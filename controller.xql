@@ -67,12 +67,20 @@ declare function local:content-negotiation($exist:path, $exist:resource){
                        else if(request:get-parameter('format', '') != '') then request:get-parameter('format', '')                            
                        else fn:tokenize($exist:resource, '\.')[fn:last()]
         return 
-            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">        
-                <forward url="{$exist:controller}/modules/content-negotiation/content-negotiation.xql">
-                    <add-parameter name="id" value="{$id}"/>
-                    <add-parameter name="format" value="{$format}"/>
-                </forward>
-            </dispatch>
+            if($format = 'ttl') then
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">        
+                    <forward url="{$exist:controller}/modules/content-negotiation/tei2ttl.xql">
+                        <add-parameter name="id" value="{$id}"/>
+                        <add-parameter name="format" value="{$format}"/>
+                    </forward>
+                </dispatch>
+            else 
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">        
+                    <forward url="{$exist:controller}/modules/content-negotiation/content-negotiation.xql">
+                        <add-parameter name="id" value="{$id}"/>
+                        <add-parameter name="format" value="{$format}"/>
+                    </forward>
+                </dispatch>
 };
 
 if ($exist:path eq '') then
@@ -135,6 +143,23 @@ else if (contains($exist:path,'/api/')) then
                 <add-parameter name="format" value="{if($format = 'json') then 'geojson' else if($format='kml') then 'kml' else 'xml'}"/>
             </forward>
         </dispatch>
+    else if(contains($exist:resource, 'bulkDownload')) then
+        let $format := request:get-parameter('format', '')
+        return
+        if($format = 'ttl') then
+            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                <forward url="{concat($exist:controller,'/modules/content-negotiation/tei2ttl.xql?download=true')}">
+                    <add-parameter name="download" value="'true'"/>
+                    <add-parameter name="format" value="ttl"/>
+                </forward>
+            </dispatch> 
+        else 
+            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                <forward url="{concat($exist:controller,'/modules/content-negotiation/content-negotiation.xql')}">
+                    <add-parameter name="download" value="'true'"/>
+                    <add-parameter name="format" value="{if($format != '') then $format else if($format='kml') then 'kml' else 'xml'}"/>
+                </forward>
+            </dispatch>  
     else
         <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
             <redirect url="{concat($config:nav-base,'/api-documentation/index.html')}"/>

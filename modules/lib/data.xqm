@@ -31,7 +31,14 @@ declare function data:get-document() {
     (: Get document by id or tei:idno:)
     if(request:get-parameter('id', '') != '') then  
         if($config:document-id) then 
-           collection($config:data-root)//tei:idno[. = request:get-parameter('id', '')][@type='URI']/ancestor::tei:TEI
+        (: SPEAR Customizations :)
+            let $rec := collection($config:data-root)//tei:idno[. = request:get-parameter('id', '')][@type='URI']/ancestor::tei:ab[@type='factoid']
+            return 
+                <TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:srophe="https://srophe.app">
+                    {$rec/ancestor::tei:TEI/tei:teiHeader}
+                    <text><body>{$rec}</body></text>
+                    {$rec/ancestor::tei:TEI/tei:text/tei:back}
+                </TEI>
         else collection($config:data-root)/id(request:get-parameter('id', ''))/ancestor::tei:TEI
     (: Get document by document path. :)
     else if(request:get-parameter('doc', '') != '') then 
