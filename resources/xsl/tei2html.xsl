@@ -147,7 +147,17 @@
     <!-- Root -->
     <xsl:template match="/">
 <!--        <xsl:apply-templates/>-->
-        <xsl:apply-templates select="//t:ab"/>
+        <xsl:choose>
+            <xsl:when test="//t:aggregate">
+              <xsl:apply-templates select="//t:aggregate"/>
+            </xsl:when>
+            <xsl:when test="//t:body/t:ab">
+              <xsl:apply-templates select="//t:ab" mode="factoid"/>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:apply-templates/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- =================================================================== -->

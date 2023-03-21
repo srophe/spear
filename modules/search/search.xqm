@@ -5,7 +5,8 @@ xquery version "3.1";
 module namespace search="http://srophe.org/srophe/search";
 
 (:eXist templating module:)
-import module namespace templates="http://exist-db.org/xquery/templates" ;
+import module namespace templates="http://exist-db.org/xquery/html-templating";
+import module namespace lib="http://exist-db.org/xquery/html-templating/lib";
 
 (: Import KWIC module:)
 import module namespace kwic="http://exist-db.org/xquery/kwic";
@@ -27,9 +28,16 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 (:declare namespace facet="http://expath.org/ns/facet";:)
 
 (: Variables:)
-declare variable $search:start {request:get-parameter('start', 1) cast as xs:integer};
-declare variable $search:perpage {request:get-parameter('perpage', 20) cast as xs:integer};
-
+declare variable $search:start {
+    if(request:get-parameter('start', 1)[1] castable as xs:integer) then 
+        xs:integer(request:get-parameter('start', 1)[1]) 
+    else 1};
+declare variable $search:perpage {
+    if(request:get-parameter('perpage', 25)[1] castable as xs:integer) then 
+        xs:integer(request:get-parameter('perpage', 25)[1]) 
+    else 25
+    };
+    
 (:~
  : Builds search result, saves to model("hits") for use in HTML display
 :)
@@ -37,7 +45,7 @@ declare variable $search:perpage {request:get-parameter('perpage', 20) cast as x
 (:~
  : Search results stored in map for use by other HTML display functions 
 :)
-declare %templates:wrap function search:search-data($node as node(), $model as map(*), $collection as xs:string?, $sort-element as xs:string?){
+declare %templates:wrap function search:search-data($node as node(), $model as map(*), $collection as xs:string?, $sort-element as xs:string*){
     let $queryExpr := if($collection = 'bibl') then
                             bibls:query-string()
                       else ()                     

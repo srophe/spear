@@ -13,7 +13,7 @@
         <!-- Logo name (assumes path to logo is $app-root/resources/images/) -->
         <logo>srophe.svg</logo>
         <!-- Web Site URL -->
-        <url>http://syriaca.org/</url>
+        <url>https://spear-prosop.org/</url>
         <!-- Root of app for building dynamic links. Default is eXist app root  /exist/apps/srophe -->
         <nav-base></nav-base>
         <!-- eXist app root for app deployment-->
@@ -21,7 +21,7 @@
         <!-- eXist data app root for TEI application.  -->
         <data-root>spear-data</data-root>
         <!-- Base URI for identifiers in app data -->
-        <base_uri>https://spear-prosop.org</base_uri>
+        <base_uri>https://spear-prosop.org/</base_uri>
         <!-- 
             Path to ODD file. Can be used in XSLT or XQuery transformations for controlled values. 
             Path to ODD file from app-root, or as an absolute path. 
@@ -34,6 +34,7 @@
             <document-ids type="document-url">document-url</document-ids>
             URI example: <document-ids type="URI">tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='URL']</document-ids
         -->
+        <!--<document-ids type="document-url">document-url</document-ids>-->
         <document-ids type="URI">tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='URL']</document-ids>
         <!--<html-render type="xquery"></html-render>-->
         <html-render type="xslt"/>

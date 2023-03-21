@@ -29,6 +29,7 @@ var d3sparql = {
 * Build d3 visualization based on Type
 * */
 d3sparql.graphType = function (data, type, config){
+/*  */
   if (type === "Table") {
         config = config || {"selector": "#result"}
         d3sparql.htmltable(data,config)
