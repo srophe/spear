@@ -146,10 +146,10 @@ else if (contains($exist:path,'/api/')) then
     else if(contains($exist:resource, 'bulkDownload')) then
         let $format := request:get-parameter('format', '')
         return
-        if($format = 'ttl') then
+        if($format = 'ttl') then 
             <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
-                <forward url="{concat($exist:controller,'/modules/content-negotiation/tei2ttl.xql?download=true')}">
-                    <add-parameter name="download" value="'true'"/>
+                <forward url="{concat($exist:controller,'/modules/content-negotiation/tei2ttl.xql')}">
+                    <add-parameter name="download" value="true"/>
                     <add-parameter name="format" value="ttl"/>
                 </forward>
             </dispatch> 
@@ -205,7 +205,36 @@ else if(replace($exist:path, $exist:resource,'') =  $exist:record-uris or replac
                             concat($config:get-config//repo:collection[ends-with(@record-URI-pattern, $record-uri-root)][1]/@app-root,'record.html')
                           else concat($config:get-config//repo:collection[ends-with(@app-root, $record-uri-root)][1]/@app-root,'record.html')
         let $format := fn:tokenize($exist:resource, '\.')[fn:last()]
+        let $document-uri := concat($config:app-root,'/factoids/',substring-before(tokenize($id,'/')[last()],'-'),'/',tokenize($id,'/')[last()],'.html')
+        let $path2html := concat('/factoids/',substring-before(tokenize($id,'/')[last()],'-'),'/',tokenize($id,'/')[last()],'.html')
         return 
+            if(doc-available(xs:anyURI($document-uri))) then
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                    <forward url="{$exist:controller}{$path2html}"></forward>
+                    <view>
+                        <forward url="{$exist:controller}/modules/view.xql">
+                           <add-parameter name="id" value="{$id}"/>
+                        </forward>
+                    </view>
+                    <error-handler>
+                        <forward url="{$exist:controller}/error-page.html" method="get"/>
+                        <forward url="{$exist:controller}/modules/view.xql"/>
+                    </error-handler>
+                </dispatch>
+            else 
+                <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
+                <forward url="{$exist:controller}{$html-path}"></forward>
+                <view>
+                    <forward url="{$exist:controller}/modules/view.xql">
+                       <add-parameter name="id" value="{$id}"/>
+                    </forward>
+                </view>
+                <error-handler>
+                    <forward url="{$exist:controller}/error-page.html" method="get"/>
+                    <forward url="{$exist:controller}/modules/view.xql"/>
+                </error-handler>
+            </dispatch>
+            (:
         (:<div>HTML page for id: [{$id}] root: [{$record-uri-root}] HTML: [{$html-path}] controler: [{$exist:controller}]</div>:)
            <dispatch xmlns="http://exist.sourceforge.net/NS/exist">
                 <forward url="{$exist:controller}{$html-path}"></forward>
@@ -219,6 +248,7 @@ else if(replace($exist:path, $exist:resource,'') =  $exist:record-uris or replac
                     <forward url="{$exist:controller}/modules/view.xql"/>
                 </error-handler>
             </dispatch>
+            :)
 else if (ends-with($exist:resource, ".html")) then
     (: the html page is run through view.xql to expand templates :)
     <dispatch xmlns="http://exist.sourceforge.net/NS/exist">

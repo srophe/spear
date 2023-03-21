@@ -78,53 +78,57 @@
         </xsl:if>
     </xsl:template>
     <xsl:template name="spearCite">
-        <h4>How to cite:</h4>
-        <span class="element">
-            <xsl:variable name="editorssourcedoc">
-                <xsl:if test="doc-available(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))">
-                    <xsl:sequence select="doc(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))"/>
-                </xsl:if>
-            </xsl:variable>
-            <xsl:variable name="docEditors" select="/tei:TEI/descendant::tei:titleStmt/tei:editor"/>
-            <xsl:variable name="respCount" select="count(tokenize(@resp,' '))"/>
-            <xsl:for-each select="tokenize(@resp,' ')">
-                <xsl:variable name="persID" select="substring-after(.,'#')"/>
-                <xsl:choose>
-                    <xsl:when test="$editorssourcedoc/descendant-or-self::tei:person[@xml:id = $persID]">
-                        <xsl:value-of select="string-join($editorssourcedoc/descendant-or-self::tei:person[@xml:id = $persID]//text(), ' ')"/>
-                    </xsl:when>
-                    <xsl:when test="$docEditors[@ref = concat('http://syriaca.org/documentation/editors.xml#',$persID)]">
-                        <xsl:value-of select="$docEditors[@ref = concat('http://syriaca.org/documentation/editors.xml#',$persID)]"/>
-                    </xsl:when>
-                    <xsl:otherwise/>
-                </xsl:choose>
-                <xsl:if test="position() != last()">
+        <div class="citation">
+            <h4>How to cite:</h4>
+            <span class="element">
+                <xsl:variable name="editorssourcedoc">
+                    <xsl:if test="doc-available(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))">
+                        <xsl:sequence select="doc(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))"/>
+                    </xsl:if>
+                </xsl:variable>
+                <xsl:variable name="docEditors" select="/tei:TEI/descendant::tei:titleStmt/tei:editor"/>
+                <xsl:variable name="respCount" select="count(tokenize(@resp,' '))"/>
+                <xsl:for-each select="tokenize(@resp,' ')">
+                    <xsl:variable name="persID" select="substring-after(.,'#')"/>
                     <xsl:choose>
-                        <xsl:when test="$respCount = 2"><xsl:text> and </xsl:text></xsl:when>
-                        <xsl:otherwise><xsl:text>, </xsl:text></xsl:otherwise>
-                    </xsl:choose>    
-                </xsl:if>
-                <xsl:if test="position() = last()"><xsl:text>, </xsl:text></xsl:if>
-            </xsl:for-each>
-            <a href="{t:idno[@type='URI']}"><xsl:value-of select="t:idno[@type='URI']"/></a><xsl:text>, </xsl:text>
-            <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"><xsl:text>in </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"/><xsl:text>, </xsl:text></xsl:if>
-            <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"><xsl:text>edited by </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"/><xsl:text>, </xsl:text></xsl:if>
-            <xsl:text>general editor </xsl:text> <xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='s']]/t:editor"/><xsl:text>, </xsl:text><xsl:value-of select="current-date()"/><xsl:text>.</xsl:text>
-        </span>
-    </xsl:template>
-    <xsl:template name="spearSources">
-        <h4>Sources:</h4>
-        <span class="element" id="sources">
-            <!-- 
-            WS:Note will need to make it look up Syriaca.org bibl items and return and process info. 
-            -->
-            <ul>
-                <xsl:for-each select="descendant::t:bibl">
-                    <xsl:sort select="if(contains(@xml:id,'-')) then xs:integer(translate(substring-after(@xml:id,'-'),translate(substring-after(@xml:id,'-'), '0123456789', ''), '')) else position()"/>
-                    <xsl:apply-templates select="." mode="footnote"/>
+                        <xsl:when test="$editorssourcedoc/descendant-or-self::tei:person[@xml:id = $persID]">
+                            <xsl:value-of select="string-join($editorssourcedoc/descendant-or-self::tei:person[@xml:id = $persID]//text(), ' ')"/>
+                        </xsl:when>
+                        <xsl:when test="$docEditors[@ref = concat('http://syriaca.org/documentation/editors.xml#',$persID)]">
+                            <xsl:value-of select="$docEditors[@ref = concat('http://syriaca.org/documentation/editors.xml#',$persID)]"/>
+                        </xsl:when>
+                        <xsl:otherwise/>
+                    </xsl:choose>
+                    <xsl:if test="position() != last()">
+                        <xsl:choose>
+                            <xsl:when test="$respCount = 2"><xsl:text> and </xsl:text></xsl:when>
+                            <xsl:otherwise><xsl:text>, </xsl:text></xsl:otherwise>
+                        </xsl:choose>    
+                    </xsl:if>
+                    <xsl:if test="position() = last()"><xsl:text>, </xsl:text></xsl:if>
                 </xsl:for-each>
-            </ul>
-        </span>
+                <a href="{t:idno[@type='URI']}"><xsl:value-of select="t:idno[@type='URI']"/></a><xsl:text>, </xsl:text>
+                <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"><xsl:text>in </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"/><xsl:text>, </xsl:text></xsl:if>
+                <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"><xsl:text>edited by </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"/><xsl:text>, </xsl:text></xsl:if>
+                <xsl:text>general editor </xsl:text> <xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='s']]/t:editor"/><xsl:text>, </xsl:text><xsl:value-of select="current-date()"/><xsl:text>.</xsl:text>
+            </span>
+        </div>
+     </xsl:template>
+    <xsl:template name="spearSources">
+        <div class="sources">
+            <h4>Sources:</h4>
+            <span class="element" id="sources">
+                <!-- 
+                WS:Note will need to make it look up Syriaca.org bibl items and return and process info. 
+                -->
+                <ul>
+                    <xsl:for-each select="descendant::t:bibl">
+                        <xsl:sort select="if(contains(@xml:id,'-')) then xs:integer(translate(substring-after(@xml:id,'-'),translate(substring-after(@xml:id,'-'), '0123456789', ''), '')) else position()"/>
+                        <xsl:apply-templates select="." mode="footnote"/>
+                    </xsl:for-each>
+                </ul>
+            </span>
+        </div>
     </xsl:template>
     <xsl:template name="factoidHeader">
         <h3>
@@ -161,263 +165,252 @@
                 </script>
             </span>
         </small>   
-        
+    </xsl:template>
+    <xsl:template name="refs">
+        <xsl:for-each-group select="//t:ab//@ref | //t:ab//@ana" group-by="tokenize(.,'/')[4]">
+            <xsl:if test="contains(current-grouping-key(),'person') or contains(current-grouping-key(),'place') or contains(current-grouping-key(),'keyword')">
+                <xsl:variable name="refs" select="current-group()"/>
+                <h4>Related <xsl:value-of select="current-grouping-key()"/>(s)</h4>
+                <ul>
+                    <xsl:for-each select="distinct-values($refs/tokenize(.,' '))">
+                        <xsl:variable name="ref" select="."/>
+                        <xsl:variable name="url">
+                            <xsl:value-of select="concat('/exist/apps/spear/aggregate/',tokenize(.,'/')[4],'/',tokenize(.,'/')[last()],'.html')"/>
+                        </xsl:variable>
+                        <li><a href="{$url}"><span class="loadRDF getLabel" data-rdfRef="{$ref}"/><xsl:value-of select="$ref"/></a></li>
+                    </xsl:for-each>
+                </ul>
+            </xsl:if>
+        </xsl:for-each-group>
     </xsl:template>
     <!-- New SPEAR -->
-    <xsl:template match="t:ab[@subtype='nameVariant']">
+    <xsl:template match="t:ab" mode="factoid">  
         <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="t:listPerson/t:person/t:persName[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="t:listPerson/t:person">
-            <span class="element"><span class="spearLabel">Name Variant: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:for-each select="descendant-or-self::t:note[not(@type='certainty')]">
-            <span class="element"><span class="spearLabel">Social Rank: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
+        <div class="row">
+            <div class="col-md-8">
+                <xsl:choose>
+                    <xsl:when test="@subtype='nameVariant'">
+                        <div class="factoid">
+                            <xsl:for-each select="t:listPerson/t:person/t:persName[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="t:listPerson/t:person">
+                                <span class="element"><span class="spearLabel">Name Variant: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:for-each select="descendant-or-self::t:note[not(@type='certainty')]">
+                                <span class="element"><span class="spearLabel">Social Rank: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/>  
+                        </div>   
+                    </xsl:when>
+                    <xsl:when test="@subtype='socecStatus'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:socecStatus[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:socecStatus/t:note[not(@type='certainty')]">
+                                <span class="element"><span class="spearLabel">Social Rank: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/>  
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='sanctity'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:state[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:state/t:note">
+                                <span class="element"><span class="spearLabel">Sanctity: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/>  
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='residence'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:residence[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:residence/t:note">
+                                <span class="element"><span class="spearLabel">Residence: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/> 
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='relation'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:relation[@type='person']/t:date[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:relation[@type='person']/t:desc">
+                                <span class="element"><span class="spearLabel">Relationship: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/> 
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='physicalTrait'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:trait[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:trait/t:note">
+                                <span class="element"><span class="spearLabel">Physical Trait: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/> 
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='occupation'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:occupation[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:occupation/t:note">
+                                <span class="element"><span class="spearLabel">Citizenship: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/> 
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='mentalState'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:state[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:state/t:note">
+                                <span class="element"><span class="spearLabel">Mental State: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/> 
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='langKnown'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:langKnown[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:langKnown/t:note">
+                                <span class="element"><span class="spearLabel">Language Known: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/>
+                        </div>            
+                    </xsl:when>
+                    <xsl:when test="@subtype='gender'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:trait[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:trait/t:note">
+                                <span class="element"><span class="spearLabel">Gender: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:apply-templates select="t:desc" mode="spear"/> 
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='event'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:event[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:event/t:desc">
+                                <span class="element"><span class="spearLabel">Event Factoid: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>            
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='ethnicLabel'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:trait[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:trait/t:note">
+                                <span class="element"><span class="spearLabel">Ethnic Label: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>            
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='education'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:education[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:education/t:note">
+                                <span class="element"><span class="spearLabel">Education: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>            
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='death'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:death/t:date[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:death/t:note">
+                                <span class="element"><span class="spearLabel">Death: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>            
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='citizenship'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:nationality[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:nationality/t:note">
+                                <span class="element"><span class="spearLabel">Citizenship: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>            
+                        </div>
+                    </xsl:when>
+                    <xsl:when test="@subtype='birth'">
+                        <div class="factoid">
+                            <xsl:for-each select="//t:birth/t:date[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:for-each select="//t:birth/t:note">
+                                <span class="element"><span class="spearLabel">Birth: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>     
+                        </div>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <div class="factoid">
+                            <xsl:for-each select="//t:date[@when or @notBefore or @notAfter or @from or @to]">
+                                <xsl:call-template name="spearDates"/>
+                            </xsl:for-each>
+                            <xsl:call-template name="spearCertainty"/>
+                            <xsl:choose>
+                                <xsl:when test="//t:note">
+                                    <xsl:for-each select="//t:note">
+                                        <span class="element"><span class="spearLabel"><xsl:sequence select="concat(upper-case(substring(current-grouping-key(),1,1)),substring(current-grouping-key(), 2),' '[not(last())])"/>: </span> <xsl:apply-templates mode="spear"/></span>
+                                    </xsl:for-each>  
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:for-each select="//child::*[not(self::t:bibl) and not(self::t:idno)]">
+                                        <span class="element"><span class="spearLabel"><xsl:sequence select="concat(upper-case(substring(current-grouping-key(),1,1)),substring(current-grouping-key(), 2),' '[not(last())])"/>: </span> <xsl:apply-templates mode="spear"/></span>
+                                    </xsl:for-each>  
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </div>
+                    </xsl:otherwise> 
+                </xsl:choose>
+                <xsl:call-template name="spearSources"/>
+                <xsl:for-each select="t:note[@type='certainty']">
+                    <xsl:apply-templates/>
+                </xsl:for-each>       
+                <xsl:call-template name="spearCite"/>
+            </div>
+            <div class="col-md-4">
+                <xsl:call-template name="refs"/>
+            </div>
+        </div>
     </xsl:template>
-    <xsl:template match="t:ab[@subtype='socecStatus']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:socecStatus[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:socecStatus/t:note[not(@type='certainty')]">
-            <span class="element"><span class="spearLabel">Social Rank: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='sanctity']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:state[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:state/t:note">
-            <span class="element"><span class="spearLabel">Sanctity: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='residence']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:residence[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:residence/t:note">
-            <span class="element"><span class="spearLabel">Residence: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='relation']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:relation[@type='person']/t:date[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:relation[@type='person']/t:desc">
-            <span class="element"><span class="spearLabel">Relationship: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='physicalTrait']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:trait[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:trait/t:note">
-            <span class="element"><span class="spearLabel">Physical Trait: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='occupation']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:occupation[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:occupation/t:note">
-            <span class="element"><span class="spearLabel">Citizenship: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='mentalState']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:state[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:state/t:note">
-            <span class="element"><span class="spearLabel">Mental State: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='langKnown']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:langKnown[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:langKnown/t:note">
-            <span class="element"><span class="spearLabel">Language Known: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='gender']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:trait[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:trait/t:note">
-            <span class="element"><span class="spearLabel">Gender: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>
-        <xsl:apply-templates select="t:desc" mode="spear"/>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='event']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:event[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:event/t:desc">
-            <span class="element"><span class="spearLabel">Event Factoid: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='ethnicLabel']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:trait[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:trait/t:note">
-            <span class="element"><span class="spearLabel">Ethnic Label: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='education']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:education[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:education/t:note">
-            <span class="element"><span class="spearLabel">Education: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='death']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:death/t:date[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:death/t:note">
-            <span class="element"><span class="spearLabel">Death: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='citizenship']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:nationality[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:nationality/t:note">
-            <span class="element"><span class="spearLabel">Citizenship: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    <xsl:template match="t:ab[@subtype='birth']">
-        <xsl:call-template name="factoidHeader"/>
-        <xsl:for-each select="//t:birth/t:date[@when or @notBefore or @notAfter or @from or @to]">
-            <xsl:call-template name="spearDates"/>
-        </xsl:for-each>
-        <xsl:call-template name="spearCertainty"/>
-        <xsl:for-each select="//t:birth/t:note">
-            <span class="element"><span class="spearLabel">Birth: </span> <xsl:apply-templates mode="spear"/></span>
-        </xsl:for-each>            
-        <xsl:call-template name="spearSources"/>
-        <xsl:for-each select="t:note[@type='certainty']">
-            <xsl:apply-templates/>
-        </xsl:for-each>       
-        <xsl:call-template name="spearCite"/>
-    </xsl:template>
-    
+   
     <!-- General templates -->
     <xsl:template match="t:choice" mode="spear">
         <xsl:value-of select="t:orig"/> <xsl:if test="t:reg">(<xsl:value-of select="t:reg"/>)</xsl:if>
@@ -427,6 +420,9 @@
         <span class="element note">
             <xsl:apply-templates mode="spear"/>
         </span>
+    </xsl:template>
+    <xsl:template match="t:note" mode="aggregate">
+        <xsl:apply-templates mode="spear"/>
     </xsl:template>
     <!-- OLD SPEAR -->
     <!-- Manuscript templates -->
@@ -451,30 +447,6 @@
                     <span id="syriaca-id">
                         <!-- NOTE: temporary fix, the Perm URI will be found in header/sourceDesc -->
                         <xsl:value-of select="concat('http://syriaca.org/spear/aggregate.html?id=', $resource-id)"/>
-                    </span>
-                </p>
-            </small>
-        </div>
-    </xsl:template>
-    <xsl:template match="t:aggregate-title">
-        <div class="row title padding-top">
-            <h1 class="col-md-8">
-                <xsl:text>SPEAR Factoids about </xsl:text>
-                <xsl:call-template name="title"/>
-            </h1>
-        </div>
-        <div style="margin:0 1em 1em; color: #999999;">
-            <small>
-                <a href="../documentation/terms.html#place-uri" title="Click to read more about Place URIs" class="no-print-link">
-                    <span class="helper circle noprint">
-                        <p>i</p>
-                    </span>
-                </a>
-                <p>
-                    <span class="srp-label">URI</span>
-                    <xsl:text>: </xsl:text>
-                    <span id="syriaca-id">
-                        <xsl:value-of select="$resource-id"/>
                     </span>
                 </p>
             </small>
@@ -562,336 +534,401 @@
     <xsl:template match="t:spear-headwords">
         <xsl:call-template name="title"/>
     </xsl:template>
-    <!--
-    <xsl:template match="t:factoid | t:ab[t:idno] | t:ab[@type='factoid']">
-                <div class="factoid">
-                    <xsl:if test="t:factoid-headword">
-                        <h4>
-                            <xsl:call-template name="title"/>
-                        </h4>
-                    </xsl:if>
-                    <xsl:choose>
-                        <xsl:when test="descendant::t:ab[t:idno]/t:listPerson">
-                            <h4>Person</h4>
-                        </xsl:when>
-                        <xsl:when test="descendant::t:ab[t:idno]/t:listEvent">
-                            <h4>Event</h4>
-                        </xsl:when>
-                        <xsl:when test="descendant::t:ab[t:idno]/t:listRelation">
-                            <h4>Relationship</h4>
-                        </xsl:when>
-                    </xsl:choose>
-                    <xsl:for-each select="//t:ab[@type='factoid']">
-                        <xsl:for-each select="child::*[not(self::t:bibl)][not(self::t:note)][not(self::t:idno)]                             [not(self::t:listRelation)]/child::*/child::*[not(empty(descendant-or-self::text()))]">
-                            <xsl:variable name="label">
-                                <xsl:choose>
-                                    <xsl:when test="name(.) = 'persName'">Name</xsl:when>
-                                    <xsl:when test="name(.) = 'desc'">Description</xsl:when>
-                                    <xsl:when test="name(.) = 'socecStatus'">Social rank</xsl:when>
-                                    <xsl:when test="name(.) = 'relation'">Relationship</xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="concat(upper-case(substring(name(.), 1, 1)), substring(name(.), 2))"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:variable>
-                            <div class="tei-{$label}">
-                                <strong>
-                            <xsl:value-of select="$label"/>: </strong>
-                                <xsl:apply-templates mode="spear"/>                                
-                            </div>
-                        </xsl:for-each>
-                        <xsl:if test="@subtype='relation'">
-                            <xsl:for-each select="descendant::t:listRelation/t:relation">
-                                <xsl:apply-templates select="t:desc" mode="spear"/>
-                                <xsl:if test="@type!=''">
-                                    <p>Qualifier(s):  
-                                        <xsl:for-each select="tokenize(@type,' ')">
-                                            <xsl:choose>
-                                                <xsl:when test=". = 'snap:AcknowledgedFamilyRelationship'">(Acknowledged family relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:AdoptedFamilyRelationship'">(Adopted family relationship)</xsl:when>
-                                                <xsl:when test=". = 'syriaca:AllegedRelationship'">(Alleged relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:ClaimedFamilyRelationship'">(Claimed family relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:FosterFamilyRelationship'">(Foster family relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:HalfFamilyRelationship'">(Half family relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:InLawFamilyRelationship'">(In law family relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:MaternalFamilyRelationship'">(Maternal family relationship)</xsl:when>
-                                                <xsl:when test=". = 'snap:PaternalFamilyRelationship'">(Paternal family relationship)</xsl:when>
-                                                <xsl:when test=". = 'syriaca:RitualKinship'">(Ritual kinship)</xsl:when>
-                                                <xsl:when test=". = 'snap:StepFamilyRelationship'">(Step family relationship) </xsl:when>
-                                            </xsl:choose> 
-                                        </xsl:for-each>
-                                    </p>
-                                </xsl:if>    
-                            </xsl:for-each>
-                        </xsl:if>
-                        <xsl:for-each select="descendant::t:note[not(@type='desc')]">
-                            <xsl:variable name="label">
-                                <xsl:value-of select="concat(upper-case(substring(@type, 1, 1)), substring(@type, 2))"/>    
-                            </xsl:variable>
-                            <div class="tei-note {if($label != '') then $label else ()}">
-                                <xsl:choose>
-                                    <xsl:when test="@type='desc'">
-                                        <span class="note-label">Description : </span>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                <span class="note-label">Note : <xsl:if test="$label != ''">
-                                        <xsl:value-of select="$label"/>
-                                    </xsl:if>
-                                </span>
-                            </xsl:otherwise>
-                                </xsl:choose>
-                                <br/>
-                                <xsl:apply-templates mode="spear"/>                            
-                            </div>    
-                        </xsl:for-each>
-                    </xsl:for-each>
-                    <xsl:if test="//t:ab[@type='factoid'][@resp != '']">
-                        <xsl:variable name="editorssourcedoc">
-                            <xsl:if test="doc-available(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))">
-                                <xsl:sequence select="doc(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))"/>
-                            </xsl:if>
-                        </xsl:variable>
-                        <xsl:variable name="editors">
-                            <xsl:for-each select="tokenize(//t:ab[@type='factoid']/@resp,' ')">
-                                <xsl:variable name="sought" select="substring-after(.,'#')"/>
-                                <xsl:choose>
-                                    <xsl:when test="$editorssourcedoc/descendant::t:body/t:listPerson[1]/t:person[@xml:id=$sought][1]">
-                                        <xsl:sequence select="$editorssourcedoc/descendant::t:body/t:listPerson[1]/t:person[@xml:id=$sought][1]"/>
-                                    </xsl:when>
-                                    <xsl:otherwise>
-                                <xsl:value-of select="."/>
-                            </xsl:otherwise>
-                                </xsl:choose>                            
-                            </xsl:for-each>
-                        </xsl:variable>
-                        <div class="tei-rsp">
-                            - This data collected by <xsl:value-of select="local:emit-responsible-persons-all($editors//t:person, 'footnote')"/>
-                        </div>    
-                    </xsl:if>
-                </div>
-    </xsl:template>
-    -->
     <xsl:template match="t:aggregate">
         <xsl:variable name="id" select="@id"/>
-        <div class="spear-aggregate">
-            <xsl:choose>
-                <xsl:when test="t:ab">
-                    <xsl:for-each-group select="t:ab/t:listPerson/t:person/t:persName[. != ''] | t:ab/t:listPerson/t:personGrp/t:persName[. != '']" group-by="name(.)">
-                        <h4>Name variant(s): </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(ancestor::t:ab[1]/t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:copy-of select="."/>
-
-                                <a href="{replace(string(ancestor::t:ab[1]/t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:trait[@type='gender']]" group-by="name(t:ab[descendant::t:trait[@type='gender']][1])">
-                        <h4>Sex: </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:birth]" group-by="name(t:ab[descendant::t:birth][1])">
-                        <xsl:for-each-group select=".[descendant::t:birth][descendant::t:date]" group-by="name(descendant::t:birth)">
-                            <h4>Birth date: </h4>
-                            <xsl:for-each select="current-group()">
-                                <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                                <p class="indent">
-                                    <xsl:apply-templates mode="spear"/>
-                                    <xsl:text> </xsl:text>
-                                    <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                    </a>
-                                </p>
-                            </xsl:for-each>
-                        </xsl:for-each-group>
-                        <xsl:for-each-group select=".[descendant::t:birth/t:placeName]" group-by="name(descendant::t:birth/t:placeName)">
-                            <h4>Birth Place: </h4>
-                            <xsl:for-each select="current-group()">
-                                <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                                <p class="indent">
-                                    <xsl:apply-templates mode="spear"/>
-                                    <xsl:text> </xsl:text>
-                                    <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                    </a>
-                                </p>
-                            </xsl:for-each>
-                        </xsl:for-each-group>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:death]" group-by="name(t:ab[descendant::t:death][1])">
-                        <xsl:for-each-group select=".[descendant::t:death][descendant::t:date]" group-by="name(descendant::t:death)">
-                            <h4>Death date: </h4>
-                            <xsl:for-each select="current-group()">
-                                <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                                <p class="indent">
-                                    <xsl:apply-templates mode="spear"/>
-                                    <xsl:text> </xsl:text>
-                                    <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                    </a>
-                                </p>
-                            </xsl:for-each>
-                        </xsl:for-each-group>
-                        <xsl:for-each-group select=".[descendant::t:death/t:placeName]" group-by="name(descendant::t:death/t:placeName)">
-                            <h4>Death Place: </h4>
-                            <xsl:for-each select="current-group()">
-                                <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                                <p class="indent">
-                                    <xsl:apply-templates mode="spear"/>
-                                    <xsl:text> </xsl:text>
-                                    <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                    </a>
-                                </p>
-                            </xsl:for-each>
-                        </xsl:for-each-group>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:socecStatus]" group-by="name(t:ab[descendant::t:socecStatus][1])">
-                        <h4>Social rank: </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:occupation]" group-by="name(t:ab[descendant::t:occupation][1])">
-                        <h4>Occupation(s): </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:nationality]" group-by="name(t:ab[descendant::t:nationality][1])">
-                        <h4>Citizenship: </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:residence]" group-by="name(t:ab[descendant::t:residence][1])">
-                        <h4>Place of residence: </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:state]" group-by="name(t:ab[descendant::t:state][1])">
-                        <xsl:for-each-group select=".[descendant::t:state]" group-by="descendant::t:state/@type">
-                            <h4>
-                                <xsl:choose>
-                                    <xsl:when test="current-grouping-key() = 'mental'">Mental state: </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="current-grouping-key()"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </h4>
-                            <xsl:for-each select="current-group()">
-                                <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                                <p class="indent">
-                                    <xsl:apply-templates mode="spear"/>
-                                    <xsl:text> </xsl:text>
-                                    <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                    </a>
-                                </p>
-                            </xsl:for-each>
-                        </xsl:for-each-group>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:education]" group-by="name(t:ab[descendant::t:education][1])">
-                        <h4>Education: </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:langKnowledge]" group-by="name(t:ab[descendant::t:langKnowledge][1])">
-                        <h4>Language known: </h4>
-                        <xsl:for-each select="current-group()">
-                            <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                            <p class="indent">
-                                <xsl:apply-templates mode="spear"/>
-                                <xsl:text> </xsl:text>
-                                <a href="{replace(string(t:idno),$base-uri,$nav-base)}">More <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                </a>
-                            </p>
-                        </xsl:for-each>
-                    </xsl:for-each-group>
-                    <xsl:for-each-group select="t:ab[descendant::t:trait[not(@type='gender')]]" group-by="name(t:ab[descendant::t:trait][1])">
-                        <xsl:for-each-group select=".[descendant::t:trait]" group-by="descendant::t:trait/@type">
-                            <h4>
-                                <xsl:choose>
-                                    <xsl:when test="current-grouping-key() = 'physical'">Physical
-                                        trait: </xsl:when>
-                                    <xsl:when test="current-grouping-key() = 'gender'">Gender: </xsl:when>
-                                    <xsl:when test="current-grouping-key() = 'ethnicLabel'">Ethnic
-                                        label: </xsl:when>
-                                    <xsl:otherwise>
-                                        <xsl:value-of select="current-grouping-key()"/>
-                                    </xsl:otherwise>
-                                </xsl:choose>
-                            </h4>
-                            <xsl:for-each select="current-group()">
-                                <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
-                                <p class="indent">
-                                    <xsl:apply-templates mode="spear"/>
-                                    <xsl:text> </xsl:text>
-                                    <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
-                                    </a>
-                                </p>
-                            </xsl:for-each>
-                        </xsl:for-each-group>
-                    </xsl:for-each-group>
-                    <xsl:for-each select="t:ab[not(descendant::t:sex | descendant::t:state | descendant::t:occupation | descendant::t:birth | descendant::t:death | descendant::t:education | descendant::t:nationality | descendant::t:residence | descendant::t:langKnowledge | descendant::t:socecStatus | descendant::t:trait | t:listPerson/child::*/t:persName[. != ''])]">
-                        <xsl:sort select="xs:integer(substring-after(t:idno, '-'))" order="ascending"/>
+        <xsl:variable name="title" select="//t:syraca/descendant-or-self::t:title[1]/text()"/>
+        <xsl:variable name="url" select="concat($base-uri,'/aggregate/person/2095.html')"/>
+        <div class="padding-top">
+            <h1>
+                <xsl:text>SPEAR Factoids about </xsl:text>
+                <xsl:call-template name="title"/>
+            </h1>
+        </div>
+        <!--
+        <xsl:choose>
+            <xsl:when test="contains($id,'/person/')">
+                <h2>Person Factoids <xsl:value-of select="@title"/></h2>
+            </xsl:when>
+            <xsl:when test="contains($id,'/person/')">
+                <h2>Place Factoids<xsl:value-of select="@title"/></h2>
+            </xsl:when>
+            <xsl:otherwise>
+                <h2><xsl:sequence select="concat(upper-case(substring(tokenize($id)[4],1,1)),substring(tokenize($id)[4], 2),' '[not(last())])"/> Factoids</h2>
+            </xsl:otherwise>
+        </xsl:choose>
+        -->
+        <!-- Notes from syriaca.org -->
+        <div>
+            <xsl:apply-templates select="t:syriaca/descendant-or-self::t:note[@type='abstract']"/>
+            <div style="margin:0 1em 1em; color: #999999;">
+                <small>
+                    <p>
+                        <span class="srp-label"><strong>Syriaca.org URI</strong></span>
+                        <xsl:text>: </xsl:text>
+                        <span id="syriaca-id">
+                            <a href="{$id}"><xsl:value-of select="$id"/></a>
+                        </span>
+                    </p>
+                </small>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <xsl:choose>
+                    <xsl:when test="contains($id,'/person/')">
+                        <xsl:if test="t:ab[@subtype = 'nameVariant']                             |t:ab[@subtype = 'birth']                             |t:ab[@subtype = 'death']                             |t:ab[@subtype = 'gender']                             |t:ab[@subtype = 'citizenship']                             |t:ab[@subtype = 'residence']                             |t:ab[@subtype = 'ethnicLabel']                             |t:ab[@subtype = 'sanctity']                             |t:ab[@subtype = 'occupation']                             |t:ab[@subtype = 'education']                             |t:ab[@subtype = 'socecStatus']                             |t:ab[@subtype = 'mentalState']                             |t:ab[@subtype = 'physicalTrait']">
+                            <div class="sources">
+                                <h3>Personal Information</h3>
+                                <xsl:if test="t:ab[@subtype = 'nameVariant']">
+                                    <h4>Name variant(s): </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'nameVariant']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'birth']">
+                                    <h4>Birth: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'birth']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'death']">
+                                    <h4>Death: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'death']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'gender']">
+                                    <h4>Sex: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'gender']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'citizenship']">
+                                    <h4>Citizenship: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'citizenship']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'residence']">
+                                    <h4>Place of residence: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'residence']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'ethnicLabel']">
+                                    <h4>Ethnic Label: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'ethnicLabel']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'sanctity']">
+                                    <h4>Sanctity: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'sanctity']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'occupation']">
+                                    <h4>Occupation(s): </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'occupation']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'education']">
+                                    <h4>Education: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'education']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'socecStatus']">
+                                    <h4>Social Rank: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'socecStatus']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'mentalState']">
+                                    <h4>Mental State: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'mentalState']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'physicalTrait']">
+                                    <h4>Physical Trait: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'physicalTrait']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                            </div>
+                        </xsl:if>
+                        <xsl:if test="t:ab[@subtype = 'relation']">
+                            <div class="sources">
+                                <h3>Relationships</h3>
+                                <xsl:apply-templates select="t:ab[@subtype = 'relation']" mode="aggregate">
+                                    <xsl:sort select="@xml:id"/>
+                                </xsl:apply-templates>
+                            </div>
+                        </xsl:if>
+                        <xsl:if test="t:ab[@subtype = 'event']">
+                            <div class="sources">
+                                <h3>Events</h3>
+                                <xsl:apply-templates select="t:ab[@subtype = 'event']" mode="aggregate">
+                                    <xsl:sort select="@xml:id"/>
+                                </xsl:apply-templates>
+                            </div>
+                        </xsl:if>    
+                    </xsl:when>
+                    <xsl:when test="contains($id,'/place/')">
+                        <xsl:if test="t:ab[@subtype = 'event']">
+                            <div class="sources">
+                                <h3>Events</h3>
+                                <xsl:apply-templates select="t:ab[@subtype = 'event']" mode="aggregate">
+                                    <xsl:sort select="@xml:id"/>
+                                </xsl:apply-templates>
+                            </div>
+                        </xsl:if>
+                        <xsl:if test="t:ab[@subtype = 'nameVariant']                             |t:ab[@subtype = 'birth']                             |t:ab[@subtype = 'death']                             |t:ab[@subtype = 'gender']                             |t:ab[@subtype = 'citizenship']                             |t:ab[@subtype = 'residence']                             |t:ab[@subtype = 'ethnicLabel']                             |t:ab[@subtype = 'sanctity']                             |t:ab[@subtype = 'occupation']                             |t:ab[@subtype = 'education']                             |t:ab[@subtype = 'socecStatus']                             |t:ab[@subtype = 'mentalState']                             |t:ab[@subtype = 'physicalTrait']">
+                            <div class="sources">
+                                <xsl:if test="t:ab[@subtype = 'nameVariant']">
+                                    <h4>Personal Names: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'nameVariant']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'birth']">
+                                    <h4>Births: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'birth']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'death']">
+                                    <h4>Deaths: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'death']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'citizenship']">
+                                    <h4>Citizenship: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'citizenship']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'residence']">
+                                    <h4>Residence: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'residence']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'sanctity']">
+                                    <h4>Sanctity: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'sanctity']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'occupation']">
+                                    <h4>Occupation(s): </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'occupation']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'education']">
+                                    <h4>Education: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'education']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                                <xsl:if test="t:ab[@subtype = 'physicalTrait']">
+                                    <h4>Physical Trait: </h4>
+                                    <xsl:apply-templates select="t:ab[@subtype = 'physicalTrait']" mode="aggregate">
+                                        <xsl:sort select="@xml:id"/>
+                                    </xsl:apply-templates>
+                                </xsl:if>
+                            </div>
+                        </xsl:if>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="t:ab" mode="aggregateLabels">
+                            <xsl:sort select="@xml:id"/>    
+                        </xsl:apply-templates>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <div class="citation">
+                    <h3>How to cite:</h3>
+                    <span class="element">
+                        <xsl:choose>
+                            <xsl:when test="contains($id,'/person/')">
+                                “Person Page for <xsl:call-template name="title"/>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
+                            </xsl:when>
+                            <xsl:when test="contains($id,'/place/')">
+                                “Place Page for <xsl:value-of select="$title"/>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
+                            </xsl:when>
+                            <xsl:when test="contains($id,'/keyword/')">
+                                “Keyword Page for <xsl:value-of select="$title"/>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
+                            </xsl:when>
+                        </xsl:choose>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <xsl:call-template name="refs"/>
+            </div>
+        </div>
+    </xsl:template>
+    <xsl:template match="t:ab" mode="aggregate">
+        <xsl:variable name="url" select="replace(string(t:idno),$base-uri,concat($nav-base,'/'))"/>
+        <xsl:choose>
+            <xsl:when test=".[descendant::t:birth]">
+                <xsl:if test="descendant::t:date">
+                    <p class="indent">
+                        <span class="spearLabel">Birth date: </span>
+                        <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                    </p>
+                </xsl:if>
+                <xsl:if test="descendant::t:birth/t:placeName">
+                    <p class="indent">
+                        <span class="spearLabel">Birth place: </span>
+                        <xsl:apply-templates select="descendant::t:birth/t:note" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        </a>
+                    </p>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test=".[descendant::t:death]">
+                <xsl:if test="descendant::t:date">
+                    <p class="indent">
+                        <span class="spearLabel">Death date: </span>
+                        <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                    </p>
+                </xsl:if>
+                <xsl:if test="descendant::t:death/t:placeName">
+                    <p class="indent">
+                        <span class="spearLabel">Death place: </span>
+                        <xsl:apply-templates select="descendant::t:death/t:note" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        </a>
+                    </p>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test=".[descendant::t:state]">
+                        <p class="indent">
+                            <xsl:apply-templates select="descendant::t:state/t:note" mode="aggregate"/>
+                            <xsl:text> </xsl:text>
+                            <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                            </a>
+                        </p>
+            </xsl:when>
+            <xsl:when test=".[descendant::t:trait[not(@type='gender')]]">
                         <p class="indent">
                             <xsl:apply-templates mode="spear"/>
                             <xsl:text> </xsl:text>
-                            <a href="{replace(string(t:idno),$base-uri,$nav-base)}" class="factoid-more">See factoid page
-                                    <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                            <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
                             </a>
                         </p>
-                    </xsl:for-each>
-                </xsl:when>
-                <xsl:otherwise>
+            </xsl:when>
+            <xsl:otherwise>
+                <p class="indent">
+                    <xsl:choose>
+                        <xsl:when test="descendant::t:note | descendant::t:desc">
+                           <xsl:apply-templates select="descendant::t:note | descendant::t:desc" mode="aggregate"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                           <xsl:apply-templates select="child::*[not(self::t:idno) and not(self::t:bibl)]" mode="spear"/> 
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:text> </xsl:text>
+                    <a href="{$url}" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    </a>
+                </p>
+                <xsl:if test="@subtype='event'"><hr/></xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template match="t:ab" mode="aggregateLabels">
+        <xsl:variable name="url" select="replace(string(t:idno),$base-uri,concat($nav-base,'/'))"/>
+        <xsl:choose>
+            <xsl:when test=".[descendant::t:birth]">
+                <xsl:if test="descendant::t:date">
+                    <p class="indent">
+                        <span class="spearLabel">Birth date: </span>
+                        <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                    </p>
+                </xsl:if>
+                <xsl:if test="descendant::t:birth/t:placeName">
+                    <p class="indent">
+                        <span class="spearLabel">Birth place: </span>
+                        <xsl:apply-templates select="descendant::t:birth/t:note" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        </a>
+                    </p>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test=".[descendant::t:death]">
+                <xsl:if test="descendant::t:date">
+                    <p class="indent">
+                        <span class="spearLabel">Death date: </span>
+                        <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                    </p>
+                </xsl:if>
+                <xsl:if test="descendant::t:death/t:placeName">
+                    <p class="indent">
+                        <span class="spearLabel">Death place: </span>
+                        <xsl:apply-templates select="descendant::t:death/t:note" mode="aggregate"/>
+                        <xsl:text> </xsl:text>
+                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        </a>
+                    </p>
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test=".[descendant::t:state]">
+                <p class="indent"><span class="spearLabel"><xsl:value-of select="descendant::t:state/@type"/>: </span>
+                    <xsl:apply-templates select="descendant::t:state/t:note" mode="aggregate"/>
+                    <xsl:text> </xsl:text>
+                    <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    </a>
+                </p>
+            </xsl:when>
+            <xsl:when test=".[descendant::t:trait[not(@type='gender')]]">
+                <p class="indent"><span class="spearLabel"><xsl:value-of select="descendant::t:state/@type"/>: </span>
                     <xsl:apply-templates mode="spear"/>
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
+                    <xsl:text> </xsl:text>
+                    <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    </a>
+                </p>
+            </xsl:when>
+            <xsl:otherwise>
+                <p class="indent"><span class="spearLabel"><xsl:value-of select="@subtype"/>: </span>
+                    <xsl:choose>
+                        <xsl:when test="descendant::t:note | descendant::t:desc">
+                            <xsl:apply-templates select="descendant::t:note | descendant::t:desc" mode="aggregate"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates select="child::*[not(self::t:idno) and not(self::t:bibl)]" mode="spear"/> 
+                        </xsl:otherwise>
+                    </xsl:choose>
+                    <xsl:text> </xsl:text>
+                    <a href="{$url}" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    </a>
+                </p>
+                <xsl:if test="@subtype='event'"><hr/></xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     <xsl:template match="t:spear-teiHeader">
         <p>
@@ -1050,24 +1087,4 @@
         </xsl:choose>
     </xsl:template>
     
-    <!-- Needs work -->
-    <xsl:template match="t:spear-citation">
-        <xsl:if test="descendant-or-self::tei:body/descendant::t:bibl">
-                <!-- Sources -->
-                <div id="sources" class="text-block">
-                    <h3>Source</h3>
-                    <ul>
-                        <li>
-                            <!-- title of the entry -->
-                            <xsl:apply-templates select="descendant-or-self::t:teiHeader/t:fileDesc/t:titleStmt/t:title[@level='a'][1]" mode="footnote"/>
-                        </li>
-                    </ul>
-                    <h3>Factoid Citations</h3>
-                    <ul>
-                        <xsl:apply-templates select="descendant-or-self::tei:body/descendant::t:bibl" mode="footnote"/>
-                    </ul>
-                </div>
-            
-        </xsl:if>
-    </xsl:template>
 </xsl:stylesheet>

@@ -16,12 +16,31 @@
              var $form = $("#RDF"),
                 url = $form.find("#endpoint").val(),
                 type = $form.select("#type").find(":selected").text();
+                // creates a string that contains the query with the data from the box 
+                // inserted into the right place
+                var query = $form.serialize();
+                            
+                // URL-encodes the query so that it can be appended as a query value
+                var encoded = encodeURIComponent(query)
+                
+                // does the AJAX to send the HTTP GET to the Callimachus SPARQL endpoint 
+                // then puts the result in the "data" variable
+                $.ajax({
+                    type: 'GET',
+                    url: 'https://sparql.vanderbilt.edu/sparql?query' + query,
+                    success: function(data) {
+                        if (type === "JSON" || type === "XML") {
+                             data
+                        } else {
+                            d3sparql.graphType(data, type);
+                        }
+                        }
+                });
+                /*
                 if (type === "JSON" || type === "XML") {
-                /* If JSON/XML submit the form with the appropriate/requested format */
                      $("#format").val(type);
                      $('form').submit();
                 } else {
-                /* Otherwise send to d3 visualization, set format to json.  */
                     $("#format").val('json');
                     $.post(url, $form.serialize(), function(data) {
                         d3sparql.graphType(data, type);
@@ -29,6 +48,7 @@
                         console.log(textStatus);
                     });
                 }
+                */
              });
             });
             
@@ -112,7 +132,7 @@
                     </div>
                 </div>
                 <br/>
-                <textarea id="sparql" class="span9" rows="15" cols="150" name="sparql">
+                <textarea id="sparql" class="span9" rows="15" cols="150" name="query">
                     <![CDATA[
                     prefix rdf: &amp;lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;gt;
                     prefix rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt;

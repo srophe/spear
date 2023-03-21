@@ -12,7 +12,7 @@ declare namespace html="http://purl.org/dc/elements/1.1/";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace xlink = "http://www.w3.org/1999/xlink";
 declare namespace util="http://exist-db.org/xquery/util";
-
+declare namespace srophe="https://srophe.app";
 (:~
  : Simple TEI to HTML transformation
  : @param $node   
@@ -318,7 +318,7 @@ declare function tei2html:summary-view-generic($nodes as node()*, $id as xs:stri
     let $url := (:<document-ids type="document-url">document-url</document-ids>:)
                 if($config:get-config//*:document-ids[@type='document-url']) then
                     concat('record.html?doc=',document-uri(root($nodes[1])))
-                else replace(replace($id,$config:base-uri,$config:nav-base),'/tei','')                   
+                else replace(replace($id,$config:base-uri,concat($config:nav-base,'/')),'/tei','')                   
     return 
         <div class="short-rec-view">
             <a href="{$url}" dir="ltr">{tei2html:tei2html($title)}</a>
@@ -343,7 +343,8 @@ declare function tei2html:summary-view-generic($nodes as node()*, $id as xs:stri
             else()}
             {
             if($id != '') then 
-            <span class="results-list-desc uri"><span class="srp-label">URI: </span><a href="{replace(replace($id,$config:base-uri,$config:nav-base),'/tei','')}">{replace($id,'/tei','')}</a></span>
+            <span class="results-list-desc uri"><span class="srp-label">URI: </span>
+            <a href="{$url}">{replace($id,'/tei','')}</a></span>
             else()
             }
         </div>   

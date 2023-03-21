@@ -1,0 +1,17 @@
+/* SPEAR styles */
+
+.factoid {
+    display:block;
+    margin:2em;
+    font-size:large;
+}
+
+.citation,
+.sources {
+    display:block;
+    margin:2em;
+    font-size:small;
+    border-top: 1px solid #ccc;
+}
+
+.results {margin:.5em;padding:.5em;}

@@ -6,7 +6,8 @@ xquery version "3.1";
 module namespace browse="http://srophe.org/srophe/browse";
 
 (:eXist templating module:)
-import module namespace templates="http://exist-db.org/xquery/templates" ;
+import module namespace templates="http://exist-db.org/xquery/html-templating";
+import module namespace lib="http://exist-db.org/xquery/html-templating/lib";
 
 (: Import Srophe application modules. :)
 import module namespace config="http://srophe.org/srophe/config" at "../config.xqm";
@@ -26,9 +27,16 @@ declare namespace srophe="https://srophe.app";
 declare variable $browse:alpha-filter {request:get-parameter('alpha-filter', '')};
 declare variable $browse:lang {request:get-parameter('lang', '')};
 declare variable $browse:view {request:get-parameter('view', '')};
-declare variable $browse:start {request:get-parameter('start', 1) cast as xs:integer};
-declare variable $browse:perpage {request:get-parameter('perpage', 25) cast as xs:integer};
-
+declare variable $browse:start {
+    if(request:get-parameter('start', 1)[1] castable as xs:integer) then 
+        xs:integer(request:get-parameter('start', 1)[1]) 
+    else 1};
+declare variable $browse:perpage {
+    if(request:get-parameter('perpage', 25)[1] castable as xs:integer) then 
+        xs:integer(request:get-parameter('perpage', 25)[1]) 
+    else 25
+    };
+    
 (:~
  : Build initial browse results based on parameters
  : Calls data function data:get-records(collection as xs:string*, $element as xs:string?)
@@ -38,6 +46,7 @@ declare variable $browse:perpage {request:get-parameter('perpage', 25) cast as x
 :)  
 declare function browse:get-all($node as node(), $model as map(*), $collection as xs:string*, $element as xs:string?, $facets as xs:string?){
     map{"hits" : data:get-records($collection, $element) }
+    
 };
 
 (:
@@ -84,18 +93,12 @@ declare function browse:show-hits($node as node(), $model as map(*), $collection
 :)
 declare function browse:display-hits($hits){
     for $hit in subsequence($hits, $browse:start,$browse:perpage)
-    let $sort-title := 
-        if($browse:lang != 'en') then 
-            <span class="sort-title" lang="{$browse:lang}" xml:lang="{$browse:lang}">{(if($browse:lang='ar' or $browse:lang='syr') then attribute dir { "rtl" } else (), 
-                if($browse:lang = 'syr') then ft:field($hit, "titleSyriac")[1]
-                else if($browse:lang = 'ar') then ft:field($hit, "titleArabic")[1]
-                else ()
-            )}</span> 
-        else () 
-    let $uri := replace($hit/descendant::tei:publicationStmt/tei:idno[1],'/tei','')
+    let $uri := concat($config:nav-base, '/aggregate/', tokenize($hit/tei:idno,'/')[4],'/',tokenize($hit/tei:idno,'/')[last()],'.html')
     return 
         <div xmlns="http://www.w3.org/1999/xhtml" class="result">
-            {($sort-title, tei2html:summary-view($hit, $browse:lang, $uri))}
+            {(:($sort-title, tei2html:summary-view($hit, $browse:lang, $uri)):)
+               (<span><a href="{$uri}">{normalize-space(string-join($hit/tei:title/descendant-or-self::text(),''))}</a></span>)
+            }
         </div>
 };
 
