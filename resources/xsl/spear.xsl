@@ -167,6 +167,7 @@
         </small>   
     </xsl:template>
     <xsl:template name="refs">
+        <xsl:variable name="refIndexs" select="doc('/db/apps/spear/resources/indexes/keywordIndex.xml') | doc('/db/apps/spear/resources/indexes/personsIndex.xml') | doc('/db/apps/spear/resources/indexes/placesIndex.xml')"/>
         <xsl:for-each-group select="//t:ab//@ref | //t:ab//@ana" group-by="tokenize(.,'/')[4]">
             <xsl:if test="contains(current-grouping-key(),'person') or contains(current-grouping-key(),'place') or contains(current-grouping-key(),'keyword')">
                 <xsl:variable name="refs" select="current-group()"/>
@@ -174,10 +175,21 @@
                 <ul>
                     <xsl:for-each select="distinct-values($refs/tokenize(.,' '))">
                         <xsl:variable name="ref" select="."/>
-                        <xsl:variable name="url">
-                            <xsl:value-of select="concat('/exist/apps/spear/aggregate/',tokenize(.,'/')[4],'/',tokenize(.,'/')[last()],'.html')"/>
+                        <xsl:variable name="title" select="$refIndexs//t:idno[. = $ref]/parent::*/t:title[1]/descendant-or-self::text()"/>
+                        <xsl:variable name="titleString">
+                            <xsl:choose>
+                                <xsl:when test="not(empty($title))"><xsl:value-of select="$title"/></xsl:when>
+                                <xsl:otherwise><xsl:value-of select="replace(concat(upper-case(substring(tokenize(.,'/')[last()],1,1)),substring(tokenize(.,'/')[last()],2)),'_',' ')"/></xsl:otherwise>
+                            </xsl:choose>
                         </xsl:variable>
-                        <li><a href="{$url}"><span class="loadRDF getLabel" data-rdfRef="{$ref}"/><xsl:value-of select="$ref"/></a></li>
+                        <xsl:variable name="url">
+                            <xsl:value-of select="concat('$nav-base/aggregate/',tokenize(.,'/')[4],'/',tokenize(.,'/')[last()],'.html')"/>
+                        </xsl:variable>
+                        <li><a href="{$url}">
+                            <span class="loadRDF getLabel" data-rdfRef="{$ref}"/>
+                            <xsl:value-of select="$titleString"/>
+                            </a>
+                        </li>
                     </xsl:for-each>
                 </ul>
             </xsl:if>
@@ -196,6 +208,9 @@
                             </xsl:for-each>
                             <xsl:call-template name="spearCertainty"/>
                             <xsl:for-each select="t:listPerson/t:person">
+                                <span class="element"><span class="spearLabel">Name Variant: </span> <xsl:apply-templates mode="spear"/></span>
+                            </xsl:for-each>
+                            <xsl:for-each select="t:listPerson/personGrp">
                                 <span class="element"><span class="spearLabel">Name Variant: </span> <xsl:apply-templates mode="spear"/></span>
                             </xsl:for-each>
                             <xsl:for-each select="descendant-or-self::t:note[not(@type='certainty')]">
@@ -399,6 +414,25 @@
                         </div>
                     </xsl:otherwise> 
                 </xsl:choose>
+                <xsl:if test="descendant::t:bibl[@type='urn']">
+                    <xsl:for-each select="descendant::t:bibl[@type='urn']">
+                        <div class="indent" style="padding-left:2em;padding-right:2em;">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h4>Source Text</h4>
+                                    <xsl:variable name="ref" select="t:ptr/@target"/>
+                                    <div class="ctsResolver" data-cts-location="https://syriaccorpus.org/" data-cts-urn="{$ref}" data-cts-format="xml"/>
+                                    <span>
+                                        <a href="https://syriaccorpus.org//api/cts?urn={$ref}">
+                                            See full text at The Syriac Corpus <span class="glyphicon glyphicon-circle-arrow-right"> </span>
+                                        </a>
+                                    </span>
+                                </div>
+                                <script type="text/javascript" src="$nav-base/CTS/resources/js/cts.js"></script>
+                            </div>
+                        </div>
+                    </xsl:for-each>
+                </xsl:if>
                 <xsl:call-template name="spearSources"/>
                 <xsl:for-each select="t:note[@type='certainty']">
                     <xsl:apply-templates/>
@@ -536,12 +570,20 @@
     </xsl:template>
     <xsl:template match="t:aggregate">
         <xsl:variable name="id" select="@id"/>
-        <xsl:variable name="title" select="//t:syraca/descendant-or-self::t:title[1]/text()"/>
-        <xsl:variable name="url" select="concat($base-uri,'/aggregate/person/2095.html')"/>
+        <xsl:variable name="titleString">
+            <xsl:call-template name="title"/>
+        </xsl:variable>
+        <xsl:variable name="title">
+            <xsl:choose>
+                <xsl:when test="$titleString != ''"><xsl:call-template name="title"/></xsl:when>
+                <xsl:when test="contains($id,'/keyword')"><xsl:value-of select="replace(tokenize($id,'/')[last()],'_',' ')"/></xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="url" select="concat('$nav-base/aggregate/',tokenize($id,'/')[4],'/',tokenize($id,'/')[last()],'.html')"/>
         <div class="padding-top">
             <h1>
                 <xsl:text>SPEAR Factoids about </xsl:text>
-                <xsl:call-template name="title"/>
+               <xsl:sequence select="$title"/>
             </h1>
         </div>
         <!--
@@ -755,17 +797,17 @@
                     <span class="element">
                         <xsl:choose>
                             <xsl:when test="contains($id,'/person/')">
-                                “Person Page for <xsl:call-template name="title"/>,” 
+                                “Person Page for <xsl:sequence select="$title"/>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
                                 <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
                             </xsl:when>
                             <xsl:when test="contains($id,'/place/')">
-                                “Place Page for <xsl:value-of select="$title"/>,” 
+                                “Place Page for <xsl:sequence select="$title"/>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
                                 <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
                             </xsl:when>
                             <xsl:when test="contains($id,'/keyword/')">
-                                “Keyword Page for <xsl:value-of select="$title"/>,” 
+                                “Keyword Page for <xsl:sequence select="$title"/>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
                                 <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
                             </xsl:when>
@@ -779,7 +821,7 @@
         </div>
     </xsl:template>
     <xsl:template match="t:ab" mode="aggregate">
-        <xsl:variable name="url" select="replace(string(t:idno),$base-uri,concat($nav-base,'/'))"/>
+        <xsl:variable name="url" select="replace(string(t:idno),$base-uri,'\$nav-base/')"/>
         <xsl:choose>
             <xsl:when test=".[descendant::t:birth]">
                 <xsl:if test="descendant::t:date">
@@ -855,7 +897,7 @@
         </xsl:choose>
     </xsl:template>
     <xsl:template match="t:ab" mode="aggregateLabels">
-        <xsl:variable name="url" select="replace(string(t:idno),$base-uri,concat($nav-base,'/'))"/>
+        <xsl:variable name="url" select="replace(string(t:idno),$base-uri,'\$nav-base/')"/>
         <xsl:choose>
             <xsl:when test=".[descendant::t:birth]">
                 <xsl:if test="descendant::t:date">

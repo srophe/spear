@@ -29,7 +29,7 @@ declare function local:mkcol($collection, $path) {
 declare function local:buildHTML($results as item()*){
     <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
         <div class="record">
-            <div class="interior-content">
+            <div class="interior-content" data-template="app:fix-links">
                 {
                         transform:transform($results, doc($config:app-root || '/resources/xsl/tei2html.xsl'), 
                             <parameters>
@@ -55,22 +55,22 @@ declare function local:buildFactoids(){
     let $total := count($items)
     let $next := if(xs:integer($start) lt xs:integer($total)) then (xs:integer($start) + xs:integer($limit)) else ()
     let $group := 
-        for $f in subsequence($items,$start,$limit)
-        let $collection := document-uri($f)
-        let $file := tokenize($collection,'/')[last()]
-        let $fileName := replace($file,'.xml','.html')
-        let $htmlPath := replace(replace($collection, $config:data-root,$config:app-root),concat('/',$file),'')
-        let $html := local:buildHTML($f)
-        let $buildPath := 
-                if(xmldb:collection-available($htmlPath)) then ()
-                else (local:mkcol("/db/apps", replace($htmlPath,'/db/apps','')))
-        return 
-           try {xmldb:store($htmlPath, xmldb:encode-uri($fileName), $html)} 
-         catch *{
-                <response status="fail">
-                    <message>Failed to add resource {$fileName}: {concat($err:code, ": ", $err:description)}</message>
-                </response>
-            }
+            for $f in subsequence($items,$start,$limit)
+            let $collection := document-uri($f)
+            let $file := tokenize($collection,'/')[last()]
+            let $fileName := replace($file,'.xml','.html')
+            let $htmlPath := replace(replace($collection, $config:data-root,$config:app-root),concat('/',$file),'')
+            let $html := local:buildHTML($f)
+            let $buildPath := 
+                    if(xmldb:collection-available($htmlPath)) then ()
+                    else (local:mkcol("/db/apps", replace($htmlPath,'/db/apps','')))
+            return 
+               try {xmldb:store($htmlPath, xmldb:encode-uri($fileName), $html)} 
+             catch *{
+                    <response status="fail">
+                        <message>Failed to add resource {$fileName}: {concat($err:code, ": ", $err:description)}</message>
+                    </response>
+                }
     return 
         if($next) then
             ($group,
@@ -119,7 +119,7 @@ declare function local:buildAggregate(){
                         <syriaca xmlns="http://www.tei-c.org/ns/1.0">
                             {$sropheData}
                         </syriaca>} 
-                    {(collection($config:data-root)//tei:ab[.//@ref[. = $f]] | collection($config:data-root)//tei:ab[.//@ana[matches(., concat($f,'(\W.*)?$'))]])}
+                    {(collection($config:data-root)//tei:ab[.//@ref[. = $f][not(parent::tei:persName/parent::tei:persName)]] | collection($config:data-root)//tei:ab[.//@ana[matches(., concat($f,'(\W.*)?$'))]])}
                 </aggregate>
             let $html := local:buildHTML($items)
             let $buildPath := 
