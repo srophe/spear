@@ -354,8 +354,8 @@ declare function tei2rdf:spear-related-triples($rec, $id){
                     for $r in tokenize($rec/tei:listPerson/child::*/tei:birth/tei:placeName/@ref,' ')
                     return tei2rdf:create-element('schema:birthPlace', (), $r, ())
                 else(),
-                if($rec/tei:listPerson/child::*/tei:nationality/tei:placeName[@ref]) then 
-                    for $r in tokenize($rec/tei:listPerson/child::*/tei:nationality/tei:placeName/@ref,' ')
+                if($rec/tei:listPerson/child::*/tei:state[@type='citizenship']/tei:placeName[@ref]) then 
+                    for $r in tokenize($rec/tei:listPerson/child::*/tei:state[@type='citizenship']/tei:placeName/@ref,' ')
                     return tei2rdf:create-element('person:citizenship', (), $r, ())
                 else(),
                 if($rec/tei:listPerson/child::*/tei:death/tei:date) then 
