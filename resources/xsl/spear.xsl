@@ -373,11 +373,11 @@
                     </xsl:when>
                     <xsl:when test="@subtype='citizenship'">
                         <div class="factoid">
-                            <xsl:for-each select="//t:nationality[@when or @notBefore or @notAfter or @from or @to]">
+                            <xsl:for-each select="//t:state[@type='citizenship'][@when or @notBefore or @notAfter or @from or @to]">
                                 <xsl:call-template name="spearDates"/>
                             </xsl:for-each>
                             <xsl:call-template name="spearCertainty"/>
-                            <xsl:for-each select="//t:nationality/t:note">
+                            <xsl:for-each select="//t:state[@type='citizenship']/t:note">
                                 <span class="element"><span class="spearLabel">Citizenship: </span> <xsl:apply-templates mode="spear"/></span>
                             </xsl:for-each>            
                         </div>

@@ -327,7 +327,7 @@ declare function local:make-triple-set-spear($rec){
         ),        
     (: citizenship :)
     for $citizenship in $factoid[@subtype='citizenship']
-    let $placeRef := local:make-uri($citizenship/descendant::tei:person/tei:nationality/tei:placeName/@ref)
+    let $placeRef := local:make-uri($citizenship/descendant::tei:person/tei:state[@type='citizenship']/tei:placeName/@ref)
     let $citizenStatementInstance := concat($factoidRef,'Inst',replace(generate-id($citizenship),'\.',''))
     return 
         (
@@ -335,8 +335,8 @@ declare function local:make-triple-set-spear($rec){
         local:make-triple($persRef,'sp:citizenship', concat('swds:',$citizenStatementInstance)),
         local:make-triple(concat('swds:',$citizenStatementInstance),'sps:citizenship', $placeRef),
         local:make-triple(concat('swds:',$citizenStatementInstance),'prov:wasDerivedFrom', local:make-uri($factoidURI)),
-        if($citizenship/descendant::tei:nationality[@when or @notBefore or @notAfter or @from or @to]) then 
-            local:create-date-triples($citizenStatementInstance,(), $citizenship/descendant::tei:nationality)   
+        if($citizenship/descendant::tei:state[@type='citizenship'][@when or @notBefore or @notAfter or @from or @to]) then 
+            local:create-date-triples($citizenStatementInstance,(), $citizenship/descendant::tei:state[@type='citizenship'])   
         else ()
         ),
     (:Education:)
