@@ -3,7 +3,7 @@ name: ci
 on:
   push:
     branches:
-      - 'build'
+      - 'build-dev'
 
 permissions:
   id-token: write   # This is required for requesting the JWT
