@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="relationships.css"/>
     <link rel="stylesheet" href="pygment_trac.css"/>
     <script type="text/javascript" src="$nav-base/resources/js/jquery.min.js"/>
-    <script type="text/javascript" src="http://d3js.org/d3.v3.js"/>
+    <script type="text/javascript" src="d3.v3.js"/>
     <script src="d3sparql.js"/>
     <script src="sankey.js"/>
     <script>
@@ -29,11 +29,14 @@
                     type: 'GET',
                     url: 'https://sparql.vanderbilt.edu/sparql?query' + query,
                     success: function(data) {
+                        d3sparql.graphType(data, type);
+                    /*
                         if (type === "JSON" || type === "XML") {
                              data
                         } else {
                             d3sparql.graphType(data, type);
                         }
+                        */
                         }
                 });
                 /*
@@ -109,8 +112,10 @@
             <form class="form-inline" id="RDF" action="../api/sparql" method="post">
                 <div class="input-append">
                     <div class="form-group">
+                        <!--
                         <label for="endpoint">SPARQL endpoint: </label>
                         <input id="endpoint" style="width:400px;" value="../api/sparql" type="text"/>
+                        -->
                         <label for="endpoint">Format:  </label>
                         <select id="type" name="type">
                             <option id="Tabel">Table</option>
@@ -121,7 +126,7 @@
                             <!--<option id="Bundle">Bundle</option>-->
                             <option id="Sankey">Sankey</option>
                             <!--<option id="Bubble">Bubble</option>-->
-                            <option id="xml">XML</option>
+<!--                            <option id="xml">XML</option>-->
                             <option id="json">JSON</option>
                         </select>     
                         <input type="hidden" name="format" id="format" value="json"/>
@@ -133,10 +138,7 @@
                 </div>
                 <br/>
                 <textarea id="sparql" class="span9" rows="15" cols="150" name="query">
-                    <![CDATA[
-                    prefix rdf: &amp;lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&amp;gt;
-                    prefix rdfs: &amp;lt;http://www.w3.org/2000/01/rdf-schema#&amp;gt;
-                                                                    
+                    <![CDATA[                              
                     SELECT *
                     WHERE {?r ?s ?o}
                     LIMIT 25

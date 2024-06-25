@@ -428,7 +428,7 @@
                                         </a>
                                     </span>
                                 </div>
-                                <script type="text/javascript" src="$nav-base/CTS/resources/js/cts.js"></script>
+                                <script type="text/javascript" src="$nav-base/CTS/resources/js/cts.js"/>
                             </div>
                         </div>
                     </xsl:for-each>
