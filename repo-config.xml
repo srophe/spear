@@ -4,25 +4,24 @@
     -->
     <config>
         <!-- Application title -->
-        <title>The Srophe web application</title>
+        <title>SPEAR: Syriac Persons Events and Relations</title>
         <srophe-version>v1.0.1</srophe-version>
         <!-- App description -->
-        <description>A collaborative research project publishling online reference works concerning the
-            culture, history, and literature of Syriac communities from antiquity to the present.</description>
+        <description>Syriac Persons, Events, and Relations (SPEAR) is a prosopographical database providing information about persons and their relationships within the context of historical events. SPEAR uses a "factoid" approach to prosopography that captures data points asserted in historical texts. </description>
         <!-- Contact email -->
         <contact>info@syriaca.app</contact>
         <!-- Logo name (assumes path to logo is $app-root/resources/images/) -->
         <logo>srophe.svg</logo>
         <!-- Web Site URL -->
-        <url>http://syriaca.org/</url>
+        <url>https://spear-prosop.org/</url>
         <!-- Root of app for building dynamic links. Default is eXist app root  /exist/apps/srophe -->
-        <nav-base>/exist/apps/srophe</nav-base>
+        <nav-base>/exist/apps/spear</nav-base>
         <!-- eXist app root for app deployment-->
-        <app-root>srophe</app-root>
+        <app-root>spear</app-root>
         <!-- eXist data app root for TEI application.  -->
-        <data-root>srophe-data</data-root>
+        <data-root>spear-data</data-root>
         <!-- Base URI for identifiers in app data -->
-        <base_uri>http://syriaca.org</base_uri>
+        <base_uri>https://spear-prosop.org/</base_uri>
         <!-- 
             Path to ODD file. Can be used in XSLT or XQuery transformations for controlled values. 
             Path to ODD file from app-root, or as an absolute path. 
@@ -35,7 +34,8 @@
             <document-ids type="document-url">document-url</document-ids>
             URI example: <document-ids type="URI">tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='URL']</document-ids
         -->
-        <document-ids type="document-url">document-url</document-ids>
+        <!--<document-ids type="document-url">document-url</document-ids>-->
+        <document-ids type="URI">tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[@type='URL']</document-ids>
         <!--<html-render type="xquery"></html-render>-->
         <html-render type="xslt"/>
         <!-- Map rendering -->
@@ -65,11 +65,13 @@
                 record-URI-pattern="URI for building links to record views."
                 app-root="folder name in app" 
                 data-root="folder name in data"/>-->
-            
+            <collection name="factoids" title="SPEAR" app-root="/" data-root="/" record-URI-pattern="https://spear-prosop.org/"/>
+            <!--
             <collection name="places" title="The Syriac Gazetteer" app-root="/geo/" data-root="places" record-URI-pattern="http://syriaca.org/place/"/>
             <collection name="persons" title="SBD" app-root="/" data-root="persons" record-URI-pattern="http://syriaca.org/person/"/>
             <collection name="works" title="NHSL" app-root="/" data-root="works" record-URI-pattern="http://syriaca.org/work/"/>
             <collection name="bibl" title="Works Cited" app-root="/bibl/" data-root="bibl" record-URI-pattern="http://syriaca.org/bibl/"/>
+            -->
         </collections>
         <!-- Configure Sort fields for the whole app. 
             Sort fields are used for sorting in browse and search. Facets should be defined separately in a facet-conf.xml document.

@@ -32,7 +32,7 @@
     position:relative;
     margin-top:-1em;
     padding-top:0;
-	background-image:url('../images/banner.png');
+	background-image:url('../images/spear-banner.png');
 	background-size:cover;
 	background-position:top;
     height:250px;
@@ -204,7 +204,7 @@ footer .poweredby img { width: 75px; }
     position:relative;
     margin:0;
     padding:0;
-	background-image:url('../images/banner.png');
+	background-image:url('../images/spear-banner.png');
 	background-size:cover;
 	background-position:top;
     min-height:375px;
@@ -250,28 +250,28 @@ img{ margin:0px }
     font-size: 1em;
 	font-family: arial, sans-serif;
 }
-/* SyrCOMAdiabene SyrCOMTalada SyrCOMAntioch */
+
 :lang(syr),:lang(syc) {
-  font-family: "SyrCOMTalada", "Estrangela Talada", Verdana, Arial, Helvetica, sans-serif;
+ font-family: "EstrangeloEdessa", "Estrangelo Edessa", Verdana, Arial, Helvetica, sans-serif;
+  /*font-size:large;*/
   font-size:1.25em; 
   line-height:1em;
   
 }
 
 :lang(syr-Syrj), :lang(syc-Syrj) {
-  font-family: "SyrCOMAntioch", "Serto Antioch", Verdana, Arial, Helvetica, sans-serif;
+ font-family: "SertoBatnan", "Serto Batnan", Verdana, Arial, Helvetica, sans-serif;
   font-size:1.25em; 
   line-height:1em;
  
 }
 
 :lang(syr-Syre), :lang(syc-Syre) {
- font-family: "SyrCOMAdiabene", "East Syriac Adiabene", Verdana, Arial, Helvetica, sans-serif;
+ font-family: "EastSyriacAdiabene", "East Syriac Adiabene", Verdana, Arial, Helvetica, sans-serif;
  font-size:1.25em; 
  line-height:1em;
 
 }
-
 
 :lang(ar) {
  font-family: arial, sans-serif;
@@ -546,3 +546,8 @@ pre {
     from { -webkit-transform: rotate(0deg); }
     to { -webkit-transform: rotate(360deg); }
 }
+
+/* SPEAR Styles */
+.element {display:block; margin:.75em;}
+.spearLabel {font-weight:bold;}
+.uri {display:block; padding:.25em 1em; margin-bottom:1.5em;}

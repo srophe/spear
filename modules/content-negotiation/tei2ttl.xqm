@@ -14,7 +14,9 @@ import module namespace functx="http://www.functx.com";
 declare namespace output="http://www.w3.org/2010/xslt-xquery-serialization";
 declare namespace tei = "http://www.tei-c.org/ns/1.0";
 
-declare option exist:serialize "method=text media-type=text/turtle indent=yes";
+declare option output:method  "text";
+(:declare option exist:serialize "method=text media-type=text/turtle indent=yes";:)
+
 
 (:~
  : Modified functx function to translate syriaca.org relationship names attributes to camel case.
@@ -463,30 +465,23 @@ declare function tei2ttl:spear($rec, $id){
 };
 
 (: Prefixes :)
-(: May not need these
-@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
-@prefix gn: <http://www.geonames.org/ontology#> .
-:)
 declare function tei2ttl:prefix() as xs:string{
-"@prefix cwrc: <http://sparql.cwrc.ca/ontologies/cwrc#>.
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
-@prefix lawd: <http://lawd.info/ontology/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#>.
-@prefix periodo: <http://n2t.net/ark:/99152/p0v#>.
-@prefix person: <https://www.w3.org/ns/person>,
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix schema: <http://schema.org/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix syriaca: <http://syriaca.org/schema#> .
-@prefix snap: <http://data.snapdrgn.net/ontology/snap#> .
-@prefix time: <http://www.w3.org/2006/time#>.
-@prefix wdata: <https://www.wikidata.org/wiki/Special:EntityData/>.
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#>. &#xa;"
+"@prefix swd: <http://syriaca.org/>.
+@prefix swds: <http://spear-prosop/entity/statement/>.
+@prefix swdt: <http://syriaca.org/prop/direct/>.
+@prefix sp: <http://syriaca.org/prop/>.
+@prefix sps: <http://syriaca.org/prop/statement/>.
+@prefix spr: <http://syriaca.org/prop/reference/>.
+@prefix spq: <http://syriaca.org/prop/qualifier/>.
+@prefix swdref: <http://spear-prosop/reference/>.
+@prefix schema: <http://schema.org/>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix prov: <http://www.w3.org/ns/prov#>. &#xa;"
 };
 
+declare function tei2ttl:make-triple-set-spear($rec){
+  ''  
+};
 (: Triples for a single record :)
 declare function tei2ttl:make-triple-set($rec){
 let $rec := if($rec/tei:div[@uri[starts-with(.,$config:base-uri)]]) then $rec/tei:div[@uri[starts-with(.,$config:base-uri)]] else $rec
@@ -497,7 +492,8 @@ let $resource-class := if($rec/descendant::tei:body/tei:biblStruct) then 'rdfs:R
                        else 'skos:Concept'    
 return 
     string-join((: start string-join-1:)(
-        tei2ttl:record((:start record-1:) string-join((:start string-join-2:)(
+        tei2ttl:record((:start record-1:) 
+        string-join((:start string-join-2:)(
         tei2ttl:make-triple(tei2ttl:make-uri($id), 'rdf:type', tei2ttl:rec-type($rec)),
         tei2ttl:make-triple((), 'a', tei2ttl:rec-type($rec)),
         tei2ttl:make-triple((),'rdfs:label',
@@ -636,9 +632,12 @@ declare function tei2ttl:record($triple as xs:string*) as xs:string*{
 };
 
 declare function tei2ttl:ttl-output($recs) {
+(tei2ttl:prefix(), tei2ttl:make-triple-set-spear($recs))
+(:
     serialize((concat(tei2ttl:prefix(), tei2ttl:make-triple-set($recs))), 
         <output:serialization-parameters>
             <output:method>text</output:method>
             <output:media-type>text/plain</output:media-type>
         </output:serialization-parameters>)
+        :)
 };

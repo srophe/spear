@@ -286,7 +286,79 @@
                                 </xsl:if>
                             </xsl:for-each>
                         </xsl:when>
+                        <xsl:when test="descendant::t:ptr[@target and contains(@target, 'syriaca.org')]">
+                            <xsl:variable name="biblfilepath">
+                                <xsl:choose>
+                                    <xsl:when test="ends-with(descendant::t:ptr/@target, 'tei') or ends-with(descendant::t:ptr/@target, 'xml')">
+                                        <xsl:value-of select="descendant::t:ptr/@target"/>
+                                    </xsl:when>
+                                    <xsl:otherwise><xsl:value-of select="concat(descendant::t:ptr/@target,'/tei')"/></xsl:otherwise>
+                                </xsl:choose>
+                            </xsl:variable>
+                            <xsl:choose>
+                                <xsl:when test="doc-available($biblfilepath)">
+                                    <xsl:variable name="rec" select="document($biblfilepath)"/>
+                                    <xsl:for-each select="$rec/descendant::t:biblStruct">
+                                        <xsl:apply-templates mode="footnote"/>
+                                        <xsl:sequence select="$passThrough"/>
+                                        <xsl:if test="descendant::t:idno[@type='URI']">
+                                            <span class="footnote-links">
+                                                <xsl:apply-templates select="descendant::t:idno[@type='URI']" mode="links"/>
+                                                <xsl:apply-templates select="descendant::t:ref[not(ancestor::note)]" mode="links"/>
+                                            </span>
+                                        </xsl:if>
+                                    </xsl:for-each>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:apply-templates mode="footnote"/>
+                                    <xsl:sequence select="$passThrough"/>
+                                    <xsl:if test="descendant::t:idno[@type='URI']">
+                                        <span class="footnote-links">
+                                            <xsl:apply-templates select="descendant::t:idno[@type='URI']" mode="links"/>
+                                            <xsl:apply-templates select="descendant::t:ref[not(ancestor::note)]" mode="links"/>
+                                        </span>
+                                    </xsl:if>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </xsl:when>
                         <xsl:otherwise>
+                            <xsl:apply-templates mode="footnote"/>
+                            <xsl:sequence select="$passThrough"/>
+                            <xsl:if test="descendant::t:idno[@type='URI']">
+                                <span class="footnote-links">
+                                    <xsl:apply-templates select="descendant::t:idno[@type='URI']" mode="links"/>
+                                    <xsl:apply-templates select="descendant::t:ref[not(ancestor::note)]" mode="links"/>
+                                </span>
+                            </xsl:if>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                <xsl:when test="descendant::t:ptr[@target and contains(@target, 'syriaca.org')]">
+                    <xsl:variable name="biblfilepath">
+                        <xsl:choose>
+                            <xsl:when test="ends-with(descendant::t:ptr/@target, 'tei') or ends-with(descendant::t:ptr/@target, 'xml')">
+                                <xsl:value-of select="descendant::t:ptr/@target"/>
+                            </xsl:when>
+                            <xsl:otherwise><xsl:value-of select="concat(descendant::t:ptr/@target,'.xml')"/></xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="biblfilepathCleaned" select="replace($biblfilepath,'http://syriaca.org','https://syriaca.org')"/>
+                    <xsl:variable name="rec" select="document(replace($biblfilepath,'http://syriaca.org','https://syriaca.org'))"/>
+                    <xsl:choose>
+                        <xsl:when test="doc-available($biblfilepathCleaned)">
+                            <xsl:variable name="rec" select="document($biblfilepathCleaned)"/>
+                            <xsl:for-each select="$rec/descendant::t:biblStruct">
+                                <xsl:apply-templates mode="footnote"/>
+                                <xsl:sequence select="$passThrough"/>
+                                <xsl:if test="descendant::t:idno[@type='URI']">
+                                    <span class="footnote-links">
+                                        <xsl:apply-templates select="descendant::t:idno[@type='URI']" mode="links"/>
+                                        <xsl:apply-templates select="descendant::t:ref[not(ancestor::note)]" mode="links"/>
+                                    </span>
+                                </xsl:if>
+                            </xsl:for-each>
+                        </xsl:when>
+                        <xsl:otherwise> 
                             <xsl:apply-templates mode="footnote"/>
                             <xsl:sequence select="$passThrough"/>
                             <xsl:if test="descendant::t:idno[@type='URI']">
@@ -1233,20 +1305,20 @@
         <xsl:param name="ref"/>
         <xsl:choose>
             <xsl:when test="@type='zotero' or contains($ref,'zotero.org/')">
-                <img src="{$nav-base}/resources/images/zotero.png" alt="Link to Zotero Bibliographic Record" height="18px"/>
+                <img src="$nav-base/resources/images/zotero.png" alt="Link to Zotero Bibliographic Record" height="18px"/>
             </xsl:when>
             <xsl:when test="starts-with($ref,$base-uri)">
-                <img src="{$nav-base}/resources/images/icons-syriaca-sm.png" alt="{concat('Link to ',$repository-title,' Bibliographic Record.')}" height="18px"/>
+                <img src="$nav-base/resources/images/icons-syriaca-sm.png" alt="{concat('Link to ',$repository-title,' Bibliographic Record.')}" height="18px"/>
             </xsl:when>
             <!-- glyphicon glyphicon-book -->
             <xsl:when test="contains($ref,'worldcat.org/')">
-                <img src="{$nav-base}/resources/images/worldCat-logo.png" alt="Link to Worldcat Bibliographic record" height="18px"/>
+                <img src="$nav-base/resources/images/worldCat-logo.png" alt="Link to Worldcat Bibliographic record" height="18px"/>
             </xsl:when>
             <xsl:when test="contains($ref,'hathitrust.org/')">
-                <img src="{$nav-base}/resources/images/htrc_logo.png" alt="Link to HathiTrust Bibliographic record" height="18px"/>
+                <img src="$nav-base/resources/images/htrc_logo.png" alt="Link to HathiTrust Bibliographic record" height="18px"/>
             </xsl:when>
             <xsl:when test="contains($ref,'archive.org')">
-                <img src="{$nav-base}/resources/images/ialogo.jpg" alt="Link to Archive.org Bibliographic record" height="18px"/>
+                <img src="$nav-base/resources/images/ialogo.jpg" alt="Link to Archive.org Bibliographic record" height="18px"/>
             </xsl:when>
             <xsl:otherwise>
                 <span class="glyphicon glyphicon-book"/>

@@ -85,9 +85,11 @@ d3sparql.graphType = function (data, type, config){
         config = config || {"selector": "#result"}
         d3sparql.htmllist(data,config)
   }
-  //var json = JSON.parse (data);
-  //console.log(JSON.parse (data));
-  //if(d3sparql.debug) { console.log(data) }    
+   /* 
+  var json = JSON.parse (data);
+  console.log(JSON.parse (data));
+  if(d3sparql.debug) { console.log(data) }
+   */
 }
 
 /*

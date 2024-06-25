@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" data-template="app:get-work" lang="en">
     <head>
         <title data-template="app:record-title">App Title</title>
@@ -11,6 +10,7 @@
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="$nav-base/resources/css/syr-icon-fonts.css"/>
         <link rel="stylesheet" type="text/css" href="$nav-base/resources/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="$nav-base/resources/css/spear.css"/>
         <link rel="stylesheet" type="text/css" media="print" href="$nav-base/resources/css/print.css"/>
         <!-- Leaflet -->
         <link rel="stylesheet" href="$nav-base/resources/leaflet/leaflet.css"/>
@@ -102,38 +102,6 @@
                     <li>
                         <a href="$nav-base/documentation/index.html" class="nav-text">Documentation </a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">Publications</span>  <b class="caret"/>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="$nav-base/index.html">
-                                    <span class="icon-text">Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="$nav-base/persons/index.html">
-                                    <span class="icon-text">Persons</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="$nav-base/geo/index.html">
-                                    <span class="icon-text">Gazetteer</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="$nav-base/bibl/index.html">
-                                    <span class="icon-text">Works Cited</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="$nav-base/d3xquery/index.html">
-                                    <span class="icon-text">Relationship Visualization</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="$nav-base/search.html" class="nav-text">Advanced Search</a>
                     </li>
@@ -150,7 +118,31 @@
                             </form>
                         </div>
                     </li>
-                    <li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/>
+                    <li>
+                        <div class="btn-nav">
+                            <button class="btn btn-default navbar-btn" id="font" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Select Font">
+                                <span class="glyphicon glyphicon-font"/>
+                            </button>  
+                            <ul class="dropdown-menu dropdown-menu-right" id="swap-font">
+                                <li>
+                                    <a href="#" class="swap-font" id="DefaultSelect" data-font-id="EstrangeloEdessa">Default</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="swap-font" id="EstrangeloEdessaSelect" data-font-id="EstrangeloEdessa">Estrangelo Edessa</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="swap-font" id="EastSyriacAdiabeneSelect" data-font-id="EastSyriacAdiabene">East Syriac Adiabene</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="swap-font" id="SertoBatnanSelect" data-font-id="SertoBatnan">Serto Batnan</a>
+                                </li>
+                                <li>
+                                    <a href="$app-root/documentation/wiki.html?wiki-page=/How-to-view-Syriac-script&amp;wiki-uri=https://github.com/srophe/srophe-app-data/wiki">Help <span class="glyphicon glyphicon-question-sign"/>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>

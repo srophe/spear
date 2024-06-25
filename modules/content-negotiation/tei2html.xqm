@@ -12,7 +12,7 @@ declare namespace html="http://purl.org/dc/elements/1.1/";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace xlink = "http://www.w3.org/1999/xlink";
 declare namespace util="http://exist-db.org/xquery/util";
-
+declare namespace srophe="https://srophe.app";
 (:~
  : Simple TEI to HTML transformation
  : @param $node   
@@ -318,16 +318,26 @@ declare function tei2html:summary-view-generic($nodes as node()*, $id as xs:stri
     let $url := (:<document-ids type="document-url">document-url</document-ids>:)
                 if($config:get-config//*:document-ids[@type='document-url']) then
                     concat('record.html?doc=',document-uri(root($nodes[1])))
-                else replace(replace($id,$config:base-uri,$config:nav-base),'/tei','')                   
+                else replace(replace($id,$config:base-uri,concat($config:nav-base,'/')),'/tei','')                   
+    let $type := $nodes//tei:ab/@subtype
+    let $typeLabel := concat(substring($type,1,1),replace(substring($type,2),'(\p{Lu})',concat(' ', '$1')))
     return 
         <div class="short-rec-view">
-            <a href="{$url}" dir="ltr">{tei2html:tei2html($title)}</a>
+            <a href="{$url}" dir="ltr">
+            {
+               if($type = 'relation') then
+                    'Relation Factoid'
+               else if($type = 'event') then
+                    'Event Factoid'
+               else 
+                    concat('Person Factoid: ', concat(upper-case(substring($typeLabel,1,1)),substring($typeLabel,2)))
+            }
+            </a>
             <button type="button" class="btn btn-sm btn-default copy-sm clipboard"  
                 data-toggle="tooltip" title="Copies record title &amp; URI to clipboard." 
                 data-clipboard-action="copy" data-clipboard-text="{normalize-space($title[1])} - {normalize-space($id[1])}">
                     <span class="glyphicon glyphicon-copy" aria-hidden="true"/>
             </button>
-            {if($series != '') then <span class="results-list-desc type" dir="ltr" lang="en">{(' (',$series,') ')}</span> else ()}
             {if($nodes/descendant-or-self::*[starts-with(@xml:id,'abstract')]) then 
                 for $abstract in $nodes/descendant::*[starts-with(@xml:id,'abstract')]
                 let $string := string-join(tei2html:tei2html($abstract)//text(),'')
@@ -343,7 +353,8 @@ declare function tei2html:summary-view-generic($nodes as node()*, $id as xs:stri
             else()}
             {
             if($id != '') then 
-            <span class="results-list-desc uri"><span class="srp-label">URI: </span><a href="{replace(replace($id,$config:base-uri,$config:nav-base),'/tei','')}">{replace($id,'/tei','')}</a></span>
+            <span class="results-list-desc uri"><span class="srp-label">URI: </span>
+            <a href="{$url}">{replace($id,'/tei','')}</a></span>
             else()
             }
         </div>   

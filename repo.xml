@@ -1,14 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<meta 
-  xmlns="http://exist-db.org/xquery/repo">
-  <description>The Srophé web application</description>
-  <author>Winona Salesky</author>
-  <website>wsalesky.com</website>
-  <status>beta</status>
-  <license>GPL-3.0</license>
-  <copyright>true</copyright>
-  <type>application</type>
-  <target>srophe</target>
-  <prepare>pre-install.xq</prepare>
-  <finish>post-install.xq</finish>
-</meta>
+<meta xmlns="http://exist-db.org/xquery/repo">
+    <description>The Srophé web application</description>
+    <author>srophe.org</author>
+    <website>srophe.org</website>
+    <status>alpha</status>
+    <license>GNU-LGPL</license>
+    <copyright>true</copyright>
+    <type>application</type>
+    <target>spear</target>
+    <prepare>pre-install.xql</prepare>
+    <finish>post-install.xql</finish>
+    
+<deployed>2023-03-20T16:14:26.414-04:00</deployed></meta>
