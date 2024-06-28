@@ -146,7 +146,7 @@ declare function local:buildAggregate(){
                         <syriaca xmlns="http://www.tei-c.org/ns/1.0">
                             {$sropheData}
                         </syriaca>}
-                    {(collection($config:data-root)//tei:ab[.//@ref[. = $f]] | collection($config:data-root)//tei:ab[.//@ana[matches(., concat($f,'(\W.*)?$'))]])}
+                    {(collection($config:data-root)//tei:ab[.//@ref[. = $f][not(parent::tei:persName/parent::tei:persName)]] | collection($config:data-root)//tei:ab[.//@ana[matches(., concat($f,'(\W.*)?$'))]])}
                 </aggregate>
             let $html := local:buildHTML($items)
             let $buildPath := 
