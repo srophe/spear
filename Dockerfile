@@ -40,4 +40,3 @@ HEALTHCHECK CMD [ "java", \
 ENV ADMIN_PASSWORD=$ADMIN_PASSWORD
 
 ENTRYPOINT [ "/busybox/sh", "/entrypoint.sh"]
-
