@@ -1798,7 +1798,7 @@
                         <sch:let name="qrURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/qualifier-relationship']/skos:narrower/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $qrURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $qrURIs">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. The acceptable values are: <sch:value-of select="string-join($qrURIs, ';  ')"/>.</sch:assert>
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the qualifier relationships in the Taxonomy. The acceptable values are: <sch:value-of select="string-join($qrURIs, ';  ')"/>.</sch:assert>
                       </sch:rule>
                     </sch:pattern>
                   </sch:schema>
@@ -1982,7 +1982,7 @@
                         <sch:let name="disciplineURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/fields-of-study-collection']/skos:member/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $disciplineURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $disciplineURIs"  role="warning">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the fields of study in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($disciplineURIs, ';  ')"/>.</sch:assert>
                       </sch:rule>
                     </sch:pattern>
@@ -2075,7 +2075,7 @@
                         <sch:let name="occupationURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/occupations-collection']/skos:member/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $occupationURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $occupationURIs" role="warning">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the occupations in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($occupationURIs, ';  ')"/>.</sch:assert>
                       </sch:rule>
                     </sch:pattern>
@@ -2124,7 +2124,7 @@
                     <sch:let name="languageURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/languages']/skos:narrower/@rdf:resource"/>
                     <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $languageURIs)]"/>
                     <sch:assert test="every $i in $anaTokens satisfies $i = $languageURIs" role="warning">
-                      <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                      <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the languages in the Taxonomy. If you find no appropriate concept on the following list, 
                       please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($languageURIs, ';  ')"/>.
                     </sch:assert>
                   </sch:rule>
@@ -2180,7 +2180,7 @@
                         <sch:let name="socioeconomicStatusURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/languages']/skos:narrower/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $socioeconomicStatusURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $socioeconomicStatusURIs" role="warning">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the socio-economic statuses in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($socioeconomicStatusURIs, ';  ')"/>.</sch:assert>
                       </sch:rule>
                     </sch:pattern>
@@ -2257,7 +2257,7 @@
                         <sch:let name="ethnicLabels" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/ethnicities']/skos:narrower/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $ethnicLabels)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $ethnicLabels" role="warning">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the ethnic labels in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($ethnicLabels, ';  ')"/>.</sch:assert>
                       </sch:rule>
                       <sch:rule context="tei:trait[@type='physical']/@ana">
@@ -2267,7 +2267,7 @@
                         <sch:let name="physicalTraits" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/physical-traits']/skos:narrower/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $physicalTraits)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $physicalTraits" role="warning">
-                          <sch:value-of select="string-join($errors, '; ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, '; ')"/>: URI(s) not among the physical descriptions in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($physicalTraits, ';  ')"/>.
                         </sch:assert>
                       </sch:rule>
@@ -2351,9 +2351,6 @@
           </content>
           <attList>
             <attDef ident="ana" mode="change" usage="req">
-              <datatype minOccurs="1" maxOccurs="unbounded">
-                <dataRef key="teidata.pointer"/>
-              </datatype>
               <constraintSpec ident="ana-in-state" scheme="schematron">
                 <!-- Add schematron rule to validate religious affiliation against the taxonomy. Taxonomy requires updating before this can be done. -->
                 <constraint>
@@ -2361,22 +2358,46 @@
                     <sch:ns uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#" prefix="rdf"/>
                     <sch:ns uri="http://www.w3.org/2004/02/skos/core#" prefix="skos"/>
                     <sch:pattern>
+                      <sch:rule context="tei:state[@type='mental']">
+                        <sch:assert text="@ana">
+                          A &lt;state&gt; with @type="mental" requires an @ana attribute.
+                        </sch:assert>
+                      </sch:rule>
+                      <sch:rule context="tei:state[@type='sanctity']">
+                        <sch:assert text="@ana">
+                          A &lt;state&gt; with @type="sanctity" requires an @ana attribute.
+                        </sch:assert>
+                      </sch:rule>
+                      <sch:rule context="tei:state[@type='religiousAffiliation']">
+                        <sch:assert text="@ana">
+                          A &lt;state&gt; with @type="religiousAffiliation" requires an @ana attribute.
+                        </sch:assert>
+                      </sch:rule>
                       <sch:rule context="tei:state[@type='mental']/@ana">
                         <sch:let name="anaTokens" value="tokenize(., ' ')"/>
                         <sch:let name="taxonomy" value="doc('https://raw.githubusercontent.com/srophe/syriaca-data/refs/heads/gaddel_development/data/taxonomy/taxonomy.rdf')"/>
                         <sch:let name="mentalStateURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/mental-and-emotional-states']/skos:narrower/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $mentalStateURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $mentalStateURIs" role="warning">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the mental states in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($mentalStateURIs, ';  ')"/>.</sch:assert>
                       </sch:rule>
                       <sch:rule context="tei:state[@type='sanctity']/@ana">
                         <sch:let name="anaTokens" value="tokenize(., ' ')"/>
                         <sch:let name="taxonomy" value="doc('https://raw.githubusercontent.com/srophe/syriaca-data/refs/heads/gaddel_development/data/taxonomy/taxonomy.rdf')"/>
-                        <sch:let name="sanctityURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/sanctity']/skos:member/@rdf:resource"/>
+                        <sch:let name="sanctityURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/sanctity-collection']/skos:member/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $sanctityURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $sanctityURIs" role="warning">
-                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not in the Taxonomy. If you find no appropriate concept on the following list, 
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the sanctity collection in the Taxonomy. If you find no appropriate concept on the following list, 
+                          please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($sanctityURIs, ';  ')"/>.</sch:assert>
+                      </sch:rule>
+                      <sch:rule context="tei:state[@type='religiousAffiliation']/@ana">
+                        <sch:let name="anaTokens" value="tokenize(., ' ')"/>
+                        <sch:let name="taxonomy" value="doc('https://raw.githubusercontent.com/srophe/syriaca-data/refs/heads/gaddel_development/data/taxonomy/taxonomy.rdf')"/>
+                        <sch:let name="religionURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/religious-communities-collection']/skos:member/@rdf:resource"/>
+                        <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $religionURIs)]"/>
+                        <sch:assert test="every $i in $anaTokens satisfies $i = $sanctityURIs" role="warning">
+                          <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not the religious communities in the Taxonomy. If you find no appropriate concept on the following list, 
                           please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($sanctityURIs, ';  ')"/>.</sch:assert>
                       </sch:rule>
                     </sch:pattern>
@@ -2389,6 +2410,9 @@
                 <dataRef key="teidata.enumerated"/>
               </datatype>
               <valList type="closed">
+                <valItem ident="citizenship">
+                  <desc>used for references to a place where someone held the position of citizen.</desc>
+                </valItem>
                 <valItem ident="mental">
                   <desc>used for references to a person's mental traits; such as intelligence,
                     mental disability, wisdom, etc.</desc>
