@@ -2359,17 +2359,17 @@
                     <sch:ns uri="http://www.w3.org/2004/02/skos/core#" prefix="skos"/>
                     <sch:pattern>
                       <sch:rule context="tei:state[@type='mental']">
-                        <sch:assert text="@ana">
+                        <sch:assert test="@ana">
                           A &lt;state&gt; with @type="mental" requires an @ana attribute.
                         </sch:assert>
                       </sch:rule>
                       <sch:rule context="tei:state[@type='sanctity']">
-                        <sch:assert text="@ana">
+                        <sch:assert test="@ana">
                           A &lt;state&gt; with @type="sanctity" requires an @ana attribute.
                         </sch:assert>
                       </sch:rule>
                       <sch:rule context="tei:state[@type='religiousAffiliation']">
-                        <sch:assert text="@ana">
+                        <sch:assert test="@ana">
                           A &lt;state&gt; with @type="religiousAffiliation" requires an @ana attribute.
                         </sch:assert>
                       </sch:rule>
@@ -2414,8 +2414,7 @@
                   <desc>used for references to a place where someone held the position of citizen.</desc>
                 </valItem>
                 <valItem ident="mental">
-                  <desc>used for references to a person's mental traits; such as intelligence,
-                    mental disability, wisdom, etc.</desc>
+                  <desc>used for references to a person's mental traits; such as intelligence, mental disability, wisdom, etc.</desc>
                 </valItem>
                 <valItem ident="religiousAffiliation">
                   <desc>used for references to a person's religious affiliation; including but 
