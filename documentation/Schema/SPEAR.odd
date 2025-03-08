@@ -2177,7 +2177,7 @@
                       <sch:rule context="tei:socecStatus/@ana">
                         <sch:let name="anaTokens" value="tokenize(., ' ')"/>
                         <sch:let name="taxonomy" value="doc('https://raw.githubusercontent.com/srophe/syriaca-data/refs/heads/gaddel_development/data/taxonomy/taxonomy.rdf')"/>
-                        <sch:let name="socioeconomicStatusURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/languages']/skos:narrower/@rdf:resource"/>
+                        <sch:let name="socioeconomicStatusURIs" value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/socio-economic-status']/skos:narrower/@rdf:resource"/>
                         <sch:let name="errors" value="for $i in $anaTokens return $i[not(. = $socioeconomicStatusURIs)]"/>
                         <sch:assert test="every $i in $anaTokens satisfies $i = $socioeconomicStatusURIs" role="warning">
                           <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not among the socio-economic statuses in the Taxonomy. If you find no appropriate concept on the following list, 
@@ -2347,10 +2347,13 @@
             <memberOf key="att.global.analytic"/>
           </classes>
           <content>
-            <elementRef key="note" minOccurs="1" maxOccurs="1"/>
+            <sequence>
+              <elementRef key="placeName" minOccurs="0" maxOccurs="1"/>
+              <elementRef key="note" minOccurs="1" maxOccurs="1"/>
+            </sequence>
           </content>
           <attList>
-            <attDef ident="ana" mode="change" usage="req">
+            <attDef ident="ana" mode="change">
               <constraintSpec ident="ana-in-state" scheme="schematron">
                 <!-- Add schematron rule to validate religious affiliation against the taxonomy. Taxonomy requires updating before this can be done. -->
                 <constraint>
