@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-03-08T17:32:10Z. . 
+Schema generated from ODD source 2025-03-08T17:34:33Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -6030,10 +6030,10 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
                            value="$taxonomy//rdf:Description[@rdf:about='http://syriaca.org/taxonomy/religious-communities-collection']/skos:member/@rdf:resource"/>
                   <sch:let name="errors"
                            value="for $i in $anaTokens return $i[not(. = $religionURIs)]"/>
-                  <sch:assert test="every $i in $anaTokens satisfies $i = $sanctityURIs"
+                  <sch:assert test="every $i in $anaTokens satisfies $i = $religionURIs"
                               role="warning">
                      <sch:value-of select="string-join($errors, ', ')"/>: URI(s) not the religious communities in the Taxonomy. If you find no appropriate concept on the following list, 
-                          please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($sanctityURIs, ';  ')"/>.</sch:assert>
+                          please choose a keyword of your own for the editors to consider: <sch:value-of select="string-join($religionURIs, ';  ')"/>.</sch:assert>
                </sch:rule>
             </sch:pattern>
          </sch:schema>
