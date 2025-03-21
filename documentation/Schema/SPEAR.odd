@@ -11,23 +11,15 @@
             Schwartz</name></editor>
       </titleStmt>
       <editionStmt>
-        <edition n="1.0"/>
+        <edition n="2.0">This edition of the SPEAR TEI Customization entails a significant revision to the original
+        schema constraining the TEI P5 All. It fully integrates SPEAR and the most up-to-date version of the Syriaca.org knowledge graph,
+        including the Syriaca.org Taxonomy.</edition>
       </editionStmt>
       <publicationStmt>
-        <publisher>Syriaca.org: The Syriac Reference Portal</publisher>
-        <availability>
-          <licence target="http://creativecommons.org/licenses/by/3.0/">
-            <p>Distributed under a Creative Commons Attribution 3.0 Unported License.</p>
-            <p>The code examples contained in <gi>exemplum</gi> elements below come from 
-              Syriaca.org projects that have been distributed under a Creative Commons Attribution 
-              3.0 Unported License. Used by permission.</p>
-            <p>The comments on element and attribute use contained in <gi>remarks</gi> elements below 
-              share some text with other Syriaca.org documentation distributed under a Creative Commons 
-              Attributiion 3.0 Unported License. This documentation can be found at various links available here:
-              <ref target="http://syriaca.org/documentation/index.html">http://syriaca.org/documentation/index.html</ref>
-              Used by permission.
-            </p>
-          </licence>
+        <publisher>SPEAR: Syriac Persons, Events, and Relations</publisher>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">Creative Commons
+            Attribution 4.0 International</licence>
         </availability>
       </publicationStmt>
       <sourceDesc>
@@ -35,6 +27,10 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change who="http://syriaca.org/documentation/editors.xml#dschwartz" when="2025-03">Significant 
+        revisions to integrate the Syriaca.org Taxonomy and constrain the use of the TEI P5 for the 
+        relaunch of Syriaca.org and SPEAR in the Gaddel Software Application.
+      </change>
       <change who="http://syriaca.org/documentation/editors.xml#dschwartz" when="2016-10-20">First
         draft</change>
     </revisionDesc>
@@ -42,13 +38,99 @@
   <text>
     <body>
 
-      <p>This schema has been created to to constrain the TEI P5 for validating the born-digital
-        project SPEAR: Syriac Persons, Events, and Relations. This customization will be used for
-        the encoding of many different documents by many different researchers having differnet
-        levels of training. As such, a schema is particularly important. The highly-structured data
-        model of SPEAR also requires some modifications and additions to TEI P5.</p>
-
-      <schemaSpec ident="SPEAR" start="TEI">
+      <opener>
+        This schema and set of encoding guidelines has been created for the born-digital prosopography project 
+        <ref target="http://spear-prosop.org">SPEAR: Syriac Persons, Events, and Relations</ref>. An initial draft of this 
+        schema was produced in 2016. Since then the data model and the linked data infrastructure of <ref target="http://syriaca.org">Syriaca.org</ref> 
+        has evolved, requiring a series of revisions culminating in version 2.0 of the schema customization contained here. The SPEAR project
+        aggregates the data encoded from multiple Syriac texts by many different researchers. If you are interested in suggesting 
+        updates to this data model you may do so via submittng pull requests or issues to this  
+        <ref target="https://github.com/srophe/spear/tree/main/documentation/Schema">GitHub repository</ref>. This schema and documentation is 
+        released under a <ref target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</ref>.
+        Users wishing to cite these material may do so in this way: Daniel L. Schwartz, <title>Syriac Persons, Events, and Relations: 
+        A TEI P5 Customization and Encoding Guidelines for Modeling Factoid Prosopography.</title>
+        These realities of the encoding process
+        and the integration of data into the larger Syriaca.org knowledge graph require a highly constrained customization.</opener>
+      
+      <divGen type="toc" xml:id="toc"></divGen>
+      <div xml:id="documentation">
+        <head>Encoding Guidelines</head>
+        <div xml:id="introduction">
+          <head>Introduction</head>
+          <p> </p>
+          <p>The prose documentation that follows here in section 1 is a much abbreviated and slightly updated version of an article appearing in the jTEI. For a fuller discussion of factoid prosopography
+            and TEI modeling of prosopographical factoids. See Daniel L. Schwartz, Nathan P. Gibson, and Katayoun Torabi, 
+            <title level="a">Modeling a Born-Digital Factoid Prosopography using the TEI and Linked Data</title>, 
+            <title level="j">Journal of the Text Encoding Initiative</title>, (<date when="2022">2022</date>), 
+            <ref target="https://journals.openedition.org/jtei/3979">https://journals.openedition.org/jtei/3979</ref>.
+          </p>
+          <p>Section 2 below contains discussion of individual TEI elements and their customization for SPEAR. These look like the pages
+            you are used to seeing in the TEI Guideline when you click on individual elements in 
+            <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html">Appendix C Elements</ref>. In most cases, the 
+            following sections have  been customized for SPEAR: Attributes, Contained by, May contain, Note, and Example.
+          </p>
+        </div>
+        <div xml:id="acknowledgements">
+          <head>Acknowledgements</head>
+          <p>SPEAR is a digital prosopography project that both stands somewhat apart from <ref target="http://syriaca.org">Syriaca.org</ref> but has 
+            also depends on it and has developed in dialogue with it. As such, I would like to acknowledge the contributions of <ref target="http://syriaca.org">Syriaca.org</ref> 
+            colleagues David A. Michelson and Jeanne-Nicole Mellon Saint-Laurant. <ref target="http://syriaca.org">Syriaca.org</ref> Senior Programmer Winona Salesky
+            has shaped SPEAR through her work on adapting the Srophe Softward Application (used for an early beta version of SPEAR) to the data model and more recently by developing
+            an instance of the Gaddel Software Application to display and query SPEAR data. The influence of these three colleagues on <ref target="http://syriaca.org">Syriaca.org</ref> 
+            can be seen throughout the SPEAR data model. Nathan P. Gibson was a postdoc with <ref target="http://syriaca.org">Syriaca.org</ref>
+            and Katayoun (Kathy) Torabi was a graduate research assistant early on in the project. Both helped shape this data model. 
+            All of these colleagues as well as many additional student and faculty researcher have contributed data to SPEAR and feedback on the data model as well.
+            Many thanks to all of these contributors.
+          </p>
+        </div>
+        <div xml:id="factoids">
+          <head>Factoids in the TEI</head>
+          <p>
+            
+          </p>
+        </div>
+        <div xml:id="factoidTypes">
+          <head>Factoid Types</head>
+          <p>
+            
+          </p>
+          <div xml:id="relationFactoids">
+            <head>Relation Factoids</head>
+            
+          </div>
+          <div xml:id="personFactoids">
+            <head>Person Factoids</head>
+            
+          </div>
+          <div xml:id="eventFactoids">
+            <head>Event Factoids</head>
+            
+            <div xml:id="relsInEvents">
+              
+            </div>
+          </div>
+        </div>
+        <div xml:id="additional">
+          <div xml:id="dates">
+            <head>Dates</head>
+            
+          </div>
+          <div xml:id="certainty">
+            <head>Certainty</head>
+            
+          </div>
+        </div>
+        <div xml:id="codeTemplates">
+          <head>Code Templates</head>
+          <p>The SPEAR factoid model requires a large amount of XML to provide the structure for the individual factoids and 
+          facilitate the integration of structured and semi-structured data for serialization into HTML and RDF. Typing this amount
+          of XML would get onerous. In order to speed the encoding process, SPEAR uses a set of code templates that allow the encoder
+          to drop a <quote>skeleton</quote> of each type of factoid into a TEI XML file. When properly loaded, this template insertion
+          can be accomplished by selecting ctrl + shift + space and scrolling to the appropriate template.</p>
+        </div>
+      </div>
+      <div xml:id="schema">
+        <schemaSpec ident="SPEAR" start="TEI">
         <moduleRef key="core"
           include="author bibl biblScope choice citedRange corr date desc editor head listBibl name note num orig p ptr publisher pubPlace ref reg resp respStmt rs sic title"/>
         <moduleRef key="tei"/>
@@ -3529,12 +3611,10 @@
                 <valItem ident="physical">
                   <desc>used for references to a person's physical characteristics, such as hair
                     color, height, weight, physical disabilities, etc.</desc>
-                  <!-- I need to update the taxonomy before I can use it to validate the corresponding @ref values. -->
                 </valItem>
                 <valItem ident="gender">
                   <desc>used for references to a person's gender identity (as opposed to their
                     biological sex which SPEAR does not presume to capture).</desc>
-                  <!-- I need to update the taxonomy before I can use it to validate the corresponding @ref values. -->
                 </valItem>
                 <valItem ident="ethnicLabel">
                   <desc>used for references to an ethnic label claimed by a person or ascribed to a
@@ -3907,6 +3987,7 @@
           </remarks>
         </elementSpec>
     </schemaSpec>
+      </div>
 
 
     </body>
