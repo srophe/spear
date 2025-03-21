@@ -3,9 +3,12 @@
 	<!-- 
 		These code templates are for encoding SPEAR data using the oXygen XML editor. 
 		
-		You import them into oXygen by selecting Options > Preferences > Editor > Content Completion > Code Templates > Import.
+		You can download them by cloning the GitHub repo or you can view the "raw" version in GitHub, highlight the whole text,
+		copy, and paste into a blank XML file. 
 		
-		Once you have done that you can insert a template into an XML file by selecting Ctrl + Shift + Space and scrolling
+		You import that file by opening oXygen and selecting Options > Preferences > Editor > Content Completion > Code Templates > Import.
+		
+		Once you have loaded the templates, you can insert a template into an XML file by selecting Ctrl + Shift + Space and scrolling
 		to the template you would like to insert.
 		
 		You can also edit code templates in the same place you import them. It is recommended that if you are doing a lot of 
