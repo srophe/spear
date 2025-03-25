@@ -40,93 +40,733 @@
 
       <opener>
         This schema and set of encoding guidelines has been created for the born-digital prosopography project 
-        <ref target="http://spear-prosop.org">SPEAR: Syriac Persons, Events, and Relations</ref>. An initial draft of this 
+        <title><ref target="http://spear-prosop.org">SPEAR: Syriac Persons, Events, and Relations</ref></title>. An initial draft of this 
         schema was produced in 2016. Since then the data model and the linked data infrastructure of <ref target="http://syriaca.org">Syriaca.org</ref> 
         has evolved, requiring a series of revisions culminating in version 2.0 of the schema customization contained here. The SPEAR project
         aggregates the data encoded from multiple Syriac texts by many different researchers. If you are interested in suggesting 
         updates to this data model you may do so via submittng pull requests or issues to this  
         <ref target="https://github.com/srophe/spear/tree/main/documentation/Schema">GitHub repository</ref>. This schema and documentation is 
         released under a <ref target="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</ref>.
-        Users wishing to cite these material may do so in this way: Daniel L. Schwartz, <title>Syriac Persons, Events, and Relations: 
-        A TEI P5 Customization and Encoding Guidelines for Modeling Factoid Prosopography.</title>
-        These realities of the encoding process
-        and the integration of data into the larger Syriaca.org knowledge graph require a highly constrained customization.</opener>
+        Users wishing to cite these material may do so in this way: Daniel L. Schwartz, <title level="a">Syriac Persons, Events, and Relations: 
+        A TEI P5 Customization and Encoding Guidelines for Modeling Factoid Prosopography</title>, 
+        <ref target="https://github.com/srophe/spear/blob/main/documentation/Schema/SPEAR.odd">https://github.com/srophe/spear/blob/main/documentation/Schema/SPEAR.odd</ref>.
+      </opener>
       
       <divGen type="toc" xml:id="toc"></divGen>
       <div xml:id="documentation">
         <head>Encoding Guidelines</head>
         <div xml:id="introduction">
           <head>Introduction</head>
-          <p> </p>
-          <p>The prose documentation that follows here in section 1 is a much abbreviated and slightly updated version of an article appearing in the jTEI. For a fuller discussion of factoid prosopography
+          <p>These realities of the encoding process
+            and the integration of data into the larger Syriaca.org knowledge graph require a highly constrained customization.</p>
+          <p>The prose documentation that follows here in section 1 is a much abbreviated and slightly updated version of 
+            an article appearing in the <title>jTEI</title>. For a fuller discussion of factoid prosopography
             and TEI modeling of prosopographical factoids. See Daniel L. Schwartz, Nathan P. Gibson, and Katayoun Torabi, 
             <title level="a">Modeling a Born-Digital Factoid Prosopography using the TEI and Linked Data</title>, 
             <title level="j">Journal of the Text Encoding Initiative</title>, (<date when="2022">2022</date>), 
             <ref target="https://journals.openedition.org/jtei/3979">https://journals.openedition.org/jtei/3979</ref>.
           </p>
-          <p>Section 2 below contains discussion of individual TEI elements and their customization for SPEAR. These look like the pages
+          <p><ref target="#schema">Section 2</ref> below contains discussion of individual TEI elements and their customization for SPEAR. These look like the pages
             you are used to seeing in the TEI Guideline when you click on individual elements in 
             <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html">Appendix C Elements</ref>. In most cases, the 
-            following sections have  been customized for SPEAR: Attributes, Contained by, May contain, Note, and Example.
+            following sections have  been customized for <title>SPEAR</title>: Attributes, Contained by, May contain, Note, and Example.
           </p>
         </div>
         <div xml:id="acknowledgements">
           <head>Acknowledgements</head>
-          <p>SPEAR is a digital prosopography project that both stands somewhat apart from <ref target="http://syriaca.org">Syriaca.org</ref> but has 
+          <p><title>SPEAR</title> is a digital prosopography project that both stands somewhat apart from <ref target="http://syriaca.org">Syriaca.org</ref> but has 
             also depends on it and has developed in dialogue with it. As such, I would like to acknowledge the contributions of <ref target="http://syriaca.org">Syriaca.org</ref> 
             colleagues David A. Michelson and Jeanne-Nicole Mellon Saint-Laurant. <ref target="http://syriaca.org">Syriaca.org</ref> Senior Programmer Winona Salesky
-            has shaped SPEAR through her work on adapting the Srophe Softward Application (used for an early beta version of SPEAR) to the data model and more recently by developing
-            an instance of the Gaddel Software Application to display and query SPEAR data. The influence of these three colleagues on <ref target="http://syriaca.org">Syriaca.org</ref> 
-            can be seen throughout the SPEAR data model. Nathan P. Gibson was a postdoc with <ref target="http://syriaca.org">Syriaca.org</ref>
-            and Katayoun (Kathy) Torabi was a graduate research assistant early on in the project. Both helped shape this data model. 
-            All of these colleagues as well as many additional student and faculty researcher have contributed data to SPEAR and feedback on the data model as well.
-            Many thanks to all of these contributors.
+            has shaped <title>SPEAR</title> through her work on adapting the Srophe Softward Application (used for an early beta version of <title>SPEAR</title>) to the data model and more recently by developing
+            an instance of the Gaddel Software Application to display and query <title>SPEAR</title> data. The influence of these three colleagues on <ref target="http://syriaca.org">Syriaca.org</ref> 
+            can be seen throughout the <title>SPEAR</title> data model. Nathan P. Gibson was a postdoc with <ref target="http://syriaca.org">Syriaca.org</ref>
+            and Katayoun (Kathy) Torabi was a graduate research assistant early on in the project. Both helped shape this data model and are co-authors on the 
+            <title>jTEI</title> article mentioned above. Nathan Gibson has also adapeted the <title>SPEAR</title> data model to his own prosopographical work
+            early Islamic intellectual networks between Jews, Christians, and Muslims. All of these colleagues as well as many additional student and faculty 
+            researcher have contributed data to <title>SPEAR</title> and feedback on the data model as well. Many thanks to all of these contributors.
           </p>
         </div>
-        <div xml:id="factoids">
-          <head>Factoids in the TEI</head>
-          <p>
-            
+        <div xml:id="model">
+          <head>The <title>SPEAR</title> Factoid Model</head>
+          <p><title>SPEAR</title> offers a customized schema for modeling prosopographical factoids in TEI XML and for integrating these factoids
+            into the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph. Each of these concepts requires a bit of unpacking. What follows
+            is an overview of these issues. For a fuller discussion, please see the <ref target="https://journals.openedition.org/jtei/3979"><title>jTEI</title></ref> 
+            article mentioned above.
           </p>
+          <div xml:id="factoidProsopography">
+            <head>Factoid Prosopography</head>
+            <p>Traditional prosopographical methods relied on print publications to collect prose descriptions of individuals appearing in historical
+              sources. These magisterial works, such as the <title>Prosophography of the Later Roman Empire</title>, eds. A. H. M. Jones, J. R. Martindale, and John 
+              Morris, (1971-1982), required multiple volumes and were very difficult to update as knowledge developed. The print medium also suffered from constraints
+              regarding scale. This required difficult editorial decisions about whom the editors included and whom they left out. The resulting focus was on 
+              elite, male figures related to political and military developments. 
+            </p>
+            <p>A group of scholars at King's College London sought to bring prosopographical research into the digital age by developing methodologies
+              that could capture prosopographical information in a database. This would allow a scale that could include all persons, not just political elites,
+              and would expose that information to computational analysis. The term they chose for the discrete pieces of personal information entered into the 
+              database was <quote>factoid</quote>.
+            </p>
+            <p>Most factoid prosopography uses a relational database for this work. <title>SPEAR</title>, along with <ref target="http://syriaca.org">Syriaca.org</ref>,
+              has preferred to use TEI XML as a data format due to its ability to integrate structured, semi-structured, and unstructured (prose) data. This offers
+              the benefits of scale and computational analysis while also leaving room for some of the ideosyncratic features of ancient source material. These 
+              guidelines and customized TEI schema describe how <title>SPEAR</title> uses the TEI to model prosopographical facoids.
+            </p>
+          </div>
+          <div xml:id="spearSBD">
+            <head><title>SPEAR</title> and the <title>Syriac Biographical Dictionary</title></head>
+            <p><title>SPEAR</title> integrates with the <title>Syriac Biographical Dictionary (SBD)</title> at a deep level
+              even though the two datasets remain separate and have separate goals. The goal of <ref target="http://syriaca.org">Syriaca.org</ref>
+              in general, and <title>SBD</title> in particular, is the creation of authority files. An authority file identifies an entity,
+              in this case a person, assigns it a so-called <hi rend="quotes">cool URI</hi> (a Uniform Resource Identifier that can be entered
+              into a web browser and resolve to a page of information about the entity), and collects data that is useful for disambiguation between
+              entities and for integration into a knowledge graph. <title>SPEAR</title>, in contrast, uses the URIs minted in SBD alongside 
+              <ref target="http://syriaca.org">Syriaca.org</ref> URIs for other types of entities, to model prosopographical information derived from
+              primary source texts. See <ref target="https://journals.openedition.org/jtei/3979#tocto1n3">Section 3</ref>, especially Table 1, in 
+              the <title>jTEI</title> article mentioned above for additional discussion of the relationship between <title>SPEAR</title> and <title>SBD</title>.
+            </p>
+          </div>
         </div>
-        <div xml:id="factoidTypes">
-          <head>Factoid Types</head>
-          <p>
-            
-          </p>
-          <div xml:id="relationFactoids">
-            <head>Relation Factoids</head>
-            
+        <div xml:id="docStructure">
+          <head><title>SPEAR</title> TEI Document Structure</head>
+          <div xml:id="header">
+            <head>The TEI Header</head>
+            <p>The TEI header identifies important information about the XML document and those responsible for its creation.
+              This discussion will focus on three components of the header that provide metadata about the file and
+              integrate it into the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph.
+            </p>
+            <div xml:id="titleStmt">
+              <head>Title Statement</head>
+              <p>The SPEAR <gi>titleStmt</gi> contains two <gi>title</gi> elements, optional <gi>sponsor</gi> and 
+                <gi>funder</gi> elements, <gi>editor</gi> elements, and <gi>respStmt</gi> elements. The <gi>title</gi>
+                element should have a @level attribute with the value "a" containing the name of the work which is the source
+                of the prosopographical information in the file. A <gi>title</gi> with @level "sub" always contains the text node
+                <quote>A SPEAR Prosopography</quote>. The <gi>editor</gi> element identifies the person or persons responsible for
+                the encoding and data model and the <gi>respStmt</gi> describes the nature of the contribution.
+                The @role attribute on <gi>editor</gi> recommends values 
+                <quote>general</quote> or <quote>creator</quote> and the @ref values can only come from the 
+                identifiers for SPEAR in the <ref target="https://raw.githubusercontent.com/srophe/srophe-eXist-app/master/documentation/editors.xml">list of editors on GitHub</ref>. 
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <titleStmt>
+                    <title level="a" type="main">John of Ephesus, <title ref="http://syriaca.org/work/800">Addai the Chorepiscopus</title>, in <title>The Lives of the
+                      Eastern Saints</title></title>
+                    <title type="sub">A SPEAR Prosopography</title>
+                    <sponsor>Syriaca.org: The Syriac Reference Portal</sponsor>
+                    <funder>The National Endowment for the Humanities</funder>
+                    <funder>Texas A&amp;M University</funder>
+                    <editor role="general" ref="http://syriaca.org/documentation/editors.xml#dschwartz">Daniel L. Schwartz</editor>
+                    <editor role="creator" ref="http://syriaca.org/documentation/editors.xml#dschwartz">Daniel L. Schwartz</editor>
+                    <editor role="creator" ref="http://syriaca.org/documentation/editors.xml#syoung">Samuel Young</editor>
+                    <respStmt>
+                      <resp>Data architecture, data entry, editing, proofreading, and revision by</resp>
+                      <name ref="http://syriaca.org/documentation/editors.xml#dschwartz">Daniel L. Schwartz</name>
+                    </respStmt>
+                    <respStmt>
+                      <resp>Text analysis and data encoding by</resp>
+                      <name ref="http://syriaca.org/documentation/editors.xml#syoung">Samuel Young</name>
+                    </respStmt>
+                  </titleStmt>
+                </egXML>
+              </p>
+            </div>
+            <div xml:id="publicationStmt">
+              <head>Publication Statement</head>
+              <p>In addition to indicating the license under which the data is released, the <gi>publicationStmt</gi> 
+                also contains an <gi>idno</gi> element with a URI for that document. The schema requires the number portion of this 
+                URI to equal the name of the XML file. In each case, this number equals the number portion of the 
+                <ref target="http://syriaca.org">Syriaca.org</ref> work URI that is the source of this prosopographical data. (See 
+                <ref target="#sourceDesc">Source Description</ref>
+                below.) The <ref target="http://syriaca.org">Syriaca.org</ref> work URI for the file in the example below is 
+                <ref target="http://syriaca.org/work/3010">http://syriaca.org/work/3010</ref>.
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <publicationStmt>
+                    <authority>Syriaca.org: The Syriac Reference Portal</authority>
+                    <idno type="URI">https://spear-prosop.org/3010/tei</idno>
+                    <availability>
+                      <licence target="http://creativecommons.org/licenses/by/3.0/">
+                        <p>Distributed under a Creative Commons Attribution 3.0 Unported
+                          License.</p>
+                      </licence>
+                    </availability>
+                    <date>2020-01-03-05:00</date>
+                  </publicationStmt>
+                </egXML>
+              </p>
+            </div>
+            <div xml:id="seriesStmt">
+              <head>Series Statement</head>
+              <p><title>SPEAR</title> uses the <gi>seriesStmt</gi> to group the data in different ways. All <title>SPEAR</title>
+                files are part of the series <title>SPEAR</title>. The example below comes from one of the letters of Severus of 
+                Antioch. By including this <gi>seriesStmt</gi>, it is possible to query <title>SPEAR</title> data from files 
+                that are only a part of this series. 
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <seriesStmt>
+                    <title level="s">SPEAR: Syriac Persons, Events, and Relations</title>
+                    <editor role="general" ref="http://syriaca.org/documentation/editors.xml#dschwartz">Daniel L. Schwartz</editor>
+                    <idno type="URI">https://spear-prosop.org</idno>
+                  </seriesStmt>
+                  <seriesStmt>
+                    <title level="m" xml:lang="en">The Letters of Severus of Antioch</title>
+                    <title type="sub">A SPEAR Prosopography</title>
+                    <editor role="general" ref="http://syriaca.org/documentation/editors.xml#dschwartz">Daniel L. Schwartz</editor>
+                    <idno type="URI">https://spear-prosop.org/letters-severus</idno>
+                    <biblScope unit="volume">
+                      <title level="s">SPEAR: Syriac Persons, Events, and Relations</title>
+                      <idno type="URI">https://spear-prosop.org</idno>
+                    </biblScope>
+                  </seriesStmt>
+                </egXML>
+              </p>
+            </div>
+            <div xml:id="sourceDesc">
+              <head>Source Description</head>
+              <p>Each <title>SPEAR</title> XML file contais prosopographical data from one work. Even though <title>SPEAR</title>
+                files are <quote>born digital</quote>, the <gi>sourceDesc</gi> is uses to provide bibligraphic information on
+                the source text. The example below contains two <gi>bibl</gi> elements. The first is a reference to a modern edition
+                of the source text. The <gi>ptr</gi> @target points to the <title>Comprehensive Bibliography on Syriac Studies (CBSS)</title>, 
+                the bibliographic dataset of <ref target="http://syriaca.org">Syriaca.org</ref>.
+              </p>
+              <p>The second <gi>bibl</gi> element contains a <ref target="http://syriaca.org">Syriaca.org</ref> work URIs. Where the first 
+                points to an edition of the text, the work URI points to the authority file for the concept of the work. Authority files for 
+                <ref target="http://syriaca.org">Syriaca.org</ref> works contain information on the various instantiations of the work: 
+                editions, translations, manuscripts, etc.
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sourceDesc>
+                  <listBibl>
+                    <head>Sources for the Data in this Born Digital Prosopography</head>
+                    <bibl type="primary">
+                      <title xml:lang="en">A Collection of Letters of Severus of Antioch</title>
+                      <title xml:lang="la" level="s">Patrologia Orientalis</title>
+                      <author><persName ref="http://syriaca.org/person/51">Severus of
+                        Antioch</persName></author>
+                      <editor><persName ref="http://syriaca.org/person/403">E. W.
+                        Brooks</persName></editor>
+                      <biblScope unit="tomus">14</biblScope>
+                      <ptr target="http://syriaca.org/cbss/4DVWZDNU"/>
+                      <citedRange unit="p">284-90</citedRange>
+                      <citedRange unit="part">117</citedRange>
+                    </bibl>
+                    <bibl type="primary">
+                      <title xml:lang="en">To Caesaria the Hypatissa</title>
+                      <author><persName ref="http://syriaca.org/person/51"/>Severus of
+                        Antioch</author>
+                      <ptr target="http://syriaca.org/work/3241"/>
+                    </bibl>
+                  </listBibl>
+                </sourceDesc>
+              </egXML>
+            </div>
           </div>
-          <div xml:id="personFactoids">
-            <head>Person Factoids</head>
-            
+          <div xml:id="factoidStructure">
+            <head>Basic Factoid Structure</head>
+            <div xml:id="ab">
+              <head>Containing Element</head>
+              <p><title>SPEAR</title> uses the <gi>ab</gi> element as the container for factoids and add a @type attribute to indicate
+                the nature of this anonymous block. The @subtype element is used to indicate what type of factoid. The allowed values are
+                <quote>relation</quote>, <quote>event</quote>, <quote>birth</quote>, <quote>citizenship</quote>, <quote>death</quote>,
+                <quote>education</quote>, <quote>ethnicLabel</quote>, <quote>gender</quote>, <quote>langKnown</quote>, <quote>mentalState</quote>, 
+                <quote>nameVariant</quote>, <quote>occupation</quote>, and <quote>physicalTrait</quote>. The <title>SPEAR</title> schema uses 
+                the @subtype values to require the necessary structure for each type of data.
+              </p>
+              <p>The name <title>SPEAR</title> comes from the TEI elements <gi>person</gi>, <gi>event</gi>, and <gi>relation</gi>. The @subtype
+                values <quote>relation</quote> and <quote>event</quote> indicate those types of factoids and have descendant <gi>relation</gi> 
+                and <gi>event</gi> element respectively. The remainder of the @subtype values indicate a person factoid and must have a descendent 
+                <gi>person</gi> element or a descendent <gi>personGrp</gi> element. The TEI expects these elements to nest under 
+                <gi>listRelation</gi>, <gi>listEvent</gi>, and <gi>listPerson</gi> elements respectively and <title>SPEAR</title> has followed that practice
+                even though it is not necessary for the <title>SPEAR</title> data model.
+              </p>
+              <p>Outline of a relation factoid:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="relation" xml:id="factoid-36" resp="#ktorabi">
+                    <idno type="URI">https://spear-prosop.org/10510-36</idno>
+                    <listRelation>
+                      <relation type="person" ref="http://syriaca.org/taxonomy/fellow-monastics" mutual="http://syriaca.org/person/3227 http://syriaca.org/person/3249">
+                        <desc>
+                          <persName ref="http://syriaca.org/person/3227">Jonathan</persName> and <persName ref="http://syriaca.org/person/3249">Samuel</persName> 
+                          were monks at the same monastery.
+                        </desc>
+                      </relation>
+                    </listRelation>
+                    <bibl type="primary">...</bibl>
+                  </ab>
+                </egXML>
+              </p>
+            </div>
+            <div xml:id="idno">
+              <head>Factoid Identifier</head>
+              <p>Each <title>SPEAR</title> factoid must contain an <gi>idno</gi> element that provides a cool-URI for the factoid. This identifies 
+                the factoid and also indicates the URL where the data can be viewed in HTML. The schema requires that this <gi>idno</gi> is based 
+                on the document URI in the <gi>publicationStmt</gi> which also aligns with the work URI in the <gi>sourceDesc</gi>,
+                (see sections <ref target="#publicationStmt">Publication Statement</ref> and <ref target="#sourceDesc">Source Description</ref> above).
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <teiHeader>
+                    <fileDesc>
+                      ...
+                      <publicationStmt>
+                        <authority>Syriaca.org: The Syriac Reference Portal</authority>
+                        <idno type="URI">https://spear-prosop.org/798/tei</idno>
+                        ...
+                      </publicationStmt>
+                      ...
+                      <sourceDesc>
+                        <listBibl>
+                          <head>Sources for the Data in this Born Digital Prosopography</head>
+                          ...
+                          <bibl type="primary">
+                            <title>Paul the Mourner</title>
+                            <author><persName ref="http://syriaca.org/person/74">John of
+                              Ephesus</persName></author>
+                            <ptr target="http://syriaca.org/work/798"/>
+                          </bibl>
+                        </listBibl>
+                      </sourceDesc>
+                    </fileDesc>
+                    <profileDesc/>
+                    ...
+                  </teiHeader>
+                  <text>
+                    <body>
+                      ...
+                      <ab type="factoid" subtype="event" xml:id="factoid-5" resp="#jwalters">
+                        <idno type="URI">https://spear-prosop.org/798-5</idno>
+                        <listEvent>
+                          <event ana="http://syriaca.org/taxonomy/holy-places http://syriaca.org/taxonomy/relics">
+                            <desc><persName ref="http://syriaca.org/person/1980">Paul</persName> entered
+                              a cave filled with malignant fiends and planted a cross and hung up
+                              relics of saints. </desc>
+                          </event>
+                        </listEvent>
+                        <bibl type="primary">...</bibl>
+                      </ab>
+                      ...
+                    </body>
+                    ...
+                  </text>  
+                </egXML>
+              </p>
+            </div>
+            <div xml:id="citation">
+              <head>Citing Sources</head>
+              <p>Each <title>SPEAR</title> factoid must also have at least one <gi>bibl</gi> element. This contains a <gi>ptr</gi> element with @ref
+                indicating the URI for the bibliograph entry in <title>CBSS</title> along with the appropriate <gi>citedRange</gi>. 
+                For texts contained in the <ref target="https://syriaccorpus.org/index.html"><title>Digital Syriac Corpus</title></ref>, 
+                <title>SPEAR</title> allows the use of a URN that facilitates the incorporation of the Syriac text cited into the HTML version of the 
+                factoid.
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="nameVariant" xml:id="factoid-82" resp="#dschwartz">
+                    <idno type="URI">https://spear-prosop.org/8559-82</idno>
+                    <listPerson>
+                      <person>
+                        <persName ref="http://syriaca.org/person/2247">
+                          Qunā the Bishop of <placeName ref="http://syriaca.org/place/2605">Edessa</placeName>
+                        </persName>
+                      </person>
+                    </listPerson>
+                    <bibl type="primary">
+                      <ptr target="http://syriaca.org/cbss/XQU5AW69"/>
+                      <citedRange unit="p">4</citedRange>
+                    </bibl>
+                    <bibl type="urn">
+                      <ptr target="urn:cts:syriacLit:nhsl8559.syriacCorpus57:4"/>
+                    </bibl>
+                  </ab>
+                </egXML>
+              </p>
+            </div>
           </div>
-          <div xml:id="eventFactoids">
-            <head>Event Factoids</head>
-            
-            <div xml:id="relsInEvents">
-              
+          <div xml:id="factoidTypes">
+            <head>Factoid Types</head>
+            <p>What follows is a basic introduction to encoding each of the three types of <title>SPEAR</title> factoids. All three types of 
+              factoids follow the basic factoid encoding structure described in the previous section on 
+              <ref target="#factoidStructure">Basic Factoid Structure</ref>.
+            </p>
+            <div xml:id="relationFactoids">
+              <head>Relation Factoids</head>
+              <p>Relation factoids contain a <gi>listRelation</gi> followed by <gi>relation</gi>. The values of @ref are constrained to allow 
+                only relationship values from the <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>. The <gi>relation</gi> element also has either a @mutual attribute
+                with two or more person URI values or @active and @passive attributes. The distinction is between relationships that are mutual (if person x
+                is a sibling of person y, then person y is a sibling of person x) and relationships that are directed (person x ordained person y).</p>
+              <p>The above is the version of the material most oriented to machine processing. It will be rendered into RDF (Resource Description Framework) 
+                which forms the basis of the Linked Open Data of <title>SPEAR</title>, but also facilitates search and advanced browse features.
+                <title>SPEAR</title> also includes a <gi>desc</gi> element with a more prose oriented version of the same information. This text, 
+                along with hyperlinks to the URIs mentioned, appears in HTML for human readers.
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <ab type="factoid" subtype="relation" xml:id="factoid-232" resp="#dschwartz">
+                  <idno type="URI">https://spear-prosop.org/8559-232</idno>
+                  <listRelation>
+                    <relation type="person" ref="http://syriaca.org/taxonomy/sibling-of" mutual="http://syriaca.org/person/2234 http://syriaca.org/person/13">
+                      <desc><persName ref="http://syriaca.org/person/2234">Anonmyous 2234</persName> and <persName ref="http://syriaca.org/person/13">Ephrem</persName> were siblings.</desc>
+                    </relation>
+                  </listRelation>
+                  <bibl type="primary">...</bibl>
+                </ab>
+              </egXML>
+            </div>
+            <div xml:id="personFactoids">
+              <head>Person Factoids</head>
+              <p>Person factoids are the most variable as they pertain to so many different types of data about persons. Each of these
+                follows the TEI for the types of elements that can appear as child elements of <gi>person</gi> or <gi>personGrp</gi>. In <title>SPEAR</title>, 
+                a <gi>person</gi> requires a child <gi>persName</gi> with @ref attribute indicating the subject of the 
+                factoid. If the factoid only contains a name variant, this <gi>persName</gi> element takes a text node with that variant.
+                Otherwise, this <gi>persName</gi> is self-closing and merely identifies the subject of the factoid. This is followed by one of the following elements: 
+                <gi>birth</gi>, <gi>death</gi>, <gi>education</gi>, <gi>langKnowledge</gi>, <gi>occupation</gi>, <gi>residence</gi>, 
+                <gi>socecStatus</gi>, <gi>state</gi>, or <gi>trait</gi>.
+              </p>
+              <div xml:id="birthDeath">
+                <head>Birth and Death</head>
+                <p>These factoids employ a <gi>birth</gi> or <gi>death</gi> element and can take a child <gi>date</gi> element and/or a <gi>placeName</gi> element.
+                  This allows them to capture both date and place of birth or death.
+                </p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="birth" xml:id="factoid-66" resp="#dschwartz">
+                    <idno type="URI">https://spear-prosop.org/8559-66</idno>
+                    <listPerson>
+                      <person>
+                        <persName ref="http://syriaca.org/person/3"/>
+                        <birth when="0154-07-11">
+                          <choice>
+                            <reg><date when="0154-07-11" calendar="Gregorian">11 July 154</date></reg>
+                            <orig><date when-custom="0465-10-11" datingMethod="Seleucid-SyriacMonths">11 Tammuz A. Gr. 465</date></orig>
+                          </choice>
+                          <note type="desc"> <persName ref="http://syriaca.org/person/3">Bardaisan</persName> was born on 11 July 154. </note>
+                        </birth>
+                      </person>
+                    </listPerson>
+                    <bibl type="primary">...</bibl>
+                  </ab>
+                </egXML>
+              </div>
+              <div xml:id="residence">
+                <head>Residence</head>
+                <p>These factoids employ a <gi>residence</gi> element which must take a take a <gi>placeName</gi> element and may take a <gi>date</gi> element.
+                </p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="residence" xml:id="factoid-12" resp="#ktorabi">
+                    <idno type="URI">https://spear-prosop.org/10510-12</idno>
+                    <listPerson>
+                      <person>
+                        <persName ref="http://syriaca.org/person/3251"/>
+                        <residence>
+                          <placeName ref="http://syriaca.org/place/399"/>
+                          <note type="desc">
+                            <persName ref="http://syriaca.org/person/3251">Mar Samuel</persName> resided in the 
+                            <placeName ref="http://syriaca.org/place/399">Convent of John Urtaya</placeName>. 
+                          </note>
+                        </residence>
+                      </person>
+                    </listPerson>
+                    <bibl type="primary">...</bibl>
+                  </ab>
+                </egXML>
+              </div>
+              <div xml:id="state">
+                <head>Citizenship, Mental States, Religious Affiliation, and Sanctity</head>
+                <p><title>SPEAR</title> uses the <gi>state</gi> element to encode information on citizenship, mental states,
+                  religious affiliation, and sanctity (a category dealing with things like sainthood, etc.). The <gi>state</gi> element requires a 
+                  @type attribute with one of the following values: <quote>citizenship</quote>, <quote>mental</quote>, 
+                  <quote>religiousAffiliation</quote>, or <quote>sanctity</quote>. It also takes an @ana attribute whose 
+                  value must validate against the appropriate concepts in the 
+                  <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>. 
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <ab type="factoid" subtype="citizenship" xml:id="factoid-39" resp="#ktorabi #dschwartz">
+                      <idno type="URI">https://spear-prosop.org/3004-39</idno>
+                      <listPerson>
+                        <person>
+                          <persName ref="http://syriaca.org/person/2562"/>
+                          <state type="citizenship">
+                            <placeName ref="http://syriaca.org/place/1469"/>
+                            <note type="desc"><persName ref="http://syriaca.org/person/2562">Epiphanius</persName> 
+                              was a citizen of <placeName ref="http://syriaca.org/place/1469">Perga</placeName>.</note>
+                          </state>
+                        </person>
+                      </listPerson>
+                      <bibl type="primary">...</bibl>
+                    </ab>
+                  </egXML>
+                </p>
+              </div>
+              <div xml:id="trait">
+                <head>Physical Traits, Gender, and Ethnicity</head>
+                <p>The <gi>trait</gi> element is used for physical traits, gender, and ethnic labels and so it takes a @type 
+                  attribute with one of the following values: <quote>physical</quote>, <quote>gender</quote>, <quote>ethnicLabel</quote>.
+                  It also takes an @ana attribute whose value must validate against the appropriate concepts in the 
+                  <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>.
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <ab type="factoid" subtype="ethnicLabel" xml:id="factoid-8" resp="#dschwartz">
+                      <idno type="URI">https://spear-prosop.org/3090-8</idno>
+                      <listPerson>
+                        <person>
+                          <persName ref="http://syriaca.org/person/3784"/>
+                          <trait type="ethnicLabel" ana="http://syriaca.org/taxonomy/ethiopians">
+                            <note type="desc">
+                              <persName ref="http://syriaca.org/person/3784">Anonymous 3784</persName> was Ethiopian.</note>
+                          </trait>
+                        </person>
+                      </listPerson>
+                      <bibl type="primary">...</bibl>
+                    </ab>
+                  </egXML>
+                </p>
+              </div>
+              <div xml:id="otherPerson">
+                <head>Education, Language, Occupation, and Socio-economic Status</head>
+                <p>With <gi>education</gi>, <gi>langKnowledge</gi>, <gi>occupation</gi>, and <gi>socecStatus</gi>, 
+                  each of these elements take an @ana attribute whose value must validate against the appropriate concepts in the 
+                  <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>.
+                </p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="occupation" xml:id="factoid-3" resp="#dschwartz">
+                    <idno type="URI">https://spear-prosop.org/3019-3</idno>
+                    <listPerson>
+                      <person>
+                        <persName ref="http://syriaca.org/person/2666"/>
+                        <occupation ana="http://syriaca.org/taxonomy/monks">
+                          <note type="desc">
+                            <persName ref="http://syriaca.org/person/2666">Isidore</persName> was a monk.
+                          </note>
+                        </occupation>
+                      </person>
+                    </listPerson>
+                    <bibl type="primary">...</bibl>
+                  </ab>
+                </egXML>
+                <p>For examples of additional factoids following this format, see <gi>education</gi>, <gi>langKnowledge</gi>,
+                  <gi>socecStatus</gi>.
+                </p>
+              </div>  
+            </div>
+            <div xml:id="eventFactoids">
+              <head>Event Factoids</head>
+              <p>Event factoids have the freest form. They contain an <gi>event</gi> element that takes various date attributes and an @ana attribute
+                that can contain one or more concepts from the <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>.
+                The child <gi>desc</gi> element can contain text marked up with <gi>date</gi>, <gi>rs</gi>, <gi>title</gi>, <gi>orgName</gi>, <gi>persName</gi>, 
+                and <gi>placeName</gi> elements. 
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="event" xml:id="factoid-26" resp="#ktorabi">
+                    <idno type="URI">https://spear-prosop.org/794-26</idno>
+                    <listEvent>
+                      <event ana="http://syriaca.org/taxonomy/miracles http://syriaca.org/taxonomy/healing">
+                        <desc> From atop his column <persName ref="http://syriaca.org/person/1524">Zeʿora</persName> healed the sick by blessing water and sprinkling
+                          it on them. </desc>
+                      </event>
+                    </listEvent>
+                    <bibl type="primary">...</bibl>
+                  </ab>
+                </egXML>
+              </p>
+              <div xml:id="relsInEvents">
+                <head>Events Creating Relationships</head>
+                <p>Some events create relationships. For example, a marriage creates a spousal relationship. Rather than model these 
+                  using two or more separate factoids, <title>SPEAR</title> prefers to model those relationships inside of the 
+                  <gi>event</gi>. In such a case, <gi>listRelation</gi> and <gi>relation</gi> can appear as descendants of <gi>event</gi>. See 
+                  <gi>relation</gi> and the discussion of <ref target="#relationFactoids">Relation Factoids</ref> above for more on the encoding 
+                  of relationships.
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <ab type="factoid" subtype="event" xml:id="factoid-46" resp="#dschwartz">
+                      <idno type="URI">https://spear-prosop.org/841-46</idno>
+                      <listEvent>
+                        <event ana="http://syriaca.org/taxonomy/ordination http://syriaca.org/taxonomy/bishops">
+                          <desc>
+                            While traveling in <placeName ref="http://syriaca.org/place/2747">Asia</placeName>, <persName ref="http://syriaca.org/person/69">Jacob Baradaeus</persName>, <persName ref="http://syriaca.org/person/3208">Eugene</persName>, and <persName ref="http://syriaca.org/person/1336">Conon</persName>
+                            ordained <persName ref="http://syriaca.org/person/3243">Peter</persName> as bishop of <placeName ref="http://syriaca.org/place/2856">Tralles</placeName>.
+                            <listRelation>
+                              <relation type="personal" ref="http://syriaca.org/taxonomy/ordained" active="http://syriaca.org/person/69 http://syriaca.org/person/3208 http://syriaca.org/person/1336" passive="http://syriaca.org/person/74"/>
+                            </listRelation>
+                          </desc>
+                        </event>
+                      </listEvent>
+                      <bibl type="primary">...</bibl>
+                    </ab>
+                  </egXML>
+                </p>
+              </div>
+              <div xml:id="relatedEvents">
+                <head>Related Events</head>
+                <p>Most of the data in <title>SPEAR</title> connects to the authority files (persons, places, works, bibliography, taxonomy concepts) of 
+                  <ref target="http://syriaca.org">Syriaca.org</ref>. The editors of <ref target="http://syriaca.org">Syriaca.org</ref> have so far not wanted
+                  to create authority files for events. As such, <title>SPEAR</title> cannot collect data directly associated with specific events. It remains 
+                  desirable, however, to at least be able to connect different textual references to the same or similar events. <title>SPEAR</title> does
+                  this by creating a <gi>relation</gi> element that connects two event factoids. These <gi>listRelation</gi> and <gi>relation</gi> elements
+                  appear in <gi>note</gi> elements  with @type="relatedEvent". These elements are direct children of the <gi>ab</gi> element containing the event. 
+                  These <gi>relation</gi> elements take a @mutual attribute connecting two or more factoid URIs and a @ref attribute with one of 
+                  the following Taxonomy URIs: <quote>http://syriaca.org/taxonomy/proximate-event</quote> or <quote>http://syriaca.org/taxonomy/same-event</quote>.
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <ab type="factoid" subtype="event" xml:id="factoid-476" resp="#dschwartz">
+                      <idno type="URI">https://spear-prosop.org/8559-476</idno>
+                      <listEvent>
+                        <event ana="http://syriaca.org/taxonomy/natural-disasters" notBefore="0524-10" notAfter="0525-09">
+                          <desc> 
+                            In <choice>
+                              <reg><date notBefore="0524-10" notAfter="0525-09" calendar="Gregorian">524/5</date></reg>
+                              <orig><date when-custom="0836" datingMethod="Seleucid">A. Gr. 836</date></orig>
+                            </choice> a flood destroyed <placeName ref="http://syriaca.org/place/78"> Edessa </placeName> for the fourth time. </desc>
+                        </event>
+                      </listEvent>
+                      <bibl type="primary">...</bibl>
+                      <note type="relatedEvent">
+                        <listRelation>
+                          <relation ref="http://syriaca.org/taxonomy/same-event" type="event" mutual="https://spear-prosop.org/8559-476 https://spear-prosop.org/8559-555">
+                            <desc>
+                              The following factoids deal with the same event: <rs ref="https://spear-prosop.org/8559-476">8559-476</rs>, <rs ref="https://spear-prosop.org/8559-555">8559-555</rs>.
+                            </desc>
+                          </relation>
+                        </listRelation>
+                      </note>
+                    </ab>
+                  </egXML>
+                </p>
+              </div>
             </div>
           </div>
         </div>
         <div xml:id="additional">
+          <head>Additional Data Issues</head>
           <div xml:id="dates">
             <head>Dates</head>
-            
+            <div xml:id="simpleDates">
+              <head>Simple Dates</head>
+              <p>Dates sometimes need to appear in two
+                locations in a factoid: a <gi>date</gi> element in a a <gi>desc</gi> element as well as one of several date attributes
+                from the att.datable.w3c attribute class: @when, @notBefore, @notAfter, @from, and @to. This facilitates the 
+                combination of human readable dates with methods more easily serialized into RDF. 
+                As in the example below, the schema requires that when <gi>date</gi> appears in a <gi>desc</gi> element, it should 
+                also appear on the ancestor <gi>event</gi> element.
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <ab type="factoid" subtype="event" xml:id="factoid-151" resp="#ktorabi">
+                    <idno type="URI">https://spear-prosop.org/10510-151</idno>
+                    <listEvent>
+                      <event ana="http://syriaca.org/taxonomy/monastic-heads http://syriaca.org/taxonomy/succession" when="0522">
+                        <desc><persName ref="http://syriaca.org/person/3263">Symy</persName>
+                          succeeded <persName ref="http://syriaca.org/person/3255">Sergius I</persName> as the head of the 
+                          <placeName ref="http://syriaca.org/place/399">Convent of John Urtaya</placeName> in 
+                          <date when="0522" calendar="Gregorian">522</date>.
+                        </desc>
+                      </event>
+                    </listEvent>
+                    <bibl type="primary">...</bibl>
+                  </ab>
+                </egXML>
+              </p>
+            </div>
+            <div xml:id="datingSystems">
+              <head>Non-Gregorian Dates</head>
+              <p><title>SPEAR</title> also allows the encoder to capture the dating system used in the sources while also rendering
+              that in a form easy to serialize. In the case below, use of <gi>choice</gi>, <gi>reg</gi>, and <gi>orig</gi> with <gi>date</gi> 
+              allows the encoding of both the Seleucid date and the corresponding Gregorian date. Only the Gregorian date is used 
+              in the @when attribute on <gi>event</gi> as that will be used for RDF serialization and the production of a timeline, etc.
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <ab type="factoid" subtype="event" xml:id="factoid-13" resp="#ayousif #ekowalik">
+                  <idno type="URI">https://spear-prosop.org/829-13</idno>
+                  <listEvent>
+                    <event ana="http://syriaca.org/taxonomy/death http://syriaca.org/taxonomy/burial" when="0560-10-22">
+                      <desc>
+                        <persName ref="http://syriaca.org/person/1533">Aaron</persName> died from old age on
+                        <choice>
+                          <reg><date when="0560-10-22" calendar="Gregorian"> 22 October 560 A.D. </date></reg>
+                          <orig><date when-custom="0872-01-22" datingMethod="Seleucid-SyriacMonths"> 22 Teshri I 872 A. G.</date></orig>
+                        </choice>
+                        and he was laid in the <placeName ref="http://syriaca.org/place/2816">sepulchre</placeName> that
+                        was built by the blessed <persName ref="http://syriaca.org/person/1875">Mare</persName>.
+                      </desc>
+                    </event>
+                  </listEvent>
+                  <bibl type="primary"><ptr target="http://syriaca.org/cbss/U78B4C66"/><citedRange unit="p">644</citedRange></bibl>
+                </ab>
+              </egXML>
+              </p>
+              <p><title>SPEAR</title> can also capture dating systems based on things like regnal years, encoding them as they appear
+                in the source text and rendering them into a Gregorian data as well.
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <event ana="http://syriaca.org/taxonomy/ordination http://syriaca.org/taxonomy/bishops" notBefore="0542-04-01" notAfter="0543-03-31">
+                    <desc>
+                      <choice>
+                        <reg>
+                          <date calendar="Gregorian" notBefore="0542-04-01" notAfter="0543-03-31">In 542/43</date> 
+                          <note ana="#calculated">This regularized date was calculated by the
+                            SPEAR editor from a non-calendrical dating system such as
+                            regnal years, etc.</note>
+                        </reg>
+                        <orig>
+                          <date datingMethod="regnalYear">During the sixteenth year of the reign of Justinian</date>
+                        </orig>
+                      </choice>,
+                      at the request of <persName ref="http://syriaca.org/person/3214">Hereth Bar Gabala</persName>,
+                      <persName ref="http://syriaca.org/person/779">Theodora</persName> ordered the ordination of non-Chalcedonian bishops: 
+                      <persName ref="http://syriaca.org/person/69">Jacob Baradaeus</persName> as bishop of 
+                      <placeName ref="http://syriaca.org/place/2605">Edessa</placeName> and 
+                      <persName ref="http://syriaca.org/person/3266">Theodore of Hirtha</persName> as bishop of 
+                      <placeName ref="http://syriaca.org/place/2791">Hirtha of the Saracens</placeName>.
+                    </desc>
+                  </event>
+                </egXML>
+                In this case the <gi>reg</gi> containing the Gregorian date also contains a note indicating that this date was calculated
+                by the encoder of this factoid. This note will appear in the HTML page for this factoid.
+              </p>
+            </div>
           </div>
           <div xml:id="certainty">
-            <head>Certainty</head>
-            
+            <head>(Un)Certainty</head>
+            <p>Since the factoid model focuses on the encoding of textual assertions about personal information, it is important that
+              the <title>SPEAR</title> data model be able to indicate levels of uncertainty regarding those textual assertions. 
+              <title>SPEAR</title> does this using a <gi>note</gi> element with a @type attribute containing the value 
+              "certainty" and a @subtype attribute containing one of the following: "incerta", "dubia", or "errata". These 
+              values are rendered into HTML for the viewer to see and are serialized into RDF as well so that queries of the 
+              data can exclude information with one or more of these values. This note also contains a prose description of 
+              the reason for the @subtype rating and can included a bibliographical reference as well.
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <ab type="factoid" subtype="event" xml:id="factoid-321" resp="#dschwartz">
+                  <idno type="URI">https://spear-prosop.org/8559-321</idno>
+                  <listEvent>
+                    <event ana="http://syriaca.org/taxonomy/bishops http://syriaca.org/taxonomy/accession" when="0448-07-21">
+                      <desc> On 
+                        <choice>
+                          <reg><date when="0448-07-21" calendar="Gregorian">21 July 448</date></reg>
+                          <orig><date when-custom="0759-10-21" datingMethod="Seleucid-SyriacMonths">21 Tāmmuz A. Gr. 759</date></orig>
+                        </choice>
+                        <persName ref="http://syriaca.org/person/2292">Nonos</persName> became Bishop of <placeName ref="http://syriaca.org/place/78"> Edessa </placeName>. </desc>
+                    </event>
+                  </listEvent>
+                  <bibl type="primary">...</bibl>
+                  <note type="certainty" subtype="dubia"> The dates of Hiba's exile and Nonos' first episcopate are confused here. 
+                    <bibl type="secondary">
+                      <ptr target="http://syriaca.org/cbss/X9NUGZJ3"/>
+                      <citedRange unit="p">116-17</citedRange>
+                    </bibl></note>
+                </ab>
+              </egXML>
+            </p>
           </div>
         </div>
         <div xml:id="codeTemplates">
           <head>Code Templates</head>
           <p>The SPEAR factoid model requires a large amount of XML to provide the structure for the individual factoids and 
           facilitate the integration of structured and semi-structured data for serialization into HTML and RDF. Typing this amount
-          of XML would get onerous. In order to speed the encoding process, SPEAR uses a set of code templates that allow the encoder
-          to drop a <quote>skeleton</quote> of each type of factoid into a TEI XML file. When properly loaded, this template insertion
-          can be accomplished by selecting ctrl + shift + space and scrolling to the appropriate template.</p>
+          of XML would get onerous. In order to speed the encoding process, <title>SPEAR</title> uses a set of code templates that allow the encoder
+          to drop a <quote>skeleton</quote> of each type of factoid into a TEI XML file. You can find these code templates along 
+          with further directions for uploading and using them 
+          at <ref target="https://github.com/srophe/spear/blob/main/documentation/SPEARCodeTemplatesOxygen.xml">https://github.com/srophe/spear/blob/main/documentation/SPEARCodeTemplatesOxygen.xml</ref>.</p>
+          <p>Here is an example of a code template for an occupation.
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <ab type="factoid" subtype="occupation" xml:id="factoid-" resp="#dschwartz">
+              <idno type="URI">https://spear-prosop.org/</idno>
+              <listPerson>
+                <person>
+                  <persName ref="http://syriaca.org/person/"/>
+                  <occupation ana="http://syriaca.org/taxonomy/">
+                    <note type="desc">
+                      <persName ref="http://syriaca.org/person/">  </persName> 
+                      .
+                    </note>
+                  </occupation>
+                </person>
+              </listPerson>
+              
+            </ab>
+          </egXML>
+          After inserting a template like this, the encoder would see error messages directing them to complete URIs, develop the 
+          content of the <gi>note</gi> element, and add a <gi>bibl</gi> element citing the source. There is also a code template containing
+          a <quote>skeleton</quote> of a <gi>bibl</gi> formatted for <title>SPEAR</title>.</p>
         </div>
       </div>
       <div xml:id="schema">
@@ -473,6 +1113,9 @@
           <content>
             <textNode/>
           </content>
+          <attList>
+            <attDef ident="calendar" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <titleStmt>
@@ -545,6 +1188,9 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          <attList>
+            <attDef ident="calendar" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <titleStmt>
@@ -574,6 +1220,9 @@
           <content>
             <textNode/>
           </content>
+          <attList>
+            <attDef ident="calendar" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <titleStmt>
@@ -651,6 +1300,9 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          <attList>
+            <attDef ident="calendar" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <publicationStmt>
@@ -684,6 +1336,9 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          <attList>
+            <attDef ident="calendar" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <publicationStmt>
@@ -1150,11 +1805,7 @@
           </exemplum>
           <remarks mode="replace">
             <p>SPEAR has three basic types of factoid data that are encoded using <gi>listPerson</gi>, <gi>listEvent</gi>,
-              and <gi>listRelation</gi> elements. The TEI Guidelines allow the first two to nest inside <gi>ab</gi> 
-              while the last one is not. For uniformity and ease of encoding,
-              SPEAR makes the <gi>listRelation</gi> element a part of the model class
-              model.listLike so that it can function like other list elements and nest directly
-              under the <gi>ab</gi> element. SPEAR also removes all attributes from the
+              and <gi>listRelation</gi> elements. SPEAR removes all attributes from the
               <gi>listRelation</gi> element and restricts the child elements to <gi>relation</gi>.</p>
           </remarks>
         </elementSpec>
@@ -1570,6 +2221,9 @@
               </sch:rule>
             </constraint>
           </constraintSpec>
+          <attList>
+            <attDef ident="calendar" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <titleStmt>
@@ -1685,6 +2339,7 @@
             </constraint>
           </constraintSpec>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="role" mode="add" usage="opt">
               <datatype>
                 <dataRef key="teidata.enumerated"/>
@@ -1935,6 +2590,8 @@
           </content>
           <attList>
             <attDef ident="role" mode="delete"/>
+            <attDef ident="sex" mode="delete"/>
+            <attDef ident="gender" mode="delete"/>
             <attDef ident="age" mode="delete"/>
             <attDef ident="size" mode="delete"/>
           </attList>
@@ -2090,6 +2747,7 @@
             </constraint>
           </constraintSpec>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="xml:id" usage="req" mode="add">
               <datatype>
                 <dataRef name="ID"/>
@@ -2288,6 +2946,7 @@
             </constraint>
           </constraintSpec>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="type">
               <datatype>
                 <dataRef key="teidata.enumerated"></dataRef>
@@ -2621,6 +3280,7 @@
             <memberOf key="model.persStateLike"/>
           </classes>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="ref" mode="add" usage="req">
               <datatype minOccurs="1" maxOccurs="1">
                 <dataRef key="teidata.pointer"/>
@@ -2683,6 +3343,7 @@
             <memberOf key="model.placeNamePart"/>
           </classes>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="ref" usage="req">
               <datatype minOccurs="1" maxOccurs="1">
                 <dataRef key="teidata.pointer"/>
@@ -2910,6 +3571,7 @@
                   </datatype>
                 </attDef>
               </attList>
+              <attDef ident="calendar" mode="delete"/>
               <attDef ident="mutual">
                 <datatype maxOccurs="unbounded">
                   <dataRef key="teidata.pointer"/>
@@ -3126,6 +3788,12 @@
               </sequence>
             </alternate>
           </content>
+          <attList>
+            <attDef ident="role" mode="delete"/>
+            <attDef ident="sex" mode="delete"/>
+            <attDef ident="gender" mode="delete"/>
+            <attDef ident="age" mode="delete"/>
+          </attList>
           <exemplum>
             <egXML  xmlns="http://www.tei-c.org/ns/Examples">
               <ab type="factoid" subtype="nameVariant" xml:id="factoid-4" resp="#ayousif #ekowalik">
@@ -3179,6 +3847,7 @@
             </sequence>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="from" mode="delete"/>
             <attDef ident="to" mode="delete"/>
           </attList>
@@ -3229,6 +3898,7 @@
             </sequence>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="from" mode="delete"/>
             <attDef ident="to" mode="delete"/>
           </attList>
@@ -3272,6 +3942,7 @@
             <elementRef key="note" minOccurs="1" maxOccurs="1"/>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="ana" mode="add" usage="req">
               <datatype minOccurs="1" maxOccurs="unbounded">
                 <dataRef key="teidata.pointer"/>
@@ -3378,6 +4049,7 @@
             <elementRef key="note" minOccurs="1" maxOccurs="1"/>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="ana" mode="change" usage="req">
               <datatype minOccurs="1" maxOccurs="unbounded">
                 <dataRef key="teidata.pointer"/>
@@ -3490,6 +4162,7 @@
           </constraintSpec>
           <attList>
             <attDef ident="tag" mode="delete"/>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="level" mode="replace" usage="opt">
               <datatype>
                 <dataRef key="teidata.enumerated"/>
@@ -3540,6 +4213,7 @@
             <elementRef key="note" minOccurs="1" maxOccurs="unbounded"/>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="ana" mode="change" usage="req">
               <datatype minOccurs="1" maxOccurs="unbounded">
                 <dataRef key="teidata.pointer"/>
@@ -3603,6 +4277,7 @@
             <elementRef key="note" minOccurs="1" maxOccurs="1"/>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="type" mode="add" usage="req">
               <datatype minOccurs="1" maxOccurs="1">
                 <dataRef key="teidata.enumerated"/>
@@ -3867,6 +4542,7 @@
             </sequence>
           </content>
           <attList>
+            <attDef ident="calendar" mode="delete"/>
             <attDef ident="ana" mode="change">
               <constraintSpec ident="ana-in-state" scheme="schematron">
                 <constraint>
