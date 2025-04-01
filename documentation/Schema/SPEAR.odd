@@ -42,7 +42,7 @@
         This schema and set of encoding guidelines has been created for the born-digital prosopography project 
         <title><ref target="http://spear-prosop.org">SPEAR: Syriac Persons, Events, and Relations</ref></title>. An initial draft of this 
         schema was produced in 2016. Since then the data model and the linked data infrastructure of <ref target="http://syriaca.org">Syriaca.org</ref> 
-        has evolved, requiring a series of revisions culminating in the current version 2.0 of the schema customization contained here. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> project
+        has evolved requiring a series of revisions culminating in the current version 2.0 of the schema customization contained here. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> project
         aggregates the data encoded from multiple Syriac texts by many different researchers. If you are interested in suggesting 
         updates to this data model you may do so via submittng pull requests or issues to this  
         <ref target="https://github.com/srophe/spear/tree/main/documentation/Schema">GitHub repository</ref>. This schema and documentation is 
@@ -59,17 +59,18 @@
           <head>Introduction</head>
           <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> is a born-digital prosopography using a methodology focused on the encoding of <quote>factoids</quote>, 
             discussed below at <ref target="#factoidProsopography">1.3.1</ref>. It relies on and integrates with the <ref target="http://syriaca.org">Syriaca.org</ref> Linked Open Data (LOD) 
-            knowledge graph. These realities of the data model, the encoding process, and the integration of data other 
+            knowledge graph. These realities of the data model, the encoding process, and the integration of other 
             <ref target="http://syriaca.org">Syriaca.org</ref> data sets require a highly constrained customization of the TEI.</p>
           <p>The prose documentation that follows here in section 1 is an abbreviated and slightly updated version of 
-            an article appearing in the <title>jTEI</title>. For a fuller discussion of factoid prosopography
+            an article appearing in the <title>jTEI</title>. The discussion here is also more oriented toward guidelines for using the schema to
+            encode prosopographical data. For a fuller discussion of factoid prosopography
             and TEI modeling of prosopographical factoids, see Daniel L. Schwartz, Nathan P. Gibson, and Katayoun Torabi, 
             <title level="a">Modeling a Born-Digital Factoid Prosopography using the TEI and Linked Data</title>, 
             <title level="j">Journal of the Text Encoding Initiative</title>, (<date when="2022">2022</date>), 
             <ref target="https://journals.openedition.org/jtei/3979">https://journals.openedition.org/jtei/3979</ref>.
           </p>
           <p><ref target="#schema">Section 2</ref> below contains discussion of individual TEI elements and their customization for SPEAR. These look like the pages
-            you are used to seeing in the TEI Guideline when you click on individual elements in 
+            readers are used to seeing in the TEI Guideline when they click on individual elements in 
             <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html">Appendix C Elements</ref>. In most cases, the 
             following sections have  been customized for <title><ref target="http://spear-prosop.org">SPEAR</ref></title>: Attributes, Contained by, May contain, Note, and Example.
           </p>
@@ -79,12 +80,14 @@
           <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> is a digital prosopography project that both stands somewhat apart from <ref target="http://syriaca.org">Syriaca.org</ref> but has 
             also depends on it and has developed in dialogue with it. As such, I would like to acknowledge the contributions of <ref target="http://syriaca.org">Syriaca.org</ref> 
             colleagues David A. Michelson and Jeanne-Nicole Mellon Saint-Laurant. <ref target="http://syriaca.org">Syriaca.org</ref> Senior Programmer Winona Salesky
-            has shaped <title><ref target="http://spear-prosop.org">SPEAR</ref></title> through her work on adapting the Srophe Softward Application (used for an early beta version of <title><ref target="http://spear-prosop.org">SPEAR</ref></title>) to the data model and more recently by developing
-            an instance of the Gaddel Software Application to display and query <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data. The influence of these three colleagues on <ref target="http://syriaca.org">Syriaca.org</ref> 
+            has shaped <title><ref target="http://spear-prosop.org">SPEAR</ref></title> through her work on adapting the 
+            <ref target="https://srophe.app/">Srophé Software Application</ref> (used for an early beta version of <title><ref target="http://spear-prosop.org">SPEAR</ref></title>) to the data model and more recently by developing
+            an instance of the Gaddel Software Application (<ref target="https://github.com/srophe/Gaddel">link to code base</ref>) to display and 
+            query <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data. The influence of these three colleagues on <ref target="http://syriaca.org">Syriaca.org</ref> 
             can be seen throughout the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model. Nathan P. Gibson was a postdoc with <ref target="http://syriaca.org">Syriaca.org</ref>
             and Katayoun (Kathy) Torabi was a graduate research assistant early on in the project. Both helped shape this data model and are co-authors on the 
-            <title>jTEI</title> article mentioned above. Nathan Gibson has also adapted the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model to his own prosopographical work on
-            early Islamic intellectual networks between Jews, Christians, and Muslims. All of these colleagues as well as many additional student and faculty 
+            <title>jTEI</title> article mentioned above. Nathan Gibson has also adapted the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model to his 
+            <ref target="https://usaybia.net/index.html">Usaybia.net</ref>, a prosopographical research project analyzing early Islamic intellectual networks between Jews, Christians, and Muslims. All of these colleagues as well as many additional student and faculty 
             researcher have contributed data to <title><ref target="http://spear-prosop.org">SPEAR</ref></title> and feedback on the data model as well. Many thanks to all of these contributors.
           </p>
         </div>
@@ -92,8 +95,8 @@
           <head>The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> Factoid Model</head>
           <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> offers a customized schema for modeling prosopographical factoids in TEI XML and for integrating these factoids
             into the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph. Each of these concepts requires a bit of unpacking. What follows
-            is an overview of these issues. For a fuller discussion, please see the <ref target="https://journals.openedition.org/jtei/3979"><title>jTEI</title></ref> 
-            article mentioned above.
+            is an overview of these issues. For a fuller discussion, please see the <ref target="https://journals.openedition.org/jtei/3979"><title>jTEI</title> article</ref> 
+            mentioned above.
           </p>
           <div xml:id="factoidProsopography">
             <head>Factoid Prosopography</head>
@@ -178,7 +181,7 @@
                 URI to equal the name of the XML file. In each case, this number equals the number portion of the 
                 <ref target="http://syriaca.org">Syriaca.org</ref> work URI that is the source of this prosopographical data. (See 
                 <ref target="#sourceDesc">Source Description</ref>
-                below.) The <ref target="http://syriaca.org">Syriaca.org</ref> work URI for the file in the example below is 
+                below.) The URI for the corresponding <ref target="http://syriaca.org">Syriaca.org</ref> work file in the example below is 
                 <ref target="http://syriaca.org/work/3010">http://syriaca.org/work/3010</ref>.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <publicationStmt>
@@ -200,7 +203,8 @@
               <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> uses the <gi>seriesStmt</gi> to group the data in different ways. All <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
                 files are part of the series <title><ref target="http://spear-prosop.org">SPEAR</ref></title>. The example below comes from one of the letters of Severus of 
                 Antioch. By indicating this in the <gi>seriesStmt</gi>, it is possible to query <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data from files 
-                that are only a part of this series. 
+                that are only a part of this series. John of Ephesus, <title>Lives of the Eastern Saints</title> is another collection of texts similarly forming a series
+                and additional series are in preparation.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <seriesStmt>
                     <title level="s">SPEAR: Syriac Persons, Events, and Relations</title>
@@ -223,9 +227,9 @@
             <div xml:id="sourceDesc">
               <head>Source Description</head>
               <p>Each <title><ref target="http://spear-prosop.org">SPEAR</ref></title> XML file contains prosopographical data from one work. Even though <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
-                files are <quote>born digital</quote>, the <gi>sourceDesc</gi> is uses to provide bibligraphic information on
+                files are <quote>born digital</quote>, the <gi>sourceDesc</gi> is used to provide bibligraphic information on
                 the source text. The example below contains two <gi>bibl</gi> elements. The first is a reference to a modern edition
-                of the source text. The <gi>ptr</gi> @target points to the <title>Comprehensive Bibliography on Syriac Studies (CBSS)</title>, 
+                of the source text. The <gi>ptr</gi> @target points to the <ref target="http://syriaca.org/cbss"><title>Comprehensive Bibliography on Syriac Studies (CBSS)</title></ref>, 
                 the bibliographic dataset of <ref target="http://syriaca.org">Syriaca.org</ref>.
               </p>
               <p>The second <gi>bibl</gi> element contains a <ref target="http://syriaca.org">Syriaca.org</ref> work URI. Where the first 
@@ -264,8 +268,8 @@
             <head>Basic Factoid Structure</head>
             <div xml:id="ab">
               <head>Containing Element</head>
-              <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> uses the <gi>ab</gi> element as the container for factoids and adds a @type attribute to indicate
-                the nature of this anonymous block. The @subtype element is used to indicate what type of factoid. The allowed values are
+              <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> uses the <gi>ab</gi> (anonymous block) element as the container for factoids and adds a @type attribute to indicate
+                the use of this element. The @subtype attribute is used to indicate what type of factoid. The allowed values are
                 <quote>relation</quote>, <quote>event</quote>, <quote>birth</quote>, <quote>citizenship</quote>, <quote>death</quote>,
                 <quote>education</quote>, <quote>ethnicLabel</quote>, <quote>gender</quote>, <quote>langKnown</quote>, <quote>mentalState</quote>, 
                 <quote>nameVariant</quote>, <quote>occupation</quote>, and <quote>physicalTrait</quote>. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> schema uses 
@@ -273,10 +277,10 @@
               </p>
               <p>The name <title><ref target="http://spear-prosop.org">SPEAR</ref></title> comes from the TEI elements <gi>person</gi>, <gi>event</gi>, and <gi>relation</gi>. The @subtype
                 values <quote>relation</quote> and <quote>event</quote> indicate those types of factoids and have descendant <gi>relation</gi> 
-                and <gi>event</gi> element respectively. The remainder of the @subtype values indicate a person factoid and must have a descendent 
+                and <gi>event</gi> elements respectively. The remainder of the @subtype values indicate a person factoid and must have a descendent 
                 <gi>person</gi> element or a descendent <gi>personGrp</gi> element. The TEI expects these elements to nest under 
                 <gi>listRelation</gi>, <gi>listEvent</gi>, and <gi>listPerson</gi> elements respectively and <title><ref target="http://spear-prosop.org">SPEAR</ref></title> has followed that practice
-                even though it is not necessary for the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model.
+                even though it is not strictly necessary for the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model.
               </p>
               <p>Outline of a relation factoid:
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -347,7 +351,7 @@
             <div xml:id="citation">
               <head>Citing Sources</head>
               <p>Each <title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoid must also have at least one <gi>bibl</gi> element. This contains a <gi>ptr</gi> element with @ref
-                indicating the URI for the bibliograph entry in <title>CBSS</title> along with the appropriate <gi>citedRange</gi>. 
+                indicating the URI for the bibliograph entry in <ref target="http://syriaca.org/cbss"><title>CBSS</title></ref> along with the appropriate <gi>citedRange</gi>. 
                 For texts contained in the <ref target="https://syriaccorpus.org/index.html"><title>Digital Syriac Corpus</title></ref>, 
                 <title><ref target="http://spear-prosop.org">SPEAR</ref></title> allows the use of a <ref target="https://wiki.digitalclassicist.org/Canonical_Text_Services">Canonical Text Services</ref> (CTS) 
                 Uniform Resource Number (URN) that facilitates the incorporation of the Syriac text cited into the HTML version of the factoid.
@@ -371,6 +375,7 @@
                   </ab>
                 </egXML>
               </p>
+              <p>For an example of the incorporation of source text into an HTML factoid page, see <ref target="https://spear-prosop.org/8559-87">https://spear-prosop.org/8559-87</ref>.</p>
             </div>
           </div>
           <div xml:id="factoidTypes">
@@ -381,13 +386,13 @@
             </p>
             <div xml:id="relationFactoids">
               <head>Relation Factoids</head>
-              <p>Relation factoids contain a <gi>listRelation</gi> followed by <gi>relation</gi>. The schema constrains the values of @ref to allow 
+              <p>Relation factoids contain a <gi>listRelation</gi> followed by <gi>relation</gi>. The schema constrains the values of the @ref attribute on <gi>relation</gi> to allow 
                 only relationship values from the <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>. The <gi>relation</gi> element also has either a @mutual attribute
                 with two or more person URI values or @active and @passive attributes. The distinction is between relationships that are mutual (if person x
                 is a sibling of person y, then person y is a sibling of person x) and relationships that are directed (person x ordained person y).</p>
               <p>The above is the version of the material most oriented to machine processing. It will be rendered into RDF (Resource Description Framework) 
                 which forms the basis of the Linked Open Data of <title><ref target="http://spear-prosop.org">SPEAR</ref></title>, but also facilitates search and advanced browse features.
-                <title><ref target="http://spear-prosop.org">SPEAR</ref></title> also includes a <gi>desc</gi> element with a more prose oriented version of the same information. This text, 
+                <title><ref target="http://spear-prosop.org">SPEAR</ref></title> also includes a <gi>desc</gi> element with a more prose-oriented version of the same information. This text, 
                 along with hyperlinks to the URIs mentioned, appears in HTML for human readers.
               </p>
               <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -511,7 +516,7 @@
               <div xml:id="otherPerson">
                 <head>Education, Language, Occupation, and Socio-economic Status</head>
                 <p>With <gi>education</gi>, <gi>langKnowledge</gi>, <gi>occupation</gi>, and <gi>socecStatus</gi>, 
-                  each of these elements take an @ana attribute whose value the schema constrains to only appropriate concepts in the 
+                  each of these elements take an @ana attribute whose value the schema constrains to appropriate concepts in the 
                   <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>.
                 </p>
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -587,7 +592,7 @@
                   to create authority files for events. As such, <title><ref target="http://spear-prosop.org">SPEAR</ref></title> cannot collect data directly associated with specific events. It remains 
                   desirable, however, to at least be able to connect different textual references to the same or similar events. <title><ref target="http://spear-prosop.org">SPEAR</ref></title> does
                   this by creating a <gi>relation</gi> element that connects two event factoids. These <gi>listRelation</gi> and <gi>relation</gi> elements
-                  appear in <gi>note</gi> elements  with @type="relatedEvent". These elements are direct children of the <gi>ab</gi> element containing the event. 
+                  appear in <gi>note</gi> elements  with <code>@type="relatedEvent"</code>. These elements are direct children of the <gi>ab</gi> element containing the event. 
                   These <gi>relation</gi> elements take a @mutual attribute connecting two or more factoid URIs and a @ref attribute with one of 
                   the following Taxonomy URIs: <quote>http://syriaca.org/taxonomy/proximate-event</quote> or <quote>http://syriaca.org/taxonomy/same-event</quote>.
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
