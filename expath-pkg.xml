@@ -1,4 +1,0 @@
-<package xmlns="http://expath.org/ns/pkg" name="http://syriaca.org/spear" abbrev="spear" version="0.05" spec="1.0">
-    <title>SPEAR: Syriac Persons Events and Relations</title>
-    <dependency package="http://exist-db.org/apps/shared"/>
-</package>
