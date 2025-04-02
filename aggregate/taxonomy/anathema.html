@@ -1,0 +1,313 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Anathema</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Anathema</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/anathema">http://syriaca.org/taxonomy/anathema</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Hippocrates the Scholastic 
+                            discussing his refusal to commune with anyone who will not anathematize the
+                            Council of Chalcedon.
+                            
+                                
+                            
+                         <a href="/3191-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Neon about why
+                            Eutyches was anathematized 
+                            at the Council of Chalcedon even though he was accepted at the Council of Ephesus.
+                            
+                                
+                            
+                         <a href="/3178-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Dioscorus I 
+                            discussing grounds for communion, namely the anathematizing of the 
+                            Council of Chalcedon.
+                            
+                                
+                            
+                         <a href="/3193-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Oecumenius discussing
+                            the unity of Christ's nature without the confusion of the human and divine elements in him.
+                            He also insisted on anathematizing those who do confuse the natures.
+                            
+                                
+                            
+                         <a href="/3095-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Oecumenius discussing
+                            the unity of Christ's nature without the confusion of the human and divine elements in him.
+                            He also insisted on anathematizing those who do confuse the natures.
+                            
+                                
+                            
+                         <a href="/3014-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Sergius about
+                            the exoneration of  
+                            Eutyches at the 
+                            Second Council of Ephesus.
+                            
+                                
+                            
+                         <a href="/3176-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            non-Chalcedonian Christians in the city of 
+                            Tyre about why
+                            Eutyches is anathematized even though he was received by
+                            Dioscorus.
+                         <a href="/3177-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Ammonius on the necessity of
+                            affirming correct theology but also anathematizing incorrect theology.
+                            
+                                
+                            
+                         <a href="/3017-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Solon concerning his
+                            ordination, piety, and relationship to unorthodox bishops. 
+                            
+                                
+                            
+                         <a href="/3012-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anonymi 3697
+                            loyal to Justinian reported Elijah of Dara to
+                                the
+                                emperor <a href="/822-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Athanasius wrote a letter indicating he accepted the Henotikon without 
+                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
+                         <a href="/3017-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            John wrote a letter indicating he accepted the Henotikon without 
+                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
+                         <a href="/3017-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Anastasius I
+                            expressing his refusal to recant his condemnation of the Council of Chalcedon and 
+                            Leo's 
+                            Tome. He preferred exile to recanting.
+                            
+                                
+                            
+                         <a href="/3190-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            John wrote a letter to 
+                            Dioscorus and 
+                            Chaeremon
+                            
+                                
+                            
+                         <a href="/3017-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sergius sent a letter to
+                            Severus about
+                            the exoneration of  
+                            Eutyches by 
+                            Dioscorus at the 
+                            Second Council of Ephesus.
+                            
+                                
+                            
+                         <a href="/3176-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Menas and
+                            Isidore
+                            wrote a letter to 
+                            Severus
+                            reporting that 
+                            Epiphanius excommunicated  
+                            Anonymi 3034 when they would not commune with him. 
+                            
+                                
+                                
+                                
+                            
+                         <a href="/3020-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            archimandrite of 
+                                the monastery of Bassus
+                             about a controversy surrounding a corrupt bishop of 
+                            Apamea.
+                            
+                                
+                                
+                            
+                         <a href="/3035-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>The supporters of the synod of Chalcedon used troops to expell people
+                            from their homes, and to arrest, imprison, plunder, torture, and kill
+                            those who did not support the synod. The persecutors then turned their
+                            attention to Sergius, first using honeyed words and then threats when
+                            he refused to leave his enclosure. Sergius anathemized
+                            the persecutors as they pulled him out of his enclosure and expelled him
+                            from the community.  <a href="/797-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Zeʿora
+                            anathematized the Council of Chalcedon and inflicted the emperor with
+                            swelling and a compromised mental state.  <a href="/794-37" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Archaelaus
+                            concerning the invalidity of heretics who adminsister bans. 
+                            
+                                
+                            
+                         <a href="/3020-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sergius
+                            received a blessing from Maro and then set out to visit the churh in Amida. Sergius walked into
+                            the church in Amida, carrying a cross, and planted his cross on the
+                            chancel steps before seizing the preacher, Bishop Abraham, by
+                            the neck and throwing him to the ground. Sergius mounted the
+                            steps and addressed the crowd: "Cursed are the renegades; cursed are the
+                            persecutors; cursed is the synod of Chaledon, and whosoever assents to
+                            it. Cursed is every soul that receives the oblation from you and assents
+                            to your opinion unless he repents." The crowd, a mixture of believers
+                            and synod supporters, responded with praise and anger. <a href="/797-41" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            
+                                
+                                    In 511 
+                                    This regularized date was calculated by the
+                                        SPEAR editor from a non-calendrical dating system such as
+                                        regnal years, etc.
+                                
+                                
+                                    After his accession as bishop
+                                
+                            , 
+                            Timothy wrote a synodical letter that he sent to 
+                            John and others in which he did not
+                            anathematize the Council of Chalcedon.
+                            
+                                
+                            
+                        This regularized date was calculated by the
+                                        SPEAR editor from a non-calendrical dating system such as
+                                        regnal years, etc. <a href="/3017-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus was
+                            aware of many letters written by Peter to himself and
+                            to the presbyter Thomas, wherein Peter accused
+                                Severus and
+                            others of breaking canon-law and tradition by allowing for ordinations
+                            outside of the diocese.  <a href="/3028-61" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            John responded to the synodical letter of
+                            Timothy and urged him to anathematize the Council of Chalcedon.
+                            
+                                
+                            
+                         <a href="/3017-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            responded to John by refusing to accept the synod of Chalcedon as a
+                            repudiation of Nestorius and Eutyches, because the
+                            Chalcedonian creed and the Tome of Leo support
+                            Nestorianism; Severus does not believe that anathematizing Eutyches makes the
+                            Council of Chalcedon legitimate, because the followers of
+                                Arius were
+                            still heretics even though they repudiated the teachings of Sabellius.  <a href="/3004-79" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus held a council in
+                            Antioch with bishops from 
+                            the East.
+                            They condemned the Council of Chalcedon and 
+                            Leo's 
+                            Tome.
+                         <a href="/3190-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus urged 
+                            Theotecnus to condemn
+                            Romanus in a synodical letter.
+                            
+                                
+                            
+                         <a href="/3063-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Anastasios wrote a letter to  
+                            John complaining about his refusal simply
+                            to accept the Henotikon without anathemas of Chalcedon. His letter cites letters by 
+                            Peter Mongus,
+                            Athanasius, 
+                            John, and
+                            John.
+                            
+                                
+                                
+                                
+                                
+                                
+                            
+                         <a href="/3017-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Elijah of Dara
+                             anathematized Anonymi 3697 who were loyal to  the emperor  <a href="/822-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Asterius attempted to convince 
+                            Severus to recant 
+                            his condemnation of the Council of Chalcedon and 
+                            Leo's 
+                            Tome. He would not recant and declared his
+                            intent to suffer exile rather than recant.
+                            
+                                
+                            
+                         <a href="/3190-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Peter Mongus wrote a letter indicating he accepted the Henotikon without 
+                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
+                         <a href="/3017-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Anathema</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/anathema, 2025-03-25T13:11:47.638-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>
+                        Eutyches
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/56.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/56"/>
+                        Oecumenius, comes
+                    </a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/2595.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2595"/>Ammonius</a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/3034.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3034"/>Anonymi 3034</a></li><li><a href="/aggregate/person/3042.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3042"/>Anonymous 3042</a></li><li><a href="/aggregate/person/3697.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3697"/>Anonymous 3697</a></li><li><a href="/aggregate/person/2606.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2606"/>Archelaus</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2610"/>Asterius</a></li><li><a href="/aggregate/person/2612.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2612"/>Athanasius II</a></li><li><a href="/aggregate/person/2624.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2624"/>Chaeremon</a></li><li><a href="/aggregate/person/2636.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2636"/>Dioscorus</a></li><li><a href="/aggregate/person/2432.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2432"/>Dioscorus I</a></li><li><a href="/aggregate/person/1704.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1704"/>Elijah of Dara</a></li><li><a href="/aggregate/person/2580.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2580"/>Epiphanius</a></li><li><a href="/aggregate/person/2658.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2658"/>Hippocrates</a></li><li><a href="/aggregate/person/2667.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2667"/>Isidore</a></li><li><a href="/aggregate/person/2687.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2687"/>John
+                        II (Hemula)</a></li><li><a href="/aggregate/person/2572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2572"/>John
+                        III of Nicaea</a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of
+                        Claudiupolis</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron</a></li><li><a href="/aggregate/person/2705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2705"/>Menas of Tyre</a></li><li><a href="/aggregate/person/2724.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2724"/>Neon</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2736"/>Peter Mongus</a></li><li><a href="/aggregate/person/2744.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2744"/>Romanus</a></li><li><a href="/aggregate/person/2555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2555"/>Sabellius the Libyan</a></li><li><a href="/aggregate/person/2747.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2747"/>Sergius</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2568.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2568"/>Theotecnus</a></li><li><a href="/aggregate/person/2515.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2515"/>Thomas</a></li><li><a href="/aggregate/person/2773.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2773"/>Timothy</a></li><li><a href="/aggregate/person/1524.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1524"/>Zeʿora</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/2630.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2630"/>Apamea</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/2604.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2604"/>East</a></li><li><a href="/aggregate/place/343.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/343"/>Mor Bosus</a></li><li><a href="/aggregate/place/195.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/195"/>Tyros</a></li></ul></div></div></div></div></div></div></body></html>

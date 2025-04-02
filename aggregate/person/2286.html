@@ -1,0 +1,168 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Kavad</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Kavad</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/2286">http://syriaca.org/person/2286</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Kawad, King of <span class="tei-placeName">Persia</span></span>
+                    </span>
+                </span> <a href="/10510-118" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Kavad <span class="tei-ref">, King </span> of <span class="tei-ref"> the Persians
+                            </span></span>
+                    </span>
+                </span> <a href="/8559-412" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Cavades, <span class="tei-ref"> King </span> of <span class="tei-ref"> the Persians
+                            </span></span>
+                    </span>
+                </span> <a href="/8559-413" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Kawad</span> was male. <a href="/10510-119" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName"> Kavad
+                                </span> was male. <a href="/8559-414" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Kawad</span>
+                                was a king. <a href="/10510-120" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">Kawad, King of
+                                    Persia attacked the City of Amida, slaughtered many
+                            people, took captives, and razed the Convent of John
+                                Urtaya in the year 
+                                502/3
+                                A. Gr.
+                                        814
+                             <a href="/10510-117" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The story of Kawad's invasion was related to John of Ephesus years
+                            later when he was a white haired man, living in the monastery at
+                                Beth
+                                Gubrin.  <a href="/10510-121" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">King Kawad's
+                            invasion was devastating and drove many away from the Convent of John
+                                Urtaya. The white-haired man fled from Amida.  <a href="/10510-126" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Because King
+                                Kawad's invasion destroyed the Convent of John
+                                Urtaya, Paul took up residence in Monastery in Orientals in
+                                Edessa.  <a href="/10510-129" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The Convent of John
+                                Urtaya was rebuilt after King Kawad's
+                            invasion, but on a smaller scale--both in the number of buildings
+                            erected and in the number of monks admitted.  <a href="/10510-135" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Kavad 
+                            besieged the city of  Amida 
+                                from 5 November A. D.
+                                        502 to 10 February 503
+                                 for 97 days beginning
+                                        on 5 Teshri II A. Gr. 814
+                             <a href="/8559-415" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> On 
+                                10 February A. D.
+                                        503
+                                the 97th day after 5
+                                        Teshri II A. Gr. 814
+                             Kavad
+                             captured the city of  Amida .  <a href="/8559-416" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> In 
+                                September A. D.
+                                        503
+                                Elul A. Gr.
+                                    814
+                             Kavad
+                             besieged 
+                                Edessa  but did not capture it. 
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with closely related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/8559-420">8559-420</a></span>, 
+                                <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/8559-421">8559-421</a></span>
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with closely related events: 8559-420, 
+                                8559-421
+                             <a href="/8559-420" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> During the seige of 
+                                Edessa  in 
+                                September A. D.
+                                        503
+                                Elul A. Gr.
+                                    814
+                             Kavad
+                             burned the House of  Mar Sergius  and
+                                 the House of the
+                                Confessors . 
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with closely related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/8559-420">8559-420</a></span>, 
+                                <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/8559-421">8559-421</a></span>
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with closely related events: 8559-420, 
+                                8559-421
+                             <a href="/8559-421" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The King
+                            was informed about the
+                                three distinguished Magians who converted to Christianity
+                            and ordered them to renounce Christianity on pain of death.  <a href="/802-53" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Some 'Nestorian' bishops 
+                            met with the Kawad and warned him
+                            about the dangerous presence of the Christians in his country. They
+                            urged the King to order a persecution of these Christians.  <a href="/802-60" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Simeon met
+                            with Anastasius and asked him to urge Kawad to let the
+                            Christians in Persia live in peace. Anastasius convinced
+                                Kawad to
+                            leave the Persian Christians alone.  <a href="/802-64" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Kawad
+                            ordered all of the Christian bishops and archimandrites to be arrested
+                            and put in a prison in Nisbis for seven years.  <a href="/802-84" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">The King of
+                                Aethiopia, who was a Christian, sent his ambassadors to ask
+                                Kawad to
+                            release the Christian bishops and archimandrites.  <a href="/802-85" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Kawad died
+                            and was succeeded by his son.  <a href="/802-92" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Kavad</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/person/2286, 2025-03-25T13:22:58.173-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
+                        John
+                        of Ephesus
+                        
+                    </a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/3618.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3618"/>Anonymi 3618</a></li><li><a href="/aggregate/person/3619.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3619"/>Anonymi 3619</a></li><li><a href="/aggregate/person/3622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3622"/>Anonymi 3622</a></li><li><a href="/aggregate/person/3191.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3191"/>Anonymous 3191</a></li><li><a href="/aggregate/person/3676.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3676"/>Anonymous 3676</a></li><li><a href="/aggregate/person/2286.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2286"/>Kavad</a></li><li><a href="/aggregate/person/2244.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2244"/>Khusrau I Anushirwan</a></li><li><a href="/aggregate/person/3239.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3239"/>Paul of Arzun</a></li><li><a href="/aggregate/person/1466.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1466"/>Sergius</a></li><li><a href="/aggregate/person/53.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/53"/>Simeon of Beth Arsham</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/390.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/390"/>Dayro d-Madnḥoye</a></li><li><a href="/aggregate/place/78.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/78"/>Edessa</a></li><li><a href="/aggregate/place/1508.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1508"/>Gubrin</a></li><li><a href="/aggregate/place/2590.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2590"/>House of the Confessors</a></li><li><a href="/aggregate/place/142.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/142"/>Nisibis</a></li><li><a href="/aggregate/place/150.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/150"/>Persian-Sasanian Empire</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li></ul></div></div></div></div></div></div></body></html>

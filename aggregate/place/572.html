@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Alexandria</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Alexandria</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/place/572">http://syriaca.org/place/572</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Events</h3><p class="indent">
+                     Jacob Baradaeus, Conon and Eugene 
+                     traveled to Constantinople where Theodosius directed them to travel to 
+                     Alexandria so that Conon and Eugene could be
+                     ordained bishops.
+                   <a href="/841-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">The monk who stole
+                             visited the
+                                blessed man  who was living with two disciples in
+                                Ennaton in
+                                Alexandria.  <a href="/824-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Sometime before 0518
+                            Musonius traveled from Isaurai
+                            to Alexandria.
+                         <a href="/3050-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> James travels to the frontier of Persia, Constantinople and
+                                Alexandria
+                            ordaining clergy.
+                         <a href="/840-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Followers of the Council of Chalcedon expelled
+                            Christians from Alexandria and Mare from his desert
+                            cell. On account of the persecution,Mare resolved to
+                            travel to Constantinople to err his grievacnes with the king and queen.  <a href="/828-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Thomas bought
+                            books from Alexandria and spices from Edessa.  <a href="/813-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After a time,John 
+                            feigned illness again as a pretense to travel around
+                            the empire to ordain more priests. He travelled to Cyprus,Caesarea,Rhodes,Tralles,Chios,Alexandria,and Palestine.  <a href="/817-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Susan chose
+                            to go into exile into the desert beyond Alexandria.  <a href="/819-32" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Mare sent
+                                Stephen to
+                            the Royal City
+                            to ask for relief from their distress in Petra. Stephen appealed to
+                                Theodora.
+                            She appealed to her husband Justinian. He
+                            appealed to his uncle, Justin I who stated that Mare could come to
+                                Alexandria.  <a href="/805-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Stephen
+                            delivered the order to come to Alexandria to
+                                Mare and his
+                            men as well as to Isidore, Bishop of Kenneshrin, also in
+                            exile.  <a href="/805-49" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Anonymi 3664
+                            came to Susan
+                            and Anonymi
+                                3352 from Alexandria and from Libya.  <a href="/819-55" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Caesaria goes from
+                            royal habits to ascectic habits in  Alexandria.  <a href="/845-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                     Severus was forced to flee Antioch 
+                     because of his opposition to the Council of Chalcedon. He went first to Alexandria 
+                     and then further into the desert. There he maintained his ascetic lifestyle.
+                   <a href="/839-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Peter, later
+                            bishop of Smyrna, and Photius entered the
+                            Monastery of the Fathers in the Enaton of Alexandria.  <a href="/847-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Mare died in
+                                 Alexandria
+                             <a href="/805-73" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> When Timothy
+                            had endured his exile from Alexandria, Epiphanius left his
+                            bishopric in Magydum and came to Alexandria, embracing
+                            communion with Timothy.  <a href="/3004-82" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Sometime around 519-520
+                             Isaiah  attempted to demonstrate his 
+                            sanctity in the city of Alexandria by raising 
+                            Anonymous 3754
+                            from the dead. He was unsuccessful and fled. 
+                         <a href="/3111-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                     Theodosius was forced to flee 
+                     Alexandria because of his opposition to 
+                     the Council of Chalcedon.
+                   <a href="/839-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="sources"><h4>Personal Names: </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Timothy, Patriarch of
+                                <span class="tei-placeName"> Alexandria
+                            </span></span>
+                    </span>
+                </span> <a href="/3004-42" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-personGrp">
+                        <span class="tei-persName"> Pilgrims who visited
+                                <span class="tei-persName">Susan</span> and
+                                <span class="tei-persName">Anonymi
+                                3662</span> from <span class="tei-placeName">
+                                Alexandria and <span class="tei-placeName"> Libya
+                                </span></span></span>
+                    </span>
+                </span> <a href="/819-56" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Residence: </h4><p class="indent"><span class="tei-persName">Susan</span>
+                                went into the desert beyond <span class="tei-placeName">Alexandria</span> to
+                                live in exile.  <a href="/819-33" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">the
+                                    blessed man </span> resided in <span class="tei-placeName">Ennaton</span> in
+                                    <span class="tei-placeName">Alexandria</span>.  <a href="/824-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent">
+                                <span class="tei-persName">Ammonius</span> 
+                                was a presbyter in <span class="tei-placeName">Alexandria</span>.
+                             <a href="/3017-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Timothy</span> was Patriarch of <span class="tei-placeName"> Alexandria </span>.
+                             <a href="/3004-44" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Place Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Alexandria</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/place/572, 2025-03-25T13:11:12.257-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/572"/>Alexandria</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/53.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/53"/>Caesarea</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/1529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1529"/>Chios</a></li><li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/586"/>Constantinople</a></li><li><a href="/aggregate/place/714.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/714"/>Cyprus</a></li><li><a href="/aggregate/place/78.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/78"/>Edessa</a></li><li><a href="/aggregate/place/2777.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2777"/>Fathers</a></li><li><a href="/aggregate/place/698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/698"/>Filasṭīn</a></li><li><a href="/aggregate/place/99.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/99"/>Isauria</a></li><li><a href="/aggregate/place/2810.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2810"/>Libya</a></li><li><a href="/aggregate/place/2681.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2681"/>Magydum</a></li><li><a href="/aggregate/place/526.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/526"/>Persia</a></li><li><a href="/aggregate/place/157.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/157"/>Petra</a></li><li><a href="/aggregate/place/162.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/162"/>Qenneshrin</a></li><li><a href="/aggregate/place/1534.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1534"/>Rhodes</a></li><li><a href="/aggregate/place/2718.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2718"/>Smyrna</a></li><li><a href="/aggregate/place/473.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/473"/>The Enaton</a></li><li><a href="/aggregate/place/2857.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2857"/>Tralles</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/48.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/48"/>
+                        Mara, metropolitan of Amid
+                        
+                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
+                        Theodora, Roman empress
+                    </a></li><li><a href="/aggregate/person/784.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/784"/>
+                        Theodosius, patriarch of Alexandria
+                    </a></li><li><a href="/aggregate/person/792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/792"/>
+                        Timothy
+                        II
+                        of Alexandria
+                    </a></li><li><a href="/aggregate/person/2595.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2595"/>Ammonius</a></li><li><a href="/aggregate/person/3716.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3716"/>Anonymi 3716</a></li><li><a href="/aggregate/person/3662.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3662"/>Anonymous 3662</a></li><li><a href="/aggregate/person/3664.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3664"/>Anonymous 3664</a></li><li><a href="/aggregate/person/3717.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3717"/>Anonymous 3717</a></li><li><a href="/aggregate/person/3718.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3718"/>Anonymous 3718</a></li><li><a href="/aggregate/person/3754.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3754"/>Anonymous 3754</a></li><li><a href="/aggregate/person/2621.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2621"/>Caesaria</a></li><li><a href="/aggregate/person/2562.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2562"/>Epiphanius</a></li><li><a href="/aggregate/person/3208.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3208"/>Eugene</a></li><li><a href="/aggregate/person/2496.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2496"/>Isaiah</a></li><li><a href="/aggregate/person/2545.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2545"/>Isidore</a></li><li><a href="/aggregate/person/69.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/69"/>Jacob Baradaeus</a></li><li><a href="/aggregate/person/1813.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1813"/>John of Hephaestopolis</a></li><li><a href="/aggregate/person/2268.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2268"/>Justin I</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/1336.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1336"/>Kenan</a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/2460.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2460"/>Musonius</a></li><li><a href="/aggregate/person/2011.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2011"/>Peter</a></li><li><a href="/aggregate/person/3014.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3014"/>Photius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/3010.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3010"/>Stephen</a></li><li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2092"/>Suzanna</a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian</a></li></ul></div></div></div></div></div></div></body></html>

@@ -1,0 +1,95 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Amida</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Amida</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/place/2737">http://syriaca.org/place/2737</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Events</h3><p class="indent">
+                            John
+                            continued to ask the old man
+                            for his teaching. In frustruation, 
+                            the old man left 
+                            Amida.  <a href="/809-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> In 
+                                529
+                                840
+                            , John ordained seventy men from the convents of Amida.  <a href="/816-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">John was
+                            captured and brought to Antioch, where he was tortured and killed by Ephraim of Amida.  <a href="/816-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Members of the church
+                                of Amida defended the Jews and prefered
+                            accusation against Sergius and Anonymi 3698.
+                         <a href="/797-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">After five
+                                years in Mar
+                                Mara, the
+                                community returned to Amida, but because
+                            of persecution, relocated to the border territory of the East, near
+                                the hot
+                                springs of Abarne, settling at the convent of the
+                                Poplars.  <a href="/827-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="sources"><h4>Personal Names: </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Abraham of <span class="tei-placeName"> Kalesh </span> in
+                                <span class="tei-placeName"> Amida
+                            </span></span>
+                    </span>
+                </span> <a href="/796-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Abraham, bishop of
+                                <span class="tei-placeName">Amida</span></span>
+                    </span>
+                </span> <a href="/797-42" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Maro of <span class="tei-placeName"> Kalesh in
+                                </span><span class="tei-placeName"> Amida
+                            </span></span>
+                    </span>
+                </span> <a href="/796-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Residence: </h4><p class="indent"><span class="tei-persName">John</span> resided in <span class="tei-placeName">the
+                                convent</span> adjoining the city of <span class="tei-placeName">Amida</span>.  <a href="/809-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Sergius</span> was an archimandrite of the convent called
+                                that of the house of <span class="tei-placeName">Mar Gyln</span>, in the territory of the city of
+                                    <span class="tei-placeName">Amida</span>.  <a href="/833-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Place Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Amida</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/place/2737, 2025-03-25T13:11:18.533-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
+                        John
+                        of Ephesus
+                        
+                    </a></li><li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1546"/>Abraham</a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/3686.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3686"/>Anonymi 3686</a></li><li><a href="/aggregate/person/3687.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3687"/>Anonymi 3687</a></li><li><a href="/aggregate/person/3698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3698"/>Anonymi 3698</a></li><li><a href="/aggregate/person/1988.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1988"/>Anonymous 1988</a></li><li><a href="/aggregate/person/2274.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2274"/>Ephrem of
+                        Amida</a></li><li><a href="/aggregate/person/50.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/50"/>John of Tella</a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron</a></li><li><a href="/aggregate/person/1934.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1934"/>Monks of Amida</a></li><li><a href="/aggregate/person/2070.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2070"/>Sergius</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2737.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2737"/>Amida</a></li><li><a href="/aggregate/place/2735.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2735"/>Amida</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/2751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2751"/>Beth Bar ʿrubtha</a></li><li><a href="/aggregate/place/2774.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2774"/>East</a></li><li><a href="/aggregate/place/2804.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2804"/>Kalesh</a></li><li><a href="/aggregate/place/2784.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2784"/>Mar Glyn</a></li><li><a href="/aggregate/place/2813.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2813"/>Mar Mama</a></li><li><a href="/aggregate/place/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2736"/>Monastery of Amida</a></li><li><a href="/aggregate/place/2834.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2834"/>Monastery of the Poplars</a></li><li><a href="/aggregate/place/2785.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2785"/>The hot spring of Abarne</a></li></ul></div></div></div></div></div></div></body></html>

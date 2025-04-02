@@ -1,0 +1,110 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Peter the Iberian</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Peter the Iberian</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note">
+                        <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span class="langattr" xml:lang="en" lang="en" dir="ltr">The son of Bosmarios, king of Georgia (Iberia), he
+                            was brought up in Constantinople as a political hostage at the court of
+                            the Emperor Theodosius II.</span><span dir="ltr">”  </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib680-1">1</a></span> </span></span>
+                    </div><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">In hagiography: Peter the Iberian was the
+                        son of the king of Georgia. He helped Nestorius preach a homily about the
+                        saints. He went on a pilgrimage to Jerusalem and became a monk. He became
+                        Bishop of Maiuma in Gaza and was exiled to Egypt in 455.</span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/680">http://syriaca.org/person/680</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Peter, the bishop from
+                                <span class="tei-placeName"> Iberia
+                            </span></span>
+                    </span>
+                </span> <a href="/3069-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Peter </span>
+                    </span>
+                </span> <a href="/3142-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Peter </span>
+                    </span>
+                </span> <a href="/3099-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Peter of <span class="tei-placeName"> Iberia </span></span>
+                    </span>
+                </span> <a href="/3004-46" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> The God-clad man </span>
+                    </span>
+                </span> <a href="/3004-47" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Peter</span> was male. <a href="/3069-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Peter</span> was male. <a href="/3142-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName"> Peter
+                                </span> was male.  <a href="/3099-36" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Peter</span> was male. <a href="/3004-48" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Peter</span> was a bishop. <a href="/3069-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Peter</span> was a bishop from <span class="tei-placeName">Iberia</span> <a href="/3142-27" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Peter of
+                                    Iberia</span> was Bishop of one of the cities in <span class="tei-placeName">Palestine</span>. <a href="/3004-49" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">Peter the
+                                Iberian had ecclesiastical authority over Timothy and
+                                Theodore. <a href="/3069-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Epiphanius,
+                                Peter the
+                                Iberian and Anonymi 3131 had a
+                            professional relationship. <a href="/3004-51" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">
+                            Severus, 
+                            Peter the Iberian, 
+                            Theodore, and
+                            Isaiah of Gaza
+                            checked the advances of the Chalcedonians. 
+                         <a href="/3016-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After Timothy had died and the orthodox began enduring
+                            persecution again, Epiphanius withdrew to Palestine where he
+                            met with Peter of
+                                    Iberia and began ordaining priests.
+                         <a href="/3004-83" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Peter the Iberian</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/person/680, 2025-03-25T13:11:40.668-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/1091.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1091"/>
+                        Isaiah
+                        of Gaza
+                    </a></li><li><a href="/aggregate/person/792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/792"/>
+                        Timothy
+                        II
+                        of Alexandria
+                    </a></li><li><a href="/aggregate/person/3131.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3131"/>Anonymi 3131</a></li><li><a href="/aggregate/person/2562.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2562"/>Epiphanius</a></li><li><a href="/aggregate/person/680.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/680"/>Peter the Iberian</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2540.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2540"/>Theodore</a></li><li><a href="/aggregate/person/2715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2715"/>Theodore [here Theodosios]</a></li><li><a href="/aggregate/person/2401.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2401"/>Timothy</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2674.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2674"/>Iberia</a></li><li><a href="/aggregate/place/149.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/149"/>Palaestina</a></li></ul></div></div></div></div></div></div></body></html>

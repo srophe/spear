@@ -1,0 +1,131 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Euphemia</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Euphemia</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">
+                        <span class="tei-persName"><a href="http://syriaca.org/person/3025">Euphemia</a></span> is
+                        commemorated along with <span class="tei-persName"><a href="http://syriaca.org/person/1880">Mary</a></span> in <a href="http://syriaca.org/work/804">Mary and
+                            Euphemia (text)
+                    [http://syriaca.org/work/804]
+                </a>, a work surviving in at least 3 manuscripts
+                        including <li><span><span class="footnote-content"> ms London,
+                            British Library, Add. 14647, f. 40-45 and Add. 14651, f. 70v-81</span></span></li>. </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib3025-1">1</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/3025">http://syriaca.org/person/3025</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Tabitha </span>
+                    </span>
+                </span> <a href="/804-39" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Our comfort and our
+                            visitor </span>
+                    </span>
+                </span> <a href="/804-60" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Daughter of the Gazelle
+                        </span>
+                    </span>
+                </span> <a href="/804-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Euphemia</span> was female. <a href="/804-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Place of residence: </h4><p class="indent"><span class="tei-persName">Euphemia</span> resided in <span class="tei-placeName">Amida</span>.
+                             <a href="/804-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent"><span class="tei-persName">Euphemia</span> was a martyr. <a href="/804-10" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Euphemia</span> was a martyr.  <a href="/804-58" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Euphemia</span> was a saint. <a href="/804-9" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">Mary and Euphemia were siblings. <a href="/804-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Maria was the child of Anonymi 3610 and Euphemia. <a href="/804-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Euphemia and Anonymous 3615 were friends. <a href="/804-48" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
+                            John of Ephesus 
+                            commemorated
+                            Euphemia.
+                         <a href="/804-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">Euphemia
+                            took a husband
+                            and had one daughter, who was trained in religion. <a href="/804-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            dedicated her life to asceticism and charitable works.  <a href="/804-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia and
+                            her daughter
+                            wove goat's wool and used half of the proceeds to feed the poor, the
+                            sick, the prisoners, and the disabled in their community.  <a href="/804-27" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia and
+                            her daughter
+                            labored tirelessly in their charitable endeavors.  <a href="/804-28" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            always refused charity for herself and her daughter, and so
+                            they never ate except from the proceeds of their labor in their house.
+                         <a href="/804-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            hired rooms to shelter Anonymi 3611 who had been expelled from their convents
+                            during the persecution.  <a href="/804-34" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            went around to all of the
+                                wealthy people in the city of Amida and asked for
+                            donations to distribute to the poor.  <a href="/804-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            helped those outside of Amida as well and took the sick to the superintendents of the
+                                hospitals for care.  <a href="/804-37" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After thirty years of service, Euphemia aroused the
+                            envy of those who held power in the Church.  <a href="/804-40" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Those who held power in the church in Amida and tried
+                            unsuccessfully to force Euphemia to share in their impiety.  <a href="/804-41" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia's
+                            persecutors imprisoned her for thirty days, then exiled her because her
+                            imprisonment caused unrest in the community.  <a href="/804-42" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia and
+                            her daughter
+                            went into exile and were persecuted for five years.  <a href="/804-43" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            returned to Amida and stayed at a certain gentleman's house.
+                         <a href="/804-44" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The adversaries found out that Euphemia returned to
+                                Amida and
+                            sent a summons for her.  <a href="/804-49" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            fell ill, blessed her daughter Maria, and died.
+                         <a href="/804-50" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Mary passed
+                            away ten days before Euphemia. <a href="/804-53" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Euphemia
+                            completed thirty-five years in the course of perfection -- thirty
+                            administering to saints and five in persecution, which led to martyrdom.
+                         <a href="/804-57" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Euphemia</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/person/3025, 2025-03-25T13:11:51.85-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
+                        John
+                        of Ephesus
+                        
+                    </a></li><li><a href="/aggregate/person/3610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3610"/>Anonymi 3610</a></li><li><a href="/aggregate/person/3611.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3611"/>Anonymi 3611</a></li><li><a href="/aggregate/person/3612.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3612"/>Anonymi 3612</a></li><li><a href="/aggregate/person/3613.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3613"/>Anonymi 3613</a></li><li><a href="/aggregate/person/3615.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3615"/>Anonymous 3615</a></li><li><a href="/aggregate/person/3025.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3025"/>Euphemia</a></li><li><a href="/aggregate/person/3232.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3232"/>Maria of Amida</a></li><li><a href="/aggregate/person/1880.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1880"/>Mary</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li></ul></div></div></div></div></div></div></body></html>

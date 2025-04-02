@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Suffering</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Suffering</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/suffering">http://syriaca.org/taxonomy/suffering</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus responded to a letter of
+                            Eupraxius
+                            answering a series of nine questions about the incarnation, the Trinity,
+                            the crucifixion, circumcision, and aspects of Christian ethics.
+                            
+                                
+                            
+                         <a href="/3209-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Heracliana 
+                            arguing that the trials of monks on behalf of God's people was foretold by
+                            Isaiah 18.7.
+                            
+                                
+                            
+                         <a href="/3239-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Ephraim began
+                            to persecute the community, 
+                            so that they were divided over the territories of Edessa,
+                            Samosata, 
+                            Izla, 
+                            Melitene, 
+                            Perrhe, and 
+                            ʿArab.  <a href="/827-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> With regard to the mutilation of Thomas, Severus advises
+                                Aurelius
+                            to allow him his priestly office if the mutilation was performed by a
+                            physician because of an illness, but to deny him if Thomas mutilated
+                            himself.  <a href="/3076-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> 
+                            For a third time, the community was forced to leave
+                            their convent,
+                            travelling to Izla, 
+                            ʿArab, and 
+                            Dara.  <a href="/827-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Between
+                                513 and 518, Severus sent a letter to Cassian concerning
+                            the treatment of a man
+                                whose genitals had been cut off.  <a href="/3075-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>John confronted Theodora about the
+                            corrupt bishops and the persecution of Christians. Theodora, angry,
+                            sought to punish the jealous bishops, but relented after John interceded on
+                            their behalf. She commanded John to cease his
+                            ordinations, something he was glad to do due to a growing illness.
+                         <a href="/817-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> In reference to Thomas, Severus refutes Cassian's blaming of
+                            the mutilation on the corrupt bishop Julian,
+                            suggesting instead that Thomas be allowed to remain in the clergy on the
+                            condition that the accident was due to illness performed by a physician.
+                         <a href="/3075-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Misael
+                            delivered Severus's church from the persecution of Ægilas.  <a href="/3042-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Harfat's ascetic practice consisted of living in solitude on a remote 
+                            mountain where he wept constantly in sorrow over his great sins.
+                         <a href="/803-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            In 542
+                            a great plague his the empire and everyone was in perturbation and doubt and confusion.
+                            Mare, in
+                            affliction and sorrow, occupied himself to fervant prayer.  <a href="/828-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">mental: </span><span class="tei-persName">Abraham</span> was suffering  <a href="/799-3" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Eupraxius sent a letter to
+                            Severus
+                            asking a series of nine questions about the incarnation, the Trinity,
+                            the crucifixion, circumcision, and aspects of Christian ethics.
+                            
+                                
+                            
+                         <a href="/3209-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            The blessed
+                                man was suffering and in great pain from a curse.  <a href="/810-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Suffering</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/suffering, 2025-03-25T13:21:00.209-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
+                        Theodora, Roman empress
+                    </a></li><li><a href="/aggregate/person/1555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1555"/>Abraham the Recluse</a></li><li><a href="/aggregate/person/2588.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2588"/>Aegilas</a></li><li><a href="/aggregate/person/1932.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1932"/>Anonymous 1932</a></li><li><a href="/aggregate/person/2614.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2614"/>Aurelius</a></li><li><a href="/aggregate/person/2425.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2425"/>Cassian</a></li><li><a href="/aggregate/person/2274.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2274"/>Ephrem of
+                        Amida</a></li><li><a href="/aggregate/person/2647.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2647"/>Eupraxius</a></li><li><a href="/aggregate/person/1771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1771"/>Harphat</a></li><li><a href="/aggregate/person/2478.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2478"/>Heracliana</a></li><li><a href="/aggregate/person/1813.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1813"/>John of Hephaestopolis</a></li><li><a href="/aggregate/person/2690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2690"/>Julian</a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/1934.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1934"/>Monks of Amida</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2772.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2772"/>Thomas</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/67.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/67"/>Dara</a></li><li><a href="/aggregate/place/2775.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2775"/>Edessa</a></li><li><a href="/aggregate/place/2800.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2800"/>Izla</a></li><li><a href="/aggregate/place/2818.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2818"/>Melitene</a></li><li><a href="/aggregate/place/2839.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2839"/>Samosata</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li><li><a href="/aggregate/place/3057.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/3057"/>ʿArab</a></li><li><a href="/aggregate/place/94.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/94"/>Ḥiṣn Manṣūr</a></li></ul></div></div></div></div></div></div></body></html>

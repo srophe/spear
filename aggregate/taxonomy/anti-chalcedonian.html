@@ -1,0 +1,289 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Anti-Chalcedonian</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Anti-Chalcedonian</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/anti-chalcedonian">http://syriaca.org/taxonomy/anti-chalcedonian</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            the presbyters of Alexandria
+                            defending his communion with the Christians of
+                            Isauria
+                            despite his stance of moderation with regard to the Henotikon.
+                            
+                                
+                            
+                         <a href="/3183-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Hippocrates the Scholastic 
+                            discussing his refusal to commune with anyone who will not anathematize the
+                            Council of Chalcedon.
+                            
+                                
+                            
+                         <a href="/3191-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to 
+                            the monks of 
+                            Mor Bassus
+                            explaining why he takes a more relaxed attitude to commemorating the names of Chalcedonians as a bishop
+                            than he did as a monk.
+                         <a href="/3184-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Dioscorus 
+                            on the subject of receiving Chalcedonians who sought communion with non-Chalcedonians.
+                            
+                                
+                            
+                         <a href="/3018-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Soteric discussing the
+                            investigation of and efforts to depose 
+                            Macedonius II.
+                            
+                                
+                            
+                         <a href="/3242-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter 
+                            arguing against rebaptism and reanointing for those converting from Chalcedonianism. 
+                         <a href="/3088-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Thomas the Syncellus on Christology
+                            and his reasons for rejecting the Council of Chalcedon.
+                            
+                                
+                            
+                         <a href="/3162-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Caesaria Hypatissa discussing a hagiographic story about
+                            Nisthora predicting that an emperor would not have 
+                            a son while the Council of Chalcedon remained in force.
+                            
+                                
+                            
+                         <a href="/3199-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Anastasius I
+                            expressing his refusal to recant his condemnation of the Council of Chalcedon and 
+                            Leo's 
+                            Tome. He preferred exile to recanting.
+                            
+                                
+                            
+                         <a href="/3190-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Those who thought the Henotikon was insufficient without an 
+                            anathema of Chalcedon refused to commune with those who thought is was sufficient. 
+                        
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with the closely related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-19">3109-19</a></span>, <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-18">3109-18</a></span> <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-17">3109-17</a></span>.
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with the closely related events: 3109-19, 3109-18 3109-17.
+                             <a href="/3109-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Anatolius prophesied the death of those
+                            who communed with non-Chalcedonians who accepted the Henotikon even though it did 
+                            not anathematize Chalcedon. He was forced to repent when his prophecies did not come true.
+                        
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with the closely related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-19">3109-19</a></span>, <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-18">3109-18</a></span> <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-17">3109-17</a></span>.
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with the closely related events: 3109-19, 3109-18 3109-17.
+                             <a href="/3109-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus healed a man with boils who thought he was
+                            going to die because Anatolius prophesied the death of those
+                            who communed with non-Chalcedonians who accepted the Henotikon even though it did 
+                            not anathematize Chalcedon.
+                        
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with the closely related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-19">3109-19</a></span>, <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-18">3109-18</a></span> <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3109-17">3109-17</a></span>.
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with the closely related events: 3109-19, 3109-18 3109-17.
+                             <a href="/3109-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            The presbyters of Alexandria wrote a letter to
+                            Severus criticizing him for 
+                            being in communion with rigorous anti-Chalcedonians in
+                            Isauria.
+                            
+                                
+                            
+                         <a href="/3183-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Oecumenius sent a letter to
+                            Severus discussing
+                            Christology and expressing doubts about non-Chalcedonian Christology.
+                            
+                                
+                            
+                         <a href="/3095-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Patricius,
+                            Severus,
+                            Paul, and
+                            Julian of Halicarnassus
+                            agressively questioned
+                            Macedonius II about his efforts to promote
+                            the Council of Chalcedon against the wishes of
+                            Anastasius I.
+                            
+                                
+                                
+                            
+                         <a href="/3242-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus, 
+                            Peter the Iberian, 
+                            Theodore, and
+                            Isaiah of Gaza
+                            checked the advances of the Chalcedonians. 
+                         <a href="/3016-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            The monk Nisthora died 
+                            but came back to life to inform the messenger of 
+                            Theodosius II that he would not have a son
+                            because the empire was about to become "Nestorian," i.e. Chalcedonian.
+                         <a href="/3199-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Non-Chalcedonians in 
+                            Isauria opposed 
+                            Philoxenus because he held that the 
+                            Henotikon was sufficient for communion between Christians.
+                         <a href="/3183-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime in the early 520s
+                            Isidore, 
+                            Thomas, and 
+                            Epimachus traveled to 
+                            Pelusium to support the non-Chalcedonian cause.
+                         <a href="/3107-48" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sought the approval of 
+                            Dioscorus in communing with 
+                            Eleusinius and
+                            Proclus but not
+                            Soteric or 
+                            Asterius.
+                            
+                                
+                                
+                                
+                            
+                         <a href="/3190-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            After rejecting the Council of Chalcedon and the Tome of Leo,
+                            Peter Mongus
+                            communed with Chalcedonians.
+                         <a href="/3017-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            responded to John by refusing to accept the synod of Chalcedon as a
+                            repudiation of Nestorius and Eutyches, because the
+                            Chalcedonian creed and the Tome of Leo support
+                            Nestorianism; Severus does not believe that anathematizing Eutyches makes the
+                            Council of Chalcedon legitimate, because the followers of
+                                Arius were
+                            still heretics even though they repudiated the teachings of Sabellius.  <a href="/3004-79" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Stephen sent a letter to 
+                            Severus 
+                            assuring him of his orthodox beliefs.
+                        
+                    The person ordained in the passage is likely 
+                    <span class="tei-persName">Stephen</span>
+                    but that identification is not certain.
+                 <a href="/3183-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus held a council in
+                            Antioch with bishops from 
+                            the East.
+                            They condemned the Council of Chalcedon and 
+                            Leo's 
+                            Tome.
+                         <a href="/3190-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus reqquired 
+                            the monastery of Mor Tumo
+                            to erect a public declaration of the orthodox (non-Chalcedonian) faith.
+                         <a href="/3093-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Asterius attempted to convince 
+                            Severus to recant 
+                            his condemnation of the Council of Chalcedon and 
+                            Leo's 
+                            Tome. He would not recant and declared his
+                            intent to suffer exile rather than recant.
+                            
+                                
+                            
+                         <a href="/3190-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Anti-Chalcedonian</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/anti-chalcedonian, 2025-03-25T13:11:02.585-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>
+                        Eutyches
+                    </a></li><li><a href="/aggregate/person/1091.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1091"/>
+                        Isaiah
+                        of Gaza
+                    </a></li><li><a href="/aggregate/person/579.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/579"/>
+                        Julian
+                        of Halicarnassus
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/56.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/56"/>
+                        Oecumenius, comes
+                    </a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/2602.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2602"/>Anatolius</a></li><li><a href="/aggregate/person/3786.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3786"/>Anonymi 3786</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/2609.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2609"/>Asterius</a></li><li><a href="/aggregate/person/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2610"/>Asterius</a></li><li><a href="/aggregate/person/2620.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2620"/>Caesaria</a></li><li><a href="/aggregate/person/2430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2430"/>Dioscorus II</a></li><li><a href="/aggregate/person/2567.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2567"/>Eleusinius</a></li><li><a href="/aggregate/person/2431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2431"/>Epimachus</a></li><li><a href="/aggregate/person/2658.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2658"/>Hippocrates</a></li><li><a href="/aggregate/person/2441.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2441"/>Isidore</a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of
+                        Claudiupolis</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/2696.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2696"/>Macedonius II</a></li><li><a href="/aggregate/person/2725.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2725"/>Nisthora</a></li><li><a href="/aggregate/person/2281.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2281"/>Patricius</a></li><li><a href="/aggregate/person/2730.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2730"/>Paul</a></li><li><a href="/aggregate/person/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2736"/>Peter Mongus</a></li><li><a href="/aggregate/person/680.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/680"/>Peter the Iberian</a></li><li><a href="/aggregate/person/44.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/44"/>Philoxenos of Mabbug</a></li><li><a href="/aggregate/person/2569.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2569"/>Proclus</a></li><li><a href="/aggregate/person/2555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2555"/>Sabellius the Libyan</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2551.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2551"/>Soteric</a></li><li><a href="/aggregate/person/2442.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2442"/>Stephen</a></li><li><a href="/aggregate/person/2715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2715"/>Theodore [here Theodosios]</a></li><li><a href="/aggregate/person/1529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1529"/>Theodosius II</a></li><li><a href="/aggregate/person/2515.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2515"/>Thomas</a></li><li><a href="/aggregate/person/2770.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2770"/>Thomas</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/1464.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1464"/>Dayro d-Mor Tumo</a></li><li><a href="/aggregate/place/2604.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2604"/>East</a></li><li><a href="/aggregate/place/2799.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2799"/>Isauria</a></li><li><a href="/aggregate/place/2690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2690"/>Monastery of Bassus</a></li><li><a href="/aggregate/place/1473.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1473"/>Pelusium</a></li></ul></div></div></div></div></div></div></body></html>

@@ -1,0 +1,432 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Monasticism</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Monasticism</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/monasticism">http://syriaca.org/taxonomy/monasticism</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Philip discussing
+                            sin, repentance, and the monastic life.
+                            
+                                
+                            
+                         <a href="/3196-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus of Antioch wrote a letter to 
+                            the monastery of Mar Bassus urging them
+                            to remove a monk from their monastery who unlawfully abandoned his wife and children when he entered
+                            the monastery.
+                         <a href="/3074-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-520
+                            Severus of Antioch sent a letter to 
+                            John and 
+                            John on the subjects of 
+                            whether or not non-Chalcedonian exiles in Egypt should take communion; and the question of what to do about 
+                             Epimachus , a devout man ordained to the clergy 
+                            but who had entered into a second marriage; and questions about the ordination of deacons and deaconesses in monasteries.
+                         <a href="/3099-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Theodore urging him to keep
+                            his monastic vows.
+                            
+                                
+                            
+                         <a href="/3010-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Theodore cautioning him 
+                            against entering the monastic life unless his wife
+                            also agreed to do the same.
+                            
+                                
+                            
+                         <a href="/3011-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Close to death,the
+                                blessed man went into the vestry to pray. After a
+                                while,the
+                                archimandrite entered to find the man praying on
+                            his mat, as if he was asleep. As  the
+                                Archimandrite spoke,the man gave up his
+                            soul to God.  <a href="/821-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Betwen 521
+                                and 531,Severus wrote a letter to Simeon the Presbyter
+                            about those who gave up the lifestyle of Simeon the Stylite.
+                         <a href="/3104-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After leaving Thella, John returned to his former convent in the
+                            city of Callinicius.  <a href="/816-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon
+                            planned and built his 
+                                cell  two miles from  Amida  <a href="/815-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After much prayer,Mare was led by God to Paul the
+                            Anchorite who received him as his student.  <a href="/828-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mar
+                            Samuel stood on a column for a time before he began to build
+                            his convent. Abraham
+                                III sent his monks to help Mar Samuel build the
+                            convent.  <a href="/10510-113" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Abraham
+                            comes to Constantinople to petition John of Ephesus to
+                            become a monk. He experiences a period of probation before being
+                            accepted.  <a href="/831-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After spending five years with Paul,Mare exceeded his
+                            teacher in prayer, asceticism, and moderation. Many criticized Mare for the severity
+                            of his practices.  <a href="/828-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> In 
+                                355/6
+                                A. Gr.
+                                        667
+                             Abraham
+                                Qidūnāyā  became a hermit.  <a href="/8559-120" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After a period of some years, Zwtʾ and
+                                Daniel
+                            were also accepted as deacons  <a href="/831-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> While staying with Paul,Mare was tired of being pestered by his family, so he
+                                left Syria and journeyed to Egypt and Thebais, where he
+                            went to and fro in the desert with the saints, observing the prayer
+                            practices of monks and solitaries.  <a href="/828-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Thomas and
+                            his wife built
+                            a monastery.  <a href="/813-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Elijah,Theodore, and their sisters turned
+                            their home into a hospice for the needy, practicing asceticism, fasting,
+                            praying, reading Scripture just like a monastery.  <a href="/823-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Followers of the Council of Chalcedon expelled
+                            Christians from Alexandria and Mare from his desert
+                            cell. On account of the persecution,Mare resolved to
+                            travel to Constantinople to err his grievacnes with the king and queen.  <a href="/828-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Brothers and sisters came from Cappadocia to educate
+                                Thomas and his wife in religion. Many followed Thomas in selling
+                            their possessions. Thomas devoted himself to an ascetic life.  <a href="/813-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>The monk who stole
+                             found a cell for himself, and lived in it for a week.
+                         <a href="/824-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to 
+                            Jannia concerning
+                            her leadership as archimandritess. 
+                            
+                                
+                            
+                         <a href="/3013-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Elijah, 
+                            Theodore, and 
+                            their sisters
+                            decided to expand their ministry to the maltreated and persecuted believers in
+                            Syria,
+                            Arabia,
+                            Callinicus, selling everything that they owned.  <a href="/823-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> 
+                            For a third time, the community was forced to leave
+                            their convent,
+                            travelling to Izla, 
+                            ʿArab, and 
+                            Dara.  <a href="/827-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> In 
+                                529
+                                840
+                            , John ordained seventy men from the convents of Amida.  <a href="/816-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Theodore the Deacon asked 
+                            Severus about the commands 
+                            Jannia gave him. 
+                            
+                                
+                            
+                         <a href="/3013-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After twenty years, Sergius received permission from Simeon to leave the
+                            monastery and shut himself up in a certain place close to the village.
+                         <a href="/797-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Elijah died
+                            before becoming a monk, but his wife and daughter joined a convent
+                                in Mabbug.
+                                The
+                                sisters presided over a monastery in N'ns, in the region
+                                of Anzetene.  <a href="/823-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Susan sought
+                            out the women's monastery between Ascalon and
+                                Gaza.
+                         <a href="/819-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Harfat wanted to divide the family wealth and property in order to give it to the poor.
+                            His kinsman Anonymi 3764 refused. Harfat
+                            took 5000 denarii cash and distributed it to the poor. Then he withdrew to a monastery.
+                         <a href="/803-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mare confronted Justinian and Theodora concerning
+                            the persecution. Because of his words and dress, they esteemed him a
+                            holy man, and gave him a hundred weight of gold, which he promptly threw
+                            away.  <a href="/828-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            advises Jannia
+                            to rule with fear and mercy, bringing forth repentance through ascetic
+                            acts of penance, and dismissing women if the community is threatened by
+                            their actions.  <a href="/3013-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Mary
+                             endured the 15-year persecution during her 30 years as a
+                            monastic.  <a href="/820-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Susan was at
+                            first refused admission to the monastery due to her age, but after three
+                            days of waiting outside the gate and weeping, she was admitted.  <a href="/819-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Between
+                                513 and 518, Severus wrote a letter to Misael, thanking him
+                            for his generosity and urging him not to become a solitary.  <a href="/3042-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            encourages Jannia to lead by example, citing the apostle Paul and
+                            King David as models.  <a href="/3013-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Feeling guilty about the hundredweight gold,the queen sent her
+                            chamberlains several times to Mare to seek his
+                            forgiveness.  <a href="/828-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sometime
+                                between 530 and 536, in the month of November,a stranger came to
+                                the convent outside
+                                    of Amida. Dirty and worn out,he stood at vespers
+                            and at table without speaking.  <a href="/821-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Between A.D. 521 and 526
+                            the community was
+                            forced to leave  their
+                            monastery by the defenders of the corrupt synod
+                            of Chalcedon.
+                            The community was so
+                            large, that the monastery
+                            of Mar Mama in the village of Hzyn 
+                            in Ṭyšf could not hold them.  <a href="/827-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            When Theodore took his monastic vows he considered
+                            entering the the house of the saintly presbyter Theodore 
+                            but chose not to do so.
+                         <a href="/3010-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            rebuked Misael
+                            for his desire to leave public life in order to become a solitary.
+                         <a href="/3042-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            commanded the
+                                brothers to compel Stephen to accept
+                            the position of bishop over the Anasarthians.
+                         <a href="/3058-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Many began to flock to Mare for a blessing, and they were amazed at his prayer
+                            and dress. Mare refused to eat anything that was not produced by the
+                            labour of his hands.  <a href="/828-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> To convince Misael to remain in his position, Severus cited several
+                            scripture passages, as well as an historical anecdote of Anonymous 3057 and
+                                Anonymous
+                                3058 who gave up their solitude in order to combat the
+                            heresy of Arius.  <a href="/3042-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After many years, Mare was fatigued due to his strenuous way of life.
+                                He sought out one of Theodora's chamberlains, who secured the goal necessary to
+                            buy a villa suited for a life of retreat.  <a href="/828-22" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Habib travelled as far as Syria.  <a href="/793-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Susan's
+                                companions
+                            in the monastery were skeptical of her devotion and tested her.  <a href="/819-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Susan
+                            dedicated herself to fasting, praying, and keeping vigil, which after
+                            two years, made her the most devout person in the monastery.  <a href="/819-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Because of the persecution of John, Thomas and his
+                            followers departed from Armenia. Travelling to the district of
+                                Claudias, Thomas build two monasteries on a mountain overlooking
+                            the Euphrates.  <a href="/813-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Susan
+                            changed her name so that she would remain hidden from her parents who were
+                            searching for her.  <a href="/819-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Thomas and Maria and their sons committed themselves to a diet of
+                            only fruit and some grain, tasting bread and wine only when absolutely
+                            necessary.  <a href="/813-27" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>For five
+                                yearsthe
+                                community attracted many into their company, some coming
+                            as far as Ingilene. All were impressed by the religious devotion
+                                of the
+                                community; all who joined them turned from sin,
+                            committing their lives to prayer, worship, singing, and monastic
+                            devotion.  <a href="/827-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After ten years of service in the monastery, the Chalcedonian
+                            persecution forced Susan and the nuns to choose between conforming or going into
+                            exile.  <a href="/819-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> The majority of the nuns in Susan's convent
+                            conformed, but some chose exile.  <a href="/819-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-525
+                            Anonymous 3751 conducted a trial in an un-canonical fashion to
+                            addressed accusations of sexual sin between John and 
+                            Anonymi 3752. This brought him into conflict with the archimandritess
+                            Heracliana                            
+                        
+                    The details of this event are difficult to decipher. 
+                 <a href="/3149-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Philip wrote a letter to
+                            Severus discussing a monk
+                            who received ordination by due to his sin early in life tried to reject
+                            his ordination.
+                            
+                                
+                            
+                         <a href="/3196-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>After five
+                                years in Mar
+                                Mara, the
+                                community returned to Amida, but because
+                            of persecution, relocated to the border territory of the East, near
+                                the hot
+                                springs of Abarne, settling at the convent of the
+                                Poplars.  <a href="/827-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>John moved
+                                to Constantinople because of a spiritual loss that
+                            consistently brought him to tears.  <a href="/843-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anonymi 3695
+                            went to fetch Anonymi
+                                3662, who immediately came to the cave to retrieve
+                                Susan.
+                            Susan did not respond to their entreaties, since demons had visited her
+                            the day before disguised as the sisters in an attempt to dislodge her
+                            from the hermitage.  <a href="/819-53" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Even though Anonymi
+                                3662 managed to convince Susan that they were
+                            not demons, she refused to return to the monastery with them as she
+                            wished to live as a hermit. They agreed to bring her a jug of water and
+                            seven bread cakes a week for her sustenance on the condition that she
+                            will not leave without giving them prior notice. This went on for three
+                            years, during which time the fame of the Susan and her sisters grew.
+                         <a href="/819-54" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anonymi 3664
+                            came to Susan
+                            and Anonymi
+                                3352 from Alexandria and from Libya.  <a href="/819-55" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro and
+                                 and his ten
+                                disciples had been Susan's neighbors in
+                            a monastery in Palestine before they were driven out of their
+                            monastery by the Chalcedonian persecution. They made their way to
+                                Susan and
+                                Anonymi
+                                3662.  <a href="/819-57" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Monastery authorities were becoming resentful of Hala giving to the
+                            poor.  <a href="/825-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Theodore
+                            gave all his wealth to the poor and needy.  <a href="/848-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> When Mare was
+                            thirty, he went against his family's wish for him to marry by committing
+                            himself to the Lord.  <a href="/828-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Stephen
+                            intended to live an ascetic life, but he was sickly and feeble of body.
+                         <a href="/805-66" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After dinner, the
+                                man began to weep. During evening worship, he appeared to
+                            sleep on his rug, crying throughout the night.  <a href="/809-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Peter, later
+                            bishop of Smyrna, and Photius entered the
+                            Monastery of the Fathers in the Enaton of Alexandria.  <a href="/847-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>John 
+                            describes the lengthy process by which men enter the monastery of 
+                            Anonymous 3762. After one month of testing 
+                            they may become penitents, after three months they many be partially tonsured and wear a limited monastic habit. 
+                            Only after three years they may become monks, fully tonsured and wearing the complete habit.  <a href="/812-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Abbi lived
+                            nine years in the monastic community at the village of Ḥzyn.  <a href="/806-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After six years of living in the pit, Thomas's trials left
+                            him physically ill and infirm.  <a href="/805-72" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro and
+                                Anonymi
+                                3665 settled near Susan and Anonymi 3662. Many
+                            others followed and settled near the holy sisters. Anonymi 3662 and
+                                Susan did
+                            not wish to cause scandal by living in such close proximity to men, so
+                            they endeavored to leave their tower and go further into the desert.
+                         <a href="/819-79" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Speaking with the
+                                archimandrite,the man decided to
+                            stay in the
+                                convent for the winter. He continued in his
+                            silence and weeping, garnering the appreciation of the brothers, who
+                            were encouraged by him.  <a href="/821-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> When strangers came to the monastery Hala would wash and
+                            annoint them.  <a href="/825-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Kashish
+                            entered the  Monastery of
+                                John Urtaya  in  Amida. <a href="/842-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anonymi 3693
+                            were the inhabitants of the Monastery of the Fathers in the Enaton who admired
+                            the asceticism of Peter and Photius.  <a href="/847-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Valieriena thanking
+                            God for her new position as archimandritess and giving advice on how to lead 
+                            the holy virgins under her care. 
+                            
+                                
+                            
+                         <a href="/3029-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            James withdrew from 
+                            Convent of the Eddessens and received the 
+                            monastery of Beth Musika.  <a href="/807-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro and
+                                Anonymi
+                                3665 felt ashamed once they learned of Susan's plan to
+                            remove herself and Anonymi 3662 to the desert and offered to build them an
+                            enclosed monastery with a tower within the village, so that they could
+                            be isolated but remain close to the other holy men and women who
+                            travelled to be near her. Susan reluctantly agreed.  <a href="/819-80" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> In his tears and sighs,the blessed man prophecied that he would die in three
+                            days. While on his deathbed, he shared with the
+                            brothers that he had been thirty-nine years since he had taken his
+                            monastic vows, asking for their prayers and blessings.  <a href="/821-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>The old
+                            man continuously asked the archimandrite of the Amida convent for
+                            a dismissal. Curious, John asks the man about his eating, sleeping, and prayer
+                            habits. He eats
+                            and prays the way he does out of recognition of human sinfulness.
+                         <a href="/809-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sergius, who
+                            was the disciple of Simeon was also a monk and a recluse, who lived an
+                            aescetic life in an enclosure. In order to avoid idleness, Simeon and Sergius taught young
+                            boys and infants from their enclosure through a window.  <a href="/797-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Monasticism</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/monasticism, 2025-03-25T13:10:07.245-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
+                        John
+                        of Ephesus
+                        
+                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
+                        Theodora, Roman empress
+                    </a></li><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
+                </a></li><li><a href="/aggregate/person/3183.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3183"/>Abba</a></li><li><a href="/aggregate/person/1536.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1536"/>Abi</a></li><li><a href="/aggregate/person/3187.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3187"/>Abraham III</a></li><li><a href="/aggregate/person/1113.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1113"/>Abraham Qidounaya</a></li><li><a href="/aggregate/person/1554.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1554"/>Abraham the Priest</a></li><li><a href="/aggregate/person/3035.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3035"/>Anonymi 3035</a></li><li><a href="/aggregate/person/3077.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3077"/>Anonymi 3077</a></li><li><a href="/aggregate/person/3079.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3079"/>Anonymi 3079</a></li><li><a href="/aggregate/person/3693.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3693"/>Anonymi 3693</a></li><li><a href="/aggregate/person/3706.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3706"/>Anonymi 3706</a></li><li><a href="/aggregate/person/3715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3715"/>Anonymi 3715</a></li><li><a href="/aggregate/person/3752.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3752"/>Anonymi 3752</a></li><li><a href="/aggregate/person/1988.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1988"/>Anonymous 1988</a></li><li><a href="/aggregate/person/3057.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3057"/>Anonymous 3057</a></li><li><a href="/aggregate/person/3058.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3058"/>Anonymous 3058</a></li><li><a href="/aggregate/person/3660.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3660"/>Anonymous 3660</a></li><li><a href="/aggregate/person/3662.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3662"/>Anonymous 3662</a></li><li><a href="/aggregate/person/3664.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3664"/>Anonymous 3664</a></li><li><a href="/aggregate/person/3665.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3665"/>Anonymous 3665</a></li><li><a href="/aggregate/person/3695.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3695"/>Anonymous 3695</a></li><li><a href="/aggregate/person/3718.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3718"/>Anonymous 3718</a></li><li><a href="/aggregate/person/3751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3751"/>Anonymous 3751</a></li><li><a href="/aggregate/person/3762.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3762"/>Anonymous 3762</a></li><li><a href="/aggregate/person/3764.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3764"/>Anonymous 3764</a></li><li><a href="/aggregate/person/3773.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3773"/>Anonymous 3773</a></li><li><a href="/aggregate/person/3776.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3776"/>Anonymous 3776</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/3204.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3204"/>Daniel</a></li><li><a href="/aggregate/person/1705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1705"/>Elijah</a></li><li><a href="/aggregate/person/2431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2431"/>Epimachus</a></li><li><a href="/aggregate/person/3763.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3763"/>Habib</a></li><li><a href="/aggregate/person/1769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1769"/>Hala</a></li><li><a href="/aggregate/person/1771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1771"/>Harphat</a></li><li><a href="/aggregate/person/2478.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2478"/>Heracliana</a></li><li><a href="/aggregate/person/1933.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1933"/>James of the Monastery of the
+                        Edessenes</a></li><li><a href="/aggregate/person/2669.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2669"/>Jannia</a></li><li><a href="/aggregate/person/3225.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3225"/>John</a></li><li><a href="/aggregate/person/2428.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2428"/>John</a></li><li><a href="/aggregate/person/2427.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2427"/>John</a></li><li><a href="/aggregate/person/2477.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2477"/>John</a></li><li><a href="/aggregate/person/3226.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3226"/>John</a></li><li><a href="/aggregate/person/50.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/50"/>John of Tella</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/1862.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1862"/>Malka</a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/3233.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3233"/>Maria the Armenian</a></li><li><a href="/aggregate/person/3234.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3234"/>Maro</a></li><li><a href="/aggregate/person/1881.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1881"/>Mary the Mourner</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/1934.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1934"/>Monks of Amida</a></li><li><a href="/aggregate/person/1983.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1983"/>Paul the Apostle</a></li><li><a href="/aggregate/person/1980.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1980"/>Paul the Mourner</a></li><li><a href="/aggregate/person/2011.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2011"/>Peter</a></li><li><a href="/aggregate/person/2437.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2437"/>Philip</a></li><li><a href="/aggregate/person/3014.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3014"/>Photius</a></li><li><a href="/aggregate/person/3250.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3250"/>Samuel</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2754.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2754"/>Simeon</a></li><li><a href="/aggregate/person/2095.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2095"/>Simeon</a></li><li><a href="/aggregate/person/2099.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2099"/>Simeon the Solitaire</a></li><li><a href="/aggregate/person/744.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/744"/>Simeon the Stylite</a></li><li><a href="/aggregate/person/2577.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2577"/>Stephen</a></li><li><a href="/aggregate/person/3010.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3010"/>Stephen</a></li><li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2092"/>Suzanna</a></li><li><a href="/aggregate/person/3140.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3140"/>Theodore</a></li><li><a href="/aggregate/person/2767.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2767"/>Theodore</a></li><li><a href="/aggregate/person/2712.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2712"/>Theodore</a></li><li><a href="/aggregate/person/2766.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2766"/>Theodore</a></li><li><a href="/aggregate/person/2108.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2108"/>Theodore Castrensus</a></li><li><a href="/aggregate/person/2127.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2127"/>Thomas</a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian</a></li><li><a href="/aggregate/person/2780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2780"/>Valeriana</a></li><li><a href="/aggregate/person/3270.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3270"/>Zwṭʾ</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/572"/>Alexandria</a></li><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/2737.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2737"/>Amida</a></li><li><a href="/aggregate/place/716.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/716"/>Arabia</a></li><li><a href="/aggregate/place/576.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/576"/>Armenia</a></li><li><a href="/aggregate/place/674.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/674"/>Ascalon</a></li><li><a href="/aggregate/place/2751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2751"/>Beth Bar ʿrubtha</a></li><li><a href="/aggregate/place/2754.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2754"/>Beth Musika</a></li><li><a href="/aggregate/place/2763.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2763"/>Cappadocia</a></li><li><a href="/aggregate/place/2618.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2618"/>Cell of Simeon the Solitary</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/2769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2769"/>Claudias</a></li><li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/586"/>Constantinople</a></li><li><a href="/aggregate/place/67.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/67"/>Dara</a></li><li><a href="/aggregate/place/1528.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1528"/>Dayro d-Urhoye</a></li><li><a href="/aggregate/place/2774.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2774"/>East</a></li><li><a href="/aggregate/place/715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/715"/>Egypt</a></li><li><a href="/aggregate/place/2777.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2777"/>Fathers</a></li><li><a href="/aggregate/place/698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/698"/>Filasṭīn</a></li><li><a href="/aggregate/place/87.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/87"/>Gaza</a></li><li><a href="/aggregate/place/2798.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2798"/>Ingilene</a></li><li><a href="/aggregate/place/2800.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2800"/>Izla</a></li><li><a href="/aggregate/place/109.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/109"/>Kallinikos</a></li><li><a href="/aggregate/place/2810.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2810"/>Libya</a></li><li><a href="/aggregate/place/2812.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2812"/>Mabbug</a></li><li><a href="/aggregate/place/2813.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2813"/>Mar Mama</a></li><li><a href="/aggregate/place/356.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/356"/>Mar Zakkay</a></li><li><a href="/aggregate/place/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2736"/>Monastery of Amida</a></li><li><a href="/aggregate/place/2690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2690"/>Monastery of Bassus</a></li><li><a href="/aggregate/place/2691.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2691"/>Monastery of Theodore</a></li><li><a href="/aggregate/place/2834.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2834"/>Monastery of the Poplars</a></li><li><a href="/aggregate/place/2828.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2828"/>Nʾns</a></li><li><a href="/aggregate/place/2827.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2827"/>Nʾns</a></li><li><a href="/aggregate/place/2718.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2718"/>Smyrna</a></li><li><a href="/aggregate/place/486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/486"/>Syria</a></li><li><a href="/aggregate/place/200.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/200"/>Tella</a></li><li><a href="/aggregate/place/473.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/473"/>The Enaton</a></li><li><a href="/aggregate/place/2785.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2785"/>The hot spring of Abarne</a></li><li><a href="/aggregate/place/2847.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2847"/>Thebais</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li><li><a href="/aggregate/place/3057.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/3057"/>ʿArab</a></li><li><a href="/aggregate/place/2758.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2758"/>ܿBeth Urtaye</a></li><li><a href="/aggregate/place/2796.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2796"/>Ḥzyn</a></li><li><a href="/aggregate/place/2858.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2858"/>Ṭyšf</a></li></ul></div></div></div></div></div></div></body></html>

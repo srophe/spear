@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Alliance with</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Alliance with</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/alliance-with">http://syriaca.org/taxonomy/alliance-with</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus of Antioch, 
+                            Eleusinius and 
+                            Proclus formed an alliance. <a href="/3053-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                     Anthimus sent letters to 
+                     Severus and 
+                     Theodosius who sent synodical letters
+                     to him as well. They agreed to a union in opposition to the Council of Chalcedon.
+                     
+                        
+                        
+                        
+                     
+                   <a href="/839-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch, Antoninus, Constantine,
+                                Cassian,
+                                Timothy IV
+                            and Paul had an alliance. <a href="/3108-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3686 and Anonymi 3687 formed an alliance. <a href="/797-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Gregory of
+                                Nyssa, Bosporius and Helladius formed an
+                            alliance. <a href="/3096-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Gregory
+                                Nazianzen, Bosporius and Theodore formed an
+                            alliance. <a href="/3096-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Paul,
+                                Dorotheus,
+                                Eutherius,
+                                Himerius
+                            and Helladius
+                            formed an alliance. <a href="/3108-33" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Isidore, 
+                            Thomas, and 
+                            Epimachus 
+                            formed an alliance. <a href="/3107-33" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Liberius and
+                                Athanasius, bishop of
+                                Alexandria formed an alliance. <a href="/3096-40" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Abraham and Anonymous 3689 formed an alliance. <a href="/797-48" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Musonius and
+                                Solon
+                            formed an alliance. <a href="/3050-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus, Eleusinius, 
+                            Soteric, and Entrechius 
+                            were united in their opposition to Chalcedon.
+                         <a href="/3019-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Alliance with</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/alliance-with, 2025-03-25T13:10:32.446-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/511.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/511"/>
+                        Gregory
+                        Nazianzen
+                    </a></li><li><a href="/aggregate/person/512.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/512"/>
+                        Gregory
+                        of Nyssa
+                    </a></li><li><a href="/aggregate/person/784.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/784"/>
+                        Theodosius, patriarch of Alexandria
+                    </a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/3686.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3686"/>Anonymi 3686</a></li><li><a href="/aggregate/person/3687.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3687"/>Anonymi 3687</a></li><li><a href="/aggregate/person/3689.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3689"/>Anonymi 3689</a></li><li><a href="/aggregate/person/1592.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1592"/>Anthimus</a></li><li><a href="/aggregate/person/2553.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2553"/>Antoninus</a></li><li><a href="/aggregate/person/354.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/354"/>Athanasius, bishop of Alexandria</a></li><li><a href="/aggregate/person/2490.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2490"/>Bosporius</a></li><li><a href="/aggregate/person/2425.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2425"/>Cassian</a></li><li><a href="/aggregate/person/2443.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2443"/>Constantine</a></li><li><a href="/aggregate/person/2444.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2444"/>Dorotheus</a></li><li><a href="/aggregate/person/2567.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2567"/>Eleusinius</a></li><li><a href="/aggregate/person/2546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2546"/>Entrechius</a></li><li><a href="/aggregate/person/2431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2431"/>Epimachus</a></li><li><a href="/aggregate/person/2445.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2445"/>Eutherius</a></li><li><a href="/aggregate/person/2447.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2447"/>Helladius</a></li><li><a href="/aggregate/person/2491.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2491"/>Helladius</a></li><li><a href="/aggregate/person/2446.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2446"/>Himerius</a></li><li><a href="/aggregate/person/2441.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2441"/>Isidore</a></li><li><a href="/aggregate/person/2494.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2494"/>Liberius</a></li><li><a href="/aggregate/person/2460.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2460"/>Musonius</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/2450.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2450"/>Paul</a></li><li><a href="/aggregate/person/2569.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2569"/>Proclus</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2551.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2551"/>Soteric</a></li><li><a href="/aggregate/person/2492.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2492"/>Theodore</a></li><li><a href="/aggregate/person/2515.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2515"/>Thomas</a></li><li><a href="/aggregate/person/2440.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2440"/>Timothy IV</a></li></ul></div></div></div></div></div></div></body></html>

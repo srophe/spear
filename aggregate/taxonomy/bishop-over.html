@@ -1,0 +1,119 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Bishop over</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bishop over</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/bishop-over">http://syriaca.org/taxonomy/bishop-over</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>Cassian had
+                            ecclesiastical authority over Aurelius. <a href="/3076-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Castor
+                            about dissensions between readers and sub-deacons in his church. 
+                            
+                                
+                            
+                         <a href="/3032-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Peter 
+                            was bishop over
+                             Eutychian 
+                         <a href="/3083-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>Severus
+                            encouraged Castor to preserve order by siding with the subdeacons over
+                                the
+                                readers and singers.  <a href="/3032-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Isidore had
+                            ecclesiastical authority over Anonymi 3045. <a href="/3036-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had ecclesiastical authority over Anonymi 3045. <a href="/3036-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>The inhabitants of
+                                    Anasartha proposed episcopal candidates
+                            to Severus.
+                         <a href="/3058-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Anonymous 3751
+                            was a bishop with authority over
+                            John.
+                         <a href="/3149-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>Severus
+                            desired to ordain Stephen as bishop over the Anasarthians.
+                         <a href="/3058-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Isidore had
+                            ecclesiastical authority over Anonymi 3045. <a href="/3036-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span> Appealing to Cyril's letter to Nestorius and the
+                            example of Severus the
+                                presbyter, Severus urged Stephen to accept
+                            the ordination of Stephen because heretics cannot be expected to follow
+                            canon-law.  <a href="/3086-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus was
+                            compelled to write because of the constant evil things being done in
+                                Isauria.
+                         <a href="/3046-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Last year, Severus compelled
+                                bishop Paul of
+                                    Olba to return to his flock.  <a href="/3046-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Paul refused
+                            to carry out the counsel of Severus to remove the names of those who affirmed the
+                            synod of Chalcedon.  <a href="/3046-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Because Paul has an ordinarily simple disposition, Solon should not
+                            frighten him like a child by forcing him to sign documents.  <a href="/3046-32" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            was a bishop with authority over
+                            Simeon.
+                         <a href="/3030-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Theodore 
+                            was bishop with authority over
+                            Anonymous 3783.
+                         <a href="/3090-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had ecclesiastical authority over Anonymi 3063. <a href="/3045-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Eucharius
+                            had ecclesiastical authority over Firminus and
+                                Anonymi
+                                3101. <a href="/3094-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had ecclesiastical authority over Anonymi 3079. <a href="/3058-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Mara, metropolitan of Amid had ecclesiastical authority over Zota. <a href="/805-96" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bishop over</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/bishop-over, 2025-03-25T13:12:22.915-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/48.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/48"/>
+                        Mara, metropolitan of Amid
+                        
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/3038.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3038"/>Anonymi 3038</a></li><li><a href="/aggregate/person/3039.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3039"/>Anonymi 3039</a></li><li><a href="/aggregate/person/3040.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3040"/>Anonymi 3040</a></li><li><a href="/aggregate/person/3045.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3045"/>Anonymi 3045</a></li><li><a href="/aggregate/person/3063.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3063"/>Anonymi 3063</a></li><li><a href="/aggregate/person/3079.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3079"/>Anonymi 3079</a></li><li><a href="/aggregate/person/3101.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3101"/>Anonymi 3101</a></li><li><a href="/aggregate/person/3751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3751"/>Anonymous 3751</a></li><li><a href="/aggregate/person/3783.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3783"/>Anonymous 3783</a></li><li><a href="/aggregate/person/2614.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2614"/>Aurelius</a></li><li><a href="/aggregate/person/2425.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2425"/>Cassian</a></li><li><a href="/aggregate/person/2527.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2527"/>Castor</a></li><li><a href="/aggregate/person/430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/430"/>Cyril of Alexandria</a></li><li><a href="/aggregate/person/2536.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2536"/>Eucharius</a></li><li><a href="/aggregate/person/2420.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2420"/>Eutychian</a></li><li><a href="/aggregate/person/2537.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2537"/>Firminus</a></li><li><a href="/aggregate/person/2545.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2545"/>Isidore</a></li><li><a href="/aggregate/person/2477.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2477"/>John</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/2534.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2534"/>Severus</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2753.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2753"/>Simeon</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2532.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2532"/>Stephen</a></li><li><a href="/aggregate/person/2533.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2533"/>Stephen</a></li><li><a href="/aggregate/person/2577.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2577"/>Stephen</a></li><li><a href="/aggregate/person/2439.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2439"/>Theodore</a></li><li><a href="/aggregate/person/3011.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3011"/>Zota</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/574.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/574"/>Anasartha</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/99.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/99"/>Isauria</a></li><li><a href="/aggregate/place/2698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2698"/>Olba in Isauria</a></li></ul></div></div></div></div></div></div></body></html>

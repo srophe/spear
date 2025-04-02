@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Leo</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li><a href="/documentation/index.html" class="nav-text">Documentation </a></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Leo</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note">
+                        <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span class="langattr" xml:lang="en" lang="en" dir="ltr">Leo I was one of the most influential bishops of Rome, considerably enlarging the power of the papacy. He acted as leader of his city at a time when the western emperors increasingly became powerless figureheads. Theologically, he is famous as the author of the so-called "Tome of Leo", a treatise in which he insisted that Christ be understood in two natures, fully divine and fully human. This view was accepted at the council of Chalcedon in 451, but proved a decisive bone of contention with the supporters of a miaphysite Christology who accused Leo of splitting Christ into two.</span><span dir="ltr">”  </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib2299-6">6</a></span> </span></span>
+                    </div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/2299">http://syriaca.org/person/2299</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Leo </span>
+                    </span>
+                </span> <a href="/3004-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Leo </span>
+                    </span>
+                </span> <a href="/8559-323" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Leo</span> was male. <a href="/3004-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName"> Leo
+                                </span> was male. <a href="/8559-324" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Leo</span> was Bishop of <span class="tei-placeName"> Rome </span>. <a href="/8559-325" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">Severus of
+                                Antioch had enmity for Leo. <a href="/3004-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
+                            Severus 
+                            cited
+                            Pope Leo.
+                         <a href="/3176-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">
+                            Severus sent a letter to
+                            Anastasius I
+                            expressing his refusal to recant his condemnation of the Council of Chalcedon and 
+                            Leo's 
+                            Tome. He preferred exile to recanting.
+                            
+                                
+                            
+                         <a href="/3190-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus and
+                            the bishops of the East had drawn up a synodal letter to John the archbishop of
+                                    Alexandria, affirming orthodoxy and
+                            condemning the council of Chalcedon, the teachings of Nestorius, and the
+                            Tome of Leo.
+                         <a href="/3057-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> In 
+                                448/9
+                                A. Gr.
+                                        760
+                             Leo 
+                            became Bishop of  Rome
+                            .  Leo I became Pope on 29 September 440.  <a href="/8559-326" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus
+                            responded to John by refusing to accept the synod of Chalcedon as a
+                            repudiation of Nestorius and Eutyches, because the
+                            Chalcedonian creed and the Tome of Leo support
+                            Nestorianism; Severus does not believe that anathematizing Eutyches makes the
+                            Council of Chalcedon legitimate, because the followers of
+                                Arius were
+                            still heretics even though they repudiated the teachings of Sabellius.  <a href="/3004-79" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Severus held a council in
+                            Antioch with bishops from 
+                            the East.
+                            They condemned the Council of Chalcedon and 
+                            Leo's 
+                            Tome.
+                         <a href="/3190-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Asterius attempted to convince 
+                            Severus to recant 
+                            his condemnation of the Council of Chalcedon and 
+                            Leo's 
+                            Tome. He would not recant and declared his
+                            intent to suffer exile rather than recant.
+                            
+                                
+                            
+                         <a href="/3190-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Leo</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/person/2299, 2025-03-25T13:11:37.718-04:00.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>
+                        Eutyches
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2610"/>Asterius</a></li><li><a href="/aggregate/person/2572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2572"/>John
+                        III of Nicaea</a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of
+                        Claudiupolis</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/2555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2555"/>Sabellius the Libyan</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2620.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2620"/>Alexandria</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/2604.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2604"/>East</a></li><li><a href="/aggregate/place/2360.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2360"/>Rome</a></li></ul></div></div></div></div></div></div></body></html>
