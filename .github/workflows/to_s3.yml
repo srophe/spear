@@ -34,7 +34,8 @@ jobs:
         id: changes
         run: |
           git fetch origin main
-          git diff --name-only HEAD^ HEAD > changed_files.txt
+          # git diff --name-only HEAD^ HEAD > changed_files.txt
+          git diff --name-only origin/main...HEAD > changed_files.txt
           cat changed_files.txt
           
       # This will add files to the S3 bucket and also delete files in S3 not in the repo
