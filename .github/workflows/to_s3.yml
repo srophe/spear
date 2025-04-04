@@ -29,43 +29,40 @@ jobs:
           role-session-name: GitHub-OIDC-frontend-spear
           
       # Step 3: Files to S3
-            # Option 1: Upload only changed files to S3
+      # Option 1: Upload only changed data files to S3, sync the rest of the code base
       - name: Get list of changed files
         id: changes
         run: |
           git fetch origin main
-          # git diff --name-only HEAD^ HEAD > changed_files.txt
-          git diff --name-only origin/main...HEAD > changed_files.txt
+          git diff --name-only origin/main...HEAD | grep '^data/.*\.html$' > changed_data_files.txt
           cat changed_files.txt
           
-      # This will add files to the S3 bucket and also delete files in S3 not in the repo
-      - name: Sync changed files in S3
+      # This will add files to the S3 bucket
+      - name: Sync code files in S3
         if: success()
         run: |
-          while read file; do
-            echo "Attempting to upload $file..."
-            if ! aws s3 cp "$file" "s3://spear-front-end/$file" ; then
-              echo "File $file not found. Falling back to sync for deletion handling."
-              aws s3 sync ./ s3://spear-front-end --delete --exact-timestamps --exclude "data/*"
-            fi
-          done < changed_files.txt
+          aws s3 sync ./ s3://spear-front-end \
+            --delete \
+            --exact-timestamps \
+            --exclude "data/*" --exclude ".git/*" --exclude ".github/*" --exclude ".gitignore/*"
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
-          
-      - name: Upload data/*.html files without folder or extension
-        run: |
-          for file in data/*.html; do
-            filename=$(basename "$file" .html)
-            echo "Uploading $file as $filename"
-            aws s3 cp "$file" "s3://spear-front-end/$filename" \
-              --content-type text/html \
-              --only-show-errors
-          done
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}           
 
+      # Upload only changed files from data/ (stripped path & extension) (slow process)
+      - name: Upload changed data files
+        if: success()
+        run: |
+          while read file; do
+            if [ -f "$file" ]; then
+              filename=$(basename "$file" .html)
+              echo "Uploading $file as $filename"
+              aws s3 cp "$file" "s3://spear-front-end/$filename" \
+                --content-type text/html \
+                --only-show-errors
+            fi
+          done < changed_data_files.txt          
+          
       - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation \
@@ -83,5 +80,36 @@ jobs:
       #   env:
       #     AWS_REGION: ${{ secrets.AWS_REGION }}
       #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
+      
+      # - name: Upload changed data files in parallel
+      #   run: |
+      #     MAX_PARALLEL=8  # Adjust this depending on runner capacity
+      
+      #     # Function to track background jobs
+      #     function wait_for_jobs() {
+      #       local joblist=($(jobs -p))
+      #       while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
+      #         sleep 1
+      #         joblist=($(jobs -p))
+      #       done
+      #     }
+      
+      #     # Start parallel uploads
+      #     while read file; do
+      #       if [ -f "$file" ]; then
+      #         filename=$(basename "$file" .html)
+      #         echo "Uploading $file as $filename"
+      #         aws s3 cp "$file" "s3://spear-front-end/$filename" \
+      #           --content-type text/html \
+      #           --only-show-errors &
+      #         wait_for_jobs  
+      #       fi
+      #     done < changed_data_files.txt
+      
+      #     wait  # Wait for all background uploads to finish
+
+      #   env:
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}      
       
           
