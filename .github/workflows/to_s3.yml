@@ -46,12 +46,25 @@ jobs:
             echo "Attempting to upload $file..."
             if ! aws s3 cp "$file" "s3://spear-front-end/$file" ; then
               echo "File $file not found. Falling back to sync for deletion handling."
-              aws s3 sync ./ s3://spear-front-end --delete --exact-timestamps 
+              aws s3 sync ./ s3://spear-front-end --delete --exact-timestamps --exclude "data/*"
             fi
           done < changed_files.txt
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
+          
+      - name: Upload data/*.html files without folder or extension
+        run: |
+          for file in data/*.html; do
+            filename=$(basename "$file" .html)
+            echo "Uploading $file as $filename"
+            aws s3 cp "$file" "s3://spear-front-end/$filename" \
+              --content-type text/html \
+              --only-show-errors
+          done
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}           
 
       - name: Invalidate CloudFront Cache
         run: |
@@ -66,8 +79,9 @@ jobs:
 
       # - name: Sync all files to S3
       #   run: |
-      #     aws s3 sync ./ s3://spear-front-end --delete --exact-timestamps 
+      #     aws s3 sync ./ s3://spear-front-end --delete --exact-timestamps --exclude "data/*"
       #   env:
       #     AWS_REGION: ${{ secrets.AWS_REGION }}
       #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
+      
           
