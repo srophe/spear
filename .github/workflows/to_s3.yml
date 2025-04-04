@@ -1,0 +1,41 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - 'main'  # Trigger the workflow on push to the main branch
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+      # Step 1: Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch the full history for accurate diff comparisons
+
+      # Step 2: Configure AWS credentials
+      - name: Configure AWS credentials from AWS account
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_SPEAR_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-frontend-spear
+          
+      # Step 3: Files to S3
+          
+      # Option 2: Full (re)deployment
+
+      - name: Sync all files to S3
+        run: |
+          aws s3 sync ./ s3://gaddel-syriaca-front-end --delete --exact-timestamps 
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
+          
