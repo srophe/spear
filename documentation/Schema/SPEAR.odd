@@ -286,20 +286,27 @@
             <head>Basic Factoid Structure</head>
             <div xml:id="ab">
               <head>Containing Element</head>
-              <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids appear in the <gi>text</gi> and <gi>body</gi> of the XML file.
-                It uses the <gi>ab</gi> (anonymous block) element as the container for factoids and adds a @type attribute to indicate
-                the use of this element. The @subtype attribute is used to indicate what type of factoid. The allowed values are
-                <quote>relation</quote>, <quote>event</quote>, <quote>birth</quote>, <quote>citizenship</quote>, <quote>death</quote>,
-                <quote>education</quote>, <quote>ethnicLabel</quote>, <quote>gender</quote>, <quote>langKnown</quote>, <quote>mentalState</quote>, 
-                <quote>nameVariant</quote>, <quote>occupation</quote>, and <quote>physicalTrait</quote>. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> schema uses 
+              <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids appear in the <gi>body</gi> element of the XML
+                file which is the child of <gi>text</gi>. It uses the <gi>ab</gi> (anonymous block) element as the container for 
+                factoids and adds a @type attribute with value <quote>factoid</quote> to indicate the content of the <gi>ab</gi>. The @subtype attribute is used to indicate 
+                what type of factoid. The allowed values are <quote>relation</quote>, <quote>event</quote>, <quote>birth</quote>, 
+                <quote>citizenship</quote>, <quote>death</quote>, <quote>education</quote>, <quote>ethnicLabel</quote>, <quote>gender</quote>, 
+                <quote>langKnown</quote>, <quote>mentalState</quote>, <quote>nameVariant</quote>, <quote>occupation</quote>, and 
+                <quote>physicalTrait</quote>. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> schema uses 
                 the @subtype values to require the necessary XML structure for each type of data.
               </p>
-              <p>The name <title><ref target="http://spear-prosop.org">SPEAR</ref></title> comes from the TEI elements <gi>person</gi>, <gi>event</gi>, and <gi>relation</gi>. The @subtype
+              <p>The <gi>ab</gi> element also requires an @xml:id with a value <quote>factoid-\d+</quote> where <quote>\d+</quote> is a unique number within the
+                document. This number must also agree with the substring after <quote>-</quote> in the child <gi>idno</gi>. This ensure that there is unique 
+                @xml:id for the <gi>ab</gi> and an <gi>idno</gi> containing a full URI for this factoid.</p>
+              <p>Every <gi>ab</gi> must also have a @resp attribute indicating one or more editors responsible for the factoid. Similar to the practice in the <gi>titleStmt</gi>, 
+                the values on the @resp attribute here must validate against the @xml:id attributes in the <ref target="https://syriaca.org/documentation/editors.xml">list of editors on GitHub</ref>.</p>
+              <p>The name <title><ref target="http://spear-prosop.org">SPEAR</ref></title> derives from the TEI elements <gi>person</gi>, <gi>event</gi>, and <gi>relation</gi>. The @subtype
                 values <quote>relation</quote> and <quote>event</quote> indicate those types of factoids and have descendant <gi>relation</gi> 
                 and <gi>event</gi> elements respectively. The remainder of the @subtype values indicate a person factoid and must have a descendent 
-                <gi>person</gi> element or a descendent <gi>personGrp</gi> element. The TEI expects these elements to nest under 
-                <gi>listRelation</gi>, <gi>listEvent</gi>, and <gi>listPerson</gi> elements respectively and <title><ref target="http://spear-prosop.org">SPEAR</ref></title> has followed that practice
-                even though it is not strictly necessary for the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model.
+                <gi>person</gi> element or a descendent <gi>personGrp</gi> element, the latter used for groups of people instead of individual persons. 
+                The TEI expects these elements to nest under <gi>listRelation</gi>, <gi>listEvent</gi>, and <gi>listPerson</gi> elements respectively 
+                and <title><ref target="http://spear-prosop.org">SPEAR</ref></title> has followed that practice even though it is not strictly necessary 
+                for the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model.
               </p>
               <p>Outline of a relation factoid:
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -325,9 +332,9 @@
                 on the document URI in the <gi>publicationStmt</gi> which also aligns with the work URI in the <gi>sourceDesc</gi>,
                 (see sections <ref target="#publicationStmt">Publication Statement</ref> and <ref target="#sourceDesc">Source Description</ref> above).
                 The three examples below come from the factoid <ref target="https://spear-prosop.org/798-5">https://spear-prosop.org/798-5</ref>, 
-                contained in a <title><ref target="http://spear-prosop.org">SPEAR</ref></title> XML file named <quote>798</quote>.
+                contained in a <title><ref target="http://spear-prosop.org">SPEAR</ref></title> XML file named <quote>798.xml</quote>.
               </p>
-              <p>The XML document URI at the path <code>publicationStmt/idno</code> contains the number <quote>798</quote>.
+              <p>The XML document URI at the path <code>/TEI/teiHeader/fileDesc/publicationStmt/idno</code> contains the number <quote>798</quote>.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <publicationStmt>
                     <authority>Syriaca.org: The Syriac Reference Portal</authority>
@@ -336,7 +343,7 @@
                   </publicationStmt>
                 </egXML>
               </p>
-              <p>The work URI at the path <code>sourceDesc//bibl/ptr/@target</code> contains the number <quote>798</quote>.
+              <p>The work URI at the path <code>/TEI/teiHeader/fileDesc/sourceDesc//bibl/ptr/@target</code> contains the number <quote>798</quote>.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <sourceDesc>
                     <listBibl>
@@ -351,7 +358,8 @@
                   </sourceDesc>
                 </egXML>
               </p>
-              <p>The factoid URI at the path <code>ab[@type='factoid']/idno</code> contains the number <quote>798</quote>.
+              <p>The factoid URI at the path <code>/TEI/text/body/ab[@type='factoid']/idno</code> contains the number <quote>798</quote> followed
+                by a <quote>-</quote> and a unique number.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <ab type="factoid" subtype="event" xml:id="factoid-5" resp="#jwalters">
                     <idno type="URI">https://spear-prosop.org/798-5</idno>
@@ -367,16 +375,28 @@
                 </egXML>
               </p>
             </div>
+            <div xml:id="balance">
+              <head>Elements for Balancing Structured and Semi-Structured Data</head>
+              <p>One of the reasons that <title><ref target="http://spear-prosop.org">SPEAR</ref></title> uses the TEI is the ability it offers for the 
+                integration of structured and semi-structured data. Specific examples of how <title><ref target="http://spear-prosop.org">SPEAR</ref></title> does
+                this appear below. Suffice it to say here, that every factoid contains either a <gi>note</gi> or a <gi>desc</gi> element. These elements contains 
+                text written by the encoder that offer a prose description of the data contained elsewhere in the factoid <gi>ab</gi>. These <gi>note</gi> and 
+                <gi>desc</gi> elements typically allow text, <gi>persName</gi> (with @ref attributes restricted to person URIs from 
+                <title><ref target="https://syriaca.org/persons/index.html">SBD</ref></title>), <gi>placeName</gi> (with @ref attributes restricted to place URIs from 
+                <title><ref target="https://syriaca.org/geo/index.html">The Syriac Gazetteer</ref></title>)and elements for encoding dates. This text, along with hyperlinks to
+                additional infromation on the persons and places encoded, are displayed to the user in HTML. The portions of each factoid that are less visible in 
+                HTML are used by the processor to facilitate filter, browse, and links to additional metadata.</p>
+            </div>
             <div xml:id="citations">
               <head>Sourcing Factoid Data</head>
               <div xml:id="bibl">
-                <head>Bibliographic Citation</head>
+                <head>Bibliographic Citations</head>
                 <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> sources every factoid to a primary source text. Because 
                   <ref target="http://syriaca.org">Syriaca.org</ref> includes a bibliography dataset, <title><ref target="http://syriaca.org/cbss">Comprehensive Bibliography on Syriac Studies (CBSS)</ref></title>,
                   only the bibliography URI and the portion of that text needs to be cited. We can generate a full bibliographic citation from this information. We attach this citation to each
-                  factoid using a <gi>bibl</gi> element with a @type attribute indicating "primary". The bibliography URI appears in the <gi>ptr</gi> element. The range of the citation appears in a 
-                  <gi>citedRange</gi> element whose @unit attribute must take one of the following values: "p" for page; "line" for a line of text, typically but not necessarily a line of poetry; 
-                  "part" for a portion of a book or collection, i.e. chapter and verse of a biblical text; and "column" for a column of text.
+                  factoid using a <gi>bibl</gi> element with a @type attribute indicating <quote>primary</quote>. The bibliography URI appears in the <gi>ptr</gi> element. The range of the citation appears in a 
+                  <gi>citedRange</gi> element whose @unit attribute must take one of the following values: <quote>p</quote> for page; <quote>line</quote> for a line of text, typically but not necessarily a line of poetry; 
+                  <quote>part</quote> for a portion of a book or collection, i.e. chapter and verse of a biblical text; and <quote>column</quote> for a column of text.
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <bibl type="primary">
                       <ptr target="http://syriaca.org/cbss/U78B4C66"/>
@@ -388,11 +408,12 @@
               <div xml:id="urn">
                 <head>CTS URNs</head>
                 <p>In addition to using <ref target="http://syriaca.org">Syriaca.org</ref> bibliography records, <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
-                  can also employ CTS URNs (Canonical Text Services, Uniform Resource Number). This allows <title><ref target="http://spear-prosop.org">SPEAR</ref></title> to pull
-                  in text from the <title><ref target="https://syriaccorpus.org/index.html">Digital Syriac Corpus</ref></title> directly into the HTML page of the individual 
+                  can also employ CTS URNs (Canonical Text Services, Uniform Resource Name). This allows 
+                  <title><ref target="http://spear-prosop.org">SPEAR</ref></title> to pull in text from the 
+                  <title><ref target="https://syriaccorpus.org/index.html">Digital Syriac Corpus</ref></title> directly into the HTML page of the individual 
                   factoid that contains a CTS URN. In this case the <gi>bibl</gi> element must have a @type attribute indcating the URN and a <gi>ptr</gi> element whose
                   @target attribute indicates the URN. A URN is a pointer to a specific portion of a text. Since the range is already included, there is no need for a 
-                  <gi>citedRange</gi> element.
+                  <gi>citedRange</gi> element. (For more on URNs, see <ref target="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</ref>.) 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <bibl type="urn">
                       <ptr target="urn:cts:syriacLit:nhsl8559.syriacCorpus57:12"/>
@@ -423,21 +444,156 @@
           </div>
           <div xml:id="factoidTypes">
             <head>Factoid Types</head>
-            <p>What follows is an introduction to encoding each of the three types of <title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids. All three types of 
-              factoids follow the basic factoid encoding structure described in the previous section on 
-              <ref target="#factoidStructure">Basic Factoid Structure</ref>.
-            </p>
+            <p>What follows is an introduction to encoding each of the types of <title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids mentioned above. All three types of 
+              factoid follow the basic encoding structure described in the previous section on <ref target="#factoidStructure">Basic Factoid Structure</ref>. The three tables
+              below introduce the different types of factoids which are discussed in greater detail in the following sections.</p>
+            <table rows="16" cols="2">
+              <head>Person Factoids</head>
+              <row role="label">
+                <cell role="data">Factoid Type</cell>
+                <cell role="data">Description</cell>
+              </row>
+              <row role="data">
+                <cell role="data">Birth</cell>
+                <cell role="data">
+                  Used to encode dates and/or places of a person's birth. See below <ref target="#birthDeath">Birth and Death</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Citizenship</cell>
+                <cell role="data">
+                  Used to encode places where a person had citizenship as well as dates of that citizenship when known. The place of 
+                  citizenship can be for any type of place, city to empire. 
+                  See below <ref target="#state">Citizenship, Mental States, Religious Affiliation, and Sanctity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Death</cell>
+                <cell role="data">
+                  Used to encode dates and/or places of a person's birth. 
+                  See below <ref target="#birthDeath">Birth and Death</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Education</cell>
+                <cell role="data">
+                  Used to encode the subject area of a person's study. 
+                  See below <ref target="#otherPerson">Education, Language, Occupation, and Socio-economic Status</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Ethnic Label</cell>
+                <cell role="data">
+                  Used to encode a text's use of an ethnic label to describe a person.
+                  See below <ref target="#trait">Physical Traits, Gender, and Ethnicity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Gender</cell>
+                <cell role="data">
+                  Used to encode a text's use of gender to describe a person.
+                  See below <ref target="#trait">Physical Traits, Gender, and Ethnicity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Language Known</cell>
+                <cell role="data">
+                  Used to encode a language known or used by a person. 
+                  See below <ref target="#otherPerson">Education, Language, Occupation, and Socio-economic Status</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Mental State</cell>
+                <cell role="data">
+                  Used to encode a person's mental or emotional state, including things like suffering, pride, tears, etc.
+                  See below <ref target="#state">Citizenship, Mental States, Religious Affiliation, and Sanctity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Name Variants</cell>
+                <cell role="data">
+                  Used to encode a variety of names for a person: personal names, descriptive names, even insulting names.
+                  See below <ref target="#nameVariants">Name Variants</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Occupation</cell>
+                <cell role="data">
+                  Used to encode the type of work ascribed to a person, including any type of labor, high political office, etc.
+                  See below <ref target="#otherPerson">Education, Language, Occupation, and Socio-economic Status</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Physical Trait</cell>
+                <cell role="data">
+                  Used to encode a person's distinguishing physical characteristics.
+                  See below <ref target="#trait">Physical Traits, Gender, and Ethnicity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Religious Affiliation</cell>
+                <cell role="data">
+                  Used to encode a person's membership or participation with a religious group regardless of personal belief. 
+                  See below <ref target="#state">Citizenship, Mental States, Religious Affiliation, and Sanctity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Residence</cell>
+                <cell role="data">
+                  Used to encode places where a person resided as well as dates when available.
+                  See below <ref target="#residence">Residence</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Sanctity</cell>
+                <cell role="data">
+                  Used to encode states of sanctity such as saint, martyr, confessor, etc.
+                  See below <ref target="#state">Citizenship, Mental States, Religious Affiliation, and Sanctity</ref>.
+                </cell>
+              </row>
+              <row role="data">
+                <cell role="data">Socio-economic Status</cell>
+                <cell role="data">
+                  Used to encode a person's socio-economic status, typically indicated by a rank held or an occupation worked.
+                  See below <ref target="#otherPerson">Education, Language, Occupation, and Socio-economic Status</ref>.
+                </cell>
+              </row>
+            </table>
+            <table rows="2" cols="2">
+              <head>Event Factoids</head>
+              <row role="label">
+                <cell role="data">Factoid Type</cell>
+                <cell role="data">Description</cell>
+              </row>
+              <row role="data">
+                <cell role="data">Events</cell>
+                <cell role="data">
+                  Event factoids capture any event the encoder deems worth capturing and include data regarding the persons, places, dates, and keyword concepts.
+                  See below <ref target="#eventFactoids">Event Factoids</ref>.
+                </cell>
+              </row>
+            </table>
+            <table rows="2" cols="2">
+              <head>Relation Factoids</head>
+              <row role="label">
+                <cell role="data">Factoid Type</cell>
+                <cell role="data">Description</cell>
+              </row>
+              <row role="data">
+                <cell role="data">Relationships</cell>
+                <cell role="data">
+                  Relation factoids capture a wide range of familial, personal, and professional relationships. See below <ref target="#relationFactoids">Relation Factoids</ref>.
+                </cell>
+              </row>
+            </table>
             <div xml:id="relationFactoids">
               <head>Relation Factoids</head>
               <p>Relation factoids contain a <gi>listRelation</gi> followed by <gi>relation</gi>. The schema constrains the values of the @ref attribute on <gi>relation</gi> to allow 
-                only relationship values from the <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>. The <gi>relation</gi> element also has either a @mutual attribute
-                with two or more person URI values or @active and @passive attributes. The distinction is between relationships that are mutual (if person x
-                is a sibling of person y, then person y is a sibling of person x) and relationships that are directed (person x ordained person y).</p>
-              <p>The above is the version of the material most oriented to machine processing. It will be rendered into RDF (Resource Description Framework) 
-                which forms the basis of the Linked Open Data of <title><ref target="http://spear-prosop.org">SPEAR</ref></title>, but also facilitates search and advanced browse features.
-                <title><ref target="http://spear-prosop.org">SPEAR</ref></title> also includes a <gi>desc</gi> element with a more prose-oriented version of the same information. This text, 
-                along with hyperlinks to the URIs mentioned, appears in HTML for human readers.
-              </p>
+                only appropriate relationship values from the <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>. The <gi>relation</gi> element 
+                also has either a @mutual attribute with two or more person URI values or @active and @passive attributes. The distinction is between relationships that are 
+                mutual (if person x is a sibling of person y, then person y is a sibling of person x) and relationships that are directed (person x ordained person y). The 
+                @mutual, @active, and @passive attributes may only take <ref target="http://syriaca.org">Syriaca.org</ref> person URIs from 
+                <title><ref target="https://syriaca.org/persons/index.html">SBD</ref></title>.</p>
               <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <ab type="factoid" subtype="relation" xml:id="factoid-232" resp="#dschwartz">
                   <idno type="URI">https://spear-prosop.org/8559-232</idno>
@@ -462,7 +618,7 @@
                 <gi>birth</gi>, <gi>death</gi>, <gi>education</gi>, <gi>langKnowledge</gi>, <gi>occupation</gi>, <gi>residence</gi>, 
                 <gi>socecStatus</gi>, <gi>state</gi>, or <gi>trait</gi>.
               </p>
-              <div xml:id="nameVariant">
+              <div xml:id="nameVariants">
                 <head>Name Variants</head>
                 <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> seeks to capture a wide variety of ways that texts refer to 
                   people. This often includes titles, places the person is associated with, or other descriptors. It is important to note that 
@@ -513,7 +669,6 @@
                   containing a human-readable version of the factoid data. In other contexts, <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
                   accomplishes the same using a <gi>desc</gi> element.
                 </p>
-                
               </div>
               <div xml:id="residence">
                 <head>Residence</head>
