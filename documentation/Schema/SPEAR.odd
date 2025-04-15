@@ -27,6 +27,7 @@
       </sourceDesc>
     </fileDesc>
     <revisionDesc>
+      <change who="http://syriaca.org/documentation/editors.xml#dschwartz" when="2016-04">Add prose documentation and encoding guidelines.</change>
       <change who="http://syriaca.org/documentation/editors.xml#dschwartz" when="2025-03">Significant 
         revisions to integrate the Syriaca.org Taxonomy and constrain the use of the TEI P5 for the 
         relaunch of Syriaca.org and SPEAR in the Gaddel Software Application.
@@ -63,7 +64,7 @@
             validated against the TEI P5 All schema. Nevertheless, the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> data model, the encoding process, 
             and the required integration with other <ref target="http://syriaca.org">Syriaca.org</ref> data sets require a highly constrained customization of the TEI.</p>
           <p>It should be noted that these guidelines assume a basic familiarity with the <ref target="https://www.tei-c.org/">Text Encoding Initiative (TEI)</ref> 
-            standard for XML. The user who is unfamiliar with the <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI Guidelines</ref> 
+            standard of XML. The user who is unfamiliar with the <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI Guidelines</ref> 
             will want to study them before trying to use these encoding guidelines. There are also tutorials, exercises, and other tools for learning the TEI available at
             <ref target="https://teibyexample.org/exist/">TEI by Example</ref>.</p>
           <p>If you are familiar with <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html">Appendix C Elements</ref> of the 
@@ -71,6 +72,9 @@
             <ref target="#schema">Section 2.1</ref> below contains discussion of individual TEI elements and their customization for 
             <title><ref target="http://spear-prosop.org">SPEAR</ref></title>. These element discussions show the customization of the following sections: 
             Attributes, Contained by, May contain, Note, and Example.</p>
+          <p>Please note that the following sections of the TEI have received almost no customization: 
+            <ref target="#index.xml-body.1_div.2_div.2">Model classes</ref>, <ref target="#index.xml-body.1_div.2_div.3">Attribute classes</ref>, 
+            <ref target="#index.xml-body.1_div.2_div.4">Macros</ref>, and <ref target="#index.xml-body.1_div.2_div.5">Datatypes</ref>.</p>
           <p>Please note as well that the prose documentation that follows here in section 1 is an abbreviated and slightly updated version of 
             an article appearing in the <title>jTEI</title>. The discussion here is also more oriented toward guidelines for using the schema to
             encode prosopographical data. For a fuller discussion of factoid prosopography
@@ -112,7 +116,7 @@
               regarding scale. This required difficult editorial decisions about whom the editors included and whom they left out. The resulting works typically focus on 
               elite, male figures related to political and military developments. 
             </p>
-            <p>A group of scholars at King's College London sought to bring prosopographical research into the digital age by developing methodologies
+            <p>A group of scholars at King's College London sought to leverage digital technologies for  prosopographical research by developing methodologies
               that could capture prosopographical information in a database. This would allow a scale that could include all persons, not just political elites,
               and would expose that information to computational analysis. The term they chose for the discrete pieces of personal information entered into the 
               database was <quote>factoid</quote>.
@@ -143,10 +147,10 @@
           <div xml:id="header">
             <head>The TEI Header</head>
             <p>In <title><ref target="http://spear-prosop.org">SPEAR</ref></title>, the <gi>teiHeader</gi> element identifies important information about 
-              the XML document and those responsible for its creation. This discussion will focus on three components of the <gi>teiHeader</gi> that provide metadata 
-              about the file and integrate it into the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph: <gi>titleStmt</gi>, <gi>publicationStmt</gi>,
-              <gi>seriesStmt</gi>, and <gi>sourceDesc</gi>. <title><ref target="http://spear-prosop.org">SPEAR</ref></title> also uses <gi>editionStmt</gi>, <gi>encodingDesc</gi>,
-              <gi>profileDesc</gi>, and <gi>revisionDesc</gi> elements but without significant customization.
+              the XML document and those responsible for its creation. This discussion will focus on four components of the <gi>teiHeader</gi> that provide metadata 
+              about the file and integrate it into the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph: 
+              <gi>titleStmt</gi>, <gi>publicationStmt</gi>, <gi>seriesStmt</gi>, and <gi>sourceDesc</gi>. <title><ref target="http://spear-prosop.org">SPEAR</ref></title> 
+              also uses <gi>editionStmt</gi>, <gi>encodingDesc</gi>, <gi>profileDesc</gi>, and <gi>revisionDesc</gi> elements but without significant customization.
             </p>
             <div xml:id="titleStmt">
               <head>Title Statement</head>
@@ -189,8 +193,8 @@
                 also contains an <gi>idno</gi> element with a URI for that document. The schema requires the number portion of this 
                 URI to equal the name of the XML file. In each case, this number equals the number portion of the 
                 <ref target="http://syriaca.org">Syriaca.org</ref> work URI that is the source of this prosopographical data. (See 
-                <ref target="#sourceDesc">Source Description</ref>
-                below.) The URI for the corresponding <ref target="http://syriaca.org">Syriaca.org</ref> work file in the example below is 
+                <ref target="#sourceDesc">Source Description</ref> below.) The URI for the corresponding 
+                <ref target="http://syriaca.org">Syriaca.org</ref> work file in the example below is 
                 <ref target="http://syriaca.org/work/3010">http://syriaca.org/work/3010</ref>.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <publicationStmt>
@@ -205,6 +209,9 @@
                     <date>2020-01-03-05:00</date>
                   </publicationStmt>
                 </egXML>
+                This practice is not strictly necessary but from the perspective of workflow it helps the encoder keep straight
+                the relationship between the <title><ref target="http://spear-prosop.org">SPEAR</ref></title> file and the 
+                <ref target="http://syriaca.org">Syriaca.org</ref> work URI. 
               </p>
             </div>
             <div xml:id="seriesStmt">
@@ -243,19 +250,20 @@
             </div>
             <div xml:id="sourceDesc">
               <head>Source Description</head>
-              <p>Each <title><ref target="http://spear-prosop.org">SPEAR</ref></title> XML file contains prosopographical data from one work. Even though <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
-                files are <quote>born digital</quote>, the <gi>sourceDesc</gi> is used to provide bibligraphic information on
-                the source text. The example below contains a <gi>listBibl</gi> with a child <gi>head</gi> element and two <gi>bibl</gi> elements. 
-                The first is a reference to a modern edition of the source text. The <gi>title</gi>, <gi>author</gi>, <gi>editor</gi>, and <gi>biblScope</gi> elements
-                are optional but included to make the metadata in the <gi>teiHeader</gi> more readable for a person. The <gi>ptr</gi> element and @target attribute 
-                point to the URI for this bibliographic information contained in teh <title><ref target="http://syriaca.org/cbss">Comprehensive Bibliography on Syriac Studies (CBSS)</ref></title>, 
+              <p>Each <title><ref target="http://spear-prosop.org">SPEAR</ref></title> XML file contains prosopographical data from one work. 
+                Even though <title><ref target="http://spear-prosop.org">SPEAR</ref></title> files are <quote>born digital</quote>, the <gi>sourceDesc</gi> 
+                is used to provide bibligraphic information sources used to create the prosopographical data. The example below contains 
+                a <gi>listBibl</gi> with a child <gi>head</gi> element and two <gi>bibl</gi> elements. The first is a reference to the specific edition 
+                of the source text used by the encoder. The <gi>title</gi>, <gi>author</gi>, <gi>editor</gi>, and <gi>biblScope</gi> elements
+                are optional but are included to make the metadata in the <gi>teiHeader</gi> more readable for a human being. The <gi>ptr</gi> element and @target attribute 
+                point to the URI for this bibliographic information contained in the <title><ref target="http://syriaca.org/cbss">Comprehensive Bibliography on Syriac Studies (CBSS)</ref></title>, 
                 the bibliographic dataset of <ref target="http://syriaca.org">Syriaca.org</ref>. 
               </p>
               <p>The second <gi>bibl</gi> element contains a <ref target="http://syriaca.org">Syriaca.org</ref> work URI. Where the first 
-                points to an edition of the text, the work URI points to the authority file for the concept of the work. Authority files for 
-                <ref target="http://syriaca.org">Syriaca.org</ref> works contain information on the various instantiations of the work: 
-                editions, translations, manuscripts, etc. Including both of these types of URIs connects each <title><ref target="http://spear-prosop.org">SPEAR</ref></title> 
-                file to the relevant Linked Open Data of the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph. For more on this see above mentioned
+                points to a specific edition of the text, the work URI points to the authority file for the concept of the work. These authority files do not
+                specify a particular manuscript witness, edition, translation, etc., but instead identify the concept of the work. 
+                Including both of these types of URIs connects each <title><ref target="http://spear-prosop.org">SPEAR</ref></title> 
+                file to the relevant Linked Open Data of the <ref target="http://syriaca.org">Syriaca.org</ref> knowledge graph. For more on this see the above-mentioned
                 <ref target="https://journals.openedition.org/jtei/3979#tocfrom1n3">jTEI article, secion 3</ref>.
               </p>
               <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -286,18 +294,19 @@
             <head>Basic Factoid Structure</head>
             <div xml:id="ab">
               <head>Containing Element</head>
-              <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids appear in the <gi>body</gi> element of the XML
-                file which is the child of <gi>text</gi>. It uses the <gi>ab</gi> (anonymous block) element as the container for 
-                factoids and adds a @type attribute with value <quote>factoid</quote> to indicate the content of the <gi>ab</gi>. The @subtype attribute is used to indicate 
+              <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids appear at the path <code>/TEI/text/body/ab</code>. 
+                The <gi>ab</gi> (anonymous block) element provides the container for factoids and takes a @type attribute 
+                with value <quote>factoid</quote> to indicate this usage. A @subtype attribute is used to indicate 
                 what type of factoid. The allowed values are <quote>relation</quote>, <quote>event</quote>, <quote>birth</quote>, 
                 <quote>citizenship</quote>, <quote>death</quote>, <quote>education</quote>, <quote>ethnicLabel</quote>, <quote>gender</quote>, 
-                <quote>langKnown</quote>, <quote>mentalState</quote>, <quote>nameVariant</quote>, <quote>occupation</quote>, and 
-                <quote>physicalTrait</quote>. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> schema uses 
-                the @subtype values to require the necessary XML structure for each type of data.
+                <quote>langKnown</quote>, <quote>mentalState</quote>, <quote>nameVariant</quote>, <quote>occupation</quote>,  
+                <quote>physicalTrait</quote>, <quote>religiousAffiliation</quote>, <quote>residence</quote>, <quote>sanctity</quote>, and 
+                <quote>socecStatus</quote>. The <title><ref target="http://spear-prosop.org">SPEAR</ref></title> schema uses 
+                these @subtype values to require the necessary XML structure for each type of data.
               </p>
               <p>The <gi>ab</gi> element also requires an @xml:id with a value <quote>factoid-\d+</quote> where <quote>\d+</quote> is a unique number within the
-                document. This number must also agree with the substring after <quote>-</quote> in the child <gi>idno</gi>. This ensure that there is unique 
-                @xml:id for the <gi>ab</gi> and an <gi>idno</gi> containing a full URI for this factoid.</p>
+                document. This number must also agree with the substring after <quote>-</quote> in the child <gi>idno</gi>. This ensures that there is unique 
+                @xml:id for the <gi>ab</gi> and an <gi>idno</gi> containing a full URI for this factoid. For more detail, see <ref target="#idno">Factoid Identifier</ref> below.</p>
               <p>Every <gi>ab</gi> must also have a @resp attribute indicating one or more editors responsible for the factoid. Similar to the practice in the <gi>titleStmt</gi>, 
                 the values on the @resp attribute here must validate against the @xml:id attributes in the <ref target="https://syriaca.org/documentation/editors.xml">list of editors on GitHub</ref>.</p>
               <p>The name <title><ref target="http://spear-prosop.org">SPEAR</ref></title> derives from the TEI elements <gi>person</gi>, <gi>event</gi>, and <gi>relation</gi>. The @subtype
@@ -374,18 +383,20 @@
                   </ab>  
                 </egXML>
               </p>
+              <p>Again, this practice is not strictly necessary but it helps maintain the connection between the work and the factoids derived from the work.</p>
             </div>
             <div xml:id="balance">
               <head>Elements for Balancing Structured and Semi-Structured Data</head>
               <p>One of the reasons that <title><ref target="http://spear-prosop.org">SPEAR</ref></title> uses the TEI is the ability it offers for the 
                 integration of structured and semi-structured data. Specific examples of how <title><ref target="http://spear-prosop.org">SPEAR</ref></title> does
-                this appear below. Suffice it to say here, that every factoid contains either a <gi>note</gi> or a <gi>desc</gi> element. These elements contains 
+                this appear below. Suffice it to say here, that most factoids contains either a <gi>note</gi> or a <gi>desc</gi> element (for the exception, 
+                see <ref target="#nameVariants">Name Variants</ref>). These elements contain 
                 text written by the encoder that offer a prose description of the data contained elsewhere in the factoid <gi>ab</gi>. These <gi>note</gi> and 
                 <gi>desc</gi> elements typically allow text, <gi>persName</gi> (with @ref attributes restricted to person URIs from 
                 <title><ref target="https://syriaca.org/persons/index.html">SBD</ref></title>), <gi>placeName</gi> (with @ref attributes restricted to place URIs from 
-                <title><ref target="https://syriaca.org/geo/index.html">The Syriac Gazetteer</ref></title>)and elements for encoding dates. This text, along with hyperlinks to
+                <title><ref target="https://syriaca.org/geo/index.html">The Syriac Gazetteer</ref></title>) and elements for encoding dates. This text, along with hyperlinks to
                 additional infromation on the persons and places encoded, are displayed to the user in HTML. The portions of each factoid that are less visible in 
-                HTML are used by the processor to facilitate filter, browse, and links to additional metadata.</p>
+                HTML are serialized into RDF triples and used by the processor to facilitate filter, browse, and linking to additional metadata.</p>
             </div>
             <div xml:id="citations">
               <head>Sourcing Factoid Data</head>
@@ -408,19 +419,19 @@
               <div xml:id="urn">
                 <head>CTS URNs</head>
                 <p>In addition to using <ref target="http://syriaca.org">Syriaca.org</ref> bibliography records, <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
-                  can also employ CTS URNs (Canonical Text Services, Uniform Resource Name). This allows 
-                  <title><ref target="http://spear-prosop.org">SPEAR</ref></title> to pull in text from the 
-                  <title><ref target="https://syriaccorpus.org/index.html">Digital Syriac Corpus</ref></title> directly into the HTML page of the individual 
+                  can also employ CTS URNs (Canonical Text Services, Uniform Resource Name). Using URNs allows <title><ref target="http://spear-prosop.org">SPEAR</ref></title> 
+                  to pull text from the <title><ref target="https://syriaccorpus.org/index.html">Digital Syriac Corpus</ref></title> directly into the HTML page of the individual 
                   factoid that contains a CTS URN. In this case the <gi>bibl</gi> element must have a @type attribute indcating the URN and a <gi>ptr</gi> element whose
                   @target attribute indicates the URN. A URN is a pointer to a specific portion of a text. Since the range is already included, there is no need for a 
-                  <gi>citedRange</gi> element. (For more on URNs, see <ref target="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</ref>.) 
+                  <gi>citedRange</gi> element. 
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <bibl type="urn">
                       <ptr target="urn:cts:syriacLit:nhsl8559.syriacCorpus57:12"/>
                     </bibl>
                   </egXML>
                 </p>
-                <p>For an example of the incorporation of source text into an HTML factoid page, see <ref target="https://spear-prosop.org/8559-87">https://spear-prosop.org/8559-87</ref>.</p>
+                <p>For an example of the incorporation of source text into an HTML factoid page, see <ref target="https://spear-prosop.org/8559-87">https://spear-prosop.org/8559-87</ref>.
+                  For more on URNs, see <ref target="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</ref>.</p>
               </div>
               <div xml:id="work">
                 <head>Citing Syriaca.org Works</head>
@@ -430,8 +441,9 @@
                   have a digitized version of the text that would allow the use of a CTS URN, <title><ref target="http://spear-prosop.org">SPEAR</ref></title> allows the use of
                   the work record URI as a temporary placeholder. This work URI appears on the @target attribute of the <gi>ptr</gi> element. Even though work records 
                   refer to concepts, not editions, and therefore do not have page ranges or similar,  <title><ref target="http://spear-prosop.org">SPEAR</ref></title> does 
-                  allow the use of <gi>citedRange</gi> so that when an edition of the Syriac text is included in the <title><ref target="https://syriaccorpus.org/index.html">Digital Syriac Corpus</ref></title> 
-                  we will be able to change the <gi>bibl</gi> element to indicate the URN and display that text on the HTML factoid page.
+                  allow the use of <gi>citedRange</gi> with a @unit attribute derived from a Syriac edition of the text. When an edition of the Syriac text is included 
+                  in the <title><ref target="https://syriaccorpus.org/index.html">Digital Syriac Corpus</ref></title> we will be able to change the <gi>bibl</gi> element 
+                  to indicate the URN and display that text on the HTML factoid page.
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <bibl type="primary">
                       <ptr target="http://syriaca.org/work/830"/>
@@ -446,7 +458,7 @@
             <head>Factoid Types</head>
             <p>What follows is an introduction to encoding each of the types of <title><ref target="http://spear-prosop.org">SPEAR</ref></title> factoids mentioned above. All three types of 
               factoid follow the basic encoding structure described in the previous section on <ref target="#factoidStructure">Basic Factoid Structure</ref>. The three tables
-              below introduce the different types of factoids which are discussed in greater detail in the following sections.</p>
+              below introduce the different types of factoids that are discussed in greater detail in the following sections.</p>
             <table rows="16" cols="2">
               <head>Person Factoids</head>
               <row role="label">
@@ -463,7 +475,7 @@
                 <cell role="data">Citizenship</cell>
                 <cell role="data">
                   Used to encode places where a person had citizenship as well as dates of that citizenship when known. The place of 
-                  citizenship can be for any type of place, city to empire. 
+                  citizenship can be for any type of place, from city to empire. 
                   See below <ref target="#state">Citizenship, Mental States, Religious Affiliation, and Sanctity</ref>.
                 </cell>
               </row>
@@ -519,7 +531,7 @@
               <row role="data">
                 <cell role="data">Occupation</cell>
                 <cell role="data">
-                  Used to encode the type of work ascribed to a person, including any type of labor, high political office, etc.
+                  Used to encode the type of work ascribed to a person, including any type of trade, clerical or political office, etc.
                   See below <ref target="#otherPerson">Education, Language, Occupation, and Socio-economic Status</ref>.
                 </cell>
               </row>
@@ -533,7 +545,7 @@
               <row role="data">
                 <cell role="data">Religious Affiliation</cell>
                 <cell role="data">
-                  Used to encode a person's membership or participation with a religious group regardless of personal belief. 
+                  Used to encode a person's membership in or participation with a religious group regardless of personal belief. 
                   See below <ref target="#state">Citizenship, Mental States, Religious Affiliation, and Sanctity</ref>.
                 </cell>
               </row>
@@ -568,7 +580,7 @@
               <row role="data">
                 <cell role="data">Events</cell>
                 <cell role="data">
-                  Event factoids capture any event the encoder deems worth capturing and include data regarding the persons, places, dates, and keyword concepts.
+                  Event factoids capture any event the encoder deems worth of capturing and include data regarding the persons, places, dates, and keyword concepts.
                   See below <ref target="#eventFactoids">Event Factoids</ref>.
                 </cell>
               </row>
@@ -588,7 +600,8 @@
             </table>
             <div xml:id="relationFactoids">
               <head>Relation Factoids</head>
-              <p>Relation factoids contain a <gi>listRelation</gi> followed by <gi>relation</gi>. The schema constrains the values of the @ref attribute on <gi>relation</gi> to allow 
+              <p>Relation factoids have the most consistent and straightforward structure so we will begin by describing them. 
+                Relation factoids contain a <gi>listRelation</gi> followed by <gi>relation</gi>. The schema constrains the values of the @ref attribute on <gi>relation</gi> to allow 
                 only appropriate relationship values from the <ref target="https://syriaca.org/taxonomy/index.html"><title>Syriac Taxonomy</title></ref>. The <gi>relation</gi> element 
                 also has either a @mutual attribute with two or more person URI values or @active and @passive attributes. The distinction is between relationships that are 
                 mutual (if person x is a sibling of person y, then person y is a sibling of person x) and relationships that are directed (person x ordained person y). The 
@@ -610,7 +623,7 @@
               <head>Person Factoids</head>
               <p>Person factoids are the most variable as they pertain to so many different types of data about persons. Each of these
                 follows the TEI for the types of elements that can appear as child elements of <gi>person</gi> or <gi>personGrp</gi>. The <gi>personGrp</gi>
-                element is used for groups of persons rather than individual persons.</p>
+                element is used for groups of persons whereas <gi>person</gi> is used for individuals.</p>
               <p>In <title><ref target="http://spear-prosop.org">SPEAR</ref></title>, 
                 a <gi>person</gi> or <gi>personGrp</gi> requires a child <gi>persName</gi> with a @ref attribute indicating the subject of the 
                 factoid. If the factoid only contains a name variant, this <gi>persName</gi> element takes a text node with that variant.
@@ -623,7 +636,8 @@
                 <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> seeks to capture a wide variety of ways that texts refer to 
                   people. This often includes titles, places the person is associated with, or other descriptors. It is important to note that 
                   <title><ref target="http://spear-prosop.org">SPEAR</ref></title> does not designate a preferred label for a person. That preferred or canonical
-                  name is encoded in the <title><ref target="https://syriaca.org/persons">Syriac Biographical Dictionary</ref></title>.
+                  name is encoded in the <title><ref target="https://syriaca.org/persons">SBD</ref></title>. This is the one factoid type that does not contain 
+                  a <gi>note</gi> or <gi>desc</gi> element. The human-readable text is simply supplied by the text node of the <gi>persName</gi> element.
                   <egXML xmlns="http://www.tei-c.org/ns/Examples">
                     <ab type="factoid" subtype="nameVariant" xml:id="factoid-1" resp="#tbaillargeon #tmcneir">
                       <idno type="URI">https://spear-prosop.org/799-1</idno>
@@ -821,9 +835,9 @@
                   <bibl type="primary">...</bibl>
                 </ab>
               </egXML>
-              <p>For events with dates, the <gi>event</gi> element takes @when or @notBefore and/or @notAfter attributes. When appropriate, the schema requires that
+              <p>For events with dates, the <gi>event</gi> element can take the date attributes @when, @notBefore, @notAfter, @from, and @to. When appropriate, the schema requires that
                 these dates correspond to dates appearing in the <gi>desc</gi> element. For a discussion of how <title><ref target="http://spear-prosop.org">SPEAR</ref></title>
-                handles different dating systems, see below on <ref target="#dates">Dating Systems</ref>.</p>
+                handles different dating systems, see the section below on <ref target="#dates">Dating Systems</ref>.</p>
               <egXML xmlns="http://www.tei-c.org/ns/Examples">
                 <event ana="http://syriaca.org/taxonomy/letters http://syriaca.org/taxonomy/sin http://syriaca.org/taxonomy/greed" notBefore="0513" notAfter="0518">
                   <desc>
@@ -869,7 +883,7 @@
                   to create authority files for events. As such, <title><ref target="http://spear-prosop.org">SPEAR</ref></title> cannot collect data directly associated with specific events. It remains 
                   desirable, however, to at least be able to connect different textual references to the same or similar events. <title><ref target="http://spear-prosop.org">SPEAR</ref></title> does
                   this by creating a <gi>relation</gi> element that connects two event factoids. These <gi>listRelation</gi> and <gi>relation</gi> elements
-                  appear in <gi>note</gi> elements  with <code>@type="relatedEvent"</code>. These elements are direct children of the <gi>ab</gi> element containing the event. 
+                  appear in a <gi>note</gi> element with a @type attribute indicating <quote>relatedEvent</quote>. These elements are direct children of the <gi>ab</gi> element containing the event. 
                   These <gi>relation</gi> elements take a @mutual attribute connecting two or more factoid URIs and a @ref attribute with one of 
                   the following Taxonomy URIs: <quote>http://syriaca.org/taxonomy/proximate-event</quote> for factoids that deal with closely related events or 
                   <quote>http://syriaca.org/taxonomy/same-event</quote> for factoids that deal with the same event.
@@ -942,7 +956,7 @@
                 more familiar with. In the case below, <gi>choice</gi> indicates that there are two different ways to encode
                 the information that follows. The <gi>orig</gi> element captures the dating system used in the original source 
                 while the <gi>reg</gi> element contains a regularization of that date into an appropriate modern data. In each case, the
-                date itself appears in a <gi>date</gi> element. The example below shows a Seleucid year and Syriac months in the <gi>orig</gi>
+                date itself appears in a <gi>date</gi> element. The example below shows a Seleucid year with Syriac months in the <gi>orig</gi>
                 element and the corresponding Gregorian date in the <gi>reg</gi> element. Only the Gregorian date is used 
                 in the @when attribute on <gi>event</gi> as that will be used for RDF serialization, the production of a timeline, etc.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -966,8 +980,8 @@
                 </egXML>
               </p>
               <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> can also capture dating systems based on things like regnal years, encoding them as they appear
-                in the source text and rendering them into a Gregorian date as well. The <gi>note</gi> element with an @ana attribute indicating "calculated" will appear to
-                users of the HTML version of this data as well.
+                in the source text and rendering them into a Gregorian date as well. The <gi>note</gi> element with an @ana attribute indicating 
+                <quote>#calculated</quote> will appear to users of the HTML version of this data as well.
                 <egXML xmlns="http://www.tei-c.org/ns/Examples">
                   <event ana="http://syriaca.org/taxonomy/ordination http://syriaca.org/taxonomy/bishops" notBefore="0542-04-01" notAfter="0543-03-31">
                     <desc>
@@ -1036,7 +1050,7 @@
           <head>Code Templates</head>
           <p>The SPEAR factoid model requires a large amount of XML to provide the structure for the individual factoids and 
           facilitate the integration of structured and semi-structured data for serialization into HTML and RDF. Typing this amount
-          of XML would get onerous. In order to speed the encoding process, <title><ref target="http://spear-prosop.org">SPEAR</ref></title> uses a set of code templates for use with
+          of XML would get onerous. In order to speed the encoding process, <title><ref target="http://spear-prosop.org">SPEAR</ref></title> employs a set of code templates for use with
           <ref target="https://www.oxygenxml.com/">oXygen XML Editor</ref>. These templates allow the encoder
           to drop a <quote>skeleton</quote> of each type of factoid into a TEI XML file. You can find these code templates along 
           with further directions for uploading and using them
@@ -1059,7 +1073,7 @@
               
             </ab>
           </egXML>
-          After inserting a template like this, the encoder would see error messages directing them to complete URIs, develop the 
+          After inserting a template like this, the encoder will see error messages directing them to complete URIs, develop the 
           content of the <gi>note</gi> element, and add a <gi>bibl</gi> element citing the source. There is also a code template containing
           a <quote>skeleton</quote> of a <gi>bibl</gi> formatted for <title><ref target="http://spear-prosop.org">SPEAR</ref></title>.</p>
           <p>Please note as well that once loaded into oXygen XML editor these code templates can be edited. If, for example, the encoding work
@@ -3130,10 +3144,10 @@
                   <gloss>relation</gloss>
                   <desc>Used to designate relation factoids</desc>
                 </valItem>
-                <!--<valItem ident="religiousAffiliation">
+                <valItem ident="religiousAffiliation">
                   <gloss>religious affiliation</gloss>
                   <desc>Used to designate person factoids that encode the religious affiliation of a person</desc>
-                </valItem>-->
+                </valItem>
                 <valItem ident="residence">
                   <gloss>residence</gloss>
                   <desc>Used to designate person factoids that encode places and dates of residence</desc>
