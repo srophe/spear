@@ -55,7 +55,7 @@
       
       <divGen type="toc" xml:id="toc"></divGen>
       <div xml:id="documentation">
-        <head>Encoding Guidelines</head>
+        <head>SPEAR Encoding Guidelines</head>
         <div xml:id="introduction">
           <head>Introduction</head>
           <p><title><ref target="http://spear-prosop.org">SPEAR</ref></title> is a born-digital prosopography using a methodology focused on the encoding of <quote>factoids</quote>, 
