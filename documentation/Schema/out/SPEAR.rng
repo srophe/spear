@@ -5,7 +5,7 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2025-03-31T21:42:49Z. . 
+Schema generated from ODD source 2025-04-22T16:49:55Z. . 
 TEI Edition: P5 Version 4.7.0. Last updated on 16th November 2023, revision e5dd73ed0 
 TEI Edition Location: https://www.tei-c.org/Vault/P5/4.7.0/ 
   
@@ -3449,8 +3449,8 @@ Suggested values include: 1] volume (volume); 2] issue; 3] page (page); 4] line;
                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
                       xmlns:xi="http://www.w3.org/2001/XInclude"
                       context="//tei:licence/tei:p">
-               <sch:assert test="normalize-space(.) = 'Distributed under a Creative Commons Attribution 3.0 Unported License.'">
-                  The &lt;licence&gt; element must contain &lt;p&gt; with the text: "Distributed under a Creative Commons Attribution 3.0 Unported License."
+               <sch:assert test="normalize-space(.) = 'Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)'">
+                  The &lt;licence&gt; element must contain &lt;p&gt; with the text: "Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)."
                 </sch:assert>
             </sch:rule>
          </pattern>
@@ -4054,6 +4054,8 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(physical trait) Used to designate person factoids that encode physical traits</a:documentation>
                <value>relation</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(relation) Used to designate relation factoids</a:documentation>
+               <value>religiousAffiliation</value>
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(religious affiliation) Used to designate person factoids that encode the religious affiliation of a person</a:documentation>
                <value>residence</value>
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(residence) Used to designate person factoids that encode places and dates of residence</a:documentation>
                <value>sanctity</value>

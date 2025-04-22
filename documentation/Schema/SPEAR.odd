@@ -201,9 +201,8 @@
                     <authority>Syriaca.org: The Syriac Reference Portal</authority>
                     <idno type="URI">https://spear-prosop.org/3010/tei</idno>
                     <availability>
-                      <licence target="http://creativecommons.org/licenses/by/3.0/">
-                        <p>Distributed under a Creative Commons Attribution 3.0 Unported
-                          License.</p>
+                      <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
                       </licence>
                     </availability>
                     <date>2020-01-03-05:00</date>
@@ -1193,9 +1192,8 @@
                     <authority>Syriaca.org: The Syriac Reference Portal</authority>
                     <idno type="URI">https://spear-prosop.org/3182/tei</idno>
                     <availability>
-                      <licence target="http://creativecommons.org/licenses/by/3.0/">
-                        <p>Distributed under a Creative Commons Attribution 3.0 Unported
-                          License.</p>
+                      <licence target="http://creativecommons.org/licenses/by/4.0/">
+                        <p>Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
                       </licence>
                     </availability>
                     <date>2020-01-03-05:00</date>
@@ -1300,9 +1298,8 @@
                   <authority>Syriaca.org: The Syriac Reference Portal</authority>
                   <idno type="URI">https://spear-prosop.org/811/tei</idno>
                   <availability>
-                    <licence target="http://creativecommons.org/licenses/by/3.0/">
-                      <p>Distributed under a Creative Commons Attribution 3.0 Unported
-                        License.</p>
+                    <licence target="http://creativecommons.org/licenses/by/4.0/">
+                      <p>Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
                     </licence>
                   </availability>
                   <date>2020-01-03-05:00</date>
@@ -1587,8 +1584,9 @@
                 <authority>Syriaca.org: The Syriac Reference Portal</authority>
                 <idno type="URI">https://spear-prosop.org/10510/tei</idno>
                 <availability>
-                  <licence target="http://creativecommons.org/licenses/by/3.0/"><p>Distributed under a Creative Commons Attribution 3.0 Unported
-                    License.</p></licence>
+                  <licence target="http://creativecommons.org/licenses/by/4.0/">
+                    <p>Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
+                  </licence>
                 </availability>
                 <date>2020-01-03-05:00</date>
               </publicationStmt>
@@ -1622,9 +1620,8 @@
                 <authority>Syriaca.org: The Syriac Reference Portal</authority>
                 <idno type="URI">https://spear-prosop.org/3159/tei</idno>
                 <availability>
-                  <licence target="http://creativecommons.org/licenses/by/3.0/">
-                    <p>Distributed under a Creative Commons Attribution 3.0 Unported
-                      License.</p>
+                  <licence target="http://creativecommons.org/licenses/by/4.0/">
+                    <p>Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
                   </licence>
                 </availability>
                 <date>2020-01-03-05:00</date>
@@ -1643,8 +1640,8 @@
           <constraintSpec ident="licence" scheme="schematron">
             <constraint>
               <sch:rule context="//tei:licence/tei:p">
-                <sch:assert test="normalize-space(.) = 'Distributed under a Creative Commons Attribution 3.0 Unported License.'">
-                  The &lt;licence&gt; element must contain &lt;p&gt; with the text: "Distributed under a Creative Commons Attribution 3.0 Unported License."
+                <sch:assert test="normalize-space(.) = 'Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)'">
+                  The &lt;licence&gt; element must contain &lt;p&gt; with the text: "Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)."
                 </sch:assert>
               </sch:rule>
             </constraint>
@@ -1658,8 +1655,9 @@
                 <authority>Syriaca.org: The Syriac Reference Portal</authority>
                 <idno type="URI">https://spear-prosop.org/10510/tei</idno>
                 <availability>
-                  <licence target="http://creativecommons.org/licenses/by/3.0/"><p>Distributed under a Creative Commons Attribution 3.0 Unported
-                    License.</p></licence>
+                  <licence target="http://creativecommons.org/licenses/by/4.0/">
+                    <p>Distributed under a Creative Commons Attribution 4.0 International License (CC BY 4.0)</p>
+                  </licence>
                 </availability>
                 <date>2020-01-03-05:00</date>
               </publicationStmt>
