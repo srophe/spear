@@ -6,7 +6,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>TEI Customization for SPEAR: Syriaca Persons, Events, and Relations</title>
+        <title>Encoding Manual and TEI Customization for SPEAR: Syriaca Persons, Events, and Relations</title>
         <editor role="creator"><name ref="http://syriaca.org/documentation/editors.xml#dschwartz">Daniel L.
             Schwartz</name></editor>
       </titleStmt>
