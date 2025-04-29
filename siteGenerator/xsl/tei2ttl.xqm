@@ -53,6 +53,82 @@ declare function local:make-date($date){
     else local:make-literal($date, (),())        
 };
 
+declare function local:make-dates-simple($date, $id, $instanceID, $type){
+    if($date/@when) then
+            local:make-triple(concat('swds:',$type,'-',$instanceID), 'spq:when', local:make-date(string($date/@when)))
+        else if($date/@notBefore) then 
+            local:make-triple(concat('swds:',$type,'-',$instanceID), 'spq:not-before', local:make-date(string($date/@notBefore)))
+        else if($date/@notAfter) then 
+            local:make-triple(concat('swds:',$type,'-',$instanceID), 'spq:not-after', local:make-date(string($date/@notAfter)))
+        else if($date/@from) then 
+            local:make-triple(concat('swds:',$type,'-',$instanceID), 'spq:from', local:make-date(string($date/@from)))
+        else if($date/@to) then 
+            local:make-triple(concat('swds:',$type,'-',$instanceID), 'spq:not-to', local:make-date(string($date/@to)))
+        else ()
+
+};
+declare function local:make-date-triples($date, $id, $instanceID, $type){
+if($date/@when != '') then
+    (
+        local:make-triple(local:make-uri($id), concat('swdt:',$type,'-when'), local:make-date(string($date/@when))),
+        local:make-triple(local:make-uri($id), concat('sp:',$type,'-when'), concat('swds:',$type,'-when','-',$instanceID)),
+        local:make-triple(concat('swds:',$type,'-when','-',$instanceID), concat('sps:',$type,'-when'), local:make-date(string($date/@when))),
+        local:make-triple(concat('swds:',$type,'-when','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+    )
+else if($date/@notBefore != '') then
+    if($date/@notAfter) then 
+        (
+            local:make-triple(local:make-uri($id), concat('swdt:',$type,'-notBefore'), local:make-date(string($date/@notBefore))),
+            local:make-triple(local:make-uri($id), concat('sp:',$type,'-notBefore'), concat('swds:',$type,'-notBefore','-',$instanceID)),
+            local:make-triple(concat('swds:',$type,'-notBefore','-',$instanceID), concat('sps:',$type,'-notBefore'), local:make-date(string($date/@notBefore))),
+            local:make-triple(concat('swds:',$type,'-notBefore','-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+            local:make-triple(local:make-uri($id), concat('swdt:',$type,'-notAfter'), local:make-date(string($date/@notAfter))),
+            local:make-triple(local:make-uri($id), concat('sp:',$type,'-notAfter'), concat('swds:',$type,'-notAfter','-',$instanceID)),
+            local:make-triple(concat('swds:',$type,'-notAfter','-',$instanceID), concat('sps:',$type,'-notAfter'), local:make-date(string($date/@notAfter))),
+            local:make-triple(concat('swds:',$type,'-notAfter','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+        )
+    else 
+        (
+                local:make-triple(local:make-uri($id), concat('swdt:',$type,'-notBefore'), local:make-date(string($date/@notBefore))),
+                local:make-triple(local:make-uri($id), concat('sp:',$type,'-notBefore'), concat('swds:',$type,'-notBefore','-',$instanceID)),
+                local:make-triple(concat('swds:',$type,'-notBefore','-',$instanceID), concat('sps:',$type,'-notBefore'), local:make-date(string($date/@notBefore))),
+                local:make-triple(concat('swds:',$type,'-notBefore','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+                )
+        else if($date/@notAfter) then
+            (
+                local:make-triple(local:make-uri($id), concat('swdt:',$type,'-notAfter'), local:make-date(string($date/@notAfter))),
+                local:make-triple(local:make-uri($id), concat('sp:',$type,'-notAfter'), concat('swds:',$type,'-notAfter','-',$instanceID)),
+                local:make-triple(concat('swds:',$type,'-notAfter','-',$instanceID), concat('sps:',$type,'-notAfter'), local:make-date(string($date/@notAfter))),
+                local:make-triple(concat('swds:',$type,'-notAfter','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+            )
+        else if($date/@from != '') then
+            if($date/@to) then 
+            (
+                local:make-triple(local:make-uri($id), concat('swdt:',$type,'-from'), local:make-date(string($date/@from))),
+                local:make-triple(local:make-uri($id), concat('sp:',$type,'-from'), concat('swds:',$type,'-from','-',$instanceID)),
+                local:make-triple(concat('swds:',$type,'-from','-',$instanceID), concat('sps:',$type,'-from'), local:make-date(string($date/@from))),
+                local:make-triple(concat('swds:',$type,'-from','-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+                local:make-triple(local:make-uri($id), concat('swdt:',$type,'-to'), local:make-date(string($date/@to))),
+                local:make-triple(local:make-uri($id), concat('sp:',$type,'-to'), concat('swds:',$type,'-to','-',$instanceID)),
+                local:make-triple(concat('swds:',$type,'-to','-',$instanceID), concat('sps:',$type,'-to'), local:make-date(string($date/@to))),
+                local:make-triple(concat('swds:',$type,'-to','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+            )
+            else 
+                (
+                local:make-triple(local:make-uri($id), concat('swdt:',$type,'-from'), local:make-date(string($date/@from))),
+                local:make-triple(local:make-uri($id), concat('sp:',$type,'-from'), concat('swds:',$type,'-from','-',$instanceID)),
+                local:make-triple(concat('swds:',$type,'-from','-',$instanceID), concat('sps:',$type,'-from'), local:make-date(string($date/@from))),
+                local:make-triple(concat('swds:',$type,'-from','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+                )
+        else if($date/@to) then
+            (
+                local:make-triple(local:make-uri($id), concat('swdt:',$type,'-to'), local:make-date(string($date/@to))),
+                local:make-triple(local:make-uri($id), concat('sp:',$type,'-to'), concat('swds:',$type,'-to','-',$instanceID)),
+                local:make-triple(concat('swds:',$type,'-to','-',$instanceID), concat('sps:',$type,'-to'), local:make-date(string($date/@to))),
+                local:make-triple(concat('swds:',$type,'-to','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
+            )        
+        else ()
+};
 declare function local:rec-type($node){
     if($node/descendant::tei:body/tei:listPerson) then
         'lawd:Person'
@@ -87,7 +163,7 @@ return
         (
         local:make-triple(local:make-uri($id), 'rdf:type', local:rec-type($node)),
         local:places($node, $id, $idShort, $typeShort)
-        )        
+        )         
     else local:make-triple(local:make-uri($id), 'rdf:type', local:rec-type($node))
 };
 
@@ -129,120 +205,54 @@ declare function local:places($node, $id, $idShort, $typeShort){
     
     (: Name variant unique statement instance :)
     for $nameVariant at $p in $node/descendant::tei:place/tei:placeName
+    let $instanceID := concat($idShort,'-',$p)
     return 
-        (local:make-triple(local:make-uri($id), 'sp:name-variant', concat('swds:',$typeShort,'-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:',$typeShort,'-',$idShort,'-',$p), 'sps:name-variant', local:make-literal($nameVariant/descendant-or-self::text(),$nameVariant/@xml:lang,'')),
-        local:make-triple(concat('swds:',$typeShort,'-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
+        (local:make-triple(local:make-uri($id), 'sp:name-variant', concat('swds:',$typeShort,'-',$instanceID)),
+        local:make-triple(concat('swds:',$typeShort,'-',$instanceID), 'sps:name-variant', local:make-literal($nameVariant/descendant-or-self::text(),$nameVariant/@xml:lang,'')),
+        local:make-triple(concat('swds:',$typeShort,'-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (:IDNO :) 
     for $closeMatch at $p in $node/descendant::tei:text/descendant::tei:idno[@type ='URI'][not(contains(., "syriaca.org"))]
+    let $instanceID := concat($idShort,'-',$p)    
     return 
         (local:make-triple(local:make-uri($id), 'swdt:closeMatch', local:make-literal($closeMatch,'','')),
-        local:make-triple(local:make-uri($id), 'sp:closeMatch', concat('swds:closeMatch-',$idShort, '-',$p)),
-        local:make-triple(concat('swds:closeMatch-',$idShort, '-',$p), 'sps:closeMatch', local:make-literal($closeMatch,'','')),
-        local:make-triple(concat('swds:closeMatch-',$idShort, '-',$p), 'spr:reference-URL', local:make-uri($id))
+        local:make-triple(local:make-uri($id), 'sp:closeMatch', concat('swds:closeMatch-',$instanceID)),
+        local:make-triple(concat('swds:closeMatch-',$instanceID), 'sps:closeMatch', local:make-literal($closeMatch,'','')),
+        local:make-triple(concat('swds:closeMatch-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (: Events state[@type='existence']:)        
     for $event at $p in $node/descendant::tei:text/descendant::tei:state[@type='existence']
-    return 
-        if($event/@from != '') then
-            if($event/@to) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:exist-from', local:make-date(string($event/@from))),
-                local:make-triple(local:make-uri($id), 'sp:exist-from', concat('swds:exist-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:exist-from','-',$idShort,'-',$p), 'sps:exist-from', local:make-date(string($event/@from))),
-                local:make-triple(concat('swds:exist-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-                local:make-triple(local:make-uri($id), 'swdt:exist-to', local:make-date(string($event/@to))),
-                local:make-triple(local:make-uri($id), 'sp:exist-to', concat('swds:exist-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:exist-to','-',$idShort,'-',$p), 'sps:exist-to', local:make-date(string($event/@to))),
-                local:make-triple(concat('swds:exist-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:exist-from', local:make-date(string($event/@from))),
-                local:make-triple(local:make-uri($id), 'sp:exist-from', concat('swds:exist-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:exist-from','-',$idShort,'-',$p), 'sps:exist-from', local:make-date(string($event/@from))),
-                local:make-triple(concat('swds:exist-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($event/@to) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:exist-to', local:make-date(string($event/@to))),
-                local:make-triple(local:make-uri($id), 'sp:exist-to', concat('swds:exist-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:exist-to','-',$idShort,'-',$p), 'sps:exist-to', local:make-date(string($event/@to))),
-                local:make-triple(concat('swds:exist-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )        
-        else (),    
+    let $instanceID := concat($idShort,'-',$p)
+    return local:make-date-triples($event, $id, $instanceID, 'exist'),    
 (: GPS :)        
     for $gps at $p in $node/descendant::tei:text/descendant::tei:location[@type='gps']
+    let $instanceID := concat($idShort,'-',$p)
     return
         (
             local:make-triple(local:make-uri($id), 'swdt:has-gps-coordinates', local:make-literal($gps/descendant::text(),'','')),
-            local:make-triple(local:make-uri($id), 'sp:has-gps-coordinates', concat('swds:coordinates','-',$idShort,'-',$p)),
-            local:make-triple(concat('swds:coordinates','-',$idShort,'-',$p), 'sps:exist-to', local:make-literal($gps/descendant::text(),'','')),
-            local:make-triple(concat('swds:coordinates','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
+            local:make-triple(local:make-uri($id), 'sp:has-gps-coordinates', concat('swds:coordinates','-',$instanceID)),
+            local:make-triple(concat('swds:coordinates','-',$instanceID), 'sps:exist-to', local:make-literal($gps/descendant::text(),'','')),
+            local:make-triple(concat('swds:coordinates','-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (: Religious community has-religious-community  place/state[@type='confession']/@ref :)
     for $religiousCom at $p in $node/descendant::tei:text/descendant::tei:place/tei:state[@type='confession'][@ref != '']
     let $ref := $religiousCom/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:has-religious-community', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:has-religious-community', concat('swds:has-religious-community-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'sps:has-religious-community', local:make-uri($ref)),
-        local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-        if($religiousCom/@when) then
-            local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'spq:when', local:make-date(string($religiousCom/@when)))
-        else if($religiousCom/@notBefore) then 
-            local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'spq:not-before', local:make-date(string($religiousCom/@notBefore)))
-        else if($religiousCom/@notAfter) then 
-            local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'spq:not-after', local:make-date(string($religiousCom/@notAfter)))
-        else if($religiousCom/@from) then 
-            local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'spq:from', local:make-date(string($religiousCom/@from)))
-        else if($religiousCom/@to) then 
-            local:make-triple(concat('swds:has-religious-community-',$idShort,'-',$p), 'spq:not-to', local:make-date(string($religiousCom/@to)))
-        else ()
+        local:make-triple(local:make-uri($id), 'sp:has-religious-community', concat('swds:has-religious-community-',$instanceID)),
+        local:make-triple(concat('swds:has-religious-community-',$instanceID), 'sps:has-religious-community', local:make-uri($ref)),
+        local:make-triple(concat('swds:has-religious-community-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+        local:make-dates-simple($religiousCom, $id, $instanceID, 'has-religious-community')
         ),
 (: Relationships :)
      for $relation at $p in $node/descendant::tei:text/descendant::tei:relation
-     let $relRef := substring-after($relation/@ref,'taxonomy/')
-     return (
-        for $s at $ap in tokenize($relation/@active,' ')
-        let $sRef := $s
-        return
-           for $o at $op in tokenize($relation/@passive,' ')
-           let $oRef := $o
-           return
-               (
-               local:make-triple(local:make-uri($sRef), concat('swdt:',$relRef), local:make-uri($oRef)),
-               local:make-triple(local:make-uri($sRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$ap)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$ap), concat('swd:',$relRef), local:make-uri($oRef)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$ap), 'spr:reference-URL', local:make-uri($id))
-               ), 
-          for $s at $m1p in tokenize($relation/@mutual,' ')
-          let $sRef := substring-after($s,'syriaca.org/')
-          return   
-            for $o at $m2p in tokenize($relation/@mutual,' ')[. != $s]
-            let $oRef := substring-after($o,'syriaca.org/')
-            return 
-               (
-               local:make-triple(local:make-uri($sRef), concat('swdt:',$relRef), local:make-uri($oRef)),
-               local:make-triple(local:make-uri($sRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m1p)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m1p), concat('swd:',$relRef), local:make-uri($oRef)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m1p), 'spr:reference-URL', local:make-uri($id)),
-               
-               local:make-triple(local:make-uri($oRef), concat('swdt:',$relRef), local:make-uri($sRef)),
-               local:make-triple(local:make-uri($oRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m2p)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m2p), concat('swd:',$relRef), local:make-uri($sRef)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m2p), 'spr:reference-URL', local:make-uri($id))
-               )
-        )         
-(:
-
-
-:)        
-
+     let $instanceID := concat($idShort,'-',$p)
+     return local:relationship-triples($relation, $id, $instanceID)         
 )
 };
+
 declare function local:persons($node, $id, $idShort, $typeShort){
 (
 (:Series statement:)
@@ -280,330 +290,128 @@ declare function local:persons($node, $id, $idShort, $typeShort){
     
     (: Name variant unique statement instance :)
     for $nameVariant at $p in $node/descendant::tei:person/tei:persName | $node/descendant::tei:personGrp/tei:persName
+    let $instanceID := concat($idShort,'-',$p)
     return 
-        (local:make-triple(local:make-uri($id), 'sp:name-variant', concat('swds:',$typeShort,'-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:',$typeShort,'-',$idShort,'-',$p), 'sps:name-variant', local:make-literal($nameVariant/descendant-or-self::text(),$nameVariant/@xml:lang,'')),
-        local:make-triple(concat('swds:',$typeShort,'-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
+        (local:make-triple(local:make-uri($id), 'sp:name-variant', concat('swds:',$typeShort,'-',$instanceID)),
+        local:make-triple(concat('swds:',$typeShort,'-',$instanceID), 'sps:name-variant', local:make-literal($nameVariant/descendant-or-self::text(),$nameVariant/@xml:lang,'')),
+        local:make-triple(concat('swds:',$typeShort,'-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (:IDNO :) 
     for $closeMatch at $p in $node/descendant::tei:text/descendant::tei:idno[@type ='URI'][not(contains(., "syriaca.org"))]
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (local:make-triple(local:make-uri($id), 'swdt:closeMatch', local:make-literal($closeMatch,'','')),
-        local:make-triple(local:make-uri($id), 'sp:closeMatch', concat('swds:closeMatch-',$idShort, '-',$p)),
-        local:make-triple(concat('swds:closeMatch-',$idShort, '-',$p), 'sps:closeMatch', local:make-literal($closeMatch,'','')),
-        local:make-triple(concat('swds:closeMatch-',$idShort, '-',$p), 'spr:reference-URL', local:make-uri($id))
+        local:make-triple(local:make-uri($id), 'sp:closeMatch', concat('swds:closeMatch-',$instanceID)),
+        local:make-triple(concat('swds:closeMatch-',$instanceID), 'sps:closeMatch', local:make-literal($closeMatch,'','')),
+        local:make-triple(concat('swds:closeMatch-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (: Floruit :)
     for $floruit at $p in $node/descendant::tei:text/descendant::tei:floruit/tei:date
-    return 
-        if($floruit/@when != '') then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-when', local:make-date(string($floruit/@when))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-when', concat('swds:floruit-when','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-when','-',$idShort,'-',$p), 'sps:floruit-when', local:make-date(string($floruit/@when))),
-                local:make-triple(concat('swds:floruit-when','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-        else if($floruit/@notBefore != '') then
-            if($floruit/@notAfter) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-notBefore', local:make-date(string($floruit/@notBefore))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-notBefore', concat('swds:floruit-notBefore','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-notBefore','-',$idShort,'-',$p), 'sps:floruit-notBefore', local:make-date(string($floruit/@notBefore))),
-                local:make-triple(concat('swds:floruit-notBefore','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-                local:make-triple(local:make-uri($id), 'swdt:floruit-notAfter', local:make-date(string($floruit/@notAfter))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-notAfter', concat('swds:floruit-notAfter','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-notAfter','-',$idShort,'-',$p), 'sps:floruit-notAfter', local:make-date(string($floruit/@notAfter))),
-                local:make-triple(concat('swds:floruit-notAfter','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-notBefore', local:make-date(string($floruit/@notBefore))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-notBefore', concat('swds:floruit-notBefore','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-notBefore','-',$idShort,'-',$p), 'sps:floruit-notBefore', local:make-date(string($floruit/@notBefore))),
-                local:make-triple(concat('swds:floruit-notBefore','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($floruit/@notAfter) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-notAfter', local:make-date(string($floruit/@notAfter))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-notAfter', concat('swds:floruit-notAfter','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-notAfter','-',$idShort,'-',$p), 'sps:floruit-notAfter', local:make-date(string($floruit/@notAfter))),
-                local:make-triple(concat('swds:floruit-notAfter','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-        else if($floruit/@from != '') then
-            if($floruit/@to) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-from', local:make-date(string($floruit/@from))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-from', concat('swds:floruit-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-from','-',$idShort,'-',$p), 'sps:floruit-from', local:make-date(string($floruit/@from))),
-                local:make-triple(concat('swds:floruit-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-                local:make-triple(local:make-uri($id), 'swdt:floruit-to', local:make-date(string($floruit/@to))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-to', concat('swds:floruit-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-to','-',$idShort,'-',$p), 'sps:floruit-to', local:make-date(string($floruit/@to))),
-                local:make-triple(concat('swds:floruit-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-from', local:make-date(string($floruit/@from))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-from', concat('swds:floruit-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-from','-',$idShort,'-',$p), 'sps:floruit-from', local:make-date(string($floruit/@from))),
-                local:make-triple(concat('swds:floruit-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($floruit/@to) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:floruit-to', local:make-date(string($floruit/@to))),
-                local:make-triple(local:make-uri($id), 'sp:floruit-to', concat('swds:floruit-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:floruit-to','-',$idShort,'-',$p), 'sps:floruit-to', local:make-date(string($floruit/@to))),
-                local:make-triple(concat('swds:floruit-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )        
-        else (),
+    let $instanceID := concat($idShort,'-',$p)
+    return local:make-date-triples($floruit, $id, $instanceID, 'floruit'), 
 (:Birth Dates:)
     for $birth at $p in $node/descendant::tei:text/descendant::tei:birth/tei:date
-    return 
-        if($birth/@when != '') then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:birth-when', local:make-date(string($birth/@when))),
-                local:make-triple(local:make-uri($id), 'sp:birth-when', concat('swds:birth-when','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-when','-',$idShort,'-',$p), 'sps:birth-when', local:make-date(string($birth/@when))),
-                local:make-triple(concat('swds:birth-when','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-        else if($birth/@notBefore != '') then
-            if($birth/@notAfter) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:birth-notBefore', local:make-date(string($birth/@notBefore))),
-                local:make-triple(local:make-uri($id), 'sp:birth-notBefore', concat('swds:birth-notBefore','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-notBefore','-',$idShort,'-',$p), 'sps:birth-notBefore', local:make-date(string($birth/@notBefore))),
-                local:make-triple(concat('swds:birth-notBefore','-',$idShort,'-',$p), 'spr:reference-URL', concat('swd:person/',$idShort)),
-                local:make-triple(local:make-uri($id), 'swdt:birth-notAfter', local:make-date(string($birth/@notAfter))),
-                local:make-triple(local:make-uri($id), 'sp:birth-notAfter', concat('swds:birth-notAfter','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-notAfter','-',$idShort,'-',$p), 'sps:birth-notAfter', local:make-date(string($birth/@notAfter))),
-                local:make-triple(concat('swds:birth-notAfter','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:birth-notBefore', local:make-date(string($birth/@notBefore))),
-                local:make-triple(local:make-uri($id), 'sp:birth-notBefore', concat('swds:birth-notBefore','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-notBefore','-',$idShort,'-',$p), 'sps:birth-notBefore', local:make-date(string($birth/@notBefore))),
-                local:make-triple(concat('swds:birth-notBefore','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($birth/@notAfter) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:birth-notAfter', local:make-date(string($birth/@notAfter))),
-                local:make-triple(local:make-uri($id), 'sp:birth-notAfter', concat('swds:birth-notAfter','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-notAfter','-',$idShort,'-',$p), 'sps:birth-notAfter', local:make-date(string($birth/@notAfter))),
-                local:make-triple(concat('swds:birth-notAfter','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-        else if($birth/@from != '') then
-            if($birth/@to) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:birth-from', local:make-date(string($birth/@from))),
-                local:make-triple(local:make-uri($id), 'sp:birth-from', concat('swds:birth-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-from','-',$idShort,'-',$p), 'sps:birth-from', local:make-date(string($birth/@from))),
-                local:make-triple(concat('swds:birth-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-                local:make-triple(local:make-uri($id), 'swdt:birth-to', local:make-date(string($birth/@to))),
-                local:make-triple(local:make-uri($id), 'sp:birth-to', concat('swds:birth-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-to','-',$idShort,'-',$p), 'sps:birth-to', local:make-date(string($birth/@to))),
-                local:make-triple(concat('swds:birth-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:birth-from', local:make-date(string($birth/@from))),
-                local:make-triple(local:make-uri($id), 'sp:birth-from', concat('swds:birth-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-from','-',$idShort,'-',$p), 'sps:birth-from', local:make-date(string($birth/@from))),
-                local:make-triple(concat('swds:birth-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($birth/@to) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:birth-to', local:make-date(string($birth/@to))),
-                local:make-triple(local:make-uri($id), 'sp:birth-to', concat('swds:birth-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:birth-to','-',$idShort,'-',$p), 'sps:birth-to', local:make-date(string($birth/@to))),
-                local:make-triple(concat('swds:birth-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )        
-        else (),
+    let $instanceID := concat($idShort,'-',$p)
+    return local:make-date-triples($birth, $id, $instanceID, 'birth'),
 (:Death Dates:)
     for $death at $p in $node/descendant::tei:text/descendant::tei:death/tei:date
-    return 
-        if($death/@when != '') then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:death-when', local:make-date(string($death/@when))),
-                local:make-triple(local:make-uri($id), 'sp:death-when', concat('swds:death-when','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-when','-',$idShort,'-',$p), 'sps:death-when', local:make-date(string($death/@when))),
-                local:make-triple(concat('swds:death-when','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-        else if($death/@notBefore != '') then
-            if($death/@notAfter) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:death-notBefore', local:make-date(string($death/@notBefore))),
-                local:make-triple(local:make-uri($id), 'sp:death-notBefore', concat('swds:death-notBefore','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-notBefore','-',$idShort,'-',$p), 'sps:death-notBefore', local:make-date(string($death/@notBefore))),
-                local:make-triple(concat('swds:death-notBefore','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-                local:make-triple(local:make-uri($id), 'swdt:death-notAfter', local:make-date(string($death/@notAfter))),
-                local:make-triple(local:make-uri($id), 'sp:death-notAfter', concat('swds:death-notAfter','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-notAfter','-',$idShort,'-',$p), 'sps:death-notAfter', local:make-date(string($death/@notAfter))),
-                local:make-triple(concat('swds:death-notAfter','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:death-notBefore', local:make-date(string($death/@notBefore))),
-                local:make-triple(local:make-uri($id), 'sp:death-notBefore', concat('swds:death-notBefore','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-notBefore','-',$idShort,'-',$p), 'sps:death-notBefore', local:make-date(string($death/@notBefore))),
-                local:make-triple(concat('swds:death-notBefore','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($death/@notAfter) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:death-notAfter', local:make-date(string($death/@notAfter))),
-                local:make-triple(local:make-uri($id), 'sp:death-notAfter', concat('swds:birth-notAfter','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-notAfter','-',$idShort,'-',$p), 'sps:birth-notAfter', local:make-date(string($death/@notAfter))),
-                local:make-triple(concat('swds:death-notAfter','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-        else if($death/@from != '') then
-            if($death/@to) then 
-            (
-                local:make-triple(local:make-uri($id), 'swdt:death-from', local:make-date(string($death/@from))),
-                local:make-triple(local:make-uri($id), 'sp:death-from', concat('swds:death-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-from','-',$idShort,'-',$p), 'sps:death-from', local:make-date(string($death/@from))),
-                local:make-triple(concat('swds:death-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-                local:make-triple(local:make-uri($id), 'swdt:death-to', local:make-date(string($death/@to))),
-                local:make-triple(local:make-uri($id), 'sp:death-to', concat('swds:birth-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-to','-',$idShort,'-',$p), 'sps:death-to', local:make-date(string($death/@to))),
-                local:make-triple(concat('swds:death-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )
-            else 
-                (
-                local:make-triple(local:make-uri($id), 'swdt:death-from', local:make-date(string($death/@from))),
-                local:make-triple(local:make-uri($id), 'sp:death-from', concat('swds:death-from','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-from','-',$idShort,'-',$p), 'sps:death-from', local:make-date(string($death/@from))),
-                local:make-triple(concat('swds:death-from','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-                )
-        else if($death/@to) then
-            (
-                local:make-triple(local:make-uri($id), 'swdt:death-to', local:make-date(string($death/@to))),
-                local:make-triple(local:make-uri($id), 'sp:death-to', concat('swds:death-to','-',$idShort,'-',$p)),
-                local:make-triple(concat('swds:death-to','-',$idShort,'-',$p), 'sps:death-to', local:make-date(string($death/@to))),
-                local:make-triple(concat('swds:death-to','-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
-            )        
-        else (),
+    let $instanceID := concat($idShort,'-',$p)
+    return local:make-date-triples($death, $id, $instanceID, 'death'),
 (: Birth Place:)
     for $birthPlace at $p in $node/descendant::tei:text/descendant::tei:birth[tei:placeName]/tei:placeName[@ref]
     let $ref := $birthPlace/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:birth-place', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:birth-place', concat('swds:birth-place-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:birth-place-',$idShort,'-',$p), 'sps:birth-place', local:make-uri($ref)),
-        local:make-triple(concat('swds:birth-place-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
+        local:make-triple(local:make-uri($id), 'sp:birth-place', concat('swds:birth-place-',$instanceID)),
+        local:make-triple(concat('swds:birth-place-',$instanceID), 'sps:birth-place', local:make-uri($ref)),
+        local:make-triple(concat('swds:birth-place-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (: Death Place:)
     for $deathPlace at $p in $node/descendant::tei:text/descendant::tei:death[tei:placeName]/tei:placeName[@ref]
     let $ref := $deathPlace/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:death-place', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:death-place', concat('swds:death-place-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:death-place-',$idShort,'-',$p), 'sps:death-place', local:make-uri($ref)),
-        local:make-triple(concat('swds:death-place-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
+        local:make-triple(local:make-uri($id), 'sp:death-place', concat('swds:death-place-',$instanceID)),
+        local:make-triple(concat('swds:death-place-',$instanceID), 'sps:death-place', local:make-uri($ref)),
+        local:make-triple(concat('swds:death-place-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (: Gender Place:)
     for $gender at $p in $node/descendant::tei:text/descendant::tei:gender[@ana]
     for $ana in tokenize($gender/@ana,' ')
     let $ref := $ana
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:gender', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:gender', concat('swds:gender-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:gender-',$idShort,'-',$p), 'sps:gender', local:make-uri($ref)),
-        local:make-triple(concat('swds:gender-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id))
+        local:make-triple(local:make-uri($id), 'sp:gender', concat('swds:gender-',$instanceID)),
+        local:make-triple(concat('swds:gender-',$instanceID), 'sps:gender', local:make-uri($ref)),
+        local:make-triple(concat('swds:gender-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (: WS:Note, may be an issue with the first triple because these are uris may need some help here 
     Occupation :)    
     for $occupation at $p in $node/descendant::tei:text/descendant::tei:state[@type='occupation'][@ref != '']
     let $ref := $occupation/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:occupation', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:occupation', concat('swds:occupation-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'sps:occupation', local:make-uri($ref)),
-        local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-        if($occupation/@when) then
-            local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'spq:when', local:make-date(string($occupation/@when)))
-        else if($occupation/@notBefore) then 
-            local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'spq:not-before', local:make-date(string($occupation/@notBefore)))
-        else if($occupation/@notAfter) then 
-            local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'spq:not-after', local:make-date(string($occupation/@notAfter)))
-        else if($occupation/@from) then 
-            local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'spq:from', local:make-date(string($occupation/@from)))
-        else if($occupation/@to) then 
-            local:make-triple(concat('swds:occupation-',$idShort,'-',$p), 'spq:not-to', local:make-date(string($occupation/@to)))
-        else ()
+        local:make-triple(local:make-uri($id), 'sp:occupation', concat('swds:occupation-',$instanceID)),
+        local:make-triple(concat('swds:occupation-',$instanceID), 'sps:occupation', local:make-uri($ref)),
+        local:make-triple(concat('swds:occupation-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+        local:make-dates-simple($occupation, $id, $instanceID, 'occupation')
         ), 
 (: WS:Note, may be an issue with the first triple because these are uris may need some help here 
     Socio Economic Status :)    
     for $economic at $p in $node/descendant::tei:text/descendant::tei:state[@type='socio-economic-status'][@ref != '']
     let $ref := $economic/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:socio-economic-status', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:socio-economic-status', concat('swds:socio-economic-status-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'sps:socio-economic-status', local:make-uri($ref)),
-        local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-        if($economic/@when) then
-            local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'spq:when', local:make-date(string($economic/@when)))
-        else if($economic/@notBefore) then 
-            local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'spq:not-before', local:make-date(string($economic/@notBefore)))
-        else if($economic/@notAfter) then 
-            local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'spq:not-after', local:make-date(string($economic/@notAfter)))
-        else if($economic/@from) then 
-            local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'spq:from', local:make-date(string($economic/@from)))
-        else if($economic/@to) then 
-            local:make-triple(concat('swds:socio-economic-status-',$idShort,'-',$p), 'spq:not-to', local:make-date(string($economic/@to)))
-        else ()
+        local:make-triple(local:make-uri($id), 'sp:socio-economic-status', concat('swds:socio-economic-status-',$instanceID)),
+        local:make-triple(concat('swds:socio-economic-status-',$instanceID), 'sps:socio-economic-status', local:make-uri($ref)),
+        local:make-triple(concat('swds:socio-economic-status-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+        local:make-dates-simple($economic, $id, $instanceID, 'socio-economic-status')
         ),
 (: WS:Note, may be an issue with the first triple because these are uris may need some help here 
     Status :)    
     for $status at $p in $node/descendant::tei:text/descendant::tei:state[@type='status'][@ref != '']
     let $ref := $status/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($id), 'swdt:status', local:make-uri($ref)),
-        local:make-triple(local:make-uri($id), 'sp:status', concat('swds:status-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:status-',$idShort,'-',$p), 'sps:status', local:make-uri($ref)),
-        local:make-triple(concat('swds:status-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-        if($status/@when) then
-            local:make-triple(concat('swds:status-',$idShort,'-',$p), 'spq:when', local:make-date(string($status/@when)))
-        else if($status/@notBefore) then 
-            local:make-triple(concat('swds:status-',$idShort,'-',$p), 'spq:not-before', local:make-date(string($status/@notBefore)))
-        else if($status/@notAfter) then 
-            local:make-triple(concat('swds:status-',$idShort,'-',$p), 'spq:not-after', local:make-date(string($status/@notAfter)))
-        else if($status/@from) then 
-            local:make-triple(concat('swds:status-',$idShort,'-',$p), 'spq:from', local:make-date(string($status/@from)))
-        else if($status/@to) then 
-            local:make-triple(concat('swds:status-',$idShort,'-',$p), 'spq:not-to', local:make-date(string($status/@to)))
-        else ()
+        local:make-triple(local:make-uri($id), 'sp:status', concat('swds:status-',$instanceID)),
+        local:make-triple(concat('swds:status-',$instanceID), 'sps:status', local:make-uri($ref)),
+        local:make-triple(concat('swds:status-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+        local:make-dates-simple($status, $id, $instanceID, 'status')
         ),
 (: WS:Note, may be an issue with the first triple because these are uris may need some help here 
     commemorates :)    
     for $commemorates at $p in $node/descendant::tei:text/descendant::tei:event[@type='veneration'][descendant::tei:rs[@ref != '']]
     let $ref := $commemorates/descendant::tei:rs/@ref
+    let $instanceID := concat($idShort,'-',$p)
     return 
         (
         local:make-triple(local:make-uri($ref), 'swdt:commemorates' ,local:make-uri($id)),
-        local:make-triple(local:make-uri($ref), 'sp:commemorates' ,concat('swds:commemorates-',$idShort,'-',$p)),
-        local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'sps:commemorates' ,local:make-uri($id)),
-        local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'spr:reference-URL', local:make-uri($id)),
-        if($commemorates/@when) then
-            local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'spq:when', local:make-date(string($commemorates/@when)))
-        else if($commemorates/@notBefore) then 
-            local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'spq:not-before', local:make-date(string($commemorates/@notBefore)))
-        else if($commemorates/@notAfter) then 
-            local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'spq:not-after', local:make-date(string($commemorates/@notAfter)))
-        else if($commemorates/@from) then 
-            local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'spq:from', local:make-date(string($commemorates/@from)))
-        else if($commemorates/@to) then 
-            local:make-triple(concat('swds:commemorates-',$idShort,'-',$p), 'spq:not-to', local:make-date(string($commemorates/@to)))
-        else ()
+        local:make-triple(local:make-uri($ref), 'sp:commemorates' ,concat('swds:commemorates-',$instanceID)),
+        local:make-triple(concat('swds:commemorates-',$instanceID), 'sps:commemorates' ,local:make-uri($id)),
+        local:make-triple(concat('swds:commemorates-',$instanceID), 'spr:reference-URL', local:make-uri($id)),
+        local:make-dates-simple($commemorates, $id, $instanceID, 'commemorates')
         ),
 (: Relationships :)
      for $relation at $p in $node/descendant::tei:text/descendant::tei:relation
-     let $relRef := substring-after($relation/@ref,'taxonomy/')
+     let $instanceID := concat($idShort,'-',$p)
+     return local:relationship-triples($relation, $id, $instanceID) 
+)
+};
+
+declare function local:relationship-triples($relation, $id, $instanceID){
+let $relRef := substring-after($relation/@ref,'taxonomy/')
      return (
         for $s at $ap in tokenize($relation/@active,' ')
         let $sRef := $s
@@ -613,9 +421,9 @@ declare function local:persons($node, $id, $idShort, $typeShort){
            return
                (
                local:make-triple(local:make-uri($sRef), concat('swdt:',$relRef), local:make-uri($oRef)),
-               local:make-triple(local:make-uri($sRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$ap)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$ap), concat('swd:',$relRef), local:make-uri($oRef)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$ap), 'spr:reference-URL', local:make-uri($id))
+               local:make-triple(local:make-uri($sRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$instanceID,$ap)),
+               local:make-triple(concat('swds:activeRelation',$relRef,'-',$instanceID,$ap), concat('swd:',$relRef), local:make-uri($oRef)),
+               local:make-triple(concat('swds:activeRelation',$relRef,'-',$instanceID,$ap), 'spr:reference-URL', local:make-uri($id))
                ), 
           for $s at $m1p in tokenize($relation/@mutual,' ')
           let $sRef := $s
@@ -625,18 +433,327 @@ declare function local:persons($node, $id, $idShort, $typeShort){
             return 
                (
                local:make-triple(local:make-uri($sRef), concat('swdt:',$relRef), local:make-uri($oRef)),
-               local:make-triple(local:make-uri($sRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m1p)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m1p), concat('swd:',$relRef), local:make-uri($oRef)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m1p), 'spr:reference-URL', local:make-uri($id)),
+               local:make-triple(local:make-uri($sRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$instanceID,$m1p)),
+               local:make-triple(concat('swds:activeRelation',$relRef,'-',$instanceID,$m1p), concat('swd:',$relRef), local:make-uri($oRef)),
+               local:make-triple(concat('swds:activeRelation',$relRef,'-',$instanceID,$m1p), 'spr:reference-URL', local:make-uri($id)),
                
                local:make-triple(local:make-uri($oRef), concat('swdt:',$relRef), local:make-uri($sRef)),
-               local:make-triple(local:make-uri($oRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m2p)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m2p), concat('swd:',$relRef), local:make-uri($sRef)),
-               local:make-triple(concat('swds:activeRelation',$relRef,'-',$idShort,'-',$p,$m2p), 'spr:reference-URL', local:make-uri($id))
+               local:make-triple(local:make-uri($oRef), concat('sp:',$relRef), concat('swds:activeRelation',$relRef,'-',$instanceID,$m2p)),
+               local:make-triple(concat('swds:activeRelation',$relRef,'-',$instanceID,$m2p), concat('swd:',$relRef), local:make-uri($sRef)),
+               local:make-triple(concat('swds:activeRelation',$relRef,'-',$instanceID,$m2p), 'spr:reference-URL', local:make-uri($id))
                )
-        )          
+        )
+};
+
+declare function local:make-SPEAR-triples($node){
+let $rec := $node/child::*[1]
+let $recID := replace($rec/descendant::tei:publicationStmt/tei:idno,'/tei','')
+for $factoid in $rec/descendant-or-self::tei:ab
+let $id := $factoid/tei:idno[@type="URI"]
+let $idShort := tokenize($id,'/')[last()]
+let $factoidRef := tokenize($factoid/tei:idno[@type="URI"], "/")[last()]
+let $persRef := 
+                    if($factoid/descendant::tei:person/tei:persName) then
+                       $factoid/descendant::tei:person/tei:persName/@ref
+                    else $factoid/descendant::tei:persName[1]/@ref
+let $labelNode := 
+                 if($factoid/tei:listEvent/tei:event/descendant::tei:desc) then
+                    $factoid/tei:listEvent/tei:event/descendant::tei:desc[1]
+                 else if($factoid/descendant::tei:listPerson) then 
+                    string-join($factoid/descendant::tei:listPerson/descendant::tei:persName/text(),' ')   
+                 else if($factoid/descendant::tei:note) then
+                    $factoid/descendant::tei:note[1]
+                  else if($factoid/descendant::tei:desc) then
+                    $factoid/descendant::tei:desc[1]
+                  else
+                    string-join(($factoid/child::*[not(self::tei:idno) and not(self::tei:bibl)]),'')      
+let $labelLiteral := local:make-literal(string($labelNode), 'en',())
+(:
+let $descHTML := serialize(('"""',$labelNode,'"""'), 
+                        <output:serialization-parameters>
+                            <output:method>html</output:method>
+                        </output:serialization-parameters>)
+:)                        
+return 
+(
+    if($labelLiteral != '') then
+            local:make-triple(local:make-uri($id),'schema:description', $labelLiteral)  
+    else (),
+    (:,
+    if($descHTML != '') then
+            local:make-triple(local:make-uri($id),'rdf:XMLLiteral ', $descHTML)   
+    else ()
+    :)
+    (: idnos, creator :)
+    for $series in $rec/descendant-or-self::tei:seriesStmt/tei:idno[@type='URI']
+    return local:make-triple(local:make-uri($id),'spr:part-of-series', local:make-uri($series)),
+    for $publicationStmt in $rec/descendant-or-self::tei:publicationStmt/tei:idno[@type='URI']
+    return local:make-triple(local:make-uri($id),'spr:part-of-series', local:make-uri($recID)),
+    for $creator in tokenize($factoid/@resp,' ')
+    let $nameURI := if(starts-with($creator,'http')) then $creator else concat('http://syriaca.org/documentation/editors.xml',$creator)              
+    return local:make-triple(local:make-uri($id),'spr:creator', local:make-uri($nameURI)),
+    for $bibl in $factoid/tei:bibl
+    let $biblref := $bibl/tei:ptr/@target
+    return 
+        if($bibl[@type='URN']) then 
+          local:make-triple(local:make-uri($id),'spr:reference-bibl', local:make-uri($biblref))  
+        else local:make-triple(local:make-uri($id),'spr:reference-bibl', local:make-uri($biblref)),
+    for $certainty in $factoid/tei:note[@type='certainty']
+    let $certaintyref := $certainty/@subtype
+    return local:make-triple(local:make-uri($id),'spq:certainty', local:make-literal($certaintyref,'en','')),
+    
+    for $birth at $p in $factoid[@subtype='birth']/descendant::tei:birth
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+    (
+        if($birth/tei:placeName) then 
+            (
+            local:make-triple(local:make-uri($persRef),'swdt:birth-place', local:make-uri($birth/tei:placeName/@ref)),
+            local:make-triple(local:make-uri($persRef),'sp:birth-place', concat('swds:birth-place',$instanceID)),
+            local:make-triple(concat('swds:birth-place',$instanceID),'sps:birth-place', local:make-uri($birth/tei:placeName/@ref)),
+            local:make-triple(concat('swds:birth-place',$instanceID),'spr:reference-URL', local:make-uri($id))
+            )
+        else (),
+    local:make-date-triples($birth, $persRef, $instanceID, 'birth')
+    ),
+   for $death at $p in $factoid[@subtype='death']/descendant::tei:death
+   let $instanceID := concat($idShort,'-',$p)
+   return 
+        (
+        if($death/tei:placeName) then 
+            (
+            local:make-triple(local:make-uri($persRef),'swdt:death-place', local:make-uri($death/tei:placeName/@ref)),
+            local:make-triple(local:make-uri($persRef),'sp:death-place', concat('swds:death-place',$instanceID)),
+            local:make-triple(concat('swds:death-place',$instanceID),'sps:death-place', local:make-uri($death/tei:placeName/@ref)),
+            local:make-triple(concat('swds:death-place',$instanceID),'spr:reference-URL', local:make-uri($id))
+            )
+        else (),
+        local:make-date-triples($death, $persRef, $instanceID, 'death')
+        ),
+    (: citizenship :)
+    for $citizenship in $factoid[@subtype='citizenship']
+    let $placeRef := local:make-uri($citizenship/descendant::tei:person/tei:state[@type='citizenship']/tei:placeName/@ref)
+    let $citizenStatementInstance := concat($factoidRef,'Inst',replace(generate-id($citizenship),'\.',''))
+    return 
+        (
+        local:make-triple(local:make-uri($persRef),'swdt:citizenship', $placeRef),
+        local:make-triple(local:make-uri($persRef),'sp:citizenship', concat('swds:',$citizenStatementInstance)),
+        local:make-triple(concat('swds:',$citizenStatementInstance),'sps:citizenship', $placeRef),
+        local:make-triple(concat('swds:',$citizenStatementInstance),'spr:reference-URL', local:make-uri($id)),
+        for $state at $p in $citizenship/descendant::tei:state
+        let $instanceID := concat($idShort,'-',$p)
+        return 
+            local:make-dates-simple($citizenship, $id, $instanceID, 'citizenship')
+        ),
+    (:Education:)
+    for $education at $p in $factoid[@subtype='education']/descendant-or-self::tei:education
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+            for $eduAna at $n in tokenize($education/@ana, ' ')
+            let $eduAnaRef := local:make-uri($eduAna)
+            let $eduAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($education),'\.',''),$n)
+            return 
+                (local:make-triple(local:make-uri($persRef),'swdt:education', $eduAnaRef),
+                local:make-triple(local:make-uri($persRef),'sp:education', concat('swds:',$eduAnaStatementInstance)),
+                local:make-triple(concat('swds:',$eduAnaStatementInstance),'sps:education', $eduAnaRef),
+                local:make-triple(concat('swds:',$eduAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+                local:make-dates-simple($education, $id, $instanceID, 'education')
+        )),
+    (: ethnicLabel :)
+    for $ethnicLabel at $p in $factoid[@subtype='ethnicLabel']/descendant-or-self::tei:trait
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+            for $ethnicLabelAna at $n in tokenize($ethnicLabel/@ana, ' ')
+            let $ethnicLabelRef := local:make-uri($ethnicLabelAna)
+            let $ethnicAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($ethnicLabel),'\.',''), $n)
+            return 
+                (local:make-triple(local:make-uri($persRef),'swdt:ethnic-label', $ethnicLabelRef),
+                local:make-triple(local:make-uri($persRef),'sp:ethnic-label', concat('swds:',$ethnicAnaStatementInstance)),
+                local:make-triple(concat('swds:',$ethnicAnaStatementInstance),'sps:ethnic-label', $ethnicLabelRef),
+                local:make-triple(concat('swds:',$ethnicAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+                local:make-dates-simple($ethnicLabel, $id, $instanceID, 'ethnic-label')
+        )),
+    (:Gender:)
+    for $gender at $p in $factoid[@subtype='gender']/descendant-or-self::tei:trait
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+            (
+            for $genderAna at $n in tokenize($gender/@ana, ' ')
+            let $genderRef := local:make-uri($genderAna)
+            let $genderAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($gender),'\.',''), $n)
+            return 
+                (
+                local:make-triple(local:make-uri($persRef),'swdt:gender', $genderRef),
+                local:make-triple(local:make-uri($persRef),'sp:gender', concat('swds:',$genderAnaStatementInstance)),
+                local:make-triple(concat('swds:',$genderAnaStatementInstance),'sps:gender', $genderRef),
+                local:make-triple(concat('swds:',$genderAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+                local:make-dates-simple($gender, $id, $instanceID, 'gender')
+            )),
+    (: Language :)
+    for $lang at $p in $factoid[@subtype='langKnown']/descendant-or-self::tei:langKnowledge
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+            (
+            for $langAna at $n in tokenize($lang/tei:langKnown/@ana, ' ')
+            let $langRef := local:make-uri($langAna)
+            let $langAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($lang),'\.',''), $n)
+            return 
+                (local:make-triple(local:make-uri($persRef),'swdt:language-known', $langRef),
+                local:make-triple(local:make-uri($persRef),'sp:language-known', concat('swds:',$langAnaStatementInstance)),
+                local:make-triple(concat('swds:',$langAnaStatementInstance),'sps:language-known', $langRef),
+                local:make-triple(concat('swds:',$langAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),                            
+               local:make-dates-simple($lang, $id, $instanceID, 'language-known')
+            )),
+    (: Mental State:)            
+    for $mentalState at $p in $factoid[@subtype='mentalState']/descendant-or-self::tei:state
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+            (
+            for $mentalStateAna at $n in tokenize($mentalState/@ana, ' ')
+            let $mentalStateRef := local:make-uri($mentalStateAna)
+            let $mentalAnaStatementInstance := concat($factoidRef,'Inst',concat(replace(generate-id($mentalState),'\.',''),$n))
+            return 
+                (local:make-triple(local:make-uri($persRef),'swdt:mental-state', $mentalStateRef),
+                local:make-triple(local:make-uri($persRef),'sp:mental-state', concat('swds:',$mentalAnaStatementInstance)),
+                local:make-triple(concat('swds:',$mentalAnaStatementInstance),'sps:mental-state', $mentalStateRef),
+                local:make-triple(concat('swds:',$mentalAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),                  
+                local:make-dates-simple($mentalState, $id, $instanceID, 'mental-state')
+            )),
+    (: Name :)
+    for $nameVariant at $p in $factoid[@subtype='nameVariant']/descendant-or-self::tei:listPerson/descendant-or-self::tei:persName[1]
+    let $nameVariantStatementInstance := concat($factoidRef,'Inst',replace(generate-id($nameVariant),'\.',''))
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+        local:make-triple(local:make-uri($persRef),'swdt:name-variant', local:make-literal(string($nameVariant), 'en',())),
+        local:make-triple(local:make-uri($persRef),'sp:name-variant', concat('swds:',$factoidRef)),
+        local:make-triple(concat('swds:',$factoidRef),'sps:name-variant', local:make-literal(string($nameVariant), 'en',())),
+        local:make-triple(concat('swds:',$factoidRef),'spr:reference-URL', local:make-uri($id))
+        ),
+    (: occupation :)
+    for $occupation at $p in $factoid[@subtype='occupation']/descendant-or-self::tei:occupation
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+        for $occupationAna at $n in tokenize($occupation/@ana, ' ')
+        let $occupationRef := local:make-uri($occupationAna)
+        let $occupationAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($occupation),'\.',''), $n)
+        return 
+            (local:make-triple(local:make-uri($persRef),'swdt:occupation', $occupationRef),
+             local:make-triple(local:make-uri($persRef),'sp:occupation', concat('swds:',$occupationAnaStatementInstance)),
+             local:make-triple(concat('swds:',$occupationAnaStatementInstance),'sps:occupation', $occupationRef),
+             local:make-triple(concat('swds:',$occupationAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+             local:make-dates-simple($occupation, $id, $instanceID, 'occupation')
+            )),
+    (: physicalTrait :)
+    for $physicalTrait at $p in $factoid[@subtype='physicalTrait']/descendant-or-self::tei:trait
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+        for $physicalTraitAna at $n in tokenize($physicalTrait/@ana, ' ')
+        let $physicalTraitRef := local:make-uri($physicalTraitAna)
+        let $physicalTraitAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($physicalTrait),'\.',''), $n)
+        return 
+            (local:make-triple(local:make-uri($persRef),'swdt:physical-trait', $physicalTraitRef),
+             local:make-triple(local:make-uri($persRef),'sp:physical-trait', concat('swds:',$physicalTraitAnaStatementInstance)),
+             local:make-triple(concat('swds:',$physicalTraitAnaStatementInstance),'sps:physical-trait', $physicalTraitRef),
+             local:make-triple(concat('swds:',$physicalTraitAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+            local:make-dates-simple($physicalTrait, $id, $instanceID, 'physical-trait')
+            )),
+    (: residence :)
+    for $residence at $p in $factoid[@subtype='residence']/descendant-or-self::tei:residence
+    let $residenceStatementInstance := concat($factoidRef,'Inst',replace(generate-id($residence),'\.',''))
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (local:make-triple(local:make-uri($persRef),'swdt:residence', local:make-uri($residence/tei:placeName/@ref)),
+        local:make-triple(local:make-uri($persRef),'sp:residence', concat('swds:',$residenceStatementInstance)),
+        local:make-triple(concat('swds:',$residenceStatementInstance),'sps:residence', local:make-uri($residence/tei:placeName/@ref)),
+        local:make-triple(concat('swds:',$residenceStatementInstance),'spr:reference-URL', local:make-uri($id)),
+        local:make-dates-simple($residence, $id, $instanceID, 'residence')
+            ),
+    (: sanctity :)
+    for $sanctity at $p in $factoid[@subtype='sanctity']/descendant-or-self::tei:state
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+        for $sanctityAna at $n in tokenize($sanctity/@ana, ' ')
+        let $sanctityAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($sanctity),'\.',''), $n)
+        return 
+            (local:make-triple(local:make-uri($persRef),'swdt:sanctity', local:make-uri($sanctityAna)),
+             local:make-triple(local:make-uri($persRef),'sp:sanctity', concat('swds:',$sanctityAnaStatementInstance)),
+             local:make-triple(concat('swds:',$sanctityAnaStatementInstance),'sps:sanctity', local:make-uri($sanctityAna)),
+             local:make-triple(concat('swds:',$sanctityAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+             local:make-dates-simple($sanctity, $id, $instanceID, 'sanctity')
+            )),
+    (: socecStatus :)
+    for $socecStatus at $p in $factoid[@subtype='socecStatus']/descendant-or-self::tei:socecStatus
+    let $instanceID := concat($idShort,'-',$p)
+    return 
+        (
+        for $socecStatusAna at $n in tokenize($socecStatus/@ana, ' ')
+        let $socecStatusAnaStatementInstance := concat($factoidRef,'Inst',replace(generate-id($socecStatus),'\.',''), $n)
+        return 
+            (local:make-triple(local:make-uri($persRef),'swdt:socec-status', local:make-uri($socecStatusAna)),
+             local:make-triple(local:make-uri($persRef),'sp:socec-status', concat('swds:',$socecStatusAnaStatementInstance)),
+             local:make-triple(concat('swds:',$socecStatusAnaStatementInstance),'sps:socec-status', local:make-uri($socecStatusAna)),
+             local:make-triple(concat('swds:',$socecStatusAnaStatementInstance),'spr:reference-URL', local:make-uri($id)),
+            local:make-dates-simple($socecStatus, $id, $instanceID, 'socec-status')
+            )),
+    (: Events :)
+    for $event at $p in $factoid[@subtype='event']
+    let $instanceID := concat($idShort,'-',$p)
+    let $eventStatementInstance := concat($factoidRef,'Inst',replace(generate-id($event),'\.',''))
+    return 
+    (
+    local:make-triple(concat('swd:event',$factoidRef),'rdfs:label', local:make-literal(concat('Event ', $factoidRef),'en',())),
+    (:event description:)
+       for $pers in $event/descendant::tei:persName/@ref
+       let $eventPersRef := local:make-uri($pers)
+       let $eventStatementInstance := concat($factoidRef,'Inst',replace(generate-id($pers),'\.',''))
+       return 
+       (
+       local:make-triple(concat('swd:event',$factoidRef),'swdt:event-participant', $eventPersRef),
+       local:make-triple(concat('swd:event',$factoidRef),'sp:event-participant', concat('swds:',$eventStatementInstance)),
+       local:make-triple(concat('swds:',$eventStatementInstance),'sps:event-participant', $eventPersRef),
+       local:make-triple(concat('swds:',$eventStatementInstance),'spr:reference-URL', local:make-uri($id))
+       ),
+       for $place in $event/descendant::tei:placeName/@ref
+       let $eventPlaceRef := local:make-uri($place)
+       let $eventStatementInstance := concat($factoidRef,'Inst',replace(generate-id($place),'\.',''))
+       return 
+       (
+       local:make-triple(concat('swd:event',$factoidRef),'swdt:event-place', $eventPlaceRef),
+       local:make-triple(concat('swd:event',$factoidRef),'sp:event-place', concat('swds:',$eventStatementInstance)),
+       local:make-triple(concat('swds:',$eventStatementInstance),'sps:event-place', $eventPlaceRef),
+       local:make-triple(concat('swds:',$eventStatementInstance),'spr:reference-URL', local:make-uri($id))
+       ),
+       for $keyword at $n in tokenize($event/descendant::tei:listEvent/tei:event/@ana,' ')
+       let $eventKeywordRef := local:make-uri($keyword)
+       let $eventStatementInstance := concat($factoidRef,'Inst',$n,replace(generate-id($event/descendant::tei:listEvent/tei:event),'\.',''), $n)
+       return 
+       (
+       local:make-triple(concat('swd:event',$factoidRef),'swdt:event-keyword', $eventKeywordRef),
+       local:make-triple(concat('swd:event',$factoidRef),'sp:event-keyword', concat('swds:',$eventStatementInstance)),
+       local:make-triple(concat('swds:',$eventStatementInstance),'sps:event-keyword', $eventKeywordRef),
+       local:make-triple(concat('swds:',$eventStatementInstance),'spr:reference-URL', local:make-uri($id))
+       ),
+       for $when at $p in $event/descendant::tei:listEvent/tei:event
+       return local:make-dates-simple($when, $id, $instanceID, 'event'),
+       for $eventRelations at $p in $event/descendant::tei:relation     
+       let $instanceID := concat($idShort,'-',$p)
+       return local:relationship-triples($eventRelations, $id, $instanceID)
+    ),        
+    for $relation at $p in $factoid/tei:listRelation/tei:relation[@type='person']
+    let $instanceID := concat($idShort,'-',$p)
+    return local:relationship-triples($relation, $id, $instanceID)             
 )
 
+(:
+
+    
+  :)
 
 };
 
@@ -670,4 +787,6 @@ declare function local:prefix() as xs:string{
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .&#xa;"
 };
 
-(local:prefix(),local:make-triple-set(.))
+if(//tei:publicationStmt/tei:idno[starts-with(.,'https://spear-prosop.org/')]) then
+   (local:prefix(),local:make-SPEAR-triples(.))
+else (local:prefix(),local:make-triple-set(.))
