@@ -78,6 +78,7 @@ jobs:
           echo "All uploads completed."
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
       - name: Invalidate CloudFront Cache
         run: |
@@ -86,3 +87,4 @@ jobs:
             --paths "/*"
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
