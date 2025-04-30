@@ -3,57 +3,55 @@ name: Deploy to S3
 on:
   push:
     branches:
-      - 'main'  # Trigger the workflow on push to the main branch
+      - 'main'
 
 permissions:
   id-token: write
   contents: read
 
+env:
+  BUCKET_NAME: spear-front-end
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    
-      # Step 1: Check out the repository code
+
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Fetch the full history for accurate diff comparisons
+          fetch-depth: 0  # Full history for accurate diffs
 
-      # Step 2: Configure AWS credentials
-      - name: Configure AWS credentials from AWS account
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           role-to-assume: ${{ secrets.AWS_SPEAR_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
           role-session-name: GitHub-OIDC-frontend-spear
           role-duration-seconds: 21600
-          
-      # Step 3: Files to S3
-      # This will add and overwrite files to the S3 bucket but not delete files in S3 that have been deleted in the repo
-      - name: Sync files in S3
-        if: success()
+
+      - name: Generate list of all changed files
         run: |
-          aws s3 sync ./ s3://spear-front-end --exact-timestamps --exclude "data/*" --exclude ".github/*"
-        env:
-          AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
-      
-      # Option 1: Upload only changed data files to S3
-      - name: Upload changed data files in parallel
+          git fetch origin main
+          git diff --name-only origin/main..HEAD > changed_files.txt || true
+
+      - name: Upload changed files in parallel to S3
         run: |
-          MAX_PARALLEL=8  # Adjust this depending on runner capacity
-      
-          # Count how many files were found
-          total_files=$(grep -c '^' changed_data_files.txt || true)
-          echo "✅ Found $total_files changed data HTML file(s) to upload."
-      
-          if [ "$total_files" -eq 0 ]; then
-            echo "ℹ️ No changed files to upload. Skipping."
+          MAX_PARALLEL=8
+
+          if [ ! -f changed_files.txt ]; then
+            echo "No changed_files.txt found. Skipping upload."
             exit 0
           fi
-      
-          # Function to throttle concurrent jobs
+
+          total_files=$(grep -c '^' changed_files.txt)
+          echo "Found $total_files changed file(s) to upload."
+
+          if [ "$total_files" -eq 0 ]; then
+            echo "No changed files to upload. Skipping."
+            exit 0
+          fi
+
           function wait_for_jobs() {
             local joblist=($(jobs -p))
             while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
@@ -61,88 +59,30 @@ jobs:
               joblist=($(jobs -p))
             done
           }
-      
-          uploaded_count=0
-      
-          # Upload each file in background
+
           while read file; do
             if [ -f "$file" ]; then
-              filename=$(basename "$file" .html)
-              echo "🚀 Uploading $file as s3://spear-front-end/$filename"
+              echo "Uploading $file to s3://$BUCKET_NAME/$file"
               (
-                aws s3 cp "$file" "s3://spear-front-end/$filename" \
-                  --content-type text/html \
-                  --only-show-errors && \
-                  echo "$file uploaded" && uploaded_count=$((uploaded_count+1))
+                aws s3 cp "$file" "s3://$BUCKET_NAME/$file" \
+                  --content-type "$(file --mime-type -b "$file")" \
+                  --only-show-errors
               ) &
               wait_for_jobs
             else
-              echo "⚠️ Skipping missing file: $file"
+              echo "File not found locally: $file"
             fi
-          done < changed_data_files.txt
-      
-          wait  # Wait for all background uploads to finish
-      
-          echo "✅ Upload complete. Attempted: $total_files file(s)."
-          echo "✅ Parallel uploads finished."
+          done < changed_files.txt
+
+          wait
+          echo "All uploads completed."
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-
-     
-      # Option 2: Full (re)deployment of data files
-
-      # - name: Upload all data files in parallel
-      #   run: |
-      #     MAX_PARALLEL=8  # Adjust this depending on runner capacity
-      
-      #     # Gather all HTML files in the data/ directory
-      #     mapfile -t data_files < <(find data -maxdepth 1 -type f -name "*.html")
-      
-      #     total_files=${#data_files[@]}
-      #     echo "📦 Found $total_files HTML file(s) in data/ to upload."
-      
-      #     if [ "$total_files" -eq 0 ]; then
-      #       echo "ℹ️ No data files found. Exiting."
-      #       exit 0
-      #     fi
-      
-      #     # Function to limit concurrent background jobs
-      #     function wait_for_jobs() {
-      #       local joblist=($(jobs -p))
-      #       while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
-      #         sleep 1
-      #         joblist=($(jobs -p))
-      #       done
-      #     }
-      
-      #     # Upload in parallel
-      #     for file in "${data_files[@]}"; do
-      #       if [ -f "$file" ]; then
-      #         filename=$(basename "$file" .html)
-      #         echo "🚀 Uploading $file as s3://spear-front-end/$filename"
-      #         (
-      #           aws s3 cp "$file" "s3://spear-front-end/$filename" \
-      #             --content-type text/html \
-      #             --only-show-errors
-      #         ) &
-      #         wait_for_jobs
-      #       fi
-      #     done
-      
-      #     wait  # Ensure all background uploads finish
-      
-      #     echo "✅ Upload complete for $total_files data file(s)."
-      #   env:
-      #     AWS_REGION: ${{ secrets.AWS_REGION }}
-      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-
 
       - name: Invalidate CloudFront Cache
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.SPEAR_CLOUDFRONT_DISTRIBUTION_ID}} \
+            --distribution-id ${{ secrets.SPEAR_CLOUDFRONT_DISTRIBUTION_ID }} \
             --paths "/*"
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}           
