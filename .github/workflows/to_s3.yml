@@ -44,10 +44,12 @@ jobs:
       #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
       
       # Option 1: Upload only changed files to S3
-      - name: Generate list of all changed files
+      - name: Get list of changed files
+        id: changes
         run: |
           git fetch origin main
-          git diff --name-only origin/main..HEAD > changed_files.txt || true
+          git diff --name-only HEAD^ HEAD > changed_files.txt
+          cat changed_files.txt
       - name: Upload changed files in parallel
         run: |
           MAX_PARALLEL=8  # Adjust this depending on runner capacity
