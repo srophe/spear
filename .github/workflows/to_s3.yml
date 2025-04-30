@@ -30,84 +30,30 @@ jobs:
           role-duration-seconds: 21600
           
       # Step 3: Files to S3
-      # # This will add and overwrite files to the S3 bucket but not delete files in S3 that have been deleted in the repo
-      # - name: Sync files in S3
-      #   if: success()
-      #   run: |
-      #     aws s3 sync ./ s3://spear-front-end --exact-timestamps --exclude "data/*" --exclude ".github/*"
-      #   env:
-      #     AWS_REGION: ${{ secrets.AWS_REGION }}
-      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
+      # This will add and overwrite files to the S3 bucket but not delete files in S3 that have been deleted in the repo
+      - name: Sync files in S3
+        if: success()
+        run: |
+          aws s3 sync ./ s3://spear-front-end --exact-timestamps --exclude "data/*" --exclude ".github/*"
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
       
-      # # Option 1: Upload only changed data files to S3
-      # - name: Upload changed data files in parallel
-      #   run: |
-      #     MAX_PARALLEL=8  # Adjust this depending on runner capacity
-      
-      #     # Count how many files were found
-      #     total_files=$(grep -c '^' changed_data_files.txt || true)
-      #     echo "✅ Found $total_files changed data HTML file(s) to upload."
-      
-      #     if [ "$total_files" -eq 0 ]; then
-      #       echo "ℹ️ No changed files to upload. Skipping."
-      #       exit 0
-      #     fi
-      
-      #     # Function to throttle concurrent jobs
-      #     function wait_for_jobs() {
-      #       local joblist=($(jobs -p))
-      #       while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
-      #         sleep 1
-      #         joblist=($(jobs -p))
-      #       done
-      #     }
-      
-      #     uploaded_count=0
-      
-      #     # Upload each file in background
-      #     while read file; do
-      #       if [ -f "$file" ]; then
-      #         filename=$(basename "$file" .html)
-      #         echo "🚀 Uploading $file as s3://spear-front-end/$filename"
-      #         (
-      #           aws s3 cp "$file" "s3://spear-front-end/$filename" \
-      #             --content-type text/html \
-      #             --only-show-errors && \
-      #             echo "$file uploaded" && uploaded_count=$((uploaded_count+1))
-      #         ) &
-      #         wait_for_jobs
-      #       else
-      #         echo "⚠️ Skipping missing file: $file"
-      #       fi
-      #     done < changed_data_files.txt
-      
-      #     wait  # Wait for all background uploads to finish
-      
-      #     echo "✅ Upload complete. Attempted: $total_files file(s)."
-      #     echo "✅ Parallel uploads finished."
-      #   env:
-      #     AWS_REGION: ${{ secrets.AWS_REGION }}
-      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-
-     
-      # Option 2: Full (re)deployment of data files
-
-      - name: Upload all data files in parallel
+      # Option 1: Upload only changed data files to S3
+      - name: Upload changed data files in parallel
         run: |
           MAX_PARALLEL=8  # Adjust this depending on runner capacity
       
-          # Gather all HTML files in the data/ directory
-          mapfile -t data_files < <(find data -maxdepth 1 -type f -name "*.html")
-      
-          total_files=${#data_files[@]}
-          echo "📦 Found $total_files HTML file(s) in data/ to upload."
+          # Count how many files were found
+          total_files=$(grep -c '^' changed_data_files.txt || true)
+          echo "✅ Found $total_files changed data HTML file(s) to upload."
       
           if [ "$total_files" -eq 0 ]; then
-            echo "ℹ️ No data files found. Exiting."
+            echo "ℹ️ No changed files to upload. Skipping."
             exit 0
           fi
       
-          # Function to limit concurrent background jobs
+          # Function to throttle concurrent jobs
           function wait_for_jobs() {
             local joblist=($(jobs -p))
             while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
@@ -116,26 +62,80 @@ jobs:
             done
           }
       
-          # Upload in parallel
-          for file in "${data_files[@]}"; do
+          uploaded_count=0
+      
+          # Upload each file in background
+          while read file; do
             if [ -f "$file" ]; then
               filename=$(basename "$file" .html)
               echo "🚀 Uploading $file as s3://spear-front-end/$filename"
               (
                 aws s3 cp "$file" "s3://spear-front-end/$filename" \
                   --content-type text/html \
-                  --only-show-errors
+                  --only-show-errors && \
+                  echo "$file uploaded" && uploaded_count=$((uploaded_count+1))
               ) &
               wait_for_jobs
+            else
+              echo "⚠️ Skipping missing file: $file"
             fi
-          done
+          done < changed_data_files.txt
       
-          wait  # Ensure all background uploads finish
+          wait  # Wait for all background uploads to finish
       
-          echo "✅ Upload complete for $total_files data file(s)."
+          echo "✅ Upload complete. Attempted: $total_files file(s)."
+          echo "✅ Parallel uploads finished."
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+
+     
+      # Option 2: Full (re)deployment of data files
+
+      # - name: Upload all data files in parallel
+      #   run: |
+      #     MAX_PARALLEL=8  # Adjust this depending on runner capacity
+      
+      #     # Gather all HTML files in the data/ directory
+      #     mapfile -t data_files < <(find data -maxdepth 1 -type f -name "*.html")
+      
+      #     total_files=${#data_files[@]}
+      #     echo "📦 Found $total_files HTML file(s) in data/ to upload."
+      
+      #     if [ "$total_files" -eq 0 ]; then
+      #       echo "ℹ️ No data files found. Exiting."
+      #       exit 0
+      #     fi
+      
+      #     # Function to limit concurrent background jobs
+      #     function wait_for_jobs() {
+      #       local joblist=($(jobs -p))
+      #       while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
+      #         sleep 1
+      #         joblist=($(jobs -p))
+      #       done
+      #     }
+      
+      #     # Upload in parallel
+      #     for file in "${data_files[@]}"; do
+      #       if [ -f "$file" ]; then
+      #         filename=$(basename "$file" .html)
+      #         echo "🚀 Uploading $file as s3://spear-front-end/$filename"
+      #         (
+      #           aws s3 cp "$file" "s3://spear-front-end/$filename" \
+      #             --content-type text/html \
+      #             --only-show-errors
+      #         ) &
+      #         wait_for_jobs
+      #       fi
+      #     done
+      
+      #     wait  # Ensure all background uploads finish
+      
+      #     echo "✅ Upload complete for $total_files data file(s)."
+      #   env:
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
 
       - name: Invalidate CloudFront Cache
