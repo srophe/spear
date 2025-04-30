@@ -100,74 +100,71 @@
         </script>
       </head>
    <body id="body">
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-template="app:fix-links">
-         
-         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-               <span class="sr-only">Toggle navigation</span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
-               <span class="icon-bar"></span>
+       <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+           <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                   <span class="sr-only">Toggle navigation</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand banner-container" href="/index.html"> 
-               <span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"></span>
-               <span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span>
+               <a class="navbar-brand banner-container" href="/index.html"> 
+                   <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
+                   <span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span>
                </a>
-            
-         </div>
-         
-         <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-            
-            <ul class="nav navbar-nav">
-               
-               <li>
-                  <a href="/index.html" class="nav-text">Home</a>
-                  
-               </li>
-               
-               <li>
-                  <a href="/browse.html" class="nav-text">Browse</a>
-                  
-               </li>
-               
-               <li>
-                  <a href="/documentation/index.html" class="nav-text">Documentation </a>
-                  
-               </li>
-               
-               <li>
-                  <a href="/search.html" class="nav-text">Advanced Search</a>
-                  
-               </li>
-               
-               <li>
-                  
-                  <div id="search-wrapper">
-                     
-                     <form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get">
-                        
-                        <div class="form-group">
-                           <input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav" />
-                           <span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"></span>
-                           <button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search">
-                              <span class="glyphicon glyphicon-search"></span>
-                              </button>                                    
-                           
-                        </div>
-                        
-                     </form>
-                     
-                  </div>
-                  
-               </li>
-               
-               <li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"></li>
-               
-            </ul>
-            
-         </div>
-         
-      </nav>
+           </div>
+           <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                   <li>
+                       <a href="/index.html" class="nav-text">Home</a>
+                   </li>
+                   <li>
+                       <a href="/browse.html" class="nav-text">Browse</a>
+                   </li>
+                   <li class="dropdown">
+                       <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                           <span class="mobile-submenu">About</span>  <b class="caret"></b>
+                       </a>
+                       <ul class="dropdown-menu pull-right">
+                           <li>
+                               <a href="/about.html">Project Overview</a>
+                           </li>
+                           <li role="presentation" class="divider"></li>
+                           <li>
+                               <a href="/contributors.html">Project Contributors</a>
+                           </li>
+                           <li role="presentation" class="divider"></li>
+                           <li>
+                               <a href="/contact.html">Contact Us</a>
+                           </li>
+                           <li role="presentation" class="divider"></li>
+                           <li>
+                               <a href="/documentation/index.html">
+                                   <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>
+                                   <span class="icon-text">Documentation</span>
+                               </a>
+                           </li>
+                       </ul>
+                   </li>
+                   <li>
+                       <a href="/search.html" class="nav-text">Advanced Search</a>
+                   </li>
+                   <li>
+                       <div id="search-wrapper">
+                           <form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get">
+                               <div class="form-group">
+                                   <input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav" />
+                                   <span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"></span>
+                                   <button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search">
+                                       <span class="glyphicon glyphicon-search"></span>
+                                   </button>                                    
+                               </div>
+                           </form>
+                       </div>
+                   </li>
+               </ul>
+           </div>
+       </nav>
       <div xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
          
          <div class="home-page">
@@ -264,6 +261,9 @@
                </li>
                 <li>
                     <a href="http://codhr.tamu.edu"><img src="resources/images/atm-co-dhr.png" alt="Initiative for Digital Humanities, Media, and Culture, Texas A&amp;M" height="55px" /></a>                    
+                </li>
+                <li>
+                    <a href="http://tamu.edu"><img src="resources/images/TAM-Horz-MaroonWhite.png" alt="Texas A&amp;M" height="100px" /></a>                    
                 </li>
                <li>
                    <a href="http://www.vanderbilt.edu/"><img src="resources/images/vulogo.png" alt="Vanderbilt University" height="65px" /></a>
