@@ -59,7 +59,6 @@
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
                     // change layout based on link ID
                     kb.options.layout = this.id
                     // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
