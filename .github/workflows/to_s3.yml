@@ -49,7 +49,9 @@ jobs:
         run: |
           git fetch origin main
           git diff --name-only HEAD^ HEAD > changed_files.txt
+          # git diff --name-only $(git merge-base origin/main HEAD)..HEAD > changed_files.txt || true
           cat changed_files.txt
+
       - name: Upload changed files in parallel
         run: |
           MAX_PARALLEL=8  # Adjust this depending on runner capacity
