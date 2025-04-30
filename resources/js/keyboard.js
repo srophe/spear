@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip({ container: 'body' });
-
     $('.keyboard').keyboard({
         openOn: null,
         stayOpen: false,
@@ -14,7 +13,6 @@ $(document).ready(function () {
             // keyboard.destroy();
         }
     });
-
     $('.keyboard-select').click(function () {
         var keyboardID = '#' + $(this).data("keyboard-id");
         var kb = $(keyboardID).getkeyboard();
