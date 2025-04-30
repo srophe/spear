@@ -1,21 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:srophe="https://srophe.app">
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      
       <title>SPEAR: Syriac Persons Events and Relations</title>
+      
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      
       <meta data-template="config:app-meta" />
+      
       <link rel="shortcut icon" href="/favicon.ico" />
+      
       <!-- Bootstrap 3 -->
+      
       <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+      
       <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+      
       <!-- Srophe styles -->
+      
       <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+      
       <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+      
       <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+      
       <!-- Leaflet -->
+      
       <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
-
+      
       <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
       
       <!-- JQuery -->
@@ -88,97 +100,197 @@
         </script>
       </head>
    <body id="body">
-      <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-template="app:fix-links">
+         
          <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
                <span class="sr-only">Toggle navigation</span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
-            </button>
+               </button>
             <a class="navbar-brand banner-container" href="/index.html"> 
-               <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
+               <span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"></span>
                <span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span>
-            </a>
+               </a>
+            
          </div>
+         
          <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+            
             <ul class="nav navbar-nav">
+               
                <li>
                   <a href="/index.html" class="nav-text">Home</a>
+                  
                </li>
+               
                <li>
                   <a href="/browse.html" class="nav-text">Browse</a>
+                  
                </li>
-               <li class="dropdown">
-                  <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                     <span class="mobile-submenu">About</span>  <b class="caret"></b>
-                  </a>
-                  <ul class="dropdown-menu pull-right">
-                     <li>
-                        <a href="/about.html">Project Overview</a>
-                     </li>
-                     <li role="presentation" class="divider"></li>
-                     <li>
-                        <a href="/contributors.html">Project Contributors</a>
-                     </li>
-                     <li role="presentation" class="divider"></li>
-                     <li>
-                        <a href="/contact.html">Contact Us</a>
-                     </li>
-                     <li role="presentation" class="divider"></li>
-                     <li>
-                        <a href="/documentation/index.html">
-                           <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>
-                           <span class="icon-text">Documentation</span>
-                        </a>
-                     </li>
-                  </ul>
+               
+               <li>
+                  <a href="/documentation/index.html" class="nav-text">Documentation </a>
+                  
                </li>
+               
                <li>
                   <a href="/search.html" class="nav-text">Advanced Search</a>
+                  
                </li>
+               
                <li>
+                  
                   <div id="search-wrapper">
+                     
                      <form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get">
+                        
                         <div class="form-group">
                            <input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav" />
                            <span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"></span>
                            <button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search">
                               <span class="glyphicon glyphicon-search"></span>
-                           </button>                                    
+                              </button>                                    
+                           
                         </div>
+                        
                      </form>
+                     
                   </div>
+                  
                </li>
+               
+               <li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"></li>
+               
             </ul>
+            
          </div>
+         
       </nav>
       <div xmlns:xi="http://www.w3.org/2001/XInclude" data-template="templates:surround" data-template-with="templates/page.html" data-template-at="content">
          
          <div class="home-page">
             
->>>>>>> Stashed changes
             <div class="home-page-text">
-                <h1>The Srophé Application</h1>
-                <h2>An open source TEI publishing framework</h2>
-                <a class="btn btn-default btn-rounded btn-light" href="documentation/index.html">Read the Docs</a>
+               
+               <h1>Welcome to SPEAR</h1>
+               
+               <h3>A prosopographical database providing information about persons <br />and their relationships within the context of historical events.
+               </h3>
+               <a class="btn btn-default btn-rounded btn-light" href="browse.html"> Browse the collection ... </a>
+               
             </div>
             <span class="img-credit">
-                <label>Photo Credit:</label> ©2016 Michelle Bukowski 
-                <button class="btn btn-link white-link" data-toggle="collapse" data-target="#img-rights">
-                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"/>
-                </button>
-                <div id="img-rights" class="collapse">
-                    Licensed under a Creative Commons Attribution 4.0 International License.
-                </div>
-            </span>
-    </div>
-    <div class="container">
-        <p><em>Syriac Persons, Events, and Relations (SPEAR)</em> is a digital prosopography project drawn from Syriac source 
-            material that is relevant to Syriac Studies, Classics, Byzantine Studies, and Islamic Studies. It contains information on all of the 
-            individuals and groups appearing in the Syriac texts included in the database. SPEAR offers multiple search fields enabling 
-            researchers to return hits for a wide variety of queries including parameters such as ethnicity, language spoken, occupation, etc.
-            Each piece of data directs the user to a specific citation in one or more primary source texts and keyword tagging used throughout 
-            the dataset links this prosopographical material to Syriaca.org's bibliography database.</p>
-    </div>
-</div>
+               <label>Photo Credit:</label> Wikimedia Commons 
+               <button class="btn btn-link white-link" data-toggle="collapse" data-target="#img-rights">
+                  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                  </button>
+               
+               <div id="img-rights" class="collapse">
+                  "Funerary moasic of the family of Moqimu with names written in Syriac, 3rd century
+                  AD, found in Edessa (now destroyed)." Last modified January 8, 2012. https://commons.wikimedia.org/wiki/File:Moqimu_mosaic_Edessa.jpg.
+                  
+               </div>
+               </span>
+            
+         </div>
+         
+         <div class="container">
+            
+            <p><em>Syriac Persons, Events, and Relations (SPEAR)</em> is a digital prosopography project drawn from Syriac 
+               source material that is relevant to Syriac Studies, Classics, Byzantine Studies, and Islamic Studies. 
+               It contains information on all of the individuals and groups appearing in the Syriac texts included in 
+               the database. SPEAR offers multiple search fields enabling researchers to return hits for a wide variety 
+               of queries including parameters such as ethnicity, language spoken, occupation, etc. Each piece of data 
+               directs the user to a specific citation in one or more primary source texts and keyword tagging used 
+               throughout the dataset links this prosopographical material to Syriaca.org's bibliography database.
+            </p>
+            
+            <h3>Editorial Committee</h3>
+            
+            <ul>
+               
+               <li>Chair: Dr. Daniel L. Schwartz, Texas A&amp;M University</li>
+               
+               <li>Dr. Kutlu Akalin, Ancient History, Istanbul Medeniyet University</li>
+               
+               <li>Dr. Volker L. Menze, Department of Medieval Studies, Central European University</li>
+               
+               <li>Dr. Meredith L.D. Riedel, Independent Scholar</li>
+               
+               <li>Ex Officio: Dr. Jeanne-Nicole Mellon Saint-Laurent, Marquette University</li>
+               
+            </ul>   
+            
+            <p>Publication Status: <i>Draft</i></p>
+            
+            <p>Syriac Persons, Events, and Relations (SPEAR) is a prosopographical database providing
+               information about persons and their relationships within the context of historical
+               events. SPEAR uses a "factoid" approach to prosopography that captures data points
+               asserted in historical texts. A factoid differs from a fact in that it indicates an
+               assertion made by a primary source text, rather than a piece of information that a
+               modern editor affirms as true. This approach allows for the fullest dataset possible
+               and captures data of particular importance for social history. For example, a fictional
+               biography of a saint can still reveal a great deal of information about how people
+               understood saints and the town councilors, clergy, and peasants with whom they interacted.
+               The factoid approach is critical for creating a database of use to social historians
+               as well as historians of the political or religious institutions upon which traditional
+               print prosopographies have focused.
+            </p>
+            
+            <p>SPEAR provides a prosopography drawn from Syriac source material that is relevant
+               to Syriac Studies, Classics, Byzantine Studies, and Islamic Studies. It contains information
+               on all of the individuals and groups appearing in the Syriac texts included in the
+               database. SPEAR offers multiple search fields enabling researchers to return hits
+               for a wide variety of queries including parameters such as ethnicity, language spoken,
+               occupation, etc. Each piece of data directs the user to a specific citation in one
+               or more primary source texts and keyword tagging used throughout the dataset links
+               this prosopographical material to Syriaca.org's bibliography database.
+            </p>
+            
+            <p>SPEAR provides a rich collection of Linked Data on persons encoded using the TEI standards
+               for XML markup. The current release is a beta version designed to make this data available
+               to researchers and the public. Future development plans include the development of
+               greater capabilities to perform faceted search and browse on this dataset.
+            </p>        
+            
+         </div>
+         
+         <div class="container">
+            <ul class="list-inline funding" style="margin-left:2em;">
+               <li>
+                  <a href="http://www.neh.gov/"><img src="resources/images/neh_logo_horizontal_rgb.jpg" alt="NEH" height="45px" /></a>
+               </li>
+                <li>
+                    <a href="http://codhr.tamu.edu"><img src="resources/images/atm-co-dhr.png" alt="Initiative for Digital Humanities, Media, and Culture, Texas A&amp;M" height="55px" /></a>                    
+                </li>
+               <li>
+                  <a href="http://www.vanderbilt.edu/">
+                     <img src="resources/images/vu07b.gif" alt="Vanderbilt University" height="65px" />
+                     </a>
+               </li>
+               <li>
+                  <a href="http://www.library.vanderbilt.edu/"><img src="resources/images/JAH_LIBRARIES.png" alt="Jean and Alexander Heard Library, Vanderbilt University" height="50px" /></a>
+               </li>
+               <li>
+                  <a href="http://www.marquette.edu/">
+                     <img src="resources/images/MU-Logo.jpg" alt="Marquette University" height="55px" />
+                     </a>
+                  
+               </li>
+               
+            </ul>
+            
+            <hr />
+            
+            <p class="caveat">Any views, findings, conclusions, or recommendations expressed in this
+               publication do not necessarily reflect those of the National Endowment for the
+               Humanities or any of the other sponsors. 
+            </p>
+            
+            
+         </div>
+         
+      </div>
+   </body><script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script><script type="text/javascript" src="/resources/js/srophe.js"></script></html>
