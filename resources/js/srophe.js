@@ -135,4 +135,6 @@ if(params !== 'undefined' && params !== ''){
     $('.nav-tabs li').first().addClass('active');
 }
 
+//Hide advanced search
+$('a[href="/search.html"]').hide();
 });
