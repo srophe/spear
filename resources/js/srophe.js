@@ -136,6 +136,6 @@ if(params !== 'undefined' && params !== ''){
 }
 
 //Hide advanced search
-$('a[href="/search.html"]').hide();
+//$('a[href="/search.html"]').hide();
 });
 
