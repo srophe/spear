@@ -137,9 +137,4 @@ if(params !== 'undefined' && params !== ''){
 
 //Hide advanced search
 $('a[href="/search.html"]').hide();
-<<<<<<< Updated upstream
 });
-=======
-});
-
->>>>>>> Stashed changes
