@@ -118,6 +118,7 @@ jobs:
               (
               aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$file" \
                 --content-type "$mime_type" \
+                --metadata-directive REPLACE \
                 --only-show-errors
               ) &
               wait_for_jobs
