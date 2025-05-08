@@ -77,23 +77,55 @@ jobs:
           uploaded_count=0
       
           # Upload each file in background
+          # while read file; do
+          #   if [ -f "$file" ]; then
+          #     filename=$(basename "$file" .html)
+          #     echo "🚀 Uploading $file as s3://spear-front-end/$filename"
+          #     (
+          #     mime_type=$(file --mime-type -b "$file")
+          #     aws s3 cp "$file" "s3://spear-front-end/$file" \
+          #       --content-type "$mime_type" \
+          #       --only-show-errors
+
+          #     ) &
+          #     wait_for_jobs
+          #   else
+          #     echo "Skipping missing file: $file"
+          #   fi
+          # done < changed_files.txt
+          # Upload each file in background
           while read file; do
             if [ -f "$file" ]; then
-              filename=$(basename "$file" .html)
-              echo "🚀 Uploading $file as s3://spear-front-end/$filename"
+              extension="${file##*.}"
+              mime_type=$(case "$extension" in
+                css) echo "text/css" ;;
+                js) echo "application/javascript" ;;
+                html) echo "text/html" ;;
+                json) echo "application/json" ;;
+                png) echo "image/png" ;;
+                jpg|jpeg) echo "image/jpeg" ;;
+                gif) echo "image/gif" ;;
+                ico) echo "image/x-icon" ;;
+                woff) echo "font/woff" ;;
+                woff2) echo "font/woff2" ;;
+                ttf) echo "font/ttf" ;;
+                otf) echo "font/otf" ;;
+                map) echo "application/json" ;;
+                *) file --mime-type -b "$file" ;;  # Fallback
+              esac)
+          
+              echo "🚀 Uploading $file with MIME type: $mime_type"
               (
-              mime_type=$(file --mime-type -b "$file")
-              aws s3 cp "$file" "s3://spear-front-end/$file" \
+              aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$file" \
                 --content-type "$mime_type" \
                 --only-show-errors
-
               ) &
               wait_for_jobs
             else
               echo "Skipping missing file: $file"
             fi
           done < changed_files.txt
-      
+
           wait  # Wait for all background uploads to finish
       
           echo "Upload complete. Attempted: $total_files file(s)."
