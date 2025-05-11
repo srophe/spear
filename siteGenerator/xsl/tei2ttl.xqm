@@ -25,7 +25,13 @@ declare function local:make-uri($uri){
  :)
 declare function local:make-literal($string as xs:string*, $lang as xs:string*, $datatype as xs:string?) as xs:string?{
     concat('"',replace(normalize-space(string-join($string,' ')),'"',''),'"',
-        if($lang != '') then concat('@',$lang) 
+        if($lang != '') then 
+            let $langString := 
+                if(contains($lang,'-')) then substring-before($lang,'-')
+                else if(contains($lang,'en')) then 'en'
+                else if(contains($lang,'syr')) then 'syr'
+                else $lang
+            return concat('@',$langString) 
         else (), 
         if($datatype != '') then concat('^^',$datatype) else()) 
 };
@@ -212,7 +218,7 @@ declare function local:places($node, $id, $idShort, $typeShort){
         local:make-triple(concat('swds:',$typeShort,'-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (:IDNO :) 
-    for $closeMatch at $p in $node/descendant::tei:text/descendant::tei:idno[@type ='URI'][not(contains(., "syriaca.org"))]
+    for $closeMatch at $p in $node/descendant::tei:text/descendant::tei:idno[@type ='URI'][not(contains(., "syriaca.org"))][not(contains(., "/viaf.org/viaf/"))][not(contains(., "/www.csc.org.il/db/browse.aspx"))]
     let $instanceID := concat($idShort,'-',$p)    
     return 
         (local:make-triple(local:make-uri($id), 'swdt:closeMatch', local:make-literal($closeMatch,'','')),
@@ -297,7 +303,7 @@ declare function local:persons($node, $id, $idShort, $typeShort){
         local:make-triple(concat('swds:',$typeShort,'-',$instanceID), 'spr:reference-URL', local:make-uri($id))
         ),
 (:IDNO :) 
-    for $closeMatch at $p in $node/descendant::tei:text/descendant::tei:idno[@type ='URI'][not(contains(., "syriaca.org"))]
+    for $closeMatch at $p in $node/descendant::tei:text/descendant::tei:idno[@type ='URI'][not(contains(., "syriaca.org"))][not(contains(., "/viaf.org/viaf/"))][not(contains(., "/www.csc.org.il/db/browse.aspx"))]
     let $instanceID := concat($idShort,'-',$p)
     return 
         (local:make-triple(local:make-uri($id), 'swdt:closeMatch', local:make-literal($closeMatch,'','')),
