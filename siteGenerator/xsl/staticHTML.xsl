@@ -595,7 +595,7 @@
                                         <xsl:call-template name="otherDataFormats">
                                             <xsl:with-param name="node" select="t:TEI"/>
                                             <xsl:with-param name="idno" select="$idno"/>
-                                            <xsl:with-param name="formats" select="'print,tei,rdf'"
+                                            <xsl:with-param name="formats" select="'print'"
                                             />
                                         </xsl:call-template>
                                         <div class="row">
@@ -789,19 +789,20 @@
                     <div class="interior-content">
                         <div class="container otherFormats" xmlns="http://www.w3.org/1999/xhtml">
                             <a href="javascript:window.print();" type="button"
-                                class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip"
+                                class="btn btn-default btn-xs" id="printBtn" data-toggle="tooltip"
                                 title="Click to send this page to the printer.">
                                 <span class="glyphicon glyphicon-print" aria-hidden="true"/>
                             </a>
                             <xsl:text>&#160;</xsl:text>
                             <!-- WS:NOTE needs work on the link.  -->
+                            <!--
                             <a href="{concat($dataPath,'.rdf')}" class="btn btn-default btn-xs"
                                 id="teiBtn" data-toggle="tooltip"
                                 title="Click to view the RDF-XML data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 RDF/XML </a>
                             <xsl:text>&#160;</xsl:text>
-
+                            -->
                         </div>
                         <div class="row">
                             <div class="col-md-7 col-lg-8">
@@ -1005,7 +1006,7 @@
                     <xsl:choose>
                         <xsl:when test=". = 'geojson'">
                             <a href="{concat($dataPath,'.geojson')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
+                                id="geoJSONBtn" data-toggle="tooltip"
                                 title="Click to view the GeoJSON data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 GeoJSON </a>
@@ -1013,7 +1014,7 @@
                         </xsl:when>
                         <xsl:when test=". = 'json'">
                             <a href="{concat($dataPath,'.json')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
+                                id="jsonLDBtn" data-toggle="tooltip"
                                 title="Click to view the GeoJSON data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 JSON-LD </a>
@@ -1022,7 +1023,7 @@
                         <xsl:when test=". = 'kml'">
                             <xsl:if test="$node/descendant::t:location/t:geo">
                                 <a href="{concat($dataPath,'.kml')}" class="btn btn-default btn-xs"
-                                    id="teiBtn" data-toggle="tooltip"
+                                    id="kmlBtn" data-toggle="tooltip"
                                     title="Click to view the KML data for this record.">
                                     <span class="glyphicon glyphicon-download-alt"
                                         aria-hidden="true"/> KML </a>
@@ -1031,7 +1032,7 @@
                         </xsl:when>
                         <xsl:when test=". = 'print'">
                             <a href="javascript:window.print();" type="button"
-                                class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip"
+                                class="btn btn-default btn-xs" id="printBtn" data-toggle="tooltip"
                                 title="Click to send this page to the printer.">
                                 <span class="glyphicon glyphicon-print" aria-hidden="true"/>
                             </a>
@@ -1039,7 +1040,7 @@
                         </xsl:when>
                         <xsl:when test=". = 'rdf'">
                             <a href="{concat($dataPath,'.rdf')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
+                                id="rdfBtn" data-toggle="tooltip"
                                 title="Click to view the RDF-XML data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 RDF/XML </a>
@@ -1055,7 +1056,7 @@
                         </xsl:when>
                         <xsl:when test=". = 'text'">
                             <a href="{concat($dataPath,'.txt')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
+                                id="textBtn" data-toggle="tooltip"
                                 title="Click to view the plain text data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 Text </a>
