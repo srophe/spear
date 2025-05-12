@@ -110,7 +110,7 @@
                 <a href="{t:idno[@type='URI']}"><xsl:value-of select="t:idno[@type='URI']"/></a><xsl:text>, </xsl:text>
                 <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"><xsl:text>in </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"/><xsl:text>, </xsl:text></xsl:if>
                 <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"><xsl:text>edited by </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"/><xsl:text>, </xsl:text></xsl:if>
-                <xsl:text>general editor </xsl:text> <xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='s']]/t:editor"/><xsl:text>, </xsl:text><xsl:value-of select="current-date()"/><xsl:text>.</xsl:text>
+                <xsl:text>general editor </xsl:text> <xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='s']]/t:editor"/><xsl:text>, </xsl:text><xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/><xsl:text>.</xsl:text>
             </span>
         </div>
      </xsl:template>
@@ -883,17 +883,17 @@
                             <xsl:when test="contains($id,'/person/')">
                                 “Person Page for <xsl:sequence select="$title"/>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
+                                <xsl:value-of select="$url"/>, <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>.
                             </xsl:when>
                             <xsl:when test="contains($id,'/place/')">
                                 “Place Page for <xsl:sequence select="$title"/>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
+                                <xsl:value-of select="$url"/>, <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>.
                             </xsl:when>
                             <xsl:when test="contains($id,'/taxonomy/')">
                                 “Keyword Page for <xsl:sequence select="$title"/>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                <xsl:value-of select="$url"/>, <xsl:value-of select="current-dateTime()"/>.
+                                <xsl:value-of select="$url"/>, <xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/>.
                             </xsl:when>
                         </xsl:choose>
                     </span>
