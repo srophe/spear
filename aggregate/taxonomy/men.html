@@ -66,7 +66,7 @@
                     // change layout based on link ID
                     kb.options.layout = this.id
                     // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
                         kb.reveal();
                     }
                 });
@@ -136,12 +136,15 @@
                         <div class="interior-content">
                                 <div class="record">
                                         <div class="interior-content" data-template="app:fix-links">
-                                                <div class="padding-top">
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns"
+                                                  class="padding-top">
                                                   <h1>SPEAR Factoids about <span id="title"
                                                   ><span><span class="tei-prefLabel" xml:lang="en"
                                                   lang="en" dir="ltr">Men</span></span></span></h1>
                                                 </div>
-                                                <div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns">
                                                   <div style="margin:0 1em 1em; color: #999999;">
                                                   <small><p><span class="srp-label"
                                                   ><strong>Syriaca.org URI</strong></span>: <span
@@ -150,7 +153,8 @@
                                                   >http://syriaca.org/taxonomy/men</a></span></p></small>
                                                   </div>
                                                 </div>
-                                                <div class="row">
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns" class="row">
                                                   <div class="col-md-8">
                                                   <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus sent a letter to Procla arguing
@@ -3443,8 +3447,8 @@
                                                   >Men</span></span></span>,” in SPEAR: Syriac
                                                   Persons Events and Relations, general editor
                                                   Daniel L. Schwartz,
-                                                  http://syriaca.org/taxonomy/men, 2025-05-11.
-                                                  </span>
+                                                  https://dev.spear-prosop.org/aggregate/taxonomy/men.html,
+                                                  2025-05-12. </span>
                                                   </div>
                                                   </div>
                                                   <div class="col-md-4">
