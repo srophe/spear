@@ -86,7 +86,7 @@
                         <xsl:sequence select="doc(concat('xmldb:exist://',$app-root,'/documentation/editors.xml'))"/>
                     </xsl:if>
                 </xsl:variable>
-                <xsl:variable name="docEditors" select="/tei:TEI/descendant::tei:titleStmt/tei:editor"/>
+                <xsl:variable name="docEditors" select="/tei:TEI/descendant::tei:titleStmt/tei:editor[@role='creator']"/>
                 <xsl:variable name="respCount" select="count(tokenize(@resp,' '))"/>
                 <xsl:for-each select="tokenize(@resp,' ')">
                     <xsl:variable name="persID" select="substring-after(.,'#')"/>
@@ -176,7 +176,9 @@
                     <xsl:variable name="relatedList">
                         <xsl:for-each select="distinct-values($refs/tokenize(.,' '))">
                             <xsl:variable name="ref" select="."/>
-                            <xsl:variable name="title" select="$personsIndex/descendant-or-self::*:idno[. = $ref]/parent::*/t:title[1]/descendant-or-self::text()"/>
+                            <xsl:variable name="title" select="$personsIndex/descendant-or-self::*:idno[. = $ref]/parent::*/t:title[1]/descendant-or-self::text() 
+                                | $placesIndex/descendant-or-self::*:idno[. = $ref]/parent::*/t:title[1]/descendant-or-self::text()
+                                | $keywordsIndex/descendant-or-self::*:idno[. = $ref]/parent::*/t:title[1]/descendant-or-self::text()"/>
                             <xsl:variable name="titleString">
                                 <xsl:choose>
                                     <xsl:when test="not(empty($title))">
@@ -285,18 +287,12 @@
                 <xsl:choose>
                     <xsl:when test="@subtype='nameVariant'">
                         <div class="factoid">
-                            <xsl:for-each select="t:listPerson/t:person/t:persName[@when or @notBefore or @notAfter or @from or @to]">
+                            <xsl:for-each select="t:listPerson/child::*/t:persName[@when or @notBefore or @notAfter or @from or @to]">
                                 <xsl:call-template name="spearDates"/>
                             </xsl:for-each>
                             <xsl:call-template name="spearCertainty"/>
-                            <xsl:for-each select="t:listPerson/t:person">
+                            <xsl:for-each select="t:listPerson/t:person | t:listPerson/t:personGrp">
                                 <span class="element"><span class="spearLabel">Name Variant: </span> <xsl:apply-templates mode="spear"/></span>
-                            </xsl:for-each>
-                            <xsl:for-each select="t:listPerson/personGrp">
-                                <span class="element"><span class="spearLabel">Name Variant: </span> <xsl:apply-templates mode="spear"/></span>
-                            </xsl:for-each>
-                            <xsl:for-each select="descendant-or-self::t:note[not(@type='certainty')]">
-                                <span class="element"><span class="spearLabel">Social Rank: </span> <xsl:apply-templates mode="spear"/></span>
                             </xsl:for-each>
                             <xsl:apply-templates select="t:desc" mode="spear"/>  
                         </div>   
@@ -964,8 +960,8 @@
             <xsl:otherwise>
                 <p class="indent">
                     <xsl:choose>
-                        <xsl:when test="descendant::t:note | descendant::t:desc">
-                           <xsl:apply-templates select="descendant::t:note | descendant::t:desc" mode="aggregate"/>
+                        <xsl:when test="descendant::t:note[not(parent::t:ab)] | descendant::t:desc">
+                           <xsl:apply-templates select="descendant::t:note[not(parent::t:ab)] | descendant::t:desc" mode="aggregate"/>
                         </xsl:when>
                         <xsl:otherwise>
                            <xsl:apply-templates select="child::*[not(self::t:idno) and not(self::t:bibl)]" mode="spear"/> 
