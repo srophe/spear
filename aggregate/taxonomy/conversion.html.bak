@@ -1,0 +1,187 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Conversion</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Conversion</span></span></span></h1></div><div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/conversion">http://syriaca.org/taxonomy/conversion</a></span></p></small></div></div><div class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter 
+                            arguing against rebaptism and reanointing for those converting from Chalcedonianism. 
+                         <a href="/3088-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Sergius and
+                            Marion
+                            on the subject of converts form Chalcedonianism doing penance but not being 
+                            re-baptized or re-anointed and the subject of needing more ordained clergy.
+                            
+                                
+                            
+                         <a href="/3124-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to the
+                            monastery at Tagai 
+                            stating that re-baptism and re-anointing are not required
+                            of those who repent of their Chalcedonianism.
+                         <a href="/3051-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            The Council of Laodicea stipulated followers of 
+                            Photinus and
+                            Novatus
+                            only needed to be re-anointed upon conversion but not re-baptized. 
+                         <a href="/3088-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            The Council of Ephesus in 431 heard from 
+                            Charisius that many in 
+                            Lydia followed a creed by 
+                            Theodore of Mopsuestia. In rejecting 
+                            it and Nestorianism, the Council required only an orthodox profession of faith without the need for 
+                            be re-baptism or re-anointing.
+                         <a href="/3088-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            When working to reunite 
+                            Egypt and
+                            the East after the Council of Ephesus
+                            Paul brokered an agreement
+                            that conversion from Nestorianism required only an orthodox profession of faith without the need for 
+                            re-baptism or re-anointing.
+                         <a href="/3088-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Theophilus of Alexandria wrote a letter to
+                            Flavian of Antioch urging his to accept 
+                            clergy ordained by his opponents during the Melitian Schism without the need for
+                            re-baptism or re-anointing. He cites the case of 
+                            Anastasius in
+                            Rome and the case of 
+                            Auxentius and
+                            Ambrose in 
+                            Milan.
+                            
+                                
+                            
+                         <a href="/3088-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Timothy of Alexandria urged accepting Diophysites ordained by 
+                            Proterius without re-ordination, re-baptism, or re-anointing.
+                         <a href="/3088-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sergius and
+                            Marion wrote a letter to 
+                            Severus
+                            on the subject of what rites to perform when receiving converts form Chalcedonianism.
+                            
+                                
+                            
+                         <a href="/3124-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Non-Chalcedonians in 
+                            the East accept converts from Chalcedonianism
+                            without re-baptism, or re-anointing, re-ordination.
+                         <a href="/3088-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Theodotus introduced
+                            the practice of re-anointing those converting to non-Chalcedonianism.
+                         <a href="/3088-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            After his ordination  Kashish 
+                            traveled around Chios with 
+                             John of Ephesus converting pagans to Christianity.
+                         <a href="/842-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Paul of Ephesus rejected the Chalcedonian confession
+                            and joined an encyclical declaring miaphysite Christology.
+                         <a href="/3134-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon
+                            travelled as far as the camp of the Saracens of the Tribe of Nu'man and
+                            converted many to Christianity. He persuaded certain magnates who had
+                            converted to Christianity build Christian churches.  <a href="/802-48" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            When Severus became bishop of 
+                            Antioch, he opposed those who
+                            insisted that Chalcedonians who repented of their theology needed to be
+                            re-baptized or re-annointed.
+                         <a href="/3051-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Theodore and Elijah committed
+                            their business to the glory of God, serving the poor and strangers,
+                            practicing their businesses without oaths or corruption.  <a href="/823-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon also
+                            battled the Magian heresy and converted three distinguished
+                                Magians to Christianity.  <a href="/802-51" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon
+                            travelled through Persia and into Rome in order to
+                            convert more people to Christianity.  <a href="/802-59" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                     Even those who disagreed with the Christology of Anonymi 3771 
+                     marveled at their asceticism and came to the palace of Hormisdas
+                     to venerate them. Some even renounced the Council of Chalcedon.
+                   <a href="/838-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Dionysius of Alexandria wrote a letter to
+                            Dionysius and 
+                            Stephen arguing that all 
+                            Trinitarian baptisms were valid, even if performed by heretics.
+                         <a href="/3088-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            When Stephen
+                            united with bishops in the regions of
+                            Palestine and 
+                            Alexandria he opposed those who
+                            insisted that Chalcedonians who repented of their theology needed to be
+                            re-baptized or re-annointed.
+                         <a href="/3051-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon visited
+                            the Christians in Hirtha Nu'man  <a href="/802-71" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Thomas decided to sell his possessions and forfeit his
+                            position, giving his life to God and the poor.  <a href="/813-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                     John of Ephesus was involved in bringing about the conversion from paganism to Christianity
+                     of eighty thousand people in the provinces of Asia, Caria,
+                     Phrygia, and Lydia.
+                     This involved the founding of ninety-eight churches and twelve monasteries and the conversion of twelve synagogues to churches.
+                   <a href="/838-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Conversion</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/conversion, 2025-05-11.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anointing.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anointing"/>Anointing</a></li><li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"/>Anti-Chalcedonian</a></li><li><a href="/aggregate/taxonomy/baptism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/baptism"/>Baptism</a></li><li><a href="/aggregate/taxonomy/blessing.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/blessing"/>Blessing</a></li><li><a href="/aggregate/taxonomy/christianity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/christianity"/>Christianity</a></li><li><a href="/aggregate/taxonomy/christianization.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/christianization"/>Christianization</a></li><li><a href="/aggregate/taxonomy/christology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/christology"/>Christology</a></li><li><a href="/aggregate/taxonomy/churches.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/churches"/>Churches</a></li><li><a href="/aggregate/taxonomy/civil-servants.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/civil-servants"/>Civil Servants</a></li><li><a href="/aggregate/taxonomy/conversion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/conversion"/>Conversion</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/council-of-ephesus-i-431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-ephesus-i-431"/>Council of Ephesus I (431)</a></li><li><a href="/aggregate/taxonomy/council-of-laodicea-364.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-laodicea-364"/>Council of Laodicea (364)</a></li><li><a href="/aggregate/taxonomy/creeds.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/creeds"/>Creeds</a></li><li><a href="/aggregate/taxonomy/cult-of-saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cult-of-saints"/>Cult of Saints</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/economics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/economics"/>Economics</a></li><li><a href="/aggregate/taxonomy/ecumenism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ecumenism"/>Ecumenism</a></li><li><a href="/aggregate/taxonomy/hell.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hell"/>Hell</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/mission.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/mission"/>Mission</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/oaths.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/oaths"/>Oaths</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/paganism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/paganism"/>Paganism</a></li><li><a href="/aggregate/taxonomy/poverty.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poverty"/>Poverty</a></li><li><a href="/aggregate/taxonomy/religion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religion"/>Religion</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/synagogues.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/synagogues"/>Synagogues</a></li><li><a href="/aggregate/taxonomy/trade.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/trade"/>Trade</a></li><li><a href="/aggregate/taxonomy/trinity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/trinity"/>Trinity</a></li><li><a href="/aggregate/taxonomy/wealth.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wealth"/>Wealth</a></li><li><a href="/aggregate/taxonomy/worship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/worship"/>Worship</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
+                        John
+                        of Ephesus
+                        
+                    </a></li><li><a href="/aggregate/person/792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/792"/>
+                        Timothy
+                        II
+                        of Alexandria
+                    </a></li><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
+                </a></li><li><a href="/aggregate/person/2584.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2584"/>Ambrose</a></li><li><a href="/aggregate/person/2599.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2599"/>Anastasius</a></li><li><a href="/aggregate/person/3618.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3618"/>Anonymi 3618</a></li><li><a href="/aggregate/person/3771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3771"/>Anonymi 3771</a></li><li><a href="/aggregate/person/2615.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2615"/>Auxentius</a></li><li><a href="/aggregate/person/2626.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2626"/>Charisius</a></li><li><a href="/aggregate/person/2456.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2456"/>Dionysios</a></li><li><a href="/aggregate/person/2634.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2634"/>Dionysius</a></li><li><a href="/aggregate/person/1705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1705"/>Elijah</a></li><li><a href="/aggregate/person/2508.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2508"/>Flavian I of
+                        Antioch</a></li><li><a href="/aggregate/person/2407.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2407"/>Marion</a></li><li><a href="/aggregate/person/2726.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2726"/>Novatus</a></li><li><a href="/aggregate/person/2450.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2450"/>Paul</a></li><li><a href="/aggregate/person/2470.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2470"/>Paul</a></li><li><a href="/aggregate/person/2738.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2738"/>Photinus of Sirmium</a></li><li><a href="/aggregate/person/2471.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2471"/>Proterius</a></li><li><a href="/aggregate/person/2751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2751"/>Sergius I</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/53.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/53"/>Simeon of Beth Arsham</a></li><li><a href="/aggregate/person/2761.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2761"/>Stephen</a></li><li><a href="/aggregate/person/2759.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2759"/>Stephen</a></li><li><a href="/aggregate/person/3140.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3140"/>Theodore</a></li><li><a href="/aggregate/person/780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/780"/>Theodore of Mopsuestia</a></li><li><a href="/aggregate/person/2472.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2472"/>Theodotus</a></li><li><a href="/aggregate/person/2507.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2507"/>Theophilos</a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2734.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2734"/>Alexandria</a></li><li><a href="/aggregate/place/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2610"/>Antioch</a></li><li><a href="/aggregate/place/2746.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2746"/>Asia</a></li><li><a href="/aggregate/place/2764.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2764"/>Caria</a></li><li><a href="/aggregate/place/1529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1529"/>Chios</a></li><li><a href="/aggregate/place/2604.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2604"/>East</a></li><li><a href="/aggregate/place/715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/715"/>Egypt</a></li><li><a href="/aggregate/place/698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/698"/>Filasṭīn</a></li><li><a href="/aggregate/place/2793.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2793"/>Hormisda</a></li><li><a href="/aggregate/place/2811.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2811"/>Lydia</a></li><li><a href="/aggregate/place/1526.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1526"/>Lydia</a></li><li><a href="/aggregate/place/2687.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2687"/>Milan</a></li><li><a href="/aggregate/place/3060.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/3060"/>Monastery at Tagais</a></li><li><a href="/aggregate/place/150.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/150"/>Persian-Sasanian Empire</a></li><li><a href="/aggregate/place/2833.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2833"/>Phrygia</a></li><li><a href="/aggregate/place/166.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/166"/>Roman Empire</a></li><li><a href="/aggregate/place/2360.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2360"/>Rome</a></li><li><a href="/aggregate/place/2792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2792"/>Ḥīrtā d-Ṭayyāyē</a></li></ul></div></div></div></div></div></div></body></html>

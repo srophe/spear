@@ -1,0 +1,154 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: 
+                        Nestorius
+                    </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>
+                        Nestorius
+                    </span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note">
+                        <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span class="langattr" xml:lang="en" lang="en" dir="ltr">Bp. of Constantinople from 428 to 431.</span><span dir="ltr">”  </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib655-1">1</a></span> </span></span>
+                    </div><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">In hagiography: Nestorius of <span class="tei-placeName"><a href="http://syriaca.org/place/2290">Constantinople</a></span> was a
+                        doctor of the Church of the East.</span></div><div xmlns:srophe="https://srophe.app" class="tei-note">
+                        <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span class="langattr" xml:lang="en" lang="en" dir="ltr">Nestorius was dyophysite patriarch of Constantinople and subscribed to controversial Christological positions. He argued that the Virgin Mary should not be called "Mother of God", but only "Mother of Christ". Some, such as Cyril of Alexandria, interpreted this as a diminution of Christ's divinity. His opponents eventually achieved that Nestorius was condemned and deposed at the council of Ephesus in 431. He was sent into exile to Egypt where he died about 20 years later. In the later miaphysite tradition, he was portrayed as an arch-heretic who had supposedly divided Christ into two distinct beings, the man Jesus and the divine Logos, who had not been with Jesus from birth, but only infused him at a later point.</span><span dir="ltr">”  </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib655-12">12</a></span> </span></span>
+                    </div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/655">http://syriaca.org/person/655</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Nestorius </span>
+                    </span>
+                </span> <a href="/3004-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Nestorius</span> was male. <a href="/3004-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">
+                            Severus 
+                            had enmity for 
+                            Sergius, 
+                            Diodore,
+                            Theodore, and
+                            Nestorius.
+                         <a href="/3110-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Cyril of
+                                Alexandria had enmity for Nestorius. <a href="/3020-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
+                                Antioch had enmity for Nestorius. <a href="/3004-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
+                            Severus 
+                            cited negatively
+                            Nestorius.
+                         <a href="/3172-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">
+                            Sergius 
+                            declared that the Council of Chalcedon was consistent with the theology of
+                            Diodore,
+                            Theodore, and
+                            Nestorius.
+                         <a href="/3110-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Appealing to Cyril's letter to Nestorius and the
+                            example of Severus the
+                                presbyter, Severus urged Stephen to accept
+                            the ordination of Stephen because heretics cannot be expected to follow
+                            canon-law.  <a href="/3086-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus and
+                            the bishops of the East had drawn up a synodal letter to John the archbishop of
+                                    Alexandria, affirming orthodoxy and
+                            condemning the council of Chalcedon, the teachings of Nestorius, and the
+                            Tome of Leo.
+                         <a href="/3057-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus had
+                            written to Dionysius of
+                                    Tarsus
+                            concerning the veneration of Nestorius in that
+                            area.  <a href="/3053-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            After the Council of Ephesus, 
+                            Paul petitioned 
+                            Cyril of Alexandria to grant forgiveness to 
+                            Dorotheus,
+                            Eutherius,
+                            Himerius,
+                            and Helladius. 
+                            For the sake of church unity, Cyril of Alexandria agreed on the condition that they condemn
+                            Nestorius.
+                         <a href="/3108-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Dorotheus
+                            presented a petition to
+                            Emperor Marcian
+                            requesting the recall of 
+                            Nestorius
+                            from exile.
+                            
+                                
+                            
+                         <a href="/3172-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Simeon
+                            travelled far and wide to preach against the followers of  Theodore ,  Nestorius ,
+                                 Mani ,
+                                 Bar Daisan ,
+                            and  Marcion .
+                            He travelled from Jerusalem to Illyricum and
+                                Persia and
+                                Constantinople to spread the Christian faith.  <a href="/802-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">John of Claudiopolis, when he received Severus in the house
+                            of Patrick,
+                            urged Severus to
+                            receive the synod of Chalcedon, not as a positive definition of faith, but
+                            as a rejection of Nestorius and Eutyches.  <a href="/3004-78" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus
+                            responded to John by refusing to accept the synod of Chalcedon as a
+                            repudiation of Nestorius and Eutyches, because the
+                            Chalcedonian creed and the Tome of Leo support
+                            Nestorianism; Severus does not believe that anathematizing Eutyches makes the
+                            Council of Chalcedon legitimate, because the followers of
+                                Arius were
+                            still heretics even though they repudiated the teachings of Sabellius.  <a href="/3004-79" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>
+                        Nestorius
+                    </span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/person/655, 2025-05-11.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"/>Anti-Chalcedonian</a></li><li><a href="/aggregate/taxonomy/anti-nestorian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-nestorian"/>Anti-Nestorian</a></li><li><a href="/aggregate/taxonomy/arianism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/arianism"/>Arianism</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/bishop-over.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishop-over"/>Bishop over</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/church-councils.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/church-councils"/>Church Councils</a></li><li><a href="/aggregate/taxonomy/cited-negatively.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cited-negatively"/>Cited Negatively</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/council-of-ephesus-i-431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-ephesus-i-431"/>Council of Ephesus I (431)</a></li><li><a href="/aggregate/taxonomy/enmity-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/enmity-for"/>Enmity for</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/men.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/men"/>Men</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/submitter-of-petition-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/submitter-of-petition-to"/>Submitter-of-petition-to</a></li><li><a href="/aggregate/taxonomy/theology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/theology"/>Theology</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/3.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3"/>
+                        Bardaisan
+                    </a></li><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>
+                        Eutyches
+                    </a></li><li><a href="/aggregate/person/608.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/608"/>
+                        Mani
+                    </a></li><li><a href="/aggregate/person/616.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/616"/>
+                        Marcion
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/430"/>Cyril of Alexandria</a></li><li><a href="/aggregate/person/451.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/451"/>Diodore of Tarsus</a></li><li><a href="/aggregate/person/2520.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2520"/>Dionysios</a></li><li><a href="/aggregate/person/2444.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2444"/>Dorotheus</a></li><li><a href="/aggregate/person/2445.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2445"/>Eutherius</a></li><li><a href="/aggregate/person/2447.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2447"/>Helladius</a></li><li><a href="/aggregate/person/2446.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2446"/>Himerius</a></li><li><a href="/aggregate/person/2572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2572"/>John
+                        III of Nicaea</a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of
+                        Claudiupolis</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/2698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2698"/>Marcian</a></li><li><a href="/aggregate/person/2281.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2281"/>Patricius</a></li><li><a href="/aggregate/person/2450.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2450"/>Paul</a></li><li><a href="/aggregate/person/2555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2555"/>Sabellius the Libyan</a></li><li><a href="/aggregate/person/2534.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2534"/>Severus</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/53.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/53"/>Simeon of Beth Arsham</a></li><li><a href="/aggregate/person/2532.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2532"/>Stephen</a></li><li><a href="/aggregate/person/2533.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2533"/>Stephen</a></li><li><a href="/aggregate/person/780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/780"/>Theodore of Mopsuestia</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2620.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2620"/>Alexandria</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/64.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/64"/>Claudiopolis</a></li><li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/586"/>Constantinople</a></li><li><a href="/aggregate/place/2797.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2797"/>Illyricum</a></li><li><a href="/aggregate/place/104.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/104"/>Jerusalem</a></li><li><a href="/aggregate/place/526.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/526"/>Persia</a></li><li><a href="/aggregate/place/196.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/196"/>Tarsos</a></li></ul></div></div></div></div></div></div></body></html>

@@ -1,8 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: James of the Monastery of the
-                        Edessenes</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: James of the Monastery of the Edessenes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -10,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -29,73 +70,312 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>James of the Monastery of the
-                        Edessenes</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">In hagiography: <span class="tei-persName"><a href="http://syriaca.org/person/1933">James of the
-                            Monastery of the Edessenes</a></span> is a wonderworking monk originally
-                        from <span class="tei-placeName"><a href="http://syriaca.org/place/1528">Monastery of the
-                            Edessenes</a></span> near <span class="tei-placeName"><a href="http://syriaca.org/place/8">Amida</a></span> who was commemorated as one of "two monks" (the other
-                        unnamed) by <span class="tei-persName"><a href="http://syriaca.org/person/74">John of
-                            Ephesus</a></span>. He is mentioned as a contemporary who met with
-                            <span class="tei-persName"><a href="http://syriaca.org/person/50">John of
-                        Tella</a></span>.</span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib1933-2">2</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/1933">http://syriaca.org/person/1933</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Sex: </h4><p class="indent"><span class="tei-persName">James</span> was male. <a href="/807-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Place of residence: </h4><p class="indent"><span class="tei-persName">James</span> resided in <span class="tei-placeName">Convent of the
-                                    Eddessens</span> near <span class="tei-placeName"> Amida</span>.  <a href="/807-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
-                                <span class="tei-persName">James</span>
-                                resided in 
-                                <span class="tei-placeName">monastery of Beth Musika</span>. 
-                             <a href="/807-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent"><span class="tei-persName"> James </span>
-                                was a saint.
-                             <a href="/807-19" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">James</span> was a saint.  <a href="/807-4" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">James</span> practiced asceticism.  <a href="/807-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">
-                            John of Ephesus 
-                            commemorated
-                             James .
-                         <a href="/807-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
-                            James and Anonymous 3760 were siblings. 
-                            
-                         <a href="/807-25" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">
-                            Anonymous 3761 
-                            was possessed by demons in order to tempt 
-                            James.
-                         <a href="/807-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> 
-                            Demons caused Anonymous 3761 
-                            to appear as an angel of light and placed her on the bishop's throne and identified her as
-                            Virgin Mary. 
-                            James and the monks ascent to ordination as priests by 
-                            Anonymous 3761.
-                         <a href="/807-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> 
-                            James and his fellow monks travel to 
-                            Marde to receive forgiveness from 
-                            John of Thella. He instructs them to make
-                            penance for three years before they may take communion again.
-                         <a href="/807-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">James 
-                            exorcized demons.  <a href="/807-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
-                            James withdrew from 
-                            Convent of the Eddessens and received the 
-                            monastery of Beth Musika.  <a href="/807-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>James of the Monastery of the
-                        Edessenes</span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/person/1933, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/angels.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/angels"/>Angels</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/commemorates.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemorates"/>Commemorates</a></li><li><a href="/aggregate/taxonomy/demonology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/demonology"/>Demonology</a></li><li><a href="/aggregate/taxonomy/exorcism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exorcism"/>Exorcism</a></li><li><a href="/aggregate/taxonomy/men.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/men"/>Men</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/penitence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/penitence"/>Penitence</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/sibling-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sibling-of"/>Sibling of</a></li><li><a href="/aggregate/taxonomy/travel.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/travel"/>Travel</a></li><li><a href="/aggregate/taxonomy/women.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/women"/>Women</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/3760.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3760"/>Anonymous 3760</a></li><li><a href="/aggregate/person/3761.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3761"/>Anonymous 3761</a></li><li><a href="/aggregate/person/1933.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1933"/>James of the Monastery of the
-                        Edessenes</a></li><li><a href="/aggregate/person/50.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/50"/>John of Tella</a></li><li><a href="/aggregate/person/624.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/624"/>Mary, Mother of God</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2754.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2754"/>Beth Musika</a></li><li><a href="/aggregate/place/1528.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1528"/>Dayro d-Urhoye</a></li><li><a href="/aggregate/place/762.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/762"/>Marde</a></li><li><a href="/aggregate/place/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2736"/>Monastery of Amida</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app"
+                                    id="title"><span>James of the Monastery of the
+                                    Edessenes</span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div xmlns:srophe="https://srophe.app" class="tei-note">
+                                <span xml:lang="en" lang="en" dir="ltr">In hagiography: <span
+                                        class="tei-persName"><a
+                                            href="http://syriaca.org/person/1933">James of the
+                                            Monastery of the Edessenes</a></span> is a wonderworking
+                                    monk originally from <span class="tei-placeName"><a
+                                            href="http://syriaca.org/place/1528">Monastery of the
+                                            Edessenes</a></span> near <span class="tei-placeName"><a
+                                            href="http://syriaca.org/place/8">Amida</a></span> who
+                                    was commemorated as one of "two monks" (the other unnamed) by
+                                        <span class="tei-persName"><a
+                                            href="http://syriaca.org/person/74">John of
+                                        Ephesus</a></span>. He is mentioned as a contemporary who
+                                    met with <span class="tei-persName"><a
+                                            href="http://syriaca.org/person/50">John of
+                                        Tella</a></span>.</span>
+                                <span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"
+                                        ><span class="tei-footnote-ref"><a href="#bib1933-2"
+                                        >2</a></span>
+                                </span>
+                            </div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/person/1933"
+                                                >http://syriaca.org/person/1933</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <div class="sources">
+                                    <h3>Personal Information</h3>
+                                    <h4>Sex: </h4>
+                                    <p class="indent"><span class="tei-persName">James</span> was
+                                        male. <a href="/807-3" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Place of residence: </h4>
+                                    <p class="indent"><span class="tei-persName">James</span>
+                                        resided in <span class="tei-placeName">Convent of the
+                                            Eddessens</span> near <span class="tei-placeName">
+                                            Amida</span>. <a href="/807-2" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent">
+                                        <span class="tei-persName">James</span> resided in <span
+                                            class="tei-placeName">monastery of Beth Musika</span>.
+                                            <a href="/807-9" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Sanctity: </h4>
+                                    <p class="indent"><span class="tei-persName"> James </span> was
+                                        a saint. <a href="/807-19" class="factoid-more"> See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">James</span> was a
+                                        saint. <a href="/807-4" class="factoid-more"> See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Occupation(s): </h4>
+                                    <p class="indent"><span class="tei-persName">James</span>
+                                        practiced asceticism. <a href="/807-5" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Relationships</h3>
+                                    <p class="indent"> John of Ephesus commemorated James . <a
+                                            href="/807-1" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"> James and Anonymous 3760 were siblings. <a
+                                            href="/807-25" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Events</h3>
+                                    <p class="indent"> Anonymous 3761 was possessed by demons in
+                                        order to tempt James. <a href="/807-10" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Demons caused Anonymous 3761 to appear as an
+                                        angel of light and placed her on the bishop's throne and
+                                        identified her as Virgin Mary. James and the monks ascent to
+                                        ordination as priests by Anonymous 3761. <a href="/807-11"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> James and his fellow monks travel to Marde to
+                                        receive forgiveness from John of Thella. He instructs them
+                                        to make penance for three years before they may take
+                                        communion again. <a href="/807-18" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">James exorcized demons. <a href="/807-7"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> James withdrew from Convent of the Eddessens
+                                        and received the monastery of Beth Musika. <a href="/807-8"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                </div>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Person Page for <span
+                                            xmlns:srophe="https://srophe.app" id="title"><span>James
+                                                of the Monastery of the Edessenes</span></span>,” in
+                                        SPEAR: Syriac Persons Events and Relations, general editor
+                                        Daniel L. Schwartz, http://syriaca.org/person/1933,
+                                        2025-05-11. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/angels.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/angels"
+                                            ></span>Angels</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/commemorates.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/commemorates"
+                                            ></span>Commemorates</a></li>
+                                    <li><a href="/aggregate/taxonomy/demonology.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/demonology"
+                                            ></span>Demonology</a></li>
+                                    <li><a href="/aggregate/taxonomy/exorcism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exorcism"
+                                            ></span>Exorcism</a></li>
+                                    <li><a href="/aggregate/taxonomy/men.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/men"
+                                            ></span>Men</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/penitence.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/penitence"
+                                            ></span>Penitence</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/repentance.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/repentance"
+                                            ></span>Repentance</a></li>
+                                    <li><a href="/aggregate/taxonomy/saints.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                            ></span>Saints</a></li>
+                                    <li><a href="/aggregate/taxonomy/sibling-of.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sibling-of"
+                                            ></span>Sibling of</a></li>
+                                    <li><a href="/aggregate/taxonomy/travel.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/travel"
+                                            ></span>Travel</a></li>
+                                    <li><a href="/aggregate/taxonomy/women.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/women"
+                                            ></span>Women</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/3760.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3760"
+                                            ></span>Anonymous 3760</a></li>
+                                    <li><a href="/aggregate/person/3761.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3761"
+                                            ></span>Anonymous 3761</a></li>
+                                    <li><a href="/aggregate/person/1933.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1933"
+                                            ></span>James of the Monastery of the Edessenes</a></li>
+                                    <li><a href="/aggregate/person/50.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/50"
+                                            ></span>John of Tella</a></li>
+                                    <li><a href="/aggregate/person/624.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/624"
+                                            ></span>Mary, Mother of God</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/2754.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2754"
+                                            ></span>Beth Musika</a></li>
+                                    <li><a href="/aggregate/place/1528.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1528"
+                                            ></span>Dayro d-Urhoye</a></li>
+                                    <li><a href="/aggregate/place/762.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/762"
+                                            ></span>Marde</a></li>
+                                    <li><a href="/aggregate/place/2736.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2736"
+                                            ></span>Monastery of Amida</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

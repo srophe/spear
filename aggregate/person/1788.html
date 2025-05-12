@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Isaac</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Isaac</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,66 +70,282 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Isaac</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">
-                        <span class="tei-persName"><a href="http://syriaca.org/person/1788">Isaac</a></span> is
-                        commemorated in <a href="http://syriaca.org/work/836">Isaac
-                            (text)
-                    [http://syriaca.org/work/836]
-                </a>, a work surviving in at least 3 manuscripts including
-                            <li><span><span class="footnote-content">ms London, British
-                            Library, Add. 14647, f. 109v-110v</span></span></li>.</span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib1788-1">1</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/1788">http://syriaca.org/person/1788</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
-               <span class="tei-person">
-                  <span class="tei-persName"> Isaac </span>
-               </span>
-            </span> <a href="/836-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Birth: </h4><p class="indent"><span class="spearLabel">Birth place: </span>
-                        <span class="tei-persName">Isaac</span> was born in
-                        <span class="tei-placeName">Dara</span>.
-                      <a href="/836-2" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Death: </h4><p class="indent"><span class="spearLabel">Death place: </span>
-                        <span class="tei-persName">Isaac of Dara</span> died in
-                        <span class="tei-placeName">Constantinople</span>.
-                      <a href="/836-11" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Place of residence: </h4><p class="indent"><span class="tei-persName">Isaac</span> resided
-                        in the <span class="tei-placeName">Royal City</span>.
-                      <a href="/836-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent"><span class="tei-persName"> Isaac </span>
-                        was a saint.
-                      <a href="/836-14" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Isaac of Dara</span> was a nurse
-                        in the hospital in <span class="tei-placeName">Constantinople</span>.  <a href="/836-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Social Rank: </h4><p class="indent"><span class="tei-persName">Isaac of Dara</span>
-                        held the honorific title of Protector.  <a href="/836-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">
-                     John of Ephesus 
-                     commemorated
-                      Isaac .
-                   <a href="/836-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Isaac and Anonymous 3690 were spouses. <a href="/836-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Anonymi 3692 was the child of Isaac and Anonymous 3690. <a href="/836-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent"> Isaac of Dara  's  wife  came to  Constantinople  to look for
-                     him. He sent her a message to ask her to come back in two months.  <a href="/836-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
-                     At  Isaac of Dara  's
-                     funeral a great number of people and his  wife  were present.  <a href="/836-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Isaac of Dara left his home
-                     city Dara and his
-                        wife and his
-                        children to move
-                     to Constantinople.
-                   <a href="/836-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Isaac of Dara devoted
-                     himself to the care of the sick and service in the church.  <a href="/836-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Isaac</span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/person/1788, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/burial.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/burial"/>Burial</a></li><li><a href="/aggregate/taxonomy/child-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/child-of"/>Child of</a></li><li><a href="/aggregate/taxonomy/children.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/children"/>Children</a></li><li><a href="/aggregate/taxonomy/commemorates.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemorates"/>Commemorates</a></li><li><a href="/aggregate/taxonomy/deacons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deacons"/>Deacons</a></li><li><a href="/aggregate/taxonomy/families.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/families"/>Families</a></li><li><a href="/aggregate/taxonomy/migration.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/migration"/>Migration</a></li><li><a href="/aggregate/taxonomy/nurses.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/nurses"/>Nurses</a></li><li><a href="/aggregate/taxonomy/protectores.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/protectores"/>Protectores</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/spouse-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/spouse-of"/>Spouse of</a></li><li><a href="/aggregate/taxonomy/spouses.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/spouses"/>Spouses</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/3692.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3692"/>Anonymi 3692</a></li><li><a href="/aggregate/person/3690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3690"/>Anonymous 3690</a></li><li><a href="/aggregate/person/1788.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1788"/>Isaac</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/586"/>Constantinople</a></li><li><a href="/aggregate/place/67.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/67"/>Dara</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app"
+                                    id="title"><span>Isaac</span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div xmlns:srophe="https://srophe.app" class="tei-note">
+                                <span xml:lang="en" lang="en" dir="ltr">
+                                    <span class="tei-persName"><a
+                                            href="http://syriaca.org/person/1788">Isaac</a></span>
+                                    is commemorated in <a href="http://syriaca.org/work/836">Isaac
+                                        (text) [http://syriaca.org/work/836] </a>, a work surviving
+                                    in at least 3 manuscripts including <li><span><span
+                                                class="footnote-content">ms London, British Library,
+                                                Add. 14647, f. 109v-110v</span></span></li>.</span>
+                                <span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"
+                                        ><span class="tei-footnote-ref"><a href="#bib1788-1"
+                                        >1</a></span>
+                                </span>
+                            </div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/person/1788"
+                                                >http://syriaca.org/person/1788</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <div class="sources">
+                                    <h3>Personal Information</h3>
+                                    <h4>Name variant(s): </h4>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName"> Isaac </span>
+                                            </span>
+                                        </span>
+                                        <a href="/836-1" class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Birth: </h4>
+                                    <p class="indent"><span class="spearLabel">Birth place: </span>
+                                        <span class="tei-persName">Isaac</span> was born in <span
+                                            class="tei-placeName">Dara</span>. <a href="/836-2"
+                                            class="factoid-more"> See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Death: </h4>
+                                    <p class="indent"><span class="spearLabel">Death place: </span>
+                                        <span class="tei-persName">Isaac of Dara</span> died in
+                                            <span class="tei-placeName">Constantinople</span>. <a
+                                            href="/836-11" class="factoid-more"> See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Place of residence: </h4>
+                                    <p class="indent"><span class="tei-persName">Isaac</span>
+                                        resided in the <span class="tei-placeName">Royal
+                                        City</span>. <a href="/836-6" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Sanctity: </h4>
+                                    <p class="indent"><span class="tei-persName"> Isaac </span> was
+                                        a saint. <a href="/836-14" class="factoid-more"> See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Occupation(s): </h4>
+                                    <p class="indent"><span class="tei-persName">Isaac of
+                                            Dara</span> was a nurse in the hospital in <span
+                                            class="tei-placeName">Constantinople</span>. <a
+                                            href="/836-8" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Social Rank: </h4>
+                                    <p class="indent"><span class="tei-persName">Isaac of
+                                            Dara</span> held the honorific title of Protector. <a
+                                            href="/836-5" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Relationships</h3>
+                                    <p class="indent"> John of Ephesus commemorated Isaac . <a
+                                            href="/836-13" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent">Isaac and Anonymous 3690 were spouses. <a
+                                            href="/836-3" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent">Anonymi 3692 was the child of Isaac and
+                                        Anonymous 3690. <a href="/836-4" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Events</h3>
+                                    <p class="indent"> Isaac of Dara 's wife came to Constantinople
+                                        to look for him. He sent her a message to ask her to come
+                                        back in two months. <a href="/836-10" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> At Isaac of Dara 's funeral a great number of
+                                        people and his wife were present. <a href="/836-12"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Isaac of Dara left his home city Dara and his
+                                        wife and his children to move to Constantinople. <a
+                                            href="/836-7" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Isaac of Dara devoted himself to the care of
+                                        the sick and service in the church. <a href="/836-9"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                </div>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Person Page for <span
+                                            xmlns:srophe="https://srophe.app" id="title"
+                                                ><span>Isaac</span></span>,” in SPEAR: Syriac
+                                        Persons Events and Relations, general editor Daniel L.
+                                        Schwartz, http://syriaca.org/person/1788, 2025-05-11.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/burial.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/burial"
+                                            ></span>Burial</a></li>
+                                    <li><a href="/aggregate/taxonomy/child-of.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/child-of"
+                                            ></span>Child of</a></li>
+                                    <li><a href="/aggregate/taxonomy/children.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/children"
+                                            ></span>Children</a></li>
+                                    <li><a href="/aggregate/taxonomy/commemorates.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/commemorates"
+                                            ></span>Commemorates</a></li>
+                                    <li><a href="/aggregate/taxonomy/deacons.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deacons"
+                                            ></span>Deacons</a></li>
+                                    <li><a href="/aggregate/taxonomy/families.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/families"
+                                            ></span>Families</a></li>
+                                    <li><a href="/aggregate/taxonomy/migration.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/migration"
+                                            ></span>Migration</a></li>
+                                    <li><a href="/aggregate/taxonomy/nurses.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/nurses"
+                                            ></span>Nurses</a></li>
+                                    <li><a href="/aggregate/taxonomy/protectores.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/protectores"
+                                            ></span>Protectores</a></li>
+                                    <li><a href="/aggregate/taxonomy/saints.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                            ></span>Saints</a></li>
+                                    <li><a href="/aggregate/taxonomy/spouse-of.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/spouse-of"
+                                            ></span>Spouse of</a></li>
+                                    <li><a href="/aggregate/taxonomy/spouses.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/spouses"
+                                            ></span>Spouses</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/3692.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3692"
+                                            ></span>Anonymi 3692</a></li>
+                                    <li><a href="/aggregate/person/3690.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3690"
+                                            ></span>Anonymous 3690</a></li>
+                                    <li><a href="/aggregate/person/1788.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1788"
+                                            ></span>Isaac</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/586.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/586"
+                                            ></span>Constantinople</a></li>
+                                    <li><a href="/aggregate/place/67.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/67"
+                                            ></span>Dara</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

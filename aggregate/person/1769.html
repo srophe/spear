@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Hala</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Hala</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,68 +70,351 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Hala</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">
-                        <span class="tei-persName"><a href="http://syriaca.org/person/1769">Hala</a></span> is
-                        commemorated in <a href="http://syriaca.org/work/825">Hala
-                        (text)
-                    [http://syriaca.org/work/825]
-                </a>, a work surviving in at least 3 manuscripts including <li><span><span class="footnote-content">mss London, British Library,
-                            Add. 14647, f. 88-90 and Add. 14735, f. 157v-159v</span></span></li>.</span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib1769-1">1</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/1769">http://syriaca.org/person/1769</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
-                    <span class="tei-person">
-                        <span class="tei-persName"> Hala the Zealous </span>
-                    </span>
-                </span> <a href="/825-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
-                    <span class="tei-person">
-                        <span class="tei-persName"> Mar so-and-so the Zealous
-                        </span>
-                    </span>
-                </span> <a href="/825-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent">
-                                <span class="tei-persName">Hala</span> 
-                                was a saint.  <a href="/825-16" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Hala</span> was a presbyter.  <a href="/825-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Hala</span> was a monk in the <span class="tei-placeName">monastery of the
-                                    Edessans</span> <a href="/825-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Mental State: </h4><p class="indent"><span class="tei-persName">Hala</span> was excited to continue charity towards the
-                                community.  <a href="/825-14" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent"> The persecution came and the convents had all their poroperty taken
-                            from them, so Hala could no longer assist the poor.  <a href="/825-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
-                            Hala was feeble and fell into a 
-                            serious illness caused by his asceticism.
-                         <a href="/825-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
-                            Hala was
-                            brought to a community gathered by the 
-                            queen at her palace
-                            called Hormisda. <a href="/825-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
-                            Hala 
-                            was a monk who cared for the sick and the needs of the strangers.
-                         <a href="/825-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Hala cleaned
-                            latrines, picked lentils from the garden, and cooked from food waste and
-                            wine for the poor by the gates.  <a href="/825-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Hala kept
-                            silence except when he prayed the psalms and the liturgy and read
-                            scripture without interruption and taught his disciples throughout the
-                            night.  <a href="/825-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Monastery authorities were becoming resentful of Hala giving to the
-                            poor.  <a href="/825-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Monastery authorities heaped indignation and abuse upon Hala and threw his
-                            cups and plates to the ground.  <a href="/825-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> When strangers came to the monastery Hala would wash and
-                            annoint them.  <a href="/825-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Hala</span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/person/1769, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
-                        Theodora, Roman empress
-                    </a></li><li><a href="/aggregate/person/1769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1769"/>Hala</a></li></ul><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anointing.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anointing"/>Anointing</a></li><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/bible.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bible"/>Bible</a></li><li><a href="/aggregate/taxonomy/charity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/charity"/>CharityCaritas</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/cooks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cooks"/>Cooks</a></li><li><a href="/aggregate/taxonomy/discipleship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/discipleship"/>Discipleship</a></li><li><a href="/aggregate/taxonomy/dress.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/dress"/>Dress</a></li><li><a href="/aggregate/taxonomy/food.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/food"/>Food</a></li><li><a href="/aggregate/taxonomy/hospitality.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hospitality"/>Hospitality</a></li><li><a href="/aggregate/taxonomy/hours.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hours"/>Hours</a></li><li><a href="/aggregate/taxonomy/humility.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/humility"/>Humility</a></li><li><a href="/aggregate/taxonomy/illness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/illness"/>Illness</a></li><li><a href="/aggregate/taxonomy/insults.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/insults"/>Insults</a></li><li><a href="/aggregate/taxonomy/liturgy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/liturgy"/>Liturgy</a></li><li><a href="/aggregate/taxonomy/material-culture.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/material-culture"/>Material Culture</a></li><li><a href="/aggregate/taxonomy/medicine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/medicine"/>Medicine</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/poor.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poor"/>Poor</a></li><li><a href="/aggregate/taxonomy/poverty.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poverty"/>Poverty</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/silence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/silence"/>Silence</a></li><li><a href="/aggregate/taxonomy/sleep.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sleep"/>Sleep</a></li><li><a href="/aggregate/taxonomy/water.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/water"/>Water</a></li><li><a href="/aggregate/taxonomy/wine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wine"/>Wine</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/1528.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1528"/>Dayro d-Urhoye</a></li><li><a href="/aggregate/place/2793.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2793"/>Hormisda</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app"
+                                    id="title"><span>Hala</span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div xmlns:srophe="https://srophe.app" class="tei-note">
+                                <span xml:lang="en" lang="en" dir="ltr">
+                                    <span class="tei-persName"><a
+                                            href="http://syriaca.org/person/1769">Hala</a></span> is
+                                    commemorated in <a href="http://syriaca.org/work/825">Hala
+                                        (text) [http://syriaca.org/work/825] </a>, a work surviving
+                                    in at least 3 manuscripts including <li><span><span
+                                                class="footnote-content">mss London, British
+                                                Library, Add. 14647, f. 88-90 and Add. 14735, f.
+                                                157v-159v</span></span></li>.</span>
+                                <span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"
+                                        ><span class="tei-footnote-ref"><a href="#bib1769-1"
+                                        >1</a></span>
+                                </span>
+                            </div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/person/1769"
+                                                >http://syriaca.org/person/1769</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <div class="sources">
+                                    <h3>Personal Information</h3>
+                                    <h4>Name variant(s): </h4>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName"> Hala the Zealous </span>
+                                            </span>
+                                        </span>
+                                        <a href="/825-1" class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName"> Mar so-and-so the
+                                                  Zealous </span>
+                                            </span>
+                                        </span>
+                                        <a href="/825-9" class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Sanctity: </h4>
+                                    <p class="indent">
+                                        <span class="tei-persName">Hala</span> was a saint. <a
+                                            href="/825-16" class="factoid-more"> See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Occupation(s): </h4>
+                                    <p class="indent"><span class="tei-persName">Hala</span> was a
+                                        presbyter. <a href="/825-15" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Hala</span> was a
+                                        monk in the <span class="tei-placeName">monastery of the
+                                            Edessans</span>
+                                        <a href="/825-2" class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Mental State: </h4>
+                                    <p class="indent"><span class="tei-persName">Hala</span> was
+                                        excited to continue charity towards the community. <a
+                                            href="/825-14" class="factoid-more"> See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Events</h3>
+                                    <p class="indent"> The persecution came and the convents had all
+                                        their poroperty taken from them, so Hala could no longer
+                                        assist the poor. <a href="/825-10" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Hala was feeble and fell into a serious
+                                        illness caused by his asceticism. <a href="/825-11"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Hala was brought to a community gathered by
+                                        the queen at her palace called Hormisda. <a href="/825-13"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Hala was a monk who cared for the sick and
+                                        the needs of the strangers. <a href="/825-3"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Hala cleaned latrines, picked lentils from the
+                                        garden, and cooked from food waste and wine for the poor by
+                                        the gates. <a href="/825-4" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Hala kept silence except when he prayed the
+                                        psalms and the liturgy and read scripture without
+                                        interruption and taught his disciples throughout the night.
+                                            <a href="/825-5" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Monastery authorities were becoming resentful
+                                        of Hala giving to the poor. <a href="/825-6"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Monastery authorities heaped indignation and
+                                        abuse upon Hala and threw his cups and plates to the ground.
+                                            <a href="/825-7" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> When strangers came to the monastery Hala
+                                        would wash and annoint them. <a href="/825-8"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                </div>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Person Page for <span
+                                            xmlns:srophe="https://srophe.app" id="title"
+                                                ><span>Hala</span></span>,” in SPEAR: Syriac Persons
+                                        Events and Relations, general editor Daniel L. Schwartz,
+                                        http://syriaca.org/person/1769, 2025-05-11. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/779.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/779"></span>
+                                            Theodora, Roman empress </a></li>
+                                    <li><a href="/aggregate/person/1769.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1769"
+                                            ></span>Hala</a></li>
+                                </ul>
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/anointing.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anointing"
+                                            ></span>Anointing</a></li>
+                                    <li><a href="/aggregate/taxonomy/asceticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/asceticism"
+                                            ></span>Asceticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/bible.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bible"
+                                            ></span>Bible</a></li>
+                                    <li><a href="/aggregate/taxonomy/charity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/charity"
+                                            ></span>CharityCaritas</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/cooks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/cooks"
+                                            ></span>Cooks</a></li>
+                                    <li><a href="/aggregate/taxonomy/discipleship.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/discipleship"
+                                            ></span>Discipleship</a></li>
+                                    <li><a href="/aggregate/taxonomy/dress.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/dress"
+                                            ></span>Dress</a></li>
+                                    <li><a href="/aggregate/taxonomy/food.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/food"
+                                            ></span>Food</a></li>
+                                    <li><a href="/aggregate/taxonomy/hospitality.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/hospitality"
+                                            ></span>Hospitality</a></li>
+                                    <li><a href="/aggregate/taxonomy/hours.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/hours"
+                                            ></span>Hours</a></li>
+                                    <li><a href="/aggregate/taxonomy/humility.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/humility"
+                                            ></span>Humility</a></li>
+                                    <li><a href="/aggregate/taxonomy/illness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                            ></span>Illness</a></li>
+                                    <li><a href="/aggregate/taxonomy/insults.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/insults"
+                                            ></span>Insults</a></li>
+                                    <li><a href="/aggregate/taxonomy/liturgy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/liturgy"
+                                            ></span>Liturgy</a></li>
+                                    <li><a href="/aggregate/taxonomy/material-culture.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/material-culture"
+                                            ></span>Material Culture</a></li>
+                                    <li><a href="/aggregate/taxonomy/medicine.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/medicine"
+                                            ></span>Medicine</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                            ></span>Monasteries</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                            ></span>Persecution</a></li>
+                                    <li><a href="/aggregate/taxonomy/poor.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/poor"
+                                            ></span>Poor</a></li>
+                                    <li><a href="/aggregate/taxonomy/poverty.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/poverty"
+                                            ></span>Poverty</a></li>
+                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                            ></span>Prayer</a></li>
+                                    <li><a href="/aggregate/taxonomy/saints.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                            ></span>Saints</a></li>
+                                    <li><a href="/aggregate/taxonomy/silence.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/silence"
+                                            ></span>Silence</a></li>
+                                    <li><a href="/aggregate/taxonomy/sleep.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sleep"
+                                            ></span>Sleep</a></li>
+                                    <li><a href="/aggregate/taxonomy/water.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/water"
+                                            ></span>Water</a></li>
+                                    <li><a href="/aggregate/taxonomy/wine.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wine"
+                                            ></span>Wine</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/1528.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1528"
+                                            ></span>Dayro d-Urhoye</a></li>
+                                    <li><a href="/aggregate/place/2793.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2793"
+                                            ></span>Hormisda</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>
