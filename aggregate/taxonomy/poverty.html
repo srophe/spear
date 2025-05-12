@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Poverty</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Poverty</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -23,93 +65,497 @@
                     // change layout based on link ID
                     kb.options.layout = this.id
                     // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
                         kb.reveal();
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Poverty</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/poverty">http://syriaca.org/taxonomy/poverty</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span> While wandering, 
-                                Kashish  changed the monastic habit for lay attire. He
-                            made baskets, fans, and hats. From his labor, he earned just enough
-                            money to support himself, and gave the rest to the poor. He ate wild
-                            herbs and fruit.  <a href="/842-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Unlike Šnq who was cruel and rapacious, Thomas devoted his
-                            life to the poor, sick, widowed, and orphaned.  <a href="/813-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Elijah,Theodore, and their sisters moved
-                                from Amida to Melitene in Cappadocia, establishing their business
-                            to divide their income among the poor and needy.  <a href="/823-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Elijah, 
-                            Theodore, and 
-                            their sisters
-                            decided to expand their ministry to the maltreated and persecuted believers in
-                            Syria,
-                            Arabia,
-                            Callinicus, selling everything that they owned.  <a href="/823-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mare confronted Justinian and Theodora concerning
-                            the persecution. Because of his words and dress, they esteemed him a
-                            holy man, and gave him a hundred weight of gold, which he promptly threw
-                            away.  <a href="/828-17" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Habib brought
-                            justice to those being exploited by the rich.  <a href="/793-17" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Though Severus had initiallly held to a strict interpretation
-                            of the Church's ordination practices, the poverty and necessity of the
-                            Church forced him to change his practices.  <a href="/3044-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sometime
-                                between 530 and 536, in the month of November,a stranger came to
-                                the convent outside
-                                    of Amida. Dirty and worn out,he stood at vespers
-                            and at table without speaking.  <a href="/821-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            John of Ephesus attempted to 
-                            provide financial assistance to the poor holy man Priscus 
-                            by sending a certain gentlemen to give a tremissis (gold coin). 
-                            Priscus refused and ran away but finally relented and took one follis.
-                         <a href="/844-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            John of Ephesus attempted to 
-                            provide assistance to the poor holy man Priscus 
-                            by sending a certain gentlemen to give him a tunic and a cloak.
-                            
-                         <a href="/844-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> The Convent treated all men kindly, zealously feeding,
-                            washing, and providing for the poor.  <a href="/809-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> A certain magistrate from the same village as Maro was an evil man
-                            who oppressed widows, orphans, and other unfortunate people.  <a href="/796-45" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Five years after the Council of Chalcedon,
-                            when the monastery at Fardaisa was brought to indigence, the brothers
-                            approached Addai in his exile. To recover financially, they began
-                            planting vineyards throughout the mountains east of Anzetene. Merchants
-                            from Cappadocia, who would go as far Syria to buy wine.
-                            Selling wine allowed Addai to begin feeding the poor again.  <a href="/800-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Theodore and Elijah committed
-                            their business to the glory of God, serving the poor and strangers,
-                            practicing their businesses without oaths or corruption.  <a href="/823-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Monastery authorities were becoming resentful of Hala giving to the
-                            poor.  <a href="/825-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Anonymous 3720  returned to  
-                            Priscus and they discussed his mode of life:
-                            his poverty and his apparent madness. Priscus explained 
-                            that he did these things to be left alone in order to pursue God. Anonymous 3720 
-                            promised only to reveal his secret to John of Ephesus.
-                         <a href="/844-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Poverty</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/poverty, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anchorites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anchorites"/>Anchorites</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/blame.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/blame"/>Blame</a></li><li><a href="/aggregate/taxonomy/blessing.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/blessing"/>Blessing</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/charity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/charity"/>CharityCaritas</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/coins.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/coins"/>Coins</a></li><li><a href="/aggregate/taxonomy/conversion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/conversion"/>Conversion</a></li><li><a href="/aggregate/taxonomy/dress.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/dress"/>Dress</a></li><li><a href="/aggregate/taxonomy/economics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/economics"/>Economics</a></li><li><a href="/aggregate/taxonomy/emperors.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emperors"/>Emperors</a></li><li><a href="/aggregate/taxonomy/food.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/food"/>Food</a></li><li><a href="/aggregate/taxonomy/holiness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/holiness"/>Holiness</a></li><li><a href="/aggregate/taxonomy/humility.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/humility"/>Humility</a></li><li><a href="/aggregate/taxonomy/illness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/illness"/>Illness</a></li><li><a href="/aggregate/taxonomy/justice.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/justice"/>Justice</a></li><li><a href="/aggregate/taxonomy/kings.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/kings"/>Kings</a></li><li><a href="/aggregate/taxonomy/madness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/madness"/>Madness</a></li><li><a href="/aggregate/taxonomy/merchants.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/merchants"/>Merchants</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/oaths.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/oaths"/>Oaths</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/orphans.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/orphans"/>Orphans</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/polemics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/polemics"/>Polemics</a></li><li><a href="/aggregate/taxonomy/poverty.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poverty"/>Poverty</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/religion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religion"/>Religion</a></li><li><a href="/aggregate/taxonomy/trade.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/trade"/>Trade</a></li><li><a href="/aggregate/taxonomy/travel.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/travel"/>Travel</a></li><li><a href="/aggregate/taxonomy/vespers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/vespers"/>Vespers</a></li><li><a href="/aggregate/taxonomy/wandering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wandering"/>Wandering</a></li><li><a href="/aggregate/taxonomy/wealth.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wealth"/>Wealth</a></li><li><a href="/aggregate/taxonomy/widows.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/widows"/>Widows</a></li><li><a href="/aggregate/taxonomy/wine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wine"/>Wine</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
-                        Theodora, Roman empress
-                    </a></li><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
-                </a></li><li><a href="/aggregate/person/1116.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1116"/>Addai the Chorepiscos</a></li><li><a href="/aggregate/person/3715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3715"/>Anonymi 3715</a></li><li><a href="/aggregate/person/3720.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3720"/>Anonymous 3720</a></li><li><a href="/aggregate/person/1705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1705"/>Elijah</a></li><li><a href="/aggregate/person/3763.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3763"/>Habib</a></li><li><a href="/aggregate/person/1769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1769"/>Hala</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/1862.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1862"/>Malka</a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/3235.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3235"/>Maro</a></li><li><a href="/aggregate/person/2024.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2024"/>Priscus</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/3140.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3140"/>Theodore</a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian</a></li><li><a href="/aggregate/person/3260.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3260"/>Šnq</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/716.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/716"/>Arabia</a></li><li><a href="/aggregate/place/2763.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2763"/>Cappadocia</a></li><li><a href="/aggregate/place/109.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/109"/>Kallinikos</a></li><li><a href="/aggregate/place/136.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/136"/>Melitene</a></li><li><a href="/aggregate/place/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2736"/>Monastery of Amida</a></li><li><a href="/aggregate/place/2776.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2776"/>Pardaisa</a></li><li><a href="/aggregate/place/486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/486"/>Syria</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li><li><a href="/aggregate/place/2758.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2758"/>ܿBeth Urtaye</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Poverty</span></span></span></h1>
+                        </div>
+                        <div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/poverty"
+                                                >http://syriaca.org/taxonomy/poverty</a></span></p></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> While
+                                    wandering, Kashish changed the monastic habit for lay attire. He
+                                    made baskets, fans, and hats. From his labor, he earned just
+                                    enough money to support himself, and gave the rest to the poor.
+                                    He ate wild herbs and fruit. <a href="/842-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Unlike Šnq
+                                    who was cruel and rapacious, Thomas devoted his life to the
+                                    poor, sick, widowed, and orphaned. <a href="/813-12"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event:
+                                    </span>Elijah,Theodore, and their sisters moved from Amida to
+                                    Melitene in Cappadocia, establishing their business to divide
+                                    their income among the poor and needy. <a href="/823-13"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Elijah,
+                                    Theodore, and their sisters decided to expand their ministry to
+                                    the maltreated and persecuted believers in Syria, Arabia,
+                                    Callinicus, selling everything that they owned. <a
+                                        href="/823-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Mare
+                                    confronted Justinian and Theodora concerning the persecution.
+                                    Because of his words and dress, they esteemed him a holy man,
+                                    and gave him a hundred weight of gold, which he promptly threw
+                                    away. <a href="/828-17" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Habib
+                                    brought justice to those being exploited by the rich. <a
+                                        href="/793-17" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Though
+                                    Severus had initiallly held to a strict interpretation of the
+                                    Church's ordination practices, the poverty and necessity of the
+                                    Church forced him to change his practices. <a href="/3044-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Sometime
+                                    between 530 and 536, in the month of November,a stranger came to
+                                    the convent outside of Amida. Dirty and worn out,he stood at
+                                    vespers and at table without speaking. <a href="/821-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> John of
+                                    Ephesus attempted to provide financial assistance to the poor
+                                    holy man Priscus by sending a certain gentlemen to give a
+                                    tremissis (gold coin). Priscus refused and ran away but finally
+                                    relented and took one follis. <a href="/844-3"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> John of
+                                    Ephesus attempted to provide assistance to the poor holy man
+                                    Priscus by sending a certain gentlemen to give him a tunic and a
+                                    cloak. <a href="/844-4" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The
+                                    Convent treated all men kindly, zealously feeding, washing, and
+                                    providing for the poor. <a href="/809-4" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> A certain
+                                    magistrate from the same village as Maro was an evil man who
+                                    oppressed widows, orphans, and other unfortunate people. <a
+                                        href="/796-45" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Five years
+                                    after the Council of Chalcedon, when the monastery at Fardaisa
+                                    was brought to indigence, the brothers approached Addai in his
+                                    exile. To recover financially, they began planting vineyards
+                                    throughout the mountains east of Anzetene. Merchants from
+                                    Cappadocia, who would go as far Syria to buy wine. Selling wine
+                                    allowed Addai to begin feeding the poor again. <a href="/800-5"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Theodore
+                                    and Elijah committed their business to the glory of God, serving
+                                    the poor and strangers, practicing their businesses without
+                                    oaths or corruption. <a href="/823-5" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Monastery
+                                    authorities were becoming resentful of Hala giving to the poor.
+                                        <a href="/825-6" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Anonymous
+                                    3720 returned to Priscus and they discussed his mode of life:
+                                    his poverty and his apparent madness. Priscus explained that he
+                                    did these things to be left alone in order to pursue God.
+                                    Anonymous 3720 promised only to reveal his secret to John of
+                                    Ephesus. <a href="/844-8" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Poverty</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        http://syriaca.org/taxonomy/poverty, 2025-05-11. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/anchorites.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anchorites"
+                                            ></span>Anchorites</a></li>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/blame.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/blame"
+                                            ></span>Blame</a></li>
+                                    <li><a href="/aggregate/taxonomy/blessing.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/blessing"
+                                            ></span>Blessing</a></li>
+                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                            ></span>Canon Law</a></li>
+                                    <li><a href="/aggregate/taxonomy/charity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/charity"
+                                            ></span>CharityCaritas</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/coins.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/coins"
+                                            ></span>Coins</a></li>
+                                    <li><a href="/aggregate/taxonomy/conversion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/conversion"
+                                            ></span>Conversion</a></li>
+                                    <li><a href="/aggregate/taxonomy/dress.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/dress"
+                                            ></span>Dress</a></li>
+                                    <li><a href="/aggregate/taxonomy/economics.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/economics"
+                                            ></span>Economics</a></li>
+                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                            ></span>Emperors</a></li>
+                                    <li><a href="/aggregate/taxonomy/food.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/food"
+                                            ></span>Food</a></li>
+                                    <li><a href="/aggregate/taxonomy/holiness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/holiness"
+                                            ></span>Holiness</a></li>
+                                    <li><a href="/aggregate/taxonomy/humility.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/humility"
+                                            ></span>Humility</a></li>
+                                    <li><a href="/aggregate/taxonomy/illness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                            ></span>Illness</a></li>
+                                    <li><a href="/aggregate/taxonomy/justice.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/justice"
+                                            ></span>Justice</a></li>
+                                    <li><a href="/aggregate/taxonomy/kings.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/kings"
+                                            ></span>Kings</a></li>
+                                    <li><a href="/aggregate/taxonomy/madness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/madness"
+                                            ></span>Madness</a></li>
+                                    <li><a href="/aggregate/taxonomy/merchants.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/merchants"
+                                            ></span>Merchants</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                            ></span>Monasteries</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/oaths.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/oaths"
+                                            ></span>Oaths</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/orphans.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/orphans"
+                                            ></span>Orphans</a></li>
+                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                            ></span>Persecution</a></li>
+                                    <li><a href="/aggregate/taxonomy/polemics.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/polemics"
+                                            ></span>Polemics</a></li>
+                                    <li><a href="/aggregate/taxonomy/poverty.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/poverty"
+                                            ></span>Poverty</a></li>
+                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                            ></span>Prayer</a></li>
+                                    <li><a href="/aggregate/taxonomy/religion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/religion"
+                                            ></span>Religion</a></li>
+                                    <li><a href="/aggregate/taxonomy/trade.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/trade"
+                                            ></span>Trade</a></li>
+                                    <li><a href="/aggregate/taxonomy/travel.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/travel"
+                                            ></span>Travel</a></li>
+                                    <li><a href="/aggregate/taxonomy/vespers.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/vespers"
+                                            ></span>Vespers</a></li>
+                                    <li><a href="/aggregate/taxonomy/wandering.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wandering"
+                                            ></span>Wandering</a></li>
+                                    <li><a href="/aggregate/taxonomy/wealth.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wealth"
+                                            ></span>Wealth</a></li>
+                                    <li><a href="/aggregate/taxonomy/widows.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/widows"
+                                            ></span>Widows</a></li>
+                                    <li><a href="/aggregate/taxonomy/wine.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wine"
+                                            ></span>Wine</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/779.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/779"></span>
+                                            Theodora, Roman empress </a></li>
+                                    <li><a href="/aggregate/person/2032.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2032"></span>
+                                            — ܩܫܝܫ </a></li>
+                                    <li><a href="/aggregate/person/1116.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1116"
+                                            ></span>Addai the Chorepiscos</a></li>
+                                    <li><a href="/aggregate/person/3715.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3715"
+                                            ></span>Anonymi 3715</a></li>
+                                    <li><a href="/aggregate/person/3720.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3720"
+                                            ></span>Anonymous 3720</a></li>
+                                    <li><a href="/aggregate/person/1705.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1705"
+                                            ></span>Elijah</a></li>
+                                    <li><a href="/aggregate/person/3763.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3763"
+                                            ></span>Habib</a></li>
+                                    <li><a href="/aggregate/person/1769.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1769"
+                                            ></span>Hala</a></li>
+                                    <li><a href="/aggregate/person/2284.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2284"
+                                            ></span>Justinian I</a></li>
+                                    <li><a href="/aggregate/person/1862.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1862"
+                                            ></span>Malka</a></li>
+                                    <li><a href="/aggregate/person/1875.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1875"
+                                            ></span>Mara the Solitary</a></li>
+                                    <li><a href="/aggregate/person/3235.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3235"
+                                            ></span>Maro</a></li>
+                                    <li><a href="/aggregate/person/2024.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2024"
+                                            ></span>Priscus</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/3140.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3140"
+                                            ></span>Theodore</a></li>
+                                    <li><a href="/aggregate/person/2126.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2126"
+                                            ></span>Thomas the Armenian</a></li>
+                                    <li><a href="/aggregate/person/3260.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3260"
+                                            ></span>Šnq</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/8.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/8"
+                                            ></span>Amida</a></li>
+                                    <li><a href="/aggregate/place/716.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/716"
+                                            ></span>Arabia</a></li>
+                                    <li><a href="/aggregate/place/2763.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2763"
+                                            ></span>Cappadocia</a></li>
+                                    <li><a href="/aggregate/place/109.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/109"
+                                            ></span>Kallinikos</a></li>
+                                    <li><a href="/aggregate/place/136.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/136"
+                                            ></span>Melitene</a></li>
+                                    <li><a href="/aggregate/place/2736.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2736"
+                                            ></span>Monastery of Amida</a></li>
+                                    <li><a href="/aggregate/place/2776.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2776"
+                                            ></span>Pardaisa</a></li>
+                                    <li><a href="/aggregate/place/486.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/486"
+                                            ></span>Syria</a></li>
+                                    <li><a href="/aggregate/place/399.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/399"
+                                            ></span>Yoḥannan Urṭaya</a></li>
+                                    <li><a href="/aggregate/place/2758.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2758"
+                                            ></span>ܿBeth Urtaye</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

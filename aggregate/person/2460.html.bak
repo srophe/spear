@@ -1,0 +1,146 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Musonius</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Musonius</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">Bishop of Meloe who brought charges against archdeacon Callistus on the
+                        ground that he had bought his priestly order and status</span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib2460-2">2</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/2460">http://syriaca.org/person/2460</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Musonius </span>
+                    </span>
+                </span> <a href="/3052-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Musonius</span> was male. <a href="/3052-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent">
+                                <span class="tei-persName">Musonius</span> 
+                                was bishop of 
+                                <span class="tei-placeName">Meloe</span>.
+                             <a href="/3185-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Musonius</span> was Bishop of <span class="tei-placeName"> Meloe </span> <a href="/3052-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">
+                            Anonymi 3727 brought legal
+                            charges or a petition against Musonius.
+                         <a href="/3050-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
+                                Antioch had enmity for Musonius. <a href="/3026-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Musonius had
+                            enmity for Paul. <a href="/3026-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Musonius
+                            brought legal charges or a petition against Callistus. <a href="/3026-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Musonius and
+                                Hilarian
+                            brought legal charges or a petition against Eustace. <a href="/3025-41" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
+                                Antioch had ecclesiastical authority over the bishop(s)
+                                Solon,
+                                Paul and
+                                Musonius. <a href="/3052-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Solon had
+                            ecclesiastical authority over the bishop(s) Paul and Musonius. <a href="/3052-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Musonius and
+                                Solon
+                            formed an alliance. <a href="/3050-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
+                                Antioch had enmity for Paul and Musonius. <a href="/3052-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
+                            Musonius
+                            brought legal charges or a petition against Anonymi 3727.
+                        <a href="/3050-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Hilarian and
+                                Musonius
+                            were part of Anonymi 3723. <a href="/3025-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">
+                            Severus wrote a letter to
+                            Musonius discussing 
+                            the need to be moderate regarding names included in the diptychs.
+                            
+                                
+                            
+                         <a href="/3185-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Musonius sent a letter to 
+                            Longinus
+                            seeking illicit gain.
+                            
+                                
+                            
+                        
+                                The following factoids deal with the same event: 3026-11, 3050-11.
+                             <a href="/3050-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Musonius sent a letter to 
+                            Longinus
+                            seeking illicity gain.
+                            
+                                
+                            
+                        
+                                The following factoids deal with the same event: 3026-11, 3050-11.
+                             <a href="/3026-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Severus of Antioch sent a letter to
+                            Anonymi 3726 on the subject of 
+                            Musonius, especially his greed, pride, and disruptive behavior.
+                            
+                                
+                            
+                         <a href="/3050-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">In 516 or
+                                517, Severus wrote a letter to Solon the bishop of Seleucia in Isauria about the
+                            controversy between Musonius and Paul.  <a href="/3052-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Sometime before 0518
+                            Musonius traveled from Isaurai
+                            to Alexandria.
+                         <a href="/3050-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Because Musonius had fled from Meloe, and Paul had left
+                                Olba,
+                                Severus
+                            advised Solon
+                            to appoint new bishops, or at the very least to petition the emperor to
+                            assemble a council of bishops in Isauria.  <a href="/3052-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Musonius was convicted of lending money at interest 
+                            in the episcopal court of Severus of Antioch.
+                         <a href="/3050-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
+                            Paul and 
+                            Musonius agreed that 
+                            Callistus ought to be returned to the diaconate..
+                         <a href="/3025-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Musonius</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/person/2460, 2025-05-11.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/alliance-with.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/alliance-with"/>Alliance with</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/bishop-over-bishop.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishop-over-bishop"/>Bishop over Bishop</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/bringer-of-legal-charges-against.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bringer-of-legal-charges-against"/>Bringer of Legal Charges against</a></li><li><a href="/aggregate/taxonomy/church-councils.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/church-councils"/>Church Councils</a></li><li><a href="/aggregate/taxonomy/deacons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deacons"/>Deacons</a></li><li><a href="/aggregate/taxonomy/diptychs.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/diptychs"/>Diptychs</a></li><li><a href="/aggregate/taxonomy/emperors.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emperors"/>Emperors</a></li><li><a href="/aggregate/taxonomy/enmity-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/enmity-for"/>Enmity for</a></li><li><a href="/aggregate/taxonomy/greed.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/greed"/>Greed</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/men.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/men"/>Men</a></li><li><a href="/aggregate/taxonomy/names.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/names"/>Names</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/pride.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pride"/>Pride</a></li><li><a href="/aggregate/taxonomy/property.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/property"/>Property</a></li><li><a href="/aggregate/taxonomy/same-event.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/same-event"/>Same Event</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/travel.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/travel"/>Travel</a></li><li><a href="/aggregate/taxonomy/usury.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/usury"/>Usury</a></li><li><a href="/aggregate/taxonomy/wealth.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wealth"/>Wealth</a></li><li><a href="/aggregate/taxonomy/member-of-group.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/member-of-group"/>member-of-group</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/3723.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3723"/>Anonymi 3723</a></li><li><a href="/aggregate/person/3726.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3726"/>Anonymi 3726</a></li><li><a href="/aggregate/person/3727.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3727"/>Anonymi 3727</a></li><li><a href="/aggregate/person/2459.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2459"/>Callistus</a></li><li><a href="/aggregate/person/2497.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2497"/>Eustace</a></li><li><a href="/aggregate/person/2458.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2458"/>Hilarian</a></li><li><a href="/aggregate/person/2511.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2511"/>Longinus</a></li><li><a href="/aggregate/person/2460.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2460"/>Musonius</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/572"/>Alexandria</a></li><li><a href="/aggregate/place/99.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/99"/>Isauria</a></li><li><a href="/aggregate/place/2686.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2686"/>Meloe in Isauria</a></li><li><a href="/aggregate/place/2698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2698"/>Olba in Isauria</a></li><li><a href="/aggregate/place/2714.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2714"/>Seleucia in Isauria</a></li></ul></div></div></div></div></div></div></body></html>

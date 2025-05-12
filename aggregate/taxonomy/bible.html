@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Bible</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Bible</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -23,426 +65,871 @@
                     // change layout based on link ID
                     kb.options.layout = this.id
                     // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
                         kb.reveal();
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bible</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/bible">http://syriaca.org/taxonomy/bible</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Anastasia the deaconess
-                            arguing that Revelation 20.6 does not indicate
-                            that there will be more than one resurrection.
-                            
-                                
-                            
-                         <a href="/3213-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Anastasia the deaconess
-                            offering an allegorical interpretation of Psalm 127:4.
-                            
-                                
-                            
-                         <a href="/3212-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Mitraeus interpreting 
-                            Ezekiel 9.4-6 to indicate that 
-                            God's judgement should come first on heretical clergy.
-                            
-                                
-                            
-                         <a href="/3238-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus sent a letter to
-                            Heracliana 
-                            arguing that the trials of monks on behalf of God's people was foretold by
-                            Isaiah 18.7.
-                            
-                                
-                            
-                         <a href="/3239-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Dorotheus
-                            offering an interpretation of Matthew 13.23.
-                            
-                                
-                            
-                         <a href="/3214-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to 
-                            Theognostus discussing 
-                            Isaiah 61.1
-                            
-                                
-                            
-                         <a href="/3001-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Georgia and 
-                            her daughter answering their questions about
-                            Proverbs 25.1.
-                            
-                                
-                            
-                         <a href="/3217-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Thomas of Germaniciea
-                            discussing in detail a late addition in the 
-                            the Gospel of Matthew indicating that the soldier
-                            who pierced the side of Christ did so before Christ had died.
-                            
-                                
-                            
-                         <a href="/3139-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus responded to a letter of
-                            Anastasia the deaconess
-                            answering her questions about 
-                            Matthew 24.20 and other passages of the bible that address 
-                            the end of the world.
-                            
-                                
-                            
-                         <a href="/3100-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus responded to a letter of
-                            Sergius
-                            addressing his questions 
-                            Matthew 17.2 
-                            and other passages of the bible that suggest greater honor being given to
-                            some people.
-                            
-                                
-                            
-                         <a href="/3103-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Archelaus 
-                            answering his question about 
-                            John 22 and arguing that the bible does not say that the 
-                            John would not
-                            experience death before the return of Christ.
-                            
-                                
-                            
-                         <a href="/3089-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter
-                            Sergius
-                            answering his question about the risen Jesus appearing to the disciples after
-                            a night of fishing. He offers an allegorical and anti-Jewish interpretation. 
-                            
-                                
-                            
-                         <a href="/3133-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus responded to a letter of
-                            Constantine of Laodicea
-                            answering his questions about difficult passages in the bible.
-                            
-                                
-                            
-                         <a href="/3126-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus responded to a letter of
-                            Caesaria hypatissa
-                            answering her questions about Balaam who did not follow God but could accurately
-                            prophesy nevertheless and about the passion of Christ.
-                            
-                                
-                            
-                         <a href="/3131-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus responded to a letter of
-                            Anastasia the deaconess,
-                            answering her questions about difficult passages in the Bible. He used allegory to explain some passages.
-                            
-                                
-                            
-                         <a href="/3125-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus responded to a letter of
-                            Caesaria hypatissa
-                            answering her questions about 
-                            Matthew 14.25
-                            and referencing biblical passages dealing with the incarnation.
-                            
-                                
-                            
-                         <a href="/3122-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Caesaria offering an interpretation of
-                            Ecclesiastes 4.17.
-                            
-                                
-                            
-                         <a href="/3232-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter
-                            Sergius
-                            discussing the exegesis of
-                            Matthew 26.29
-                            regarding Jesus not drinking wine until he is in his father's kingdom. 
-                            
-                                
-                            
-                         <a href="/3145-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Thomas of Germanicia 
-                            discussing heresiarchs and the interpretation of
-                            Jude.
-                            
-                                
-                            
-                         <a href="/3233-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Caesaria answering her questions about the interpretation of 
-                            John 20.22 and
-                            Matthew 12.40.
-                            
-                                
-                            
-                         <a href="/3227-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Ammonius discussing the interpretation of 
-                            Ecclestiastes 1.9-10 and 3.15 and 
-                            Matthew 24.21.
-                            
-                                
-                            
-                         <a href="/3219-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Philoxenus on the interpretation of 
-                            1 Corinthians 3.10.
-                            
-                                
-                            
-                         <a href="/3218-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            the monks of the east 
-                            lamenting their expulsion from their monasteries and seeking to console them
-                            with many scripture reference.
-                            
-                                
-                            
-                         <a href="/3180-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Ammonius answering his question about
-                            Exodus 20.25 using allegory.
-                            
-                                
-                            
-                         <a href="/3223-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Zacharias interpreting 
-                            Ezekiel 11.16-17.
-                            
-                                
-                            
-                         <a href="/3237-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Uranius 
-                            offering an allegorical interpretation of 
-                            Exodus 29.22, 26.
-                            
-                                
-                            
-                         <a href="/3236-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus recommended that 
-                            Elisha 
-                            sell the complete copy of that Bible that had been owned by 
-                            John
-                            before his death, and use the funds for the care of the poor.
-                         <a href="/3179-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus argued
-                            that the order of deacons have greater honor than the readers of the
-                            church.  <a href="/3032-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
-                            encourages Georgia to glory in her unmarried state, because time
-                            will make her more mature, wise, and intelligent, allowing her to be a
-                            greater help, model, and encouragement to her husband.  <a href="/3127-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
-                            encourages Jannia to lead by example, citing the apostle Paul and
-                            King David as models.  <a href="/3013-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            During the investigation of 
-                            Macedonius II that led to his exile, there was close examination of 
-                            copies of the Gospel of Matthew showing that someone had falsely
-                            added the story of the soldier piercing the side of Christ.
-                         <a href="/3139-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Anastasia the deaconess wrote a letter to
-                            Severus
-                            asking questions about 
-                            Matthew 24.20 and other passages of the bible that address 
-                            the end of the world.
-                            
-                                
-                            
-                         <a href="/3100-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Sergius wrote a letter to
-                            Severus
-                            asking about the risen Jesus appearing to the disciples after
-                            a night of fishing.
-                            
-                                
-                            
-                         <a href="/3133-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Caesaria hypatissa wrote a letter to
-                            Severus
-                            asking questions about Balaam who did not follow God but could accurately
-                            prophesy nevertheless and about the passion of Christ.
-                            
-                                
-                            
-                         <a href="/3131-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Caesaria hypatissa wrote a letter to
-                            Severus
-                            asking questions about 
-                            Matthew 14.25.
-                            
-                                
-                            
-                         <a href="/3122-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Caesaria wrote a letter to
-                            Severus asking about the interpretation of 
-                            John 20.22 and
-                            Matthew 12.40.
-                            
-                                
-                            
-                         <a href="/3227-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Ammonius wrote a letter to
-                            Severus asking about the interpretation of
-                            Exodus 20.25.
-                            
-                                
-                            
-                         <a href="/3223-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> To convince Misael to remain in his position, Severus cited several
-                            scripture passages, as well as an historical anecdote of Anonymous 3057 and
-                                Anonymous
-                                3058 who gave up their solitude in order to combat the
-                            heresy of Arius.  <a href="/3042-21" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> In response to Caesarea's desire to leave her marriage to live a
-                            sanctified life, Severus encourages her to remain in her marriage,
-                            stating that to leave her husband even for pure reasons would be a grave
-                            sin, and that great glory is given to God by faithful wives and mothers.
-                         <a href="/3115-24" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
-                            accused the unorthodox of denying scripture, canon-law, and the
-                            authority of the bishops, because they insulted the orthodox bishops of Antioch.  <a href="/3049-26" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Archelaus wrote a letter to
-                            Severus 
-                            asking about 
-                            John 22 and the claim made by some that the 
-                            apostle John and other disciples would not
-                            experience death before the return of Christ.
-                            
-                                
-                            
-                         <a href="/3089-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Constantine of Laodicea wrote a letter to
-                            Severus asking questions
-                            about difficult passages in the bible.
-                            
-                                
-                            
-                         <a href="/3126-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Ammonius wrote a letter to
-                            Severus discussing the interpretation of 
-                            Ecclestiastes 1.9-10 and 3.15.
-                            
-                                
-                            
-                         <a href="/3219-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
-                            encouraged Solon to live a holy and virtuous life, modelling the
-                            piety of Jesus
-                            andthe martyrs, especially Thecla, so that the
-                            legitimacy of his ordination by a bishop outside of the diocese might be
-                            confirmed.  <a href="/3012-30" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Sergius wrote a letter to
-                            Severus
-                            asking about 
-                            Matthew 17.2 
-                            and other passages of the bible that suggest greater honor being given to
-                            some people.
-                            
-                                
-                            
-                         <a href="/3103-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Anastasia the deaconess wrote a letter to
-                            Severus
-                            asking him to clarify various difficult passages in the Bible.
-                            
-                                
-                            
-                         <a href="/3125-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Georgia and 
-                            her daughter wrote a letter to
-                            Severus asking about
-                            Proverbs 25.1.
-                            
-                                
-                            
-                         <a href="/3217-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">education: </span><span class="tei-persName">Kashish</span> studied the reading of the Holy Scriptures
-                                at the <span class="tei-placeName"> Monastery of
-                                    John Urtraya </span> in the city of <span class="tei-placeName"> Amida</span>. <a href="/842-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>Hala kept
-                            silence except when he prayed the psalms and the liturgy and read
-                            scripture without interruption and taught his disciples throughout the
-                            night.  <a href="/825-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Abbi wept
-                            while reading Bible with covered head and limited light.  <a href="/806-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">education: </span>
-                        <span class="tei-persName">Tribunus</span> 
-                        had been taught religion and scripture. 
-                      <a href="/835-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>Severus
-                            asserts that an oblation delivery is only necessary for those without
-                            bishops, making it unnecessary for Misael. Severus appeals to the
-                            scriptural story of Elijah and the ravens, asserting that even impious
-                            priests can be vessels to deliver the Eucharist.  <a href="/3136-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bible</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/bible, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/allegory.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/allegory"/>Allegory</a></li><li><a href="/aggregate/taxonomy/anti-judaism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-judaism"/>Anti-Judaism</a></li><li><a href="/aggregate/taxonomy/arianism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/arianism"/>Arianism</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/bible.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bible"/>Bible</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/blessing.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/blessing"/>Blessing</a></li><li><a href="/aggregate/taxonomy/books.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/books"/>Books</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/charity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/charity"/>CharityCaritas</a></li><li><a href="/aggregate/taxonomy/civil-servants.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/civil-servants"/>Civil Servants</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/deacons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deacons"/>Deacons</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/discipleship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/discipleship"/>Discipleship</a></li><li><a href="/aggregate/taxonomy/divine-judgment.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/divine-judgment"/>Divine Judgment</a></li><li><a href="/aggregate/taxonomy/divorce.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/divorce"/>Divorce</a></li><li><a href="/aggregate/taxonomy/eschatology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/eschatology"/>Eschatology</a></li><li><a href="/aggregate/taxonomy/eucharist.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/eucharist"/>Eucharist</a></li><li><a href="/aggregate/taxonomy/exegesis.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exegesis"/>Exegesis</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/falsification.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/falsification"/>Falsification</a></li><li><a href="/aggregate/taxonomy/heresiology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heresiology"/>Heresiology</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/holiness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/holiness"/>Holiness</a></li><li><a href="/aggregate/taxonomy/honour.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/honour"/>Honour</a></li><li><a href="/aggregate/taxonomy/hours.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hours"/>Hours</a></li><li><a href="/aggregate/taxonomy/incarnation.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/incarnation"/>Incarnation</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/liturgy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/liturgy"/>Liturgy</a></li><li><a href="/aggregate/taxonomy/marriage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/marriage"/>Marriage</a></li><li><a href="/aggregate/taxonomy/martyrs.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/martyrs"/>Martyrs</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/passion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/passion"/>Passion</a></li><li><a href="/aggregate/taxonomy/pastoral-care.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pastoral-care"/>Pastoral Care</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/prophecy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prophecy"/>Prophecy</a></li><li><a href="/aggregate/taxonomy/prophets.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prophets"/>Prophets</a></li><li><a href="/aggregate/taxonomy/readers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/readers"/>Readers</a></li><li><a href="/aggregate/taxonomy/religion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religion"/>Religion</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/silence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/silence"/>Silence</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/sleep.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sleep"/>Sleep</a></li><li><a href="/aggregate/taxonomy/suffering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/suffering"/>Suffering</a></li><li><a href="/aggregate/taxonomy/tears.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tears"/>Tears</a></li><li><a href="/aggregate/taxonomy/theology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/theology"/>Theology</a></li><li><a href="/aggregate/taxonomy/time.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/time"/>Time</a></li><li><a href="/aggregate/taxonomy/trinity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/trinity"/>Trinity</a></li><li><a href="/aggregate/taxonomy/virginity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/virginity"/>Virginity</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/57.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/57"/>
-                        Thomas
-                        of Germanicea
-                    </a></li><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
-                </a></li><li><a href="/aggregate/person/1536.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1536"/>Abi</a></li><li><a href="/aggregate/person/2595.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2595"/>Ammonius</a></li><li><a href="/aggregate/person/2594.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2594"/>Ammonius</a></li><li><a href="/aggregate/person/2597.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2597"/>Anastasia</a></li><li><a href="/aggregate/person/2221.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2221"/>Anonymi 2221</a></li><li><a href="/aggregate/person/3072.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3072"/>Anonymi 3072</a></li><li><a href="/aggregate/person/3057.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3057"/>Anonymous 3057</a></li><li><a href="/aggregate/person/3058.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3058"/>Anonymous 3058</a></li><li><a href="/aggregate/person/3787.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3787"/>Anonymous 3787</a></li><li><a href="/aggregate/person/2606.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2606"/>Archelaus</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/2621.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2621"/>Caesaria</a></li><li><a href="/aggregate/person/2620.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2620"/>Caesaria</a></li><li><a href="/aggregate/person/2443.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2443"/>Constantine</a></li><li><a href="/aggregate/person/2639.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2639"/>Dorotheus</a></li><li><a href="/aggregate/person/2641.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2641"/>Elisha</a></li><li><a href="/aggregate/person/2656.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2656"/>Georgia</a></li><li><a href="/aggregate/person/1769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1769"/>Hala</a></li><li><a href="/aggregate/person/2478.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2478"/>Heracliana</a></li><li><a href="/aggregate/person/2669.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2669"/>Jannia</a></li><li><a href="/aggregate/person/2245.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2245"/>Jesus the Messiah</a></li><li><a href="/aggregate/person/2673.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2673"/>John</a></li><li><a href="/aggregate/person/1826.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1826"/>John the Evangelist</a></li><li><a href="/aggregate/person/2696.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2696"/>Macedonius II</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/2723.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2723"/>Mitraeus</a></li><li><a href="/aggregate/person/1983.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1983"/>Paul the Apostle</a></li><li><a href="/aggregate/person/44.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/44"/>Philoxenos of Mabbug</a></li><li><a href="/aggregate/person/2748.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2748"/>Sergius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2416.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2416"/>Thecla</a></li><li><a href="/aggregate/person/2768.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2768"/>Theognostus</a></li><li><a href="/aggregate/person/3155.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3155"/>Tribunus</a></li><li><a href="/aggregate/person/2775.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2775"/>Uranius</a></li><li><a href="/aggregate/person/3788.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3788"/>Zacharias</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Bible</span></span></span></h1>
+                        </div>
+                        <div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/bible"
+                                                >http://syriaca.org/taxonomy/bible</a></span></p></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Anastasia the deaconess arguing that
+                                    Revelation 20.6 does not indicate that there will be more than
+                                    one resurrection. <a href="/3213-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Anastasia the deaconess offering an
+                                    allegorical interpretation of Psalm 127:4. <a href="/3212-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Mitraeus interpreting Ezekiel 9.4-6 to
+                                    indicate that God's judgement should come first on heretical
+                                    clergy. <a href="/3238-1" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    sent a letter to Heracliana arguing that the trials of monks on
+                                    behalf of God's people was foretold by Isaiah 18.7. <a
+                                        href="/3239-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Dorotheus offering an interpretation of
+                                    Matthew 13.23. <a href="/3214-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Theognostus discussing Isaiah 61.1 <a
+                                        href="/3001-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Georgia and her daughter answering their
+                                    questions about Proverbs 25.1. <a href="/3217-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Thomas of Germaniciea discussing in detail a
+                                    late addition in the the Gospel of Matthew indicating that the
+                                    soldier who pierced the side of Christ did so before Christ had
+                                    died. <a href="/3139-1" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    responded to a letter of Anastasia the deaconess answering her
+                                    questions about Matthew 24.20 and other passages of the bible
+                                    that address the end of the world. <a href="/3100-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    responded to a letter of Sergius addressing his questions
+                                    Matthew 17.2 and other passages of the bible that suggest
+                                    greater honor being given to some people. <a href="/3103-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Archelaus answering his question about John 22
+                                    and arguing that the bible does not say that the John would not
+                                    experience death before the return of Christ. <a href="/3089-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter Sergius answering his question about the risen
+                                    Jesus appearing to the disciples after a night of fishing. He
+                                    offers an allegorical and anti-Jewish interpretation. <a
+                                        href="/3133-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    responded to a letter of Constantine of Laodicea answering his
+                                    questions about difficult passages in the bible. <a
+                                        href="/3126-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    responded to a letter of Caesaria hypatissa answering her
+                                    questions about Balaam who did not follow God but could
+                                    accurately prophesy nevertheless and about the passion of
+                                    Christ. <a href="/3131-1" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    responded to a letter of Anastasia the deaconess, answering her
+                                    questions about difficult passages in the Bible. He used
+                                    allegory to explain some passages. <a href="/3125-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    responded to a letter of Caesaria hypatissa answering her
+                                    questions about Matthew 14.25 and referencing biblical passages
+                                    dealing with the incarnation. <a href="/3122-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Caesaria offering an interpretation of
+                                    Ecclesiastes 4.17. <a href="/3232-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter Sergius discussing the exegesis of Matthew 26.29
+                                    regarding Jesus not drinking wine until he is in his father's
+                                    kingdom. <a href="/3145-1" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Thomas of Germanicia discussing heresiarchs
+                                    and the interpretation of Jude. <a href="/3233-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Caesaria answering her questions about the
+                                    interpretation of John 20.22 and Matthew 12.40. <a
+                                        href="/3227-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Ammonius discussing the interpretation of
+                                    Ecclestiastes 1.9-10 and 3.15 and Matthew 24.21. <a
+                                        href="/3219-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Philoxenus on the interpretation of 1
+                                    Corinthians 3.10. <a href="/3218-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to the monks of the east lamenting their
+                                    expulsion from their monasteries and seeking to console them
+                                    with many scripture reference. <a href="/3180-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Ammonius answering his question about Exodus
+                                    20.25 using allegory. <a href="/3223-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Zacharias interpreting Ezekiel 11.16-17. <a
+                                        href="/3237-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Uranius offering an allegorical interpretation
+                                    of Exodus 29.22, 26. <a href="/3236-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    recommended that Elisha sell the complete copy of that Bible
+                                    that had been owned by John before his death, and use the funds
+                                    for the care of the poor. <a href="/3179-14"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    argued that the order of deacons have greater honor than the
+                                    readers of the church. <a href="/3032-14" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    encourages Georgia to glory in her unmarried state, because time
+                                    will make her more mature, wise, and intelligent, allowing her
+                                    to be a greater help, model, and encouragement to her husband.
+                                        <a href="/3127-15" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    encourages Jannia to lead by example, citing the apostle Paul
+                                    and King David as models. <a href="/3013-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> During the
+                                    investigation of Macedonius II that led to his exile, there was
+                                    close examination of copies of the Gospel of Matthew showing
+                                    that someone had falsely added the story of the soldier piercing
+                                    the side of Christ. <a href="/3139-2" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Anastasia
+                                    the deaconess wrote a letter to Severus asking questions about
+                                    Matthew 24.20 and other passages of the bible that address the
+                                    end of the world. <a href="/3100-2" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Sergius
+                                    wrote a letter to Severus asking about the risen Jesus appearing
+                                    to the disciples after a night of fishing. <a href="/3133-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Caesaria
+                                    hypatissa wrote a letter to Severus asking questions about
+                                    Balaam who did not follow God but could accurately prophesy
+                                    nevertheless and about the passion of Christ. <a href="/3131-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Caesaria
+                                    hypatissa wrote a letter to Severus asking questions about
+                                    Matthew 14.25. <a href="/3122-2" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Caesaria
+                                    wrote a letter to Severus asking about the interpretation of
+                                    John 20.22 and Matthew 12.40. <a href="/3227-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Ammonius
+                                    wrote a letter to Severus asking about the interpretation of
+                                    Exodus 20.25. <a href="/3223-2" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> To
+                                    convince Misael to remain in his position, Severus cited several
+                                    scripture passages, as well as an historical anecdote of
+                                    Anonymous 3057 and Anonymous 3058 who gave up their solitude in
+                                    order to combat the heresy of Arius. <a href="/3042-21"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> In
+                                    response to Caesarea's desire to leave her marriage to live a
+                                    sanctified life, Severus encourages her to remain in her
+                                    marriage, stating that to leave her husband even for pure
+                                    reasons would be a grave sin, and that great glory is given to
+                                    God by faithful wives and mothers. <a href="/3115-24"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    accused the unorthodox of denying scripture, canon-law, and the
+                                    authority of the bishops, because they insulted the orthodox
+                                    bishops of Antioch. <a href="/3049-26" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Archelaus
+                                    wrote a letter to Severus asking about John 22 and the claim
+                                    made by some that the apostle John and other disciples would not
+                                    experience death before the return of Christ. <a href="/3089-3"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>
+                                    Constantine of Laodicea wrote a letter to Severus asking
+                                    questions about difficult passages in the bible. <a
+                                        href="/3126-3" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Ammonius
+                                    wrote a letter to Severus discussing the interpretation of
+                                    Ecclestiastes 1.9-10 and 3.15. <a href="/3219-3"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    encouraged Solon to live a holy and virtuous life, modelling the
+                                    piety of Jesus andthe martyrs, especially Thecla, so that the
+                                    legitimacy of his ordination by a bishop outside of the diocese
+                                    might be confirmed. <a href="/3012-30" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Sergius
+                                    wrote a letter to Severus asking about Matthew 17.2 and other
+                                    passages of the bible that suggest greater honor being given to
+                                    some people. <a href="/3103-4" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Anastasia
+                                    the deaconess wrote a letter to Severus asking him to clarify
+                                    various difficult passages in the Bible. <a href="/3125-4"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Georgia
+                                    and her daughter wrote a letter to Severus asking about Proverbs
+                                    25.1. <a href="/3217-5" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">education: </span><span
+                                        class="tei-persName">Kashish</span> studied the reading of
+                                    the Holy Scriptures at the <span class="tei-placeName">
+                                        Monastery of John Urtraya </span> in the city of <span
+                                        class="tei-placeName"> Amida</span>. <a href="/842-5"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Hala kept
+                                    silence except when he prayed the psalms and the liturgy and
+                                    read scripture without interruption and taught his disciples
+                                    throughout the night. <a href="/825-5" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Abbi wept
+                                    while reading Bible with covered head and limited light. <a
+                                        href="/806-6" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">education: </span>
+                                    <span class="tei-persName">Tribunus</span> had been taught
+                                    religion and scripture. <a href="/835-6" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    asserts that an oblation delivery is only necessary for those
+                                    without bishops, making it unnecessary for Misael. Severus
+                                    appeals to the scriptural story of Elijah and the ravens,
+                                    asserting that even impious priests can be vessels to deliver
+                                    the Eucharist. <a href="/3136-9" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Bible</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        http://syriaca.org/taxonomy/bible, 2025-05-11. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/allegory.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/allegory"
+                                            ></span>Allegory</a></li>
+                                    <li><a href="/aggregate/taxonomy/anti-judaism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anti-judaism"
+                                            ></span>Anti-Judaism</a></li>
+                                    <li><a href="/aggregate/taxonomy/arianism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/arianism"
+                                            ></span>Arianism</a></li>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/bible.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bible"
+                                            ></span>Bible</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/blessing.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/blessing"
+                                            ></span>Blessing</a></li>
+                                    <li><a href="/aggregate/taxonomy/books.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/books"
+                                            ></span>Books</a></li>
+                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                            ></span>Canon Law</a></li>
+                                    <li><a href="/aggregate/taxonomy/charity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/charity"
+                                            ></span>CharityCaritas</a></li>
+                                    <li><a href="/aggregate/taxonomy/civil-servants.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/civil-servants"
+                                            ></span>Civil Servants</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/deacons.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deacons"
+                                            ></span>Deacons</a></li>
+                                    <li><a href="/aggregate/taxonomy/death.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/death"
+                                            ></span>Death</a></li>
+                                    <li><a href="/aggregate/taxonomy/discipleship.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/discipleship"
+                                            ></span>Discipleship</a></li>
+                                    <li><a href="/aggregate/taxonomy/divine-judgment.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/divine-judgment"
+                                            ></span>Divine Judgment</a></li>
+                                    <li><a href="/aggregate/taxonomy/divorce.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/divorce"
+                                            ></span>Divorce</a></li>
+                                    <li><a href="/aggregate/taxonomy/eschatology.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/eschatology"
+                                            ></span>Eschatology</a></li>
+                                    <li><a href="/aggregate/taxonomy/eucharist.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/eucharist"
+                                            ></span>Eucharist</a></li>
+                                    <li><a href="/aggregate/taxonomy/exegesis.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exegesis"
+                                            ></span>Exegesis</a></li>
+                                    <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                            ></span>Exile</a></li>
+                                    <li><a href="/aggregate/taxonomy/falsification.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/falsification"
+                                            ></span>Falsification</a></li>
+                                    <li><a href="/aggregate/taxonomy/heresiology.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heresiology"
+                                            ></span>Heresiology</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/holiness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/holiness"
+                                            ></span>Holiness</a></li>
+                                    <li><a href="/aggregate/taxonomy/honour.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/honour"
+                                            ></span>Honour</a></li>
+                                    <li><a href="/aggregate/taxonomy/hours.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/hours"
+                                            ></span>Hours</a></li>
+                                    <li><a href="/aggregate/taxonomy/incarnation.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/incarnation"
+                                            ></span>Incarnation</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/liturgy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/liturgy"
+                                            ></span>Liturgy</a></li>
+                                    <li><a href="/aggregate/taxonomy/marriage.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/marriage"
+                                            ></span>Marriage</a></li>
+                                    <li><a href="/aggregate/taxonomy/martyrs.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/martyrs"
+                                            ></span>Martyrs</a></li>
+                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                            ></span>Monastic Heads</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/passion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/passion"
+                                            ></span>Passion</a></li>
+                                    <li><a href="/aggregate/taxonomy/pastoral-care.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/pastoral-care"
+                                            ></span>Pastoral Care</a></li>
+                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                            ></span>Prayer</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/prophecy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prophecy"
+                                            ></span>Prophecy</a></li>
+                                    <li><a href="/aggregate/taxonomy/prophets.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prophets"
+                                            ></span>Prophets</a></li>
+                                    <li><a href="/aggregate/taxonomy/readers.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/readers"
+                                            ></span>Readers</a></li>
+                                    <li><a href="/aggregate/taxonomy/religion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/religion"
+                                            ></span>Religion</a></li>
+                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                            ></span>Sender of Letter to</a></li>
+                                    <li><a href="/aggregate/taxonomy/silence.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/silence"
+                                            ></span>Silence</a></li>
+                                    <li><a href="/aggregate/taxonomy/sin.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sin"
+                                            ></span>Sin</a></li>
+                                    <li><a href="/aggregate/taxonomy/sleep.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sleep"
+                                            ></span>Sleep</a></li>
+                                    <li><a href="/aggregate/taxonomy/suffering.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/suffering"
+                                            ></span>Suffering</a></li>
+                                    <li><a href="/aggregate/taxonomy/tears.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/tears"
+                                            ></span>Tears</a></li>
+                                    <li><a href="/aggregate/taxonomy/theology.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/theology"
+                                            ></span>Theology</a></li>
+                                    <li><a href="/aggregate/taxonomy/time.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/time"
+                                            ></span>Time</a></li>
+                                    <li><a href="/aggregate/taxonomy/trinity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/trinity"
+                                            ></span>Trinity</a></li>
+                                    <li><a href="/aggregate/taxonomy/virginity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/virginity"
+                                            ></span>Virginity</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/57.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/57"></span>
+                                            Thomas of Germanicea </a></li>
+                                    <li><a href="/aggregate/person/2032.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2032"></span>
+                                            — ܩܫܝܫ </a></li>
+                                    <li><a href="/aggregate/person/1536.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1536"
+                                            ></span>Abi</a></li>
+                                    <li><a href="/aggregate/person/2595.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2595"
+                                            ></span>Ammonius</a></li>
+                                    <li><a href="/aggregate/person/2594.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2594"
+                                            ></span>Ammonius</a></li>
+                                    <li><a href="/aggregate/person/2597.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2597"
+                                            ></span>Anastasia</a></li>
+                                    <li><a href="/aggregate/person/2221.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2221"
+                                            ></span>Anonymi 2221</a></li>
+                                    <li><a href="/aggregate/person/3072.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3072"
+                                            ></span>Anonymi 3072</a></li>
+                                    <li><a href="/aggregate/person/3057.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3057"
+                                            ></span>Anonymous 3057</a></li>
+                                    <li><a href="/aggregate/person/3058.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3058"
+                                            ></span>Anonymous 3058</a></li>
+                                    <li><a href="/aggregate/person/3787.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3787"
+                                            ></span>Anonymous 3787</a></li>
+                                    <li><a href="/aggregate/person/2606.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2606"
+                                            ></span>Archelaus</a></li>
+                                    <li><a href="/aggregate/person/2486.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2486"
+                                            ></span>Arius</a></li>
+                                    <li><a href="/aggregate/person/2621.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2621"
+                                            ></span>Caesaria</a></li>
+                                    <li><a href="/aggregate/person/2620.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2620"
+                                            ></span>Caesaria</a></li>
+                                    <li><a href="/aggregate/person/2443.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2443"
+                                            ></span>Constantine</a></li>
+                                    <li><a href="/aggregate/person/2639.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2639"
+                                            ></span>Dorotheus</a></li>
+                                    <li><a href="/aggregate/person/2641.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2641"
+                                            ></span>Elisha</a></li>
+                                    <li><a href="/aggregate/person/2656.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2656"
+                                            ></span>Georgia</a></li>
+                                    <li><a href="/aggregate/person/1769.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1769"
+                                            ></span>Hala</a></li>
+                                    <li><a href="/aggregate/person/2478.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2478"
+                                            ></span>Heracliana</a></li>
+                                    <li><a href="/aggregate/person/2669.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2669"
+                                            ></span>Jannia</a></li>
+                                    <li><a href="/aggregate/person/2245.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2245"
+                                            ></span>Jesus the Messiah</a></li>
+                                    <li><a href="/aggregate/person/2673.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2673"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/1826.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1826"
+                                            ></span>John the Evangelist</a></li>
+                                    <li><a href="/aggregate/person/2696.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2696"
+                                            ></span>Macedonius II</a></li>
+                                    <li><a href="/aggregate/person/2558.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2558"
+                                            ></span>Misael</a></li>
+                                    <li><a href="/aggregate/person/2723.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2723"
+                                            ></span>Mitraeus</a></li>
+                                    <li><a href="/aggregate/person/1983.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1983"
+                                            ></span>Paul the Apostle</a></li>
+                                    <li><a href="/aggregate/person/44.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/44"
+                                            ></span>Philoxenos of Mabbug</a></li>
+                                    <li><a href="/aggregate/person/2748.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2748"
+                                            ></span>Sergius</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                    <li><a href="/aggregate/person/2416.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2416"
+                                            ></span>Thecla</a></li>
+                                    <li><a href="/aggregate/person/2768.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2768"
+                                            ></span>Theognostus</a></li>
+                                    <li><a href="/aggregate/person/3155.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3155"
+                                            ></span>Tribunus</a></li>
+                                    <li><a href="/aggregate/person/2775.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2775"
+                                            ></span>Uranius</a></li>
+                                    <li><a href="/aggregate/person/3788.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3788"
+                                            ></span>Zacharias</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/8.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/8"
+                                            ></span>Amida</a></li>
+                                    <li><a href="/aggregate/place/10.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/10"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/399.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/399"
+                                            ></span>Yoḥannan Urṭaya</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

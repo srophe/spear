@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Bringer of Legal Charges against</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Bringer of Legal Charges against</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -23,84 +65,406 @@
                     // change layout based on link ID
                     kb.options.layout = this.id
                     // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
                         kb.reveal();
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bringer of Legal Charges against</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/bringer-of-legal-charges-against">http://syriaca.org/taxonomy/bringer-of-legal-charges-against</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3734 brought legal
-                            charges or a petition against Julian. <a href="/3079-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Anonymi 3727 brought legal
-                            charges or a petition against Musonius.
-                         <a href="/3050-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3091
-                            brought legal charges or a petition against Libanius. <a href="/3070-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3101
-                            brought legal charges or a petition against Firminus. <a href="/3094-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Peter
-                            brought legal charges or a petition against Anonymi 3066. <a href="/3048-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3737 brought legal
-                            charges or a petition against Nonnus. <a href="/3081-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3038
-                            brought legal charges or a petition against Anonymi 3039 and
-                                Anonymi
-                                3040. <a href="/3032-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span> The party of  Hilarian  and
-                             Musonius
-                             brought legal
-                            charges or a petition against Callistus. <a href="/3025-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>Between
-                                513 and 518, Severus wrote a letter to Eucharius about the
-                            trial of Firminus.  <a href="/3094-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3050
-                            brought legal charges or a petition against Procopius. <a href="/3038-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span> Though the people of
-                                    Paltus had found Firminus guilty,
-                                Severus
-                            wanted to withhold judgment until a formal trial in Antioch could be
-                            organized.  <a href="/3094-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Stephen
-                            brought legal charges or a petition against Leontius. <a href="/3085-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Paul brought
-                            legal charges or a petition against Callistus. <a href="/3046-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Cosmas,
-                                Polyeuctus
-                            and Zeno
-                            brought legal charges or a petition against Anonymi 3045. <a href="/3036-22" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Musonius
-                            brought legal charges or a petition against Callistus. <a href="/3026-23" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3051
-                            brought legal charges or a petition against Adelphius. <a href="/3038-26" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
-                            Anonymi 3046
-                            and Anonymi
-                                3050 persisted in bringing charges against their bishop
-                                Procopius to Severus.  <a href="/3038-37" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Musonius and
-                                Hilarian
-                            brought legal charges or a petition against Eustace. <a href="/3025-41" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Paul brought
-                            legal charges or a petition against Hilarian. <a href="/3055-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3085
-                            brought legal charges or a petition against John of Alexandria
-                                Minor. <a href="/3062-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3046
-                            brought legal charges or a petition against Procopius. <a href="/3038-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Musonius
-                            brought legal charges or a petition against Anonymi 3727.
-                        <a href="/3050-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bringer of Legal Charges against</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/bringer-of-legal-charges-against, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/bringer-of-legal-charges-against.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bringer-of-legal-charges-against"/>Bringer of Legal Charges against</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/justice.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/justice"/>Justice</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/old-age.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/old-age"/>Old Age</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2549.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2549"/>Adelphius</a></li><li><a href="/aggregate/person/3038.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3038"/>Anonymi 3038</a></li><li><a href="/aggregate/person/3039.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3039"/>Anonymi 3039</a></li><li><a href="/aggregate/person/3040.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3040"/>Anonymi 3040</a></li><li><a href="/aggregate/person/3045.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3045"/>Anonymi 3045</a></li><li><a href="/aggregate/person/3046.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3046"/>Anonymi 3046</a></li><li><a href="/aggregate/person/3050.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3050"/>Anonymi 3050</a></li><li><a href="/aggregate/person/3051.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3051"/>Anonymi 3051</a></li><li><a href="/aggregate/person/3066.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3066"/>Anonymi 3066</a></li><li><a href="/aggregate/person/3085.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3085"/>Anonymi 3085</a></li><li><a href="/aggregate/person/3091.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3091"/>Anonymi 3091</a></li><li><a href="/aggregate/person/3101.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3101"/>Anonymi 3101</a></li><li><a href="/aggregate/person/3723.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3723"/>Anonymi 3723</a></li><li><a href="/aggregate/person/3727.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3727"/>Anonymi 3727</a></li><li><a href="/aggregate/person/3734.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3734"/>Anonymi 3734</a></li><li><a href="/aggregate/person/3737.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3737"/>Anonymi 3737</a></li><li><a href="/aggregate/person/2459.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2459"/>Callistus</a></li><li><a href="/aggregate/person/2544.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2544"/>Cosmas</a></li><li><a href="/aggregate/person/2536.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2536"/>Eucharius</a></li><li><a href="/aggregate/person/2497.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2497"/>Eustace</a></li><li><a href="/aggregate/person/2537.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2537"/>Firminus</a></li><li><a href="/aggregate/person/2458.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2458"/>Hilarian</a></li><li><a href="/aggregate/person/2581.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2581"/>John
-                        of Alexandria Minor</a></li><li><a href="/aggregate/person/2410.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2410"/>Julian</a></li><li><a href="/aggregate/person/2423.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2423"/>Leontius</a></li><li><a href="/aggregate/person/2405.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2405"/>Libanius</a></li><li><a href="/aggregate/person/2460.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2460"/>Musonius</a></li><li><a href="/aggregate/person/2418.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2418"/>Nonnus</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/2542.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2542"/>Polyeuctus</a></li><li><a href="/aggregate/person/2547.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2547"/>Procopius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2422.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2422"/>Stephen</a></li><li><a href="/aggregate/person/2543.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2543"/>Zeno</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/2702.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2702"/>Paltus</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Bringer of Legal Charges
+                                against</span></span></span></h1>
+                        </div>
+                        <div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/bringer-of-legal-charges-against"
+                                                >http://syriaca.org/taxonomy/bringer-of-legal-charges-against</a></span></p></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3734 brought legal charges or a petition against Julian. <a
+                                        href="/3079-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Anonymi
+                                    3727 brought legal charges or a petition against Musonius. <a
+                                        href="/3050-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3091 brought legal charges or a petition against Libanius. <a
+                                        href="/3070-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3101 brought legal charges or a petition against Firminus. <a
+                                        href="/3094-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Peter
+                                    brought legal charges or a petition against Anonymi 3066. <a
+                                        href="/3048-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3737 brought legal charges or a petition against Nonnus. <a
+                                        href="/3081-11" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3038 brought legal charges or a petition against Anonymi 3039
+                                    and Anonymi 3040. <a href="/3032-11" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> The
+                                    party of Hilarian and Musonius brought legal charges or a
+                                    petition against Callistus. <a href="/3025-11"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Between 513
+                                    and 518, Severus wrote a letter to Eucharius about the trial of
+                                    Firminus. <a href="/3094-11" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3050 brought legal charges or a petition against Procopius. <a
+                                        href="/3038-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Though the
+                                    people of Paltus had found Firminus guilty, Severus wanted to
+                                    withhold judgment until a formal trial in Antioch could be
+                                    organized. <a href="/3094-12" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Stephen
+                                    brought legal charges or a petition against Leontius. <a
+                                        href="/3085-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Paul
+                                    brought legal charges or a petition against Callistus. <a
+                                        href="/3046-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Cosmas,
+                                    Polyeuctus and Zeno brought legal charges or a petition against
+                                    Anonymi 3045. <a href="/3036-22" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Musonius
+                                    brought legal charges or a petition against Callistus. <a
+                                        href="/3026-23" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3051 brought legal charges or a petition against Adelphius. <a
+                                        href="/3038-26" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Anonymi
+                                    3046 and Anonymi 3050 persisted in bringing charges against
+                                    their bishop Procopius to Severus. <a href="/3038-37"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Musonius
+                                    and Hilarian brought legal charges or a petition against
+                                    Eustace. <a href="/3025-41" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Paul
+                                    brought legal charges or a petition against Hilarian. <a
+                                        href="/3055-5" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3085 brought legal charges or a petition against John of
+                                    Alexandria Minor. <a href="/3062-8" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3046 brought legal charges or a petition against Procopius. <a
+                                        href="/3038-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Musonius brought legal charges or a petition against Anonymi
+                                    3727. <a href="/3050-9" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Bringer of Legal Charges
+                                                  against</span></span></span>,” in SPEAR: Syriac
+                                        Persons Events and Relations, general editor Daniel L.
+                                        Schwartz,
+                                        http://syriaca.org/taxonomy/bringer-of-legal-charges-against,
+                                        2025-05-11. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a
+                                            href="/aggregate/taxonomy/bringer-of-legal-charges-against.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bringer-of-legal-charges-against"
+                                            ></span>Bringer of Legal Charges against</a></li>
+                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                            ></span>Canon Law</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/justice.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/justice"
+                                            ></span>Justice</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/old-age.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/old-age"
+                                            ></span>Old Age</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/2549.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2549"
+                                            ></span>Adelphius</a></li>
+                                    <li><a href="/aggregate/person/3038.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3038"
+                                            ></span>Anonymi 3038</a></li>
+                                    <li><a href="/aggregate/person/3039.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3039"
+                                            ></span>Anonymi 3039</a></li>
+                                    <li><a href="/aggregate/person/3040.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3040"
+                                            ></span>Anonymi 3040</a></li>
+                                    <li><a href="/aggregate/person/3045.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3045"
+                                            ></span>Anonymi 3045</a></li>
+                                    <li><a href="/aggregate/person/3046.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3046"
+                                            ></span>Anonymi 3046</a></li>
+                                    <li><a href="/aggregate/person/3050.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3050"
+                                            ></span>Anonymi 3050</a></li>
+                                    <li><a href="/aggregate/person/3051.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3051"
+                                            ></span>Anonymi 3051</a></li>
+                                    <li><a href="/aggregate/person/3066.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3066"
+                                            ></span>Anonymi 3066</a></li>
+                                    <li><a href="/aggregate/person/3085.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3085"
+                                            ></span>Anonymi 3085</a></li>
+                                    <li><a href="/aggregate/person/3091.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3091"
+                                            ></span>Anonymi 3091</a></li>
+                                    <li><a href="/aggregate/person/3101.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3101"
+                                            ></span>Anonymi 3101</a></li>
+                                    <li><a href="/aggregate/person/3723.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3723"
+                                            ></span>Anonymi 3723</a></li>
+                                    <li><a href="/aggregate/person/3727.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3727"
+                                            ></span>Anonymi 3727</a></li>
+                                    <li><a href="/aggregate/person/3734.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3734"
+                                            ></span>Anonymi 3734</a></li>
+                                    <li><a href="/aggregate/person/3737.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3737"
+                                            ></span>Anonymi 3737</a></li>
+                                    <li><a href="/aggregate/person/2459.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2459"
+                                            ></span>Callistus</a></li>
+                                    <li><a href="/aggregate/person/2544.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2544"
+                                            ></span>Cosmas</a></li>
+                                    <li><a href="/aggregate/person/2536.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2536"
+                                            ></span>Eucharius</a></li>
+                                    <li><a href="/aggregate/person/2497.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2497"
+                                            ></span>Eustace</a></li>
+                                    <li><a href="/aggregate/person/2537.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2537"
+                                            ></span>Firminus</a></li>
+                                    <li><a href="/aggregate/person/2458.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2458"
+                                            ></span>Hilarian</a></li>
+                                    <li><a href="/aggregate/person/2581.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2581"
+                                            ></span>John of Alexandria Minor</a></li>
+                                    <li><a href="/aggregate/person/2410.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2410"
+                                            ></span>Julian</a></li>
+                                    <li><a href="/aggregate/person/2423.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2423"
+                                            ></span>Leontius</a></li>
+                                    <li><a href="/aggregate/person/2405.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2405"
+                                            ></span>Libanius</a></li>
+                                    <li><a href="/aggregate/person/2460.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2460"
+                                            ></span>Musonius</a></li>
+                                    <li><a href="/aggregate/person/2418.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2418"
+                                            ></span>Nonnus</a></li>
+                                    <li><a href="/aggregate/person/2468.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2468"
+                                            ></span>Paul</a></li>
+                                    <li><a href="/aggregate/person/2514.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2514"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/2542.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2542"
+                                            ></span>Polyeuctus</a></li>
+                                    <li><a href="/aggregate/person/2547.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2547"
+                                            ></span>Procopius</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2422.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2422"
+                                            ></span>Stephen</a></li>
+                                    <li><a href="/aggregate/person/2543.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2543"
+                                            ></span>Zeno</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/10.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/10"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/2702.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2702"
+                                            ></span>Paltus</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

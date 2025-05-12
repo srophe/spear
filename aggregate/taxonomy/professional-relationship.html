@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Professional Relationship</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Professional Relationship</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -23,330 +65,1079 @@
                     // change layout based on link ID
                     kb.options.layout = this.id
                     // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
                         kb.reveal();
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Professional Relationship</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/professional-relationship">http://syriaca.org/taxonomy/professional-relationship</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>Asterius and
-                                Anonymi
-                                3129 had a professional relationship. <a href="/3004-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Sosiana and Caesaria had a professional relationship. <a href="/846-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymous
-                                3114 and Severus of Antioch had a professional
-                            relationship. <a href="/3115-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Oecumenius,
-                                comes and Severus of Antioch had a professional
-                            relationship. <a href="/3052-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Andrew,
-                                Severus of
-                                Antioch, Theodosius, patriarch of Alexandria and Theodora, Roman
-                                empress had a professional relationship. <a href="/3140-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Eleutherius had a
-                            professional relationship. <a href="/3044-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus and Philip 
-                            had a professional relationship.
-                         <a href="/3179-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Oecumenius,
-                                comes and Solon had a professional relationship. <a href="/3052-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Eustathios
-                            and John had a
-                            professional relationship. <a href="/3069-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch, Ignatius and Anonymous 3093 had a professional
-                            relationship. <a href="/3072-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus and James 
-                            had a professional relationship.
-                         <a href="/3141-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3099
-                            and Anonymi
-                                3100 had a professional relationship. <a href="/3092-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Philoxenos of Mabbug had a professional
-                            relationship. <a href="/3056-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Abba,
-                                Severus of
-                                Antioch and Maximus had a
-                            professional relationship. <a href="/3002-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Peter and
-                                Severus of
-                                Antioch had a professional relationship. <a href="/3083-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Anonymi 3099 had a
-                            professional relationship. <a href="/3087-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Anonymous 3751 and  
-                            Zacharias
-                            had a professional relationship.
-                         <a href="/3149-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Paul and
-                                Solon had
-                            a professional relationship. <a href="/3046-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>John and
-                                Aelian had
-                            a professional relationship. <a href="/3047-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Barsa and Constantius II had a professional relationship. <a href="/8559-133" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anastasios I
-                            and Flavian II of
-                                Antioch had a professional relationship. <a href="/3004-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Apophon had a
-                            professional relationship. <a href="/3039-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Anonymi 3061 had a
-                            professional relationship. <a href="/3044-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Hypatius and 
-                            Anonymous 3056 had
-                            a professional relationship. <a href="/3041-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
-                            Theodore the Deacon asked 
-                            Severus about the commands 
-                            Jannia gave him. 
-                            
-                                
-                            
-                         <a href="/3013-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
-                     Theodora and Anonymous 3768  
-                     had a professional relationship.
-                   <a href="/839-17" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Theodosius
-                            and Entrechius
-                            had a professional relationship. <a href="/3038-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3054
-                            and Simeon had
-                            a professional relationship. <a href="/3040-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John and Justinian 
-                            had a professional relationship.
-                         <a href="/848-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>John of
-                                Claudiupolis, Patricius and
-                                Severus of
-                                Antioch had a professional relationship. <a href="/3004-19" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
-                            Basil carried a letter from 
-                            Solon to
-                            Severus introducing
-                            Epiphanius and 
-                            Symbatius.
-                            
-                                
-                                
-                                
-                                
-                            
-                         <a href="/3024-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Patricius,
-                            Severus,
-                            Paul, and
-                            Julian of Halicarnassus
-                            agressively questioned
-                            Macedonius II about his efforts to promote
-                            the Council of Chalcedon against the wishes of
-                            Anastasius I.
-                            
-                                
-                                
-                            
-                         <a href="/3242-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Nicias wrote a letter to 
-                            Severus informing him that
-                            Gennadius doubted that 
-                             heretical clergy who have repented could be received.
-                            
-                                
-                                
-                            
-                         <a href="/3034-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus and Neon 
-                            had a professional relationship.
-                         <a href="/3051-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi
-                            3072, Anonymi
-                                3067, Anonymous 3068, Anonymous 3069 and
-                                Anonymous
-                                3070 had a professional relationship. <a href="/3049-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Mishael and 
-                            Justinian 
-                            had a professional relationhsip.
-                         <a href="/848-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                     Theodora and Anonymous 3769  
-                     had a professional relationship.
-                   <a href="/839-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Antoninus
-                            and Anonymi
-                                3055 had a professional relationship. <a href="/3040-21" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>John and
-                                Severus of
-                                Antioch had a professional relationship. <a href="/3085-21" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Theodore and
-                            Mishael
-                            had a professional relationship.
-                         <a href="/848-21" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                     Anonymous 3768 and Anonymous 3769 
-                     had a professional relationship.
-                   <a href="/839-21" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Simeon the Mountaineer and Anonymi 3701 had a professional relationship. <a href="/808-22" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Solon and
-                                Paul had a
-                            professional relationship. <a href="/3046-23" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John and Theodore 
-                            had a professional relationship.
-                         <a href="/848-23" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Anonymi 3044 had a
-                            professional relationship. <a href="/3035-24" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Isidore had a
-                            professional relationship. <a href="/3040-25" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Anonymi 3072 had a
-                            professional relationship. <a href="/3053-26" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Stephen,
-                                Severus of
-                                Antioch and Simeon had a
-                            professional relationship. <a href="/3071-26" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Arcadius and Honorios had a professional relationship. <a href="/8559-262" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Anonymous 3751, 
-                            Joseph, and  
-                            John
-                            had a professional relationship.
-                         <a href="/3149-34/" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Leontios and Zeno had a professional relationship. <a href="/8559-371" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Yahab bar Shemesh and Qayuma bar Magartat had a professional relationship. <a href="/8559-38" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anastasios I and Euphemios had a professional relationship. <a href="/8559-404" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anastasios I and Macedonios II had a professional relationship. <a href="/8559-438" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Vitalian and Anastasios I had a professional relationship. <a href="/8559-444" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Epiphanius
-                            and Timothy II of
-                                Alexandria had a professional relationship. <a href="/3004-45" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Bar Din and Bulid had a professional relationship. <a href="/8559-45" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Isidore and
-                                Severus of
-                                Antioch had a professional relationship. <a href="/3099-45" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Justin I, Severus of Antioch and Philoxenos of Mabbug had a professional relationship. <a href="/8559-459" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Patricius, Justin I and Pawla had a professional relationship. <a href="/8559-463" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Asclepius and Euphrasios had a professional relationship. <a href="/8559-481" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Justinian I, Euphrasios and Pawla had a professional relationship. <a href="/8559-489" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
-                            Severus sought the approval of 
-                            Dioscorus in communing with 
-                            Eleusinius and
-                            Proclus but not
-                            Soteric or 
-                            Asterius.
-                            
-                                
-                                
-                                
-                            
-                         <a href="/3190-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Epiphanius,
-                                Peter the
-                                Iberian and Anonymi 3131 had a
-                            professional relationship. <a href="/3004-51" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Justinian I and Justin I had a professional relationship. <a href="/8559-521" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Julian had a
-                            professional relationship. <a href="/3140-54" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Honorios and Theodosius II had a professional relationship. <a href="/8559-553" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Anonymi 3060 had a
-                            professional relationship. <a href="/3044-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
-                            Julian, 
-                            lacking needed clergy, sought the ordination of priests and deacons by
-                            Sergius and
-                            Marion.
-                            
-                                
-                            
-                         <a href="/3124-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch and Anonymous 3056 had a
-                            professional relationship. <a href="/3041-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch, Menas of Tyre, Isidore, Anonymi 3034 and
-                                Archelaus
-                            had a professional relationship. <a href="/3020-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>John and Caesaria had a professional relationship. <a href="/846-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Antiochus,
-                                Severus of
-                                Antioch and Antoninus had a
-                            professional relationship. <a href="/3040-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3103
-                            and Simeon had
-                            a professional relationship. <a href="/3104-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus and Victor 
-                            had a professional relationship.
-                         <a href="/3179-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus and Anonymous 3778 
-                            had a professional relationship.
-                         <a href="/3037-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Jannia,
-                                Theodore
-                            and Severus of
-                                Antioch had a professional relationship. <a href="/3013-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Theodore and 
-                            Justinian 
-                            had a professional relationship/
-                         <a href="/848-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
-                            Asterius attempted to convince 
-                            Severus to recant 
-                            his condemnation of the Council of Chalcedon and 
-                            Leo's 
-                            Tome. He would not recant and declared his
-                            intent to suffer exile rather than recant.
-                            
-                                
-                            
-                         <a href="/3190-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Professional Relationship</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/professional-relationship, 2025-05-11.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"/>Anti-Chalcedonian</a></li><li><a href="/aggregate/taxonomy/carrier-of-letter-from.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/carrier-of-letter-from"/>Carrier of Letter from</a></li><li><a href="/aggregate/taxonomy/carrier-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/carrier-of-letter-to"/>Carrier of Letter to</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/commune-together.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commune-together"/>Commune Together</a></li><li><a href="/aggregate/taxonomy/communion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/communion"/>Communion</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/deacons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deacons"/>Deacons</a></li><li><a href="/aggregate/taxonomy/deposition-of-clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"/>Deposition of Clergy</a></li><li><a href="/aggregate/taxonomy/enmity-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/enmity-for"/>Enmity for</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/professional-relationship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"/>Professional Relationship</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/579.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/579"/>
-                        Julian
-                        of Halicarnassus
-                    </a></li><li><a href="/aggregate/person/56.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/56"/>
-                        Oecumenius, comes
-                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
-                        Theodora, Roman empress
-                    </a></li><li><a href="/aggregate/person/784.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/784"/>
-                        Theodosius, patriarch of Alexandria
-                    </a></li><li><a href="/aggregate/person/792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/792"/>
-                        Timothy
-                        II
-                        of Alexandria
-                    </a></li><li><a href="/aggregate/person/2582.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2582"/>Abba</a></li><li><a href="/aggregate/person/2589.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2589"/>Aelian</a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/2480.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2480"/>Andrew</a></li><li><a href="/aggregate/person/3034.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3034"/>Anonymi 3034</a></li><li><a href="/aggregate/person/3044.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3044"/>Anonymi 3044</a></li><li><a href="/aggregate/person/3054.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3054"/>Anonymi 3054</a></li><li><a href="/aggregate/person/3055.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3055"/>Anonymi 3055</a></li><li><a href="/aggregate/person/3060.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3060"/>Anonymi 3060</a></li><li><a href="/aggregate/person/3061.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3061"/>Anonymi 3061</a></li><li><a href="/aggregate/person/3067.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3067"/>Anonymi 3067</a></li><li><a href="/aggregate/person/3072.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3072"/>Anonymi 3072</a></li><li><a href="/aggregate/person/3099.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3099"/>Anonymi 3099</a></li><li><a href="/aggregate/person/3100.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3100"/>Anonymi 3100</a></li><li><a href="/aggregate/person/3103.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3103"/>Anonymi 3103</a></li><li><a href="/aggregate/person/3129.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3129"/>Anonymi 3129</a></li><li><a href="/aggregate/person/3131.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3131"/>Anonymi 3131</a></li><li><a href="/aggregate/person/3056.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3056"/>Anonymous 3056</a></li><li><a href="/aggregate/person/3068.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3068"/>Anonymous 3068</a></li><li><a href="/aggregate/person/3069.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3069"/>Anonymous 3069</a></li><li><a href="/aggregate/person/3070.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3070"/>Anonymous 3070</a></li><li><a href="/aggregate/person/3093.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3093"/>Anonymous 3093</a></li><li><a href="/aggregate/person/3114.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3114"/>Anonymous 3114</a></li><li><a href="/aggregate/person/3701.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3701"/>Anonymous 3701</a></li><li><a href="/aggregate/person/3751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3751"/>Anonymous 3751</a></li><li><a href="/aggregate/person/3768.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3768"/>Anonymous 3768</a></li><li><a href="/aggregate/person/3769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3769"/>Anonymous 3769</a></li><li><a href="/aggregate/person/3778.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3778"/>Anonymous 3778</a></li><li><a href="/aggregate/person/2552.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2552"/>Antiochus</a></li><li><a href="/aggregate/person/2553.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2553"/>Antoninus</a></li><li><a href="/aggregate/person/2782.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2782"/>Apophon</a></li><li><a href="/aggregate/person/2266.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2266"/>Arcadius</a></li><li><a href="/aggregate/person/2606.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2606"/>Archelaus</a></li><li><a href="/aggregate/person/2236.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2236"/>Asclepius</a></li><li><a href="/aggregate/person/2528.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2528"/>Asterius</a></li><li><a href="/aggregate/person/2609.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2609"/>Asterius</a></li><li><a href="/aggregate/person/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2610"/>Asterius</a></li><li><a href="/aggregate/person/2239.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2239"/>Bardin</a></li><li><a href="/aggregate/person/2241.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2241"/>Barsa</a></li><li><a href="/aggregate/person/3789.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3789"/>Basil</a></li><li><a href="/aggregate/person/2243.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2243"/>Bulid</a></li><li><a href="/aggregate/person/2621.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2621"/>Caesaria</a></li><li><a href="/aggregate/person/2249.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2249"/>Constantius
-                        II</a></li><li><a href="/aggregate/person/2430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2430"/>Dioscorus II</a></li><li><a href="/aggregate/person/2567.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2567"/>Eleusinius</a></li><li><a href="/aggregate/person/2559.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2559"/>Eleutherius</a></li><li><a href="/aggregate/person/2546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2546"/>Entrechius</a></li><li><a href="/aggregate/person/2562.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2562"/>Epiphanius</a></li><li><a href="/aggregate/person/2560.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2560"/>Epiphanius</a></li><li><a href="/aggregate/person/2277.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2277"/>Euphemios</a></li><li><a href="/aggregate/person/2278.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2278"/>Euphrasios</a></li><li><a href="/aggregate/person/2402.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2402"/>Eustathios</a></li><li><a href="/aggregate/person/2530.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2530"/>Flavian II of
-                        Antioch</a></li><li><a href="/aggregate/person/2655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2655"/>Gennadius</a></li><li><a href="/aggregate/person/2267.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2267"/>Honorios</a></li><li><a href="/aggregate/person/2556.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2556"/>Hypatius</a></li><li><a href="/aggregate/person/2406.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2406"/>Ignatius</a></li><li><a href="/aggregate/person/2545.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2545"/>Isidore</a></li><li><a href="/aggregate/person/2667.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2667"/>Isidore</a></li><li><a href="/aggregate/person/2668.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2668"/>James</a></li><li><a href="/aggregate/person/2669.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2669"/>Jannia</a></li><li><a href="/aggregate/person/2477.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2477"/>John</a></li><li><a href="/aggregate/person/1820.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1820"/>John</a></li><li><a href="/aggregate/person/2424.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2424"/>John</a></li><li><a href="/aggregate/person/3224.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3224"/>John</a></li><li><a href="/aggregate/person/2400.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2400"/>John</a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of
-                        Claudiupolis</a></li><li><a href="/aggregate/person/2475.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2475"/>Joseph</a></li><li><a href="/aggregate/person/2465.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2465"/>Julian</a></li><li><a href="/aggregate/person/2487.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2487"/>Julian</a></li><li><a href="/aggregate/person/2268.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2268"/>Justin I</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/2287.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2287"/>Leontios</a></li><li><a href="/aggregate/person/2696.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2696"/>Macedonius II</a></li><li><a href="/aggregate/person/2407.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2407"/>Marion</a></li><li><a href="/aggregate/person/2722.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2722"/>Maximus</a></li><li><a href="/aggregate/person/2705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2705"/>Menas of Tyre</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/2724.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2724"/>Neon</a></li><li><a href="/aggregate/person/2526.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2526"/>Nicias</a></li><li><a href="/aggregate/person/2281.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2281"/>Patricius</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/2730.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2730"/>Paul</a></li><li><a href="/aggregate/person/2296.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2296"/>Pawla</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/680.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/680"/>Peter the Iberian</a></li><li><a href="/aggregate/person/2437.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2437"/>Philip</a></li><li><a href="/aggregate/person/44.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/44"/>Philoxenos of Mabbug</a></li><li><a href="/aggregate/person/2569.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2569"/>Proclus</a></li><li><a href="/aggregate/person/2285.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2285"/>Qayuma bar
-                        Magartat</a></li><li><a href="/aggregate/person/2751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2751"/>Sergius I</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2754.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2754"/>Simeon</a></li><li><a href="/aggregate/person/2554.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2554"/>Simeon</a></li><li><a href="/aggregate/person/2097.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2097"/>Simeon the Mountaineer</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/3020.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3020"/>Sosiana</a></li><li><a href="/aggregate/person/2551.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2551"/>Soteric</a></li><li><a href="/aggregate/person/2566.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2566"/>Stephen the deacon</a></li><li><a href="/aggregate/person/2561.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2561"/>Symbatius</a></li><li><a href="/aggregate/person/2767.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2767"/>Theodore</a></li><li><a href="/aggregate/person/2108.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2108"/>Theodore Castrensus</a></li><li><a href="/aggregate/person/2548.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2548"/>Theodosius</a></li><li><a href="/aggregate/person/1529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1529"/>Theodosius II</a></li><li><a href="/aggregate/person/2433.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2433"/>Victor</a></li><li><a href="/aggregate/person/2311.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2311"/>Vitalian</a></li><li><a href="/aggregate/person/2313.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2313"/>Yahab bar
-                        Shemesh</a></li><li><a href="/aggregate/person/2476.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2476"/>Zacharias</a></li><li><a href="/aggregate/person/2273.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2273"/>Zeno</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Professional Relationship</span></span></span></h1>
+                        </div>
+                        <div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/professional-relationship"
+                                                >http://syriaca.org/taxonomy/professional-relationship</a></span></p></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">relation: </span>Asterius
+                                    and Anonymi 3129 had a professional relationship. <a
+                                        href="/3004-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Sosiana
+                                    and Caesaria had a professional relationship. <a href="/846-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Anonymous 3114 and Severus of Antioch had a professional
+                                    relationship. <a href="/3115-10" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Oecumenius, comes and Severus of Antioch had a
+                                    professional relationship. <a href="/3052-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Andrew,
+                                    Severus of Antioch, Theodosius, patriarch of Alexandria and
+                                    Theodora, Roman empress had a professional relationship. <a
+                                        href="/3140-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Eleutherius had a professional relationship. <a
+                                        href="/3044-11" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    and Philip had a professional relationship. <a href="/3179-11"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Oecumenius, comes and Solon had a professional
+                                    relationship. <a href="/3052-11" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Eustathios and John had a professional relationship. <a
+                                        href="/3069-11" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch, Ignatius and Anonymous 3093 had a professional
+                                    relationship. <a href="/3072-12" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    and James had a professional relationship. <a href="/3141-12"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3099 and Anonymi 3100 had a professional relationship. <a
+                                        href="/3092-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Philoxenos of Mabbug had a professional
+                                    relationship. <a href="/3056-12" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Abba,
+                                    Severus of Antioch and Maximus had a professional relationship.
+                                        <a href="/3002-12" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Peter
+                                    and Severus of Antioch had a professional relationship. <a
+                                        href="/3083-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Anonymi 3099 had a professional relationship. <a
+                                        href="/3087-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Anonymous 3751 and Zacharias had a professional relationship. <a
+                                        href="/3149-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Paul and
+                                    Solon had a professional relationship. <a href="/3046-13"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>John and
+                                    Aelian had a professional relationship. <a href="/3047-13"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Barsa
+                                    and Constantius II had a professional relationship. <a
+                                        href="/8559-133" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Anastasios I and Flavian II of Antioch had a professional
+                                    relationship. <a href="/3004-15" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Apophon had a professional relationship. <a
+                                        href="/3039-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Anonymi 3061 had a professional relationship. <a
+                                        href="/3044-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Hypatius and Anonymous 3056 had a professional relationship. <a
+                                        href="/3041-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Theodore
+                                    the Deacon asked Severus about the commands Jannia gave him. <a
+                                        href="/3013-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Theodora and Anonymous 3768 had a professional relationship. <a
+                                        href="/839-17" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Theodosius and Entrechius had a professional
+                                    relationship. <a href="/3038-18" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3054 and Simeon had a professional relationship. <a
+                                        href="/3040-18" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> John
+                                    and Justinian had a professional relationship. <a href="/848-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>John of
+                                    Claudiupolis, Patricius and Severus of Antioch had a
+                                    professional relationship. <a href="/3004-19"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Basil
+                                    carried a letter from Solon to Severus introducing Epiphanius
+                                    and Symbatius. <a href="/3024-2" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Patricius,
+                                    Severus, Paul, and Julian of Halicarnassus agressively
+                                    questioned Macedonius II about his efforts to promote the
+                                    Council of Chalcedon against the wishes of Anastasius I. <a
+                                        href="/3242-2" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Nicias
+                                    wrote a letter to Severus informing him that Gennadius doubted
+                                    that heretical clergy who have repented could be received. <a
+                                        href="/3034-2" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    and Neon had a professional relationship. <a href="/3051-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3072, Anonymi 3067, Anonymous 3068, Anonymous 3069 and Anonymous
+                                    3070 had a professional relationship. <a href="/3049-20"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Mishael
+                                    and Justinian had a professional relationhsip. <a href="/848-20"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Theodora and Anonymous 3769 had a professional relationship. <a
+                                        href="/839-20" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Antoninus and Anonymi 3055 had a professional
+                                    relationship. <a href="/3040-21" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>John and
+                                    Severus of Antioch had a professional relationship. <a
+                                        href="/3085-21" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Theodore and Mishael had a professional relationship. <a
+                                        href="/848-21" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Anonymous 3768 and Anonymous 3769 had a professional
+                                    relationship. <a href="/839-21" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Simeon
+                                    the Mountaineer and Anonymi 3701 had a professional
+                                    relationship. <a href="/808-22" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Solon
+                                    and Paul had a professional relationship. <a href="/3046-23"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> John
+                                    and Theodore had a professional relationship. <a href="/848-23"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Anonymi 3044 had a professional relationship. <a
+                                        href="/3035-24" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Isidore had a professional relationship. <a
+                                        href="/3040-25" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Anonymi 3072 had a professional relationship. <a
+                                        href="/3053-26" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Stephen, Severus of Antioch and Simeon had a professional
+                                    relationship. <a href="/3071-26" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Arcadius
+                                    and Honorios had a professional relationship. <a
+                                        href="/8559-262" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Anonymous 3751, Joseph, and John had a professional
+                                    relationship. <a href="/3149-34/" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Leontios
+                                    and Zeno had a professional relationship. <a href="/8559-371"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Yahab
+                                    bar Shemesh and Qayuma bar Magartat had a professional
+                                    relationship. <a href="/8559-38" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Anastasios I and Euphemios had a professional
+                                    relationship. <a href="/8559-404" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Anastasios I and Macedonios II had a professional
+                                    relationship. <a href="/8559-438" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Vitalian
+                                    and Anastasios I had a professional relationship. <a
+                                        href="/8559-444" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Epiphanius and Timothy II of Alexandria had a
+                                    professional relationship. <a href="/3004-45"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Bar Din
+                                    and Bulid had a professional relationship. <a href="/8559-45"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Isidore
+                                    and Severus of Antioch had a professional relationship. <a
+                                        href="/3099-45" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Justin
+                                    I, Severus of Antioch and Philoxenos of Mabbug had a
+                                    professional relationship. <a href="/8559-459"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Patricius, Justin I and Pawla had a professional
+                                    relationship. <a href="/8559-463" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Asclepius and Euphrasios had a professional relationship.
+                                        <a href="/8559-481" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Justinian I, Euphrasios and Pawla had a professional
+                                    relationship. <a href="/8559-489" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    sought the approval of Dioscorus in communing with Eleusinius
+                                    and Proclus but not Soteric or Asterius. <a href="/3190-5"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Epiphanius, Peter the Iberian and Anonymi 3131 had a
+                                    professional relationship. <a href="/3004-51"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Justinian I and Justin I had a professional relationship.
+                                        <a href="/8559-521" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Julian had a professional relationship. <a
+                                        href="/3140-54" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Honorios
+                                    and Theodosius II had a professional relationship. <a
+                                        href="/8559-553" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Anonymi 3060 had a professional relationship. <a
+                                        href="/3044-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Julian,
+                                    lacking needed clergy, sought the ordination of priests and
+                                    deacons by Sergius and Marion. <a href="/3124-7"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch and Anonymous 3056 had a professional relationship.
+                                        <a href="/3041-7" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch, Menas of Tyre, Isidore, Anonymi 3034 and Archelaus
+                                    had a professional relationship. <a href="/3020-7"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>John and
+                                    Caesaria had a professional relationship. <a href="/846-8"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Antiochus, Severus of Antioch and Antoninus had a
+                                    professional relationship. <a href="/3040-8"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3103 and Simeon had a professional relationship. <a
+                                        href="/3104-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    and Victor had a professional relationship. <a href="/3179-9"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    and Anonymous 3778 had a professional relationship. <a
+                                        href="/3037-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Jannia,
+                                    Theodore and Severus of Antioch had a professional relationship.
+                                        <a href="/3013-9" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Theodore and Justinian had a professional relationship/ <a
+                                        href="/848-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Asterius
+                                    attempted to convince Severus to recant his condemnation of the
+                                    Council of Chalcedon and Leo's Tome. He would not recant and
+                                    declared his intent to suffer exile rather than recant. <a
+                                        href="/3190-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Professional
+                                                  Relationship</span></span></span>,” in SPEAR:
+                                        Syriac Persons Events and Relations, general editor Daniel
+                                        L. Schwartz,
+                                        http://syriaca.org/taxonomy/professional-relationship,
+                                        2025-05-11. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/anathema.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anathema"
+                                            ></span>Anathema</a></li>
+                                    <li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"
+                                            ></span>Anti-Chalcedonian</a></li>
+                                    <li><a href="/aggregate/taxonomy/carrier-of-letter-from.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/carrier-of-letter-from"
+                                            ></span>Carrier of Letter from</a></li>
+                                    <li><a href="/aggregate/taxonomy/carrier-of-letter-to.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/carrier-of-letter-to"
+                                            ></span>Carrier of Letter to</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/commune-together.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/commune-together"
+                                            ></span>Commune Together</a></li>
+                                    <li><a href="/aggregate/taxonomy/communion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/communion"
+                                            ></span>Communion</a></li>
+                                    <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
+                                            ></span>Council of Chalcedon</a></li>
+                                    <li><a href="/aggregate/taxonomy/deacons.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deacons"
+                                            ></span>Deacons</a></li>
+                                    <li><a href="/aggregate/taxonomy/deposition-of-clergy.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"
+                                            ></span>Deposition of Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/enmity-for.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/enmity-for"
+                                            ></span>Enmity for</a></li>
+                                    <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                            ></span>Exile</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                            ></span>Monastic Heads</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/professional-relationship.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"
+                                            ></span>Professional Relationship</a></li>
+                                    <li><a href="/aggregate/taxonomy/repentance.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/repentance"
+                                            ></span>Repentance</a></li>
+                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                            ></span>Sender of Letter to</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/579.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/579"></span>
+                                            Julian of Halicarnassus </a></li>
+                                    <li><a href="/aggregate/person/56.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/56"></span>
+                                            Oecumenius, comes </a></li>
+                                    <li><a href="/aggregate/person/779.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/779"></span>
+                                            Theodora, Roman empress </a></li>
+                                    <li><a href="/aggregate/person/784.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/784"></span>
+                                            Theodosius, patriarch of Alexandria </a></li>
+                                    <li><a href="/aggregate/person/792.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/792"></span>
+                                            Timothy II of Alexandria </a></li>
+                                    <li><a href="/aggregate/person/2582.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2582"
+                                            ></span>Abba</a></li>
+                                    <li><a href="/aggregate/person/2589.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2589"
+                                            ></span>Aelian</a></li>
+                                    <li><a href="/aggregate/person/2265.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2265"
+                                            ></span>Anastasios I</a></li>
+                                    <li><a href="/aggregate/person/2480.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2480"
+                                            ></span>Andrew</a></li>
+                                    <li><a href="/aggregate/person/3034.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3034"
+                                            ></span>Anonymi 3034</a></li>
+                                    <li><a href="/aggregate/person/3044.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3044"
+                                            ></span>Anonymi 3044</a></li>
+                                    <li><a href="/aggregate/person/3054.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3054"
+                                            ></span>Anonymi 3054</a></li>
+                                    <li><a href="/aggregate/person/3055.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3055"
+                                            ></span>Anonymi 3055</a></li>
+                                    <li><a href="/aggregate/person/3060.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3060"
+                                            ></span>Anonymi 3060</a></li>
+                                    <li><a href="/aggregate/person/3061.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3061"
+                                            ></span>Anonymi 3061</a></li>
+                                    <li><a href="/aggregate/person/3067.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3067"
+                                            ></span>Anonymi 3067</a></li>
+                                    <li><a href="/aggregate/person/3072.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3072"
+                                            ></span>Anonymi 3072</a></li>
+                                    <li><a href="/aggregate/person/3099.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3099"
+                                            ></span>Anonymi 3099</a></li>
+                                    <li><a href="/aggregate/person/3100.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3100"
+                                            ></span>Anonymi 3100</a></li>
+                                    <li><a href="/aggregate/person/3103.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3103"
+                                            ></span>Anonymi 3103</a></li>
+                                    <li><a href="/aggregate/person/3129.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3129"
+                                            ></span>Anonymi 3129</a></li>
+                                    <li><a href="/aggregate/person/3131.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3131"
+                                            ></span>Anonymi 3131</a></li>
+                                    <li><a href="/aggregate/person/3056.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3056"
+                                            ></span>Anonymous 3056</a></li>
+                                    <li><a href="/aggregate/person/3068.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3068"
+                                            ></span>Anonymous 3068</a></li>
+                                    <li><a href="/aggregate/person/3069.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3069"
+                                            ></span>Anonymous 3069</a></li>
+                                    <li><a href="/aggregate/person/3070.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3070"
+                                            ></span>Anonymous 3070</a></li>
+                                    <li><a href="/aggregate/person/3093.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3093"
+                                            ></span>Anonymous 3093</a></li>
+                                    <li><a href="/aggregate/person/3114.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3114"
+                                            ></span>Anonymous 3114</a></li>
+                                    <li><a href="/aggregate/person/3701.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3701"
+                                            ></span>Anonymous 3701</a></li>
+                                    <li><a href="/aggregate/person/3751.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3751"
+                                            ></span>Anonymous 3751</a></li>
+                                    <li><a href="/aggregate/person/3768.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3768"
+                                            ></span>Anonymous 3768</a></li>
+                                    <li><a href="/aggregate/person/3769.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3769"
+                                            ></span>Anonymous 3769</a></li>
+                                    <li><a href="/aggregate/person/3778.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3778"
+                                            ></span>Anonymous 3778</a></li>
+                                    <li><a href="/aggregate/person/2552.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2552"
+                                            ></span>Antiochus</a></li>
+                                    <li><a href="/aggregate/person/2553.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2553"
+                                            ></span>Antoninus</a></li>
+                                    <li><a href="/aggregate/person/2782.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2782"
+                                            ></span>Apophon</a></li>
+                                    <li><a href="/aggregate/person/2266.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2266"
+                                            ></span>Arcadius</a></li>
+                                    <li><a href="/aggregate/person/2606.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2606"
+                                            ></span>Archelaus</a></li>
+                                    <li><a href="/aggregate/person/2236.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2236"
+                                            ></span>Asclepius</a></li>
+                                    <li><a href="/aggregate/person/2528.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2528"
+                                            ></span>Asterius</a></li>
+                                    <li><a href="/aggregate/person/2609.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2609"
+                                            ></span>Asterius</a></li>
+                                    <li><a href="/aggregate/person/2610.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2610"
+                                            ></span>Asterius</a></li>
+                                    <li><a href="/aggregate/person/2239.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2239"
+                                            ></span>Bardin</a></li>
+                                    <li><a href="/aggregate/person/2241.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2241"
+                                            ></span>Barsa</a></li>
+                                    <li><a href="/aggregate/person/3789.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3789"
+                                            ></span>Basil</a></li>
+                                    <li><a href="/aggregate/person/2243.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2243"
+                                            ></span>Bulid</a></li>
+                                    <li><a href="/aggregate/person/2621.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2621"
+                                            ></span>Caesaria</a></li>
+                                    <li><a href="/aggregate/person/2249.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2249"
+                                            ></span>Constantius II</a></li>
+                                    <li><a href="/aggregate/person/2430.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2430"
+                                            ></span>Dioscorus II</a></li>
+                                    <li><a href="/aggregate/person/2567.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2567"
+                                            ></span>Eleusinius</a></li>
+                                    <li><a href="/aggregate/person/2559.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2559"
+                                            ></span>Eleutherius</a></li>
+                                    <li><a href="/aggregate/person/2546.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2546"
+                                            ></span>Entrechius</a></li>
+                                    <li><a href="/aggregate/person/2562.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2562"
+                                            ></span>Epiphanius</a></li>
+                                    <li><a href="/aggregate/person/2560.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2560"
+                                            ></span>Epiphanius</a></li>
+                                    <li><a href="/aggregate/person/2277.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2277"
+                                            ></span>Euphemios</a></li>
+                                    <li><a href="/aggregate/person/2278.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2278"
+                                            ></span>Euphrasios</a></li>
+                                    <li><a href="/aggregate/person/2402.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2402"
+                                            ></span>Eustathios</a></li>
+                                    <li><a href="/aggregate/person/2530.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2530"
+                                            ></span>Flavian II of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2655.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2655"
+                                            ></span>Gennadius</a></li>
+                                    <li><a href="/aggregate/person/2267.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2267"
+                                            ></span>Honorios</a></li>
+                                    <li><a href="/aggregate/person/2556.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2556"
+                                            ></span>Hypatius</a></li>
+                                    <li><a href="/aggregate/person/2406.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2406"
+                                            ></span>Ignatius</a></li>
+                                    <li><a href="/aggregate/person/2545.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2545"
+                                            ></span>Isidore</a></li>
+                                    <li><a href="/aggregate/person/2667.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2667"
+                                            ></span>Isidore</a></li>
+                                    <li><a href="/aggregate/person/2668.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2668"
+                                            ></span>James</a></li>
+                                    <li><a href="/aggregate/person/2669.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2669"
+                                            ></span>Jannia</a></li>
+                                    <li><a href="/aggregate/person/2477.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2477"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/1820.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1820"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2424.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2424"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/3224.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3224"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2400.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2400"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2529"
+                                            ></span>John of Claudiupolis</a></li>
+                                    <li><a href="/aggregate/person/2475.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2475"
+                                            ></span>Joseph</a></li>
+                                    <li><a href="/aggregate/person/2465.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2465"
+                                            ></span>Julian</a></li>
+                                    <li><a href="/aggregate/person/2487.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2487"
+                                            ></span>Julian</a></li>
+                                    <li><a href="/aggregate/person/2268.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2268"
+                                            ></span>Justin I</a></li>
+                                    <li><a href="/aggregate/person/2284.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2284"
+                                            ></span>Justinian I</a></li>
+                                    <li><a href="/aggregate/person/2299.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2299"
+                                            ></span>Leo</a></li>
+                                    <li><a href="/aggregate/person/2287.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2287"
+                                            ></span>Leontios</a></li>
+                                    <li><a href="/aggregate/person/2696.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2696"
+                                            ></span>Macedonius II</a></li>
+                                    <li><a href="/aggregate/person/2407.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2407"
+                                            ></span>Marion</a></li>
+                                    <li><a href="/aggregate/person/2722.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2722"
+                                            ></span>Maximus</a></li>
+                                    <li><a href="/aggregate/person/2705.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2705"
+                                            ></span>Menas of Tyre</a></li>
+                                    <li><a href="/aggregate/person/2558.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2558"
+                                            ></span>Misael</a></li>
+                                    <li><a href="/aggregate/person/2724.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2724"
+                                            ></span>Neon</a></li>
+                                    <li><a href="/aggregate/person/2526.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2526"
+                                            ></span>Nicias</a></li>
+                                    <li><a href="/aggregate/person/2281.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2281"
+                                            ></span>Patricius</a></li>
+                                    <li><a href="/aggregate/person/2468.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2468"
+                                            ></span>Paul</a></li>
+                                    <li><a href="/aggregate/person/2730.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2730"
+                                            ></span>Paul</a></li>
+                                    <li><a href="/aggregate/person/2296.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2296"
+                                            ></span>Pawla</a></li>
+                                    <li><a href="/aggregate/person/2514.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2514"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/680.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/680"
+                                            ></span>Peter the Iberian</a></li>
+                                    <li><a href="/aggregate/person/2437.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2437"
+                                            ></span>Philip</a></li>
+                                    <li><a href="/aggregate/person/44.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/44"
+                                            ></span>Philoxenos of Mabbug</a></li>
+                                    <li><a href="/aggregate/person/2569.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2569"
+                                            ></span>Proclus</a></li>
+                                    <li><a href="/aggregate/person/2285.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2285"
+                                            ></span>Qayuma bar Magartat</a></li>
+                                    <li><a href="/aggregate/person/2751.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2751"
+                                            ></span>Sergius I</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2754.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2754"
+                                            ></span>Simeon</a></li>
+                                    <li><a href="/aggregate/person/2554.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2554"
+                                            ></span>Simeon</a></li>
+                                    <li><a href="/aggregate/person/2097.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2097"
+                                            ></span>Simeon the Mountaineer</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                    <li><a href="/aggregate/person/3020.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3020"
+                                            ></span>Sosiana</a></li>
+                                    <li><a href="/aggregate/person/2551.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2551"
+                                            ></span>Soteric</a></li>
+                                    <li><a href="/aggregate/person/2566.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2566"
+                                            ></span>Stephen the deacon</a></li>
+                                    <li><a href="/aggregate/person/2561.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2561"
+                                            ></span>Symbatius</a></li>
+                                    <li><a href="/aggregate/person/2767.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2767"
+                                            ></span>Theodore</a></li>
+                                    <li><a href="/aggregate/person/2108.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2108"
+                                            ></span>Theodore Castrensus</a></li>
+                                    <li><a href="/aggregate/person/2548.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2548"
+                                            ></span>Theodosius</a></li>
+                                    <li><a href="/aggregate/person/1529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1529"
+                                            ></span>Theodosius II</a></li>
+                                    <li><a href="/aggregate/person/2433.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2433"
+                                            ></span>Victor</a></li>
+                                    <li><a href="/aggregate/person/2311.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2311"
+                                            ></span>Vitalian</a></li>
+                                    <li><a href="/aggregate/person/2313.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2313"
+                                            ></span>Yahab bar Shemesh</a></li>
+                                    <li><a href="/aggregate/person/2476.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2476"
+                                            ></span>Zacharias</a></li>
+                                    <li><a href="/aggregate/person/2273.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2273"
+                                            ></span>Zeno</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

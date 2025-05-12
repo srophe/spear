@@ -1,0 +1,511 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Canon Law</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Canon Law</span></span></span></h1></div><div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/canon-law">http://syriaca.org/taxonomy/canon-law</a></span></p></small></div></div><div class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Theodore urging him to keep
+                            his monastic vows.
+                            
+                                
+                            
+                         <a href="/3010-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-525
+                            Severus of Antioch wrote a letter to
+                            Anonymous 3751
+                            addressing his request to intervene in various interpersonal disputes. 
+                            Severus 
+                            emphasized proper order in judicial matters, especially the need for multiple witnesses.
+                            
+                                
+                            
+                         <a href="/3149-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-520
+                            Severus of Antioch sent a letter to 
+                            John and 
+                            John on the subjects of 
+                            whether or not non-Chalcedonian exiles in Egypt should take communion; and the question of what to do about 
+                             Epimachus , a devout man ordained to the clergy 
+                            but who had entered into a second marriage; and questions about the ordination of deacons and deaconesses in monasteries.
+                         <a href="/3099-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-520
+                            Severus of Antioch sent a letter to 
+                            Anonymi 3753 about the attempts of 
+                             Gregory  and 
+                             Isaiah  to falsely claim episcopal status.
+                            He refuted their claims with references to scripture, canon law, and the lifestyles of these men.
+                            
+                                
+                            
+                         <a href="/3111-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus of Antioch wrote a letter to 
+                            the monastery of Mar Bassus urging them
+                            to remove a monk from their monastery who unlawfully abandoned his wife and children when he entered
+                            the monastery.
+                         <a href="/3074-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            John the scholastic 
+                            in which he answered questions posed by another. The questions dealt with repentance for
+                            refusing to submit to monastic discipline and repentance for self-castration in one's youth.
+                            
+                                
+                            
+                         <a href="/3129-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Theodore of Olba 
+                            on the subject of Anonymous 3783 who took communion and later said he did not know
+                            whether he had ever been baptized.
+                            
+                                
+                            
+                         <a href="/3090-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Nonnus on the disobedience of
+                            Pelagius.
+                            
+                                
+                            
+                         <a href="/3093-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Nicias 
+                            discussing the impiety of ordination by Nestorian bishops. 
+                            
+                                
+                            
+                         <a href="/3031-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Solon 
+                            disucssing episcopal authority  and canon law.
+                            
+                                
+                            
+                         <a href="/3026-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            John.
+                            
+                                
+                            
+                         <a href="/3009-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            commanded Nicias to remain faithful to the sacred canons by
+                            stripping the deacons and
+                                priests on Minidus who had been ordained by Nestorians of
+                            their honor, titles, and ability to administer the sacraments.  <a href="/3031-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Anonymous 3780
+                            performed ordinations against canon law and made many false oaths.
+                         <a href="/3061-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Basil wrote a letter to 
+                            Severus 
+                            about uncanonical ordinations.
+                            
+                                
+                            
+                         <a href="/3063-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Between
+                                513 and 518, Severus wrote a letter to Eucharius about the
+                            trial of Firminus.  <a href="/3094-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Dionysius 
+                            forced 
+                            Basil
+                            to perform an unlawful ordination.
+                            
+                                
+                            
+                        
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3063-12">3063-12</a></span>, <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3064-14">3064-14</a></span>.
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with related events: 3063-12, 3064-14.
+                             <a href="/3063-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            After years of living as a monk and regularly taking communion,
+                            Anonymous 3784 witnessed a baptism for the first time
+                            and admitted that he had never been baptized. After conducting a formal investigation in order to ensure that they avoid re-baptism, 
+                            Anonymous 3784 was baptized.
+                         <a href="/3090-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Though the people of
+                                    Paltus had found Firminus guilty,
+                                Severus
+                            wanted to withhold judgment until a formal trial in Antioch could be
+                            organized.  <a href="/3094-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Sometime
+                                between 513 and 518 , Severus sent a letter to  Philoxenus of  Mabbug
+                                 detailing his request to  Philoxenus , of
+                                 Doliche 
+                            that  Romulus
+                            , be granted permission to conduct prayers in  Antioch .  <a href="/3056-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus argued
+                            that the order of deacons have greater honor than the readers of the
+                            church.  <a href="/3032-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            When Dionysius 
+                            attempted to force 
+                            Basil
+                            to perform an unlawful ordination, 
+                            Severus
+                            urged 
+                            Theotecnus and 
+                            John
+                            to oppose this.
+                        
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3063-12">3063-12</a></span>, <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3064-14">3064-14</a></span>.
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with related events: 3063-12, 3064-14.
+                             <a href="/3063-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime during his episcopacy
+                            Severus of Antioch wrote a letter to 
+                             Eutychian  the governor of 
+                             Apamea  urging him not to join in worship with 
+                            Anonymous 3740 because he had been lawfully deprived of his priestly office.
+                         <a href="/3083-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime around 519-520
+                            Isaiah produced false canons in an attempt to 
+                            claim that his ordination by one bishop was lawful.
+                         <a href="/3111-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a
+                            letter to Cassian concerning the vexing question of the ordination
+                            of Dorotheus
+                            who had been castrated by a physician and not of his own will.  <a href="/3075-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Though Severus had initiallly held to a strict interpretation
+                            of the Church's ordination practices, the poverty and necessity of the
+                            Church forced him to change his practices.  <a href="/3044-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519 and 538
+                            Severus of Antioch wrote a letter to 
+                            Proclus discussing the difficulties of 
+                            being a bishop with a wife and child. He encouraged Proclus
+                            that his situation was not unique and urged him to call his wayward daughter
+                            to repentance. 
+                         <a href="/3114-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Anonymi 3733 deposed 
+                            Paul
+                            and later Anonymi 3732 upheld the ruling.
+                            
+                                
+                            
+                         <a href="/3108-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            John the scholastic wrote a letter to 
+                            Severus 
+                            in which he sought answers to questions someone else had asked him. The questions dealt with repentance for
+                            refusing to submit to monastic discipline and repentance for self-castration in one's youth.
+                            
+                                
+                            
+                         <a href="/3129-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Theodore of Olba wrote a letter to 
+                            Severus 
+                            on the subject of Anonymous 3783 who took communion and later said he did not know
+                            whether he had ever been baptized.
+                            
+                                
+                            
+                         <a href="/3090-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Pelagius was summoned to be judged by
+                            Severus and 
+                            the Count of the East. He was convicted of sowing discord and exiled from his monastery
+                            the House of Thomas.
+                            
+                                
+                                
+                            
+                         <a href="/3093-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-520
+                            Severus of Antioch sent a letter to 
+                            Anonymi 3732
+                            on the subject of the deposition of clergy and how those deposed by a local synod may appeal to a higher authority 
+                            and be reinstated but only with agreement of the bishops who originally condemned him. Moreover, they may not exercise 
+                            their priestly duties while appeal is pending. 
+                            
+                                
+                            
+                         <a href="/3108-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Between
+                                513 and 518, Severus wrote a letter to Stephen, bishop of Tripoli about a presbyter Stephen who came to
+                                Tripoli
+                            without a dismissory letter from his original diocese.  <a href="/3086-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime during his episcopacy
+                            Severus of Antioch sent a letter to  
+                            Anonymous 3738
+                            requesting that the monk  Nonnus  appear in 
+                            Antioch to face charges of misappropriating church funds.
+                         <a href="/3081-22/" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime during his episcopacy
+                            Severus of Antioch wrote a letter to 
+                            the clergy of Antaradus
+                            regarding a difficult set of circumstance surrounding their efforts to have a bishop ordained for their city and the case of 
+                            Leontius, a deacon who had been disciplined because of his sin but was unrepentant and
+                            indeed sought to become head deacon. 
+                         <a href="/3085-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 515-18
+                            Severus of Antioch wrote a letter to the magister militum
+                            Hypatius about the case of 
+                            Julian who petitioned Hypatius
+                            to overturn the ruling of an ecclesiastical court that found him guilt of using church property for personal benefit.
+                         <a href="/3079-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Appealing to Cyril's letter to Nestorius and the
+                            example of Severus the
+                                presbyter, Severus urged Stephen to accept
+                            the ordination of Stephen because heretics cannot be expected to follow
+                            canon-law.  <a href="/3086-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime during the episcopacy of Severus of Antioch
+                             Nonnus  fled Antioch 
+                            when faced with charges of misappropriating church funds. He then entered 
+                             the monastery of Saint Simeon  and refused attempts to return him for trial.
+                         <a href="/3081-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime during his episcopacy
+                            Severus of Antioch consulted with 
+                             Anastasios I  regarding the difficult circumstances surrounding the lack of a 
+                            bishop in Antaradus.
+                         <a href="/3085-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime during his episcopacy
+                            Severus of Antioch received a petition from
+                            Stephen, a deacon in Antaradus
+                            requesting the intervention of Severus in the case of 
+                            Leontius who had been removed from the sacred tables for taking a second wife 
+                            after his ordination as a deacon but allowed to keep ministering. Stephen opposed his 
+                            lifestyle and his attempts to become head deacon.
+                         <a href="/3085-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            accused the unorthodox of denying scripture, canon-law, and the
+                            authority of the bishops, because they insulted the orthodox bishops of Antioch.  <a href="/3049-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 515-18
+                            Severus of Antioch and a group of clergy
+                            and scholastics ruled against Julian
+                            in a dispute regarding church property in Tarsus. 
+                            Julian attempted to appeal to the magister militum
+                            Hypatius.
+                        
+                    
+                        
+                            <span class="tei-desc">
+                                The following factoids deal with related events: <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3079-26">3079-26</a></span>, <span class="tei-rs"><a href="factoid.html?id=https://spear-prosop.org/3064-3">3064-3</a></span>.
+                            </span>
+                        
+                    
+                
+                                The following factoids deal with related events: 3079-26, 3064-3.
+                             <a href="/3079-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime after the end of his episcopacy
+                            Severus of Antioch wrote a letter to 
+                            Thecla discussing her devoutness and answering questions she had posed to
+                            Stephen about deacons baptizing in extraordinary situations and whether
+                            or not to baptize someone unable to make a profession of faith.
+                         <a href="/3117-28" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-538
+                            a very ill baby was baptized by 
+                            a deacon in the absence of a priest.
+                            This raised questions about the legitimacy of the baptism.
+                            
+                                
+                            
+                         <a href="/3117-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Pelagius brought Diophysites into the monastery
+                            and even supported them in taking communion against canon law.
+                         <a href="/3093-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus of
+                                Antioch and Anonymi 3729 exchanged letters 
+                            on questions of whether or not there would be sufficient ordained clergy to adminster
+                            the Lord's Supper and baptism to the women. Severus of
+                                Antioch states that deaconnesses may administer baptism to women and male 
+                            presbyters or deacons may administer the Lord's Supper.
+                            
+                                
+                                
+                            
+                         <a href="/3150-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-538
+                            questions arose about whether a boy unable to make a profession of faith
+                            should be considered a believer or an unbeliever.
+                         <a href="/3117-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime between 519-525
+                            Anonymous 3751 conducted a trial in an un-canonical fashion to
+                            addressed accusations of sexual sin between John and 
+                            Anonymi 3752. This brought him into conflict with the archimandritess
+                            Heracliana                            
+                        
+                    The details of this event are difficult to decipher. 
+                 <a href="/3149-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            After the Council of Ephesus, 
+                            Paul petitioned 
+                            Cyril of Alexandria to grant forgiveness to 
+                            Dorotheus,
+                            Eutherius,
+                            Himerius,
+                            and Helladius. 
+                            For the sake of church unity, Cyril of Alexandria agreed on the condition that they condemn
+                            Nestorius.
+                         <a href="/3108-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Peter sent a letter to 
+                            Severus
+                            accusing him with performing invalid ordinations.
+                            
+                                
+                            
+                         <a href="/3028-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime in the early 520s
+                            Severus of Antioch sent a letter to 
+                            John and 
+                            John
+                            on the subjects of Christian slaves sold by Jewish owners, fellowship with clergy who accept 
+                            non-Chalcedonian theology but remain in communion with Chalcedonians, and the persecution of 
+                            non-Chalcedonians.
+                         <a href="/3107-44" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Peter sent a letter to 
+                            Thomas accusing
+                            Severus of performing invalid ordinations.
+                            
+                                
+                            
+                         <a href="/3028-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Anonymous 3783 took communion and later told the clergy
+                            that he did not know whether he had ever been baptized.
+                         <a href="/3090-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Sometime before 520
+                            Isidore re-ordained deacons whom
+                            Severus had already ordained. 
+                            Severus did not object to this because 
+                            this ordination took place far outside of his jurisdiction. 
+                         <a href="/3099-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus was
+                            aware of many letters written by Peter to himself and
+                            to the presbyter Thomas, wherein Peter accused
+                                Severus and
+                            others of breaking canon-law and tradition by allowing for ordinations
+                            outside of the diocese.  <a href="/3028-61" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Cyril of Alexandria faced a situation where 
+                            two mothers did not know which of their two children had been baptized. To avoid the risk of re-baptism, 
+                            he dipped both into the font and while saying that only the one who had not been baptized was being
+                            baptized.
+                         <a href="/3090-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus judged 
+                            Pelagius unworthy to reside in 
+                            the monastery of Mor Tumo.
+                         <a href="/3093-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Sometime
+                                between 513 and 518 ,  prominent men in  Antioch
+                                 petitioned  Severus  to allow
+                                 Romulus 
+                            to conduct prayers in 
+                                Antioch  even though he was under the authority of
+                                 Philoxenus
+                            , bishop of 
+                                Doliche .  <a href="/3056-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Sometime
+                                between 513 and 518 , Severus sent a letter to  Philoxenus , bishop
+                            of  Doliche 
+                            requesting that he grant permission to one of his clergymen,  Romulus , to
+                            conduct prayers in  Antioch
+                            .  <a href="/3056-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus argued
+                            that by ordaining priests in a diocese that was not his own, Epiphanius was not
+                            violating the sacred canons, which only outlaws such behavior in the
+                            cases of bishops forcing themselves on other dioceses, citing the
+                            examples of Eusebius of
+                                    Samosata during the controversy of
+                                Arius,
+                                Theodoret,
+                                Basil, and
+                                Gregory the
+                                Theologian.  <a href="/3004-84" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Canon Law</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                http://syriaca.org/taxonomy/canon-law, 2025-05-11.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/anti-nestorian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-nestorian"/>Anti-Nestorian</a></li><li><a href="/aggregate/taxonomy/arianism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/arianism"/>Arianism</a></li><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/baptism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/baptism"/>Baptism</a></li><li><a href="/aggregate/taxonomy/baptized.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/baptized"/>Baptized</a></li><li><a href="/aggregate/taxonomy/bible.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bible"/>Bible</a></li><li><a href="/aggregate/taxonomy/bishop-over.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishop-over"/>Bishop over</a></li><li><a href="/aggregate/taxonomy/bishop-over-bishop.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishop-over-bishop"/>Bishop over Bishop</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/bodies.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bodies"/>Bodies</a></li><li><a href="/aggregate/taxonomy/bringer-of-legal-charges-against.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bringer-of-legal-charges-against"/>Bringer of Legal Charges against</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/church-councils.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/church-councils"/>Church Councils</a></li><li><a href="/aggregate/taxonomy/churches.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/churches"/>Churches</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/communion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/communion"/>Communion</a></li><li><a href="/aggregate/taxonomy/council-of-ephesus-i-431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-ephesus-i-431"/>Council of Ephesus I (431)</a></li><li><a href="/aggregate/taxonomy/creeds.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/creeds"/>Creeds</a></li><li><a href="/aggregate/taxonomy/deacons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deacons"/>Deacons</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/deposition-of-clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"/>Deposition of Clergy</a></li><li><a href="/aggregate/taxonomy/emperors.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emperors"/>Emperors</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/faith.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/faith"/>Faith</a></li><li><a href="/aggregate/taxonomy/families.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/families"/>Families</a></li><li><a href="/aggregate/taxonomy/fathers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/fathers"/>Fathers</a></li><li><a href="/aggregate/taxonomy/governors.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/governors"/>Governors</a></li><li><a href="/aggregate/taxonomy/greek-fathers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/greek-fathers"/>Greek Fathers</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/honour.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/honour"/>Honour</a></li><li><a href="/aggregate/taxonomy/jews.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/jews"/>Jews</a></li><li><a href="/aggregate/taxonomy/judge-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/judge-of"/>Judge of</a></li><li><a href="/aggregate/taxonomy/justice.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/justice"/>Justice</a></li><li><a href="/aggregate/taxonomy/law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/law"/>Law</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/marriage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/marriage"/>Marriage</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/orthodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/orthodoxy"/>Orthodoxy</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/poverty.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poverty"/>Poverty</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/property.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/property"/>Property</a></li><li><a href="/aggregate/taxonomy/proximate-event.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/proximate-event"/>Proximate Event</a></li><li><a href="/aggregate/taxonomy/purity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/purity"/>Purity</a></li><li><a href="/aggregate/taxonomy/readers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/readers"/>Readers</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/slavery.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/slavery"/>Slavery</a></li><li><a href="/aggregate/taxonomy/tradition.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tradition"/>Tradition</a></li><li><a href="/aggregate/taxonomy/women.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/women"/>Women</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/958.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/958"/>
+                        Eusebius
+                        of Samosata
+                    </a></li><li><a href="/aggregate/person/511.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/511"/>
+                        Gregory
+                        Nazianzen
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/781.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/781"/>
+                        Theodoret
+                        of Cyrrhus
+                    </a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/3036.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3036"/>Anonymi 3036</a></li><li><a href="/aggregate/person/3072.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3072"/>Anonymi 3072</a></li><li><a href="/aggregate/person/3075.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3075"/>Anonymi 3075</a></li><li><a href="/aggregate/person/3101.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3101"/>Anonymi 3101</a></li><li><a href="/aggregate/person/3729.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3729"/>Anonymi 3729</a></li><li><a href="/aggregate/person/3732.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3732"/>Anonymi 3732</a></li><li><a href="/aggregate/person/3733.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3733"/>Anonymi 3733</a></li><li><a href="/aggregate/person/3735.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3735"/>Anonymi 3735</a></li><li><a href="/aggregate/person/3736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3736"/>Anonymi 3736</a></li><li><a href="/aggregate/person/3741.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3741"/>Anonymi 3741</a></li><li><a href="/aggregate/person/3752.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3752"/>Anonymi 3752</a></li><li><a href="/aggregate/person/3753.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3753"/>Anonymi 3753</a></li><li><a href="/aggregate/person/3728.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3728"/>Anonymous 3728</a></li><li><a href="/aggregate/person/3738.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3738"/>Anonymous 3738</a></li><li><a href="/aggregate/person/3740.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3740"/>Anonymous 3740</a></li><li><a href="/aggregate/person/3747.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3747"/>Anonymous 3747</a></li><li><a href="/aggregate/person/3748.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3748"/>Anonymous 3748</a></li><li><a href="/aggregate/person/3749.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3749"/>Anonymous 3749</a></li><li><a href="/aggregate/person/3751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3751"/>Anonymous 3751</a></li><li><a href="/aggregate/person/3773.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3773"/>Anonymous 3773</a></li><li><a href="/aggregate/person/3780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3780"/>Anonymous 3780</a></li><li><a href="/aggregate/person/3783.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3783"/>Anonymous 3783</a></li><li><a href="/aggregate/person/3784.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3784"/>Anonymous 3784</a></li><li><a href="/aggregate/person/3790.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3790"/>Anonymous 3790</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/2617.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2617"/>Basil</a></li><li><a href="/aggregate/person/376.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/376"/>Basil of Caesarea</a></li><li><a href="/aggregate/person/2425.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2425"/>Cassian</a></li><li><a href="/aggregate/person/430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/430"/>Cyril of Alexandria</a></li><li><a href="/aggregate/person/2520.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2520"/>Dionysios</a></li><li><a href="/aggregate/person/2638.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2638"/>Dorotheus</a></li><li><a href="/aggregate/person/2444.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2444"/>Dorotheus</a></li><li><a href="/aggregate/person/2431.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2431"/>Epimachus</a></li><li><a href="/aggregate/person/2562.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2562"/>Epiphanius</a></li><li><a href="/aggregate/person/2536.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2536"/>Eucharius</a></li><li><a href="/aggregate/person/2445.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2445"/>Eutherius</a></li><li><a href="/aggregate/person/2420.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2420"/>Eutychian</a></li><li><a href="/aggregate/person/2537.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2537"/>Firminus</a></li><li><a href="/aggregate/person/2495.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2495"/>Gregory</a></li><li><a href="/aggregate/person/2447.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2447"/>Helladius</a></li><li><a href="/aggregate/person/2478.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2478"/>Heracliana</a></li><li><a href="/aggregate/person/2446.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2446"/>Himerius</a></li><li><a href="/aggregate/person/2556.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2556"/>Hypatius</a></li><li><a href="/aggregate/person/2496.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2496"/>Isaiah</a></li><li><a href="/aggregate/person/2545.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2545"/>Isidore</a></li><li><a href="/aggregate/person/2477.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2477"/>John</a></li><li><a href="/aggregate/person/2428.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2428"/>John</a></li><li><a href="/aggregate/person/2427.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2427"/>John</a></li><li><a href="/aggregate/person/2681.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2681"/>John</a></li><li><a href="/aggregate/person/2678.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2678"/>John</a></li><li><a href="/aggregate/person/2684.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2684"/>John</a></li><li><a href="/aggregate/person/2410.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2410"/>Julian</a></li><li><a href="/aggregate/person/2423.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2423"/>Leontius</a></li><li><a href="/aggregate/person/2526.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2526"/>Nicias</a></li><li><a href="/aggregate/person/2418.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2418"/>Nonnus</a></li><li><a href="/aggregate/person/2706.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2706"/>Nonnus/Naunus</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/2450.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2450"/>Paul</a></li><li><a href="/aggregate/person/2731.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2731"/>Pelagius</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/44.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/44"/>Philoxenos of Mabbug</a></li><li><a href="/aggregate/person/2574.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2574"/>Philoxenus</a></li><li><a href="/aggregate/person/2569.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2569"/>Proclus</a></li><li><a href="/aggregate/person/2575.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2575"/>Romulus</a></li><li><a href="/aggregate/person/2534.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2534"/>Severus</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2758.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2758"/>Stephen</a></li><li><a href="/aggregate/person/2422.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2422"/>Stephen</a></li><li><a href="/aggregate/person/2532.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2532"/>Stephen</a></li><li><a href="/aggregate/person/2533.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2533"/>Stephen</a></li><li><a href="/aggregate/person/2764.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2764"/>Thecla</a></li><li><a href="/aggregate/person/2712.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2712"/>Theodore</a></li><li><a href="/aggregate/person/2439.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2439"/>Theodore</a></li><li><a href="/aggregate/person/2568.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2568"/>Theotecnus</a></li><li><a href="/aggregate/person/2515.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2515"/>Thomas</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/1471.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1471"/>Antaradus</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/2630.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2630"/>Apamea</a></li><li><a href="/aggregate/place/1464.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1464"/>Dayro d-Mor Tumo</a></li><li><a href="/aggregate/place/2661.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2661"/>Doliche</a></li><li><a href="/aggregate/place/122.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/122"/>Mabbug</a></li><li><a href="/aggregate/place/2690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2690"/>Monastery of Bassus</a></li><li><a href="/aggregate/place/2702.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2702"/>Paltus</a></li><li><a href="/aggregate/place/635.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/635"/>Qalʿat Simʿān</a></li><li><a href="/aggregate/place/2607.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2607"/>Samosata</a></li><li><a href="/aggregate/place/196.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/196"/>Tarsos</a></li><li><a href="/aggregate/place/2726.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2726"/>Tripolis</a></li></ul></div></div></div></div></div></div></body></html>
