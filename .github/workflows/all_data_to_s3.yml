@@ -1,0 +1,99 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/all_data_to_s3.yml'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  BUCKET_NAME: spear-front-end
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Full history for accurate diffs
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_SPEAR_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-frontend-spear
+          role-duration-seconds: 21600
+
+
+      - name: Upload all files in data/ folder in parallel
+        run: |
+          MAX_PARALLEL=8  # Adjust depending on runner capacity
+      
+          # Recursively find all regular files under 'data/' directory
+          find data/ -type f > all_files.txt
+      
+          total_files=$(grep -c '^' all_files.txt || true)
+          echo "Found $total_files file(s) to upload."
+      
+          if [ "$total_files" -eq 0 ]; then
+            echo "No files found in data/. Skipping."
+            exit 0
+          fi
+      
+          # Function to throttle concurrent jobs
+          function wait_for_jobs() {
+            local joblist=($(jobs -p))
+            while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
+              sleep 1
+              joblist=($(jobs -p))
+            done
+          }
+      
+          while read file; do
+            if [ -f "$file" ]; then
+              relative_path="${file#data/}"  # Strip 'data/' prefix for S3 key if additional folders are added
+              filename=$(basename "$file" .html)
+              extension="${file##*.}"
+              mime_type=$(case "$extension" in
+                css) echo "text/css" ;;
+                js) echo "application/javascript" ;;
+                html) echo "text/html" ;;
+                json) echo "application/json" ;;
+                png) echo "image/png" ;;
+                jpg|jpeg) echo "image/jpeg" ;;
+                gif) echo "image/gif" ;;
+                ico) echo "image/x-icon" ;;
+                woff) echo "font/woff" ;;
+                woff2) echo "font/woff2" ;;
+                ttf) echo "font/ttf" ;;
+                otf) echo "font/otf" ;;
+                map) echo "application/json" ;;
+                *) file --mime-type -b "$file" ;;  # Fallback
+              esac)
+      
+              echo "Uploading $file as s3://${{ env.BUCKET_NAME }}/$filename"
+              (
+              aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$filename" \
+                --content-type "$mime_type" \
+                --metadata-directive REPLACE \
+                --only-show-errors
+              ) &
+              wait_for_jobs
+            else
+              echo "Skipping missing file: $file"
+            fi
+          done < all_files.txt
+      
+          wait
+          echo "Upload complete. Attempted: $total_files file(s)."
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
