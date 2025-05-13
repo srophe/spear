@@ -96,6 +96,7 @@ jobs:
           # Upload each file in background
           while read file; do
             if [ -f "$file" ]; then
+              filename=$(basename "$file" .html)
               extension="${file##*.}"
               mime_type=$(case "$extension" in
                 css) echo "text/css" ;;
@@ -116,7 +117,7 @@ jobs:
           
               echo "🚀 Uploading $file with MIME type: $mime_type"
               (
-              aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$file" \
+              aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$filename" \
                 --content-type "$mime_type" \
                 --metadata-directive REPLACE \
                 --only-show-errors
