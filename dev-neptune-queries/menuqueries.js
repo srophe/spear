@@ -104,19 +104,30 @@ export async function populateDropdown(query, dropdownId, labelField = "label", 
 export async function fetchPeopleRelatedToKeyword(uri, relation) {
   const keywordQueryMap = {
     event: `
-      PREFIX swdt: <http://syriaca.org/prop/direct/>
-      PREFIX schema: <http://schema.org/>
-      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      SELECT
-        ?person
+      PREFIX schema: <http://schema.org/>
+      PREFIX swdt: <http://syriaca.org/prop/direct/>
+      
+      SELECT DISTINCT
+        (STR(?p) AS ?person)
+        (STR(?label_en) AS ?label)
+        (STR(?desc) AS ?description)
+        (STRAFTER(STR(?sex), "/taxonomy/") AS ?gender)
       FROM <http://syriaca.org/persons#graph>
-      FROM <https://spear-prosop.org>
+      FROM NAMED <https://spear-prosop.org>
       WHERE {
-        ?event swdt:event-keyword <${uri}> ;
-               swdt:event-participant ?person .
+        ?p rdfs:label ?label_en . 
+        FILTER(LANG(?label_en) = "en")
+        ?p schema:description ?desc
+        OPTIONAL { ?p swdt:gender  ?sex }
+        {
+          GRAPH <https://spear-prosop.org> {
+              ?event swdt:event-keyword <${uri}> ;
+                     swdt:event-participant ?p .
+          }
+        }
       }
-      ORDER BY ?person
+      ORDER BY ?label_en
     `,
     ethnicity: `
       PREFIX swdt: <http://syriaca.org/prop/direct/>
@@ -153,8 +164,8 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
   });
   const data = await res.json();
   return data.results.bindings.map(b => ({
-    uri: b.person.value,
-    name: b.label_en?.value || "",
+    person: b.person.value,
+    label: b.label?.value || "",
     description: b.description?.value || "",
     gender: b.gender?.value || ""
   }));
