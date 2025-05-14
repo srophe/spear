@@ -30,94 +30,87 @@ jobs:
           role-session-name: GitHub-OIDC-frontend-spear
           role-duration-seconds: 21600
 
-      - name: Verify AWS CLI version
-        run: aws --version
-
       # Step 3: Files to S3
-      # This will add and overwrite all non data folder files to the S3 bucket but not delete files in S3 that have been deleted in the repo
-      - name: Sync files in S3
-        if: success()
+      
+      # Option 1: Upload only changed files to S3
+      - name: Get list of changed files
+        id: changes
         run: |
-          aws s3 sync ./ s3://spear-front-end --exact-timestamps --exclude "data/*" --exclude ".github/*"
+          git fetch origin main
+          git diff --name-only HEAD^ HEAD > changed_files.txt
+          # git diff --name-only $(git merge-base origin/main HEAD)..HEAD > changed_files.txt || true
+          cat changed_files.txt
+
+      - name: Upload changed files in parallel
+        run: |
+          MAX_PARALLEL=8  # Adjust this depending on runner capacity
+      
+          # Count how many files were found
+          total_files=$(grep -c '^' changed_files.txt || true)
+          echo "Found $total_files changed file(s) to upload."
+      
+          if [ "$total_files" -eq 0 ]; then
+            echo "No changed files to upload. Skipping."
+            exit 0
+          fi
+      
+          # Function to throttle concurrent jobs
+          function wait_for_jobs() {
+            local joblist=($(jobs -p))
+            while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
+              sleep 1
+              joblist=($(jobs -p))
+            done
+          }
+      
+          uploaded_count=0
+      
+          while read file; do
+            if [ -f "$file" ]; then
+                # Default: use full filename (do not strip .html)
+              filename="$file"
+              # If file is in the data/ folder and ends in .html, strip the extension
+              if [[ "$file" == data/*.html ]]; then
+                filename=$(basename "$file" .html)
+              fi
+              extension="${file##*.}"
+              mime_type=$(case "$extension" in
+                css) echo "text/css" ;;
+                js) echo "application/javascript" ;;
+                html) echo "text/html" ;;
+                json) echo "application/json" ;;
+                png) echo "image/png" ;;
+                jpg|jpeg) echo "image/jpeg" ;;
+                gif) echo "image/gif" ;;
+                ico) echo "image/x-icon" ;;
+                woff) echo "font/woff" ;;
+                woff2) echo "font/woff2" ;;
+                ttf) echo "font/ttf" ;;
+                otf) echo "font/otf" ;;
+                map) echo "application/json" ;;
+                *) file --mime-type -b "$file" ;;  # Fallback
+              esac)
+          
+              echo "🚀 Uploading $file with MIME type: $mime_type"
+              (
+              aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$filename" \
+                --content-type "$mime_type" \
+                --metadata-directive REPLACE \
+                --only-show-errors
+              ) &
+              wait_for_jobs
+            else
+              echo "Skipping missing file: $file"
+            fi
+          done < changed_files.txt
+
+          wait  # Wait for all background uploads to finish
+      
+          echo "Upload complete. Attempted: $total_files file(s)."
+          echo "Parallel uploads finished."
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
-      
-      # # Option 1: Upload only changed files to S3
-      # - name: Get list of changed files
-      #   id: changes
-      #   run: |
-      #     git fetch origin main
-      #     git diff --name-only HEAD^ HEAD > changed_files.txt
-      #     # git diff --name-only $(git merge-base origin/main HEAD)..HEAD > changed_files.txt || true
-      #     cat changed_files.txt
-
-      # - name: Upload changed files in parallel
-      #   run: |
-      #     MAX_PARALLEL=8  # Adjust this depending on runner capacity
-      
-      #     # Count how many files were found
-      #     total_files=$(grep -c '^' changed_files.txt || true)
-      #     echo "Found $total_files changed file(s) to upload."
-      
-      #     if [ "$total_files" -eq 0 ]; then
-      #       echo "No changed files to upload. Skipping."
-      #       exit 0
-      #     fi
-      
-      #     # Function to throttle concurrent jobs
-      #     function wait_for_jobs() {
-      #       local joblist=($(jobs -p))
-      #       while [ ${#joblist[@]} -ge $MAX_PARALLEL ]; do
-      #         sleep 1
-      #         joblist=($(jobs -p))
-      #       done
-      #     }
-      
-      #     uploaded_count=0
-      
-
-        #   while read file; do
-        #     if [ -f "$file" ]; then
-        #       filename=$(basename "$file" .html)
-        #       extension="${file##*.}"
-        #       mime_type=$(case "$extension" in
-        #         css) echo "text/css" ;;
-        #         js) echo "application/javascript" ;;
-        #         html) echo "text/html" ;;
-        #         json) echo "application/json" ;;
-        #         png) echo "image/png" ;;
-        #         jpg|jpeg) echo "image/jpeg" ;;
-        #         gif) echo "image/gif" ;;
-        #         ico) echo "image/x-icon" ;;
-        #         woff) echo "font/woff" ;;
-        #         woff2) echo "font/woff2" ;;
-        #         ttf) echo "font/ttf" ;;
-        #         otf) echo "font/otf" ;;
-        #         map) echo "application/json" ;;
-        #         *) file --mime-type -b "$file" ;;  # Fallback
-        #       esac)
-          
-        #       echo "🚀 Uploading $file with MIME type: $mime_type"
-        #       (
-        #       aws s3 cp "$file" "s3://${{ env.BUCKET_NAME }}/$filename" \
-        #         --content-type "$mime_type" \
-        #         --metadata-directive REPLACE \
-        #         --only-show-errors
-        #       ) &
-        #       wait_for_jobs
-        #     else
-        #       echo "Skipping missing file: $file"
-        #     fi
-        #   done < changed_files.txt
-
-        #   wait  # Wait for all background uploads to finish
-      
-        #   echo "Upload complete. Attempted: $total_files file(s)."
-        #   echo "Parallel uploads finished."
-        # env:
-        #   AWS_REGION: ${{ secrets.AWS_REGION }}
-        #   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
 
       - name: Invalidate CloudFront Cache
         run: |
