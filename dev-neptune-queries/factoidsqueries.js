@@ -1,0 +1,139 @@
+export const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
+
+export const getAllFactoids = () => `
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX spr: <http://syriaca.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+
+SELECT DISTINCT ?factoid ?description
+FROM <https://spear-prosop.org>
+WHERE {
+  
+    ?statementNode spr:reference-URL ?factoid .
+    OPTIONAL {
+      ?factoid schema:description ?description .
+    }
+}
+ORDER BY ?factoid
+`;
+
+export const getAllPersonFactoids = () => `
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX spr: <http://syriaca.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+
+SELECT DISTINCT ?factoid ?description
+FROM <http://syriaca.org/persons#graph>
+FROM NAMED <https://spear-prosop.org>
+WHERE {
+  ?person rdfs:label ?label .
+
+  GRAPH <https://spear-prosop.org> {
+    {
+      ?person ?pred ?statementNode .
+      ?statementNode spr:reference-URL ?factoid .
+    }
+    UNION
+    {
+      ?statementNode ?pred ?person .
+      ?statementNode spr:reference-URL ?factoid .
+    }
+
+    FILTER(?factoid != ?person)
+
+    OPTIONAL {
+      ?factoid schema:description ?description .
+    }
+  }
+}
+ORDER BY ?factoid
+`;
+export const getFactoidsForEthnicity = (ethnicityUri) => `
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  PREFIX schema: <http://schema.org/>
+  PREFIX sp: <http://syriaca.org/prop/>
+  PREFIX sps: <http://syriaca.org/schema/>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+  
+  SELECT DISTINCT ?factoid ?description
+  FROM <https://spear-prosop.org>
+  WHERE {
+    ?person swdt:ethnic-label <${ethnicityUri}> .
+    ?person sp:ethnic-label ?statementNode .
+    ?statementNode spr:reference-URL ?factoid .
+    ?factoid schema:description ?description .
+  }
+`;
+
+export const getFactoidsForPlace = (placeUri) => `
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+  PREFIX schema: <http://schema.org/>
+  PREFIX sp: <http://syriaca.org/prop/>
+  PREFIX sps: <http://syriaca.org/schema/>
+
+  SELECT DISTINCT ?factoid ?description
+  FROM <https://spear-prosop.org>
+  WHERE {
+    {
+      ?person swdt:birth-place <${placeUri}> ;
+              sp:birth-place ?statementNode .
+    } UNION {
+      ?person swdt:death-place <${placeUri}> ;
+              sp:death-place ?statementNode .
+    } UNION {
+      ?person swdt:residence <${placeUri}> ;
+              sp:residence ?statementNode .
+    } UNION {
+      ?event swdt:event-place <${placeUri}> ;
+             sp:event-place ?statementNode .
+    }
+    ?statementNode spr:reference-URL ?factoid .
+    ?factoid schema:description ?description .
+  }
+`;
+
+export const getFactoidsForFieldOfStudy = (fieldUri) => `
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+  PREFIX schema: <http://schema.org/>
+  PREFIX sp: <http://syriaca.org/prop/>
+  PREFIX sps: <http://syriaca.org/schema/>
+
+  SELECT DISTINCT ?factoid ?description
+  FROM <https://spear-prosop.org>
+  WHERE {
+    ?person swdt:education <${fieldUri}> ;
+            sp:education ?statementNode .
+    ?statementNode spr:reference-URL ?factoid .
+    ?factoid schema:description ?description .
+  }
+`;
+export async function fetchFactoidsByType(uri, type) {
+  let query;
+  switch (type) {
+    case "event":
+      query = getFactoidsRelatedToKeyword(uri);
+      break;
+    case "ethnicity":
+      query = getFactoidsForEthnicity(uri);
+      break;
+    case "place":
+      query = getFactoidsForPlace(uri);
+      break;
+    case "fieldOfStudy":
+      query = getFactoidsForFieldOfStudy(uri);
+      break;
+    default:
+      return [];
+  }
+
+  const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
+    headers: { Accept: 'application/sparql-results+json' }
+  });
+  const data = await res.json();
+  return data.results.bindings.map(b => ({
+    uri: b.factoid.value,
+    description: b.description?.value || ''
+  }));
+}
