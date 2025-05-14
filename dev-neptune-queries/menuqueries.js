@@ -108,15 +108,11 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
       PREFIX schema: <http://schema.org/>
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-      SELECT DISTINCT
-        ?person ?label_en ?description ?gender
+      SELECT
+        ?person
       FROM <http://syriaca.org/persons#graph>
       FROM <https://spear-prosop.org>
       WHERE {
-        ?person rdfs:label ?label_en . 
-          FILTER(LANG(?label_en) = "en")
-        ?person schema:description ?description
-        OPTIONAL { ?person swdt:gender  ?gender }
         ?event swdt:event-keyword <${uri}> ;
                swdt:event-participant ?person .
       }
