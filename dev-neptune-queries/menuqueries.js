@@ -109,13 +109,9 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
       PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
       PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
       SELECT DISTINCT
-        // (STR(?person) AS ?uri)
-        // (STR(?label_en) AS ?name)
-        // (STR(?desc) AS ?description)
-        // (STRAFTER(STR(?gender), "/taxonomy/") AS ?sex)
         ?person ?label_en ?description ?gender
       FROM <http://syriaca.org/persons#graph>
-            FROM <https://spear-prosop.org>
+      FROM <https://spear-prosop.org>
       WHERE {
         ?person rdfs:label ?label_en . 
           FILTER(LANG(?label_en) = "en")
@@ -160,5 +156,12 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
     headers: { Accept: 'application/sparql-results+json' }
   });
   const data = await res.json();
-  return data.results.bindings.map(b => b.person.value);
+  return data.results.bindings.map(b => ({
+    uri: b.person.value,
+    name: b.label_en?.value || "",
+    description: b.description?.value || "",
+    gender: b.gender?.value || ""
+  }));
 }
+
+
