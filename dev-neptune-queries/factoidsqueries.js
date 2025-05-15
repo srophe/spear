@@ -87,7 +87,10 @@ export const getFactoidsForPlace = (placeUri) => `
     } UNION {
       ?event swdt:event-place <${placeUri}> ;
              sp:event-place ?statementNode .
-    }
+    } UNION {
+      ?person swdt:citizenship <${placeUri}> ;
+              sp:citizenship ?statementNode .
+
     ?statementNode spr:reference-URL ?factoid .
     ?factoid schema:description ?description .
   }
@@ -103,12 +106,27 @@ export const getFactoidsForFieldOfStudy = (fieldUri) => `
   SELECT DISTINCT ?factoid ?description
   FROM <https://spear-prosop.org>
   WHERE {
-    ?person swdt:education <${fieldUri}> ;
-            sp:education ?statementNode .
+    ?statementNode sps:education <${fieldUri}> .
     ?statementNode spr:reference-URL ?factoid .
     ?factoid schema:description ?description .
   }
 `;
+export const getFactoidsRelatedToKeyword = (eventKeywordUri) => `
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+  PREFIX schema: <http://schema.org/>
+  PREFIX sp: <http://syriaca.org/prop/>
+  PREFIX sps: <http://syriaca.org/schema/>
+
+  SELECT DISTINCT ?factoid ?description
+  FROM <https://spear-prosop.org>
+  WHERE {
+    ?statementNode sps:event-keyword <${eventKeywordUri}> .
+    ?statementNode spr:reference-URL ?factoid .
+    OPTIONAL { ?factoid schema:description ?description . }
+  }
+`;
+
 export async function fetchFactoidsByType(uri, type) {
   let query;
   switch (type) {
