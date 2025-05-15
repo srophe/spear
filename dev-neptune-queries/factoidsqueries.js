@@ -87,10 +87,7 @@ export const getFactoidsForPlace = (placeUri) => `
     } UNION {
       ?event swdt:event-place <${placeUri}> ;
              sp:event-place ?statementNode .
-    } UNION {
-      ?person swdt:citizenship <${placeUri}> ;
-              sp:citizenship ?statementNode .
-
+    }
     ?statementNode spr:reference-URL ?factoid .
     ?factoid schema:description ?description .
   }
