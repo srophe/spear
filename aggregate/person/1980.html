@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Paul the Mourner</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Paul the Mourner</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,68 +70,345 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown">             <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown">                  <span class="mobile-submenu">About</span>  <b class="caret"></b>             </a>             <ul class="dropdown-menu pull-right">                 <li>                     <a href="/about.html">Project Overview</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contributors.html">Project Contributors</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="http://vu.edu/syriac">Support Our Work</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contact.html">Contact Us</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/documentation/index.html">                         <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>                         <span class="icon-text">Documentation</span>                     </a>                 </li>             </ul>         </li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Paul the Mourner</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note"><span xml:lang="en" lang="en" dir="ltr">
-                        <span class="tei-persName"><a href="http://syriaca.org/person/1980">Paul the Mourner</a></span> is commemorated in <a href="http://syriaca.org/work/798">Paul the Mourner
-                            (text)
-                    [http://syriaca.org/work/798]
-                </a>, a work surviving in at least 4 manuscripts including
-                            <li><span><span class="footnote-content"> ms London, British
-                            Library, Add. 14647, f. 26v-28v</span></span></li>.</span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib1980-1">1</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/1980">http://syriaca.org/person/1980</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
-                    <span class="tei-person">
-                        <span class="tei-persName">Paul the Anchorite</span>
-                    </span>
-                </span> <a href="/828-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Place of residence: </h4><p class="indent"><span class="tei-persName">Paul</span> resided in <span class="tei-placeName">Sophanene</span>.
-                             <a href="/798-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent"><span class="tei-persName">Paul</span>
-                                was a saint.
-                             <a href="/798-2" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Paul</span> was an anchorite.  <a href="/828-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">
-                            John of Ephesus 
-                            commemorated
-                            Paul.
-                         <a href="/798-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Mara the
-                                Solitary studied under Paul the
-                            Mourner. <a href="/828-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent"> After much prayer,Mare was led by God to Paul the
-                            Anchorite who received him as his student.  <a href="/828-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After spending five years with Paul,Mare exceeded his
-                            teacher in prayer, asceticism, and moderation. Many criticized Mare for the severity
-                            of his practices.  <a href="/828-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> While staying with Paul,Mare was tired of being pestered by his family, so he
-                                left Syria and journeyed to Egypt and Thebais, where he
-                            went to and fro in the desert with the saints, observing the prayer
-                            practices of monks and solitaries.  <a href="/828-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Paul went to
-                            a certain large cave in the side of a certain high rock on the banks of
-                            the Tigris at
-                            a place called Surtha, and he erected a cross and traced the plan for
-                            a small oratory.  <a href="/798-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Paul entered
-                            a cave filled with malignent fiends and planted a cross and hung up
-                            relics of saints.  <a href="/798-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Paul made an
-                            altar and a chapel in his cave.  <a href="/798-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> A monastery was built at the site of Paul's cave.  <a href="/798-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
-                            After Paul's
-                            death miracles were everywhere wrought through his holy bones, men
-                            taking his skull and going round the districts, and, wheresoever locusts
-                            came, or hail or a scorching wind or bubonic plague, and his right hand
-                            or his head went, God would straighlway make deliverance.  <a href="/798-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Paul the Mourner</span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/person/1980, 2025-03-25T13:22:36.334-04:00.
-                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/1980.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1980"/>Paul the Mourner</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/715"/>Egypt</a></li><li><a href="/aggregate/place/493.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/493"/>Sophene</a></li><li><a href="/aggregate/place/486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/486"/>Syria</a></li><li><a href="/aggregate/place/2847.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2847"/>Thebais</a></li><li><a href="/aggregate/place/202.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/202"/>Tigris</a></li><li><a href="/aggregate/place/2844.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2844"/>Ṣurta</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span>Paul the
+                                    Mourner</span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div class="tei-note">
+                                <span xml:lang="en" lang="en" dir="ltr">
+                                    <span class="tei-persName"><a
+                                            href="http://syriaca.org/person/1980">Paul the
+                                            Mourner</a></span> is commemorated in <a
+                                        href="http://syriaca.org/work/798">Paul the Mourner (text)
+                                        [http://syriaca.org/work/798] </a>, a work surviving in at
+                                    least 4 manuscripts including <li><span><span
+                                                class="footnote-content"> ms London, British
+                                                Library, Add. 14647, f.
+                                    26v-28v</span></span></li>.</span>
+                                <span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"
+                                        ><span class="tei-footnote-ref"><a href="#bib1980-1"
+                                        >1</a></span>
+                                </span>
+                            </div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/person/1980"
+                                                >http://syriaca.org/person/1980</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <div class="sources">
+                                    <h3>Personal Information</h3>
+                                    <h4>Name variant(s): </h4>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName">Paul the Anchorite</span>
+                                            </span>
+                                        </span>
+                                        <a href="/828-8" class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Place of residence: </h4>
+                                    <p class="indent"><span class="tei-persName">Paul</span> resided
+                                        in <span class="tei-placeName">Sophanene</span>. <a
+                                            href="/798-3" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Sanctity: </h4>
+                                    <p class="indent"><span class="tei-persName">Paul</span> was a
+                                        saint. <a href="/798-2" class="factoid-more"> See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Occupation(s): </h4>
+                                    <p class="indent"><span class="tei-persName">Paul</span> was an
+                                        anchorite. <a href="/828-9" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Relationships</h3>
+                                    <p class="indent"> John of Ephesus commemorated Paul. <a
+                                            href="/798-1" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent">Mara the Solitary studied under Paul the
+                                        Mourner. <a href="/828-10" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Events</h3>
+                                    <p class="indent"> After much prayer,Mare was led by God to Paul
+                                        the Anchorite who received him as his student. <a
+                                            href="/828-11" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After spending five years with Paul,Mare
+                                        exceeded his teacher in prayer, asceticism, and moderation.
+                                        Many criticized Mare for the severity of his practices. <a
+                                            href="/828-12" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> While staying with Paul,Mare was tired of
+                                        being pestered by his family, so he left Syria and journeyed
+                                        to Egypt and Thebais, where he went to and fro in the desert
+                                        with the saints, observing the prayer practices of monks and
+                                        solitaries. <a href="/828-13" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Paul went to a certain large cave in the side
+                                        of a certain high rock on the banks of the Tigris at a place
+                                        called Surtha, and he erected a cross and traced the plan
+                                        for a small oratory. <a href="/798-4" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Paul entered a cave filled with malignent
+                                        fiends and planted a cross and hung up relics of saints. <a
+                                            href="/798-5" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Paul made an altar and a chapel in his cave.
+                                            <a href="/798-7" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> A monastery was built at the site of Paul's
+                                        cave. <a href="/798-8" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After Paul's death miracles were everywhere
+                                        wrought through his holy bones, men taking his skull and
+                                        going round the districts, and, wheresoever locusts came, or
+                                        hail or a scorching wind or bubonic plague, and his right
+                                        hand or his head went, God would straighlway make
+                                        deliverance. <a href="/798-9" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                </div>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Person Page for <span id="title"
+                                                ><span>Paul the Mourner</span></span>,” in SPEAR:
+                                        Syriac Persons Events and Relations, general editor Daniel
+                                        L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/person/1980.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/altars.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/altars"
+                                            ></span>Altars</a></li>
+                                    <li><a href="/aggregate/taxonomy/anchorites.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anchorites"
+                                            ></span>Anchorites</a></li>
+                                    <li><a href="/aggregate/taxonomy/architecture.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/architecture"
+                                            ></span>Architecture</a></li>
+                                    <li><a href="/aggregate/taxonomy/asceticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/asceticism"
+                                            ></span>Asceticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/buildings.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/buildings"
+                                            ></span>Buildings</a></li>
+                                    <li><a href="/aggregate/taxonomy/commemorates.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/commemorates"
+                                            ></span>Commemorates</a></li>
+                                    <li><a href="/aggregate/taxonomy/families.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/families"
+                                            ></span>Families</a></li>
+                                    <li><a href="/aggregate/taxonomy/fasting.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/fasting"
+                                            ></span>Fasting</a></li>
+                                    <li><a href="/aggregate/taxonomy/holy-places.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/holy-places"
+                                            ></span>Holy Places</a></li>
+                                    <li><a href="/aggregate/taxonomy/humility.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/humility"
+                                            ></span>Humility</a></li>
+                                    <li><a href="/aggregate/taxonomy/labor.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/labor"
+                                            ></span>Labor</a></li>
+                                    <li><a href="/aggregate/taxonomy/miracles.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/miracles"
+                                            ></span>Miracles</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                            ></span>Monasteries</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                            ></span>Prayer</a></li>
+                                    <li><a href="/aggregate/taxonomy/relics.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/relics"
+                                            ></span>Relics</a></li>
+                                    <li><a href="/aggregate/taxonomy/religion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/religion"
+                                            ></span>Religion</a></li>
+                                    <li><a href="/aggregate/taxonomy/saints.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                            ></span>Saints</a></li>
+                                    <li><a href="/aggregate/taxonomy/student-of.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/student-of"
+                                            ></span>Student of</a></li>
+                                    <li><a href="/aggregate/taxonomy/students.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/students"
+                                            ></span>Students</a></li>
+                                    <li><a href="/aggregate/taxonomy/tears.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/tears"
+                                            ></span>Tears</a></li>
+                                    <li><a href="/aggregate/taxonomy/travel.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/travel"
+                                            ></span>Travel</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/1875.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1875"
+                                            ></span>Mara the Solitary</a></li>
+                                    <li><a href="/aggregate/person/1980.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1980"
+                                            ></span>Paul the Mourner</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/715.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/715"
+                                            ></span>Egypt</a></li>
+                                    <li><a href="/aggregate/place/493.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/493"
+                                            ></span>Sophene</a></li>
+                                    <li><a href="/aggregate/place/486.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/486"
+                                            ></span>Syria</a></li>
+                                    <li><a href="/aggregate/place/2847.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2847"
+                                            ></span>Thebais</a></li>
+                                    <li><a href="/aggregate/place/202.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/202"
+                                            ></span>Tigris</a></li>
+                                    <li><a href="/aggregate/place/2844.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2844"
+                                            ></span>Ṣurta</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

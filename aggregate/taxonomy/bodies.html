@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Bodies</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Bodies</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,117 +70,395 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown">             <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown">                  <span class="mobile-submenu">About</span>  <b class="caret"></b>             </a>             <ul class="dropdown-menu pull-right">                 <li>                     <a href="/about.html">Project Overview</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contributors.html">Project Contributors</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="http://vu.edu/syriac">Support Our Work</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contact.html">Contact Us</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/documentation/index.html">                         <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>                         <span class="icon-text">Documentation</span>                     </a>                 </li>             </ul>         </li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bodies</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/bodies">http://syriaca.org/taxonomy/bodies</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Simus 
-                            discussing the creation of human bodies and souls.
-                            
-                                
-                            
-                         <a href="/3235-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Archelaus 
-                            discussing passages of the bible that seem to suggest angels have bodies and
-                            explaining how that is not the case.
-                            
-                                
-                            
-                         <a href="/3225-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Solon 
-                            arguing that the blessings of heaven are spiritual and not physical; eating, drinking, etc.
-                            
-                                
-                            
-                         <a href="/3024-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Isidore 
-                            arguing that when God or angels speak they do not do so by means of physical tongues and lips.
-                            
-                                
-                            
-                         <a href="/3226-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus sent a letter to
-                            John,
-                            John, and 
-                            Theodore refuting the 
-                            Codicils of the Alexandrine,
-                            affirming the resurrection of a physical body, and discussing the descent of Christ into sheol.
-                            
-                                
-                            
-                         <a href="/3174-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus denounced 
-                            Isaiah 
-                            for telling lies about him, claiming that 
-                            Severus taught that
-                            the body of Christ underwent corruption while he was in the grave.
-                            
-                                
-                                
-                            
-                         <a href="/3125-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Between
-                                513 and 518, Severus wrote a letter to Aurelius about
-                            showing a kind disposition to sin, and how to handle cases of
-                            self-mutilation.  <a href="/3076-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> With regard to the mutilation of Thomas, Severus advises
-                                Aurelius
-                            to allow him his priestly office if the mutilation was performed by a
-                            physician because of an illness, but to deny him if Thomas mutilated
-                            himself.  <a href="/3076-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus also
-                            wrote to Cassian, advocating the view that Thomas's mutilation
-                            was medicinal.  <a href="/3076-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Leontius
-                            grew up with John of
-                                Ephesus from childhood.  <a href="/830-17" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus sent a
-                            letter to Cassian concerning the vexing question of the ordination
-                            of Dorotheus
-                            who had been castrated by a physician and not of his own will.  <a href="/3075-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Simus wrote a letter to
-                            Severus 
-                            discussing the creation of human bodies and souls.
-                            
-                                
-                            
-                         <a href="/3235-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Leontius left his
-                            monastery in the same manner as his fellow monastic Qashish to travel
-                            alone to the eastern, southern, and western regions in the capacity of a
-                            wandering monk (aksnāyutā) for many years, while both let their hair
-                            grow long in a worldly fashion, lest they be honored as monks.  <a href="/830-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After many years of wandering, Leontius and
-                                Qashish
-                            joined the company of John
-                                of Ephesus at the Monastery of Yoḥannan
-                                Urṭaya and lived there for about twenty years until his
-                            death.  <a href="/830-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Leontius was
-                            buried alongside of the
-                                Blessed Aaron at the Monastery of Yoḥannan
-                                Urṭaya <a href="/830-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Bodies</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/bodies, 2025-03-25T13:22:34.092-04:00.
-                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
-                </a></li><li><a href="/aggregate/person/1533.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1533"/>Aaron</a></li><li><a href="/aggregate/person/2606.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2606"/>Archelaus</a></li><li><a href="/aggregate/person/2614.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2614"/>Aurelius</a></li><li><a href="/aggregate/person/2425.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2425"/>Cassian</a></li><li><a href="/aggregate/person/2638.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2638"/>Dorotheus</a></li><li><a href="/aggregate/person/2496.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2496"/>Isaiah</a></li><li><a href="/aggregate/person/2665.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2665"/>Isidore</a></li><li><a href="/aggregate/person/2427.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2427"/>John</a></li><li><a href="/aggregate/person/2428.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2428"/>John</a></li><li><a href="/aggregate/person/1853.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1853"/>Leontius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2755.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2755"/>Simus</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2765.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2765"/>Theodore</a></li><li><a href="/aggregate/person/2772.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2772"/>Thomas</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Bodies</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/bodies"
+                                                >http://syriaca.org/taxonomy/bodies</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    sent a letter to John, John, and Theodore refuting the Codicils
+                                    of the Alexandrine, affirming the resurrection of a physical
+                                    body, and discussing the descent of Christ into sheol. <a
+                                        href="/3174-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Isidore arguing that when God or angels speak
+                                    they do not do so by means of physical tongues and lips. <a
+                                        href="/3226-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Solon arguing that the blessings of heaven are
+                                    spiritual and not physical; eating, drinking, etc. <a
+                                        href="/3024-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Archelaus discussing passages of the bible
+                                    that seem to suggest angels have bodies and explaining how that
+                                    is not the case. <a href="/3225-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Simus discussing the creation of human bodies
+                                    and souls. <a href="/3235-1" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    denounced Isaiah for telling lies about him, claiming that
+                                    Severus taught that the body of Christ underwent corruption
+                                    while he was in the grave. <a href="/3125-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Between 513
+                                    and 518, Severus wrote a letter to Aurelius about showing a kind
+                                    disposition to sin, and how to handle cases of self-mutilation.
+                                        <a href="/3076-14" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> With
+                                    regard to the mutilation of Thomas, Severus advises Aurelius to
+                                    allow him his priestly office if the mutilation was performed by
+                                    a physician because of an illness, but to deny him if Thomas
+                                    mutilated himself. <a href="/3076-15" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    also wrote to Cassian, advocating the view that Thomas's
+                                    mutilation was medicinal. <a href="/3076-16"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Leontius
+                                    grew up with John of Ephesus from childhood. <a href="/830-17"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    sent a letter to Cassian concerning the vexing question of the
+                                    ordination of Dorotheus who had been castrated by a physician
+                                    and not of his own will. <a href="/3075-18" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Simus
+                                    wrote a letter to Severus discussing the creation of human
+                                    bodies and souls. <a href="/3235-3" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Leontius
+                                    left his monastery in the same manner as his fellow monastic
+                                    Qashish to travel alone to the eastern, southern, and western
+                                    regions in the capacity of a wandering monk (aksnāyutā) for many
+                                    years, while both let their hair grow long in a worldly fashion,
+                                    lest they be honored as monks. <a href="/830-7"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After many
+                                    years of wandering, Leontius and Qashish joined the company of
+                                    John of Ephesus at the Monastery of Yoḥannan Urṭaya and lived
+                                    there for about twenty years until his death. <a href="/830-8"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Leontius
+                                    was buried alongside of the Blessed Aaron at the Monastery of
+                                    Yoḥannan Urṭaya <a href="/830-9" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Bodies</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/bodies.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/angels.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/angels"
+                                            ></span>Angels</a></li>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/bodies.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bodies"
+                                            ></span>Bodies</a></li>
+                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                            ></span>Canon Law</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/creation.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/creation"
+                                            ></span>Creation</a></li>
+                                    <li><a href="/aggregate/taxonomy/enmity-for.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/enmity-for"
+                                            ></span>Enmity for</a></li>
+                                    <li><a href="/aggregate/taxonomy/food.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/food"
+                                            ></span>Food</a></li>
+                                    <li><a href="/aggregate/taxonomy/heaven.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heaven"
+                                            ></span>Heaven</a></li>
+                                    <li><a href="/aggregate/taxonomy/hell.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/hell"
+                                            ></span>Hell</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/illness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                            ></span>Illness</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/mercy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/mercy"
+                                            ></span>Mercy</a></li>
+                                    <li><a href="/aggregate/taxonomy/physicians.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/physicians"
+                                            ></span>Physicians</a></li>
+                                    <li><a href="/aggregate/taxonomy/pilgrimage.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"
+                                            ></span>Pilgrimage</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/purity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/purity"
+                                            ></span>Purity</a></li>
+                                    <li><a href="/aggregate/taxonomy/resurrection.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/resurrection"
+                                            ></span>Resurrection</a></li>
+                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                            ></span>Sender of Letter to</a></li>
+                                    <li><a href="/aggregate/taxonomy/shame.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/shame"
+                                            ></span>Shame</a></li>
+                                    <li><a href="/aggregate/taxonomy/sin.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sin"
+                                            ></span>Sin</a></li>
+                                    <li><a href="/aggregate/taxonomy/souls.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/souls"
+                                            ></span>Souls</a></li>
+                                    <li><a href="/aggregate/taxonomy/suffering.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/suffering"
+                                            ></span>Suffering</a></li>
+                                    <li><a href="/aggregate/taxonomy/theology.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/theology"
+                                            ></span>Theology</a></li>
+                                    <li><a href="/aggregate/taxonomy/wandering.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wandering"
+                                            ></span>Wandering</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/2032.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2032"></span>
+                                            — ܩܫܝܫ </a></li>
+                                    <li><a href="/aggregate/person/1533.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1533"
+                                            ></span>Aaron</a></li>
+                                    <li><a href="/aggregate/person/2606.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2606"
+                                            ></span>Archelaus</a></li>
+                                    <li><a href="/aggregate/person/2614.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2614"
+                                            ></span>Aurelius</a></li>
+                                    <li><a href="/aggregate/person/2425.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2425"
+                                            ></span>Cassian</a></li>
+                                    <li><a href="/aggregate/person/2638.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2638"
+                                            ></span>Dorotheus</a></li>
+                                    <li><a href="/aggregate/person/2496.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2496"
+                                            ></span>Isaiah</a></li>
+                                    <li><a href="/aggregate/person/2665.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2665"
+                                            ></span>Isidore</a></li>
+                                    <li><a href="/aggregate/person/2427.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2427"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2428.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2428"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/1853.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1853"
+                                            ></span>Leontius</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2755.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2755"
+                                            ></span>Simus</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                    <li><a href="/aggregate/person/2765.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2765"
+                                            ></span>Theodore</a></li>
+                                    <li><a href="/aggregate/person/2772.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2772"
+                                            ></span>Thomas</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/399.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/399"
+                                            ></span>Yoḥannan Urṭaya</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

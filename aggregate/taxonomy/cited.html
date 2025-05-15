@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Cited</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Cited</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,140 +70,374 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown">             <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown">                  <span class="mobile-submenu">About</span>  <b class="caret"></b>             </a>             <ul class="dropdown-menu pull-right">                 <li>                     <a href="/about.html">Project Overview</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contributors.html">Project Contributors</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="http://vu.edu/syriac">Support Our Work</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contact.html">Contact Us</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/documentation/index.html">                         <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>                         <span class="icon-text">Documentation</span>                     </a>                 </li>             </ul>         </li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Cited</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/cited">http://syriaca.org/taxonomy/cited</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch refered to the writings of Cyril of
-                            Alexandria. <a href="/3086-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Misael referenced
-                                Severus of
-                                Antioch and Misael. <a href="/3042-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Antoninus referenced
-                                Severus of
-                                Antioch and Antoninus. <a href="/3040-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            A letter between Severus of Antioch and 
-                            Anonymi 3750 referenced 
-                            Eustochius. <a href="/3148-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Philoxenus
-                            referenced Severus of
-                                Antioch and Philoxenus. <a href="/3056-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Anonymous 3042
-                            referenced Severus of
-                                Antioch and Anonymous
-                            3042. <a href="/3035-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Anonymous 3033 referenced Anonymous
-                            3033. <a href="/3013-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Dionysios referenced Dionysios. <a href="/3114-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Stephen referenced
-                                Severus of
-                                Antioch and Stephen. <a href="/3086-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Peter referenced
-                                Severus of
-                                Antioch and Peter. <a href="/3028-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Isaac referenced
-                                Severus of
-                                Antioch and Isaac. <a href="/3059-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch refered to the writings of Cyril of
-                            Alexandria. <a href="/3020-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Stephen referenced
-                                Severus of
-                                Antioch and Stephen. <a href="/3086-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch referenced Severus of
-                            Antioch. <a href="/3026-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Anonymous 3042
-                            referenced Severus of
-                                Antioch and Anonymous
-                            3042. <a href="/3035-21" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Peter referenced
-                                Severus of
-                                Antioch and Peter. <a href="/3028-24" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Antoninus referenced
-                                Severus of
-                                Antioch and Antoninus. <a href="/3040-26" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Solon and Severus of Antioch referenced Solon and Severus of
-                            Antioch. <a href="/3012-27" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited
-                            Basil.
-                         <a href="/3152-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited
-                            Gregory Nazianzen.
-                         <a href="/3122-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Peter referenced
-                                Severus of
-                                Antioch and Peter. <a href="/3028-33" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            A letter between Severus of Antioch referenced 
-                            Dioscorus I,
-                            Irenaeus of Tyre, and 
-                            Theodosius
-                            . <a href="/3099-33" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter by Dioscorus I referenced 
-                            Irenaeus of Tyre and 
-                            Theodosius. <a href="/3099-34" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch referenced Severus of
-                            Antioch. <a href="/3134-42" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited
-                            Gregory Nazianzen.
-                         <a href="/3120-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Antipater referenced Antipater. <a href="/3058-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Peter referenced
-                                Severus of
-                                Antioch and Peter. <a href="/3028-55" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited
-                            Pope Leo.
-                         <a href="/3176-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch refered to the writings of Gregory
-                            Nazianzen. <a href="/3136-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited
-                            Gregory Nazianzen.
-                         <a href="/3024-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>A letter between Severus
-                                of Antioch and Timostratus
-                            referenced Severus of
-                                Antioch and Timostratus. <a href="/3033-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3080
-                            refered to the writings of Anonymous
-                            3082. <a href="/3059-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Cited</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/cited, 2025-03-25T13:10:19.479-04:00.
-                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/511.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/511"/>
-                        Gregory
-                        Nazianzen
-                    </a></li><li><a href="/aggregate/person/847.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/847"/>
-                        Irenaeus
-                        of Tyre
-                    </a></li><li><a href="/aggregate/person/3080.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3080"/>Anonymi 3080</a></li><li><a href="/aggregate/person/3750.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3750"/>Anonymi 3750</a></li><li><a href="/aggregate/person/3033.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3033"/>Anonymous 3033</a></li><li><a href="/aggregate/person/3042.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3042"/>Anonymous 3042</a></li><li><a href="/aggregate/person/3082.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3082"/>Anonymous 3082</a></li><li><a href="/aggregate/person/2576.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2576"/>Antipater</a></li><li><a href="/aggregate/person/2553.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2553"/>Antoninus</a></li><li><a href="/aggregate/person/376.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/376"/>Basil of Caesarea</a></li><li><a href="/aggregate/person/430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/430"/>Cyril of Alexandria</a></li><li><a href="/aggregate/person/2456.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2456"/>Dionysios</a></li><li><a href="/aggregate/person/2432.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2432"/>Dioscorus I</a></li><li><a href="/aggregate/person/2454.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2454"/>Eustochius</a></li><li><a href="/aggregate/person/2578.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2578"/>Isaac</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/2574.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2574"/>Philoxenus</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2532.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2532"/>Stephen</a></li><li><a href="/aggregate/person/1529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1529"/>Theodosius II</a></li><li><a href="/aggregate/person/2531.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2531"/>Timostratus</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Cited</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/cited"
+                                                >http://syriaca.org/taxonomy/cited</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch refered to the writings of Cyril of Alexandria. <a
+                                        href="/3086-11" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Misael referenced Severus of
+                                    Antioch and Misael. <a href="/3042-11" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Antoninus referenced Severus of
+                                    Antioch and Antoninus. <a href="/3040-12" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> A
+                                    letter between Severus of Antioch and Anonymi 3750 referenced
+                                    Eustochius. <a href="/3148-13" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Philoxenus referenced Severus of
+                                    Antioch and Philoxenus. <a href="/3056-13" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Anonymous 3042 referenced Severus
+                                    of Antioch and Anonymous 3042. <a href="/3035-13"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Anonymous 3033 referenced Anonymous 3033. <a
+                                        href="/3013-14" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Dionysios referenced Dionysios. <a href="/3114-15"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Stephen referenced Severus of
+                                    Antioch and Stephen. <a href="/3086-15" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Peter referenced Severus of
+                                    Antioch and Peter. <a href="/3028-15" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Isaac referenced Severus of
+                                    Antioch and Isaac. <a href="/3059-18" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch refered to the writings of Cyril of Alexandria. <a
+                                        href="/3020-18" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Stephen referenced Severus of
+                                    Antioch and Stephen. <a href="/3086-20" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch referenced Severus of Antioch. <a
+                                        href="/3026-20" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Anonymous 3042 referenced Severus
+                                    of Antioch and Anonymous 3042. <a href="/3035-21"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Peter referenced Severus of
+                                    Antioch and Peter. <a href="/3028-24" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Antoninus referenced Severus of
+                                    Antioch and Antoninus. <a href="/3040-26" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Solon and Severus of Antioch referenced Solon and
+                                    Severus of Antioch. <a href="/3012-27" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    cited Basil. <a href="/3152-3" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    cited Gregory Nazianzen. <a href="/3122-3" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Peter referenced Severus of
+                                    Antioch and Peter. <a href="/3028-33" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> A
+                                    letter between Severus of Antioch referenced Dioscorus I,
+                                    Irenaeus of Tyre, and Theodosius . <a href="/3099-33"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    by Dioscorus I referenced Irenaeus of Tyre and Theodosius. <a
+                                        href="/3099-34" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch referenced Severus of Antioch. <a
+                                        href="/3134-42" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    cited Gregory Nazianzen. <a href="/3120-5" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Antipater referenced Antipater. <a href="/3058-5"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Peter referenced Severus of
+                                    Antioch and Peter. <a href="/3028-55" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    cited Pope Leo. <a href="/3176-6" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch refered to the writings of Gregory Nazianzen. <a
+                                        href="/3136-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Severus
+                                    cited Gregory Nazianzen. <a href="/3024-7" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>A letter
+                                    between Severus of Antioch and Timostratus referenced Severus of
+                                    Antioch and Timostratus. <a href="/3033-7" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3080 refered to the writings of Anonymous 3082. <a
+                                        href="/3059-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Cited</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/cited.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/cited.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/cited"
+                                            ></span>Cited</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/511.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/511"></span>
+                                            Gregory Nazianzen </a></li>
+                                    <li><a href="/aggregate/person/847.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/847"></span>
+                                            Irenaeus of Tyre </a></li>
+                                    <li><a href="/aggregate/person/3080.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3080"
+                                            ></span>Anonymi 3080</a></li>
+                                    <li><a href="/aggregate/person/3750.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3750"
+                                            ></span>Anonymi 3750</a></li>
+                                    <li><a href="/aggregate/person/3033.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3033"
+                                            ></span>Anonymous 3033</a></li>
+                                    <li><a href="/aggregate/person/3042.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3042"
+                                            ></span>Anonymous 3042</a></li>
+                                    <li><a href="/aggregate/person/3082.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3082"
+                                            ></span>Anonymous 3082</a></li>
+                                    <li><a href="/aggregate/person/2576.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2576"
+                                            ></span>Antipater</a></li>
+                                    <li><a href="/aggregate/person/2553.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2553"
+                                            ></span>Antoninus</a></li>
+                                    <li><a href="/aggregate/person/376.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/376"
+                                            ></span>Basil of Caesarea</a></li>
+                                    <li><a href="/aggregate/person/430.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/430"
+                                            ></span>Cyril of Alexandria</a></li>
+                                    <li><a href="/aggregate/person/2456.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2456"
+                                            ></span>Dionysios</a></li>
+                                    <li><a href="/aggregate/person/2432.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2432"
+                                            ></span>Dioscorus I</a></li>
+                                    <li><a href="/aggregate/person/2454.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2454"
+                                            ></span>Eustochius</a></li>
+                                    <li><a href="/aggregate/person/2578.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2578"
+                                            ></span>Isaac</a></li>
+                                    <li><a href="/aggregate/person/2299.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2299"
+                                            ></span>Leo</a></li>
+                                    <li><a href="/aggregate/person/2558.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2558"
+                                            ></span>Misael</a></li>
+                                    <li><a href="/aggregate/person/2514.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2514"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/2574.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2574"
+                                            ></span>Philoxenus</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                    <li><a href="/aggregate/person/2532.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2532"
+                                            ></span>Stephen</a></li>
+                                    <li><a href="/aggregate/person/1529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1529"
+                                            ></span>Theodosius II</a></li>
+                                    <li><a href="/aggregate/person/2531.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2531"
+                                            ></span>Timostratus</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

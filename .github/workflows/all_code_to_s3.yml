@@ -1,0 +1,54 @@
+name: Deploy all code files for SPEAR site to S3
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - '.github/workflows/all_code_to_s3.yml'
+
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  BUCKET_NAME: spear-front-end
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: ${{ secrets.AWS_SPEAR_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+          role-session-name: GitHub-OIDC-frontend-spear
+          role-duration-seconds: 21600
+
+
+      # Step 3: Files to S3
+      # This will add and overwrite all non data folder files to the S3 bucket but not delete files in S3 that have been deleted in the repo
+      # - name: Sync files in S3
+      #   if: success()
+      #   run: |
+      #     aws s3 sync ./ s3://spear-front-end --exact-timestamps --exclude "data/*" --exclude ".github/*" --exclude "aggregate/*"
+      #   env:
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }} 
+
+      # - name: Invalidate CloudFront Cache
+      #   run: |
+      #     aws cloudfront create-invalidation \
+      #       --distribution-id ${{ secrets.SPEAR_CLOUDFRONT_DISTRIBUTION_ID}} \
+      #       --paths "/*"
+      #   env:
+      #     AWS_REGION: ${{ secrets.AWS_REGION }}
+      #     AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}     

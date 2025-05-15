@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Abba</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Abba</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,92 +70,381 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown">             <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown">                  <span class="mobile-submenu">About</span>  <b class="caret"></b>             </a>             <ul class="dropdown-menu pull-right">                 <li>                     <a href="/about.html">Project Overview</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contributors.html">Project Contributors</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="http://vu.edu/syriac">Support Our Work</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contact.html">Contact Us</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/documentation/index.html">                         <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>                         <span class="icon-text">Documentation</span>                     </a>                 </li>             </ul>         </li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span>Abba</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div xmlns:srophe="https://srophe.app" class="tei-note">
-            <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span class="langattr" xml:lang="en" lang="en" dir="ltr">Monastic head of the monastery of John Urtaya</span><span dir="ltr">”  </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib3183-1">1</a></span> </span></span>
-          </div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/3183">http://syriaca.org/person/3183</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
-                    <span class="tei-person">
-                        <span class="tei-persName"> Abba </span>
-                    </span>
-                </span> <a href="/10510-160" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
-                    <span class="tei-person">
-                        <span class="tei-persName">the archimandrite</span>
-                    </span>
-                </span> <a href="/821-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Birth: </h4><p class="indent"><span class="spearLabel">Birth place: </span>
-                                <span class="tei-persName">Abba</span> was born in 
-                                <span class="tei-placeName">Arzen</span>. <a href="/10510-163" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">Abba</span> was male. <a href="/10510-161" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Place of residence: </h4><p class="indent"><span class="tei-persName">Abba</span>
-                                resided in the <span class="tei-placeName">Convent of the Poplars</span>.  <a href="/10510-175" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Anonymi
-                                    3677</span> who followed <span class="tei-persName">Abba</span> into exile
-                                resided in the <span class="tei-placeName">Convent of the Poplars</span>.  <a href="/10510-176" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Abba</span>
-                                resided in the <span class="tei-placeName">Convent of Nut</span>.  <a href="/10510-179" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Anonymi
-                                    3677</span> who went into exile with <span class="tei-persName">Abba</span> resided in
-                                the <span class="tei-placeName">Convent of
-                                    Nut</span>.  <a href="/10510-180" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Abba</span>
-                                resided in the <span class="tei-placeName">Monastery of the Huts</span>.  <a href="/10510-182" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Anonymi
-                                    3677</span> who followed <span class="tei-persName">Abba</span> into exile
-                                resided in the <span class="tei-placeName">Monastery of the Huts</span>.  <a href="/10510-183" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Abba</span> was an archimandrite. <a href="/10510-162" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">Abba was a monastic authority over Anonymi 3677. <a href="/10510-177" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent"> Close to death,the
-                                blessed man went into the vestry to pray. After a
-                                while,the
-                                archimandrite entered to find the man praying on
-                            his mat, as if he was asleep. As  the
-                                Archimandrite spoke,the man gave up his
-                            soul to God.  <a href="/821-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abba succeeded Symy as head of the Convent of John
-                                Urtaya.  <a href="/10510-159" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abba and
-                                Anonymi
-                                3677 went into exile and took up residence in the
-                                Convent of the
-                                Poplars.  <a href="/10510-172" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abba and
-                                Anonymi
-                                3677 were expelled from the Convent of the
-                                Poplars and took up residence in the Convent of Nut in
-                            the village of 'Bdhyr.  <a href="/10510-178" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abba continued to be persecuted and fled to the court of
-                                Empress
-                                Theodora.  <a href="/10510-184" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abba
-                            returned to the Convent
-                                of the Huts and died.  <a href="/10510-188" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abraham
-                            IV succeeded Abba as head of the Convent of John
-                                Urtaya.  <a href="/10510-189" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> While in the
-                                conventthe man refused to sleep during the night while others
-                            were awake, and during service he would lie on the floor crying,
-                                leading the
-                                archimandrite question him.  <a href="/821-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">The
-                                archimandrite approached the man about his
-                            actions. Attending vespers, he began to cry
-                            because of his humility and sinfulness before God.  <a href="/821-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Speaking with the
-                                archimandrite,the man decided to
-                            stay in the
-                                convent for the winter. He continued in his
-                            silence and weeping, garnering the appreciation of the brothers, who
-                            were encouraged by him.  <a href="/821-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Person Page for <span xmlns:srophe="https://srophe.app" id="title"><span>Abba</span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/person/3183, 2025-03-25T13:23:03.287-04:00.
-                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
-                        Theodora, Roman empress
-                    </a></li><li><a href="/aggregate/person/3183.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3183"/>Abba</a></li><li><a href="/aggregate/person/3188.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3188"/>Abraham IV</a></li><li><a href="/aggregate/person/3677.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3677"/>Anonymous 3677</a></li><li><a href="/aggregate/person/1862.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1862"/>Malka</a></li><li><a href="/aggregate/person/3263.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3263"/>Symy</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2795.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2795"/>Monastery of the Huts</a></li><li><a href="/aggregate/place/2826.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2826"/>Monastery of the Nut</a></li><li><a href="/aggregate/place/2834.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2834"/>Monastery of the Poplars</a></li><li><a href="/aggregate/place/724.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/724"/>Siirt</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li><li><a href="/aggregate/place/2864.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2864"/>ʾBdhyr</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span>Abba</span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div class="tei-note">
+                                <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr">
+                                        “</span><span class="langattr" xml:lang="en" lang="en"
+                                        dir="ltr">Monastic head of the monastery of John
+                                        Urtaya</span><span dir="ltr">” </span><span
+                                        class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"
+                                            ><span class="tei-footnote-ref"><a href="#bib3183-1"
+                                                >1</a></span>
+                                    </span></span>
+                            </div>
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/person/3183"
+                                                >http://syriaca.org/person/3183</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <div class="sources">
+                                    <h3>Personal Information</h3>
+                                    <h4>Name variant(s): </h4>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName"> Abba </span>
+                                            </span>
+                                        </span>
+                                        <a href="/10510-160" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName">the archimandrite</span>
+                                            </span>
+                                        </span>
+                                        <a href="/821-6" class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Birth: </h4>
+                                    <p class="indent"><span class="spearLabel">Birth place: </span>
+                                        <span class="tei-persName">Abba</span> was born in <span
+                                            class="tei-placeName">Arzen</span>. <a href="/10510-163"
+                                            class="factoid-more"> See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Sex: </h4>
+                                    <p class="indent"><span class="tei-persName">Abba</span> was
+                                        male. <a href="/10510-161" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Place of residence: </h4>
+                                    <p class="indent"><span class="tei-persName">Abba</span> resided
+                                        in the <span class="tei-placeName">Convent of the
+                                            Poplars</span>. <a href="/10510-175"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Anonymi 3677</span>
+                                        who followed <span class="tei-persName">Abba</span> into
+                                        exile resided in the <span class="tei-placeName">Convent of
+                                            the Poplars</span>. <a href="/10510-176"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Abba</span> resided
+                                        in the <span class="tei-placeName">Convent of Nut</span>. <a
+                                            href="/10510-179" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Anonymi 3677</span>
+                                        who went into exile with <span class="tei-persName"
+                                            >Abba</span> resided in the <span class="tei-placeName"
+                                            >Convent of Nut</span>. <a href="/10510-180"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Abba</span> resided
+                                        in the <span class="tei-placeName">Monastery of the
+                                            Huts</span>. <a href="/10510-182" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Anonymi 3677</span>
+                                        who followed <span class="tei-persName">Abba</span> into
+                                        exile resided in the <span class="tei-placeName">Monastery
+                                            of the Huts</span>. <a href="/10510-183"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Occupation(s): </h4>
+                                    <p class="indent"><span class="tei-persName">Abba</span> was an
+                                        archimandrite. <a href="/10510-162" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Relationships</h3>
+                                    <p class="indent">Abba was a monastic authority over Anonymi
+                                        3677. <a href="/10510-177" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="sources">
+                                    <h3>Events</h3>
+                                    <p class="indent"> Close to death,the blessed man went into the
+                                        vestry to pray. After a while,the archimandrite entered to
+                                        find the man praying on his mat, as if he was asleep. As the
+                                        Archimandrite spoke,the man gave up his soul to God. <a
+                                            href="/821-10" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Abba succeeded Symy as head of the Convent of
+                                        John Urtaya. <a href="/10510-159" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Abba and Anonymi 3677 went into exile and took
+                                        up residence in the Convent of the Poplars. <a
+                                            href="/10510-172" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Abba and Anonymi 3677 were expelled from the
+                                        Convent of the Poplars and took up residence in the Convent
+                                        of Nut in the village of 'Bdhyr. <a href="/10510-178"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Abba continued to be persecuted and fled to
+                                        the court of Empress Theodora. <a href="/10510-184"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Abba returned to the Convent of the Huts and
+                                        died. <a href="/10510-188" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Abraham IV succeeded Abba as head of the
+                                        Convent of John Urtaya. <a href="/10510-189"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> While in the conventthe man refused to sleep
+                                        during the night while others were awake, and during service
+                                        he would lie on the floor crying, leading the archimandrite
+                                        question him. <a href="/821-5" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">The archimandrite approached the man about his
+                                        actions. Attending vespers, he began to cry because of his
+                                        humility and sinfulness before God. <a href="/821-7"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Speaking with the archimandrite,the man
+                                        decided to stay in the convent for the winter. He continued
+                                        in his silence and weeping, garnering the appreciation of
+                                        the brothers, who were encouraged by him. <a href="/821-8"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                </div>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Person Page for <span id="title"
+                                                ><span>Abba</span></span>,” in SPEAR: Syriac Persons
+                                        Events and Relations, general editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/person/3183.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/death.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/death"
+                                            ></span>Death</a></li>
+                                    <li><a href="/aggregate/taxonomy/emotions.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/emotions"
+                                            ></span>Emotions</a></li>
+                                    <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                            ></span>Exile</a></li>
+                                    <li><a href="/aggregate/taxonomy/humility.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/humility"
+                                            ></span>Humility</a></li>
+                                    <li><a href="/aggregate/taxonomy/men.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/men"
+                                            ></span>Men</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                            ></span>Monasteries</a></li>
+                                    <li><a href="/aggregate/taxonomy/monastic-head-over.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-head-over"
+                                            ></span>Monastic Head over</a></li>
+                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                            ></span>Monastic Heads</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                            ></span>Persecution</a></li>
+                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                            ></span>Prayer</a></li>
+                                    <li><a href="/aggregate/taxonomy/silence.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/silence"
+                                            ></span>Silence</a></li>
+                                    <li><a href="/aggregate/taxonomy/sleep.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sleep"
+                                            ></span>Sleep</a></li>
+                                    <li><a href="/aggregate/taxonomy/succession.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/succession"
+                                            ></span>Succession</a></li>
+                                    <li><a href="/aggregate/taxonomy/tears.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/tears"
+                                            ></span>Tears</a></li>
+                                    <li><a href="/aggregate/taxonomy/vespers.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/vespers"
+                                            ></span>Vespers</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/779.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/779"></span>
+                                            Theodora, Roman empress </a></li>
+                                    <li><a href="/aggregate/person/3183.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3183"
+                                            ></span>Abba</a></li>
+                                    <li><a href="/aggregate/person/3188.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3188"
+                                            ></span>Abraham IV</a></li>
+                                    <li><a href="/aggregate/person/3677.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3677"
+                                            ></span>Anonymous 3677</a></li>
+                                    <li><a href="/aggregate/person/1862.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1862"
+                                            ></span>Malka</a></li>
+                                    <li><a href="/aggregate/person/3263.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3263"
+                                            ></span>Symy</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/2795.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2795"
+                                            ></span>Monastery of the Huts</a></li>
+                                    <li><a href="/aggregate/place/2826.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2826"
+                                            ></span>Monastery of the Nut</a></li>
+                                    <li><a href="/aggregate/place/2834.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2834"
+                                            ></span>Monastery of the Poplars</a></li>
+                                    <li><a href="/aggregate/place/724.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/724"
+                                            ></span>Siirt</a></li>
+                                    <li><a href="/aggregate/place/399.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/399"
+                                            ></span>Yoḥannan Urṭaya</a></li>
+                                    <li><a href="/aggregate/place/2864.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2864"
+                                            ></span>ʾBdhyr</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

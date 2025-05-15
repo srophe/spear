@@ -1,0 +1,181 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Maron</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span>Maron</span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div class="tei-note"><span xml:lang="en" lang="en" dir="ltr">
+                        <span class="tei-persName"><a href="http://syriaca.org/person/1885">Maron</a></span> is
+                        commemorated in <a href="http://syriaca.org/work/796">Abraham and Maron
+                            (text)
+                    [http://syriaca.org/work/796]
+                </a> in the Lives of the Eastern Saints by <span class="tei-persName"><a href="http://syriaca.org/person/74">John of Ephesus.</a></span>
+                    </span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib1885-1">1</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/1885">http://syriaca.org/person/1885</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Maro the stylite </span>
+                    </span>
+                </span> <a href="/797-36" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Maro of <span class="tei-placeName"> Kalesh in
+                                </span><span class="tei-placeName"> Amida
+                            </span></span>
+                    </span>
+                </span> <a href="/796-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Birth: </h4><p class="indent"><span class="spearLabel">Birth place: </span><span class="tei-persName">Maro</span>
+                                was born in <span class="tei-placeName">Kalesh</span>. <a href="/796-7" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName"> Maro
+                                </span> was male. <a href="/797-37" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Maro</span> was male. <a href="/796-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent"><span class="tei-persName">Maro</span> was a saint. <a href="/796-10" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent"><span class="tei-persName">Maro</span> was an archimandrite.  <a href="/797-38" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Maro</span> was an archimandrite of <span class="tei-placeName"> Arʿa Rabtha
+                                </span> <a href="/796-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Mental State: </h4><p class="indent"><span class="tei-persName">Sergius</span> was greatly distressed by the treatment of
+                                believers by the persecutors and wept unceasingly in the presence of
+                                    <span class="tei-persName">Maro</span>,
+                                who had given him refuge.  <a href="/797-40" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">Abraham and Maron were siblings. <a href="/796-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">
+                            John of Ephesus 
+                            commemorated
+                            Maro.
+                         <a href="/796-76" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Events</h3><p class="indent">Maro
+                            received gifts of the Spirit, but refused to perform exorcisms, instead
+                            he decided to enclose himself in a tree in the monastery and live as a
+                            hermit and ascetic.  <a href="/796-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Because Maro's ascetic practices were so extreme and sometimes
+                            dangerous, Abraham convinced him to return to the shelter of the
+                            monastery.  <a href="/796-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abraham and
+                                Maro
+                            gained a great deal of fame.  <a href="/796-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro took
+                                Abraham's
+                            place on the column so that his brother's place would not be empty.
+                         <a href="/796-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro prayed
+                            that his time on the column would not be a torment, but a conductor to
+                            life.  <a href="/796-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">John's
+                                mother and
+                                father
+                            visited the holy Maro and asked him to save John's life, as all of
+                            his brothers and sisters died in infancy.  <a href="/796-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro bid
+                                a certain
+                                brother to fetch lentils for the baby John to eat. <a href="/796-27" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">John, who
+                            appeared dead, was revived by eating the lentils provided by Maro.  <a href="/796-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro made
+                                John's
+                                mother and
+                                father
+                            promise to bring him back in two years to be raised in the monastery
+                         <a href="/796-32" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Sergius set
+                            out to visit Maro the
+                                stylite, whom the synod supporters left alone until
+                                a certain
+                                bishop visited him and tried unsuccessfully to convert
+                            him to the Chalcedonian heresy. <a href="/797-32" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After two years, John's mother and father brought him
+                            to Maro to be
+                            raised in the monastery.  <a href="/796-33" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro's fame
+                            grew as he became known for performing blessings and miracles through
+                            prayer.  <a href="/796-34" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro
+                            explained to the people that he would not perform exorcisms because they
+                            are a means by which deceitful fiends possess the innocent in order to
+                            trick exorcists and healers into believing that they are more powerful
+                            than they really are--causing them to fall into the trap of pride and
+                            vainglory.  <a href="/796-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">A certain
+                                layman whose wife was barren came
+                            to Maro for
+                            help. Maro
+                            gave him one of his toenails to hang on his wife, who then promptly
+                            conceived a son whom he named Maro.  <a href="/796-36" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Sergius was
+                            greatly distressed by the treatment of believers by the persecutors and
+                            wept unceasingly in the presence of Maro, who had given
+                            him refuge.  <a href="/797-39" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Sergius
+                            received a blessing from Maro and then set out to visit the churh in Amida. Sergius walked into
+                            the church in Amida, carrying a cross, and planted his cross on the
+                            chancel steps before seizing the preacher, Bishop Abraham, by
+                            the neck and throwing him to the ground. Sergius mounted the
+                            steps and addressed the crowd: "Cursed are the renegades; cursed are the
+                            persecutors; cursed is the synod of Chaledon, and whosoever assents to
+                            it. Cursed is every soul that receives the oblation from you and assents
+                            to your opinion unless he repents." The crowd, a mixture of believers
+                            and synod supporters, responded with praise and anger. <a href="/797-41" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro warned
+                            the magistrate
+                            against abusing his authority and the magistrate ignored him.  <a href="/796-49" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro sent a
+                                presbyter
+                            to check on the magistrate and discovered that he, the people he enslaved, and his
+                                wife
+                            barely escaped a fire with their lives.  <a href="/796-51" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Anonymous
+                                3629 fell ill and died after his confrontation with
+                                Maro. <a href="/796-61" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Anonymous
+                                3632 went blind after her husband's
+                            confrontation with Maro. <a href="/796-62" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Anonymous
+                                3632 died after her husband's
+                            confrontation with Maro.  <a href="/796-63" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Anonymi 3633
+                            died after their
+                                master's confrontation with Maro.  <a href="/796-64" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro used
+                            the story of the fall of Anonymous 3629 and
+                            his household as a warning against pride.  <a href="/796-65" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After twenty years, Maro received a vision of the invasion of the Huns.
+                         <a href="/796-66" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Maro's
+                            companions refused to abandon him.  <a href="/796-68" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The Huns invaded but the monastery was protected and left unharmed
+                            because of Maro's prayers.  <a href="/796-70" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After forty years of labor, Maro died.  <a href="/796-71" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/></div><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Person Page for <span id="title"><span>Maron</span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                https://dev.spear-prosop.org/aggregate/person/1885.html, 2025-05-12.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/blindness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/blindness"/>Blindness</a></li><li><a href="/aggregate/taxonomy/child-dedication.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/child-dedication"/>Child Dedication</a></li><li><a href="/aggregate/taxonomy/commemorates.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemorates"/>Commemorates</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/divine-judgment.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/divine-judgment"/>Divine Judgment</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/exorcism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exorcism"/>Exorcism</a></li><li><a href="/aggregate/taxonomy/fame.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/fame"/>Fame</a></li><li><a href="/aggregate/taxonomy/huns.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/huns"/>Huns</a></li><li><a href="/aggregate/taxonomy/illness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/illness"/>Illness</a></li><li><a href="/aggregate/taxonomy/men.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/men"/>Men</a></li><li><a href="/aggregate/taxonomy/miracles.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/miracles"/>Miracles</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/polemics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/polemics"/>Polemics</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/pride.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pride"/>Pride</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/sibling-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sibling-of"/>Sibling of</a></li><li><a href="/aggregate/taxonomy/stylites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/stylites"/>Stylites</a></li><li><a href="/aggregate/taxonomy/tears.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tears"/>Tears</a></li><li><a href="/aggregate/taxonomy/violence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/violence"/>Violence</a></li><li><a href="/aggregate/taxonomy/visions.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/visions"/>Visions</a></li><li><a href="/aggregate/taxonomy/war.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/war"/>War</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
+                        John
+                        of Ephesus
+                        
+                    </a></li><li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1546"/>Abraham</a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/3633.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3633"/>Anonymi 3633</a></li><li><a href="/aggregate/person/3624.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3624"/>Anonymous 3624</a></li><li><a href="/aggregate/person/3625.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3625"/>Anonymous 3625</a></li><li><a href="/aggregate/person/3626.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3626"/>Anonymous 3626</a></li><li><a href="/aggregate/person/3627.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3627"/>Anonymous 3627</a></li><li><a href="/aggregate/person/3628.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3628"/>Anonymous 3628</a></li><li><a href="/aggregate/person/3629.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3629"/>Anonymous 3629</a></li><li><a href="/aggregate/person/3630.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3630"/>Anonymous 3630</a></li><li><a href="/aggregate/person/3632.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3632"/>Anonymous 3632</a></li><li><a href="/aggregate/person/3688.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3688"/>Anonymous 3688</a></li><li><a href="/aggregate/person/3235.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3235"/>Maro</a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2737.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2737"/>Amida</a></li><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/1524.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1524"/>Dayro d-Arʿo Rabto</a></li><li><a href="/aggregate/place/2804.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2804"/>Kalesh</a></li></ul></div></div></div></div></div></div></body></html>

@@ -1,7 +1,49 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Shame</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Shame</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
                 $('.keyboard').keyboard({
                     openOn: null,
                     stayOpen: false,
@@ -9,13 +51,13 @@
                     autoAccept: true,
                     usePreview: false,
                     initialFocus: true,
-                    rtl : true,
+                    rtl: true,
                     layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
                 });
-
+                
                 $('.keyboard-select').click(function () {
                     var keyboardID = '#' + $(this).data("keyboard-id")
                     var kb = $(keyboardID).getkeyboard();
@@ -28,58 +70,370 @@
                     }
                 });
                 //Change fonts
-                $('.swap-font').on('click', function(){
+                $('.swap-font').on('click', function () {
                     var selectedFont = $(this).data("font-id")
                     $('.selectableFont').not('.syr').css('font-family', selectedFont);
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown">             <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown">                  <span class="mobile-submenu">About</span>  <b class="caret"></b>             </a>             <ul class="dropdown-menu pull-right">                 <li>                     <a href="/about.html">Project Overview</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contributors.html">Project Contributors</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="http://vu.edu/syriac">Support Our Work</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/contact.html">Contact Us</a>                 </li>                 <li role="presentation" class="divider"></li>                 <li>                     <a href="/documentation/index.html">                         <span class="syriaca-icon syriaca-book icon-nav" style="color:red;"></span>                         <span class="icon-text">Documentation</span>                     </a>                 </li>             </ul>         </li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li><li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Shame</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/shame">http://syriaca.org/taxonomy/shame</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span> After hearing about the
-                                old man's practices, John repented of his
-                            sins.  <a href="/809-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Because the
-                                woman was very beautiful, many of the men of Amida sought to sleep
-                            with her. When they could not prevail against her, they petitioned the
-                            governor of Amida to arrest her. The young man cried
-                            out in a loud voice that the woman was his wife.  <a href="/843-10" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anastasia
-                            and her
-                                husband were ashamed that their daughter had
-                            not yet been married.  <a href="/3127-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> With regard to the mutilation of Thomas, Severus advises
-                                Aurelius
-                            to allow him his priestly office if the mutilation was performed by a
-                            physician because of an illness, but to deny him if Thomas mutilated
-                            himself.  <a href="/3076-15" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> In reference to Thomas, Severus refutes Cassian's blaming of
-                            the mutilation on the corrupt bishop Julian,
-                            suggesting instead that Thomas be allowed to remain in the clergy on the
-                            condition that the accident was due to illness performed by a physician.
-                         <a href="/3075-17" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Feeling guilty about the hundredweight gold,the queen sent her
-                            chamberlains several times to Mare to seek his
-                            forgiveness.  <a href="/828-19" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
-                            rebuked Misael
-                            for his desire to leave public life in order to become a solitary.
-                         <a href="/3042-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">mental: </span><span class="tei-persName"> the
-                                    monk who stole </span> was in great sorrow and humility.
-                             <a href="/824-21" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>Theophilus and Maria made John promise to
-                            conceal their secret, or else they would leave Amida.  <a href="/843-22" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>The monks
-                            serving under Abraham accused him of embezzling monastery funds in
-                            order to support his family. Abraham was
-                            innocent, but left the monastery to live in the city and lived the rest
-                            of his days longing for his former monastic existence.  <a href="/10510-76" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
-                                “Keyword Page for <span xmlns:srophe="https://srophe.app" id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Shame</span></span></span>,” 
-                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                http://syriaca.org/taxonomy/shame, 2025-03-25T13:11:23.685-04:00.
-                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
-                        Theodora, Roman empress
-                    </a></li><li><a href="/aggregate/person/3185.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3185"/>Abraham I</a></li><li><a href="/aggregate/person/2596.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2596"/>Anastasia</a></li><li><a href="/aggregate/person/1988.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1988"/>Anonymous 1988</a></li><li><a href="/aggregate/person/3119.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3119"/>Anonymous 3119</a></li><li><a href="/aggregate/person/3673.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3673"/>Anonymous 3673</a></li><li><a href="/aggregate/person/3718.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3718"/>Anonymous 3718</a></li><li><a href="/aggregate/person/2614.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2614"/>Aurelius</a></li><li><a href="/aggregate/person/2425.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2425"/>Cassian</a></li><li><a href="/aggregate/person/2656.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2656"/>Georgia</a></li><li><a href="/aggregate/person/3225.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3225"/>John</a></li><li><a href="/aggregate/person/2690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2690"/>Julian</a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/3021.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3021"/>Mary</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2121.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2121"/>Theophilos</a></li><li><a href="/aggregate/person/2772.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2772"/>Thomas</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li></ul></div></div></div></div></div></div></body></html>
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Shame</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/shame"
+                                                >http://syriaca.org/taxonomy/shame</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> Because
+                                    the woman was very beautiful, many of the men of Amida sought to
+                                    sleep with her. When they could not prevail against her, they
+                                    petitioned the governor of Amida to arrest her. The young man
+                                    cried out in a loud voice that the woman was his wife. <a
+                                        href="/843-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After
+                                    hearing about the old man's practices, John repented of his
+                                    sins. <a href="/809-10" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Anastasia
+                                    and her husband were ashamed that their daughter had not yet
+                                    been married. <a href="/3127-14" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> With
+                                    regard to the mutilation of Thomas, Severus advises Aurelius to
+                                    allow him his priestly office if the mutilation was performed by
+                                    a physician because of an illness, but to deny him if Thomas
+                                    mutilated himself. <a href="/3076-15" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> In
+                                    reference to Thomas, Severus refutes Cassian's blaming of the
+                                    mutilation on the corrupt bishop Julian, suggesting instead that
+                                    Thomas be allowed to remain in the clergy on the condition that
+                                    the accident was due to illness performed by a physician. <a
+                                        href="/3075-17" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Feeling
+                                    guilty about the hundredweight gold,the queen sent her
+                                    chamberlains several times to Mare to seek his forgiveness. <a
+                                        href="/828-19" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    rebuked Misael for his desire to leave public life in order to
+                                    become a solitary. <a href="/3042-20" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">mental: </span><span
+                                        class="tei-persName"> the monk who stole </span> was in
+                                    great sorrow and humility. <a href="/824-21"
+                                        class="factoid-more"> See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Theophilus
+                                    and Maria made John promise to conceal their secret, or else
+                                    they would leave Amida. <a href="/843-22" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>The monks
+                                    serving under Abraham accused him of embezzling monastery funds
+                                    in order to support his family. Abraham was innocent, but left
+                                    the monastery to live in the city and lived the rest of his days
+                                    longing for his former monastic existence. <a href="/10510-76"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Shame</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/shame.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/anchorites.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anchorites"
+                                            ></span>Anchorites</a></li>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/blame.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/blame"
+                                            ></span>Blame</a></li>
+                                    <li><a href="/aggregate/taxonomy/bodies.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bodies"
+                                            ></span>Bodies</a></li>
+                                    <li><a href="/aggregate/taxonomy/civil-servants.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/civil-servants"
+                                            ></span>Civil Servants</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/embezzlement.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/embezzlement"
+                                            ></span>Embezzlement</a></li>
+                                    <li><a href="/aggregate/taxonomy/emotions.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/emotions"
+                                            ></span>Emotions</a></li>
+                                    <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                            ></span>Exile</a></li>
+                                    <li><a href="/aggregate/taxonomy/families.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/families"
+                                            ></span>Families</a></li>
+                                    <li><a href="/aggregate/taxonomy/food.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/food"
+                                            ></span>Food</a></li>
+                                    <li><a href="/aggregate/taxonomy/illness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                            ></span>Illness</a></li>
+                                    <li><a href="/aggregate/taxonomy/marriage.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/marriage"
+                                            ></span>Marriage</a></li>
+                                    <li><a href="/aggregate/taxonomy/memory.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/memory"
+                                            ></span>Memory</a></li>
+                                    <li><a href="/aggregate/taxonomy/misogyny.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/misogyny"
+                                            ></span>Misogyny</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/oaths.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/oaths"
+                                            ></span>Oaths</a></li>
+                                    <li><a href="/aggregate/taxonomy/passions.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/passions"
+                                            ></span>Passions</a></li>
+                                    <li><a href="/aggregate/taxonomy/physicians.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/physicians"
+                                            ></span>Physicians</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/repentance.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/repentance"
+                                            ></span>Repentance</a></li>
+                                    <li><a href="/aggregate/taxonomy/sex.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sex"
+                                            ></span>Sex</a></li>
+                                    <li><a href="/aggregate/taxonomy/shame.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/shame"
+                                            ></span>Shame</a></li>
+                                    <li><a href="/aggregate/taxonomy/sin.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sin"
+                                            ></span>Sin</a></li>
+                                    <li><a href="/aggregate/taxonomy/suffering.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/suffering"
+                                            ></span>Suffering</a></li>
+                                    <li><a href="/aggregate/taxonomy/tears.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/tears"
+                                            ></span>Tears</a></li>
+                                    <li><a href="/aggregate/taxonomy/wine.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wine"
+                                            ></span>Wine</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/779.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/779"></span>
+                                            Theodora, Roman empress </a></li>
+                                    <li><a href="/aggregate/person/3185.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3185"
+                                            ></span>Abraham I</a></li>
+                                    <li><a href="/aggregate/person/2596.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2596"
+                                            ></span>Anastasia</a></li>
+                                    <li><a href="/aggregate/person/1988.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1988"
+                                            ></span>Anonymous 1988</a></li>
+                                    <li><a href="/aggregate/person/3119.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3119"
+                                            ></span>Anonymous 3119</a></li>
+                                    <li><a href="/aggregate/person/3673.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3673"
+                                            ></span>Anonymous 3673</a></li>
+                                    <li><a href="/aggregate/person/3718.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3718"
+                                            ></span>Anonymous 3718</a></li>
+                                    <li><a href="/aggregate/person/2614.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2614"
+                                            ></span>Aurelius</a></li>
+                                    <li><a href="/aggregate/person/2425.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2425"
+                                            ></span>Cassian</a></li>
+                                    <li><a href="/aggregate/person/2656.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2656"
+                                            ></span>Georgia</a></li>
+                                    <li><a href="/aggregate/person/3225.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3225"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2690.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2690"
+                                            ></span>Julian</a></li>
+                                    <li><a href="/aggregate/person/1875.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1875"
+                                            ></span>Mara the Solitary</a></li>
+                                    <li><a href="/aggregate/person/3021.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3021"
+                                            ></span>Mary</a></li>
+                                    <li><a href="/aggregate/person/2558.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2558"
+                                            ></span>Misael</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2121.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2121"
+                                            ></span>Theophilos</a></li>
+                                    <li><a href="/aggregate/person/2772.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2772"
+                                            ></span>Thomas</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/8.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/8"
+                                            ></span>Amida</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>
