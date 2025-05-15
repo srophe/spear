@@ -103,23 +103,21 @@ export const getFactoidsForFieldOfStudy = (fieldUri) => `
   SELECT DISTINCT ?factoid ?description
   FROM <https://spear-prosop.org>
   WHERE {
-    ?statementNode sps:education <${fieldUri}> .
-    ?statementNode spr:reference-URL ?factoid .
+    ?statementNode sps:education <${fieldUri}> ;
+       spr:reference-URL ?factoid .
     ?factoid schema:description ?description .
   }
 `;
 export const getFactoidsRelatedToKeyword = (eventKeywordUri) => `
-  PREFIX swdt: <http://syriaca.org/prop/direct/>
-  PREFIX spr: <http://syriaca.org/prop/reference/>
-  PREFIX schema: <http://schema.org/>
-  PREFIX sp: <http://syriaca.org/prop/>
-  PREFIX sps: <http://syriaca.org/schema/>
+PREFIX spr: <http://syriaca.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+PREFIX sps: <http://syriaca.org/prop/statement/>
 
   SELECT DISTINCT ?factoid ?description
   FROM <https://spear-prosop.org>
   WHERE {
-    ?statementNode sps:event-keyword <${eventKeywordUri}> .
-    ?statementNode spr:reference-URL ?factoid .
+    ?statementNode sps:event-keyword <${eventKeywordUri}> ;
+                   spr:reference-URL ?factoid .
     OPTIONAL { ?factoid schema:description ?description . }
   }
 `;
