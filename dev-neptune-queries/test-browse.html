@@ -81,7 +81,7 @@
     }
   
     factoidDisplay.innerHTML = `
-      <h3>Related Factoids:</h3>
+      <h3>(Factoid filter) Related Factoids:</h3>
       <ul>
         ${factoids.map(f => `<li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>`).join('')}
       </ul>
@@ -93,14 +93,14 @@
       resultDisplay.innerHTML = `<p>No associated persons found.</p>`;
     } else {
       resultDisplay.innerHTML = `
-        <h3>Related Person URIs:</strong></h3>
+        <h3>(Person Filter)Related Persons:</h3>
         <ul>
           ${relatedPeople
             .map(p => `
               <li>
                 <a href="${p.person}" target="_blank">${p.label || p.person}</a>
                 ${p.gender ? ` – ${p.gender}` : ""}
-                ${p.description ? `<br/><small>${p.description}</small>` : ""}
+                ${p.description ? `<br/><small><em>${p.description}</em></small>` : ""}
               </li>
             `)
             .join('')}
