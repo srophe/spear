@@ -124,6 +124,7 @@ PREFIX sps: <http://syriaca.org/prop/statement/>
 
 export async function fetchFactoidsByType(uri, type) {
   let query;
+
   switch (type) {
     case "event":
       query = getFactoidsRelatedToKeyword(uri);
@@ -135,19 +136,41 @@ export async function fetchFactoidsByType(uri, type) {
       query = getFactoidsForPlace(uri);
       break;
     case "fieldOfStudy":
-      console.log("FOS: ", ${uri});
+      console.log("Field of Study URI:", uri);
       query = getFactoidsForFieldOfStudy(uri);
       break;
     default:
+      console.warn(`Unsupported type: ${type}`);
       return [];
   }
 
-  const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
-    headers: { Accept: 'application/sparql-results+json' }
-  });
-  const data = await res.json();
-  return data.results.bindings.map(b => ({
-    uri: b.factoid.value,
-    description: b.description?.value || ''
-  }));
+  console.log("SPARQL query being sent:", query);
+
+  try {
+    const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
+      headers: { Accept: 'application/sparql-results+json' }
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error("SPARQL HTTP error:", res.status, errorText);
+      throw new Error(`SPARQL HTTP error ${res.status}`);
+    }
+
+    const data = await res.json();
+
+    if (!data.results?.bindings) {
+      console.warn("No 'bindings' in response:", data);
+      return [];
+    }
+
+    return data.results.bindings.map(b => ({
+      uri: b.factoid?.value ?? '',
+      description: b.description?.value ?? ''
+    }));
+  } catch (err) {
+    console.error("Failed to fetch factoids:", err);
+    return [];
+  }
 }
+
