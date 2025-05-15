@@ -135,6 +135,7 @@ export async function fetchFactoidsByType(uri, type) {
       query = getFactoidsForPlace(uri);
       break;
     case "fieldOfStudy":
+      console.log("FOS: ", ${uri));
       query = getFactoidsForFieldOfStudy(uri);
       break;
     default:
