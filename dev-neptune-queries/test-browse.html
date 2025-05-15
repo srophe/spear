@@ -86,7 +86,6 @@
         ${factoids.map(f => `<li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>`).join('')}
       </ul>
     `;
-  });
     
     const relatedPeople = await fetchPeopleRelatedToKeyword(selectedValue, type);
 
