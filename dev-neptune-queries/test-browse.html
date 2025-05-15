@@ -77,18 +77,21 @@
   <h1>Browse SPARQL Results</h1>
 
   <label for="queryType">Choose a query type:</label>
-  <select id="queryType">
-    <option value="event">Event Keywords</option>
-    <option value="ethnicity">Ethnicities</option>
-    <option value="place">Places</option>
-    <option value="fieldOfStudy">Education Fields of Study</option> 
-  </select>
+
+<select id="queryType">
+  <option value="event">Event Keywords</option>
+  <option value="ethnicity">Ethnicities</option>
+  <option value="place">Places</option>
+  <option value="fieldOfStudy">Education Fields of Study</option> 
+</select>
+
 
   <label for="resultDropdown">Select a result:</label>
   <select id="resultDropdown"></select>
 
-  <div id="result">Results will appear here.</div>
-  <div id="factoidResults"></div>
+  <div id="result">Results</div>
+  <button id="loadFactoidsBtn">Load Related Factoids</button>
+  <div id="factoidResults" style="margin-top: 1rem;"></div>
 
   <script type="module">
     import {
@@ -99,66 +102,83 @@
       populateDropdown,
       fetchPeopleRelatedToKeyword
     } from './menuqueries.js';
-    import { fetchFactoidsByType } from './factoidsqueries.js';
+    import { fetchFactoidsByType, getAllFactoids,getAllPersonFactoids,getFactoidsForEthnicity,getFactoidsForPlace,getFactoidsForFieldOfStudy } from './factoidsqueries.js';
 
     const queryTypeSelect = document.getElementById('queryType');
     const resultDropdown = document.getElementById('resultDropdown');
     const resultDisplay = document.getElementById('result');
-    const factoidDisplay = document.getElementById('factoidResults');
 
-    const loadQuery = (type) => {
-      if (type === 'event') {
-        populateDropdown(getEventKeywords(), 'resultDropdown', 'keyword', 'keyword');
-      } else if (type === 'ethnicity') {
-        populateDropdown(getEthnicityOptions(), 'resultDropdown', 'ethnicity', 'ethnicity');
-      } else if (type === 'place') {
-        populateDropdown(getPlaceOptions(), 'resultDropdown', 'label', 'place');
-      } else if (type === 'fieldOfStudy') {
-        populateDropdown(getEducationFieldsOfStudy(), 'resultDropdown', 'label', 'subject');
-      }
-    };
+  const loadQuery = (type) => {
+    if (type === 'event') {
+      populateDropdown(getEventKeywords(), 'resultDropdown', 'keyword', 'keyword');
+    } else if (type === 'ethnicity') {
+      populateDropdown(getEthnicityOptions(), 'resultDropdown', 'ethnicity', 'ethnicity');
+    } else if (type === 'place') {
+      populateDropdown(getPlaceOptions(), 'resultDropdown', 'label', 'place');
+    } else if (type === 'fieldOfStudy') {
+      populateDropdown(getEducationFieldsOfStudy(), 'resultDropdown', 'label', 'subject');
+    }
+  };
 
+
+    // Load default query on page load
+    loadQuery(queryTypeSelect.value);
+
+    // When query type changes
     queryTypeSelect.addEventListener('change', () => {
       loadQuery(queryTypeSelect.value);
     });
 
-    resultDropdown.addEventListener('change', async () => {
-      const selectedValue = resultDropdown.value;
-      const type = queryTypeSelect.value;
+    // Show selected URI
+    resultDropdown.addEventListener('change', () => {
+      resultDisplay.textContent = `Selected URI: ${resultDropdown.value}`;
+    });
+  resultDropdown.addEventListener('change', async () => {
+    const selectedValue = resultDropdown.value;
+    const type = queryTypeSelect.value;
+    const relatedPeople = await fetchPeopleRelatedToKeyword(selectedValue, type);
 
-      const relatedPeople = await fetchPeopleRelatedToKeyword(selectedValue, type);
-      if (!relatedPeople.length) {
-        resultDisplay.innerHTML = `<p><em>No associated persons found.</em></p>`;
-      } else {
-        resultDisplay.innerHTML = `
-          <p><strong>Related Person URIs:</strong></p>
-          <ul>
-            ${relatedPeople.map(p => `
+    if (relatedPeople.length === 0) {
+      resultDisplay.innerHTML = `<p>No associated persons found.</p>`;
+    } else {
+      resultDisplay.innerHTML = `
+        <p><strong>Related Person URIs:</strong></p>
+        <ul>
+          ${relatedPeople
+            .map(p => `
               <li>
                 <a href="${p.person}" target="_blank">${p.label || p.person}</a>
                 ${p.gender ? ` – ${p.gender}` : ""}
                 ${p.description ? `<br/><em>${p.description}</em>` : ""}
               </li>
-            `).join('')}
-          </ul>
-        `;
-      }
+            `)
+            .join('')}
+        </ul>
+      `;
+    }
+  });
 
-      const factoids = await fetchFactoidsByType(selectedValue, type);
-      if (!factoids.length) {
-        factoidDisplay.innerHTML = "<p><em>No factoids found for this selection.</em></p>";
-      } else {
-        factoidDisplay.innerHTML = `
-          <h3>Related Factoids:</h3>
-          <ul>
-            ${factoids.map(f => `<li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>`).join('')}
-          </ul>
-        `;
-      }
-    });
+const factoidButton = document.getElementById('loadFactoidsBtn');
+const factoidDisplay = document.getElementById('factoidResults');
 
-    // Initial load
-    loadQuery(queryTypeSelect.value);
+factoidButton.addEventListener('click', async () => {
+  const selectedUri = resultDropdown.value;
+  const type = queryTypeSelect.value;
+
+  const factoids = await fetchFactoidsByType(selectedUri, type);
+  if (!factoids.length) {
+    factoidDisplay.innerHTML = "<em>No factoids found for this selection.</em>";
+    return;
+  }
+
+  factoidDisplay.innerHTML = `
+    <h3>Related Factoids:</h3>
+    <ul>
+      ${factoids.map(f => `<li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>`).join('')}
+    </ul>
+  `;
+});
+
   </script>
 </body>
 </html>
