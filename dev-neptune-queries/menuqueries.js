@@ -140,9 +140,22 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
     `,
     place: `
       PREFIX swdt: <http://syriaca.org/prop/direct/>
-      SELECT DISTINCT ?person
-      FROM <https://spear-prosop.org>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX schema: <http://schema.org/>
+      SELECT DISTINCT         
+        (STR(?p) AS ?person)
+        (STR(?label_en) AS ?label)
+        (STR(?desc) AS ?description)
+        (STRAFTER(STR(?sex), "/taxonomy/") AS ?gender)
+      FROM <http://syriaca.org/persons#graph>
+      FROM NAMED <https://spear-prosop.org>
       WHERE {
+          ?p rdfs:label ?label_en . 
+          FILTER(LANG(?label_en) = "en")
+          ?p schema:description ?desc
+          OPTIONAL { ?p swdt:gender  ?sex }
+        {
+          GRAPH <https://spear-prosop.org> {
         { ?person swdt:residence <${uri}> } UNION
          { ?person swdt:citizenship <${uri}> } UNION
         { ?person swdt:birth-place <${uri}> } UNION
@@ -151,7 +164,8 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
           ?event swdt:event-place <${uri}> ;
                  swdt:event-participant ?person .
         }
-      }
+        }
+      } 
       ORDER BY ?person
     `
   };
