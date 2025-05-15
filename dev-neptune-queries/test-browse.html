@@ -74,7 +74,7 @@
     const type = queryTypeSelect.value;
     const factoidDisplay = document.getElementById('factoidResults');
 
-    const factoids = await fetchFactoidsByType(selectedUri, type);
+    const factoids = await fetchFactoidsByType(selectedValue, type);
     if (!factoids.length) {
       factoidDisplay.innerHTML = "<em>No factoids found for this selection.</em>";
       return;
