@@ -588,7 +588,7 @@ pre {
 
 /* SPEAR Styles */
  .element {display:block; margin:.75em;} 
-.spearLabel {font-weight:bold;}
+.spearLabel {font-weight:bold; display:inline-block: margin-right:1em;}
 .uri {display:block; padding:.25em 1em; margin-bottom:1.5em;}
 
 /* NAVIGATION */
