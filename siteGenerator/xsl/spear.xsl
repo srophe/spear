@@ -54,7 +54,7 @@
     
     <xsl:template name="spearDates">
         <xsl:if test="@when or @notBefore or @notAfter or @from or @to">
-            <span class="element"><span class="spearLabel">Date:</span> 
+            <span class="element"><span class="spearLabel">Date:<xsl:text> </xsl:text></span> 
                 <xsl:choose>
                     <xsl:when test="@when"><xsl:value-of select="@when"/></xsl:when>
                     <xsl:when test="@notBefore and @notAfter">Sometime between <xsl:value-of select="@notBefore"/> and <xsl:value-of select="@notAfter"/></xsl:when>
@@ -74,7 +74,7 @@
         WS:Note: need test data, did not find any of these notes in the data
         -->
         <xsl:if test="t:note[@type='certainty']">
-            <span class="element"><span class="spearLabel">Certainty:</span> <a href="#{@subtype}"><xsl:value-of select="@subtype"/></a></span>
+            <span class="element"><span class="spearLabel">Certainty:<xsl:text> </xsl:text></span><a href="#{@subtype}"><xsl:value-of select="@subtype"/></a></span>
         </xsl:if>
     </xsl:template>
     <xsl:template name="spearCite">
