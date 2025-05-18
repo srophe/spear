@@ -595,8 +595,7 @@
                                         <xsl:call-template name="otherDataFormats">
                                             <xsl:with-param name="node" select="t:TEI"/>
                                             <xsl:with-param name="idno" select="$idno"/>
-                                            <xsl:with-param name="formats" select="'print'"
-                                            />
+                                            <xsl:with-param name="formats" select="''"/>
                                         </xsl:call-template>
                                         <div class="row">
                                             <div class="col-md-7 col-lg-8">
