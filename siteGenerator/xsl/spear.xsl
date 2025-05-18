@@ -108,7 +108,7 @@
                     <xsl:if test="position() = last()"><xsl:text>, </xsl:text></xsl:if>
                 </xsl:for-each>
                 <a href="{t:idno[@type='URI']}"><xsl:value-of select="t:idno[@type='URI']"/></a><xsl:text>, </xsl:text>
-                <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"><xsl:text>in </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"/><xsl:text>, </xsl:text></xsl:if>
+                <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"><xsl:text>in </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@level='m']"/>: <xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt/t:title[@type='sub']"/><xsl:text>, </xsl:text></xsl:if>
                 <xsl:if test="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"><xsl:text>edited by </xsl:text><xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='m']]/t:editor"/><xsl:text>, </xsl:text></xsl:if>
                 <xsl:text>general editor </xsl:text> <xsl:apply-templates select="ancestor-or-self::t:TEI/descendant::t:seriesStmt[t:title[@level='s']]/t:editor"/><xsl:text>, </xsl:text><xsl:value-of select="format-date(current-date(), '[Y0001]-[M01]-[D01]')"/><xsl:text>.</xsl:text>
             </span>
@@ -498,15 +498,22 @@
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <h4>Source Text</h4>
+                                    <!--NOTE:  Use this for local generation of factoids only.  -->
                                     <xsl:variable name="ref" select="t:ptr/@target"/>
+                                    <xsl:variable name="text" select="document(xs:anyURI(concat('http://localhost:8080/exist/apps/syriac-corpus/CTS/cts-resolver.xql?urn=',$ref,'&amp;action=xml')))"/>
+                                    <div>
+                                        <xsl:apply-templates select="$text//*:response/child::*"/>
+                                    </div>
+                                    <!--
                                     <div class="ctsResolver" data-cts-location="https://syriaccorpus.org/" data-cts-urn="{$ref}" data-cts-format="xml"/>
+                                    -->
                                     <span>
-                                        <a href="https://syriaccorpus.org//api/cts?urn={$ref}">
+                                        <a href="https://syriaccorpus.org/api/cts?urn={$ref}">
                                             See full text at The Syriac Corpus <span class="glyphicon glyphicon-circle-arrow-right"> </span>
                                         </a>
                                     </span>
                                 </div>
-                                <script type="text/javascript" src="$nav-base/CTS/resources/js/cts.js"/>
+                                <script type="text/javascript" src="/CTS/resources/js/cts.js"/>
                             </div>
                         </div>
                     </xsl:for-each>
