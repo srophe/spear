@@ -19,7 +19,46 @@ WHERE {
 }
 ORDER BY ?label_en
 `;
+//Faster version, only finds subjects (828) much slower to add union which brings total to 902 (for browse does this matter?? It would be quicker to pull both queries separately and merge results in javascript):
+export const getSubjectNames = (limit = 25, offset = 0) => `
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+SELECT DISTINCT ?person ?label_en 
+FROM <http://syriaca.org/persons#graph>
+FROM NAMED <https://spear-prosop.org>
+WHERE {
+  ?person rdfs:label ?label_en .
+  FILTER(LANG(?label_en) = "en")
+  {
+    GRAPH <https://spear-prosop.org> {
+      { ?person ?anyPredicate ?anyObject }
+    }
+  }
+}
+ORDER BY ?label_en
+LIMIT ${limit}
+OFFSET ${offset}
+`;
+//Much slower than subject search-- perhaps there is a small subset of predicates to search by?
+export const getObjectNames = (limit = 25, offset = 0) => `
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?person ?label_en 
+FROM <http://syriaca.org/persons#graph>
+FROM NAMED <https://spear-prosop.org>
+WHERE {
+  ?person rdfs:label ?label_en .
+  FILTER(LANG(?label_en) = "en")
+  {
+    GRAPH <https://spear-prosop.org> {
+      { ?anySubject ?anyPredicate ?person }
+    }
+  }
+}
+ORDER BY ?label_en
+LIMIT ${limit}
+OFFSET ${offset}
+`;
 export const getPeopleProfiles = (limit = 25, offset = 0) =>
     `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
