@@ -51,4 +51,42 @@ ORDER BY ?label_en
 LIMIT ${limit}
 OFFSET ${offset}
 `;
-    
+
+export const getPersonByUri = (uri) =>
+    `
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX swdt: <http://syriaca.org/prop/direct/>
+
+SELECT DISTINCT
+  (STR(?label_en) AS ?name)
+  (STR(?desc) AS ?description)
+  (STRAFTER(STR(?gender), "/taxonomy/") AS ?sex)
+FROM <http://syriaca.org/persons#graph>
+WHERE {
+  <${uri}> rdfs:label ?label_en . 
+  FILTER(LANG(?label_en) = "en")
+  <${uri}> schema:description ?desc
+  OPTIONAL { <${uri}> swdt:gender ?gender }
+}
+`;
+//Example:
+// curl -G https://sparql.vanderbilt.edu/sparql \
+//   --data-urlencode 'query=
+// PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+// PREFIX schema: <http://schema.org/>
+// PREFIX swdt: <http://syriaca.org/prop/direct/>
+
+// SELECT DISTINCT
+//   (STR(?label_en) AS ?name)
+//   (STR(?desc) AS ?description)
+//   (STRAFTER(STR(?gender), "/taxonomy/") AS ?sex)
+// FROM <http://syriaca.org/persons#graph>
+// WHERE {
+//   <http://syriaca.org/person/3784> rdfs:label ?label_en . 
+//   FILTER(LANG(?label_en) = "en")
+//   <http://syriaca.org/person/3784> schema:description ?desc .
+//   OPTIONAL { <http://syriaca.org/person/3784> swdt:gender ?gender }
+// }' \
+//   -H 'Accept: application/sparql-results+json'
+
