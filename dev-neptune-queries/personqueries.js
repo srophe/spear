@@ -26,7 +26,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
 PREFIX swdt: <http://syriaca.org/prop/direct/>
 
-SELECT DISTINCT ?person ?label_en ?description ?gender
+SELECT DISTINCT ?person ?label_en ?description (STRAFTER(STR(?gender), "/taxonomy/") AS ?sex)
 WHERE {
   GRAPH <https://spear-prosop.org> {
     { ?person ?p ?o } UNION { ?s ?p ?person }
