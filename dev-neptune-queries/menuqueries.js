@@ -100,7 +100,7 @@ export async function populateDropdown(query, dropdownId, labelField = "label", 
     console.error("Dropdown load failed:", err);
   }
 }
-// Load related people for a selected value
+// Load related people for a selected value: should data returned labeled gender or sex? This one uses gender
 export async function fetchPeopleRelatedToKeyword(uri, relation) {
   const keywordQueryMap = {
     event: `
@@ -118,7 +118,7 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
       WHERE {
         ?p rdfs:label ?label_en . 
         FILTER(LANG(?label_en) = "en")
-        ?p schema:description ?desc
+        OPTIONAL { ?p schema:description ?desc }
         OPTIONAL { ?p swdt:gender  ?sex }
         {
           GRAPH <https://spear-prosop.org> {
@@ -152,12 +152,12 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
       WHERE {
           ?p rdfs:label ?label_en . 
           FILTER(LANG(?label_en) = "en")
-          ?p schema:description ?desc
+          OPTIONAL { ?p schema:description ?desc }
           OPTIONAL { ?p swdt:gender  ?sex }
         {
           GRAPH <https://spear-prosop.org> {
         { ?person swdt:residence <${uri}> } UNION
-         { ?person swdt:citizenship <${uri}> } UNION
+        { ?person swdt:citizenship <${uri}> } UNION
         { ?person swdt:birth-place <${uri}> } UNION
         { ?person swdt:death-place <${uri}> } UNION
         {
