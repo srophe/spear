@@ -58,7 +58,7 @@ FROM NAMED <https://spear-prosop.org>
 WHERE {
   ?person rdfs:label ?label_en . 
   FILTER(LANG(?label_en) = "en")
-  ?person schema:description ?desc
+  OPTIONAL {?person schema:description ?desc}
   OPTIONAL { ?person swdt:gender  ?gender }
 
   {
@@ -88,7 +88,7 @@ FROM <http://syriaca.org/persons#graph>
 WHERE {
   <${uri}> rdfs:label ?label_en . 
   FILTER(LANG(?label_en) = "en")
-  <${uri}> schema:description ?desc
+  OPTIONAL <${uri}> schema:description ?desc
   OPTIONAL { <${uri}> swdt:gender ?gender }
 }
 `;
