@@ -19,47 +19,30 @@ WHERE {
 }
 ORDER BY ?label_en
 `;
-//Faster version, only finds subjects (828) much slower to add union which brings total to 902 (for browse does this matter?? It would be quicker to pull both queries separately and merge results in javascript):
-export const getSubjectNames = (limit = 25, offset = 0) => `
+//9 seconds: 902 results
+export const getPeopleProfiles = () =>
+      `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX swdt: <http://syriaca.org/prop/direct/>
 
-SELECT DISTINCT ?person ?label_en 
-FROM <http://syriaca.org/persons#graph>
-FROM NAMED <https://spear-prosop.org>
+SELECT DISTINCT ?person ?label_en ?description ?gender
 WHERE {
-  ?person rdfs:label ?label_en .
-  FILTER(LANG(?label_en) = "en")
-  {
-    GRAPH <https://spear-prosop.org> {
-      { ?person ?anyPredicate ?anyObject }
-    }
+  GRAPH <https://spear-prosop.org> {
+    { ?person ?p ?o } UNION { ?s ?p ?person }
+  }
+  GRAPH <http://syriaca.org/persons#graph> {
+    ?person rdfs:label ?label_en . 
+    FILTER(LANG(?label_en) = "en")
+    OPTIONAL {?person schema:description ?description}
+    OPTIONAL  { ?person swdt:gender  ?gender }
   }
 }
 ORDER BY ?label_en
-LIMIT ${limit}
-OFFSET ${offset}
-`;
-//Much slower than subject search-- perhaps there is a small subset of predicates to search by?
-export const getObjectNames = (limit = 25, offset = 0) => `
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    `;
 
-SELECT DISTINCT ?person ?label_en 
-FROM <http://syriaca.org/persons#graph>
-FROM NAMED <https://spear-prosop.org>
-WHERE {
-  ?person rdfs:label ?label_en .
-  FILTER(LANG(?label_en) = "en")
-  {
-    GRAPH <https://spear-prosop.org> {
-      { ?anySubject ?anyPredicate ?person }
-    }
-  }
-}
-ORDER BY ?label_en
-LIMIT ${limit}
-OFFSET ${offset}
-`;
-export const getPeopleProfiles = (limit = 25, offset = 0) =>
+// Limits and offsets do not save api call time, unfortunately
+export const getPeopleProfilesLimited = (limit = 25, offset = 0) =>
     `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
