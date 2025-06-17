@@ -638,3 +638,17 @@ td .pre {
 #browse--options button:not(.active) svg.open {
   display: none;
 }
+
+.btn-outline-dark {
+  --bs-btn-color: #456889;
+  --bs-btn-border-color: #456889;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-border-color: #456889;
+  --bs-btn-active-bg: #456889;
+  --bs-btn-hover-bg: #456889;
+}
+
+a {
+  color: #337ab7;
+}
+
