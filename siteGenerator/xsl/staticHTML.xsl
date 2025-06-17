@@ -672,49 +672,6 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
-    <xsl:template match="html:span">
-        <xsl:choose>
-            <xsl:when test="@data-template = 'app:keyboard-select-menu'">
-                <xsl:variable name="inputID" select="@data-template-input-id"/>
-                <xsl:choose>
-                    <xsl:when test="$config/descendant::*:keyboard-options/child::*">
-                        <span class="keyboard-menu" xmlns="http://www.w3.org/1999/xhtml">
-                            <button type="button" class="btn btn-default dropdown-toggle"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                title="Select Keyboard"> &#160;<span
-                                    class="syriaca-icon syriaca-keyboard">&#160; </span><span
-                                    class="caret"/>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <xsl:for-each
-                                    select="$config/descendant::*:keyboard-options/*:option">
-                                    <li xmlns="http://www.w3.org/1999/xhtml">
-                                        <a href="#" class="keyboard-select" id="{@id}"
-                                            data-keyboard-id="{$inputID}">
-                                            <xsl:value-of select="."/>
-                                        </a>
-                                    </li>
-                                </xsl:for-each>
-                            </ul>
-                        </span>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:call-template name="generickeyboardSelect"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="{name(.)}" namespace="http://www.w3.org/1999/xhtml">
-                    <xsl:for-each select="@*">
-                        <xsl:attribute name="{name(.)}">
-                            <xsl:value-of select="."/>
-                        </xsl:attribute>
-                    </xsl:for-each>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
     <xsl:template match="html:link | html:script | html:a">
         <xsl:element name="{name()}">
             <!--<link rel="stylesheet" type="text/css" href="$nav-base/resources/css/syr-icon-fonts.css"/>-->
@@ -1152,7 +1109,7 @@
             <meta name="DC.isPartOf" property="dc.ispartof" content="{$config/html:title[1]}"/>
             <link rel="shortcut icon" href="/resources/images/fav-icons/syriaca-favicon.ico"/>
             <!-- Bootstrap 3 -->
-            <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/>
             <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/>
             <!-- Srophe styles -->
             <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/>
@@ -1172,252 +1129,35 @@
             <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/>
             <script type="text/javascript" src="/resources/js/clipboard.min.js"/>
             <!-- Bootstrap -->
-            <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/>
+            <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/>
             <!-- ReCaptcha -->
             <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/>
-            <!-- keyboard widget css & script -->
-            <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/>
-            <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/>
-            <link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/>
-            <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/syr.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Hebrew.min.js"/>
-            <script type="text/javascript">
-                <xsl:text disable-output-escaping="yes">
-                    <![CDATA[
-                $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-                
-                $('.keyboard').keyboard({
-                openOn: null,
-                stayOpen: false,
-                alwaysOpen: false,
-                autoAccept: true,
-                usePreview: false,
-                initialFocus: true,
-                rtl : true,
-                layout: 'syriac-phonetic',
-                hidden: function(event, keyboard, el){
-                //  keyboard.destroy();
-                }
-                });
-                
-                $('.keyboard-select').click(function () {
-                var keyboardID = '#' + $(this).data("keyboard-id")
-                var kb = $(keyboardID).getkeyboard();
-                //var kb = $('#searchField').getkeyboard();
-                // change layout based on link ID
-                kb.options.layout = this.id
-                // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
-                kb.reveal();
-                }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                var selectedFont = $(this).data("font-id")
-                $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                $("*:lang(syr)").css('font-family', selectedFont)
-                });
-                
-                })]]>
-                </xsl:text>
-            </script>
         </head>
     </xsl:template>
     <xsl:template name="genericNav">
-        <nav xmlns="http://www.w3.org/1999/xhtml" class="navbar navbar-default navbar-fixed-top"
-            role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"/>
-                    <span class="icon-bar"/>
-                    <span class="icon-bar"/>
-                </button>
-                <a class="navbar-brand banner-container" href="index.html">
-                    <span class="syriaca-icon syriaca-syriaca banner-icon">
-                        <span class="path1"/>
-                        <span class="path2"/>
-                        <span class="path3"/>
-                        <span class="path4"/>
-                    </span>
-                    <span class="banner-text">
-                        <xsl:value-of select="$config/html:title[1]"/>
-                    </span>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"  xmlns="http://www.w3.org/1999/xhtml" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand banner-container" href="/index.html">
+                    <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
+                    <span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span
+            >                    </span
+          >
                 </a>
-            </div>
-            <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <xsl:call-template name="syriacaSharedLinks"/>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                                <span class="mobile-submenu">About</span>  <b class="caret"/>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="/about-syriac.html">What is Syriac?</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/about-srophe.html">Project Overview</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/project-team.html">Project Team</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/project-partners.html">Project Partners</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/geo/index.html">
-                                    <span class="icon-text">Gazetteer</span>
-                                </a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="http://vu.edu/syriac">Support Our Work</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/contact-us.html">Contact Us</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/documentation/index.html">
-                                    <span class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"/>
-                                    <span class="icon-text">Documentation</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="search.html" class="nav-text">Advanced Search</a>
-                    </li>
-                    <li>
-                        <div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="search.html" method="get">
-                                <div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav"/>
-                                    <xsl:call-template name="keyboard-select-menu">
-                                        <xsl:with-param name="inputID" select="'keywordNav'"/>
-                                    </xsl:call-template>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search">
-                                        <span class="glyphicon glyphicon-search"/>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="btn-nav">
-                            <button class="btn btn-default navbar-btn" id="font"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                title="Select Font">
-                                <span class="glyphicon glyphicon-font"/>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-right" id="swap-font">
-                                <li>
-                                    <a href="#" class="swap-font" id="DefaultSelect"
-                                        data-font-id="EstrangeloEdessa">Default</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="swap-font" id="EstrangeloEdessaSelect"
-                                        data-font-id="EstrangeloEdessa">Estrangelo Edessa</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="swap-font" id="EastSyriacAdiabeneSelect"
-                                        data-font-id="EastSyriacAdiabene">East Syriac Adiabene</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="swap-font" id="SertoBatnanSelect"
-                                        data-font-id="SertoBatnan">Serto Batnan</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/documentation/wiki.html?wiki-page=/How-to-view-Syriac-script&amp;wiki-uri=https://github.com/srophe/syriaca-data/wiki"
-                                        >Help <span class="glyphicon glyphicon-question-sign"/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <!-- <xsl:call-template name="syriacaSharedLinks"/> -->
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </nav>
-    </xsl:template>
-    <xsl:template name="generickeyboardSelect">
-        <span xmlns="http://www.w3.org/1999/xhtml" class="keyboard-menu">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" title="Select Keyboard"> &#160;<span
-                    class="syriaca-icon syriaca-keyboard">&#160; </span><span class="caret"/>
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#" class="keyboard-select" id="syriac-phonetic"
-                        data-keyboard-id="keywordNav">Syriac Phonetic</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="syriac-standard"
-                        data-keyboard-id="keywordNav">Syriac Standard</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Arabic (101)"
-                        data-keyboard-id="keywordNav">Arabic Mod. Standard</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Hebrew" data-keyboard-id="keywordNav"
-                        >Hebrew</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Russian"
-                        data-keyboard-id="keywordNav">Russian</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Greek" data-keyboard-id="keywordNav"
-                        >Greek</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="qwerty" data-keyboard-id="keywordNav"
-                        >English QWERTY</a>
-                </li>
-            </ul>
-        </span>
-    </xsl:template>
-    <xsl:template name="keyboard-select-menu">
-        <xsl:param name="inputID"/>
-        <xsl:if test="$config/descendant::*:keyboard-options/child::*">
-            <span xmlns="http://www.w3.org/1999/xhtml" class="keyboard-menu">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" title="Select Keyboard"> &#160;<span
-                        class="syriaca-icon syriaca-keyboard">&#160; </span><span class="caret"/>
-                </button>
-                <ul class="dropdown-menu">
-                    <xsl:for-each select="$config/descendant::*:keyboard-options/*:option">
-                        <li xmlns="http://www.w3.org/1999/xhtml">
-                            <a href="#" class="keyboard-select" id="{@id}"
-                                data-keyboard-id="{$inputID}">
-                                <xsl:value-of select="."/>
-                            </a>
-                        </li>
-                    </xsl:for-each>
-                </ul>
-            </span>
-        </xsl:if>
     </xsl:template>
     <xsl:template name="syriacaSharedLinks">
         <xsl:if test="doc-available(concat($applicationPath, '/', 'templates/shared-links.html'))">
