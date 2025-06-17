@@ -147,19 +147,19 @@
             >
               <button
                 type="button"
-                class="btn btn-light active"
+                class="btn btn-outline-dark active"
                 data-type="person"
               >
                 Persons
               </button>
-              <button type="button" class="btn btn-light" data-type="factoid">Factoids</button>
+              <button type="button" class="btn btn-outline-dark" data-type="factoid">Factoids</button>
             </div>
             <div class="flex-grow-1">
               <div class="card ms-5 p-3 border-1 flex-grow-1">
                 <div class="d-inline-flex gap-4" id="browse--options">
                   <button
                     type="button"
-                    class="btn btn-light w-100 active"
+                    class="btn btn-outline-dark w-100 active"
                     data-filter="name"
                   >
                     <span>Names</span>
@@ -194,7 +194,7 @@
                   </button>
                   <button
                     type="button"
-                    class="btn btn-light w-100"
+                    class="btn btn-outline-dark w-100"
                     data-filter="gender"
                   >
                     <span>Gender</span>
@@ -227,7 +227,7 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100" disabled>
+                  <button type="button" class="btn btn-outline-dark w-100" disabled>
                     <span>Events</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -258,7 +258,7 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100" disabled>
+                  <button type="button" class="btn btn-outline-dark w-100" disabled>
                     <span>Dates</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -289,7 +289,7 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100" disabled>
+                  <button type="button" class="btn btn-outline-dark w-100" disabled>
                     <span>Uncertainty</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -452,6 +452,8 @@
     browseLetterFilter?.addEventListener("click", (event) => {
       event.preventDefault();
 
+      document.getElementById("browse--items-container").innerHTML = null;
+
       if (event.target.tagName === "BUTTON") {
         const selectedButton = event.target;
 
@@ -595,9 +597,9 @@
               new URL(event?.destination?.url).searchParams.get("person") ===
                 person
             ) {
-              return `<button data-name="${person}" class="btn btn-text p-2 active">${person}</button>`;
+              return `<button data-name="${person}" class="btn btn-outline p-2 active">${person}</button>`;
             }
-            return `<button data-name="${person}" class="btn btn-text p-2">${person}</button>`;
+            return `<button data-name="${person}" class="btn btn-outline p-2">${person}</button>`;
           })
           .join("");
         document.getElementById(
@@ -674,9 +676,9 @@
         ]
           .map(([key, value]) => {
             if (key === params.gender) {
-              return `<button data-gender="${key}" class="btn btn-light p-1 active">${value}</button>`;
+              return `<button data-gender="${key}" class="btn btn-outline-dark p-1 active">${value}</button>`;
             }
-            return `<button data-gender="${key}" class="btn btn-light p-1">${value}</button>`;
+            return `<button data-gender="${key}" class="btn btn-outline-dark p-1">${value}</button>`;
           })
           .join("");
       } else if (params.filter === "name") {
@@ -685,9 +687,9 @@
         )
           .map((item) => {
             if (item === params.letter) {
-              return `<button data-letter="${item}" class="btn btn-light letter-btn p-1 text-uppercase active">${item}</button>`;
+              return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase active">${item}</button>`;
             }
-            return `<button data-letter="${item}" class="btn btn-light letter-btn p-1 text-uppercase">${item}</button>`;
+            return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase">${item}</button>`;
           })
           .join("");
       }
