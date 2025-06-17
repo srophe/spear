@@ -595,7 +595,7 @@
               new URL(event?.destination?.url).searchParams.get("person") ===
                 person
             ) {
-              return `<button data-name="${person}" class="btn btn-text p-2">${person}</button>`;
+              return `<button data-name="${person}" class="btn btn-text p-2 active">${person}</button>`;
             }
             return `<button data-name="${person}" class="btn btn-text p-2">${person}</button>`;
           })
@@ -691,6 +691,10 @@
           })
           .join("");
       }
+
+       document.getElementById("browse--items-container").scrollIntoView({behavior: "smooth", block: "start", inline: "start" });
+
+       console.log("SCROLLING TO TOP");
     };
 
     const updateParams = (params) => {
