@@ -45,10 +45,10 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">occupation: </span><span class="tei-persName">Samuel</span> was a scribe in <span class="tei-placeName"> the Convent of the
                                     Edessenes</span>. <a href="/10510-29" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">occupation: </span><span class="tei-persName">Simeon</span> was a scribe. <a href="/826-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">occupation: </span><span class="tei-persName">Jonathan</span> was a scribe in <span class="tei-placeName"> the Convent of the
-                                    Edessenes </span> <a href="/10510-34" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">occupation: </span><span class="tei-persName">Mar
                                     Yahab Bar Shemesh</span> was a scribe of <span class="tei-placeName">Edessa </span>.  <a href="/8559-34" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">occupation: </span><span class="tei-persName">Jonathan</span> was a scribe in <span class="tei-placeName"> the Convent of the
+                                    Edessenes </span> <a href="/10510-34" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">occupation: </span><span class="tei-persName">Kaiuma
                                     Bar Magartat</span> was a scribe of <span class="tei-placeName"> Edessa </span>.  <a href="/8559-37" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">occupation: </span>
@@ -62,8 +62,23 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
                                 “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Scribes</span></span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/taxonomy/scribes.html, 2025-05-12.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/scribes.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/scribes"/>Scribes</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2679.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2679"/>John</a></li><li><a href="/aggregate/person/2682.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2682"/>John
-                        the Scribe</a></li><li><a href="/aggregate/person/3218.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3218"/>John (Urtaya)</a></li><li><a href="/aggregate/person/3227.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3227"/>Jonathan</a></li><li><a href="/aggregate/person/2285.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2285"/>Qayuma bar
-                        Magartat</a></li><li><a href="/aggregate/person/3249.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3249"/>Samuel</a></li><li><a href="/aggregate/person/2098.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2098"/>Simeon the Scribe</a></li><li><a href="/aggregate/person/2313.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2313"/>Yahab bar
-                        Shemesh</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/1528.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1528"/>Dayro d-Urhoye</a></li><li><a href="/aggregate/place/78.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/78"/>Edessa</a></li></ul></div></div></div></div></div></div></body></html>
+                                https://dev.spear-prosop.org/aggregate/taxonomy/scribes.html, 2025-06-16.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/3218.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3218"/>John (Urtaya) - ܝܘܚܢܢ
+        </a></li><li><a href="/aggregate/person/2682.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2682"/>John the Scribe — ܝܘܚܢܢ
+                        ܣܦܪܐ
+                </a></li><li><a href="/aggregate/person/2679.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2679"/>John — ܝܘܚܢܢ ܩܪܘܝܐ
+                        ܘܟܬܘܒܐ
+                </a></li><li><a href="/aggregate/person/3227.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3227"/>Jonathan - ܝܘܢܬܢ
+        </a></li><li><a href="/aggregate/person/2285.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2285"/>Qayuma bar Magartat — ܩܝܘܡܐ
+                        ܒܪ ܡܓܪܛܛ
+                </a></li><li><a href="/aggregate/person/3249.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3249"/>Samuel - ܫܡܘܐܝܠ
+        </a></li><li><a href="/aggregate/person/2098.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2098"/>Simeon the Scribe — ܫܡܥܘܢ
+                        ܟܬܘܒܐ
+                </a></li><li><a href="/aggregate/person/2313.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2313"/>Yahab bar Shemesh — ܝܗܒ ܒܪ
+                        ܫܡܫ 
+                </a></li></ul><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/scribes.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/scribes"/>Scribes</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida
+                                        — ܐܡܝܕ
+                </a></li><li><a href="/aggregate/place/1528.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1528"/>Dayro d-Urhoye
+                                        — ܕܝܪܐ ܕܐܘܪ̈ܗܝܐ
+                </a></li><li><a href="/aggregate/place/78.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/78"/>Edessa — ܐܘܪܗܝ
+                </a></li></ul></div></div></div></div></div></div></body></html>

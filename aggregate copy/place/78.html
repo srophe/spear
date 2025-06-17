@@ -1,0 +1,1328 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Edessa</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl: true,
+                    layout: 'syriac-phonetic',
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
+                });
+                
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function () {
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"
+                                ><span>Edessa</span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/place/78"
+                                                >http://syriaca.org/place/78</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <div class="sources">
+                                    <h3>Events</h3>
+                                    <p class="indent"> In 345/6 A. Gr. 657 Abraham built the House
+                                        of the Confessors in Edessa . <a href="/8559-109"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In November A. D. 201 Teshri II A. Gr. 513
+                                        during the reign of Abgar the Great , the Daisan river
+                                        flooded Edessa destroying the western wall of the city, the
+                                        Great Palace , and the Church of the Christians . <a
+                                            href="/8559-12" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Thomas bought books from Alexandria and spices
+                                        from Edessa. <a href="/813-15" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 369/70 A. Gr. 681 the great House of
+                                        Baptism of Edessa was built. <a href="/8559-152"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In November A. D. 201 Teshri II A. Gr. 513 ,
+                                        Abgar commanded the removal of the flood gates of Edessa .
+                                            <a href="/8559-16" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In September A. D. 373 Elul A. Gr. 684 people
+                                        fled the Church of Edessa because of the persecution of
+                                        Arians . <a href="/8559-160" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In December A.D. 377 December A.D. 378 The
+                                        orthodox recovered the Church of Edessa . <a
+                                            href="/8559-168" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Two thousand people were killed in Edessa by
+                                        the flooding of the Daisan river in November A. D. 201
+                                        Teshri II A. Gr. 513 . The following factoids deal with the
+                                        same event: 8559-18, 8559-545. <a href="/8559-18"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In November A. D. 201 Teshri II A. Gr. 513 ,
+                                        Abgar commanded the craftsmen of Edessa to remove their
+                                        cottage from the banks of the Daisan river . <a
+                                            href="/8559-21" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 411/2 A. Gr. 723 Rabbula built in Edessa
+                                        the House of Mar Stephanos previously called the House of
+                                        the Sabbath of the Jews of Edessa by the command of
+                                        Theodosius . <a href="/8559-260" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 412/3 A. Gr. 724 the walls of Edessa were
+                                        broken down by a flood for the third time. The following
+                                        factoids deal with the same event: 8559-261, 8559-554. <a
+                                            href="/8559-261" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In November A. D. 201 Teshri II A. Gr. 513 ,
+                                        Abgar commanded those who live in the portico of Edessa not
+                                        to lodge in their cottages during the winter. <a
+                                            href="/8559-27" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 437/8 A. Gr. 749 Senator bought a silver
+                                        table weighing 720 pounds and it was placed in the old
+                                        Church of Edessa . <a href="/8559-290" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After November A. D. 201 Teshri II A. Gr. 513
+                                        , Abgar remitted the taxes of Edessa and the surrounding
+                                        towns for five years on account of the flood. <a
+                                            href="/8559-31" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The bishops assembled at the Second Council
+                                        of Ephesus anathematized Flavian of Constantinople , Domnus
+                                        of Antioch , Irenaeus of Tyre , Hiba of Edessa , Eusebius of
+                                        Dorylaeum , Daniel of Ḥarran , Sophronius of Tella , and
+                                        Theodoret of Cyrrhus . <a href="/8559-315"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> On 1 January A. D. 448 1 Kānun II A. Gr. 759
+                                        Hiba left Edessa . <a href="/8559-316" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> On 21 July 448 21 Tāmmuz A. Gr. 759 Nonos
+                                        became Bishop of Edessa . <a href="/8559-321"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After 21 July 448 21 Tāmmuz A. Gr. 759 Nonos
+                                        built a sacristy in the Church of Edessa . <a
+                                            href="/8559-322" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After 28 October A. D. 457 28 Teshri I A. Gr.
+                                        769 Nonos built the House of John the Baptist in Edessa . <a
+                                            href="/8559-344" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After 28 October A. D. 457 28 Teshri I A. Gr.
+                                        769 Nonos built the House for the leperous poor of Edessa
+                                        outside the gate of Beth Shemesh . <a href="/8559-345"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 488/9 A. Gr. 800 The School of the
+                                        Persians was removed from Edessa . <a href="/8559-374"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent">Hiba the Bishop of Edessa allowed certain
+                                        heresies to spread in Edessa, such as Nestorianism, which
+                                        was promoted by the School of the Persians. <a
+                                            href="/802-38" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Peter became bishop and entered the city of
+                                        Edessa on 12 September 498 12 Elul A. Gr. 809 . <a
+                                            href="/8559-383" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 498/9 A. Gr. 810 many locusts appeared in
+                                        Edessa and did little damage but layed eggs. <a
+                                            href="/8559-385" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In January 499 Kānun II A. Gr. 810 a sign
+                                        like a spear appeared for many days in the sky above Edessa
+                                        . <a href="/8559-397" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 499/500 A. Gr. 811 locusts devoured the
+                                        grain of Edessa . <a href="/8559-410" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> On 22 August A. D. 502 22 Āb A. Gr. 813 a
+                                        great fire appeared in the north of the city of Edessa . <a
+                                            href="/8559-411" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In September A. D. 503 Elul A. Gr. 814 Kavad
+                                        besieged Edessa but did not capture it. The following
+                                        factoids deal with closely related events: 8559-420,
+                                        8559-421 <a href="/8559-420" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> During the seige of Edessa in September A. D.
+                                        503 Elul A. Gr. 814 Kavad burned the House of Mar Sergius
+                                        and the House of the Confessors . The following factoids
+                                        deal with closely related events: 8559-420, 8559-421 <a
+                                            href="/8559-421" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Bishop Cyrus of Edessa was opposed to the
+                                        School of the Persians and stopped it from flourishing in
+                                        Edessa. The School moved to Nisbis. <a href="/802-43"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After November A. D. 201 Teshri II A. Gr. 513
+                                        , Mar Yahab Bar Shemesh and Kaiuma Bar Magartat recorded the
+                                        flooding of Edessa. <a href="/8559-46" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> On 4 November A. D. 519 4 Teshri II A. Gr.
+                                        831 Patricius arrived in Edessa at the command of the
+                                        Emperor Justin in order to urge Bishop Pawlā to receive the
+                                        Council of Chalcedon or else be deposed. <a href="/8559-464"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After 4 November A. D. 519 4 Teshri II A. Gr.
+                                        831 , Bishop Pawlā refused to accept the Council of
+                                        Chalcedon . When Patricius threatened to remove him from
+                                        Edessa he fled to the House of Baptism . Fearing the command
+                                        of Emperor Justin , Patricius removed Bishop Pawlā to
+                                        Seleucia . <a href="/8559-465" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 520/1 A. Gr. 832 , the Emperor Justin
+                                        returned Bishop Pawlā to his episcopal see in Edessa hoping
+                                        that he would accept the Council of Chalcedon . <a
+                                            href="/8559-466" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After November A. D. 201 Teshri II A. Gr. 513
+                                        , Bar Din and Bulid archived the record of the flooding of
+                                        Edessa . <a href="/8559-47" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Asclepius became bishop and entered the city
+                                        of Edessa on 23 October A. D. 522 23 Teshri I A. Gr. 834 .
+                                            <a href="/8559-471" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 524/5 A. Gr. 836 a flood destroyed Edessa
+                                        for the fourth time. The following factoids deal with the
+                                        same event: 8559-476, 8559-555. <a href="/8559-476"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 132/1 B.C. A. Gr. 180 Kings began to rule
+                                        in Edessa. <a href="/8559-48" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 424/5 A. Gr. 836 , after the flooding of
+                                        Edessa Asclepius fled Edessa and spent 70 days in Antioch
+                                        with Euphrasius . The following factoids deal with closely
+                                        related events: 8559-476, 8559-482 <a href="/8559-482"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> On 4 September A. D. 525 4 Elul A. Gr. 836
+                                        they moved the body of Asclepius from Antioch to Edessa
+                                        where he was buried alongside Nonos in the the House of Mar
+                                        Barlāhā . <a href="/8559-484" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Following Pawlā's acceptance of the Council
+                                        of Chalcedon and a letter of support from Justinian , the
+                                        Emperor Justin restored Pawlā to his episcopal see and he
+                                        entered Edessa on 8 March 526 8 Ādar A. Gr. 837 . <a
+                                            href="/8559-491" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Andreos became bishop and entered the city of
+                                        Edessa on 7 February A. D. 527 7 Shebāṭ A. Gr. 838 . <a
+                                            href="/8559-497" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> On 5 October A. D. 538 5 Teshri I A. Gr. 850
+                                        a sign like a spear appeared in the sky above Edessa . <a
+                                            href="/8559-500" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Addai became bishop and entered the city of
+                                        Edessa on 28 August A. D. 533 28 Āb A. Gr. 844 . <a
+                                            href="/8559-517" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In July 531 Tammuz A. Gr. 842 Demosthenes
+                                        arrived in Edessa to command the Roman army . <a
+                                            href="/8559-529" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After May 540 Iyār A. Gr. 851 , the great men
+                                        of the city of Edessa saved the city from Chosroes by paying
+                                        him two centenaria of gold, after which Chosroes returned to
+                                        Persia . <a href="/8559-544" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The first time the walls of Edessa were
+                                        broken down was in November A. D. 201 Teshri II A. Gr. 513
+                                        The following factoids deal with the same event: 8559-18,
+                                        8559-545. <a href="/8559-545" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The second time the walls of Edessa were
+                                        broken down . was in the days of Diocletian the King in May
+                                        303 Iyār A. Gr. 614 The following factoids deal with the
+                                        same event: 8559-79 and 8559-546. <a href="/8559-546"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The third time the walls of Edessa were
+                                        broken down was in the days of the Kings Honorios and
+                                        Theodosius and of the bishop Rabbula in March 413 Ādar A.
+                                        Gr. 724 . The following factoids deal with the same event:
+                                        8559-261, 8559-554. <a href="/8559-554" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The fourth time the walls of Edessa were
+                                        broken down was in the days of the king Justin and of the
+                                        bishop Asclepius in 424/5 A. Gr. 836 The following factoids
+                                        deal with the same event: 8559-476, 8559-555. <a
+                                            href="/8559-555" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 205/6 A. Gr. 517 Abgar built a new palace
+                                        in Edessa <a href="/8559-73" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The walls of Edessa were destroyed in 302/3
+                                        A. Gr. 614 . The following factoids deal with the same
+                                        event: 8559-79, 8559-546. <a href="/8559-79"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Qunā laid the foundations of the Church of
+                                        Edessa in 312/3 A. Gr. 624 . <a href="/8559-87"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> After 312/3 A. Gr. 624 , Shaʿad finished
+                                        building the Church of Edessa . <a href="/8559-88"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> The cemetery of Edessa was built in 323/4 A.
+                                        Gr. 635 . <a href="/8559-93" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> Aitalaha built the cemetery and the eastern
+                                        side of the Church of Edessa in 324/5 A. Gr. 636 . <a
+                                            href="/8559-96" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                    <p class="indent"> In 327/8 A. Gr. 639 the Church of Edessa was
+                                        enlarged. <a href="/8559-99" class="factoid-more">See
+                                            factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <hr />
+                                </div>
+                                <div class="sources">
+                                    <h4>Personal Names: </h4>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> Workers in the <span
+                                                  class="tei-orgName">government of <span
+                                                  class="tei-placeName"> Edessa </span> in Teshri II
+                                                  A. Gr. 513(November A. D. 201)</span></span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-13" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The wise men of <span
+                                                  class="tei-placeName"> Edessa </span> in Teshri II
+                                                  A. Gr. 513(November A. D. 201)</span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-15" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The people of <span
+                                                  class="tei-placeName"> Edessa </span> who fled the
+                                                  persecution of the <span class="tei-persName">
+                                                  Arians </span> in Elul A. Gr. 684(September A. D.
+                                                  373)</span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-157" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The Arians who
+                                                  persecuted <span class="tei-persName"> people in
+                                                  the <span class="tei-placeName"> Church of <span
+                                                  class="tei-placeName"> Edessa </span></span> in
+                                                  Elul A. Gr. 684(September A. D. 373).
+                                                  </span></span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-158" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The orthodox who
+                                                  returned to the city of <span
+                                                  class="tei-placeName"> Edessa </span> in after
+                                                  being persecuted by the <span class="tei-persName"
+                                                  > Arians </span></span>
+                                            </span>
+                                        </span><h4>Note : </h4><span class="element note"> Hallier
+                                            rightly points out that chronicler made an error in the
+                                            date. Instead of December 377, it should be December
+                                            378. </span>
+                                        <a href="/8559-167" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The two thousand people
+                                                  killed by flooding in <span class="tei-placeName">
+                                                  Edessa </span> in Teshri II A. Gr. 513(November A.
+                                                  D. 201). </span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-17" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The craftsmen of <span
+                                                  class="tei-placeName"> Edessa </span> in Teshri II
+                                                  A. Gr. 513(November A. D. 201). </span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-19" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The measurers and men of
+                                                  skill of <span class="tei-placeName"> Edessa
+                                                  </span> in Teshri II A. Gr. 513(November A. D.
+                                                  201). </span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-22" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> Those who lived in the
+                                                  portico in <span class="tei-placeName"> Edessa
+                                                  </span> in Teshri II A. Gr. 513(November A. D.
+                                                  201)</span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-24" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The islanders of <span
+                                                  class="tei-placeName"> Edessa </span> in Teshri II
+                                                  A. Gr. 513(November A. D. 201). </span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-25" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The nobles of <span
+                                                  class="tei-persName"> Abgar </span> of <span
+                                                  class="tei-placeName"> Edessa </span> in Teshri II
+                                                  A. Gr. 513(November A. D. 201). </span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-29" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The participants in the
+                                                  School of the Persians who were removed from <span
+                                                  class="tei-placeName"> Edessa </span> in A. Gr.
+                                                  800(488/9)</span>
+                                                <span class="tei-ptr"></span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-373" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The craftsmen of the
+                                                  land around <span class="tei-placeName"> Edessa
+                                                  </span> in Iyār A. Gr. 809(May 498)</span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-375" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-person">
+                                                <span class="tei-persName"> Cyrus, Bishop of <span
+                                                  class="tei-placeName"> Edessa </span></span>
+                                            </span>
+                                        </span>
+                                        <a href="/802-44" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-listPerson">
+                                            <span class="tei-personGrp">
+                                                <span class="tei-persName"> The great men of the
+                                                  city of <span class="tei-placeName"> Edessa
+                                                  </span> in Iyār A. Gr. 851(May 540)</span>
+                                            </span>
+                                        </span>
+                                        <a href="/8559-543" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Births: </h4>
+                                    <p class="indent"><span class="spearLabel">Birth place: </span>
+                                        <span class="tei-persName">Samuel</span> was born in <span
+                                            class="tei-placeName">Edessa</span>. <a href="/819-71"
+                                            class="factoid-more"> See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="spearLabel">Birth place:
+                                            </span><span class="tei-persName">Anonymous 3667</span>
+                                        was born in <span class="tei-placeName">Edessa</span>. <a
+                                            href="/819-76" class="factoid-more"> See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <h4>Occupation(s): </h4>
+                                    <p class="indent"><span class="tei-persName">Anonymi 2210</span>
+                                        were government officials in <span class="tei-placeName">
+                                            Edessa </span>. <a href="/8559-14" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Anonymi 2229</span>
+                                        were craftsmen in <span class="tei-placeName"> Edessa
+                                        </span>. <a href="/8559-20" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">ʿAbsmayyā</span>
+                                        was a priest in <span class="tei-placeName"> Edessa </span>.
+                                            <a href="/8559-229" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Anonymi 2230</span>
+                                        were skilled laborers in <span class="tei-placeName"> Edessa
+                                        </span>. <a href="/8559-23" class="factoid-more">See factoid
+                                            page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">The
+                                            islanders</span> were watchmen in <span
+                                            class="tei-placeName"> Edessa </span>. <a
+                                            href="/8559-26" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Mar Yahab Bar
+                                            Shemesh</span> was a scribe of <span
+                                            class="tei-placeName">Edessa </span>. <a href="/8559-34"
+                                            class="factoid-more">See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Kaiuma Bar
+                                            Magartat</span> was a scribe of <span
+                                            class="tei-placeName"> Edessa </span>. <a
+                                            href="/8559-37" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Bar Din</span> was
+                                        a prefect over the archives of <span class="tei-placeName">
+                                            Edessa </span>. <a href="/8559-41" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Bulid</span> was
+                                        prefect over the archives of <span class="tei-placeName">
+                                            Edessa </span>. <a href="/8559-44" class="factoid-more"
+                                            >See factoid page <span
+                                                class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Abgar</span> was
+                                        king of <span class="tei-placeName"> Edessa </span>. <a
+                                            href="/8559-59" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                    <p class="indent"><span class="tei-persName">Abgar</span> was
+                                        king of <span class="tei-placeName"> Edessa </span>. <a
+                                            href="/8559-6" class="factoid-more">See factoid page
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
+                                </div>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Place Page for <span id="title"
+                                                ><span>Edessa</span></span>,” in SPEAR: Syriac
+                                        Persons Events and Relations, general editor Daniel L.
+                                        Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/place/78.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/326.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/326"></span>
+                                            Aitalaha </a></li>
+                                    <li><a href="/aggregate/person/847.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/847"></span>
+                                            Irenaeus of Tyre </a></li>
+                                    <li><a href="/aggregate/person/26.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/26"></span>
+                                            Rabbula of Edessa </a></li>
+                                    <li><a href="/aggregate/person/781.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/781"></span>
+                                            Theodoret of Cyrrhus </a></li>
+                                    <li><a href="/aggregate/person/16.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/16"></span>
+                                            ʿAbshmayya </a></li>
+                                    <li><a href="/aggregate/person/1710.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1710"
+                                            ></span>1710</a></li>
+                                    <li><a href="/aggregate/person/2200.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2200"
+                                            ></span>Abgar VI</a></li>
+                                    <li><a href="/aggregate/person/2201.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2201"
+                                            ></span>Abgar VIII</a></li>
+                                    <li><a href="/aggregate/person/2202.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2202"
+                                            ></span>Abraham</a></li>
+                                    <li><a href="/aggregate/person/2203.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2203"
+                                            ></span>Addai</a></li>
+                                    <li><a href="/aggregate/person/2205.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2205"
+                                            ></span>Andreos</a></li>
+                                    <li><a href="/aggregate/person/2208.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2208"
+                                            ></span>Anonymi 2208</a></li>
+                                    <li><a href="/aggregate/person/2209.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2209"
+                                            ></span>Anonymi 2209</a></li>
+                                    <li><a href="/aggregate/person/2210.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2210"
+                                            ></span>Anonymi 2210</a></li>
+                                    <li><a href="/aggregate/person/2211.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2211"
+                                            ></span>Anonymi 2211</a></li>
+                                    <li><a href="/aggregate/person/2216.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2216"
+                                            ></span>Anonymi 2216</a></li>
+                                    <li><a href="/aggregate/person/2220.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2220"
+                                            ></span>Anonymi 2220</a></li>
+                                    <li><a href="/aggregate/person/2222.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2222"
+                                            ></span>Anonymi 2222</a></li>
+                                    <li><a href="/aggregate/person/2225.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2225"
+                                            ></span>Anonymi 2225</a></li>
+                                    <li><a href="/aggregate/person/2226.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2226"
+                                            ></span>Anonymi 2226</a></li>
+                                    <li><a href="/aggregate/person/2228.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2228"
+                                            ></span>Anonymi 2228</a></li>
+                                    <li><a href="/aggregate/person/2229.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2229"
+                                            ></span>Anonymi 2229</a></li>
+                                    <li><a href="/aggregate/person/2230.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2230"
+                                            ></span>Anonymi 2230</a></li>
+                                    <li><a href="/aggregate/person/2231.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2231"
+                                            ></span>Anonymi 2231</a></li>
+                                    <li><a href="/aggregate/person/2232.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2232"
+                                            ></span>Anonymi 2232</a></li>
+                                    <li><a href="/aggregate/person/2233.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2233"
+                                            ></span>Anonymi 2233</a></li>
+                                    <li><a href="/aggregate/person/2314.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2314"
+                                            ></span>Anonymi 2314</a></li>
+                                    <li><a href="/aggregate/person/3667.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3667"
+                                            ></span>Anonymous 3667</a></li>
+                                    <li><a href="/aggregate/person/2236.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2236"
+                                            ></span>Asclepius</a></li>
+                                    <li><a href="/aggregate/person/2239.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2239"
+                                            ></span>Bardin</a></li>
+                                    <li><a href="/aggregate/person/2240.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2240"
+                                            ></span>Barlaha</a></li>
+                                    <li><a href="/aggregate/person/2243.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2243"
+                                            ></span>Bulid</a></li>
+                                    <li><a href="/aggregate/person/2247.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2247"
+                                            ></span>Conon</a></li>
+                                    <li><a href="/aggregate/person/2253.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2253"
+                                            ></span>Cyrus II of Edessa</a></li>
+                                    <li><a href="/aggregate/person/2257.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2257"
+                                            ></span>Daniel of Harran</a></li>
+                                    <li><a href="/aggregate/person/2259.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2259"
+                                            ></span>Demosthenes</a></li>
+                                    <li><a href="/aggregate/person/2261.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2261"
+                                            ></span>Diocletian</a></li>
+                                    <li><a href="/aggregate/person/2264.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2264"
+                                            ></span>Domnus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2278.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2278"
+                                            ></span>Euphrasios</a></li>
+                                    <li><a href="/aggregate/person/2280.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2280"
+                                            ></span>Eusebius of Dorylaeum</a></li>
+                                    <li><a href="/aggregate/person/2282.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2282"
+                                            ></span>Flavian</a></li>
+                                    <li><a href="/aggregate/person/534.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/534"
+                                            ></span>Hiba of Edessa</a></li>
+                                    <li><a href="/aggregate/person/2267.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2267"
+                                            ></span>Honorios</a></li>
+                                    <li><a href="/aggregate/person/1808.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1808"
+                                            ></span>John the Baptist</a></li>
+                                    <li><a href="/aggregate/person/2268.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2268"
+                                            ></span>Justin I</a></li>
+                                    <li><a href="/aggregate/person/2284.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2284"
+                                            ></span>Justinian I</a></li>
+                                    <li><a href="/aggregate/person/2286.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2286"
+                                            ></span>Kavad</a></li>
+                                    <li><a href="/aggregate/person/2244.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2244"
+                                            ></span>Khusrau I Anushirwan</a></li>
+                                    <li><a href="/aggregate/person/2292.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2292"
+                                            ></span>Nona</a></li>
+                                    <li><a href="/aggregate/person/2281.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2281"
+                                            ></span>Patricius</a></li>
+                                    <li><a href="/aggregate/person/2296.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2296"
+                                            ></span>Pawla</a></li>
+                                    <li><a href="/aggregate/person/2297.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2297"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/2285.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2285"
+                                            ></span>Qayuma bar Magartat</a></li>
+                                    <li><a href="/aggregate/person/3253.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3253"
+                                            ></span>Samuel</a></li>
+                                    <li><a href="/aggregate/person/2301.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2301"
+                                            ></span>Senator</a></li>
+                                    <li><a href="/aggregate/person/1466.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1466"
+                                            ></span>Sergius</a></li>
+                                    <li><a href="/aggregate/person/2303.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2303"
+                                            ></span>Shaʿad</a></li>
+                                    <li><a href="/aggregate/person/2306.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2306"
+                                            ></span>Sophronios of Tella</a></li>
+                                    <li><a href="/aggregate/person/1529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1529"
+                                            ></span>Theodosius II</a></li>
+                                    <li><a href="/aggregate/person/2126.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2126"
+                                            ></span>Thomas the Armenian</a></li>
+                                    <li><a href="/aggregate/person/2313.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2313"
+                                            ></span>Yahab bar Shemesh</a></li>
+                                </ul>
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/accession.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/accession"
+                                            ></span>Accession</a></li>
+                                    <li><a href="/aggregate/taxonomy/administration.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/administration"
+                                            ></span>Administration</a></li>
+                                    <li><a href="/aggregate/taxonomy/architecture.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/architecture"
+                                            ></span>Architecture</a></li>
+                                    <li><a href="/aggregate/taxonomy/archivists.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/archivists"
+                                            ></span>Archivists</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/books.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/books"
+                                            ></span>Books</a></li>
+                                    <li><a href="/aggregate/taxonomy/burial.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/burial"
+                                            ></span>Burial</a></li>
+                                    <li><a href="/aggregate/taxonomy/church-councils.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/church-councils"
+                                            ></span>Church Councils</a></li>
+                                    <li><a href="/aggregate/taxonomy/civil-servants.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/civil-servants"
+                                            ></span>Civil Servants</a></li>
+                                    <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
+                                            ></span>Council of Chalcedon</a></li>
+                                    <li><a href="/aggregate/taxonomy/council-of-ephesus-ii-449.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/council-of-ephesus-ii-449"
+                                            ></span>Council of Ephesus II (449)</a></li>
+                                    <li><a href="/aggregate/taxonomy/decrees.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/decrees"
+                                            ></span>Decrees</a></li>
+                                    <li><a href="/aggregate/taxonomy/deposition-of-clergy.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"
+                                            ></span>Deposition of Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/education.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/education"
+                                            ></span>Education</a></li>
+                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                            ></span>Emperors</a></li>
+                                    <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                            ></span>Exile</a></li>
+                                    <li><a href="/aggregate/taxonomy/fathers.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/fathers"
+                                            ></span>Fathers</a></li>
+                                    <li><a href="/aggregate/taxonomy/generals-roman.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/generals-roman"
+                                            ></span>Generals (Roman/Byzantine)</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/holy-places.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/holy-places"
+                                            ></span>Holy Places</a></li>
+                                    <li><a href="/aggregate/taxonomy/hospices.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/hospices"
+                                            ></span>Hospices</a></li>
+                                    <li><a href="/aggregate/taxonomy/kings.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/kings"
+                                            ></span>Kings</a></li>
+                                    <li><a href="/aggregate/taxonomy/natural-disasters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/natural-disasters"
+                                            ></span>Natural Disasters</a></li>
+                                    <li><a href="/aggregate/taxonomy/nobles.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/nobles"
+                                            ></span>Nobles</a></li>
+                                    <li><a href="/aggregate/taxonomy/omens.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/omens"
+                                            ></span>Omens</a></li>
+                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                            ></span>Persecution</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/proximate-event.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
+                                            ></span>Proximate Event</a></li>
+                                    <li><a href="/aggregate/taxonomy/saints.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                            ></span>Saints</a></li>
+                                    <li><a href="/aggregate/taxonomy/same-event.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/same-event"
+                                            ></span>Same Event</a></li>
+                                    <li><a href="/aggregate/taxonomy/school-of-the-persians.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/school-of-the-persians"
+                                            ></span>School of the Persians</a></li>
+                                    <li><a href="/aggregate/taxonomy/scribes.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/scribes"
+                                            ></span>Scribes</a></li>
+                                    <li><a href="/aggregate/taxonomy/skilled-laborers.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/skilled-laborers"
+                                            ></span>Skilled Laborers</a></li>
+                                    <li><a href="/aggregate/taxonomy/spices.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/spices"
+                                            ></span>Spices</a></li>
+                                    <li><a href="/aggregate/taxonomy/synagogues.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/synagogues"
+                                            ></span>Synagogues</a></li>
+                                    <li><a href="/aggregate/taxonomy/war.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/war"
+                                            ></span>War</a></li>
+                                    <li><a href="/aggregate/taxonomy/watchmen.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/watchmen"
+                                            ></span>Watchmen</a></li>
+                                    <li><a href="/aggregate/taxonomy/writing.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/writing"
+                                            ></span>Writing</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/572.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/572"
+                                            ></span>Alexandria</a></li>
+                                    <li><a href="/aggregate/place/10.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/10"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/2589.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2589"
+                                            ></span>Cemetery of Edessa</a></li>
+                                    <li><a href="/aggregate/place/622.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/622"
+                                            ></span>Chalcedon</a></li>
+                                    <li><a href="/aggregate/place/2588.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2588"
+                                            ></span>Church of Edessa</a></li>
+                                    <li><a href="/aggregate/place/2580.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2580"
+                                            ></span>Church of the Christians at Edessa</a></li>
+                                    <li><a href="/aggregate/place/586.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/586"
+                                            ></span>Constantinople</a></li>
+                                    <li><a href="/aggregate/place/65.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/65"
+                                            ></span>Cyrrhus</a></li>
+                                    <li><a href="/aggregate/place/191.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/191"
+                                            ></span>Daiṣan</a></li>
+                                    <li><a href="/aggregate/place/2572.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2572"
+                                            ></span>Dorylaion</a></li>
+                                    <li><a href="/aggregate/place/78.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/78"
+                                            ></span>Edessa</a></li>
+                                    <li><a href="/aggregate/place/2605.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2605"
+                                            ></span>Edessa</a></li>
+                                    <li><a href="/aggregate/place/623.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/623"
+                                            ></span>Ephesus</a></li>
+                                    <li><a href="/aggregate/place/2601.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2601"
+                                            ></span>Gate of Beth Shemesh</a></li>
+                                    <li><a href="/aggregate/place/2579.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2579"
+                                            ></span>Great Palace of Abgar VIII</a></li>
+                                    <li><a href="/aggregate/place/2591.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2591"
+                                            ></span>House of Baptism</a></li>
+                                    <li><a href="/aggregate/place/2594.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2594"
+                                            ></span>House of Mar Barlaha</a></li>
+                                    <li><a href="/aggregate/place/2599.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2599"
+                                            ></span>House of Mar Johanan the Baptist</a></li>
+                                    <li><a href="/aggregate/place/2595.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2595"
+                                            ></span>House of Mar Stephanus</a></li>
+                                    <li><a href="/aggregate/place/2596.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2596"
+                                            ></span>House of Sabbath of the Jews</a></li>
+                                    <li><a href="/aggregate/place/2590.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2590"
+                                            ></span>House of the Confessors</a></li>
+                                    <li><a href="/aggregate/place/2600.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2600"
+                                            ></span>House of the leperous poor</a></li>
+                                    <li><a href="/aggregate/place/2587.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2587"
+                                            ></span>New palace of Abgar VIII</a></li>
+                                    <li><a href="/aggregate/place/142.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/142"
+                                            ></span>Nisibis</a></li>
+                                    <li><a href="/aggregate/place/150.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/150"
+                                            ></span>Persian-Sasanian Empire</a></li>
+                                    <li><a href="/aggregate/place/2598.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2598"
+                                            ></span>Sacristy</a></li>
+                                    <li><a href="/aggregate/place/174.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/174"
+                                            ></span>Seleucia</a></li>
+                                    <li><a href="/aggregate/place/200.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/200"
+                                            ></span>Tella</a></li>
+                                    <li><a href="/aggregate/place/195.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/195"
+                                            ></span>Tyros</a></li>
+                                    <li><a href="/aggregate/place/216.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/216"
+                                            ></span>Ḥarran</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

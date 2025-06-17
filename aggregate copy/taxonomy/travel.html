@@ -1,0 +1,1123 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Travel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl: true,
+                    layout: 'syriac-phonetic',
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
+                });
+                
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function () {
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Travel</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/travel"
+                                                >http://syriaca.org/taxonomy/travel</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> Theodosius
+                                    and the rest of the bishops were sent into exile. Along with
+                                    three hundred clergy and saint Zura, they travelled to a
+                                    fortress called Dereus in Thrace. They were supported in the
+                                    court by Empress Theodora. <a href="/817-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>John of
+                                    Ephesus visited Peter and Photius at the Monastery of the
+                                    Fathers in the Enaton. <a href="/847-10" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Conon and Eugene traveled to Constantinople where
+                                    Theodosius directed them to travel to Alexandria so that Conon
+                                    and Eugene could be ordained bishops. <a href="/841-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Under
+                                    persecution, suffering Christians would go to Constantinople,
+                                    but nowhere, not even in Thrace, could they find anyone willing
+                                    to ordain priests. <a href="/817-11" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Mar Samuel,
+                                    prior to founding Mar Samuel Convent, visited the Convent of
+                                    John Urtaya. <a href="/10510-112" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>The bishops
+                                    of Antioch asked Peter of Apamea why no one had assembled from
+                                    his city. <a href="/3048-12" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>The monk
+                                    who stole visited the blessed man who was living with two
+                                    disciples in Ennaton in Alexandria. <a href="/824-12"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> While
+                                    staying with Paul,Mare was tired of being pestered by his
+                                    family, so he left Syria and journeyed to Egypt and Thebais,
+                                    where he went to and fro in the desert with the saints,
+                                    observing the prayer practices of monks and solitaries. <a
+                                        href="/828-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Because
+                                    Musonius had fled from Meloe, and Paul had left Olba, Severus
+                                    advised Solon to appoint new bishops, or at the very least to
+                                    petition the emperor to assemble a council of bishops in
+                                    Isauria. <a href="/3052-13" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    before 0518 Musonius traveled from Isaurai to Alexandria. <a
+                                        href="/3050-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>The monk
+                                    who stole started living with the blessed man . After a while,
+                                    tempted by Satan, he stole his possessions and fled. <a
+                                        href="/824-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event:
+                                    </span>Elijah,Theodore, and their sisters moved from Amida to
+                                    Melitene in Cappadocia, establishing their business to divide
+                                    their income among the poor and needy. <a href="/823-13"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> James
+                                    travels to the frontier of Persia, Constantinople and Alexandria
+                                    ordaining clergy. <a href="/840-14" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>The monk
+                                    who stole took all of the possessions of the blessed man and
+                                    went to Cellia in the desert above Libya. <a href="/824-14"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> For a
+                                    third time, the community was forced to leave their convent,
+                                    travelling to Izla, ʿArab, and Dara. <a href="/827-16"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Elijah,
+                                    Theodore, and their sisters decided to expand their ministry to
+                                    the maltreated and persecuted believers in Syria, Arabia,
+                                    Callinicus, selling everything that they owned. <a
+                                        href="/823-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> John
+                                    continued to ordain believers, travelling to Lydia in Asia,
+                                    Tarsus in Cilicia, and all of Syria before returning to Anthemiu
+                                    in Constantinople. <a href="/817-17" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>the monk
+                                    who stole was ashamed, and left everything he stole, and went to
+                                    the desert of Mendia, to the convent of Andrew , near the
+                                    monastery of holy Mar Menas . <a href="/824-17"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> James and
+                                    his fellow monks travel to Marde to receive forgiveness from
+                                    John of Thella. He instructs them to make penance for three
+                                    years before they may take communion again. <a href="/807-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The
+                                    Brother and Sister of Peter moved to Smyrna. <a href="/847-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    before 519 Isaiah travelled to Egypt and Pamphylia seeking
+                                    support for his claim to episcopal office. <a href="/3111-19"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After a
+                                    time,John feigned illness again as a pretense to travel around
+                                    the empire to ordain more priests. He travelled to
+                                    Cyprus,Caesarea,Rhodes,Tralles,Chios,Alexandria,and Palestine.
+                                        <a href="/817-20" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> 18 years
+                                    after entering the Monastery of the Fathers, Peter visited his
+                                    brother and sister in Smyrna. <a href="/847-20"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>A devout
+                                    presbyter from the East brought many forged letters and
+                                    treatises to Severus. <a href="/3115-22" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Rufinus,
+                                    who had brought a letter from the Master of Offices to Severus
+                                    summoning him to Heraclea, was unable to bring back the response
+                                    because of a disease of the eyes. <a href="/3049-23"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After one
+                                    year,Theophilus and Maria left Amida, leaving John behind. <a
+                                        href="/843-23" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    fell ill and traveled to Ksoi where he died. <a href="/839-24"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The
+                                    enslaved person Leontius brought the message from Severus to the
+                                    Master of Offices in Constantinople. <a href="/3049-24"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>John
+                                    visited Theophilus and Maria in Egypt outside of Thella and
+                                    received a blessing from them. <a href="/843-25"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    desired for Cosmas, Polyeuctus, Zeno, and those who were in
+                                    conflict with them to come to Antioch because Isidore the bishop
+                                    of Chalis had not been present to adjudicate. <a href="/3036-25"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Most of
+                                    the bishops assembled at Constantinople, except the Romans, were
+                                    found to be orthodox, but the pious bishops Eleusinius and
+                                    Proclus had fled the royal city. <a href="/3053-28"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Antoninus
+                                    had sent Antiochus the tribune to Severus in Antioch. <a
+                                        href="/3040-28" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus had
+                                    corresponded with the Master of Offices in Constantinople
+                                    through Leontius about the illegitimacy of corrupt bishops. <a
+                                        href="/3053-30" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After a
+                                    dispute with Hilarian about a monastery and a presumptuous and
+                                    illeagl forging of signatures by Callistus, Paul fled to the
+                                    royal city. <a href="/3046-33" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>After five
+                                    years in Mar Mara, the community returned to Amida, but because
+                                    of persecution, relocated to the border territory of the East,
+                                    near the hot springs of Abarne, settling at the convent of the
+                                    Poplars. <a href="/827-5" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>James and
+                                    Sergius traveled to the royal city . <a href="/840-7"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After
+                                    twenty years of trading,Theodore and Elijah returned to Amida.
+                                        <a href="/823-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Asterius
+                                    the Bishop and those with him came to Severus in Antioch. <a
+                                        href="/3004-76" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> James
+                                    withdrew from Convent of the Eddessens and received the
+                                    monastery of Beth Musika. <a href="/807-8" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> When
+                                    Timothy had endured his exile from Alexandria, Epiphanius left
+                                    his bishopric in Magydum and came to Alexandria, embracing
+                                    communion with Timothy. <a href="/3004-82" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After
+                                    Timothy had died and the orthodox began enduring persecution
+                                    again, Epiphanius withdrew to Palestine where he met with Peter
+                                    of Iberia and began ordaining priests. <a href="/3004-83"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> For seven
+                                    years, Simeon travelled to different Christian communities in
+                                    order to confirm their belief in the Christian faith. <a
+                                        href="/802-91" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Travel</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/travel.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/anchorites.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anchorites"
+                                            ></span>Anchorites</a></li>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/blessing.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/blessing"
+                                            ></span>Blessing</a></li>
+                                    <li><a href="/aggregate/taxonomy/books.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/books"
+                                            ></span>Books</a></li>
+                                    <li><a href="/aggregate/taxonomy/charity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/charity"
+                                            ></span>CharityCaritas</a></li>
+                                    <li><a href="/aggregate/taxonomy/church-councils.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/church-councils"
+                                            ></span>Church Councils</a></li>
+                                    <li><a href="/aggregate/taxonomy/churches.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/churches"
+                                            ></span>Churches</a></li>
+                                    <li><a href="/aggregate/taxonomy/civil-servants.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/civil-servants"
+                                            ></span>Civil Servants</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/communion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/communion"
+                                            ></span>Communion</a></li>
+                                    <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
+                                            ></span>Council of Chalcedon</a></li>
+                                    <li><a href="/aggregate/taxonomy/death.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/death"
+                                            ></span>Death</a></li>
+                                    <li><a href="/aggregate/taxonomy/discipleship.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/discipleship"
+                                            ></span>Discipleship</a></li>
+                                    <li><a href="/aggregate/taxonomy/economics.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/economics"
+                                            ></span>Economics</a></li>
+                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                            ></span>Emperors</a></li>
+                                    <li><a href="/aggregate/taxonomy/evil.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/evil"
+                                            ></span>Evil</a></li>
+                                    <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                            ></span>Exile</a></li>
+                                    <li><a href="/aggregate/taxonomy/falsification.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/falsification"
+                                            ></span>Falsification</a></li>
+                                    <li><a href="/aggregate/taxonomy/families.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/families"
+                                            ></span>Families</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/illness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                            ></span>Illness</a></li>
+                                    <li><a href="/aggregate/taxonomy/justice.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/justice"
+                                            ></span>Justice</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/love.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/love"
+                                            ></span>Love</a></li>
+                                    <li><a href="/aggregate/taxonomy/memory.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/memory"
+                                            ></span>Memory</a></li>
+                                    <li><a href="/aggregate/taxonomy/merchants.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/merchants"
+                                            ></span>Merchants</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                            ></span>Monasteries</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/nobles.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/nobles"
+                                            ></span>Nobles</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/penitence.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/penitence"
+                                            ></span>Penitence</a></li>
+                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                            ></span>Persecution</a></li>
+                                    <li><a href="/aggregate/taxonomy/poverty.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/poverty"
+                                            ></span>Poverty</a></li>
+                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                            ></span>Prayer</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/religion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/religion"
+                                            ></span>Religion</a></li>
+                                    <li><a href="/aggregate/taxonomy/repentance.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/repentance"
+                                            ></span>Repentance</a></li>
+                                    <li><a href="/aggregate/taxonomy/sin.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sin"
+                                            ></span>Sin</a></li>
+                                    <li><a href="/aggregate/taxonomy/slaves.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/slaves"
+                                            ></span>Slaves</a></li>
+                                    <li><a href="/aggregate/taxonomy/suffering.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/suffering"
+                                            ></span>Suffering</a></li>
+                                    <li><a href="/aggregate/taxonomy/trade.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/trade"
+                                            ></span>Trade</a></li>
+                                    <li><a href="/aggregate/taxonomy/travel.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/travel"
+                                            ></span>Travel</a></li>
+                                    <li><a href="/aggregate/taxonomy/wealth.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wealth"
+                                            ></span>Wealth</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/779.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/779"></span>
+                                            Theodora, Roman empress </a></li>
+                                    <li><a href="/aggregate/person/784.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/784"></span>
+                                            Theodosius, patriarch of Alexandria </a></li>
+                                    <li><a href="/aggregate/person/792.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/792"></span>
+                                            Timothy II of Alexandria </a></li>
+                                    <li><a href="/aggregate/person/3045.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3045"
+                                            ></span>Anonymi 3045</a></li>
+                                    <li><a href="/aggregate/person/3071.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3071"
+                                            ></span>Anonymi 3071</a></li>
+                                    <li><a href="/aggregate/person/3072.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3072"
+                                            ></span>Anonymi 3072</a></li>
+                                    <li><a href="/aggregate/person/3129.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3129"
+                                            ></span>Anonymi 3129</a></li>
+                                    <li><a href="/aggregate/person/3715.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3715"
+                                            ></span>Anonymi 3715</a></li>
+                                    <li><a href="/aggregate/person/3716.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3716"
+                                            ></span>Anonymi 3716</a></li>
+                                    <li><a href="/aggregate/person/3114.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3114"
+                                            ></span>Anonymous 3114</a></li>
+                                    <li><a href="/aggregate/person/3654.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3654"
+                                            ></span>Anonymous 3654</a></li>
+                                    <li><a href="/aggregate/person/3655.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3655"
+                                            ></span>Anonymous 3655</a></li>
+                                    <li><a href="/aggregate/person/3717.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3717"
+                                            ></span>Anonymous 3717</a></li>
+                                    <li><a href="/aggregate/person/3718.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3718"
+                                            ></span>Anonymous 3718</a></li>
+                                    <li><a href="/aggregate/person/2552.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2552"
+                                            ></span>Antiochus</a></li>
+                                    <li><a href="/aggregate/person/2553.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2553"
+                                            ></span>Antoninus</a></li>
+                                    <li><a href="/aggregate/person/2528.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2528"
+                                            ></span>Asterius</a></li>
+                                    <li><a href="/aggregate/person/2459.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2459"
+                                            ></span>Callistus</a></li>
+                                    <li><a href="/aggregate/person/2564.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2564"
+                                            ></span>Celer</a></li>
+                                    <li><a href="/aggregate/person/2544.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2544"
+                                            ></span>Cosmas</a></li>
+                                    <li><a href="/aggregate/person/2567.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2567"
+                                            ></span>Eleusinius</a></li>
+                                    <li><a href="/aggregate/person/1705.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1705"
+                                            ></span>Elijah</a></li>
+                                    <li><a href="/aggregate/person/2562.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2562"
+                                            ></span>Epiphanius</a></li>
+                                    <li><a href="/aggregate/person/3208.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3208"
+                                            ></span>Eugene</a></li>
+                                    <li><a href="/aggregate/person/2458.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2458"
+                                            ></span>Hilarian</a></li>
+                                    <li><a href="/aggregate/person/2496.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2496"
+                                            ></span>Isaiah</a></li>
+                                    <li><a href="/aggregate/person/2545.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2545"
+                                            ></span>Isidore</a></li>
+                                    <li><a href="/aggregate/person/69.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/69"
+                                            ></span>Jacob Baradaeus</a></li>
+                                    <li><a href="/aggregate/person/1933.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1933"
+                                            ></span>James of the Monastery of the Edessenes</a></li>
+                                    <li><a href="/aggregate/person/3225.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3225"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/1813.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1813"
+                                            ></span>John of Hephaestopolis</a></li>
+                                    <li><a href="/aggregate/person/50.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/50"
+                                            ></span>John of Tella</a></li>
+                                    <li><a href="/aggregate/person/1336.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1336"
+                                            ></span>Kenan</a></li>
+                                    <li><a href="/aggregate/person/2565.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2565"
+                                            ></span>Leontius</a></li>
+                                    <li><a href="/aggregate/person/1875.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1875"
+                                            ></span>Mara the Solitary</a></li>
+                                    <li><a href="/aggregate/person/3021.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3021"
+                                            ></span>Mary</a></li>
+                                    <li><a href="/aggregate/person/1934.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1934"
+                                            ></span>Monks of Amida</a></li>
+                                    <li><a href="/aggregate/person/2460.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2460"
+                                            ></span>Musonius</a></li>
+                                    <li><a href="/aggregate/person/2468.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2468"
+                                            ></span>Paul</a></li>
+                                    <li><a href="/aggregate/person/1980.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1980"
+                                            ></span>Paul the Mourner</a></li>
+                                    <li><a href="/aggregate/person/2514.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2514"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/2011.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2011"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/680.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/680"
+                                            ></span>Peter the Iberian</a></li>
+                                    <li><a href="/aggregate/person/3014.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3014"
+                                            ></span>Photius</a></li>
+                                    <li><a href="/aggregate/person/2542.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2542"
+                                            ></span>Polyeuctus</a></li>
+                                    <li><a href="/aggregate/person/2569.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2569"
+                                            ></span>Proclus</a></li>
+                                    <li><a href="/aggregate/person/2563.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2563"
+                                            ></span>Rufinus</a></li>
+                                    <li><a href="/aggregate/person/3250.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3250"
+                                            ></span>Samuel</a></li>
+                                    <li><a href="/aggregate/person/3651.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3651"
+                                            ></span>Satan</a></li>
+                                    <li><a href="/aggregate/person/3258.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3258"
+                                            ></span>Sergius</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/53.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/53"
+                                            ></span>Simeon of Beth Arsham</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                    <li><a href="/aggregate/person/3140.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3140"
+                                            ></span>Theodore</a></li>
+                                    <li><a href="/aggregate/person/2121.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2121"
+                                            ></span>Theophilos</a></li>
+                                    <li><a href="/aggregate/person/2543.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2543"
+                                            ></span>Zeno</a></li>
+                                    <li><a href="/aggregate/person/1524.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1524"
+                                            ></span>Zeʿora</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/572.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/572"
+                                            ></span>Alexandria</a></li>
+                                    <li><a href="/aggregate/place/8.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/8"
+                                            ></span>Amida</a></li>
+                                    <li><a href="/aggregate/place/2737.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2737"
+                                            ></span>Amida</a></li>
+                                    <li><a href="/aggregate/place/2739.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2739"
+                                            ></span>Anthemius</a></li>
+                                    <li><a href="/aggregate/place/10.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/10"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/2630.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2630"
+                                            ></span>Apamea</a></li>
+                                    <li><a href="/aggregate/place/716.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/716"
+                                            ></span>Arabia</a></li>
+                                    <li><a href="/aggregate/place/2746.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2746"
+                                            ></span>Asia</a></li>
+                                    <li><a href="/aggregate/place/2751.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2751"
+                                            ></span>Beth Bar ʿrubtha</a></li>
+                                    <li><a href="/aggregate/place/2754.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2754"
+                                            ></span>Beth Musika</a></li>
+                                    <li><a href="/aggregate/place/53.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/53"
+                                            ></span>Caesarea</a></li>
+                                    <li><a href="/aggregate/place/2763.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2763"
+                                            ></span>Cappadocia</a></li>
+                                    <li><a href="/aggregate/place/2766.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2766"
+                                            ></span>Cellia</a></li>
+                                    <li><a href="/aggregate/place/1529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1529"
+                                            ></span>Chios</a></li>
+                                    <li><a href="/aggregate/place/55.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/55"
+                                            ></span>Cilicia</a></li>
+                                    <li><a href="/aggregate/place/586.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/586"
+                                            ></span>Constantinople</a></li>
+                                    <li><a href="/aggregate/place/714.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/714"
+                                            ></span>Cyprus</a></li>
+                                    <li><a href="/aggregate/place/67.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/67"
+                                            ></span>Dara</a></li>
+                                    <li><a href="/aggregate/place/1528.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1528"
+                                            ></span>Dayro d-Urhoye</a></li>
+                                    <li><a href="/aggregate/place/2772.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2772"
+                                            ></span>Dercus</a></li>
+                                    <li><a href="/aggregate/place/2774.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2774"
+                                            ></span>East</a></li>
+                                    <li><a href="/aggregate/place/715.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/715"
+                                            ></span>Egypt</a></li>
+                                    <li><a href="/aggregate/place/2777.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2777"
+                                            ></span>Fathers</a></li>
+                                    <li><a href="/aggregate/place/698.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/698"
+                                            ></span>Filasṭīn</a></li>
+                                    <li><a href="/aggregate/place/2790.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2790"
+                                            ></span>Heraclea</a></li>
+                                    <li><a href="/aggregate/place/2674.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2674"
+                                            ></span>Iberia</a></li>
+                                    <li><a href="/aggregate/place/99.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/99"
+                                            ></span>Isauria</a></li>
+                                    <li><a href="/aggregate/place/2800.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2800"
+                                            ></span>Izla</a></li>
+                                    <li><a href="/aggregate/place/109.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/109"
+                                            ></span>Kallinikos</a></li>
+                                    <li><a href="/aggregate/place/2810.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2810"
+                                            ></span>Libya</a></li>
+                                    <li><a href="/aggregate/place/2811.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2811"
+                                            ></span>Lydia</a></li>
+                                    <li><a href="/aggregate/place/2681.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2681"
+                                            ></span>Magydum</a></li>
+                                    <li><a href="/aggregate/place/2813.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2813"
+                                            ></span>Mar Mama</a></li>
+                                    <li><a href="/aggregate/place/2819.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2819"
+                                            ></span>Mar Menas</a></li>
+                                    <li><a href="/aggregate/place/2840.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2840"
+                                            ></span>Mar Samuel</a></li>
+                                    <li><a href="/aggregate/place/762.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/762"
+                                            ></span>Marde</a></li>
+                                    <li><a href="/aggregate/place/136.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/136"
+                                            ></span>Melitene</a></li>
+                                    <li><a href="/aggregate/place/2686.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2686"
+                                            ></span>Meloe in Isauria</a></li>
+                                    <li><a href="/aggregate/place/2821.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2821"
+                                            ></span>Mendis</a></li>
+                                    <li><a href="/aggregate/place/2738.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2738"
+                                            ></span>Monastery of Andrew</a></li>
+                                    <li><a href="/aggregate/place/2834.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2834"
+                                            ></span>Monastery of the Poplars</a></li>
+                                    <li><a href="/aggregate/place/2698.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2698"
+                                            ></span>Olba in Isauria</a></li>
+                                    <li><a href="/aggregate/place/149.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/149"
+                                            ></span>Palaestina</a></li>
+                                    <li><a href="/aggregate/place/1531.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1531"
+                                            ></span>Pamphylia</a></li>
+                                    <li><a href="/aggregate/place/526.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/526"
+                                            ></span>Persia</a></li>
+                                    <li><a href="/aggregate/place/2642.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2642"
+                                            ></span>Qenneshrin</a></li>
+                                    <li><a href="/aggregate/place/1534.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1534"
+                                            ></span>Rhodes</a></li>
+                                    <li><a href="/aggregate/place/1467.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1467"
+                                            ></span>Sakhā</a></li>
+                                    <li><a href="/aggregate/place/2718.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2718"
+                                            ></span>Smyrna</a></li>
+                                    <li><a href="/aggregate/place/486.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/486"
+                                            ></span>Syria</a></li>
+                                    <li><a href="/aggregate/place/196.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/196"
+                                            ></span>Tarsos</a></li>
+                                    <li><a href="/aggregate/place/200.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/200"
+                                            ></span>Tella</a></li>
+                                    <li><a href="/aggregate/place/473.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/473"
+                                            ></span>The Enaton</a></li>
+                                    <li><a href="/aggregate/place/2785.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2785"
+                                            ></span>The hot spring of Abarne</a></li>
+                                    <li><a href="/aggregate/place/2847.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2847"
+                                            ></span>Thebais</a></li>
+                                    <li><a href="/aggregate/place/2854.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2854"
+                                            ></span>Thrace</a></li>
+                                    <li><a href="/aggregate/place/2857.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2857"
+                                            ></span>Tralles</a></li>
+                                    <li><a href="/aggregate/place/399.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/399"
+                                            ></span>Yoḥannan Urṭaya</a></li>
+                                    <li><a href="/aggregate/place/3057.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/3057"
+                                            ></span>ʿArab</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

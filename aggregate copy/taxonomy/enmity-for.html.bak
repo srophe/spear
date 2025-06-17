@@ -1,0 +1,423 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Enmity for</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
+
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl : true,
+                    layout: 'syriac-phonetic',
+                    hidden: function(event, keyboard, el){
+                       //  keyboard.destroy();
+                     }
+                });
+
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function(){
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+
+            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
+                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Enmity for</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/enmity-for">http://syriaca.org/taxonomy/enmity-for</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Ammantius 
+                            expressing his refusal to receive 
+                            Epiphanius of Tyre
+                            into communion even if he repented.
+                            
+                                
+                                
+                            
+                         <a href="/3195-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus denounced 
+                            Isaiah 
+                            for telling lies about him, claiming that 
+                            Severus taught that
+                            the body of Christ underwent corruption while he was in the grave.
+                            
+                                
+                                
+                            
+                         <a href="/3125-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus described 
+                            Anonymous 3778 
+                            as a beast of burden and a pack-ass.
+                         <a href="/3037-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymi 3086. <a href="/3065-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3675 had enmity for Abraham. <a href="/10510-109" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Elijah of
+                            Jerusalem. <a href="/3039-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for 
+                            Sergius, 
+                            Diodore,
+                            Theodore, and
+                            Nestorius.
+                         <a href="/3110-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3675 had enmity for Abraham. <a href="/10510-110" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            denounced 
+                            Isaiah the Armenian and
+                            Anonymous 3780.
+                         <a href="/3061-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Julian. <a href="/3075-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Antoninus
+                            had enmity for Anonymi
+                                3059. <a href="/3043-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3034
+                            had enmity for Epiphanius. <a href="/3020-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymous 3093. <a href="/3072-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3134
+                            had enmity for Basil of
+                                Caesarea. <a href="/3012-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Gaian.
+                         <a href="/3141-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Eutyches. <a href="/3053-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Sergius bar
+                            Fathya. <a href="/3140-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Marinus rejected the incarnation and adopted the errors of 
+                            Eutyches and
+                            Valentinus.
+                            
+                                
+                                
+                            
+                         <a href="/3061-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Dorotheus. <a href="/3075-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Epiphanius. <a href="/3020-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 2211 had enmity for Anonymi 2208. <a href="/8559-159" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Julian of Halicarnassus.
+                         <a href="/3121-16" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Paul had
+                            enmity for Solon. <a href="/3046-17" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Bisula. <a href="/3026-18" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Paul. <a href="/3026-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymi 3054. <a href="/3040-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                            3067, Anonymous 3068, Anonymous 3069 and
+                                Anonymous
+                                3070 had enmity for Anonymi 3072. <a href="/3049-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Sergius had enmity for Anonymi 3686. <a href="/797-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Martyrius. <a href="/3057-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Cyril of
+                                Alexandria had enmity for Nestorius. <a href="/3020-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Musonius. <a href="/3026-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            John wrote a letter to 
+                            Severus denouncing 
+                            Timothy.
+                            
+                                
+                                    
+                            
+                         <a href="/3009-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Patricius,
+                            Severus,
+                            Paul, and
+                            Julian of Halicarnassus
+                            agressively questioned
+                            Macedonius II about his efforts to promote
+                            the Council of Chalcedon against the wishes of
+                            Anastasius I.
+                            
+                                
+                                
+                            
+                         <a href="/3242-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            called 
+                            Anatolius
+                            a false prophet.
+                         <a href="/3109-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Musonius had
+                            enmity for Paul. <a href="/3026-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                            3067, Anonymous 3068, Anonymous 3069 and
+                                Anonymous
+                                3070 had enmity for Anastasios I. <a href="/3049-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Menas and
+                            Isidore
+                            wrote a letter to 
+                            Severus
+                            reporting that 
+                            Epiphanius excommunicated  
+                            Anonymi 3034 when they would not commune with him. 
+                            
+                                
+                                
+                                
+                            
+                         <a href="/3020-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Leontius 
+                            anathematized
+                            Isaiah
+                         <a href="/3111-22" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Flavian II of
+                                Antioch. <a href="/3012-22" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Anonymous 3781.
+                         <a href="/3061-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymi 3076. <a href="/3057-23" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymi 3071. <a href="/3053-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Stephen. <a href="/3107-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Hilarian had
+                            enmity for Paul. <a href="/3046-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            found the doctrine of 
+                            Origen
+                            to be faulty.
+                         <a href="/3088-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Nestorius. <a href="/3004-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymous 3751 had enmity for
+                                Heracliana. <a href="/3149-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Proterius. <a href="/3134-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymous
+                            3122. <a href="/3140-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymous
+                            3102. <a href="/3098-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            found the doctrine of 
+                            Eusebius of Caesarea
+                            to be faulty.
+                         <a href="/3088-25" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Heracliana
+                            had enmity for Anonymous 3751. <a href="/3149-26" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Eutyches. <a href="/3004-28" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>John had enmity for
+                                Thomas the
+                                Armenian. <a href="/813-29" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Cyriac.
+                         <a href="/3124-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Ammonius about his lack 
+                            of agreement wiht the decision to add Peter Mongus 
+                            to the dyptichs in Alexandria.
+                            
+                                
+                                
+                            
+                         <a href="/3017-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anatolius. <a href="/3140-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Cyril 
+                            wrote against 
+                            Theodore of Mopsuestia.
+                         <a href="/3088-30" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Leo. <a href="/3004-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Dorotheus, Eutherius, Himerius and
+                                Helladius. <a href="/3108-31" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Anonymi 2314 had enmity for 
+                            Flavian, 
+                            Domnus of Antioch, 
+                            Irenaeus of Tyre, 
+                            Hiba of Edessa, 
+                            Eusebius of Dorylaeum, 
+                            Daniel of Harran, 
+                            Silwana and 
+                            Theodoret of Cyrrhus.
+                         <a href="/8559-314" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Anonymi 3130. <a href="/3004-33" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Joseph 
+                            expressed enmity for
+                            John
+                         <a href="/3149-33" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3052
+                            had enmity for Adelphius. <a href="/3038-35" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Liberius had
+                            enmity for Constantius
+                                II. <a href="/3096-36" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Podalirius. <a href="/3140-37" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Theodotus. <a href="/3134-38" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Flavian of Antioch.
+                         <a href="/3124-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Isidore sent a letter to 
+                            Theodosius on the subject of
+                            Eusebius oppressing his congregation in order to 
+                            build a lavish church building.
+                            
+                                
+                                
+                            
+                         <a href="/3021-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            described
+                            Isidore
+                            as unphilosophic and deceitful.
+                         <a href="/3019-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Severus had episcopal authority over
+                            Epiphanius, but he rebelled.
+                            
+                                
+                                
+                            
+                         <a href="/3195-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Simeon of Beth Arsham had enmity for Hiba of Edessa. <a href="/802-42" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Theodora, Roman
+                                empress had enmity for Alexander of
+                                Alexandria and Athanasius, bishop of
+                                Alexandria. <a href="/3140-45" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Abraham and Anonymous 3689 had enmity for Sergius. <a href="/797-49" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            expressed enmity for
+                            John the Grammarian.
+                         <a href="/3179-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Romanus.
+                         <a href="/3124-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Zeʿora had enmity for Agapetus. <a href="/794-52" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Anonymi 3115
+                            had enmity for Severus of
+                                Antioch. <a href="/3115-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            had enmity for
+                            Julian of Halicarnassus.
+                         <a href="/3124-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Aegilas had
+                            enmity for Severus of
+                                Antioch. <a href="/3042-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Paul and Musonius. <a href="/3052-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Elijah of
+                            Jerusalem. <a href="/3087-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Flavian II of
+                                Antioch. <a href="/3092-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
+                            Severus urged 
+                            Theotecnus to condemn
+                            Romanus in a synodical letter.
+                            
+                                
+                            
+                         <a href="/3063-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus refused to recognize ordinations by
+                            Theodotus and
+                            Gregory 
+                            but he did accept the baptisms they performed.
+                            
+                                
+                            
+                         <a href="/3061-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch had enmity for Cosmas. <a href="/3035-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
+                                “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Enmity for</span></span></span>,” 
+                                in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
+                                https://dev.spear-prosop.org/aggregate/taxonomy/enmity-for.html, 2025-05-12.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/alleged-relationship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/alleged-relationship"/>Alleged Relationship</a></li><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"/>Anti-Chalcedonian</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/baptism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/baptism"/>Baptism</a></li><li><a href="/aggregate/taxonomy/bishop-over-bishop.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishop-over-bishop"/>Bishop over Bishop</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/bodies.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bodies"/>Bodies</a></li><li><a href="/aggregate/taxonomy/buildings.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/buildings"/>Buildings</a></li><li><a href="/aggregate/taxonomy/churches.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/churches"/>Churches</a></li><li><a href="/aggregate/taxonomy/commemoration.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemoration"/>Commemoration</a></li><li><a href="/aggregate/taxonomy/communion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/communion"/>Communion</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/deposition-of-clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"/>Deposition of Clergy</a></li><li><a href="/aggregate/taxonomy/diptychs.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/diptychs"/>Diptychs</a></li><li><a href="/aggregate/taxonomy/enmity-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/enmity-for"/>Enmity for</a></li><li><a href="/aggregate/taxonomy/follower-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/follower-of"/>Follower of</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/incarnation.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/incarnation"/>Incarnation</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/oppression.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/oppression"/>Oppression</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/professional-relationship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"/>Professional Relationship</a></li><li><a href="/aggregate/taxonomy/readers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/readers"/>Readers</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/480.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/480"/>
+                        Eusebius
+                        of Caesarea
+                    </a></li><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>
+                        Eutyches
+                    </a></li><li><a href="/aggregate/person/847.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/847"/>
+                        Irenaeus
+                        of Tyre
+                    </a></li><li><a href="/aggregate/person/564.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/564"/>
+                        Isidore
+                        of Pelusium
+                    </a></li><li><a href="/aggregate/person/579.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/579"/>
+                        Julian
+                        of Halicarnassus
+                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
+                        Nestorius
+                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
+                        Theodora, Roman empress
+                    </a></li><li><a href="/aggregate/person/781.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/781"/>
+                        Theodoret
+                        of Cyrrhus
+                    </a></li><li><a href="/aggregate/person/792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/792"/>
+                        Timothy
+                        II
+                        of Alexandria
+                    </a></li><li><a href="/aggregate/person/3186.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3186"/>Abraham II</a></li><li><a href="/aggregate/person/3187.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3187"/>Abraham III</a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/2549.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2549"/>Adelphius</a></li><li><a href="/aggregate/person/2588.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2588"/>Aegilas</a></li><li><a href="/aggregate/person/3193.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3193"/>Agapetus</a></li><li><a href="/aggregate/person/2485.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2485"/>Alexander of
+                        Alexandria</a></li><li><a href="/aggregate/person/2592.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2592"/>Ammantius</a></li><li><a href="/aggregate/person/2595.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2595"/>Ammonius</a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/2602.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2602"/>Anatolius</a></li><li><a href="/aggregate/person/2481.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2481"/>Anatolius</a></li><li><a href="/aggregate/person/2208.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2208"/>Anonymi 2208</a></li><li><a href="/aggregate/person/2211.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2211"/>Anonymi 2211</a></li><li><a href="/aggregate/person/2314.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2314"/>Anonymi 2314</a></li><li><a href="/aggregate/person/3034.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3034"/>Anonymi 3034</a></li><li><a href="/aggregate/person/3052.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3052"/>Anonymi 3052</a></li><li><a href="/aggregate/person/3054.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3054"/>Anonymi 3054</a></li><li><a href="/aggregate/person/3059.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3059"/>Anonymi 3059</a></li><li><a href="/aggregate/person/3067.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3067"/>Anonymi 3067</a></li><li><a href="/aggregate/person/3071.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3071"/>Anonymi 3071</a></li><li><a href="/aggregate/person/3072.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3072"/>Anonymi 3072</a></li><li><a href="/aggregate/person/3076.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3076"/>Anonymi 3076</a></li><li><a href="/aggregate/person/3086.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3086"/>Anonymi 3086</a></li><li><a href="/aggregate/person/3115.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3115"/>Anonymi 3115</a></li><li><a href="/aggregate/person/3130.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3130"/>Anonymi 3130</a></li><li><a href="/aggregate/person/3134.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3134"/>Anonymi 3134</a></li><li><a href="/aggregate/person/3686.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3686"/>Anonymi 3686</a></li><li><a href="/aggregate/person/3689.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3689"/>Anonymi 3689</a></li><li><a href="/aggregate/person/3068.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3068"/>Anonymous 3068</a></li><li><a href="/aggregate/person/3069.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3069"/>Anonymous 3069</a></li><li><a href="/aggregate/person/3070.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3070"/>Anonymous 3070</a></li><li><a href="/aggregate/person/3093.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3093"/>Anonymous 3093</a></li><li><a href="/aggregate/person/3102.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3102"/>Anonymous 3102</a></li><li><a href="/aggregate/person/3122.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3122"/>Anonymous 3122</a></li><li><a href="/aggregate/person/3675.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3675"/>Anonymous 3675</a></li><li><a href="/aggregate/person/3751.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3751"/>Anonymous 3751</a></li><li><a href="/aggregate/person/3778.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3778"/>Anonymous 3778</a></li><li><a href="/aggregate/person/3780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3780"/>Anonymous 3780</a></li><li><a href="/aggregate/person/3781.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3781"/>Anonymous 3781</a></li><li><a href="/aggregate/person/2553.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2553"/>Antoninus</a></li><li><a href="/aggregate/person/354.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/354"/>Athanasius, bishop of Alexandria</a></li><li><a href="/aggregate/person/376.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/376"/>Basil of Caesarea</a></li><li><a href="/aggregate/person/2512.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2512"/>Bisula</a></li><li><a href="/aggregate/person/2249.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2249"/>Constantius
+                        II</a></li><li><a href="/aggregate/person/2539.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2539"/>Cosmas</a></li><li><a href="/aggregate/person/2630.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2630"/>Cyriac</a></li><li><a href="/aggregate/person/430.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/430"/>Cyril of Alexandria</a></li><li><a href="/aggregate/person/2257.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2257"/>Daniel of
+                        Harran</a></li><li><a href="/aggregate/person/451.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/451"/>Diodore of Tarsus</a></li><li><a href="/aggregate/person/2264.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2264"/>Domnus of
+                        Antioch</a></li><li><a href="/aggregate/person/2444.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2444"/>Dorotheus</a></li><li><a href="/aggregate/person/2638.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2638"/>Dorotheus</a></li><li><a href="/aggregate/person/2415.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2415"/>Elijah of
+                        Jerusalem</a></li><li><a href="/aggregate/person/2580.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2580"/>Epiphanius</a></li><li><a href="/aggregate/person/2648.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2648"/>Eusebius</a></li><li><a href="/aggregate/person/2280.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2280"/>Eusebius of
+                        Dorylaeum</a></li><li><a href="/aggregate/person/2445.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2445"/>Eutherius</a></li><li><a href="/aggregate/person/2282.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2282"/>Flavian</a></li><li><a href="/aggregate/person/2530.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2530"/>Flavian II of
+                        Antioch</a></li><li><a href="/aggregate/person/2654.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2654"/>Gaian</a></li><li><a href="/aggregate/person/2495.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2495"/>Gregory</a></li><li><a href="/aggregate/person/2447.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2447"/>Helladius</a></li><li><a href="/aggregate/person/2478.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2478"/>Heracliana</a></li><li><a href="/aggregate/person/534.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/534"/>Hiba of Edessa</a></li><li><a href="/aggregate/person/2458.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2458"/>Hilarian</a></li><li><a href="/aggregate/person/2446.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2446"/>Himerius</a></li><li><a href="/aggregate/person/2496.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2496"/>Isaiah</a></li><li><a href="/aggregate/person/2666.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2666"/>Isidore</a></li><li><a href="/aggregate/person/2667.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2667"/>Isidore</a></li><li><a href="/aggregate/person/2477.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2477"/>John</a></li><li><a href="/aggregate/person/3226.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3226"/>John</a></li><li><a href="/aggregate/person/2684.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2684"/>John</a></li><li><a href="/aggregate/person/2688.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2688"/>John
+                        the Grammarian</a></li><li><a href="/aggregate/person/2475.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2475"/>Joseph</a></li><li><a href="/aggregate/person/2690.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2690"/>Julian</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/2500.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2500"/>Leontius</a></li><li><a href="/aggregate/person/2494.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2494"/>Liberius</a></li><li><a href="/aggregate/person/2696.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2696"/>Macedonius II</a></li><li><a href="/aggregate/person/2699.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2699"/>Marinus</a></li><li><a href="/aggregate/person/2573.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2573"/>Martyrius</a></li><li><a href="/aggregate/person/2705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2705"/>Menas of Tyre</a></li><li><a href="/aggregate/person/2460.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2460"/>Musonius</a></li><li><a href="/aggregate/person/2728.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2728"/>Origen</a></li><li><a href="/aggregate/person/2281.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2281"/>Patricius</a></li><li><a href="/aggregate/person/2468.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2468"/>Paul</a></li><li><a href="/aggregate/person/2730.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2730"/>Paul</a></li><li><a href="/aggregate/person/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2736"/>Peter Mongus</a></li><li><a href="/aggregate/person/2482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2482"/>Podalirius</a></li><li><a href="/aggregate/person/2471.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2471"/>Proterius</a></li><li><a href="/aggregate/person/2744.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2744"/>Romanus</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li><li><a href="/aggregate/person/2483.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2483"/>Sergius bar
+                        Fathya</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2304.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2304"/>Silwana</a></li><li><a href="/aggregate/person/53.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/53"/>Simeon of Beth Arsham</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2442.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2442"/>Stephen</a></li><li><a href="/aggregate/person/780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/780"/>Theodore of Mopsuestia</a></li><li><a href="/aggregate/person/2714.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2714"/>Theodosius</a></li><li><a href="/aggregate/person/2472.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2472"/>Theodotus</a></li><li><a href="/aggregate/person/2568.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2568"/>Theotecnus</a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian</a></li><li><a href="/aggregate/person/2779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2779"/>Valentinus</a></li><li><a href="/aggregate/person/1524.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1524"/>Zeʿora</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2620.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2620"/>Alexandria</a></li></ul></div></div></div></div></div></div></body></html>

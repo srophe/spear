@@ -37,17 +37,12 @@
             })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
                             <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Asceticism</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/asceticism">http://syriaca.org/taxonomy/asceticism</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
                             Severus wrote a letter to 
-                            Theodore cautioning him 
-                            against entering the monastic life unless his wife
-                            also agreed to do the same.
+                            Eustace 
+                            on the subject of troubling thoughts and a legal dispute over an inheritance.
                             
                                 
                             
-                         <a href="/3011-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon was a
-                            recluse who lived in a walled monastery. He spent much of his time
-                            standing on a wall in order to fulfill two purposes: seclusion and the
-                            entertainment of strangers. He began living as a recluse in  483.  <a href="/797-1" class="factoid-more">See factoid page
+                         <a href="/3128-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Severus wrote a letter to 
                             Theodore urging him to keep
@@ -56,22 +51,27 @@
                                 
                             
                          <a href="/3010-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon was a
+                            recluse who lived in a walled monastery. He spent much of his time
+                            standing on a wall in order to fulfill two purposes: seclusion and the
+                            entertainment of strangers. He began living as a recluse in  483.  <a href="/797-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Severus wrote a letter to 
-                            Eustace 
-                            on the subject of troubling thoughts and a legal dispute over an inheritance.
+                            Theodore cautioning him 
+                            against entering the monastic life unless his wife
+                            also agreed to do the same.
                             
                                 
                             
-                         <a href="/3128-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After ten years of prayer and contending with demons, John was granted
-                            divine authority over his enemies and sprititual clarity, so that his
-                            understanding of Scripture equalled or surpassed most scholastics.
-                         <a href="/795-10" class="factoid-more">See factoid page
+                         <a href="/3011-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                      Tribunus resists marriage fearing that such a worldly
                      attachment would lead to sin and the begetting of children who would sin and die.
                    <a href="/835-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After ten years of prayer and contending with demons, John was granted
+                            divine authority over his enemies and sprititual clarity, so that his
+                            understanding of Scripture equalled or surpassed most scholastics.
+                         <a href="/795-10" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>John of
                                 Ephesus, who was a monk in the Convent of John
                                 Urtaya, observed Thomas's ascetic
@@ -86,12 +86,12 @@
                             the desert of Mendis by Mar Menas. Thomas's body was
                             frail and sunburnt. He had dedicated his life to fasting, praying, so
                             that by depriving the body he would purify the soul.  <a href="/805-109" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon
-                            becomes a solitary after twenty years of spiritual labors  <a href="/815-11" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Hala was feeble and fell into a 
                             serious illness caused by his asceticism.
                          <a href="/825-11" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Simeon
+                            becomes a solitary after twenty years of spiritual labors  <a href="/815-11" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mar
                             Samuel stood on a column for a time before he began to build
                             his convent. Abraham
@@ -100,64 +100,64 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Stephen
                             lived a life of asceticism and abstinence, setting an excellent example
                             for the king, queen, and senators.  <a href="/805-114" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After spending five years with Paul,Mare exceeded his
-                            teacher in prayer, asceticism, and moderation. Many criticized Mare for the severity
-                            of his practices.  <a href="/828-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> At the age of 10, 
+                                Mary  followed the example of a local anchorite and began
+                            living an ascetic life.  <a href="/820-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Abraham
                             comes to Constantinople to petition John of Ephesus to
                             become a monk. He experiences a period of probation before being
                             accepted.  <a href="/831-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> At the age of 10, 
-                                Mary  followed the example of a local anchorite and began
-                            living an ascetic life.  <a href="/820-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> From childhood, Mary chose to remain a virgin and dedicate her life to
-                            fasting, prayer, charity, and pilgrimage.  <a href="/804-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After spending five years with Paul,Mare exceeded his
+                            teacher in prayer, asceticism, and moderation. Many criticized Mare for the severity
+                            of his practices.  <a href="/828-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mary's
                             family attempted to dissuade her from pursuing an ascetic life.  <a href="/820-13" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro
-                            received gifts of the Spirit, but refused to perform exorcisms, instead
-                            he decided to enclose himself in a tree in the monastery and live as a
-                            hermit and ascetic.  <a href="/796-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Brothers and sisters came from Cappadocia to educate
-                                Thomas and his wife in religion. Many followed Thomas in selling
-                            their possessions. Thomas devoted himself to an ascetic life.  <a href="/813-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mary
-                            travelled to Golgotha,
-                                where she prayed and fasted for three days. <a href="/804-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> From childhood, Mary chose to remain a virgin and dedicate her life to
+                            fasting, prayer, charity, and pilgrimage.  <a href="/804-13" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Elijah,Theodore, and their sisters turned
+                            their home into a hospice for the needy, practicing asceticism, fasting,
+                            praying, reading Scripture just like a monastery.  <a href="/823-14" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Mishael 
                             retired from imperial service and lived an ascetic life of care for the poor.
                          <a href="/848-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Elijah,Theodore, and their sisters turned
-                            their home into a hospice for the needy, practicing asceticism, fasting,
-                            praying, reading Scripture just like a monastery.  <a href="/823-14" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Because Maro's ascetic practices were so extreme and sometimes
-                            dangerous, Abraham convinced him to return to the shelter of the
-                            monastery.  <a href="/796-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mary
+                            travelled to Golgotha,
+                                where she prayed and fasted for three days. <a href="/804-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Brothers and sisters came from Cappadocia to educate
+                                Thomas and his wife in religion. Many followed Thomas in selling
+                            their possessions. Thomas devoted himself to an ascetic life.  <a href="/813-14" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro
+                            received gifts of the Spirit, but refused to perform exorcisms, instead
+                            he decided to enclose himself in a tree in the monastery and live as a
+                            hermit and ascetic.  <a href="/796-14" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> As Mary
                             prayed and fasted the custodians of Golgotha tried to drive her away,
                             then let her remain once they saw that she was praying.  <a href="/804-15" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Because Maro's ascetic practices were so extreme and sometimes
+                            dangerous, Abraham convinced him to return to the shelter of the
+                            monastery.  <a href="/796-15" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After twenty years, Sergius received permission from Simeon to leave the
                             monastery and shut himself up in a certain place close to the village.
                          <a href="/797-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
-                            advises Jannia
-                            to rule with fear and mercy, bringing forth repentance through ascetic
-                            acts of penance, and dismissing women if the community is threatened by
-                            their actions.  <a href="/3013-17" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mary engaged
                             in ecstatic prayer and fasting for three years in Golgotha, drawing
                                 crowds of
                                 people who marvelled at her and asked for prayers and
                             blessings.  <a href="/804-17" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mary,
-                            disturbed by the attention of those who gathered to admire her
-                            asceticism in Golgotha, left the holy site and went east to get away
-                            from the crowds and live a holy life.  <a href="/804-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
+                            advises Jannia
+                            to rule with fear and mercy, bringing forth repentance through ascetic
+                            acts of penance, and dismissing women if the community is threatened by
+                            their actions.  <a href="/3013-17" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Harfat's ascetic practice consisted of living in solitude on a remote 
                             mountain where he wept constantly in sorrow over his great sins.
                          <a href="/803-19" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Mary,
+                            disturbed by the attention of those who gathered to admire her
+                            asceticism in Golgotha, left the holy site and went east to get away
+                            from the crowds and live a holy life.  <a href="/804-19" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sergius gained distinction in exile during the persecutions
                             and embraced asceticism and abstinence.  <a href="/10510-196" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
@@ -186,25 +186,25 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Susan
                             dedicated herself to fasting, praying, and keeping vigil, which after
                             two years, made her the most devout person in the monastery.  <a href="/819-25" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Euphemia
-                            dedicated her life to asceticism and charitable works.  <a href="/804-26" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             When Justinian learned about the poverty of
                             Theodore, he provided him with a generous annual stipend
                             which he also distributed to the poor.
                          <a href="/848-26" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Over the next forty years Sergius grew ill and
-                            frail in his enclosure. <a href="/797-27" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Euphemia
+                            dedicated her life to asceticism and charitable works.  <a href="/804-26" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Thomas and Maria and their sons committed themselves to a diet of
                             only fruit and some grain, tasting bread and wine only when absolutely
                             necessary.  <a href="/813-27" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            A blessed man
-                            enters the monastery.  <a href="/810-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Over the next forty years Sergius grew ill and
+                            frail in his enclosure. <a href="/797-27" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Hala 
                             was a monk who cared for the sick and the needs of the strangers.
                          <a href="/825-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            A blessed man
+                            enters the monastery.  <a href="/810-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                      Well known for his learning and holy way of life, Sergius
                      became bishop of Antioch. 
@@ -219,12 +219,7 @@
                                 Anonymi 3689 beat Sergius severely before shaving off his hair, which
                             marked his ascetic profession, and putting him in irons in order to
                             transport him to the monastery of 'Tryz. <a href="/797-45" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                     Theodora commissioned the refurbishing of 
-                     the palace of Hormisdas so that
-                     Anonymi 3771 could live there as in a 
-                     monastery, performing acts of prayer and asceticism.
-                   <a href="/838-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span><span class="tei-persName">James</span> studied at <span class="tei-placeName">Fsiltha</span>.  <a href="/840-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Sometime after his episcopacy
                             Severus of Antioch wrote a letter to
@@ -233,7 +228,12 @@
                             her decision not to leave her monastery to see Anonymous 3759 before her death, 
                             and questions about where she should be buried.
                          <a href="/3138-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span><span class="tei-persName">James</span> studied at <span class="tei-placeName">Fsiltha</span>.  <a href="/840-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                     Theodora commissioned the refurbishing of 
+                     the palace of Hormisdas so that
+                     Anonymi 3771 could live there as in a 
+                     monastery, performing acts of prayer and asceticism.
+                   <a href="/838-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> After ten days, people
                                 of the village were moved by the sisters' weeping and
                             distress and discovered that Susan had been
@@ -242,12 +242,6 @@
                             was attacked by demons in the cave day and night, thought that anonymi 3695 who
                             discovered her were fiends as well. She did not respond to them when
                             they called out to her.  <a href="/819-52" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Shortly after Sergius established the monastery of
-                            Qlwfyte, his adversaries came to pull it down. Sergius told his
-                            enemies that he would rebuild it each time it was destroyed, so they
-                            finally left him alone. Sergius rebuilt the monastery of Qlwfyte
-                            and invited Simeon to stay with him. Sergius died after
-                            Simeon's arrival.  <a href="/797-53" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anonymi 3695
                             went to fetch Anonymi
                                 3662, who immediately came to the cave to retrieve
@@ -255,6 +249,12 @@
                             Susan did not respond to their entreaties, since demons had visited her
                             the day before disguised as the sisters in an attempt to dislodge her
                             from the hermitage.  <a href="/819-53" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Shortly after Sergius established the monastery of
+                            Qlwfyte, his adversaries came to pull it down. Sergius told his
+                            enemies that he would rebuild it each time it was destroyed, so they
+                            finally left him alone. Sergius rebuilt the monastery of Qlwfyte
+                            and invited Simeon to stay with him. Sergius died after
+                            Simeon's arrival.  <a href="/797-53" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Even though Anonymi
                                 3662 managed to convince Susan that they were
                             not demons, she refused to return to the monastery with them as she
@@ -275,12 +275,12 @@
                                 Susan and
                                 Anonymi
                                 3662.  <a href="/819-57" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Caesaria goes from
+                            royal habits to ascectic habits in  Alexandria.  <a href="/845-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Zacharias pursued the ascetic practice of always keeping a stone in his mouth
                             that kept him from speaking superfluously. Anonymi 3772 followed him in this practice.
                          <a href="/811-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Caesaria goes from
-                            royal habits to ascectic habits in  Alexandria.  <a href="/845-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Thomas,
                             endeavored to live as an ascetic in the pit near the village of
                                 Mendis,
@@ -292,21 +292,21 @@
                             his keys to The bishop's
                                 cellarer and snuck out of his monastery at night to go to
                             the pit, where he lived an ascetic life of prayer and fasting.  <a href="/805-68" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>John decided
+                            that he would commit himself to an aescetic lifestyle by eating only
+                            lentils, salt, water, and bread, despite the misgivings of those around
+                            him.  <a href="/795-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                     Severus was forced to flee Antioch 
+                     because of his opposition to the Council of Chalcedon. He went first to Alexandria 
+                     and then further into the desert. There he maintained his ascetic lifestyle.
+                   <a href="/839-7" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Whenever a stranger came to Simeon's door, he
                             would demonstrate great hospitality and feast with his guest as if he
                             were Christ. However, when he was not in the presence of strangers
                             seeking shelter, he fasted for up to ten days at a time and dedicated
                             his efforts to praying all day and most of the night, rarely sleeping
                             more than two hours a night.  <a href="/797-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                     Severus was forced to flee Antioch 
-                     because of his opposition to the Council of Chalcedon. He went first to Alexandria 
-                     and then further into the desert. There he maintained his ascetic lifestyle.
-                   <a href="/839-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>John decided
-                            that he would commit himself to an aescetic lifestyle by eating only
-                            lentils, salt, water, and bread, despite the misgivings of those around
-                            him.  <a href="/795-7" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro and
                                 Anonymi
                                 3665 settled near Susan and Anonymi 3662. Many
@@ -315,22 +315,22 @@
                             not wish to cause scandal by living in such close proximity to men, so
                             they endeavored to leave their tower and go further into the desert.
                          <a href="/819-79" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Zacharias bound a cord around his hand containing three knots. 
-                            The first was to remind him to guard his thoughts. The second was to remind him
-                            to keep God in his mind. The third was to remind him to keep the commandments of God.
-                         <a href="/811-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> A place was made for John in a monastery enclosure, which he dwelt in night
-                            and day so that he could pray, weep, and live an ascetic life.  <a href="/795-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Kashish
+                            entered the  Monastery of
+                                John Urtaya  in  Amida. <a href="/842-8" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Theodore
                             retired from his position as castrensis for 
                             Justinian
                             in order to pursue ascetic practices.
                          <a href="/848-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Kashish
-                            entered the  Monastery of
-                                John Urtaya  in  Amida. <a href="/842-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> A place was made for John in a monastery enclosure, which he dwelt in night
+                            and day so that he could pray, weep, and live an ascetic life.  <a href="/795-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Zacharias bound a cord around his hand containing three knots. 
+                            The first was to remind him to guard his thoughts. The second was to remind him
+                            to keep God in his mind. The third was to remind him to keep the commandments of God.
+                         <a href="/811-8" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Maro and
                                 Anonymi
                                 3665 felt ashamed once they learned of Susan's plan to
@@ -357,28 +357,109 @@
                                 3668 asked Susan why she hasn't shown her face to a man in
                             twenty-five years and she said that it would cause her and the person
                             who beheld her face great suffering.  <a href="/819-84" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sergius, who
-                            was the disciple of Simeon was also a monk and a recluse, who lived an
-                            aescetic life in an enclosure. In order to avoid idleness, Simeon and Sergius taught young
-                            boys and infants from their enclosure through a window.  <a href="/797-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Addai lived as a recluse in the mountains for
-                            twenty-five years before dying.
-                         <a href="/800-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Severus
                             advises Valeriena to encourage the virgins to an
                             ascetic life, suggesting their isolation from men, sharing common meals,
                             discouraging the owning of enslaved people, and emphasize physical
                             labour.  <a href="/3029-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Addai lived as a recluse in the mountains for
+                            twenty-five years before dying.
+                         <a href="/800-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Sergius, who
+                            was the disciple of Simeon was also a monk and a recluse, who lived an
+                            aescetic life in an enclosure. In order to avoid idleness, Simeon and Sergius taught young
+                            boys and infants from their enclosure through a window.  <a href="/797-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
                                 “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Asceticism</span></span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/taxonomy/asceticism.html, 2025-05-12.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anchorites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anchorites"/>Anchorites</a></li><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/bread.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bread"/>Bread</a></li><li><a href="/aggregate/taxonomy/buildings.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/buildings"/>Buildings</a></li><li><a href="/aggregate/taxonomy/burial.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/burial"/>Burial</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/celibacy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/celibacy"/>Celibacy</a></li><li><a href="/aggregate/taxonomy/charity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/charity"/>CharityCaritas</a></li><li><a href="/aggregate/taxonomy/chastity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/chastity"/>Chastity</a></li><li><a href="/aggregate/taxonomy/commandments.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commandments"/>Commandments</a></li><li><a href="/aggregate/taxonomy/commemorates.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemorates"/>Commemorates</a></li><li><a href="/aggregate/taxonomy/cult-of-saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cult-of-saints"/>Cult of Saints</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/demons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/demons"/>Demons</a></li><li><a href="/aggregate/taxonomy/education.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/education"/>Education</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/families.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/families"/>Families</a></li><li><a href="/aggregate/taxonomy/fasting.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/fasting"/>Fasting</a></li><li><a href="/aggregate/taxonomy/food.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/food"/>Food</a></li><li><a href="/aggregate/taxonomy/friendship-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/friendship-for"/>Friendship for</a></li><li><a href="/aggregate/taxonomy/hermitages.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hermitages"/>Hermitages</a></li><li><a href="/aggregate/taxonomy/hospitality.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hospitality"/>Hospitality</a></li><li><a href="/aggregate/taxonomy/humility.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/humility"/>Humility</a></li><li><a href="/aggregate/taxonomy/illness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/illness"/>Illness</a></li><li><a href="/aggregate/taxonomy/imprisonment.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/imprisonment"/>Imprisonment</a></li><li><a href="/aggregate/taxonomy/inheritance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/inheritance"/>Inheritance</a></li><li><a href="/aggregate/taxonomy/labor.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/labor"/>Labor</a></li><li><a href="/aggregate/taxonomy/law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/law"/>Law</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/marriage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/marriage"/>Marriage</a></li><li><a href="/aggregate/taxonomy/martyrdom.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/martyrdom"/>Martyrdom</a></li><li><a href="/aggregate/taxonomy/medicine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/medicine"/>Medicine</a></li><li><a href="/aggregate/taxonomy/memory.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/memory"/>Memory</a></li><li><a href="/aggregate/taxonomy/mercy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/mercy"/>Mercy</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/patronage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/patronage"/>Patronage</a></li><li><a href="/aggregate/taxonomy/penitence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/penitence"/>Penitence</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/pilgrimage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"/>Pilgrimage</a></li><li><a href="/aggregate/taxonomy/poor.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poor"/>Poor</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/probation.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/probation"/>Probation</a></li><li><a href="/aggregate/taxonomy/religion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religion"/>Religion</a></li><li><a href="/aggregate/taxonomy/religious-conflict.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religious-conflict"/>Religious Conflict</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/resurrection.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/resurrection"/>Resurrection</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/slavery.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/slavery"/>Slavery</a></li><li><a href="/aggregate/taxonomy/spiritual-or-ascetic-disciplines.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/spiritual-or-ascetic-disciplines"/>Spirtual or Ascetic Disciplines</a></li><li><a href="/aggregate/taxonomy/students.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/students"/>Students</a></li><li><a href="/aggregate/taxonomy/stylites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/stylites"/>Stylites</a></li><li><a href="/aggregate/taxonomy/suffering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/suffering"/>Suffering</a></li><li><a href="/aggregate/taxonomy/tears.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tears"/>Tears</a></li><li><a href="/aggregate/taxonomy/thoughts.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/thoughts"/>Thoughts</a></li><li><a href="/aggregate/taxonomy/violence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/violence"/>Violence</a></li><li><a href="/aggregate/taxonomy/virginity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/virginity"/>Virginity</a></li><li><a href="/aggregate/taxonomy/widows-of-the-church.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/widows-of-the-church"/>Widows of the Church</a></li><li><a href="/aggregate/taxonomy/wine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wine"/>Wine</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>
-                        John
-                        of Ephesus
-                        
-                    </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>
-                        Theodora, Roman empress
-                    </a></li><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
-                </a></li><li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1546"/>Abraham</a></li><li><a href="/aggregate/person/3187.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3187"/>Abraham III</a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/1554.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1554"/>Abraham the Priest</a></li><li><a href="/aggregate/person/1116.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1116"/>Addai the Chorepiscos</a></li><li><a href="/aggregate/person/3035.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3035"/>Anonymi 3035</a></li><li><a href="/aggregate/person/3609.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3609"/>Anonymi 3609</a></li><li><a href="/aggregate/person/3689.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3689"/>Anonymi 3689</a></li><li><a href="/aggregate/person/3715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3715"/>Anonymi 3715</a></li><li><a href="/aggregate/person/3771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3771"/>Anonymi 3771</a></li><li><a href="/aggregate/person/1932.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1932"/>Anonymous 1932</a></li><li><a href="/aggregate/person/3605.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3605"/>Anonymous 3605</a></li><li><a href="/aggregate/person/3662.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3662"/>Anonymous 3662</a></li><li><a href="/aggregate/person/3663.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3663"/>Anonymous 3663</a></li><li><a href="/aggregate/person/3664.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3664"/>Anonymous 3664</a></li><li><a href="/aggregate/person/3665.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3665"/>Anonymous 3665</a></li><li><a href="/aggregate/person/3668.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3668"/>Anonymous 3668</a></li><li><a href="/aggregate/person/3695.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3695"/>Anonymous 3695</a></li><li><a href="/aggregate/person/3759.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3759"/>Anonymous 3759</a></li><li><a href="/aggregate/person/3772.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3772"/>Anonymous 3772</a></li><li><a href="/aggregate/person/3776.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3776"/>Anonymous 3776</a></li><li><a href="/aggregate/person/2621.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2621"/>Caesaria</a></li><li><a href="/aggregate/person/1705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1705"/>Elijah</a></li><li><a href="/aggregate/person/3025.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3025"/>Euphemia</a></li><li><a href="/aggregate/person/2652.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2652"/>Eustace</a></li><li><a href="/aggregate/person/1769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1769"/>Hala</a></li><li><a href="/aggregate/person/1771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1771"/>Harphat</a></li><li><a href="/aggregate/person/3215.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3215"/>Ishakuni Bar Brʿy</a></li><li><a href="/aggregate/person/2664.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2664"/>Isidora</a></li><li><a href="/aggregate/person/69.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/69"/>Jacob Baradaeus</a></li><li><a href="/aggregate/person/2669.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2669"/>Jannia</a></li><li><a href="/aggregate/person/1320.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1320"/>John the Nazarite</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary</a></li><li><a href="/aggregate/person/3233.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3233"/>Maria the Armenian</a></li><li><a href="/aggregate/person/3234.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3234"/>Maro</a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron</a></li><li><a href="/aggregate/person/1880.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1880"/>Mary</a></li><li><a href="/aggregate/person/1881.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1881"/>Mary the Mourner</a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael</a></li><li><a href="/aggregate/person/1980.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1980"/>Paul the Mourner</a></li><li><a href="/aggregate/person/3250.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3250"/>Samuel</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li><li><a href="/aggregate/person/3256.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3256"/>Sergius II</a></li><li><a href="/aggregate/person/1463.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1463"/>Sergius of Tella</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2095.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2095"/>Simeon</a></li><li><a href="/aggregate/person/2099.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2099"/>Simeon the Solitaire</a></li><li><a href="/aggregate/person/3010.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3010"/>Stephen</a></li><li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2092"/>Suzanna</a></li><li><a href="/aggregate/person/2766.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2766"/>Theodore</a></li><li><a href="/aggregate/person/2712.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2712"/>Theodore</a></li><li><a href="/aggregate/person/3140.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3140"/>Theodore</a></li><li><a href="/aggregate/person/2108.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2108"/>Theodore Castrensus</a></li><li><a href="/aggregate/person/2127.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2127"/>Thomas</a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian</a></li><li><a href="/aggregate/person/3155.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3155"/>Tribunus</a></li><li><a href="/aggregate/person/2780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2780"/>Valeriana</a></li><li><a href="/aggregate/person/2153.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2153"/>Zacharias</a></li><li><a href="/aggregate/person/3011.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3011"/>Zota</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/572"/>Alexandria</a></li><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2610"/>Antioch</a></li><li><a href="/aggregate/place/2763.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2763"/>Cappadocia</a></li><li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/586"/>Constantinople</a></li><li><a href="/aggregate/place/698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/698"/>Filasṭīn</a></li><li><a href="/aggregate/place/2781.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2781"/>Golgotha</a></li><li><a href="/aggregate/place/2793.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2793"/>Hormisda</a></li><li><a href="/aggregate/place/2810.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2810"/>Libya</a></li><li><a href="/aggregate/place/2819.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2819"/>Mar Menas</a></li><li><a href="/aggregate/place/2820.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2820"/>Mendis</a></li><li><a href="/aggregate/place/2821.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2821"/>Mendis</a></li><li><a href="/aggregate/place/2837.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2837"/>Monastery of Qlupyata</a></li><li><a href="/aggregate/place/373.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/373"/>Phesilta</a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya</a></li><li><a href="/aggregate/place/2867.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2867"/>ʿTryz</a></li></ul></div></div></div></div></div></div></body></html>
+                                https://dev.spear-prosop.org/aggregate/taxonomy/asceticism.html, 2025-06-16.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anchorites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anchorites"/>Anchorites</a></li><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/bread.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bread"/>Bread</a></li><li><a href="/aggregate/taxonomy/buildings.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/buildings"/>Buildings</a></li><li><a href="/aggregate/taxonomy/burial.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/burial"/>Burial</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/celibacy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/celibacy"/>Celibacy</a></li><li><a href="/aggregate/taxonomy/charity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/charity"/>CharityCaritas</a></li><li><a href="/aggregate/taxonomy/chastity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/chastity"/>Chastity</a></li><li><a href="/aggregate/taxonomy/commandments.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commandments"/>Commandments</a></li><li><a href="/aggregate/taxonomy/commemorates.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemorates"/>Commemorates</a></li><li><a href="/aggregate/taxonomy/cult-of-saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cult-of-saints"/>Cult of Saints</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/demons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/demons"/>Demons</a></li><li><a href="/aggregate/taxonomy/education.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/education"/>Education</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/families.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/families"/>Families</a></li><li><a href="/aggregate/taxonomy/fasting.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/fasting"/>Fasting</a></li><li><a href="/aggregate/taxonomy/food.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/food"/>Food</a></li><li><a href="/aggregate/taxonomy/friendship-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/friendship-for"/>Friendship for</a></li><li><a href="/aggregate/taxonomy/hermitages.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hermitages"/>Hermitages</a></li><li><a href="/aggregate/taxonomy/hospitality.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/hospitality"/>Hospitality</a></li><li><a href="/aggregate/taxonomy/humility.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/humility"/>Humility</a></li><li><a href="/aggregate/taxonomy/illness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/illness"/>Illness</a></li><li><a href="/aggregate/taxonomy/imprisonment.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/imprisonment"/>Imprisonment</a></li><li><a href="/aggregate/taxonomy/inheritance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/inheritance"/>Inheritance</a></li><li><a href="/aggregate/taxonomy/labor.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/labor"/>Labor</a></li><li><a href="/aggregate/taxonomy/law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/law"/>Law</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/marriage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/marriage"/>Marriage</a></li><li><a href="/aggregate/taxonomy/martyrdom.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/martyrdom"/>Martyrdom</a></li><li><a href="/aggregate/taxonomy/medicine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/medicine"/>Medicine</a></li><li><a href="/aggregate/taxonomy/memory.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/memory"/>Memory</a></li><li><a href="/aggregate/taxonomy/mercy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/mercy"/>Mercy</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/patronage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/patronage"/>Patronage</a></li><li><a href="/aggregate/taxonomy/penitence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/penitence"/>Penitence</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/pilgrimage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"/>Pilgrimage</a></li><li><a href="/aggregate/taxonomy/poor.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poor"/>Poor</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/probation.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/probation"/>Probation</a></li><li><a href="/aggregate/taxonomy/religion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religion"/>Religion</a></li><li><a href="/aggregate/taxonomy/religious-conflict.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/religious-conflict"/>Religious Conflict</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/resurrection.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/resurrection"/>Resurrection</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/slavery.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/slavery"/>Slavery</a></li><li><a href="/aggregate/taxonomy/spiritual-or-ascetic-disciplines.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/spiritual-or-ascetic-disciplines"/>Spirtual or Ascetic Disciplines</a></li><li><a href="/aggregate/taxonomy/students.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/students"/>Students</a></li><li><a href="/aggregate/taxonomy/stylites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/stylites"/>Stylites</a></li><li><a href="/aggregate/taxonomy/suffering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/suffering"/>Suffering</a></li><li><a href="/aggregate/taxonomy/tears.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tears"/>Tears</a></li><li><a href="/aggregate/taxonomy/thoughts.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/thoughts"/>Thoughts</a></li><li><a href="/aggregate/taxonomy/violence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/violence"/>Violence</a></li><li><a href="/aggregate/taxonomy/virginity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/virginity"/>Virginity</a></li><li><a href="/aggregate/taxonomy/widows-of-the-church.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/widows-of-the-church"/>Widows of the Church</a></li><li><a href="/aggregate/taxonomy/wine.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wine"/>Wine</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
+                </a></li><li><a href="/aggregate/person/3187.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3187"/>Abraham III - ܐܒܪܗܡ
+        </a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/1554.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1554"/>Abraham the Priest — ܐܒܪܗܡ
+                </a></li><li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1546"/>Abraham — ܐܒܪܗܡ
+                </a></li><li><a href="/aggregate/person/1116.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1116"/>Addai the Chorepiscos — ܐܕܝ
+                        ܟܘܪܐܦܝܣܩܦܐ
+                </a></li><li><a href="/aggregate/person/3035.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3035"/>Anonymi 3035 — The sacred virgins under the authority
+                    of Valeriana sometime between A.D. 513-518</a></li><li><a href="/aggregate/person/3609.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3609"/>Anonymi 3609</a></li><li><a href="/aggregate/person/3715.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3715"/>Anonymi 3715</a></li><li><a href="/aggregate/person/3771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3771"/>Anonymi 3771</a></li><li><a href="/aggregate/person/1932.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1932"/>Anonymous 1932 — Monk who left a monastery</a></li><li><a href="/aggregate/person/3605.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3605"/>Anonymous 3605</a></li><li><a href="/aggregate/person/3662.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3662"/>Anonymous 3662</a></li><li><a href="/aggregate/person/3663.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3663"/>Anonymous 3663</a></li><li><a href="/aggregate/person/3664.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3664"/>Anonymous 3664</a></li><li><a href="/aggregate/person/3665.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3665"/>Anonymous 3665</a></li><li><a href="/aggregate/person/3668.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3668"/>Anonymous 3668</a></li><li><a href="/aggregate/person/3689.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3689"/>Anonymous 3689</a></li><li><a href="/aggregate/person/3695.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3695"/>Anonymous 3695</a></li><li><a href="/aggregate/person/3759.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3759"/>Anonymous 3759</a></li><li><a href="/aggregate/person/3772.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3772"/>Anonymous 3772</a></li><li><a href="/aggregate/person/3776.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3776"/>Anonymous 3776</a></li><li><a href="/aggregate/person/2621.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2621"/>Caesaria — ܩܣܪܝܐ
+                        ܦܛܪܝܩܝܐ
+                </a></li><li><a href="/aggregate/person/1705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1705"/>Elijah — ܐܠܝܐ
+                </a></li><li><a href="/aggregate/person/3025.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3025"/>Euphemia — ܐܘܦܡܝܐ
+                </a></li><li><a href="/aggregate/person/2652.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2652"/>Eustace — ܐܘܣܛܬܝܘܣ
+                        ܕܝܪܐ
+                </a></li><li><a href="/aggregate/person/1769.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1769"/>Hala — ܚܠܐ
+                </a></li><li><a href="/aggregate/person/1771.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1771"/>Harphat — ܚܪܦܛ
+                </a></li><li><a href="/aggregate/person/3215.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3215"/>Ishakuni Bar Brʿy - ܐܣܚܩܘܢܝ ܒܪ
+            ܒܪܥܝ
+        </a></li><li><a href="/aggregate/person/2664.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2664"/>Isidora — ܐܝܣܝܕܘܪܐ
+                </a></li><li><a href="/aggregate/person/69.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/69"/>Jacob Baradaeus — ܝܥܩܘܒ
+                        ܒܘܪܕܥܝܐ
+                </a></li><li><a href="/aggregate/person/2669.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2669"/>Jannia — ܝܐܢܝܐ ܡܫܡܫܢܝܬܐ ܘܪܝܫܬ
+                        ܕܝܪܐ
+                </a></li><li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/74"/>John of Ephesus — ܝܘܚܢܢ
+                        ܕܐܦܣܘܣ
+                </a></li><li><a href="/aggregate/person/1320.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1320"/>John the Nazarite — ܝܘܚܢܢ
+                        ܢܙܝܪܐ
+                </a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I — ܝܘܣܛܝܢܝܢܐ
+                </a></li><li><a href="/aggregate/person/1875.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1875"/>Mara the Solitary — ܡܪܐ
+                        ܝܚܝܕܝܐ
+                </a></li><li><a href="/aggregate/person/3233.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3233"/>Maria the Armenian - ܡܐܪܝܐ
+        </a></li><li><a href="/aggregate/person/3234.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3234"/>Maro - ܡܪܘܢ
+        </a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron — ܡܪܘܢ
+                </a></li><li><a href="/aggregate/person/1881.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1881"/>Mary the Mourner — ܡܪܝܡ
+                        ܐܒܝܠܬܐ
+                </a></li><li><a href="/aggregate/person/1880.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1880"/>Mary — ܡܪܝܡ 
+                </a></li><li><a href="/aggregate/person/2558.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2558"/>Misael — ܡܝܘܐܝܠ
+                        ܩܘܒܘܩܠܪܐ
+                </a></li><li><a href="/aggregate/person/1980.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1980"/>Paul the Mourner — ܦܘܠܘܣ
+                        ܐܒܝܠܐ
+                </a></li><li><a href="/aggregate/person/3250.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3250"/>Samuel - ܫܡܘܐܝܠ
+        </a></li><li><a href="/aggregate/person/3256.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3256"/>Sergius II - ܣܪܓܝܣ ܐܡܕܝܐ
+        </a></li><li><a href="/aggregate/person/1463.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1463"/>Sergius of Tella</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius — ܣܪܓܝܣ
+                </a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch — ܣܘܝܪܝܘܣ
+                        ܕܐܢܛܝܘܟܝܐ
+                </a></li><li><a href="/aggregate/person/2099.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2099"/>Simeon the Solitaire — ܫܡܥܘܢ
+                        ܝܚܝܕܝܐ
+                </a></li><li><a href="/aggregate/person/2095.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2095"/>Simeon — ܫܡܥܘܢ
+                </a></li><li><a href="/aggregate/person/3010.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3010"/>Stephen — ܐܣܛܦܢܐ
+                </a></li><li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2092"/>Suzanna — ܫܘܫܢ
+                </a></li><li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/779"/>Theodora, Roman empress — ܡܠܟܬܐ ܬܐܘܕܘܪܐ
+                </a></li><li><a href="/aggregate/person/2108.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2108"/>Theodore Castrensus — ܬܐܕܘܪܐ
+                        ܩܣܛܪܝܣܝܣ
+                </a></li><li><a href="/aggregate/person/2712.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2712"/>Theodore — ܬܐܕܘܪܘܣ ܕܝܪܝܐ
+                        ܒܘܙܢܛܝܐ
+                </a></li><li><a href="/aggregate/person/2766.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2766"/>Theodore — ܬܐܕܘܪܘܣ ܛܪܝܒܘܢܐ
+                        ܘܢܘܛܪܐ
+                </a></li><li><a href="/aggregate/person/3140.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3140"/>Theodore — ܬܐܘܕܘܪܐ
+                </a></li><li><a href="/aggregate/person/2126.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2126"/>Thomas the Armenian — ܬܐܘܡܐ
+                </a></li><li><a href="/aggregate/person/2127.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2127"/>Thomas — ܬܐܘܡܐ
+                </a></li><li><a href="/aggregate/person/3155.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3155"/>Tribunus — ܛܪܝܒܘܢܐ
+                </a></li><li><a href="/aggregate/person/2780.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2780"/>Valeriana — ܘܐܠܝܐܪܝܐܢܝ
+                        ܡܫܡܫܢܝܬܐ ܐܪܝܫܬ ܕܝܪܐ
+                </a></li><li><a href="/aggregate/person/2153.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2153"/>Zacharias — ܙܟܪܝܐ
+                </a></li><li><a href="/aggregate/person/3011.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3011"/>Zota — ܙܘܛܐ
+                </a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/572"/>Alexandria
+                                        — ܐܠܟܣܢܕܪܝܐ
+                </a></li><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida
+                                        — ܐܡܝܕ
+                </a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch
+                                        — ܐܢܛܝܘܟܝܐ
+                </a></li><li><a href="/aggregate/place/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2610"/>Antioch — ܐܢܛܝܘܟܝܐ
+            </a></li><li><a href="/aggregate/place/2763.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2763"/>Cappadocia — ܩܦܘܕܩܝܐ
+            </a></li><li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/586"/>Constantinople
+                                        — ܩܘܣܛܢܛܝܢܘܦܘܠܝܣ
+                </a></li><li><a href="/aggregate/place/698.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/698"/>Filasṭīn
+                                        — ܦܠܫܬ
+                </a></li><li><a href="/aggregate/place/2781.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2781"/>Golgotha — ܓܓܘܠܬܐ
+            </a></li><li><a href="/aggregate/place/2793.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2793"/>Hormisda — ܗܘܪܡܙܕܐ
+            </a></li><li><a href="/aggregate/place/2810.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2810"/>Libya — ܠܘܒܐ
+            </a></li><li><a href="/aggregate/place/2819.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2819"/>Mar Menas — ܡܪܝ ܡܐܢܐ
+            </a></li><li><a href="/aggregate/place/2821.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2821"/>Mendis — ܡܕܒܪܐ ܕܡܢܕܝܣ
+            </a></li><li><a href="/aggregate/place/2820.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2820"/>Mendis — ܡܢܕܝܣ
+            </a></li><li><a href="/aggregate/place/2837.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2837"/>Monastery of Qlupyata — ܕܝܪܐ ܕܩܠܘ̈ܦܝܬܐ
+            </a></li><li><a href="/aggregate/place/373.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/373"/>Phesilta
+                                        — ܕܝܪܐ ܕܦܣܝܠܬܐ
+                </a></li><li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/399"/>Yoḥannan Urṭaya
+                                        — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ
+                </a></li><li><a href="/aggregate/place/2867.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2867"/>ʿTryz — ܐܬܪܝܙ
+            </a></li></ul></div></div></div></div></div></div></body></html>

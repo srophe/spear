@@ -1,0 +1,467 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Same Event</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl: true,
+                    layout: 'syriac-phonetic',
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
+                });
+                
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function () {
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Same Event</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/same-event"
+                                                >http://syriaca.org/taxonomy/same-event</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Dionysius on the subject of the repentance of
+                                    Mark and whether he should become an archimandrite. <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3063-9"
+                                                >3063-9</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3064-1"
+                                                >3064-1</a></span>. </span> The following factoids
+                                    deal with the same event: 3063-9, 3064-1. <a href="/3064-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Dionysius on the subject of the repentance of
+                                    Mark and whether he should become an archimandrite. <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3063-10"
+                                                >3063-10</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3064-1"
+                                                >3064-1</a></span>. </span> The following factoids
+                                    deal with the same event: 3063-10, 3064-1. <a href="/3063-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Musonius
+                                    sent a letter to Longinus seeking illicit gain. <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3026-11"
+                                                >3026-11</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3050-11"
+                                                >3050-11</a></span>. </span> The following factoids
+                                    deal with the same event: 3026-11, 3050-11. <a href="/3050-11"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Musonius
+                                    sent a letter to Longinus seeking illicity gain. <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3026-11"
+                                                >3026-11</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3050-11"
+                                                >3050-11</a></span>. </span> The following factoids
+                                    deal with the same event: 3026-11, 3050-11. <a href="/3026-11"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Two
+                                    thousand people were killed in Edessa by the flooding of the
+                                    Daisan river in November A. D. 201 Teshri II A. Gr. 513 . <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-18"
+                                                >8559-18</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-545"
+                                                >8559-545</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-18, 8559-545. <a href="/8559-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Basil
+                                    wrote a letter to Urbicius on the subject of refraining from
+                                    communion with heretics. <span class="tei-desc"> The following
+                                        factoids deal with the same event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3018-6"
+                                                >3018-6</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3064-2"
+                                                >3064-2</a></span>. </span> The following factoids
+                                    deal with the same event: 3018-6, 3064-2. <a href="/3064-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> In 412/3
+                                    A. Gr. 724 the walls of Edessa were broken down by a flood for
+                                    the third time. <span class="tei-desc"> The following factoids
+                                        deal with the same event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-261"
+                                                >8559-261</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-554"
+                                                >8559-554</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-261, 8559-554. <a
+                                        href="/8559-261" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> In 524/5
+                                    A. Gr. 836 a flood destroyed Edessa for the fourth time. <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-476"
+                                                >8559-476</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-555"
+                                                >8559-555</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-476, 8559-555. <a
+                                        href="/8559-476" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The first
+                                    time the walls of Edessa were broken down was in November A. D.
+                                    201 Teshri II A. Gr. 513 <span class="tei-desc"> The following
+                                        factoids deal with the same event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-18"
+                                                >8559-18</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-545"
+                                                >8559-545</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-18, 8559-545. <a href="/8559-545"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The second
+                                    time the walls of Edessa were broken down . was in the days of
+                                    Diocletian the King in May 303 Iyār A. Gr. 614 <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-79"
+                                                >8559-79</a></span> and <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-546"
+                                                >8559-546</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-79 and 8559-546. <a
+                                        href="/8559-546" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The third
+                                    time the walls of Edessa were broken down was in the days of the
+                                    Kings Honorios and Theodosius and of the bishop Rabbula in March
+                                    413 Ādar A. Gr. 724 . <span class="tei-desc"> The following
+                                        factoids deal with the same event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-261"
+                                                >8559-261</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-554"
+                                                >8559-554</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-261, 8559-554. <a
+                                        href="/8559-554" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The fourth
+                                    time the walls of Edessa were broken down was in the days of the
+                                    king Justin and of the bishop Asclepius in 424/5 A. Gr. 836
+                                        <span class="tei-desc"> The following factoids deal with the
+                                        same event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-476"
+                                                >8559-476</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-555"
+                                                >8559-555</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-476, 8559-555. <a
+                                        href="/8559-555" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Basil
+                                    wrote a letter to Urbicius on the subject of refraining from
+                                    communion with heretics. <span class="tei-desc"> The following
+                                        factoids deal with the same event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3018-6"
+                                                >3018-6</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/3064-2"
+                                                >3064-2</a></span>. </span> The following factoids
+                                    deal with the same event: 3018-6, 3064-2. <a href="/3018-6"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> The walls
+                                    of Edessa were destroyed in 302/3 A. Gr. 614 . <span
+                                        class="tei-desc"> The following factoids deal with the same
+                                        event: <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-79"
+                                                >8559-79</a></span>, <span class="tei-rs"><a
+                                                href="factoid.html?id=https://spear-prosop.org/8559-546"
+                                                >8559-546</a></span>. </span> The following factoids
+                                    deal with the same event: 8559-79, 8559-546. <a href="/8559-79"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Same
+                                            Event</span></span></span>,” in SPEAR: Syriac Persons
+                                        Events and Relations, general editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/same-event.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/communion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/communion"
+                                            ></span>Communion</a></li>
+                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                            ></span>Emperors</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                            ></span>Monastic Heads</a></li>
+                                    <li><a href="/aggregate/taxonomy/natural-disasters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/natural-disasters"
+                                            ></span>Natural Disasters</a></li>
+                                    <li><a href="/aggregate/taxonomy/property.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/property"
+                                            ></span>Property</a></li>
+                                    <li><a href="/aggregate/taxonomy/same-event.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/same-event"
+                                            ></span>Same Event</a></li>
+                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                            ></span>Sender of Letter to</a></li>
+                                    <li><a href="/aggregate/taxonomy/wealth.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/wealth"
+                                            ></span>Wealth</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/26.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/26"></span>
+                                            Rabbula of Edessa </a></li>
+                                    <li><a href="/aggregate/person/2228.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2228"
+                                            ></span>Anonymi 2228</a></li>
+                                    <li><a href="/aggregate/person/2236.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2236"
+                                            ></span>Asclepius</a></li>
+                                    <li><a href="/aggregate/person/376.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/376"
+                                            ></span>Basil of Caesarea</a></li>
+                                    <li><a href="/aggregate/person/2261.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2261"
+                                            ></span>Diocletian</a></li>
+                                    <li><a href="/aggregate/person/2520.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2520"
+                                            ></span>Dionysios</a></li>
+                                    <li><a href="/aggregate/person/2267.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2267"
+                                            ></span>Honorios</a></li>
+                                    <li><a href="/aggregate/person/2268.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2268"
+                                            ></span>Justin I</a></li>
+                                    <li><a href="/aggregate/person/2511.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2511"
+                                            ></span>Longinus</a></li>
+                                    <li><a href="/aggregate/person/2701.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2701"
+                                            ></span>Mark</a></li>
+                                    <li><a href="/aggregate/person/2460.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2460"
+                                            ></span>Musonius</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/1529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1529"
+                                            ></span>Theodosius II</a></li>
+                                    <li><a href="/aggregate/person/2778.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2778"
+                                            ></span>Urbicius</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/191.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/191"
+                                            ></span>Daiṣan</a></li>
+                                    <li><a href="/aggregate/place/78.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/78"
+                                            ></span>Edessa</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

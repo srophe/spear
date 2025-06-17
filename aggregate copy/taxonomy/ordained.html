@@ -1,0 +1,662 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Ordained</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl: true,
+                    layout: 'syriac-phonetic',
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
+                });
+                
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function () {
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Ordained</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/ordained"
+                                                >http://syriaca.org/taxonomy/ordained</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch ordained Anonymi 3100. <a href="/3092-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3135 ordained Solon. <a href="/3012-11" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Basil
+                                    ordained Anonymous 3087. <a href="/3065-11" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus and other bishops in Alexandria, with the blessing of
+                                    Theodosius ordained Conon as bishop of Tarsus and Eugene as
+                                    bishop of Seleucia. <a href="/841-11" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> After five
+                                    years on Chios, Kashish was ordainedas bishop of Chios by Jacob
+                                    Bardaeus and two other bishops (Conon and Eugene). <a
+                                        href="/842-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus and other bishops in Alexandria, with the blessing of
+                                    Theodosius ordained Eugene as bishop of Seleucia. <a
+                                        href="/841-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon ordained Dimet as bishop of
+                                    Laodicea. <a href="/841-14" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon ordained John as bishop of
+                                    Seleucia. <a href="/841-17" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Flavian
+                                    II of Antioch ordained Anonymous 3032. <a href="/3012-18"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon ordained John as bishop. <a
+                                        href="/841-20" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Simeon
+                                    the Mountaineer ordained Anonymi 3700. <a href="/808-23"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon ordained Sergius as bishop of
+                                    Harran. <a href="/841-23" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Anonymous 3122 ordained Sergius bar Fathya. <a
+                                        href="/3140-26" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon ordained John as bishop of Sura
+                                    Romanorum. <a href="/841-26" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>
+                                    Eusebius ordained Isaiah presbyter. <a href="/3111-27"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon traveled to Constantinople where
+                                    they ordained Sergius as bishop of Antioch. <a href="/841-29"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus and others ordained Paul as bishop of Antioch. <a
+                                        href="/841-33" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> In the
+                                    city of Constantinople Jacob Baradaeus and others ordained
+                                    Eunomius as bishop of Amida. <a href="/841-34"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> While
+                                    traveling in Asia Jacob Baradaeus, Eugene, and Conon ordained
+                                    John as bishop of Ephesus. <a href="/841-39"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Hilarian
+                                    ordained Anonymi 3074. <a href="/3055-4" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation:
+                                    </span>Epiphanius ordained Severus of Antioch. <a
+                                        href="/3004-41" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> While
+                                    traveling in Asia Jacob Baradaeus, Eugene, and Conon ordained
+                                    Peter as bishop of Smyrna. <a href="/841-42"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> While
+                                    traveling in Asia Jacob Baradaeus, Eugene, and Conon ordained
+                                    John as bishop of Pergamum. <a href="/841-44"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> While
+                                    traveling in Asia Jacob Baradaeus, Eugene, and Conon ordained
+                                    Peter as bishop of Tralles. <a href="/841-46"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon traveled to Caria where they
+                                    ordained Paul as bishop of Aphrodisias. <a href="/841-51"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Jacob
+                                    Baradaeus, Eugene, and Conon traveled to Caria where they
+                                    ordained Julian as bishop of Alabanda. <a href="/841-53"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">relation: </span>Eusebius
+                                    of Samosata ordained Anonymi 3132. <a href="/3004-57"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Gregory
+                                    the Wonderworker ordained Phaedimus. <a href="/3111-57"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3133 ordained Basil of Caesarea. <a href="/3004-67"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
+                                    3037 ordained Anonymi 3036. <a href="/3031-7"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Paulinus
+                                    ordained Evagrius. <a href="/3111-72" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span> Anonymi
+                                    3757 ordained Flavian I of Antioch. <a href="/3111-74"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Elijah
+                                    of Jerusalem ordained Agapius. <a href="/3087-9"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">relation: </span>Severus
+                                    of Antioch ordained Philip. <a href="/3039-9"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr"
+                                        >Ordained</span></span></span>,” in SPEAR: Syriac Persons
+                                        Events and Relations, general editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/ordained.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordained.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordained"
+                                            ></span>Ordained</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/paganism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/paganism"
+                                            ></span>Paganism</a></li>
+                                </ul>
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/958.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/958"></span>
+                                            Eusebius of Samosata </a></li>
+                                    <li><a href="/aggregate/person/61.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/61"></span>
+                                            John II of Qenneshre </a></li>
+                                    <li><a href="/aggregate/person/74.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/74"></span>
+                                            John of Ephesus </a></li>
+                                    <li><a href="/aggregate/person/72.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/72"></span>
+                                            Paul II, Patriarch of Antioch </a></li>
+                                    <li><a href="/aggregate/person/71.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/71"></span>
+                                            Sergius bar Karyo </a></li>
+                                    <li><a href="/aggregate/person/784.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/784"></span>
+                                            Theodosius, patriarch of Alexandria </a></li>
+                                    <li><a href="/aggregate/person/2032.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2032"></span>
+                                            — ܩܫܝܫ </a></li>
+                                    <li><a href="/aggregate/person/2426.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2426"
+                                            ></span>Agapius</a></li>
+                                    <li><a href="/aggregate/person/3036.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3036"
+                                            ></span>Anonymi 3036</a></li>
+                                    <li><a href="/aggregate/person/3037.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3037"
+                                            ></span>Anonymi 3037</a></li>
+                                    <li><a href="/aggregate/person/3074.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3074"
+                                            ></span>Anonymi 3074</a></li>
+                                    <li><a href="/aggregate/person/3100.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3100"
+                                            ></span>Anonymi 3100</a></li>
+                                    <li><a href="/aggregate/person/3132.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3132"
+                                            ></span>Anonymi 3132</a></li>
+                                    <li><a href="/aggregate/person/3133.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3133"
+                                            ></span>Anonymi 3133</a></li>
+                                    <li><a href="/aggregate/person/3135.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3135"
+                                            ></span>Anonymi 3135</a></li>
+                                    <li><a href="/aggregate/person/3700.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3700"
+                                            ></span>Anonymi 3700</a></li>
+                                    <li><a href="/aggregate/person/3757.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3757"
+                                            ></span>Anonymi 3757</a></li>
+                                    <li><a href="/aggregate/person/3032.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3032"
+                                            ></span>Anonymous 3032</a></li>
+                                    <li><a href="/aggregate/person/3087.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3087"
+                                            ></span>Anonymous 3087</a></li>
+                                    <li><a href="/aggregate/person/3122.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3122"
+                                            ></span>Anonymous 3122</a></li>
+                                    <li><a href="/aggregate/person/2617.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2617"
+                                            ></span>Basil</a></li>
+                                    <li><a href="/aggregate/person/376.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/376"
+                                            ></span>Basil of Caesarea</a></li>
+                                    <li><a href="/aggregate/person/3207.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3207"
+                                            ></span>Dimet</a></li>
+                                    <li><a href="/aggregate/person/2415.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2415"
+                                            ></span>Elijah of Jerusalem</a></li>
+                                    <li><a href="/aggregate/person/2562.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2562"
+                                            ></span>Epiphanius</a></li>
+                                    <li><a href="/aggregate/person/3208.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3208"
+                                            ></span>Eugene</a></li>
+                                    <li><a href="/aggregate/person/3209.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3209"
+                                            ></span>Eunomius</a></li>
+                                    <li><a href="/aggregate/person/2504.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2504"
+                                            ></span>Eusebius</a></li>
+                                    <li><a href="/aggregate/person/2505.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2505"
+                                            ></span>Evagrius</a></li>
+                                    <li><a href="/aggregate/person/2508.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2508"
+                                            ></span>Flavian I of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2530.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2530"
+                                            ></span>Flavian II of Antioch</a></li>
+                                    <li><a href="/aggregate/person/513.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/513"
+                                            ></span>Gregory the Wonderworker</a></li>
+                                    <li><a href="/aggregate/person/2458.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2458"
+                                            ></span>Hilarian</a></li>
+                                    <li><a href="/aggregate/person/2496.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2496"
+                                            ></span>Isaiah</a></li>
+                                    <li><a href="/aggregate/person/69.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/69"
+                                            ></span>Jacob Baradaeus</a></li>
+                                    <li><a href="/aggregate/person/3221.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3221"
+                                            ></span>John of Pergamum</a></li>
+                                    <li><a href="/aggregate/person/3222.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3222"
+                                            ></span>John of Seleucia in Syria</a></li>
+                                    <li><a href="/aggregate/person/3223.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3223"
+                                            ></span>John of Sura</a></li>
+                                    <li><a href="/aggregate/person/3228.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3228"
+                                            ></span>Julian of Alabanda</a></li>
+                                    <li><a href="/aggregate/person/1336.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1336"
+                                            ></span>Kenan</a></li>
+                                    <li><a href="/aggregate/person/3240.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3240"
+                                            ></span>Paul of Aphrodisias</a></li>
+                                    <li><a href="/aggregate/person/2506.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2506"
+                                            ></span>Paulinus</a></li>
+                                    <li><a href="/aggregate/person/2011.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2011"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/3243.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3243"
+                                            ></span>Peter</a></li>
+                                    <li><a href="/aggregate/person/2502.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2502"
+                                            ></span>Phaedimus</a></li>
+                                    <li><a href="/aggregate/person/2414.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2414"
+                                            ></span>Philip</a></li>
+                                    <li><a href="/aggregate/person/2483.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2483"
+                                            ></span>Sergius bar Fathya</a></li>
+                                    <li><a href="/aggregate/person/1463.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1463"
+                                            ></span>Sergius of Tella</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2097.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2097"
+                                            ></span>Simeon the Mountaineer</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/2732.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2732"
+                                            ></span>Alabanda</a></li>
+                                    <li><a href="/aggregate/place/2735.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2735"
+                                            ></span>Amida</a></li>
+                                    <li><a href="/aggregate/place/2610.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2610"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/2741.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2741"
+                                            ></span>Aphrodisias</a></li>
+                                    <li><a href="/aggregate/place/2747.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2747"
+                                            ></span>Asia</a></li>
+                                    <li><a href="/aggregate/place/1472.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1472"
+                                            ></span>Caria</a></li>
+                                    <li><a href="/aggregate/place/1529.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1529"
+                                            ></span>Chios</a></li>
+                                    <li><a href="/aggregate/place/2767.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2767"
+                                            ></span>Chios</a></li>
+                                    <li><a href="/aggregate/place/586.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/586"
+                                            ></span>Constantinople</a></li>
+                                    <li><a href="/aggregate/place/2666.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2666"
+                                            ></span>Ephesus</a></li>
+                                    <li><a href="/aggregate/place/2809.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2809"
+                                            ></span>Laodicea</a></li>
+                                    <li><a href="/aggregate/place/2829.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2829"
+                                            ></span>Pergamum</a></li>
+                                    <li><a href="/aggregate/place/2714.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2714"
+                                            ></span>Seleucia in Isauria</a></li>
+                                    <li><a href="/aggregate/place/185.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/185"
+                                            ></span>Shura</a></li>
+                                    <li><a href="/aggregate/place/2719.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2719"
+                                            ></span>Smyrna</a></li>
+                                    <li><a href="/aggregate/place/2722.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2722"
+                                            ></span>Tarsus</a></li>
+                                    <li><a href="/aggregate/place/2856.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2856"
+                                            ></span>Tralles</a></li>
+                                    <li><a href="/aggregate/place/216.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/216"
+                                            ></span>Ḥarran</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>
