@@ -1,0 +1,1042 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>SPEAR: Deacons</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <!-- Bootstrap 3 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+        <!-- Srophe styles -->
+        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+        <!-- Leaflet -->
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+        <!-- JQuery -->
+        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <!-- ReCaptcha -->
+        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+        <!-- keyboard widget css & script -->
+        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        <script type="text/javascript"><![CDATA[
+            $(document).ready(function () {
+                $('[data-toggle="tooltip"]').tooltip({
+                    container: 'body'
+                })
+                
+                $('.keyboard').keyboard({
+                    openOn: null,
+                    stayOpen: false,
+                    alwaysOpen: false,
+                    autoAccept: true,
+                    usePreview: false,
+                    initialFocus: true,
+                    rtl: true,
+                    layout: 'syriac-phonetic',
+                    hidden: function (event, keyboard, el) {
+                        //  keyboard.destroy();
+                    }
+                });
+                
+                $('.keyboard-select').click(function () {
+                    var keyboardID = '#' + $(this).data("keyboard-id")
+                    var kb = $(keyboardID).getkeyboard();
+                    //var kb = $('#searchField').getkeyboard();
+                    // change layout based on link ID
+                    kb.options.layout = this.id
+                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
+                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
+                        kb.reveal();
+                    }
+                });
+                //Change fonts
+                $('.swap-font').on('click', function () {
+                    var selectedFont = $(this).data("font-id")
+                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
+                    $("*:lang(syr)").css('font-family', selectedFont)
+                });
+            })//]]></script>
+    </head>
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
+            <div class="interior-content">
+                <div class="record">
+                    <div class="interior-content" data-template="app:fix-links">
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="padding-top">
+                            <h1>SPEAR Factoids about <span id="title"><span><span
+                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
+                                            >Deacons</span></span></span></h1>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns">
+                            <div style="margin:0 1em 1em; color: #999999;">
+                                <small><p><span class="srp-label"><strong>Syriaca.org
+                                            URI</strong></span>: <span id="syriaca-id"><a
+                                                href="http://syriaca.org/taxonomy/deacons"
+                                                >http://syriaca.org/taxonomy/deacons</a></span></p></small>
+                            </div>
+                        </div>
+                        <div xmlns:x="http://www.w3.org/1999/xhtml"
+                            xmlns:local="http://syriaca.org/ns" class="row">
+                            <div class="col-md-8">
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    between 519-520 Severus of Antioch sent a letter to John and
+                                    John on the subjects of whether or not non-Chalcedonian exiles
+                                    in Egypt should take communion; and the question of what to do
+                                    about Epimachus , a devout man ordained to the clergy but who
+                                    had entered into a second marriage; and questions about the
+                                    ordination of deacons and deaconesses in monasteries. <a
+                                        href="/3099-1" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Nicias discussing the impiety of ordination by
+                                    Nestorian bishops. <a href="/3031-1" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    sent a letter to Solon addressing a dispute involving Callistus
+                                    that resulted in his deposition as deacon. <a href="/3025-1"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    commanded Nicias to remain faithful to the sacred canons by
+                                    stripping the deacons and priests on Minidus who had been
+                                    ordained by Nestorians of their honor, titles, and ability to
+                                    administer the sacraments. <a href="/3031-10"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    urged Timostratus to take the issue of ordination seriously
+                                    because many in Antioch and the royal city were seeking
+                                    ordination. <a href="/3033-10" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Daniel</span> was a deacon. <a
+                                        href="/831-10" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Anonymous 3730</span> was a deacon.
+                                        <a href="/3134-11" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Eustochius </span> was a deacon of
+                                        <span class="tei-placeName"> Alexandria </span>
+                                    <a href="/3148-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Leontius </span> was a deacon. <a
+                                        href="/3085-12" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Basil</span> was a deacon of <span
+                                        class="tei-placeName"> Antioch </span>
+                                    <a href="/3060-13" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Severus
+                                    wrote a letter to Castor about dissensions between readers and
+                                    sub-deacons in his church. <a href="/3032-13"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    argued that the order of deacons have greater honor than the
+                                    readers of the church. <a href="/3032-14" class="factoid-more"
+                                        >See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Barhadbshabba</span> was a deacon. <a
+                                        href="/834-14" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Sergius</span> was a deacon. <a
+                                        href="/3140-14" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Anonymi
+                                    3038 wrote to Severus about the readers and and singers claiming
+                                    more authority than them. <a href="/3032-15"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Deaconries
+                                    were established for the men and women who emulated Paul,
+                                    patriarch of Antioch's zeal and earnestness by serving and
+                                    giving. <a href="/837-15" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Theodore
+                                    the Deacon asked Severus about the commands Jannia gave him. <a
+                                        href="/3013-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> In 529 840
+                                    , John ordained seventy men from the convents of Amida. <a
+                                        href="/816-16" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Paul and
+                                    Musonius agreed that Callistus ought to be returned to the
+                                    diaconate.. <a href="/3025-16" class="factoid-more">See factoid
+                                        page <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    encouraged Castor to preserve order by siding with the
+                                    subdeacons over the readers and singers. <a href="/3032-16"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Stephen</span> was a deacon. <a
+                                        href="/805-18" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Irenaeus</span> was a deacon. <a
+                                        href="/3028-18" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Eusebius </span> was a deacon of <span
+                                        class="tei-placeName"> Antioch </span>. <a href="/3081-19"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Sergius</span> was a deacon. <a
+                                        href="/834-19" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Aeneas</span> was a deacon. <a
+                                        href="/3061-2" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Anastasia</span> was a deaconess. <a
+                                        href="/3125-2" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Solon sent
+                                    a letter to Severus addressing a dispute involving Callistus
+                                    that resulted in his deposition as deacon.. <a href="/3025-2"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Eugenia</span> was a deaconess. <a
+                                        href="/3234-2" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Anonymous 3748</span> was a deacon. <a
+                                        href="/3117-20" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Heracliana </span> was a deaconess. <a
+                                        href="/3149-23" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    during his episcopacy Severus of Antioch wrote a letter to the
+                                    clergy of Antaradus regarding a difficult set of circumstance
+                                    surrounding their efforts to have a bishop ordained for their
+                                    city and the case of Leontius, a deacon who had been disciplined
+                                    because of his sin but was unrepentant and indeed sought to
+                                    become head deacon. <a href="/3085-23" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Stephen</span> was a deacon. <a
+                                        href="/3071-25" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    during his episcopacy Severus of Antioch received a petition
+                                    from Stephen, a deacon in Antaradus requesting the intervention
+                                    of Severus in the case of Leontius who had been removed from the
+                                    sacred tables for taking a second wife after his ordination as a
+                                    deacon but allowed to keep ministering. Stephen opposed his
+                                    lifestyle and his attempts to become head deacon. <a
+                                        href="/3085-25" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Anatolius</span> was a deacon. <a
+                                        href="/3028-27" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Elijah</span> was a deacon. <a
+                                        href="/3035-27" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    after the end of his episcopacy Severus of Antioch wrote a
+                                    letter to Thecla discussing her devoutness and answering
+                                    questions she had posed to Stephen about deacons baptizing in
+                                    extraordinary situations and whether or not to baptize someone
+                                    unable to make a profession of faith. <a href="/3117-28"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">event: </span> Sometime
+                                    between 519-538 a very ill baby was baptized by a deacon in the
+                                    absence of a priest. This raised questions about the legitimacy
+                                    of the baptism. <a href="/3117-29" class="factoid-more">See
+                                        factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Anatolius</span> was a deacon. <a
+                                        href="/3140-29" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Eusebius</span> was a deacon in Apamea.
+                                        <a href="/3070-3" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Misael</span> was a deacon. <a
+                                        href="/3136-3" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Severus of
+                                    Antioch and Anonymi 3729 exchanged letters on questions of
+                                    whether or not there would be sufficient ordained clergy to
+                                    adminster the Lord's Supper and baptism to the women. Severus of
+                                    Antioch states that deaconnesses may administer baptism to women
+                                    and male presbyters or deacons may administer the Lord's Supper.
+                                        <a href="/3150-3" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Misael</span> was a deacon. <a
+                                        href="/3140-3" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Deacon
+                                    Elijah suggested to Severus that Cosmas wanted him to visit in
+                                    order to repent and receive the oblation from bishop,so Severus
+                                    went begrudgingly, not even greeting Cosmas when he came to him.
+                                        <a href="/3035-38" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Jannia</span> was a deaconess. <a
+                                        href="/3013-4" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Valieriana</span> was a deaconess. <a
+                                        href="/3029-4" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Zacharias</span> was a deacon. <a
+                                        href="/3061-4" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Abraham</span> was a deacon. <a
+                                        href="/834-4" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Zenobius </span> was a deacon. <a
+                                        href="/3096-5" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Stephen </span> was a deacon. <a
+                                        href="/3050-6" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Severus
+                                    defended his ordination practices by pointing out that many
+                                    other godly bishops approved, including Julian, who allowed
+                                    Severus to ordain the deacon Irenaeus, and Dionysius, who
+                                    allowed Severus to ordain the deacon Anatolius. <a
+                                        href="/3028-62" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Elijah</span> was a deacon. <a
+                                        href="/3061-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span> Julian,
+                                    lacking needed clergy, sought the ordination of priests and
+                                    deacons by Sergius and Marion. <a href="/3124-7"
+                                        class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Sannus</span> was a deacon. <a
+                                        href="/3119-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span>
+                                    <span class="tei-persName">Anatolius</span> was a deacon. This
+                                        <span class="tei-persName">Anatolius</span> might be the
+                                    same person as this <span class="tei-persName">Anatolius</span>.
+                                        <a href="/3095-7" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Misael </span> was a deacon. <a
+                                        href="/3137-7" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Anonymous 3606</span> was a deaconess.
+                                        <a href="/805-77" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Philip</span> was a deacon. <a
+                                        href="/3039-8" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Theodore</span> was a deacon. <a
+                                        href="/3013-8" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Anonymous 3097</span> was a deaconess.
+                                        <a href="/3084-8" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> John </span> was a deacon. <a
+                                        href="/3047-8" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName"> Stephen </span> was a deacon. <a
+                                        href="/3085-8" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Early in
+                                    the sixth century, Severus wrote a letter to Misael the Deacon
+                                    concerning the efficacy of the eucharist from impious priests.
+                                        <a href="/3136-8" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Anonymous 3607</span> was a deaconess.
+                                        <a href="/805-80" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Thomas</span> was a deacon of <span
+                                        class="tei-placeName"> Antioch </span>
+                                    <a href="/3060-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Some from
+                                    Minidus and Uaris obtained ordination at the hands of Nestorian
+                                    bishops. <a href="/3031-9" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Cyriac</span> was a deacon. <a
+                                        href="/834-9" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <p class="indent"><span class="spearLabel">event: </span>Isaac of
+                                    Dara devoted himself to the care of the sick and service in the
+                                    church. <a href="/836-9" class="factoid-more">See factoid page
+                                            <span class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <hr />
+                                <p class="indent"><span class="spearLabel">occupation: </span><span
+                                        class="tei-persName">Zota</span> was a deacon. <a
+                                        href="/805-94" class="factoid-more">See factoid page <span
+                                            class="glyphicon glyphicon-circle-arrow-right"
+                                            aria-hidden="true"></span></a></p>
+                                <div class="citation">
+                                    <h3>How to cite:</h3>
+                                    <span class="element"> “Keyword Page for <span id="title"
+                                                  ><span><span class="tei-prefLabel" xml:lang="en"
+                                                  lang="en" dir="ltr">Deacons</span></span></span>,”
+                                        in SPEAR: Syriac Persons Events and Relations, general
+                                        editor Daniel L. Schwartz,
+                                        https://dev.spear-prosop.org/aggregate/taxonomy/deacons.html,
+                                        2025-05-12. </span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <h4>Related person(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/person/1547.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1547"
+                                            ></span>Abraham</a></li>
+                                    <li><a href="/aggregate/person/2538.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2538"
+                                            ></span>Aeneas</a></li>
+                                    <li><a href="/aggregate/person/2597.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2597"
+                                            ></span>Anastasia</a></li>
+                                    <li><a href="/aggregate/person/2516.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2516"
+                                            ></span>Anatolius</a></li>
+                                    <li><a href="/aggregate/person/2601.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2601"
+                                            ></span>Anatolius</a></li>
+                                    <li><a href="/aggregate/person/2481.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2481"
+                                            ></span>Anatolius</a></li>
+                                    <li><a href="/aggregate/person/3036.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3036"
+                                            ></span>Anonymi 3036</a></li>
+                                    <li><a href="/aggregate/person/3038.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3038"
+                                            ></span>Anonymi 3038</a></li>
+                                    <li><a href="/aggregate/person/3039.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3039"
+                                            ></span>Anonymi 3039</a></li>
+                                    <li><a href="/aggregate/person/3040.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3040"
+                                            ></span>Anonymi 3040</a></li>
+                                    <li><a href="/aggregate/person/3729.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3729"
+                                            ></span>Anonymi 3729</a></li>
+                                    <li><a href="/aggregate/person/3741.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3741"
+                                            ></span>Anonymi 3741</a></li>
+                                    <li><a href="/aggregate/person/3097.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3097"
+                                            ></span>Anonymous 3097</a></li>
+                                    <li><a href="/aggregate/person/3606.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3606"
+                                            ></span>Anonymous 3606</a></li>
+                                    <li><a href="/aggregate/person/3607.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3607"
+                                            ></span>Anonymous 3607</a></li>
+                                    <li><a href="/aggregate/person/3730.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3730"
+                                            ></span>Anonymous 3730</a></li>
+                                    <li><a href="/aggregate/person/3747.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3747"
+                                            ></span>Anonymous 3747</a></li>
+                                    <li><a href="/aggregate/person/3748.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3748"
+                                            ></span>Anonymous 3748</a></li>
+                                    <li><a href="/aggregate/person/1625.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1625"
+                                            ></span>Barhadbshabba</a></li>
+                                    <li><a href="/aggregate/person/2579.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2579"
+                                            ></span>Basil</a></li>
+                                    <li><a href="/aggregate/person/2459.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2459"
+                                            ></span>Callistus</a></li>
+                                    <li><a href="/aggregate/person/2527.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2527"
+                                            ></span>Castor</a></li>
+                                    <li><a href="/aggregate/person/2539.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2539"
+                                            ></span>Cosmas</a></li>
+                                    <li><a href="/aggregate/person/1664.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1664"
+                                            ></span>Cyriacus</a></li>
+                                    <li><a href="/aggregate/person/3204.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3204"
+                                            ></span>Daniel</a></li>
+                                    <li><a href="/aggregate/person/2520.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2520"
+                                            ></span>Dionysios</a></li>
+                                    <li><a href="/aggregate/person/2541.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2541"
+                                            ></span>Elijah</a></li>
+                                    <li><a href="/aggregate/person/2431.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2431"
+                                            ></span>Epimachus</a></li>
+                                    <li><a href="/aggregate/person/2645.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2645"
+                                            ></span>Eugenia</a></li>
+                                    <li><a href="/aggregate/person/2404.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2404"
+                                            ></span>Eusebius</a></li>
+                                    <li><a href="/aggregate/person/2419.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2419"
+                                            ></span>Eusebius</a></li>
+                                    <li><a href="/aggregate/person/2454.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2454"
+                                            ></span>Eustochius</a></li>
+                                    <li><a href="/aggregate/person/2478.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2478"
+                                            ></span>Heracliana</a></li>
+                                    <li><a href="/aggregate/person/2517.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2517"
+                                            ></span>Irenaeus</a></li>
+                                    <li><a href="/aggregate/person/1788.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1788"
+                                            ></span>Isaac</a></li>
+                                    <li><a href="/aggregate/person/2669.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2669"
+                                            ></span>Jannia</a></li>
+                                    <li><a href="/aggregate/person/2428.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2428"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2427.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2427"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/2400.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2400"
+                                            ></span>John</a></li>
+                                    <li><a href="/aggregate/person/50.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/50"
+                                            ></span>John of Tella</a></li>
+                                    <li><a href="/aggregate/person/2518.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2518"
+                                            ></span>Julian</a></li>
+                                    <li><a href="/aggregate/person/2465.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2465"
+                                            ></span>Julian</a></li>
+                                    <li><a href="/aggregate/person/2423.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2423"
+                                            ></span>Leontius</a></li>
+                                    <li><a href="/aggregate/person/2407.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2407"
+                                            ></span>Marion</a></li>
+                                    <li><a href="/aggregate/person/2558.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2558"
+                                            ></span>Misael</a></li>
+                                    <li><a href="/aggregate/person/2460.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2460"
+                                            ></span>Musonius</a></li>
+                                    <li><a href="/aggregate/person/2526.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2526"
+                                            ></span>Nicias</a></li>
+                                    <li><a href="/aggregate/person/2468.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2468"
+                                            ></span>Paul</a></li>
+                                    <li><a href="/aggregate/person/1977.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/1977"
+                                            ></span>Paul, patriarch of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2414.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2414"
+                                            ></span>Philip</a></li>
+                                    <li><a href="/aggregate/person/3118.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3118"
+                                            ></span>Sannus</a></li>
+                                    <li><a href="/aggregate/person/2069.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2069"
+                                            ></span>Sergius</a></li>
+                                    <li><a href="/aggregate/person/2751.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2751"
+                                            ></span>Sergius I</a></li>
+                                    <li><a href="/aggregate/person/2483.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2483"
+                                            ></span>Sergius bar Fathya</a></li>
+                                    <li><a href="/aggregate/person/51.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/51"
+                                            ></span>Severus of Antioch</a></li>
+                                    <li><a href="/aggregate/person/2417.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2417"
+                                            ></span>Solon</a></li>
+                                    <li><a href="/aggregate/person/3010.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3010"
+                                            ></span>Stephen</a></li>
+                                    <li><a href="/aggregate/person/2758.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2758"
+                                            ></span>Stephen</a></li>
+                                    <li><a href="/aggregate/person/2422.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2422"
+                                            ></span>Stephen</a></li>
+                                    <li><a href="/aggregate/person/2566.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2566"
+                                            ></span>Stephen the deacon</a></li>
+                                    <li><a href="/aggregate/person/2764.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2764"
+                                            ></span>Thecla</a></li>
+                                    <li><a href="/aggregate/person/2767.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2767"
+                                            ></span>Theodore</a></li>
+                                    <li><a href="/aggregate/person/2586.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2586"
+                                            ></span>Thomas</a></li>
+                                    <li><a href="/aggregate/person/2531.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2531"
+                                            ></span>Timostratus</a></li>
+                                    <li><a href="/aggregate/person/2780.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2780"
+                                            ></span>Valeriana</a></li>
+                                    <li><a href="/aggregate/person/2718.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2718"
+                                            ></span>Zacharias</a></li>
+                                    <li><a href="/aggregate/person/2489.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/2489"
+                                            ></span>Zenobius</a></li>
+                                    <li><a href="/aggregate/person/3011.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/person/3011"
+                                            ></span>Zota</a></li>
+                                </ul>
+                                <h4>Related taxonomy(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/taxonomy/anti-nestorian.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/anti-nestorian"
+                                            ></span>Anti-Nestorian</a></li>
+                                    <li><a href="/aggregate/taxonomy/authority.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/authority"
+                                            ></span>Authority</a></li>
+                                    <li><a href="/aggregate/taxonomy/baptism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/baptism"
+                                            ></span>Baptism</a></li>
+                                    <li><a href="/aggregate/taxonomy/baptized.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/baptized"
+                                            ></span>Baptized</a></li>
+                                    <li><a href="/aggregate/taxonomy/bible.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bible"
+                                            ></span>Bible</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishop-over.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishop-over"
+                                            ></span>Bishop over</a></li>
+                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                            ></span>Bishops</a></li>
+                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                            ></span>Canon Law</a></li>
+                                    <li><a href="/aggregate/taxonomy/charity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/charity"
+                                            ></span>CharityCaritas</a></li>
+                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                            ></span>Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/communion.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/communion"
+                                            ></span>Communion</a></li>
+                                    <li><a href="/aggregate/taxonomy/creeds.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/creeds"
+                                            ></span>Creeds</a></li>
+                                    <li><a href="/aggregate/taxonomy/deacons.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deacons"
+                                            ></span>Deacons</a></li>
+                                    <li><a href="/aggregate/taxonomy/death.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/death"
+                                            ></span>Death</a></li>
+                                    <li><a href="/aggregate/taxonomy/deposition-of-clergy.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"
+                                            ></span>Deposition of Clergy</a></li>
+                                    <li><a href="/aggregate/taxonomy/eucharist.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/eucharist"
+                                            ></span>Eucharist</a></li>
+                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                            ></span>Heterodoxy</a></li>
+                                    <li><a href="/aggregate/taxonomy/honour.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/honour"
+                                            ></span>Honour</a></li>
+                                    <li><a href="/aggregate/taxonomy/illness.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                            ></span>Illness</a></li>
+                                    <li><a href="/aggregate/taxonomy/laity.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/laity"
+                                            ></span>Laity</a></li>
+                                    <li><a href="/aggregate/taxonomy/letters.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                            ></span>Letters</a></li>
+                                    <li><a href="/aggregate/taxonomy/marriage.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/marriage"
+                                            ></span>Marriage</a></li>
+                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                            ></span>Monastic Heads</a></li>
+                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                            ></span>Monasticism</a></li>
+                                    <li><a href="/aggregate/taxonomy/monks.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                            ></span>Monks</a></li>
+                                    <li><a href="/aggregate/taxonomy/nobles.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/nobles"
+                                            ></span>Nobles</a></li>
+                                    <li><a href="/aggregate/taxonomy/nurses.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/nurses"
+                                            ></span>Nurses</a></li>
+                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                            ></span>Ordination</a></li>
+                                    <li><a href="/aggregate/taxonomy/penitence.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/penitence"
+                                            ></span>Penitence</a></li>
+                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                            ></span>Persecution</a></li>
+                                    <li><a href="/aggregate/taxonomy/priests.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                            ></span>Priests</a></li>
+                                    <li><a href="/aggregate/taxonomy/professional-relationship.html"
+                                                ><span class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"
+                                            ></span>Professional Relationship</a></li>
+                                    <li><a href="/aggregate/taxonomy/readers.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/readers"
+                                            ></span>Readers</a></li>
+                                    <li><a href="/aggregate/taxonomy/repentance.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/repentance"
+                                            ></span>Repentance</a></li>
+                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                            ></span>Sender of Letter to</a></li>
+                                    <li><a href="/aggregate/taxonomy/sin.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/sin"
+                                            ></span>Sin</a></li>
+                                    <li><a href="/aggregate/taxonomy/women.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/taxonomy/women"
+                                            ></span>Women</a></li>
+                                </ul>
+                                <h4>Related place(s)</h4>
+                                <ul>
+                                    <li><a href="/aggregate/place/2620.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2620"
+                                            ></span>Alexandria</a></li>
+                                    <li><a href="/aggregate/place/2737.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2737"
+                                            ></span>Amida</a></li>
+                                    <li><a href="/aggregate/place/1471.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/1471"
+                                            ></span>Antaradus</a></li>
+                                    <li><a href="/aggregate/place/2610.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2610"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/10.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/10"
+                                            ></span>Antioch</a></li>
+                                    <li><a href="/aggregate/place/586.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/586"
+                                            ></span>Constantinople</a></li>
+                                    <li><a href="/aggregate/place/2688.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2688"
+                                            ></span>Minidus</a></li>
+                                    <li><a href="/aggregate/place/2736.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2736"
+                                            ></span>Monastery of Amida</a></li>
+                                    <li><a href="/aggregate/place/2730.html"><span
+                                                class="loadRDF getLabel"
+                                                data-rdfRef="http://syriaca.org/place/2730"
+                                            ></span>Uaris</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></body>
+</html>

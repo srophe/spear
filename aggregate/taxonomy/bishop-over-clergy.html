@@ -1,44 +1,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>SPEAR: Bishop over Clergy</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
-        <!-- Srophe styles -->
-        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
-        <!-- Leaflet -->
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
-        <!-- JQuery -->
-        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
-        <!-- ReCaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
-        <!-- keyboard widget css & script -->
-        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
-        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>SPEAR: Bishop over Clergy</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <!-- Bootstrap 3 -->
+                <link rel="stylesheet" type="text/css"
+                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+                <!-- Srophe styles -->
+                <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+                <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+                <!-- Leaflet -->
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+                <!-- JQuery -->
+                <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+                <!-- Bootstrap -->
+                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <!-- ReCaptcha -->
+                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+                <!-- keyboard widget css & script -->
+                <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+                <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+                <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip({
                     container: 'body'
@@ -76,699 +77,838 @@
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
             })//]]></script>
-    </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand banner-container" href="/index.html"><span
-                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
-            <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span><span
-                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
-                                            >Bishop over Clergy</span></span></span></h1>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/taxonomy/bishop-over-clergy"
-                                                >http://syriaca.org/taxonomy/bishop-over-clergy</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <p class="indent"><span class="spearLabel">relation: </span>Cassian
-                                    had ecclesiastical authority over Agapius. <a href="/3087-10"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Procopius had ecclesiastical authority over Anonymi 3046.
-                                        <a href="/3038-10" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Anonymous 3090. <a
-                                        href="/3068-10" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Longinus. <a
-                                        href="/3026-10" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Castor
-                                    had ecclesiastical authority over Anonymi 3040. <a
-                                        href="/3032-10" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Thomas. <a
-                                        href="/3028-11" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Isaac
-                                    had ecclesiastical authority over Anonymi 3080. <a
-                                        href="/3059-11" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>
-                                    Entrechius had ecclesiastical authority over Anonymous 3064 and
-                                    Anonymi 3062. <a href="/3045-11" class="factoid-more">See
-                                        factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Epiphanius had ecclesiastical authority over Anonymi
-                                    3034. <a href="/3020-11" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Simeon
-                                    of Beth Arsham had ecclesiastical authority over Anonymous 3623.
-                                        <a href="/802-112" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Procopius had ecclesiastical authority over Anonymi 3050.
-                                        <a href="/3038-13" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Cassian
-                                    had ecclesiastical authority over Thomas. <a href="/3076-13"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span> Peter
-                                    was bishop over Anonymous 3740 <a href="/3083-13"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Theodore. <a
-                                        href="/3035-14" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Anonymous 3093. <a
-                                        href="/3071-14" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Isaac
-                                    had ecclesiastical authority over Anonymous 3083. <a
-                                        href="/3059-15" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Theodosius. <a
-                                        href="/3038-17" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span> Severus
-                                    was bishop over Eusebius and Victor. <a href="/3061-17"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3742 had ecclesiastical authority over
-                                    Leontius. <a href="/3085-17" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
-                                    3733 had ecclesiastical authority over Paul. <a href="/3108-18"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Cosmas, Polyeuctus
-                                    and Zeno. <a href="/3036-19" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Eusebius. <a
-                                        href="/3081-20" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Isidore
-                                    had ecclesiastical authority over Cosmas, Polyeuctus and Zeno.
-                                        <a href="/3036-20" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Irenaeus. <a
-                                        href="/3028-20" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Peter
-                                    the Iberian had ecclesiastical authority over Timothy and
-                                    Theodore. <a href="/3069-21" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Simeon
-                                    had ecclesiastical authority over Cosmas. <a href="/3072-23"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Paul had
-                                    ecclesiastical authority over Anonymi 3065. <a href="/3046-26"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Elijah. <a
-                                        href="/3035-29" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Anatolius. <a
-                                        href="/3028-29" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Mara,
-                                    metropolitan of Amid had ecclesiastical authority over Stephen,
-                                    Thomas and Sergius. <a href="/805-34" class="factoid-more">See
-                                        factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Leontius. <a
-                                        href="/3028-38" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 2235 had ecclesiastical authority over Anonymi
-                                    2218. <a href="/8559-395" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Epiphanius had ecclesiastical authority over Isaiah. <a
-                                        href="/3111-42" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Stephen. <a
-                                        href="/3025-45" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span> Stephen
-                                    was a bishop with authority over Anonymi 3746 <a href="/3107-47"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Victor. <a
-                                        href="/3099-49" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Solon
-                                    had ecclesiastical authority over Maximus. <a href="/3066-5"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span> Isidore
-                                    was bishop with authority over Silvanus. <a href="/3109-5"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Philoxenus had ecclesiastical authority over Romulus. <a
-                                        href="/3056-5" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Romulus. <a
-                                        href="/3056-6" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Hesychius. <a
-                                        href="/3026-6" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Castor
-                                    had ecclesiastical authority over Anonymi 3038. <a
-                                        href="/3032-6" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Anonymi 3062. <a
-                                        href="/3045-6" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>John of
-                                    Alexandria Minor had ecclesiastical authority over Anonymi 3085.
-                                        <a href="/3062-7" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Stephen
-                                    had ecclesiastical authority over Stephen. <a href="/3086-8"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Philip. <a
-                                        href="/3106-8" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Castor
-                                    had ecclesiastical authority over Anonymi 3039. <a
-                                        href="/3032-8" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Dionysios had ecclesiastical authority over Anonymous
-                                    3073. <a href="/3054-8" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Cassian
-                                    had ecclesiastical authority over Thomas. <a href="/3075-8"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Didymus
-                                    had ecclesiastical authority over Sannus. <a href="/3119-8"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Simeon
-                                    had ecclesiastical authority over Anonymous 3092. <a
-                                        href="/3071-8" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Severus
-                                    of Antioch had ecclesiastical authority over Anonymous 3097. <a
-                                        href="/3084-9" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Antoninus had ecclesiastical authority over Mark. <a
-                                        href="/3043-9" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span> Severus
-                                    was a bishop with authority over Mark. <a href="/3063-9"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Victor
-                                    had ecclesiastical authority over John. <a href="/3047-9"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Keyword Page for <span id="title"
+        </head>
+        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                                class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target="#navbar-collapse-1"><span class="sr-only"
+                                                >Toggle navigation</span><span class="icon-bar"
+                                                ></span><span class="icon-bar"></span><span
+                                                class="icon-bar"></span></button>
+                                <a class="navbar-brand banner-container" href="/index.html"><span
+                                                class="syriaca-icon syriaca-syriaca banner-icon"
+                                                ></span><span class="banner-text"
+                                                data-template="config:app-title">SPEAR: Syriac
+                                                Persons Events and Relations</span></a>
+                        </div><div class="navbar-collapse collapse pull-right"
+                                id="navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                        <li><a href="/index.html" class="nav-text">Home</a></li>
+                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                                        <li class="dropdown"><a href="#"
+                                                  class="dropdown-toggle lonely-caret"
+                                                  data-toggle="dropdown">  <span
+                                                  class="mobile-submenu">About</span>  <b
+                                                  class="caret"></b></a><ul
+                                                  class="dropdown-menu pull-right">
+                                                  <li><a href="/about.html">Project
+                                                  Overview</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/contributors.html">Project
+                                                  Contributors</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/contact.html">Contact Us</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/documentation/index.html"><span
+                                                  class="syriaca-icon syriaca-book icon-nav"
+                                                  style="color:red;"></span><span class="icon-text"
+                                                  >Documentation</span></a></li>
+                                                </ul></li>
+                                        <li><a href="/search.html" class="nav-text">Advanced
+                                                  Search</a></li>
+                                        <li><div id="search-wrapper">
+                                                  <form class="navbar-form navbar-right search-box"
+                                                  role="search" action="/search.html" method="get"
+                                                  ><div class="form-group">
+                                                  <input type="text" class="form-control keyboard"
+                                                  placeholder="search" name="keyword"
+                                                  id="keywordNav" />
+                                                  <span data-template="app:keyboard-select-menu"
+                                                  data-template-input-id="keywordNav"></span>
+                                                  <button class="btn btn-default search-btn"
+                                                  id="searchbtn" type="submit" title="Search"><span
+                                                  class="glyphicon glyphicon-search"
+                                                  ></span></button>
+                                                  </div></form>
+                                                </div></li>
+                                </ul>
+                        </div></nav><div class="main-content-block">
+                        <div class="interior-content">
+                                <div class="record">
+                                        <div class="interior-content" data-template="app:fix-links">
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns"
+                                                  class="padding-top">
+                                                  <h1>SPEAR Factoids about <span id="title"
                                                   ><span><span class="tei-prefLabel" xml:lang="en"
                                                   lang="en" dir="ltr">Bishop over
-                                                Clergy</span></span></span>,” in SPEAR: Syriac
-                                        Persons Events and Relations, general editor Daniel L.
-                                        Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/taxonomy/bishop-over-clergy.html,
-                                        2025-05-12. </span>
+                                                  Clergy</span></span></span></h1>
+                                                </div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns">
+                                                  <div style="margin:0 1em 1em; color: #999999;">
+                                                  <small><p><span class="srp-label"
+                                                  ><strong>Syriaca.org URI</strong></span>: <span
+                                                  id="syriaca-id"><a
+                                                  href="http://syriaca.org/taxonomy/bishop-over-clergy"
+                                                  >http://syriaca.org/taxonomy/bishop-over-clergy</a></span></p></small>
+                                                  </div>
+                                                </div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns" class="row">
+                                                  <div class="col-md-8">
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Cassian had ecclesiastical
+                                                  authority over Agapius. <a href="/3087-10"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Procopius had ecclesiastical
+                                                  authority over Anonymi 3046. <a href="/3038-10"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Anonymous 3090. <a
+                                                  href="/3068-10" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Longinus. <a
+                                                  href="/3026-10" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Castor had ecclesiastical
+                                                  authority over Anonymi 3040. <a href="/3032-10"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Thomas. <a
+                                                  href="/3028-11" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Isaac had ecclesiastical
+                                                  authority over Anonymi 3080. <a href="/3059-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span> Entrechius had ecclesiastical
+                                                  authority over Anonymous 3064 and Anonymi 3062. <a
+                                                  href="/3045-11" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Epiphanius had ecclesiastical
+                                                  authority over Anonymi 3034. <a href="/3020-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Simeon of Beth Arsham had
+                                                  ecclesiastical authority over Anonymous 3623. <a
+                                                  href="/802-112" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Procopius had ecclesiastical
+                                                  authority over Anonymi 3050. <a href="/3038-13"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Cassian had ecclesiastical
+                                                  authority over Thomas. <a href="/3076-13"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span> Peter was bishop over Anonymous
+                                                  3740 <a href="/3083-13" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Theodore. <a
+                                                  href="/3035-14" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Anonymous 3093. <a
+                                                  href="/3071-14" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Isaac had ecclesiastical
+                                                  authority over Anonymous 3083. <a href="/3059-15"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Theodosius. <a
+                                                  href="/3038-17" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span> Severus was bishop over
+                                                  Eusebius and Victor. <a href="/3061-17"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Anonymous 3742 had
+                                                  ecclesiastical authority over Leontius. <a
+                                                  href="/3085-17" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Anonymi 3733 had ecclesiastical
+                                                  authority over Paul. <a href="/3108-18"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Cosmas, Polyeuctus
+                                                  and Zeno. <a href="/3036-19" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Eusebius. <a
+                                                  href="/3081-20" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Isidore had ecclesiastical
+                                                  authority over Cosmas, Polyeuctus and Zeno. <a
+                                                  href="/3036-20" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Irenaeus. <a
+                                                  href="/3028-20" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Peter the Iberian had
+                                                  ecclesiastical authority over Timothy and
+                                                  Theodore. <a href="/3069-21" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Simeon had ecclesiastical
+                                                  authority over Cosmas. <a href="/3072-23"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Paul had ecclesiastical
+                                                  authority over Anonymi 3065. <a href="/3046-26"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Elijah. <a
+                                                  href="/3035-29" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Anatolius. <a
+                                                  href="/3028-29" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Mara, metropolitan of Amid had
+                                                  ecclesiastical authority over Stephen, Thomas and
+                                                  Sergius. <a href="/805-34" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Leontius. <a
+                                                  href="/3028-38" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Anonymous 2235 had
+                                                  ecclesiastical authority over Anonymi 2218. <a
+                                                  href="/8559-395" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Epiphanius had ecclesiastical
+                                                  authority over Isaiah. <a href="/3111-42"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Stephen. <a
+                                                  href="/3025-45" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span> Stephen was a bishop with
+                                                  authority over Anonymi 3746 <a href="/3107-47"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Victor. <a
+                                                  href="/3099-49" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Solon had ecclesiastical
+                                                  authority over Maximus. <a href="/3066-5"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span> Isidore was bishop with
+                                                  authority over Silvanus. <a href="/3109-5"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Philoxenus had ecclesiastical
+                                                  authority over Romulus. <a href="/3056-5"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Romulus. <a
+                                                  href="/3056-6" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Hesychius. <a
+                                                  href="/3026-6" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Castor had ecclesiastical
+                                                  authority over Anonymi 3038. <a href="/3032-6"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Anonymi 3062. <a
+                                                  href="/3045-6" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>John of Alexandria Minor had
+                                                  ecclesiastical authority over Anonymi 3085. <a
+                                                  href="/3062-7" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Stephen had ecclesiastical
+                                                  authority over Stephen. <a href="/3086-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Philip. <a
+                                                  href="/3106-8" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Castor had ecclesiastical
+                                                  authority over Anonymi 3039. <a href="/3032-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Dionysios had ecclesiastical
+                                                  authority over Anonymous 3073. <a href="/3054-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Cassian had ecclesiastical
+                                                  authority over Thomas. <a href="/3075-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Didymus had ecclesiastical
+                                                  authority over Sannus. <a href="/3119-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Simeon had ecclesiastical
+                                                  authority over Anonymous 3092. <a href="/3071-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Severus of Antioch had
+                                                  ecclesiastical authority over Anonymous 3097. <a
+                                                  href="/3084-9" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Antoninus had ecclesiastical
+                                                  authority over Mark. <a href="/3043-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span> Severus was a bishop with
+                                                  authority over Mark. <a href="/3063-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >relation: </span>Victor had ecclesiastical
+                                                  authority over John. <a href="/3047-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <div class="citation">
+                                                  <h3>How to cite:</h3>
+                                                  <span class="element"> “Keyword Page for <span
+                                                  id="title"><span><span class="tei-prefLabel"
+                                                  xml:lang="en" lang="en" dir="ltr">Bishop over
+                                                  Clergy</span></span></span>,” in SPEAR: Syriac
+                                                  Persons Events and Relations, general editor
+                                                  Daniel L. Schwartz,
+                                                  https://dev.spear-prosop.org/aggregate/taxonomy/bishop-over-clergy.html,
+                                                  2025-06-16. </span>
+                                                  </div>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                  <h4>Related taxonomy(s)</h4>
+                                                  <ul>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/bishop-over-clergy.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/bishop-over-clergy"
+                                                  ></span>Bishop over Clergy</a></li>
+                                                  </ul>
+                                                  <h4>Related person(s)</h4>
+                                                  <ul>
+                                                  <li><a href="/aggregate/person/2426.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2426"
+                                                  ></span>Agapius — ܐܓܐܦܝܘܣ ܐܦܝܣܩܘܦܐ </a></li>
+                                                  <li><a href="/aggregate/person/2516.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2516"
+                                                  ></span>Anatolius — ܐܢܐܛܘܠܝܘܣ ܡܫܡܫܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2218.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2218"
+                                                  ></span>Anonymi 2218 — Two synkelli who survived
+                                                  the earthquake in Nicopolis in 498/9</a></li>
+                                                  <li><a href="/aggregate/person/3034.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3034"
+                                                  ></span>Anonymi 3034 — The readers of Tyre who
+                                                  recoiled from communion with their bishop
+                                                  Epiphanius</a></li>
+                                                  <li><a href="/aggregate/person/3038.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3038"
+                                                  ></span>Anonymi 3038 — The subdeacons under Castor
+                                                  of Perga who petitioned Severus sometime between
+                                                  A.D,.513-518</a></li>
+                                                  <li><a href="/aggregate/person/3039.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3039"
+                                                  ></span>Anonymi 3039 — The readers under Castor of
+                                                  Perga sometime between A.D. 513-518</a></li>
+                                                  <li><a href="/aggregate/person/3040.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3040"
+                                                  ></span>Anonymi 3040 — The singers under Castor of
+                                                  Perga sometime between A.D. 513-518</a></li>
+                                                  <li><a href="/aggregate/person/3046.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3046"
+                                                  ></span>Anonymi 3046 — A group of clergy in
+                                                  Flavias who brought charges against their bishop
+                                                  Procopius</a></li>
+                                                  <li><a href="/aggregate/person/3050.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3050"
+                                                  ></span>Anonymi 3050 — A group of clergy making
+                                                  accusations against Procopius, Bishop of
+                                                  Flavias</a></li>
+                                                  <li><a href="/aggregate/person/3062.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3062"
+                                                  ></span>Anonymi 3062 — The clergy of Rhosus who
+                                                  submitted a petition to Severus</a></li>
+                                                  <li><a href="/aggregate/person/3065.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3065"
+                                                  ></span>Anonymi 3065 — Clergy of a monastery under
+                                                  the authority of Paul of Olba</a></li>
+                                                  <li><a href="/aggregate/person/3080.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3080"
+                                                  ></span>Anonymi 3080 — The clergy of Apamea
+                                                  following the death of the bishop Isaac in A.D.
+                                                  513</a></li>
+                                                  <li><a href="/aggregate/person/3085.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3085"
+                                                  ></span>Anonymi 3085 — The devout subdeacons of
+                                                  Alexandria Minor who petitioned Severus</a></li>
+                                                  <li><a href="/aggregate/person/3733.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3733"
+                                                  ></span>Anonymi 3733</a></li>
+                                                  <li><a href="/aggregate/person/3746.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3746"
+                                                  ></span>Anonymi 3746</a></li>
+                                                  <li><a href="/aggregate/person/2235.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2235"
+                                                  ></span>Anonymous 2235 — The bishop of Nicopolis
+                                                  who survived the earthquake in 498/9</a></li>
+                                                  <li><a href="/aggregate/person/3064.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3064"
+                                                  ></span>Anonymous 3064 — A nominee for bishop of
+                                                  Rhosus</a></li>
+                                                  <li><a href="/aggregate/person/3073.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3073"
+                                                  ></span>Anonymous 3073 — A presbyter in the
+                                                  fillage of Pessinus who was possessed by a demon
+                                                  sometime between A.D. 513-515</a></li>
+                                                  <li><a href="/aggregate/person/3083.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3083"
+                                                  ></span>Anonymous 3083 — The man given stewardship
+                                                  of the church property of Apamea after the death
+                                                  of Isaac in A.D. 513</a></li>
+                                                  <li><a href="/aggregate/person/3090.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3090"
+                                                  ></span>Anonymous 3090 — A reader in the church of
+                                                  Antioch who delivered a message to the bishops of
+                                                  Syria Secunda</a></li>
+                                                  <li><a href="/aggregate/person/3092.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3092"
+                                                  ></span>Anonymous 3092 — The devout monk who was
+                                                  removed from the monastery of ʿAkiba by the bishop
+                                                  Simeon</a></li>
+                                                  <li><a href="/aggregate/person/3093.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3093"
+                                                  ></span>Anonymous 3093 — The chorepiscopus and
+                                                  periodeutes in the village of Thelhadin</a></li>
+                                                  <li><a href="/aggregate/person/3097.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3097"
+                                                  ></span>Anonymous 3097 — A deaconess deprived of
+                                                  her ordination by Severus because she had been
+                                                  married three times</a></li>
+                                                  <li><a href="/aggregate/person/3623.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3623"
+                                                  ></span>Anonymous 3623</a></li>
+                                                  <li><a href="/aggregate/person/3740.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3740"
+                                                  ></span>Anonymous 3740</a></li>
+                                                  <li><a href="/aggregate/person/3742.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3742"
+                                                  ></span>Anonymous 3742</a></li>
+                                                  <li><a href="/aggregate/person/2553.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2553"
+                                                  ></span>Antoninus — ܐܢܬܘܢܝܘܣ ܐܦܝܣܩܘܦܐ ܕܚܠܒ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2425.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2425"
+                                                  ></span>Cassian — ܩܣܝܢܐ ܐܦܝܣܩܘܦܐ ܕܒܘܨܛܪܐ </a></li>
+                                                  <li><a href="/aggregate/person/2527.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2527"
+                                                  ></span>Castor — ܩܐܣܛܘܪ ܐܦܝܣܩܘܦܐ ܕܦܪܓܐ </a></li>
+                                                  <li><a href="/aggregate/person/2544.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2544"
+                                                  ></span>Cosmas — ܩܘܣܡܐ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2462.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2462"
+                                                  ></span>Didymus — ܕܝܕܘܡܘܣ ܐܦܝܣܩܘܦܐ </a></li>
+                                                  <li><a href="/aggregate/person/2520.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2520"
+                                                  ></span>Dionysios — ܕܝܘܢܘܣܝܘܣ ܐܦܝܣܩܘܦܐ ܕܛܐܪܣܘܣ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2541.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2541"
+                                                  ></span>Elijah — ܐܠܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/2546.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2546"
+                                                  ></span>Entrechius — ܐܢܛܪܟܝܘܣ ܐܦܝܣܩܘܦܐ ܓܐܢܙܪܒܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2580.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2580"
+                                                  ></span>Epiphanius — ܐܦܝܦܢܝܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2562.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2562"
+                                                  ></span>Epiphanius — ܐܦܝܦܢܝܘܣ ܐܦܥܣܩܘܦܐ </a></li>
+                                                  <li><a href="/aggregate/person/2419.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2419"
+                                                  ></span>Eusebius — ܐܘܣܒܝܘܣ ܡܫܡܫܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2649.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2649"
+                                                  ></span>Eusebius — ܐܘܣܒܝܘܣ ܩܫܝܫܐ ܘܐܝܩܘܢܘܡܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2510.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2510"
+                                                  ></span>Hesychius — ܗܣܘܟܝܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2517.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2517"
+                                                  ></span>Irenaeus — ܐܝܪܝܢܐܘܣ ܡܫܡܫܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2578.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2578"
+                                                  ></span>Isaac — ܐܝܣܚܩ </a></li>
+                                                  <li><a href="/aggregate/person/2496.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2496"
+                                                  ></span>Isaiah — ܐܫܥܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/2545.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2545"
+                                                  ></span>Isidore — ܐܝܣܝܕܘܪܘܣ ܐܦܝܣܩܘܦܐ ܕܩ̈ܢܫܪܝܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2581.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2581"
+                                                  ></span>John of Alexandria Minor — ܝܘܚܢܢ ܐܦܝܣܩܘܦܐ
+                                                  ܕܐܠܟܣܢܕܪܝܐ ܙܥܘܪܬܐ </a></li>
+                                                  <li><a href="/aggregate/person/2400.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2400"
+                                                  ></span>John — ܝܘܚܢܢ </a></li>
+                                                  <li><a href="/aggregate/person/2423.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2423"
+                                                  ></span>Leontius — ܠܐܘܢܛܝܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2519.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2519"
+                                                  ></span>Leontius — ܠܐܘܢܛܝܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2511.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2511"
+                                                  ></span>Longinus — ܠܘܢܓܝܢܘܣ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/48.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/48"
+                                                  ></span>Mara, metropolitan of Amid — ܡܪܐ ܕܐܡܝܕ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2557.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2557"
+                                                  ></span>Mark — ܡܪܩܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2701.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2701"
+                                                  ></span>Mark — ܡܪܩܘܣ ܕܝܪܐ ܘܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2413.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2413"
+                                                  ></span>Maximus — ܡܐܟܣܝܡܘܣ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2468.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2468"
+                                                  ></span>Paul — ܦܘܠܘܣ ܐܦܝܣܩܘܦܐ ܕܐܘܠܒܐ </a></li>
+                                                  <li><a href="/aggregate/person/680.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/680"
+                                                  ></span>Peter the Iberian — ܦܛܪܘܣ ܐܝܒܪܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/2514.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2514"
+                                                  ></span>Peter — ܦܛܪܘܣ ܐܦܝܣܩܘܦܐ ܕܐܦܡܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/2437.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2437"
+                                                  ></span>Philip — ܦܝܠܝܦܘܣ ܩܫܝܫܐ ܘܕܝܪܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/2574.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2574"
+                                                  ></span>Philoxenus — ܦܝܠܘܟܣܝܢܘܣ ܐܦܝܣܩܘܦܐ ܕܕܠܝܟ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2542.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2542"
+                                                  ></span>Polyeuctus — ܦܘܠܘܐܝܘܩܛܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2547.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2547"
+                                                  ></span>Procopius — ܦܪܘܩܘܦܝܘܣ ܐܦܝܣܩܘܦܐ </a></li>
+                                                  <li><a href="/aggregate/person/2575.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2575"
+                                                  ></span>Romulus — ܪܘܡܝܠܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/3118.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3118"
+                                                  ></span>Sannus — ܣܐܢܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/3257.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3257"
+                                                  ></span>Sergius - ܣܪܓܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/51.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/51"
+                                                  ></span>Severus of Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2752.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2752"
+                                                  ></span>Silvanus — ܣܝܠܘܐܢܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/53.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/53"
+                                                  ></span>Simeon of Beth Arsham — ܫܡܥܘܢ ܕܒܝܬ ܐܪܫܡ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2554.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2554"
+                                                  ></span>Simeon — ܫܡܥܘܢ ܐܦܝܣܩܘܦܐ ܕܩܢܫܪܝܢ </a></li>
+                                                  <li><a href="/aggregate/person/2417.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2417"
+                                                  ></span>Solon — ܣܘܠܘܢ ܐܦܝܣܩܘܦܐ ܘܡܝܛܪܘܦܘܠܝܛܝܣ
+                                                  ܕܣܠܘܩܝܐ ܕܐܝܣܘܪܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/3010.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3010"
+                                                  ></span>Stephen — ܐܣܛܦܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2442.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2442"
+                                                  ></span>Stephen — ܣܛܦܢܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2533.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2533"
+                                                  ></span>Stephen — ܣܛܦܢܘܣ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2503.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2503"
+                                                  ></span>Stephen — ܣܛܦܢܘܣ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2532.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2532"
+                                                  ></span>Stephen — ܣܛܦܢܘܣ ܐܦܝܣܩܘܦܐ ܕܛܪܝܦܘܠܝܣ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2540.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2540"
+                                                  ></span>Theodore — ܬܐܘܕܘܪܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2548.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2548"
+                                                  ></span>Theodosius — ܬܐܘܕܘܣܝܘܣ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2772.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2772"
+                                                  ></span>Thomas — ܬܐܘܡܐ </a></li>
+                                                  <li><a href="/aggregate/person/2127.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2127"
+                                                  ></span>Thomas — ܬܐܘܡܐ </a></li>
+                                                  <li><a href="/aggregate/person/2515.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2515"
+                                                  ></span>Thomas — ܬܐܘܡܐ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2401.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2401"
+                                                  ></span>Timothy — ܛܝܡܘܬܐܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2479.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2479"
+                                                  ></span>Victor — ܒܝܩܛܘܪ ܐܦܝܣܩܦܐ ܐܦܝܠܐܕܠܦܝܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2433.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2433"
+                                                  ></span>Victor — ܒܝܩܛܘܪ ܩܫܝܫܐ ܘܡܩܒܠ ܐܟ̈ܣܢܝܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2543.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2543"
+                                                  ></span>Zeno — ܙܝܢܘܢ </a></li>
+                                                  </ul>
+                                                  </div>
+                                                </div>
+                                        </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/bishop-over-clergy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bishop-over-clergy"
-                                            ></span>Bishop over Clergy</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/48.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/48"></span>
-                                            Mara, metropolitan of Amid </a></li>
-                                    <li><a href="/aggregate/person/2426.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2426"
-                                            ></span>Agapius</a></li>
-                                    <li><a href="/aggregate/person/2516.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2516"
-                                            ></span>Anatolius</a></li>
-                                    <li><a href="/aggregate/person/2218.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2218"
-                                            ></span>Anonymi 2218</a></li>
-                                    <li><a href="/aggregate/person/3034.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3034"
-                                            ></span>Anonymi 3034</a></li>
-                                    <li><a href="/aggregate/person/3038.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3038"
-                                            ></span>Anonymi 3038</a></li>
-                                    <li><a href="/aggregate/person/3039.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3039"
-                                            ></span>Anonymi 3039</a></li>
-                                    <li><a href="/aggregate/person/3040.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3040"
-                                            ></span>Anonymi 3040</a></li>
-                                    <li><a href="/aggregate/person/3046.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3046"
-                                            ></span>Anonymi 3046</a></li>
-                                    <li><a href="/aggregate/person/3050.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3050"
-                                            ></span>Anonymi 3050</a></li>
-                                    <li><a href="/aggregate/person/3062.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3062"
-                                            ></span>Anonymi 3062</a></li>
-                                    <li><a href="/aggregate/person/3065.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3065"
-                                            ></span>Anonymi 3065</a></li>
-                                    <li><a href="/aggregate/person/3080.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3080"
-                                            ></span>Anonymi 3080</a></li>
-                                    <li><a href="/aggregate/person/3085.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3085"
-                                            ></span>Anonymi 3085</a></li>
-                                    <li><a href="/aggregate/person/3733.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3733"
-                                            ></span>Anonymi 3733</a></li>
-                                    <li><a href="/aggregate/person/3746.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3746"
-                                            ></span>Anonymi 3746</a></li>
-                                    <li><a href="/aggregate/person/2235.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2235"
-                                            ></span>Anonymous 2235</a></li>
-                                    <li><a href="/aggregate/person/3064.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3064"
-                                            ></span>Anonymous 3064</a></li>
-                                    <li><a href="/aggregate/person/3073.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3073"
-                                            ></span>Anonymous 3073</a></li>
-                                    <li><a href="/aggregate/person/3083.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3083"
-                                            ></span>Anonymous 3083</a></li>
-                                    <li><a href="/aggregate/person/3090.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3090"
-                                            ></span>Anonymous 3090</a></li>
-                                    <li><a href="/aggregate/person/3092.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3092"
-                                            ></span>Anonymous 3092</a></li>
-                                    <li><a href="/aggregate/person/3093.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3093"
-                                            ></span>Anonymous 3093</a></li>
-                                    <li><a href="/aggregate/person/3097.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3097"
-                                            ></span>Anonymous 3097</a></li>
-                                    <li><a href="/aggregate/person/3623.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3623"
-                                            ></span>Anonymous 3623</a></li>
-                                    <li><a href="/aggregate/person/3740.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3740"
-                                            ></span>Anonymous 3740</a></li>
-                                    <li><a href="/aggregate/person/3742.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3742"
-                                            ></span>Anonymous 3742</a></li>
-                                    <li><a href="/aggregate/person/2553.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2553"
-                                            ></span>Antoninus</a></li>
-                                    <li><a href="/aggregate/person/2425.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2425"
-                                            ></span>Cassian</a></li>
-                                    <li><a href="/aggregate/person/2527.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2527"
-                                            ></span>Castor</a></li>
-                                    <li><a href="/aggregate/person/2544.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2544"
-                                            ></span>Cosmas</a></li>
-                                    <li><a href="/aggregate/person/2462.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2462"
-                                            ></span>Didymus</a></li>
-                                    <li><a href="/aggregate/person/2520.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2520"
-                                            ></span>Dionysios</a></li>
-                                    <li><a href="/aggregate/person/2541.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2541"
-                                            ></span>Elijah</a></li>
-                                    <li><a href="/aggregate/person/2546.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2546"
-                                            ></span>Entrechius</a></li>
-                                    <li><a href="/aggregate/person/2562.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2562"
-                                            ></span>Epiphanius</a></li>
-                                    <li><a href="/aggregate/person/2580.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2580"
-                                            ></span>Epiphanius</a></li>
-                                    <li><a href="/aggregate/person/2419.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2419"
-                                            ></span>Eusebius</a></li>
-                                    <li><a href="/aggregate/person/2649.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2649"
-                                            ></span>Eusebius</a></li>
-                                    <li><a href="/aggregate/person/2510.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2510"
-                                            ></span>Hesychius</a></li>
-                                    <li><a href="/aggregate/person/2517.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2517"
-                                            ></span>Irenaeus</a></li>
-                                    <li><a href="/aggregate/person/2578.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2578"
-                                            ></span>Isaac</a></li>
-                                    <li><a href="/aggregate/person/2496.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2496"
-                                            ></span>Isaiah</a></li>
-                                    <li><a href="/aggregate/person/2545.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2545"
-                                            ></span>Isidore</a></li>
-                                    <li><a href="/aggregate/person/2400.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2400"
-                                            ></span>John</a></li>
-                                    <li><a href="/aggregate/person/2581.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2581"
-                                            ></span>John of Alexandria Minor</a></li>
-                                    <li><a href="/aggregate/person/2423.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2423"
-                                            ></span>Leontius</a></li>
-                                    <li><a href="/aggregate/person/2519.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2519"
-                                            ></span>Leontius</a></li>
-                                    <li><a href="/aggregate/person/2511.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2511"
-                                            ></span>Longinus</a></li>
-                                    <li><a href="/aggregate/person/2557.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2557"
-                                            ></span>Mark</a></li>
-                                    <li><a href="/aggregate/person/2701.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2701"
-                                            ></span>Mark</a></li>
-                                    <li><a href="/aggregate/person/2413.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2413"
-                                            ></span>Maximus</a></li>
-                                    <li><a href="/aggregate/person/2468.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2468"
-                                            ></span>Paul</a></li>
-                                    <li><a href="/aggregate/person/2514.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2514"
-                                            ></span>Peter</a></li>
-                                    <li><a href="/aggregate/person/680.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/680"
-                                            ></span>Peter the Iberian</a></li>
-                                    <li><a href="/aggregate/person/2437.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2437"
-                                            ></span>Philip</a></li>
-                                    <li><a href="/aggregate/person/2574.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2574"
-                                            ></span>Philoxenus</a></li>
-                                    <li><a href="/aggregate/person/2542.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2542"
-                                            ></span>Polyeuctus</a></li>
-                                    <li><a href="/aggregate/person/2547.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2547"
-                                            ></span>Procopius</a></li>
-                                    <li><a href="/aggregate/person/2575.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2575"
-                                            ></span>Romulus</a></li>
-                                    <li><a href="/aggregate/person/3118.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3118"
-                                            ></span>Sannus</a></li>
-                                    <li><a href="/aggregate/person/3257.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3257"
-                                            ></span>Sergius</a></li>
-                                    <li><a href="/aggregate/person/51.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/51"
-                                            ></span>Severus of Antioch</a></li>
-                                    <li><a href="/aggregate/person/2752.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2752"
-                                            ></span>Silvanus</a></li>
-                                    <li><a href="/aggregate/person/2554.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2554"
-                                            ></span>Simeon</a></li>
-                                    <li><a href="/aggregate/person/53.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/53"
-                                            ></span>Simeon of Beth Arsham</a></li>
-                                    <li><a href="/aggregate/person/2417.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2417"
-                                            ></span>Solon</a></li>
-                                    <li><a href="/aggregate/person/2532.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2532"
-                                            ></span>Stephen</a></li>
-                                    <li><a href="/aggregate/person/2533.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2533"
-                                            ></span>Stephen</a></li>
-                                    <li><a href="/aggregate/person/2442.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2442"
-                                            ></span>Stephen</a></li>
-                                    <li><a href="/aggregate/person/3010.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3010"
-                                            ></span>Stephen</a></li>
-                                    <li><a href="/aggregate/person/2503.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2503"
-                                            ></span>Stephen</a></li>
-                                    <li><a href="/aggregate/person/2540.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2540"
-                                            ></span>Theodore</a></li>
-                                    <li><a href="/aggregate/person/2548.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2548"
-                                            ></span>Theodosius</a></li>
-                                    <li><a href="/aggregate/person/2772.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2772"
-                                            ></span>Thomas</a></li>
-                                    <li><a href="/aggregate/person/2127.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2127"
-                                            ></span>Thomas</a></li>
-                                    <li><a href="/aggregate/person/2515.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2515"
-                                            ></span>Thomas</a></li>
-                                    <li><a href="/aggregate/person/2401.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2401"
-                                            ></span>Timothy</a></li>
-                                    <li><a href="/aggregate/person/2433.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2433"
-                                            ></span>Victor</a></li>
-                                    <li><a href="/aggregate/person/2479.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2479"
-                                            ></span>Victor</a></li>
-                                    <li><a href="/aggregate/person/2543.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2543"
-                                            ></span>Zeno</a></li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div></body>
+                </div></body>
 </html>

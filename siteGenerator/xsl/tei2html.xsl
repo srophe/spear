@@ -1335,7 +1335,7 @@
     <!-- T -->
     <xsl:template match="t:TEI">
         <xsl:choose>
-            <xsl:when test="contains($resource-id,'spear-prosop')">    
+            <xsl:when test="contains($resource-id,'spear-prosop')">  
                 <xsl:apply-templates select="//t:ab" mode="factoid"/>
             </xsl:when>
             <xsl:when test="contains($resource-id,'cbss')">

@@ -1,44 +1,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>SPEAR: Chamberlains</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
-        <!-- Srophe styles -->
-        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
-        <!-- Leaflet -->
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
-        <!-- JQuery -->
-        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
-        <!-- ReCaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
-        <!-- keyboard widget css & script -->
-        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
-        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>SPEAR: Chamberlains</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <!-- Bootstrap 3 -->
+                <link rel="stylesheet" type="text/css"
+                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+                <!-- Srophe styles -->
+                <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+                <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+                <!-- Leaflet -->
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+                <!-- JQuery -->
+                <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+                <!-- Bootstrap -->
+                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <!-- ReCaptcha -->
+                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+                <!-- keyboard widget css & script -->
+                <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+                <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+                <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip({
                     container: 'body'
@@ -76,212 +77,255 @@
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
             })//]]></script>
-    </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand banner-container" href="/index.html"><span
-                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
-            <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span><span
-                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
-                                            >Chamberlains</span></span></span></h1>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/taxonomy/chamberlains"
-                                                >http://syriaca.org/taxonomy/chamberlains</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Mishael</span> was a praepositus. <a
-                                        href="/848-12" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Anonymous 3768</span> was a
-                                    chamberlain. <a href="/839-15" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span><span
-                                        class="tei-persName">John</span> was a chamberlain. <a
-                                        href="/848-17" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Anonymous 3769</span> was a
-                                    chamberlain. <a href="/839-18" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Phocas</span> was a chamberlain. <a
-                                        href="/3003-2" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Ammantius</span> was a chamberlain.
-                                        <a href="/3195-2" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Eupraxius</span> was a chamberlain.
-                                        <a href="/3209-2" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span>
-                                    <span class="tei-persName">Eupraxius</span> was a chamberlain.
-                                        <a href="/3003-3" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span><span
-                                        class="tei-persName">Theodore</span> was a chamberlain. <a
-                                        href="/848-3" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span><span
-                                        class="tei-persName">Misael</span> was a chamberlain. <a
-                                        href="/3044-3" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">socecStatus: </span><span
-                                        class="tei-persName">Sosiana</span> was a chamberlain. <a
-                                        href="/846-3" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span><span
-                                        class="tei-persName">Misael</span> was a chamberlain. <a
-                                        href="/3042-3" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">socecStatus: </span><span
-                                        class="tei-persName">John</span> was a chamberlain. <a
-                                        href="/846-4" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">occupation: </span><span
-                                        class="tei-persName">Julian</span> was a chamberlain. <a
-                                        href="/3140-53" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Keyword Page for <span id="title"
+        </head>
+        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                                class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target="#navbar-collapse-1"><span class="sr-only"
+                                                >Toggle navigation</span><span class="icon-bar"
+                                                ></span><span class="icon-bar"></span><span
+                                                class="icon-bar"></span></button>
+                                <a class="navbar-brand banner-container" href="/index.html"><span
+                                                class="syriaca-icon syriaca-syriaca banner-icon"
+                                                ></span><span class="banner-text"
+                                                data-template="config:app-title">SPEAR: Syriac
+                                                Persons Events and Relations</span></a>
+                        </div><div class="navbar-collapse collapse pull-right"
+                                id="navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                        <li><a href="/index.html" class="nav-text">Home</a></li>
+                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                                        <li class="dropdown"><a href="#"
+                                                  class="dropdown-toggle lonely-caret"
+                                                  data-toggle="dropdown">  <span
+                                                  class="mobile-submenu">About</span>  <b
+                                                  class="caret"></b></a><ul
+                                                  class="dropdown-menu pull-right">
+                                                  <li><a href="/about.html">Project
+                                                  Overview</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/contributors.html">Project
+                                                  Contributors</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/contact.html">Contact Us</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/documentation/index.html"><span
+                                                  class="syriaca-icon syriaca-book icon-nav"
+                                                  style="color:red;"></span><span class="icon-text"
+                                                  >Documentation</span></a></li>
+                                                </ul></li>
+                                        <li><a href="/search.html" class="nav-text">Advanced
+                                                  Search</a></li>
+                                        <li><div id="search-wrapper">
+                                                  <form class="navbar-form navbar-right search-box"
+                                                  role="search" action="/search.html" method="get"
+                                                  ><div class="form-group">
+                                                  <input type="text" class="form-control keyboard"
+                                                  placeholder="search" name="keyword"
+                                                  id="keywordNav" />
+                                                  <span data-template="app:keyboard-select-menu"
+                                                  data-template-input-id="keywordNav"></span>
+                                                  <button class="btn btn-default search-btn"
+                                                  id="searchbtn" type="submit" title="Search"><span
+                                                  class="glyphicon glyphicon-search"
+                                                  ></span></button>
+                                                  </div></form>
+                                                </div></li>
+                                </ul>
+                        </div></nav><div class="main-content-block">
+                        <div class="interior-content">
+                                <div class="record">
+                                        <div class="interior-content" data-template="app:fix-links">
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns"
+                                                  class="padding-top">
+                                                  <h1>SPEAR Factoids about <span id="title"
                                                   ><span><span class="tei-prefLabel" xml:lang="en"
                                                   lang="en" dir="ltr"
-                                            >Chamberlains</span></span></span>,” in SPEAR: Syriac
-                                        Persons Events and Relations, general editor Daniel L.
-                                        Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/taxonomy/chamberlains.html,
-                                        2025-05-12. </span>
+                                                  >Chamberlains</span></span></span></h1>
+                                                </div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns">
+                                                  <div style="margin:0 1em 1em; color: #999999;">
+                                                  <small><p><span class="srp-label"
+                                                  ><strong>Syriaca.org URI</strong></span>: <span
+                                                  id="syriaca-id"><a
+                                                  href="http://syriaca.org/taxonomy/chamberlains"
+                                                  >http://syriaca.org/taxonomy/chamberlains</a></span></p></small>
+                                                  </div>
+                                                </div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns" class="row">
+                                                  <div class="col-md-8">
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Mishael</span> was a
+                                                  praepositus. <a href="/848-12"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Anonymous 3768</span>
+                                                  was a chamberlain. <a href="/839-15"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span><span class="tei-persName"
+                                                  >John</span> was a chamberlain. <a href="/848-17"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Anonymous 3769</span>
+                                                  was a chamberlain. <a href="/839-18"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Eupraxius</span> was a
+                                                  chamberlain. <a href="/3209-2"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Ammantius</span> was a
+                                                  chamberlain. <a href="/3195-2"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Phocas</span> was a
+                                                  chamberlain. <a href="/3003-2"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span><span class="tei-persName"
+                                                  >Misael</span> was a chamberlain. <a
+                                                  href="/3042-3" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >socecStatus: </span><span class="tei-persName"
+                                                  >Sosiana</span> was a chamberlain. <a
+                                                  href="/846-3" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span><span class="tei-persName"
+                                                  >Misael</span> was a chamberlain. <a
+                                                  href="/3044-3" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span><span class="tei-persName"
+                                                  >Theodore</span> was a chamberlain. <a
+                                                  href="/848-3" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span>
+                                                  <span class="tei-persName">Eupraxius</span> was a
+                                                  chamberlain. <a href="/3003-3"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >socecStatus: </span><span class="tei-persName"
+                                                  >John</span> was a chamberlain. <a href="/846-4"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="spearLabel"
+                                                  >occupation: </span><span class="tei-persName"
+                                                  >Julian</span> was a chamberlain. <a
+                                                  href="/3140-53" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <div class="citation">
+                                                  <h3>How to cite:</h3>
+                                                  <span class="element"> “Keyword Page for <span
+                                                  id="title"><span><span class="tei-prefLabel"
+                                                  xml:lang="en" lang="en" dir="ltr"
+                                                  >Chamberlains</span></span></span>,” in SPEAR:
+                                                  Syriac Persons Events and Relations, general
+                                                  editor Daniel L. Schwartz,
+                                                  https://dev.spear-prosop.org/aggregate/taxonomy/chamberlains.html,
+                                                  2025-06-16. </span>
+                                                  </div>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                  <h4>Related person(s)</h4>
+                                                  <ul>
+                                                  <li><a href="/aggregate/person/2592.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2592"
+                                                  ></span>Ammantius — ܐܡܢܛܝܘܣ ܩܒܘܩܠܪܐ </a></li>
+                                                  <li><a href="/aggregate/person/3768.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3768"
+                                                  ></span>Anonymous 3768</a></li>
+                                                  <li><a href="/aggregate/person/3769.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3769"
+                                                  ></span>Anonymous 3769</a></li>
+                                                  <li><a href="/aggregate/person/2647.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2647"
+                                                  ></span>Eupraxius — ܐܘܦܪܟܣܝܘܣ ܩܒܘܩܠܪܐ </a></li>
+                                                  <li><a href="/aggregate/person/3224.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3224"
+                                                  ></span>John - ܝܘܚܢܢ </a></li>
+                                                  <li><a href="/aggregate/person/1820.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/1820"
+                                                  ></span>John — ܝܘܚܢܢ </a></li>
+                                                  <li><a href="/aggregate/person/2487.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2487"
+                                                  ></span>Julian — ܝܘܠܝܢܐ ܩܘܠܒܘܩܠܪܐ </a></li>
+                                                  <li><a href="/aggregate/person/2558.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2558"
+                                                  ></span>Misael — ܡܝܘܐܝܠ ܩܘܒܘܩܠܪܐ </a></li>
+                                                  <li><a href="/aggregate/person/2737.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2737"
+                                                  ></span>Phocas — ܦܘܩܐ ܩܘܒܘܩܠܪܐ </a></li>
+                                                  <li><a href="/aggregate/person/3020.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3020"
+                                                  ></span>Sosiana — ܣܘܣܝܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2108.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2108"
+                                                  ></span>Theodore Castrensus — ܬܐܕܘܪܐ ܩܣܛܪܝܣܝܣ
+                                                  </a></li>
+                                                  </ul>
+                                                  <h4>Related taxonomy(s)</h4>
+                                                  <ul>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/chamberlains.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/chamberlains"
+                                                  ></span>Chamberlains</a></li>
+                                                  </ul>
+                                                  </div>
+                                                </div>
+                                        </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/2592.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2592"
-                                            ></span>Ammantius</a></li>
-                                    <li><a href="/aggregate/person/3768.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3768"
-                                            ></span>Anonymous 3768</a></li>
-                                    <li><a href="/aggregate/person/3769.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3769"
-                                            ></span>Anonymous 3769</a></li>
-                                    <li><a href="/aggregate/person/2647.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2647"
-                                            ></span>Eupraxius</a></li>
-                                    <li><a href="/aggregate/person/3224.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3224"
-                                            ></span>John</a></li>
-                                    <li><a href="/aggregate/person/1820.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1820"
-                                            ></span>John</a></li>
-                                    <li><a href="/aggregate/person/2487.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2487"
-                                            ></span>Julian</a></li>
-                                    <li><a href="/aggregate/person/2558.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2558"
-                                            ></span>Misael</a></li>
-                                    <li><a href="/aggregate/person/2737.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2737"
-                                            ></span>Phocas</a></li>
-                                    <li><a href="/aggregate/person/3020.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3020"
-                                            ></span>Sosiana</a></li>
-                                    <li><a href="/aggregate/person/2108.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2108"
-                                            ></span>Theodore Castrensus</a></li>
-                                </ul>
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/chamberlains.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/chamberlains"
-                                            ></span>Chamberlains</a></li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div></body>
+                </div></body>
 </html>

@@ -1,44 +1,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>SPEAR: Constantinople</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
-        <!-- Srophe styles -->
-        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
-        <!-- Leaflet -->
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
-        <!-- JQuery -->
-        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
-        <!-- ReCaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
-        <!-- keyboard widget css & script -->
-        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
-        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>SPEAR: Constantinople</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <!-- Bootstrap 3 -->
+                <link rel="stylesheet" type="text/css"
+                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+                <!-- Srophe styles -->
+                <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+                <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+                <!-- Leaflet -->
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+                <!-- JQuery -->
+                <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
+                <!-- Bootstrap -->
+                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <!-- ReCaptcha -->
+                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+                <!-- keyboard widget css & script -->
+                <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
+                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
+                <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+                <script type="text/javascript"><![CDATA[
             $(document).ready(function () {
                 $('[data-toggle="tooltip"]').tooltip({
                     container: 'body'
@@ -76,298 +77,343 @@
                     $("*:lang(syr)").css('font-family', selectedFont)
                 });
             })//]]></script>
-    </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand banner-container" href="/index.html"><span
-                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
-            <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"
-                                    ><span>Constantinople</span></span></h1>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/place/2290"
-                                                >http://syriaca.org/place/2290</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <div class="sources">
-                                    <h3>Events</h3>
-                                    <p class="indent"> Anthimus chose to exile himself from
-                                        Constantinople when he learned that Severus and Theodosius
-                                        had been exiled because of their opposition to the Council
-                                        of Chalcedon. <a href="/839-12" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 398/9 A. Gr. 710 John Chrysostom became
-                                        Bishop of Constantinople . <a href="/8559-221"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 498/9 A. Gr. 810 Macedon became Bishop of
-                                        Constantinople after the deposition of Euphemius . The
-                                        following factoids deal with closely related events:
-                                        8559-408, 8559-409 <a href="/8559-409" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 511/2This regularized date was calculated
-                                        by the SPEAR editor from a non-calendrical dating system
-                                        such as regnal years, etc. the 21st year of the reign of
-                                        Anastasios Timotheos became Bishop of Constantinople . This
-                                        regularized date was calculated by the SPEAR editor from a
-                                        non-calendrical dating system such as regnal years, etc. <a
-                                            href="/8559-440" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> John of Cappadocia became bishop of
-                                        Constantinople. <a href="/3019-5" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                </div>
-                                <div class="sources">
-                                    <h4>Personal Names: </h4>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Eutyches, archimandrite
-                                                  of <span class="tei-placeName"> Constantinople
-                                                  </span></span>
-                                            </span>
-                                        </span>
-                                        <a href="/3053-12" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Occupation(s): </h4>
-                                    <p class="indent">
-                                        <span class="tei-persName">Anthimus</span> was bishop of
-                                            <span class="tei-placeName">Constantinople</span>. <a
-                                            href="/839-11" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anonymi 3099</span>
-                                        managed the affairs of the church of <span
-                                            class="tei-placeName"> Antioch </span> in <span
-                                            class="tei-placeName"> Constantinople </span>. <a
-                                            href="/3087-12" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">John</span> was
-                                        Bishop of <span class="tei-placeName"> Constantinople </span>
-                                        <a href="/3115-18" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">John
-                                            Chrysostom</span> was Bishop of <span
-                                            class="tei-placeName"> Constantinople </span>. <a
-                                            href="/8559-220" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Euphemius</span>
-                                        was Bishop of <span class="tei-placeName"> Constantinople
-                                        </span>. <a href="/8559-403" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Macedon</span> was
-                                        Bishop of <span class="tei-placeName"> Constantinople
-                                        </span>. <a href="/8559-407" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName"> John </span> was
-                                        the bishop of <span class="tei-placeName"> Constantinople </span>
-                                        <a href="/3134-41" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Timotheos</span>
-                                        was Bishop of <span class="tei-placeName"> Constantinople
-                                        </span>. <a href="/8559-437" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Alexander</span>
-                                        was bishop of <span class="tei-placeName"> Constantinople </span>
-                                        <a href="/3140-48" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName"> Maximian </span>
-                                        was the bishop of <span class="tei-placeName">
-                                            Constantinople </span>. <a href="/3108-50"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">
-                                        <span class="tei-persName">John of Cappadocia</span> was
-                                        bishop of <span class="tei-placeName">Constantinople</span>.
-                                            <a href="/3019-6" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Place Page for <span id="title"
-                                                ><span>Constantinople</span></span>,” in SPEAR:
-                                        Syriac Persons Events and Relations, general editor Daniel
-                                        L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/place/2290.html,
-                                        2025-05-12. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/482.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/482"></span>
-                                            Eutyches </a></li>
-                                    <li><a href="/aggregate/person/784.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/784"></span>
-                                            Theodosius, patriarch of Alexandria </a></li>
-                                    <li><a href="/aggregate/person/790.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/790"></span>
-                                            Timothy I, catholicos </a></li>
-                                    <li><a href="/aggregate/person/2484.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2484"
-                                            ></span>Alexander</a></li>
-                                    <li><a href="/aggregate/person/3099.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3099"
-                                            ></span>Anonymi 3099</a></li>
-                                    <li><a href="/aggregate/person/1592.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1592"
-                                            ></span>Anthimus</a></li>
-                                    <li><a href="/aggregate/person/2277.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2277"
-                                            ></span>Euphemios</a></li>
-                                    <li><a href="/aggregate/person/2686.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2686"
-                                            ></span>John of Cappadocia</a></li>
-                                    <li><a href="/aggregate/person/573.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/573"
-                                            ></span>John Chrysostom</a></li>
-                                    <li><a href="/aggregate/person/2696.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2696"
-                                            ></span>Macedonius II</a></li>
-                                    <li><a href="/aggregate/person/2451.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2451"
-                                            ></span>Maximian</a></li>
-                                    <li><a href="/aggregate/person/51.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/51"
-                                            ></span>Severus of Antioch</a></li>
+        </head>
+        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                                class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                        data-target="#navbar-collapse-1"><span class="sr-only"
+                                                >Toggle navigation</span><span class="icon-bar"
+                                                ></span><span class="icon-bar"></span><span
+                                                class="icon-bar"></span></button>
+                                <a class="navbar-brand banner-container" href="/index.html"><span
+                                                class="syriaca-icon syriaca-syriaca banner-icon"
+                                                ></span><span class="banner-text"
+                                                data-template="config:app-title">SPEAR: Syriac
+                                                Persons Events and Relations</span></a>
+                        </div><div class="navbar-collapse collapse pull-right"
+                                id="navbar-collapse-1">
+                                <ul class="nav navbar-nav">
+                                        <li><a href="/index.html" class="nav-text">Home</a></li>
+                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                                        <li class="dropdown"><a href="#"
+                                                  class="dropdown-toggle lonely-caret"
+                                                  data-toggle="dropdown">  <span
+                                                  class="mobile-submenu">About</span>  <b
+                                                  class="caret"></b></a><ul
+                                                  class="dropdown-menu pull-right">
+                                                  <li><a href="/about.html">Project
+                                                  Overview</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/contributors.html">Project
+                                                  Contributors</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/contact.html">Contact Us</a></li>
+                                                  <li role="presentation" class="divider"></li>
+                                                  <li><a href="/documentation/index.html"><span
+                                                  class="syriaca-icon syriaca-book icon-nav"
+                                                  style="color:red;"></span><span class="icon-text"
+                                                  >Documentation</span></a></li>
+                                                </ul></li>
+                                        <li><a href="/search.html" class="nav-text">Advanced
+                                                  Search</a></li>
+                                        <li><div id="search-wrapper">
+                                                  <form class="navbar-form navbar-right search-box"
+                                                  role="search" action="/search.html" method="get"
+                                                  ><div class="form-group">
+                                                  <input type="text" class="form-control keyboard"
+                                                  placeholder="search" name="keyword"
+                                                  id="keywordNav" />
+                                                  <span data-template="app:keyboard-select-menu"
+                                                  data-template-input-id="keywordNav"></span>
+                                                  <button class="btn btn-default search-btn"
+                                                  id="searchbtn" type="submit" title="Search"><span
+                                                  class="glyphicon glyphicon-search"
+                                                  ></span></button>
+                                                  </div></form>
+                                                </div></li>
                                 </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/10.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/10"
-                                            ></span>Antioch</a></li>
-                                    <li><a href="/aggregate/place/2290.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2290"
-                                            ></span>Constantinople</a></li>
-                                </ul>
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/accession.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/accession"
-                                            ></span>Accession</a></li>
-                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
-                                            ></span>Bishops</a></li>
-                                    <li><a
-                                            href="/aggregate/taxonomy/ecclesiastical-administrators.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/ecclesiastical-administrators"
-                                            ></span>Ecclesiastical Administrators</a></li>
-                                    <li><a href="/aggregate/taxonomy/exile.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
-                                            ></span>Exile</a></li>
-                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
-                                            ></span>Ordination</a></li>
-                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
-                                            ></span>Persecution</a></li>
-                                    <li><a href="/aggregate/taxonomy/proximate-event.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
-                                            ></span>Proximate Event</a></li>
-                                </ul>
-                            </div>
+                        </div></nav><div class="main-content-block">
+                        <div class="interior-content">
+                                <div class="record">
+                                        <div class="interior-content" data-template="app:fix-links">
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns"
+                                                  class="padding-top">
+                                                  <h1>SPEAR Factoids about <span id="title"
+                                                  ><span>Constantinople</span></span></h1>
+                                                </div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns">
+                                                  <div style="margin:0 1em 1em; color: #999999;">
+                                                  <small><p><span class="srp-label"
+                                                  ><strong>Syriaca.org URI</strong></span>: <span
+                                                  id="syriaca-id"><a
+                                                  href="http://syriaca.org/place/2290"
+                                                  >http://syriaca.org/place/2290</a></span></p></small>
+                                                  </div>
+                                                </div>
+                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                                  xmlns:local="http://syriaca.org/ns" class="row">
+                                                  <div class="col-md-8">
+                                                  <div class="sources">
+                                                  <h3>Events</h3>
+                                                  <p class="indent"> Anthimus chose to exile himself
+                                                  from Constantinople when he learned that Severus
+                                                  and Theodosius had been exiled because of their
+                                                  opposition to the Council of Chalcedon. <a
+                                                  href="/839-12" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In 398/9 A. Gr. 710 John
+                                                  Chrysostom became Bishop of Constantinople . <a
+                                                  href="/8559-221" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In 498/9 A. Gr. 810 Macedon
+                                                  became Bishop of Constantinople after the
+                                                  deposition of Euphemius . The following factoids
+                                                  deal with closely related events: 8559-408,
+                                                  8559-409 <a href="/8559-409" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In 511/2This regularized date
+                                                  was calculated by the SPEAR editor from a
+                                                  non-calendrical dating system such as regnal
+                                                  years, etc. the 21st year of the reign of
+                                                  Anastasios Timotheos became Bishop of
+                                                  Constantinople . This regularized date was
+                                                  calculated by the SPEAR editor from a
+                                                  non-calendrical dating system such as regnal
+                                                  years, etc. <a href="/8559-440"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> John of Cappadocia became
+                                                  bishop of Constantinople. <a href="/3019-5"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  </div>
+                                                  <div class="sources">
+                                                  <h4>Personal Names: </h4>
+                                                  <p class="indent"><span class="tei-listPerson">
+                                                  <span class="tei-person">
+                                                  <span class="tei-persName"> Eutyches,
+                                                  archimandrite of <span class="tei-placeName">
+                                                  Constantinople </span></span>
+                                                  </span>
+                                                  </span>
+                                                  <a href="/3053-12" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <h4>Occupation(s): </h4>
+                                                  <p class="indent">
+                                                  <span class="tei-persName">Anthimus</span> was
+                                                  bishop of <span class="tei-placeName"
+                                                  >Constantinople</span>. <a href="/839-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Anonymi 3099</span> managed the affairs of the
+                                                  church of <span class="tei-placeName"> Antioch
+                                                  </span> in <span class="tei-placeName">
+                                                  Constantinople </span>. <a href="/3087-12"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >John</span> was Bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>
+                                                  <a href="/3115-18" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName">John
+                                                  Chrysostom</span> was Bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>. <a
+                                                  href="/8559-220" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Euphemius</span> was Bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>. <a
+                                                  href="/8559-403" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Macedon</span> was Bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>. <a
+                                                  href="/8559-407" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"> John
+                                                  </span> was the bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>
+                                                  <a href="/3134-41" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Timotheos</span> was Bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>. <a
+                                                  href="/8559-437" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Alexander</span> was bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>
+                                                  <a href="/3140-48" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName">
+                                                  Maximian </span> was the bishop of <span
+                                                  class="tei-placeName"> Constantinople </span>. <a
+                                                  href="/3108-50" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent">
+                                                  <span class="tei-persName">John of
+                                                  Cappadocia</span> was bishop of <span
+                                                  class="tei-placeName">Constantinople</span>. <a
+                                                  href="/3019-6" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  </div>
+                                                  <div class="citation">
+                                                  <h3>How to cite:</h3>
+                                                  <span class="element"> “Place Page for <span
+                                                  id="title"><span>Constantinople</span></span>,” in
+                                                  SPEAR: Syriac Persons Events and Relations,
+                                                  general editor Daniel L. Schwartz,
+                                                  https://dev.spear-prosop.org/aggregate/place/2290.html,
+                                                  2025-06-16. </span>
+                                                  </div>
+                                                  </div>
+                                                  <div class="col-md-4">
+                                                  <h4>Related person(s)</h4>
+                                                  <ul>
+                                                  <li><a href="/aggregate/person/2484.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2484"
+                                                  ></span>Alexander — ܐܠܟܣܢܕܪܘܣ ܐܦܝܣܩܘܦܐ
+                                                  ܕܩܘܣܛܢܛܝܢܘܦܘܠܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/3099.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3099"
+                                                  ></span>Anonymi 3099 — Those in Constantinople who
+                                                  managed the affairs of the church of Antioch for
+                                                  Severus</a></li>
+                                                  <li><a href="/aggregate/person/1592.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/1592"
+                                                  ></span>Anthimus — ܐܢܬܝܡܣ </a></li>
+                                                  <li><a href="/aggregate/person/2277.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2277"
+                                                  ></span>Euphemios — ܐܘܦܝܡܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/482.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/482"
+                                                  ></span>Eutyches — ܐܘܛܘܟܐ </a></li>
+                                                  <li><a href="/aggregate/person/573.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/573"
+                                                  ></span>John Chrysostom — ܝܘܐܢܝܣ ܟܪܘܣܘܣܛܘܡܘܣ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2686.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2686"
+                                                  ></span>John of Cappadocia — ܝܘܚܢܢ </a></li>
+                                                  <li><a href="/aggregate/person/2696.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2696"
+                                                  ></span>Macedonius II — ܡܩܕܘܢܝܘܣ ܐܦܝܣܩܘܦܐ
+                                                  ܕܩܘܣܛܢܛܝܢܦܘܠܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/2451.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2451"
+                                                  ></span>Maximian — ܡܐܟܣܝܡܝܢܘܣ ܐܦܝܣܩܘܦܐ </a></li>
+                                                  <li><a href="/aggregate/person/51.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/51"
+                                                  ></span>Severus of Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/784.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/784"
+                                                  ></span>Theodosius, patriarch of Alexandria —
+                                                  ܬܐܘܕܘܣܝܘܣ ܕܐܠܟܣܢܕܪܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/790.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/790"
+                                                  ></span>Timothy I, catholicos — ܛܝܡܬܐܘܣ ܩܕܡܝܐ
+                                                  </a></li>
+                                                  </ul>
+                                                  <h4>Related place(s)</h4>
+                                                  <ul>
+                                                  <li><a href="/aggregate/place/10.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/10"
+                                                  ></span>Antioch — ܐܢܛܝܘܟܝܐ </a></li>
+                                                  <li><a href="/aggregate/place/2290.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/2290"
+                                                  ></span>Constantinople</a></li>
+                                                  </ul>
+                                                  <h4>Related taxonomy(s)</h4>
+                                                  <ul>
+                                                  <li><a href="/aggregate/taxonomy/accession.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/accession"
+                                                  ></span>Accession</a></li>
+                                                  <li><a href="/aggregate/taxonomy/bishops.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                                  ></span>Bishops</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/ecclesiastical-administrators.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/ecclesiastical-administrators"
+                                                  ></span>Ecclesiastical Administrators</a></li>
+                                                  <li><a href="/aggregate/taxonomy/exile.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                                  ></span>Exile</a></li>
+                                                  <li><a href="/aggregate/taxonomy/ordination.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                                  ></span>Ordination</a></li>
+                                                  <li><a href="/aggregate/taxonomy/persecution.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                                  ></span>Persecution</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/proximate-event.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
+                                                  ></span>Proximate Event</a></li>
+                                                  </ul>
+                                                  </div>
+                                                </div>
+                                        </div>
+                                </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div></body>
+                </div></body>
 </html>

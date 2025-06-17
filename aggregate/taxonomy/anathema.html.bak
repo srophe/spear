@@ -36,28 +36,50 @@
 
             })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
                             <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Anathema</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/anathema">http://syriaca.org/taxonomy/anathema</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to 
-                            Solon concerning his
-                            ordination, piety, and relationship to unorthodox bishops. 
+                            Severus wrote a letter to
+                            Hippocrates the Scholastic 
+                            discussing his refusal to commune with anyone who will not anathematize the
+                            Council of Chalcedon.
                             
                                 
                             
-                         <a href="/3012-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to 
-                            Ammonius on the necessity of
-                            affirming correct theology but also anathematizing incorrect theology.
-                            
-                                
-                            
-                         <a href="/3017-1" class="factoid-more">See factoid page
+                         <a href="/3191-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Severus sent a letter to
-                            non-Chalcedonian Christians in the city of 
-                            Tyre about why
-                            Eutyches is anathematized even though he was received by
-                            Dioscorus.
-                         <a href="/3177-1" class="factoid-more">See factoid page
+                            Neon about why
+                            Eutyches was anathematized 
+                            at the Council of Chalcedon even though he was accepted at the Council of Ephesus.
+                            
+                                
+                            
+                         <a href="/3178-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to
+                            Dioscorus I 
+                            discussing grounds for communion, namely the anathematizing of the 
+                            Council of Chalcedon.
+                            
+                                
+                            
+                         <a href="/3193-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Oecumenius discussing
+                            the unity of Christ's nature without the confusion of the human and divine elements in him.
+                            He also insisted on anathematizing those who do confuse the natures.
+                            
+                                
+                            
+                         <a href="/3095-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus sent a letter to
+                            Oecumenius discussing
+                            the unity of Christ's nature without the confusion of the human and divine elements in him.
+                            He also insisted on anathematizing those who do confuse the natures.
+                            
+                                
+                            
+                         <a href="/3014-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Severus sent a letter to
                             Sergius about
@@ -70,69 +92,39 @@
                          <a href="/3176-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Severus sent a letter to
-                            Oecumenius discussing
-                            the unity of Christ's nature without the confusion of the human and divine elements in him.
-                            He also insisted on anathematizing those who do confuse the natures.
+                            non-Chalcedonian Christians in the city of 
+                            Tyre about why
+                            Eutyches is anathematized even though he was received by
+                            Dioscorus.
+                         <a href="/3177-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus wrote a letter to 
+                            Ammonius on the necessity of
+                            affirming correct theology but also anathematizing incorrect theology.
                             
                                 
                             
-                         <a href="/3014-1" class="factoid-more">See factoid page
+                         <a href="/3017-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus sent a letter to
-                            Oecumenius discussing
-                            the unity of Christ's nature without the confusion of the human and divine elements in him.
-                            He also insisted on anathematizing those who do confuse the natures.
+                            Severus wrote a letter to 
+                            Solon concerning his
+                            ordination, piety, and relationship to unorthodox bishops. 
                             
                                 
                             
-                         <a href="/3095-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Dioscorus I 
-                            discussing grounds for communion, namely the anathematizing of the 
-                            Council of Chalcedon.
-                            
-                                
-                            
-                         <a href="/3193-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus sent a letter to
-                            Neon about why
-                            Eutyches was anathematized 
-                            at the Council of Chalcedon even though he was accepted at the Council of Ephesus.
-                            
-                                
-                            
-                         <a href="/3178-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus wrote a letter to
-                            Hippocrates the Scholastic 
-                            discussing his refusal to commune with anyone who will not anathematize the
-                            Council of Chalcedon.
-                            
-                                
-                            
-                         <a href="/3191-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Athanasius wrote a letter indicating he accepted the Henotikon without 
-                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
-                         <a href="/3017-10" class="factoid-more">See factoid page
+                         <a href="/3012-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>Anonymi 3697
                             loyal to Justinian reported Elijah of Dara to
                                 the
                                 emperor <a href="/822-10" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Athanasius wrote a letter indicating he accepted the Henotikon without 
+                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
+                         <a href="/3017-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             John wrote a letter indicating he accepted the Henotikon without 
                             specifically anathematizing the Council of Chalcedon or Leo's Tome.
                          <a href="/3017-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            John wrote a letter to 
-                            Dioscorus and 
-                            Chaeremon
-                            
-                                
-                            
-                         <a href="/3017-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Severus sent a letter to
                             Anastasius I
@@ -143,6 +135,14 @@
                                 
                             
                          <a href="/3190-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            John wrote a letter to 
+                            Dioscorus and 
+                            Chaeremon
+                            
+                                
+                            
+                         <a href="/3017-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Sergius sent a letter to
                             Severus about
@@ -250,6 +250,22 @@
                                 Arius were
                             still heretics even though they repudiated the teachings of Sabellius.  <a href="/3004-79" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus held a council in
+                            Antioch with bishops from 
+                            the East.
+                            They condemned the Council of Chalcedon and 
+                            Leo's 
+                            Tome.
+                         <a href="/3190-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Severus urged 
+                            Theotecnus to condemn
+                            Romanus in a synodical letter.
+                            
+                                
+                            
+                         <a href="/3063-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Anastasios wrote a letter to  
                             John complaining about his refusal simply
                             to accept the Henotikon without anathemas of Chalcedon. His letter cites letters by 
@@ -265,26 +281,8 @@
                                 
                             
                          <a href="/3017-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus urged 
-                            Theotecnus to condemn
-                            Romanus in a synodical letter.
-                            
-                                
-                            
-                         <a href="/3063-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Severus held a council in
-                            Antioch with bishops from 
-                            the East.
-                            They condemned the Council of Chalcedon and 
-                            Leo's 
-                            Tome.
-                         <a href="/3190-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
-                            Peter Mongus wrote a letter indicating he accepted the Henotikon without 
-                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
-                         <a href="/3017-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Elijah of Dara
+                             anathematized Anonymi 3697 who were loyal to  the emperor  <a href="/822-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
                             Asterius attempted to convince 
                             Severus to recant 
@@ -296,19 +294,76 @@
                                 
                             
                          <a href="/3190-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span> Elijah of Dara
-                             anathematized Anonymi 3697 who were loyal to  the emperor  <a href="/822-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">event: </span>
+                            Peter Mongus wrote a letter indicating he accepted the Henotikon without 
+                            specifically anathematizing the Council of Chalcedon or Leo's Tome.
+                         <a href="/3017-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><div class="citation"><h3>How to cite:</h3><span class="element">
                                 “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Anathema</span></span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/taxonomy/anathema.html, 2025-05-12.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"/>Anti-Chalcedonian</a></li><li><a href="/aggregate/taxonomy/anti-nestorian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-nestorian"/>Anti-Nestorian</a></li><li><a href="/aggregate/taxonomy/arianism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/arianism"/>Arianism</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/christology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/christology"/>Christology</a></li><li><a href="/aggregate/taxonomy/church-councils.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/church-councils"/>Church Councils</a></li><li><a href="/aggregate/taxonomy/cited-positively.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cited-positively"/>Cited Positively</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/communion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/communion"/>Communion</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/council-of-ephesus-ii-449.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-ephesus-ii-449"/>Council of Ephesus II (449)</a></li><li><a href="/aggregate/taxonomy/emperors.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emperors"/>Emperors</a></li><li><a href="/aggregate/taxonomy/enmity-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/enmity-for"/>Enmity for</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/holiness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/holiness"/>Holiness</a></li><li><a href="/aggregate/taxonomy/incarnation.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/incarnation"/>Incarnation</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/orthodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/orthodoxy"/>Orthodoxy</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/polemics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/polemics"/>Polemics</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/professional-relationship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"/>Professional Relationship</a></li><li><a href="/aggregate/taxonomy/readers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/readers"/>Readers</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/theology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/theology"/>Theology</a></li><li><a href="/aggregate/taxonomy/tradition.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tradition"/>Tradition</a></li><li><a href="/aggregate/taxonomy/violence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/violence"/>Violence</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>
-                        Eutyches
-                    </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>
-                        Nestorius
-                    </a></li><li><a href="/aggregate/person/56.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/56"/>
-                        Oecumenius, comes
-                    </a></li><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/2595.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2595"/>Ammonius</a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I</a></li><li><a href="/aggregate/person/3034.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3034"/>Anonymi 3034</a></li><li><a href="/aggregate/person/3042.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3042"/>Anonymous 3042</a></li><li><a href="/aggregate/person/3697.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3697"/>Anonymous 3697</a></li><li><a href="/aggregate/person/2606.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2606"/>Archelaus</a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius</a></li><li><a href="/aggregate/person/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2610"/>Asterius</a></li><li><a href="/aggregate/person/2612.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2612"/>Athanasius II</a></li><li><a href="/aggregate/person/2624.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2624"/>Chaeremon</a></li><li><a href="/aggregate/person/2636.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2636"/>Dioscorus</a></li><li><a href="/aggregate/person/2432.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2432"/>Dioscorus I</a></li><li><a href="/aggregate/person/1704.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1704"/>Elijah of Dara</a></li><li><a href="/aggregate/person/2580.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2580"/>Epiphanius</a></li><li><a href="/aggregate/person/2658.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2658"/>Hippocrates</a></li><li><a href="/aggregate/person/2667.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2667"/>Isidore</a></li><li><a href="/aggregate/person/2687.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2687"/>John
-                        II (Hemula)</a></li><li><a href="/aggregate/person/2572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2572"/>John
-                        III of Nicaea</a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of
-                        Claudiupolis</a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I</a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo</a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron</a></li><li><a href="/aggregate/person/2705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2705"/>Menas of Tyre</a></li><li><a href="/aggregate/person/2724.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2724"/>Neon</a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter</a></li><li><a href="/aggregate/person/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2736"/>Peter Mongus</a></li><li><a href="/aggregate/person/2744.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2744"/>Romanus</a></li><li><a href="/aggregate/person/2555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2555"/>Sabellius the Libyan</a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius</a></li><li><a href="/aggregate/person/2747.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2747"/>Sergius</a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch</a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon</a></li><li><a href="/aggregate/person/2568.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2568"/>Theotecnus</a></li><li><a href="/aggregate/person/2515.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2515"/>Thomas</a></li><li><a href="/aggregate/person/2773.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2773"/>Timothy</a></li><li><a href="/aggregate/person/1524.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1524"/>Zeʿora</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida</a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch</a></li><li><a href="/aggregate/place/2630.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2630"/>Apamea</a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon</a></li><li><a href="/aggregate/place/2604.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2604"/>East</a></li><li><a href="/aggregate/place/343.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/343"/>Mor Bosus</a></li><li><a href="/aggregate/place/195.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/195"/>Tyros</a></li></ul></div></div></div></div></div></div></body></html>
+                                https://dev.spear-prosop.org/aggregate/taxonomy/anathema.html, 2025-06-16.
+                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"/>Anti-Chalcedonian</a></li><li><a href="/aggregate/taxonomy/anti-nestorian.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anti-nestorian"/>Anti-Nestorian</a></li><li><a href="/aggregate/taxonomy/arianism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/arianism"/>Arianism</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/canon-law.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/canon-law"/>Canon Law</a></li><li><a href="/aggregate/taxonomy/christology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/christology"/>Christology</a></li><li><a href="/aggregate/taxonomy/church-councils.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/church-councils"/>Church Councils</a></li><li><a href="/aggregate/taxonomy/cited-positively.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cited-positively"/>Cited Positively</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/communion.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/communion"/>Communion</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/council-of-ephesus-ii-449.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-ephesus-ii-449"/>Council of Ephesus II (449)</a></li><li><a href="/aggregate/taxonomy/emperors.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emperors"/>Emperors</a></li><li><a href="/aggregate/taxonomy/enmity-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/enmity-for"/>Enmity for</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/holiness.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/holiness"/>Holiness</a></li><li><a href="/aggregate/taxonomy/incarnation.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/incarnation"/>Incarnation</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/orthodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/orthodoxy"/>Orthodoxy</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/polemics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/polemics"/>Polemics</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/professional-relationship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"/>Professional Relationship</a></li><li><a href="/aggregate/taxonomy/readers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/readers"/>Readers</a></li><li><a href="/aggregate/taxonomy/repentance.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/repentance"/>Repentance</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/theology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/theology"/>Theology</a></li><li><a href="/aggregate/taxonomy/tradition.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tradition"/>Tradition</a></li><li><a href="/aggregate/taxonomy/violence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/violence"/>Violence</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/3184.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3184"/>Abraham of Amida</a></li><li><a href="/aggregate/person/2595.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2595"/>Ammonius — ܐܡܘܢܝܘܣ ܩܫܝܫܐ
+                        ܕܐܠܟܣܢܕܪܝܐ
+                </a></li><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I — ܐܢܣܛܘܣ
+                </a></li><li><a href="/aggregate/person/3034.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3034"/>Anonymi 3034 — The readers of Tyre who recoiled from
+                    communion with their bishop Epiphanius</a></li><li><a href="/aggregate/person/3042.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3042"/>Anonymous 3042 — The archimandrite of the monastery
+                    of Bassus and recipient of a letter from Severus of Antioch sometime between
+                    A.D. 514-518</a></li><li><a href="/aggregate/person/3697.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3697"/>Anonymous 3697</a></li><li><a href="/aggregate/person/2606.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2606"/>Archelaus — ܐܪܟܠܐܘܣ ܩܪܘܝܐ
+                        ܕܨܘܪ
+                </a></li><li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2486"/>Arius — ܐܪܝܘܣ
+                </a></li><li><a href="/aggregate/person/2610.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2610"/>Asterius — ܐܣܛܪܝܘܣ
+                </a></li><li><a href="/aggregate/person/2612.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2612"/>Athanasius II — ܐܬܢܣܝܘܣ
+                </a></li><li><a href="/aggregate/person/2624.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2624"/>Chaeremon — ܟܐܪܝܡܘܢ
+                </a></li><li><a href="/aggregate/person/2432.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2432"/>Dioscorus I — ܕܝܘܣܩܘܪܘܣ ܪܝܫ
+                        ܐܦ̈ܝܣܩܘܦܐ ܘܣܗܕܐ
+                </a></li><li><a href="/aggregate/person/2636.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2636"/>Dioscorus — ܕܝܘܣܩܘܪܘܣ
+                </a></li><li><a href="/aggregate/person/1704.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1704"/>Elijah of Dara — ܐܠܝܐ
+                </a></li><li><a href="/aggregate/person/2580.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2580"/>Epiphanius — ܐܦܝܦܢܝܘܣ
+                </a></li><li><a href="/aggregate/person/482.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/482"/>Eutyches — ܐܘܛܘܟܐ
+                </a></li><li><a href="/aggregate/person/2658.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2658"/>Hippocrates</a></li><li><a href="/aggregate/person/2667.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2667"/>Isidore — ܐܝܣܝܕܘܪܘܣ
+                        ܕܨܘܪ
+                </a></li><li><a href="/aggregate/person/2687.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2687"/>John II (Hemula) — ܝܘܚܢܢ ܪܝܫ
+                        ܐܝ̈ܣܩܦܐ
+                </a></li><li><a href="/aggregate/person/2572.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2572"/>John III of Nicaea — ܝܘܚܢܢ
+                        ܪܝܫ ܐܦ̈ܝܣܩܘܦܐ ܕܐܠܟܣܢܕܪܝܐ
+                </a></li><li><a href="/aggregate/person/2529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2529"/>John of Claudiupolis — ܝܘܚܢܢ
+                        ܕܩܠܘܕܝܘܦܘܠܝܣ
+                </a></li><li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2284"/>Justinian I — ܝܘܣܛܝܢܝܢܐ
+                </a></li><li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2299"/>Leo — ܠܐܘܢ
+                </a></li><li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1885"/>Maron — ܡܪܘܢ
+                </a></li><li><a href="/aggregate/person/2705.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2705"/>Menas of Tyre — ܡܐܢܐ
+                </a></li><li><a href="/aggregate/person/2724.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2724"/>Neon — ܢܐܘܢ ܩܫܝܫܐ ܐܪܝܫܕܝܪܐ
+                        ܕܒܛܐܓܐܝܣ
+                </a></li><li><a href="/aggregate/person/655.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/655"/>Nestorius — ܢܣܛܘܪܝܣ
+                </a></li><li><a href="/aggregate/person/56.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/56"/>Oecumenius, comes — ܩܘܢܬ
+                        ܐܝܩܘܡܘܢܝܘܣ
+                </a></li><li><a href="/aggregate/person/2736.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2736"/>Peter Mongus — ܦܛܪܘܣ ܐܦܝܣܩܘܦܐ
+                        ܕܐܠܟܣܢܕܪܝܐ
+                </a></li><li><a href="/aggregate/person/2514.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2514"/>Peter — ܦܛܪܘܣ ܐܦܝܣܩܘܦܐ
+                        ܕܐܦܡܝܐ
+                </a></li><li><a href="/aggregate/person/2744.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2744"/>Romanus — ܪܘܡܢܘܣ
+                </a></li><li><a href="/aggregate/person/2555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2555"/>Sabellius the Libyan — ܣܒܠܝܘܣ
+                </a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius — ܣܪܓܝܣ
+                </a></li><li><a href="/aggregate/person/2747.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2747"/>Sergius — ܣܪܓܝܣ ܐܣܝܐ
+                        ܣܩܦܝܣܛܐ
+                </a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch — ܣܘܝܪܝܘܣ
+                        ܕܐܢܛܝܘܟܝܐ
+                </a></li><li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2417"/>Solon — ܣܘܠܘܢ ܐܦܝܣܩܘܦܐ
+                        ܘܡܝܛܪܘܦܘܠܝܛܝܣ ܕܣܠܘܩܝܐ ܕܐܝܣܘܪܝܐ
+                </a></li><li><a href="/aggregate/person/2568.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2568"/>Theotecnus — ܬܐܘܛܩܢܘܣ
+                        ܐܪܟܝܐܛܪܘܣ
+                </a></li><li><a href="/aggregate/person/2515.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2515"/>Thomas — ܬܐܘܡܐ
+                        ܩܫܝܫܐ
+                </a></li><li><a href="/aggregate/person/2773.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2773"/>Timothy — ܛܝܡܬܐܘܣ
+                </a></li><li><a href="/aggregate/person/1524.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1524"/>Zeʿora — ܙܥܘܪܐ
+                </a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/8.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/8"/>Amida
+                                        — ܐܡܝܕ
+                </a></li><li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/10"/>Antioch
+                                        — ܐܢܛܝܘܟܝܐ
+                </a></li><li><a href="/aggregate/place/2630.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2630"/>Apamea — ܐܦܡܝܐ
+            </a></li><li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/622"/>Chalcedon
+                                        — ܟܠܩܝܕܘܢܐ
+                </a></li><li><a href="/aggregate/place/2604.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2604"/>East — ܡܕܢܚܐ
+            </a></li><li><a href="/aggregate/place/343.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/343"/>Mor Bosus
+                                        — ܕܝܪܐ ܕܡܪܝ ܒܣܘܣ
+                </a></li><li><a href="/aggregate/place/195.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/195"/>Tyros</a></li></ul></div></div></div></div></div></div></body></html>
