@@ -1,0 +1,5023 @@
+{
+  "head": {
+    "vars": [
+      "place",
+      "label",
+      "relationType"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2832"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Abba Peter the Iberian"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2832"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Abba Peter the Iberian"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2732"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Alabanda"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/18"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Aleppo"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/3055"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Aleppo (diocese)"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2620"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Alexandria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/572"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Alexandria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/572"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Alexandria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2734"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Alexandria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/8"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2737"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/8"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/8"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2735"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2737"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/8"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/574"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Anasartha"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1471"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Antaradus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2739"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Anthemius"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/10"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Antioch"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/10"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Antioch"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/10"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Antioch"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2610"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Antioch"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2630"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Apamea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/11"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Apamea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2741"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Aphrodisias"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/716"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arabia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/716"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arabia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/27"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arethusa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/576"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Armenia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2743"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Armenia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/576"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Armenia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2743"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Armenia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2744"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arsamosata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/285"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arzun"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/285"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arzun"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2745"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Arʿa Rabtha"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/674"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ascalon"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2747"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Asia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2747"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Asia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2746"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Asia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/579"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bassīṭ"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/46"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beirut"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/46"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beirut"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2749"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Arsham"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2751"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Bar ʿrubtha"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2753"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Marka"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2754"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Musika"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2754"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Musika"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2635"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Remsha"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2756"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Rwmntʾ"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2757"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Shurla"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2584"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Beth Tabarā"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/503"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Black Sea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/40"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Bostra"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/53"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caesarea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2637"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caesarea in Cappadocia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2761"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caesaria the Patrician"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2762"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caesaria the Patrician"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2761"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caesaria the Patrician"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2763"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cappadocia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2763"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cappadocia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1472"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2764"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Caria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2618"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cell of Simeon the Solitary"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2618"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cell of Simeon the Solitary"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2766"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cellia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2589"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cemetery of Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2641"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chalane"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/622"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chalcedon"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2767"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chios"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1529"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chios"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1529"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Chios"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2588"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Church of Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2580"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Church of the Christians at Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/55"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cilicia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/56"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cilicia I"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2769"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Claudias"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/64"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Claudiopolis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/586"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Constantinople"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2290"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Constantinople"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/586"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Constantinople"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/586"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Constantinople"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/714"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cyprus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/65"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cyrrhus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/439"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cyzicus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/191"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Daiṣan"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/67"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dara"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/67"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dara"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/390"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dayro d-Madnḥoye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/390"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dayro d-Madnḥoye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1457"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dayro d-Mor Isḥaq"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1464"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dayro d-Mor Tumo"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1528"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dayro d-Urhoye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1528"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dayro d-Urhoye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2772"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dercus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/3029"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Diocaesarea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2661"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Doliche"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2572"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Dorylaion"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2604"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "East"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2774"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "East"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/78"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2605"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/78"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2775"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Edessa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/715"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Egypt"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/715"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Egypt"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/215"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Emesa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2665"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Emesa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/215"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Emesa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/623"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ephesus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2666"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ephesus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2573"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Euchaita"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2777"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Fathers"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/698"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Filasṭīn"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/698"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Filasṭīn"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2780"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gadara"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2601"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gate of Beth Shemesh"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/87"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gaza"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/87"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gaza"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2672"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Germanicupolis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2781"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Golgotha"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2782"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gordiana"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2579"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Great Palace of Abgar VIII"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2673"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Greece"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1508"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gubrin"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1508"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gubrin"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2783"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Gumathene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2606"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Harran"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2788"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hephaestopolis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2790"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Heraclea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2793"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hormisda"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2793"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hormisda"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2591"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Baptism"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2594"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Mar Barlaha"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2592"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Mar Daniel"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2599"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Mar Johanan the Baptist"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2595"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Mar Stephanus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2602"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Martyrs"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2596"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of Sabbath of the Jews"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2597"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of the Apostles"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2590"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of the Confessors"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2600"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "House of the leperous poor"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2794"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Hula"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2674"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Iberia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2797"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Illyricum"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2798"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ingilene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2799"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Isauria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/99"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Isauria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2800"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Izla"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/502"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Izmīd"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/104"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Jerusalem"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2804"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Kalesh"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/109"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Kallinikos"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2608"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Kallinikos"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2809"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Laodicea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2810"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Libya"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1532"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Lycaonia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1533"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Lycia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1526"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Lydia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2811"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Lydia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2812"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mabbug"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/122"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mabbug"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2681"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Magydum"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2803"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar John"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2814"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Mama"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2813"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Mama"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2819"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Menas"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2819"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Menas"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2840"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Samuel"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2593"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Thomas the Apostle"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/356"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mar Zakkay"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/762"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Marde"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/762"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Marde"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2586"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mausoleum of Abgar VI"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/134"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Maypherqaṭ"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/134"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Maypherqaṭ"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/134"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Maypherqaṭ"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2818"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Melitene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/136"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Melitene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2686"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Meloe in Isauria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2820"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mendis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2820"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mendis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2821"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mendis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2821"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mendis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1452"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mesopotamia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2687"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Milan"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2688"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Minidus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/3060"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery at Tagais"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/3048"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery built by Addai and Abraham"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2736"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2736"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Amida"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2738"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Andrew"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2690"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Bassus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2837"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Qlupyata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2837"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Qlupyata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2691"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of Theodore"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2795"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Huts"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2795"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Huts"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2826"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Nut"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2826"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Nut"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2834"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Poplars"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2834"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Poplars"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2868"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of the Syrians"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2692"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Monastery of ʿAkiba"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2345"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mopsuestia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/343"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mor Bosus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1478"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mytilene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2823"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mʿrbnʾ"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2824"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Narda"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2693"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nazianzus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2587"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "New palace of Abgar VIII"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/621"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nicaea"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2611"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nikopolis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2574"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nikopolis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/466"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Niksār"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/142"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nisibis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2828"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nʾns"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2827"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nʾns"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2698"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Olba in Isauria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2699"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Orobiane"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/145"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Osrhoene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/149"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Palaestina"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/149"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Palaestina"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2702"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Paltus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1531"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pamphylia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2776"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pardaisa"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1473"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pelusium"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1473"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pelusium"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1469"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Perga"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1469"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Perga"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2829"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pergamum"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/526"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Persia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/526"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Persia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/150"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Persian-Sasanian Empire"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/150"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Persian-Sasanian Empire"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/211"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Peruz Shapur"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2703"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pessinus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/157"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Petra"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/157"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Petra"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/373"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Phesilta"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1476"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Philadelphia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1525"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Phrygia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2833"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Phrygia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/633"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pontos"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2835"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Prusias"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2779"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pyṭr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2778"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pyṭr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2779"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pyṭr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2778"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Pyṭr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/635"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Qalʿat Simʿān"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2642"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Qenneshrin"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/162"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Qenneshrin"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2836"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Qlupyata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/172"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Reshʿayna"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2708"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Rhaphania"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1534"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Rhodes"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/173"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Rhosos"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/166"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Roman Empire"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/641"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Rome"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2360"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Rome"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/641"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Rome"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2598"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sacristy"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1467"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sakhā"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "death-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1467"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sakhā"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/178"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Samosata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2607"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Samosata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2839"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Samosata"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/174"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Seleucia"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2714"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Seleucia in Isauria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2841"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sema"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2841"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sema"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/185"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Shura"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/724"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Siirt"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2719"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Smyrna"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2718"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Smyrna"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/493"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sophene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/493"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sophene"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2845"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sycae"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2845"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sycae"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/486"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Syria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/486"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Syria"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/196"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tarsos"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "citizenship"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/196"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tarsos"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2722"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tarsus"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/200"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/200"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/200"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2849"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella d-Mikhana"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2849"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella d-Mikhana"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2851"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella d-Thuthe"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2850"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tella d-Thuthe"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/473"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "The Enaton"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/473"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "The Enaton"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2785"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "The hot spring of Abarne"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2847"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Thebais"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2854"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Thrace"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/1459"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Thrace"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/202"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tigris"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2816"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tomb of the Strangers"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2856"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tralles"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2857"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tralles"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2726"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tripolis"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/195"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tyros"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2730"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Uaris"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2855"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Unidentified Church in Tralles"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/3049"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Unnamed women's monastery"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2860"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Villa near Sycae"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2583"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Winter Palace of Abgar VIII"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/399"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Yoḥannan Urṭaya"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/399"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Yoḥannan Urṭaya"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/358"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zuqnin"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/358"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Zuqnin"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2864"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʾBdhyr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2864"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʾBdhyr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2865"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʿAina d-Praka"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/3057"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʿArab"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2624"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʿAyn Zarba"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2866"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʿBubnat"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2867"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ʿTryz"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2758"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ܿBeth Urtaye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "birth-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2758"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ܿBeth Urtaye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2758"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "ܿBeth Urtaye"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/91"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥama"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/216"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥarran"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/219"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥirta"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/219"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥirta"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/94"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥiṣn Manṣūr"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2796"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥzyn"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "residence"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2796"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥzyn"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2792"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥīrtā d-Ṭayyāyē"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2791"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ḥīrtā d-Ṭayyāyē"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2844"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ṣurta"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      },
+      {
+        "place": {
+          "type": "uri",
+          "value": "http://syriaca.org/place/2858"
+        },
+        "label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ṭyšf"
+        },
+        "relationType": {
+          "type": "literal",
+          "value": "event-place"
+        }
+      }
+    ]
+  }
+}

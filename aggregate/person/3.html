@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -77,45 +77,49 @@
                 });
             })//]]></script>
     </head>
-    <body id="body">
-        <nav
-      class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand banner-container" href="/index.html">
-          <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
-          <span class="banner-text" data-template="config:app-title"
-            >SPEAR<span class="d-none d-md-inline"
-              >: Syriac Persons Events and Relations</span
-            ></span
-          >
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-            <a class="nav-link active" href="/browse.html">Browse</a>
-            <a class="nav-link" href="/documentation.html">Documentation</a>
-            <a class="nav-link" href="/about.html">About</a>
-            <a class="nav-link" href="/contact.html">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-            <div class="container">
+    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
+                class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
+                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
+                        ></span><span class="icon-bar"></span></button>
+                <a class="navbar-brand banner-container" href="/index.html"><span
+                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
+                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
+                        Events and Relations</span></a>
+            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/index.html" class="nav-text">Home</a></li>
+                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
+                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
+                                class="caret"></b></a><ul class="dropdown-menu pull-right">
+                            <li><a href="/about.html">Project Overview</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contributors.html">Project Contributors</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/contact.html">Contact Us</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li><a href="/documentation/index.html"><span
+                                        class="syriaca-icon syriaca-book icon-nav"
+                                        style="color:red;"></span><span class="icon-text"
+                                        >Documentation</span></a></li>
+                        </ul></li>
+                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
+                    <li><div id="search-wrapper">
+                            <form class="navbar-form navbar-right search-box" role="search"
+                                action="/search.html" method="get"><div class="form-group">
+                                    <input type="text" class="form-control keyboard"
+                                        placeholder="search" name="keyword" id="keywordNav" />
+                                    <span data-template="app:keyboard-select-menu"
+                                        data-template-input-id="keywordNav"></span>
+                                    <button class="btn btn-default search-btn" id="searchbtn"
+                                        type="submit" title="Search"><span
+                                            class="glyphicon glyphicon-search"></span></button>
+                                </div></form>
+                        </div></li>
+                </ul>
+            </div></nav><div class="main-content-block">
             <div class="interior-content">
                 <div class="record">
                     <div class="interior-content" data-template="app:fix-links">
@@ -154,7 +158,8 @@
                                             </span>
                                         </span>
                                         <a href="/8559-64" class="factoid-more">See factoid page
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg></a></p>
+                                                <span class="glyphicon glyphicon-circle-arrow-right"
+                                                aria-hidden="true"></span></a></p>
                                     <h4>Birth: </h4>
                                     <p class="indent"><span class="spearLabel">Birth date: </span>11
                                         July 15411 Tammuz A. Gr. 465 <a href="/8559-66"
