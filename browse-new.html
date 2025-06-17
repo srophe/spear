@@ -148,16 +148,20 @@
               <button
                 type="button"
                 class="btn btn-light active"
-                aria-pressed="true"
+                data-type="person"
               >
                 Persons
               </button>
-              <button type="button" class="btn btn-light">Factoids</button>
+              <button type="button" class="btn btn-light" data-type="factoid">Factoids</button>
             </div>
             <div class="flex-grow-1">
               <div class="card ms-5 p-3 border-1 flex-grow-1">
                 <div class="d-inline-flex gap-4" id="browse--options">
-                  <button type="button" class="btn btn-light w-100 active">
+                  <button
+                    type="button"
+                    class="btn btn-light w-100 active"
+                    data-filter="name"
+                  >
                     <span>Names</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +192,11 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100">
+                  <button
+                    type="button"
+                    class="btn btn-light w-100"
+                    data-filter="gender"
+                  >
                     <span>Gender</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +227,7 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100">
+                  <button type="button" class="btn btn-light w-100" disabled>
                     <span>Events</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -250,7 +258,7 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100">
+                  <button type="button" class="btn btn-light w-100" disabled>
                     <span>Dates</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -281,7 +289,7 @@
                       <path d="m6 9 6 6 6-6" />
                     </svg>
                   </button>
-                  <button type="button" class="btn btn-light w-100">
+                  <button type="button" class="btn btn-light w-100" disabled>
                     <span>Uncertainty</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -316,145 +324,9 @@
                 <div
                   id="browse--letter-filter"
                   class="d-inline-flex gap-2 mt-3"
-                >
-                  <button
-                    data-letter="a"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    a</button
-                  ><button
-                    data-letter="b"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    b</button
-                  ><button
-                    data-letter="c"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    c</button
-                  ><button
-                    data-letter="d"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    d</button
-                  ><button
-                    data-letter="e"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    e</button
-                  ><button
-                    data-letter="f"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    f</button
-                  ><button
-                    data-letter="g"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    g</button
-                  ><button
-                    data-letter="h"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    h</button
-                  ><button
-                    data-letter="i"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    i</button
-                  ><button
-                    data-letter="j"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    j</button
-                  ><button
-                    data-letter="k"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    k</button
-                  ><button
-                    data-letter="l"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    l</button
-                  ><button
-                    data-letter="m"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    m</button
-                  ><button
-                    data-letter="n"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    n</button
-                  ><button
-                    data-letter="o"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    o</button
-                  ><button
-                    data-letter="p"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    p</button
-                  ><button
-                    data-letter="q"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    q</button
-                  ><button
-                    data-letter="r"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    r</button
-                  ><button
-                    data-letter="s"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    s</button
-                  ><button
-                    data-letter="t"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    t</button
-                  ><button
-                    data-letter="u"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    u</button
-                  ><button
-                    data-letter="v"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    v</button
-                  ><button
-                    data-letter="w"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    w</button
-                  ><button
-                    data-letter="x"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    x</button
-                  ><button
-                    data-letter="y"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    y</button
-                  ><button
-                    data-letter="z"
-                    class="btn btn-light letter-btn rounded p-1 text-uppercase"
-                  >
-                    z
-                  </button>
-                </div>
+                ></div>
                 <hr />
-                <div
-                  id="browse--items"
-                  class="grid-col-5 gap-3"
-                >
-                </div>
+                <div id="browse--items" class="grid-col-5 gap-3"></div>
               </div>
               <div class="ms-5 mt-3" id="browse--items-container">
                 <div class="card border-2 col-start-2 border-blue-900 mb-3">
@@ -539,28 +411,17 @@
 
     browseTypes?.querySelectorAll("button").forEach((button) => {
       if (button.dataset.type === type) {
-        button.classList.remove("bg-neutral-content");
-        button.classList.add("border");
-        button.classList.add("border-2");
-        button.classList.add("border-neutral");
+        button.classList.add("active");
       } else {
-        button.classList.remove("border");
-        button.classList.remove("border-2");
-        button.classList.remove("border-neutral");
+        button.classList.remove("active");
       }
     });
 
     browseOptions?.querySelectorAll("button").forEach((button) => {
       if (button.dataset.filter === filter) {
-        button.classList.remove("border-neutral-content/50");
-        button.classList.add("border");
-        button.classList.add("border-2");
-        button.classList.add("border-neutral");
         button.classList.add("active");
       } else {
-        button.classList.remove("border");
-        button.classList.remove("border-2");
-        button.classList.remove("border-neutral");
+        button.classList.remove("active");
       }
     });
 
@@ -678,12 +539,10 @@
         const selectedButton = event.target;
 
         browseTypes.querySelectorAll("button").forEach((button) => {
-          button.classList.add("bg-neutral-content");
-          button.classList.remove("border-2", "border-neutral");
+          button.classList.remove("active");
         });
 
-        selectedButton.classList.remove("bg-neutral-content");
-        selectedButton.classList.add("border-2", "border-neutral");
+        selectedButton.classList.add("active");
 
         updateParams({ type: selectedButton.dataset.type });
       }
@@ -696,21 +555,22 @@
 
     const updateData = (params, event) => {
       let people = [];
+      let factoids = [];  
 
       if (params.type === "factoid") {
-        people = factoids.results.bindings.slice(0, 25);
-        document.getElementById("browse--items").innerHTML = people
-          .map((factoid) => {
-            return `<button data-id="${encodeURI(
-              factoid?.factoid?.value
-            )}" class="btn btn-text p-2 rounded-sm">${
-              factoid?.factoid?.value
-            }</button>`;
-          })
-          .join("");
-        document.getElementById(
-          "browse--items"
-        ).previousElementSibling.style.display = "none";
+        // people = factoids.results.bindings.slice(0, 25);
+        // document.getElementById("browse--items").innerHTML = people
+        //   .map((factoid) => {
+        //     return `<button data-id="${encodeURI(
+        //       factoid?.factoid?.value
+        //     )}" class="btn btn-text p-2 rounded-sm">${
+        //       factoid?.factoid?.value
+        //     }</button>`;
+        //   })
+        //   .join("");
+        // document.getElementById(
+        //   "browse--items"
+        // ).previousElementSibling.style.display = "none";
         return;
       }
 
@@ -811,9 +671,9 @@
         ]
           .map(([key, value]) => {
             if (key === params.gender) {
-              return `<button data-gender="${key}" class="cursor-pointer bg-neutral text-neutral-content rounded-sm p-1 px-3 h-6 leading-3">${value}</button>`;
+              return `<button data-gender="${key}" class="btn btn-light p-1 active">${value}</button>`;
             }
-            return `<button data-gender="${key}" class="cursor-pointer bg-neutral-300 rounded-sm p-1 px-3 h-6 leading-3">${value}</button>`;
+            return `<button data-gender="${key}" class="btn btn-light p-1">${value}</button>`;
           })
           .join("");
       } else if (params.filter === "name") {
@@ -822,9 +682,9 @@
         )
           .map((item) => {
             if (item === params.letter) {
-              return `<button data-letter="${item}" class="cursor-pointer bg-neutral text-neutral-content rounded-sm p-1 w-6 h-6 leading-3 uppercase">${item}</button>`;
+              return `<button data-letter="${item}" class="btn btn-light letter-btn p-1 text-uppercase active">${item}</button>`;
             }
-            return `<button data-letter="${item}" class="cursor-pointer bg-neutral-300 rounded-sm p-1 w-6 h-6 leading-3 uppercase">${item}</button>`;
+            return `<button data-letter="${item}" class="btn btn-light letter-btn p-1 text-uppercase">${item}</button>`;
           })
           .join("");
       }
