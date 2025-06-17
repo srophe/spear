@@ -643,9 +643,12 @@
 
         document.getElementById("browse--items-container").innerHTML = people
           .map((person) => {
+            const captured = person.uri.value.match(/\/.+\/(?<category>.+)\/(?<id>\d+)$/);
+            const path = Object.values(captured?.groups).join("/");
+
             return `<div class="card mb-3 p-3">
             <div class="card-body">
-              <a href="${person.uri.value}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
+              <a href="/aggregate/${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
               <small>${person.desc.value}</small>
             </div>
           </div>`;
