@@ -590,7 +590,7 @@
                     <xsl:otherwise>
                         <xsl:choose>
                             <xsl:when test="$collectionTemplate">
-                                <div class="container mt-5">
+                                <div class="container my-5">
                                     <div class="interior-content">
                                         <xsl:call-template name="otherDataFormats">
                                             <xsl:with-param name="node" select="t:TEI"/>
@@ -743,7 +743,7 @@
         <xsl:variable name="id" select="@rdf:about"/>
         <xsl:choose>
             <xsl:when test="child::*:hasTopConcept">
-                <div class="container mt-5">
+                <div class="container my-5">
                     <div class="interior-content">
                         <h1>Browse Taxonomy</h1>
                         <ul class="list-unstyled indent">
@@ -784,7 +784,7 @@
                 </div>
             </xsl:when>
             <xsl:otherwise>
-                <div class="container mt-5">
+                <div class="container my-5">
                     <div class="interior-content">
                         <div class="container otherFormats" xmlns="http://www.w3.org/1999/xhtml">
                             <a href="javascript:window.print();" type="button"
@@ -1084,7 +1084,7 @@
         <xsl:param name="collection-title"/>
         <xsl:param name="idno"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <div class="container mt-5">
+            <div class="container my-5">
                 <div class="interior-content">
                     <xsl:call-template name="otherDataFormats">
                         <xsl:with-param name="node" select="t:TEI"/>
