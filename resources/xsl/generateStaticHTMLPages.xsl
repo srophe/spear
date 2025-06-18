@@ -158,7 +158,7 @@
         <xsl:variable name="type" select="string(//t:place/@type)"/>
         <div xmlns:xi="http://www.w3.org/2001/XInclude">
             <div class="grey-dark">
-                <div class="section main-content-block white">
+                <div class="section container white mt-5">
                     <xsl:apply-templates select="/t:teiHeader/t:fileDesc/t:titleStmt"/>
                     <div class="row">
                         <!-- Column 1 -->
@@ -299,7 +299,7 @@
     <xsl:template name="persons">
         <div xmlns:xi="http://www.w3.org/2001/XInclude">
             <div class="grey-dark">
-                <div class="section main-content-block white">
+                <div class="section container mt-5 white">
                     <xsl:for-each select="//t:person">
                         <xsl:call-template name="persons-title"/>
                         <div class="row">
@@ -527,7 +527,7 @@
     </xsl:template>
     <xsl:template name="bibl">
         <div xmlns:xi="http://www.w3.org/2001/XInclude">
-            <div class="main-content-block">
+            <div class="container mt-5">
                 <div class="interior-content white">
                     <xsl:apply-templates select="/t:teiHeader/t:fileDesc/t:titleStmt"/>
                     <div class="row">
@@ -603,7 +603,7 @@
     </xsl:template>
     <xsl:template name="record">
         <div xmlns:xi="http://www.w3.org/2001/XInclude">
-            <div class="main-content-block">
+            <div class="container-mt-5">
                 <div class="interior-content white">
                     <xsl:apply-templates select="/t:teiHeader/t:fileDesc/t:titleStmt"/>
                     <div class="row">
