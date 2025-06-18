@@ -653,7 +653,7 @@
                                             />
                                         </xsl:call-template>
                                         <div class="row">
-                                            <div class="col-md-7 col-lg-8">
+                                            <div class="col-md-12">
                                                 <xsl:apply-templates select="$nodes//t:TEI">
                                                   <xsl:with-param name="collection"
                                                   select="$collection"/>
@@ -858,7 +858,7 @@
 
                         </div>
                         <div class="row">
-                            <div class="col-md-7 col-lg-8">
+                            <div class="col-md-12">
                                 <div class="title">
                                     <h1>
                                         <span id="title">
@@ -1147,7 +1147,7 @@
                         <xsl:with-param name="formats" select="'print,tei'"/>
                     </xsl:call-template>
                     <div class="row">
-                        <div class="col-md-7 col-lg-8">
+                        <div class="col-md-12">
                             <xsl:apply-templates select="t:TEI"/>
                             <!--
                             <xsl:apply-templates select="t:TEI">
@@ -1206,7 +1206,7 @@
             <meta name="DC.isPartOf" property="dc.ispartof" content="{$config/html:title[1]}"/>
             <link rel="shortcut icon" href="/resources/images/fav-icons/syriaca-favicon.ico"/>
             <!-- Bootstrap 3 -->
-            <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/>
+            <link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/>
             <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/>
             <!-- Srophe styles -->
             <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/>
@@ -1226,64 +1226,9 @@
             <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/>
             <script type="text/javascript" src="/resources/js/clipboard.min.js"/>
             <!-- Bootstrap -->
-            <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/>
+            <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/>
             <!-- ReCaptcha -->
             <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/>
-            <!-- keyboard widget css & script -->
-            <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/>
-            <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/>
-            <link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/>
-            <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/>
-            <script type="text/javascript" src="/resources/keyboard/syr/syr.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/>
-            <script type="text/javascript" src="/resources/keyboard/layouts/ms-Hebrew.min.js"/>
-            <script type="text/javascript">
-                <xsl:text disable-output-escaping="yes">
-                    <![CDATA[
-                $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-                
-                $('.keyboard').keyboard({
-                openOn: null,
-                stayOpen: false,
-                alwaysOpen: false,
-                autoAccept: true,
-                usePreview: false,
-                initialFocus: true,
-                rtl : true,
-                layout: 'syriac-phonetic',
-                hidden: function(event, keyboard, el){
-                //  keyboard.destroy();
-                }
-                });
-                
-                $('.keyboard-select').click(function () {
-                var keyboardID = '#' + $(this).data("keyboard-id")
-                var kb = $(keyboardID).getkeyboard();
-                //var kb = $('#searchField').getkeyboard();
-                // change layout based on link ID
-                kb.options.layout = this.id
-                // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) < 200) {
-                kb.reveal();
-                }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                var selectedFont = $(this).data("font-id")
-                $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                $("*:lang(syr)").css('font-family', selectedFont)
-                });
-                
-                })]]>
-                </xsl:text>
-            </script>
         </head>
     </xsl:template>
     <xsl:template name="genericNav">

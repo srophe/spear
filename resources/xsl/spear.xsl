@@ -197,8 +197,10 @@
     </xsl:template>
     <!-- New SPEAR -->
     <xsl:template match="t:ab" mode="factoid">  
-        <xsl:call-template name="factoidHeader"/>
-        <div class="row">
+        <div class="row gx-5">
+            <div class="col-12">
+                <xsl:call-template name="factoidHeader"/>
+            </div>
             <div class="col-md-8">
                 <xsl:choose>
                     <xsl:when test="@subtype='nameVariant'">
@@ -614,7 +616,7 @@
                 </small>
             </div>
         </div>
-        <div class="row">
+        <div class="row gx-5">
             <div class="col-md-8">
                 <xsl:choose>
                     <xsl:when test="contains($id,'/person/')">
