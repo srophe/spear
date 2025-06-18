@@ -1,541 +1,435 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:srophe="https://srophe.app"
->
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:srophe="https://srophe.app">
 
-    <title>SPEAR: Syriac Persons Events and Relations</title>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPEAR: Syriac Persons Events and Relations</title>
 
-    <meta data-template="config:app-meta" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="/favicon.ico" />
+  <meta data-template="config:app-meta" />
 
-    <!-- Bootstrap 3 -->
+  <link rel="shortcut icon" href="/favicon.ico" />
 
-    <!-- <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" /> -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"
-    />
+  <!-- Bootstrap 3 -->
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/resources/css/sm-core-css.css"
-    />
+  <!-- <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" /> -->
+  <link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
 
-    <!-- Srophe styles -->
+  <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/resources/css/syr-icon-fonts.css"
-    />
+  <!-- Srophe styles -->
 
-    <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      media="print"
-      href="/resources/css/print.css"
-    />
+  <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
 
-    <!-- Leaflet -->
+  <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
 
-    <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+  <!-- Leaflet -->
 
-    <link
-      rel="stylesheet"
-      href="/resources/leaflet/leaflet.awesome-markers.css"
-    />
+  <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
 
-    <!-- JQuery -->
+  <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
 
-    <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="/resources/jquery-ui/jquery-ui.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/resources/js/jquery.smartmenus.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/resources/js/clipboard.min.js"
-    ></script>
+  <!-- JQuery -->
 
-    <!-- Bootstrap -->
-    <script
-      type="text/javascript"
-      src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"
-    ></script>
+  <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+  <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
+  <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
 
-    <!-- ReCaptcha -->
-    <script
-      src="https://www.google.com/recaptcha/api.js"
-      type="text/javascript"
-      async="async"
-      defer="defer"
-    ></script>
-    <script
-      type="text/javascript"
-      src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"
-    ></script>
-    <script
-      defer="defer"
-      data-domain="spear.vuexistapps.us"
-      src="https://plausible.io/js/script.js"
-    ></script>
-  </head>
-  <body id="body">
-    <nav
-      class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand banner-container" href="/index.html">
-          <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
-          <span class="banner-text" data-template="config:app-title"
-            >SPEAR<span class="d-none d-md-inline"
-              >: Syriac Persons Events and Relations</span
-            ></span
-          >
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end"
-          id="navbarNavAltMarkup"
-        >
-          <div class="navbar-nav">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
-            <a class="nav-link active" href="/browse.html">Browse</a>
-            <a class="nav-link" href="/documentation.html">Documentation</a>
-            <a class="nav-link" href="/about.html">About</a>
-            <a class="nav-link" href="/contact.html">Contact Us</a>
-          </div>
+  <!-- Bootstrap -->
+  <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
+
+  <!-- ReCaptcha -->
+  <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+  <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
+  <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+</head>
+
+<body id="body">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center">
+    <div class="container-fluid">
+      <a class="navbar-brand banner-container" href="/index.html">
+        <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
+        <span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac
+            Persons Events and Relations</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" href="/browse.html">Browse</a>
+          <a class="nav-link" href="/documentation.html">Documentation</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <a class="nav-link" href="/contact.html">Contact Us</a>
         </div>
       </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="py-4 d-flex align-items-start">
-            <div
-              class="btn-group my-3"
-              role="group"
-              aria-label="types"
-              id="browse--types"
-            >
-              <button
-                type="button"
-                class="btn btn-outline-dark active"
-                data-type="person"
-              >
-                Persons
-              </button>
-              <button type="button" class="btn btn-outline-dark" data-type="factoid">Factoids</button>
-            </div>
-            <div class="flex-grow-1">
-              <div class="card ms-5 p-3 border-1 flex-grow-1">
-                <div class="d-inline-flex gap-4" id="browse--options">
-                  <button
-                    type="button"
-                    class="btn btn-outline-dark w-100 active"
-                    data-filter="name"
-                  >
-                    <span>Names</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="open lucide lucide-chevron-up-icon lucide-chevron-up"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="close lucide lucide-chevron-down-icon lucide-chevron-down"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-outline-dark w-100"
-                    data-filter="gender"
-                  >
-                    <span>Gender</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="open lucide lucide-chevron-up-icon lucide-chevron-up"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="close lucide lucide-chevron-down-icon lucide-chevron-down"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                  <button type="button" class="btn btn-outline-dark w-100" disabled>
-                    <span>Events</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="open lucide lucide-chevron-up-icon lucide-chevron-up"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="close lucide lucide-chevron-down-icon lucide-chevron-down"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                  <button type="button" class="btn btn-outline-dark w-100" disabled>
-                    <span>Dates</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="open lucide lucide-chevron-up-icon lucide-chevron-up"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="close lucide lucide-chevron-down-icon lucide-chevron-down"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                  <button type="button" class="btn btn-outline-dark w-100" disabled>
-                    <span>Uncertainty</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="open lucide lucide-chevron-up-icon lucide-chevron-up"
-                    >
-                      <path d="m18 15-6-6-6 6" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="close lucide lucide-chevron-down-icon lucide-chevron-down"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                </div>
-                <div
-                  id="browse--letter-filter"
-                  class="d-inline-flex gap-2 mt-3"
-                ></div>
-                <hr />
-                <div id="browse--items" class="grid-col-5 gap-3"></div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="py-4 d-flex align-items-start">
+          <div class="btn-group my-3" role="group" aria-label="types" id="browse--types">
+            <button type="button" class="btn btn-outline-dark active" data-type="person">
+              Persons
+            </button>
+            <button type="button" class="btn btn-outline-dark" data-type="factoid">
+              Factoids
+            </button>
+          </div>
+          <div class="flex-grow-1">
+            <div class="card ms-5 p-3 border-1 flex-grow-1">
+              <div class="d-inline-flex gap-4" id="browse--options">
+                <button type="button" class="btn btn-outline-dark w-100 active" data-filter="name">
+                  <span>Names</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="open lucide lucide-chevron-up-icon lucide-chevron-up">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="close lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <button type="button" class="btn btn-outline-dark w-100" data-filter="gender">
+                  <span>Gender</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="open lucide lucide-chevron-up-icon lucide-chevron-up">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="close lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <button type="button" class="btn btn-outline-dark w-100" data-filter="events">
+                  <span>Events</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="open lucide lucide-chevron-up-icon lucide-chevron-up">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="close lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <button type="button" class="btn btn-outline-dark w-100" disabled>
+                  <span>Dates</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="open lucide lucide-chevron-up-icon lucide-chevron-up">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="close lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <button type="button" class="btn btn-outline-dark w-100" disabled>
+                  <span>Uncertainty</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="open lucide lucide-chevron-up-icon lucide-chevron-up">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="close lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
               </div>
-              <div class="ms-5 mt-3" id="browse--items-container">
-              </div>
+              <div id="browse--letter-filter" class="d-inline-flex gap-2 mt-3"></div>
+              <hr />
+              <div id="browse--items" class="grid-col-5 gap-3"></div>
             </div>
+            <div class="ms-5 mt-3" id="browse--items-container"></div>
           </div>
         </div>
       </div>
     </div>
-  </body>
-  <script
-    type="text/javascript"
-    src="/resources/js/jquery.validate.min.js"
-  ></script>
-  <script type="text/javascript" src="/resources/js/srophe.js"></script>
-  <script type="module">
-    //  types, selectedType, selectedFilter, people, persons, factoids
-    import persons from "../types/persons.json" with { type: 'json' };
-    import factoids from "../types/factoids.json" with { type: 'json' };
+  </div>
+</body>
+<script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="/resources/js/srophe.js"></script>
+<script type="module">
+  //  types, selectedType, selectedFilter, people, persons, factoids
+  import persons from "../types/persons.json" with { type: 'json' };
+  import factoids from "../types/factoids.json" with { type: 'json' };
+  import personNamesData from "../types/factoid/names.json" with { type: 'json' };
 
-    const types = {
-      person: "Persons",
-      factoid: "Factoids",
-    };
+  const types = {
+    person: "Persons",
+    factoid: "Factoids",
+  };
 
-    let selectedType = "person";
-    let selectedFilter = "source";
+  let selectedType = "person";
+  let selectedFilter = "source";
 
-    let people = persons.results.bindings.slice(0, 20);
+  let people = persons.results?.bindings?.slice(0, 20);
+  let personNames = personNamesData.results?.bindings?.slice(0, 20);
 
+  const type =
+    new URLSearchParams(window.location.search).get("type") ?? "person";
+  const filter =
+    new URLSearchParams(window.location.search).get("filter") ?? "name";
+  const letter =
+    new URLSearchParams(window.location.search).get("letter") ?? "";
+  const id = new URLSearchParams(window.location.search).get("id") ?? "";
 
-    const type =
-      new URLSearchParams(window.location.search).get("type") ?? "person";
-    const filter =
-      new URLSearchParams(window.location.search).get("filter") ?? "name";
-    const letter =
-      new URLSearchParams(window.location.search).get("letter") ?? "";
-    const id = new URLSearchParams(window.location.search).get("id") ?? "";
+  const browseOptions = document.getElementById("browse--options");
+  const browseTypes = document.getElementById("browse--types");
+  const browseItems = document.getElementById("browse--items");
+  const browseLetterFilter = document.getElementById("browse--letter-filter");
 
-    const browseOptions = document.getElementById("browse--options");
-    const browseTypes = document.getElementById("browse--types");
-    const browseItems = document.getElementById("browse--items");
-    const browseLetterFilter = document.getElementById("browse--letter-filter");
+  browseTypes?.querySelectorAll("button").forEach((button) => {
+    if (button.dataset.type === type) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
 
-    browseTypes?.querySelectorAll("button").forEach((button) => {
-      if (button.dataset.type === type) {
-        button.classList.add("active");
-      } else {
-        button.classList.remove("active");
+  browseOptions?.querySelectorAll("button").forEach((button) => {
+    if (button.dataset.filter === filter) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+
+  browseItems?.querySelectorAll("button").forEach((button) => {
+    if (button.dataset.id === id) {
+      button.classList.add("border-neutral");
+      button.classList.remove("border-transparent");
+    } else {
+      button.classList.remove("border-neutral");
+      button.classList.add("border-transparent");
+    }
+  });
+
+  browseLetterFilter?.querySelectorAll("button").forEach((button) => {
+    if (button.dataset.letter === letter) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove(
+        "active"
+      );
+    }
+  });
+
+  browseLetterFilter?.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    document.getElementById("browse--items-container").innerHTML = null;
+
+    if (event.target.tagName === "BUTTON") {
+      const selectedButton = event.target;
+
+      browseLetterFilter.querySelectorAll("button").forEach((button) => {
+        button.classList.remove("remove");
+      });
+      selectedButton.classList.add("active");
+
+      if (selectedButton.dataset.letter) {
+        updateParams({ letter: selectedButton.dataset.letter });
       }
-    });
-
-    browseOptions?.querySelectorAll("button").forEach((button) => {
-      if (button.dataset.filter === filter) {
-        button.classList.add("active");
-      } else {
-        button.classList.remove("active");
+      if (selectedButton.dataset.gender) {
+        updateParams({ gender: selectedButton.dataset.gender });
       }
-    });
+    }
+  });
 
-    browseItems?.querySelectorAll("button").forEach((button) => {
-      if (button.dataset.id === id) {
-        button.classList.add("border-neutral");
-        button.classList.remove("border-transparent");
+  browseOptions?.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (
+      event.target.tagName === "BUTTON" ||
+      event.target.parentElement.tagName === "BUTTON"
+    ) {
+      const selectedButton =
+        event.target.tagName === "BUTTON"
+          ? event.target
+          : event.target.parentElement;
+
+      browseOptions
+        .querySelectorAll("button, button:not(.selected)")
+        .forEach((button) => {
+          button.classList.add("border-neutral-content/50");
+          button.classList.remove("border");
+          button.classList.remove("border-2");
+          button.classList.remove("border-neutral");
+          button.classList.remove("active");
+        });
+      if (selectedButton.classList.contains("active")) {
+        selectedButton.classList.remove("active");
       } else {
-        button.classList.remove("border-neutral");
-        button.classList.add("border-transparent");
+        selectedButton.classList.remove("border-neutral-content/50");
+        selectedButton.classList.add("border");
+        selectedButton.classList.add("border-2");
+        selectedButton.classList.add("border-neutral");
+        selectedButton.classList.add("active");
       }
-    });
-
-    browseLetterFilter?.querySelectorAll("button").forEach((button) => {
-      if (button.dataset.letter === letter) {
-        button.classList.remove("bg-neutral-300");
-        button.classList.add("bg-neutral", "text-neutral-content", "active");
-      } else {
-        button.classList.remove(
-          "bg-neutral",
-          "text-neutral-content",
-          "active"
-        );
-        button.classList.add("bg-neutral-300");
-      }
-    });
-
-    browseLetterFilter?.addEventListener("click", (event) => {
-      event.preventDefault();
 
       document.getElementById("browse--items-container").innerHTML = null;
 
-      if (event.target.tagName === "BUTTON") {
-        const selectedButton = event.target;
+      updateParams({ filter: selectedButton.dataset.filter });
+    }
+  });
 
-        browseLetterFilter.querySelectorAll("button").forEach((button) => {
-          button.classList.remove("bg-neutral", "text-neutral-content");
-          button.classList.add("bg-neutral-300", "text-neutral-100");
-        });
-        selectedButton.classList.remove("bg-neutral-300", "text-neutral-100");
-        selectedButton.classList.add("bg-neutral", "text-neutral-content");
+  browseItems?.addEventListener("click", (event) => {
+    event.preventDefault();
 
-        if (selectedButton.dataset.letter) {
-          updateParams({ letter: selectedButton.dataset.letter });
-        }
-        if (selectedButton.dataset.gender) {
-          updateParams({ gender: selectedButton.dataset.gender });
-        }
+    if (event.target.tagName === "BUTTON") {
+      const selectedButton = event.target;
+
+      browseItems.querySelectorAll("button").forEach((button) => {
+        button.classList.remove("active");
+      });
+      selectedButton.classList.add("active");
+
+      updateParams({ person: selectedButton.dataset.name });
+    }
+  });
+
+  browseTypes?.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (event.target.tagName === "BUTTON") {
+      const selectedButton = event.target;
+
+      browseTypes.querySelectorAll("button").forEach((button) => {
+        button.classList.remove("active");
+      });
+
+      selectedButton.classList.add("active");
+
+      updateParams({ type: selectedButton.dataset.type });
+    }
+  });
+
+  navigation.addEventListener("navigate", (e) => {
+    const params = new URL(e.destination.url).searchParams;
+    updateData(Object.fromEntries(params), e);
+  });
+
+  const updateData = (params, event) => {
+    const url = new URL(event?.destination?.url || document.location.href);
+
+    let people = [];
+    let factoids = [];
+
+    if (params.type === "factoid") {
+
+      document.getElementById("browse--letter-filter").innerHTML = Array.from(
+        "abcdefghijklmnopqrstuvwxyz"
+      )
+        .map((item) => {
+          if (item === params.letter) {
+            return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase active">${item}</button>`;
+          }
+          return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase">${item}</button>`;
+        })
+        .join("");
+
+      if (Object.keys(params).includes("letter")) {
+        people = [
+          ...new Set(
+            personNamesData.results.bindings
+              .filter((person) => {
+                const name = person.name.value.toLowerCase();
+                return name.startsWith(params.letter.toLowerCase());
+              })
+              .map((person) => {
+                return person.name.value;
+              })
+          ),
+        ].slice(0, 25);
+
+        document.getElementById("browse--items").innerHTML = people
+          .map((person) => {
+            if (
+              event?.destination?.url &&
+              new URL(event?.destination?.url).searchParams.get("person") ===
+              person
+            ) {
+              return `<button data-name="${person}" class="btn btn-outline p-2 px-3 active">${person}</button>`;
+            }
+            return `<button data-name="${person}" class="btn btn-outline p-2 px-3">${person}</button>`;
+          })
+          .join("");
+        document.getElementById(
+          "browse--items"
+        ).previousElementSibling.style.display = null;
       }
-    });
 
-    browseOptions?.addEventListener("click", (event) => {
-      event.preventDefault();
+      if (Object.keys(params).includes("gender")) {
+        people = [
+          ...new Set(
+            personNamesData.results.bindings
+              .filter((person) => {
+                const gender = person?.sex?.value.toLowerCase();
+                if (gender === params.gender.toLowerCase()) {
+                  return person.name.value;
+                }
+              })
+              .map((person) => {
+                return person.name.value;
+              })
+          ),
+        ].slice(0, 25);
+      }
 
-      if (
-        event.target.tagName === "BUTTON" ||
-        event.target.parentElement.tagName === "BUTTON"
-      ) {
-        const selectedButton =
-          event.target.tagName === "BUTTON"
-            ? event.target
-            : event.target.parentElement;
+      if (url.searchParams.get("person") || url.searchParams.get("gender")) {
+        const personName = new URL(url).searchParams.get("person");
 
-        browseOptions
-          .querySelectorAll("button, button:not(.selected)")
-          .forEach((button) => {
-            button.classList.add("border-neutral-content/50");
-            button.classList.remove("border");
-            button.classList.remove("border-2");
-            button.classList.remove("border-neutral");
-            button.classList.remove("active");
+        const genederValue = new URL(url).searchParams.get("gender");
+
+        if (personName) {
+          people = personNamesData.results.bindings.filter((person) => {
+            return person.name.value === personName;
           });
-        if (selectedButton.classList.contains("active")) {
-          selectedButton.classList.remove("active");
-        } else {
-          selectedButton.classList.remove("border-neutral-content/50");
-          selectedButton.classList.add("border");
-          selectedButton.classList.add("border-2");
-          selectedButton.classList.add("border-neutral");
-          selectedButton.classList.add("active");
         }
 
-        document.getElementById("browse--items-container").innerHTML = null;
+        if (genederValue) {
+          people = personNamesData.results.bindings.filter((person) => {
+            return person?.sex?.value === genederValue;
+          });
+        }
 
-        updateParams({ filter: selectedButton.dataset.filter });
+        document.getElementById("browse--items-container").innerHTML = people
+          .map((person) => {
+            const captured = person?.factoid?.value.match(/\/(?<id>(\d+)-(\d+))$/);
+            const path = Object.values(captured?.groups).join("/");
+
+            const prefix = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? 'data/' : '';
+
+            return `<div class="card mb-3 p-3">
+            <div class="card-body">
+              <a href="/${prefix}${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
+              <small>${person.description.value}</small>
+            </div>
+          </div>`;
+          })
+          .join("");
       }
-    });
-
-    browseItems?.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      if (event.target.tagName === "BUTTON") {
-        const selectedButton = event.target;
-
-        browseItems.querySelectorAll("button").forEach((button) => {
-          button.classList.add(
-            "border-neutral-content/50",
-            "border-transparent"
-          );
-          button.classList.remove("border-neutral");
-        });
-
-        selectedButton.classList.remove(
-          "border-neutral-content/50",
-          "border-transparent"
-        );
-        selectedButton.classList.add("border-neutral");
-
-        updateParams({ person: selectedButton.dataset.name });
-      }
-    });
-
-    browseTypes?.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      if (event.target.tagName === "BUTTON") {
-        const selectedButton = event.target;
-
-        browseTypes.querySelectorAll("button").forEach((button) => {
-          button.classList.remove("active");
-        });
-
-        selectedButton.classList.add("active");
-
-        updateParams({ type: selectedButton.dataset.type });
-      }
-    });
-
-    navigation.addEventListener("navigate", (e) => {
-      const params = new URL(e.destination.url).searchParams;
-      updateData(Object.fromEntries(params), e);
-    });
-
-    const updateData = (params, event) => {
-      let people = [];
-      let factoids = [];  
-
-      if (params.type === "factoid") {
-        // people = factoids.results.bindings.slice(0, 25);
-        // document.getElementById("browse--items").innerHTML = people
-        //   .map((factoid) => {
-        //     return `<button data-id="${encodeURI(
-        //       factoid?.factoid?.value
-        //     )}" class="btn btn-text p-2 rounded-sm">${
-        //       factoid?.factoid?.value
-        //     }</button>`;
-        //   })
-        //   .join("");
-        // document.getElementById(
-        //   "browse--items"
-        // ).previousElementSibling.style.display = "none";
-        return;
-      }
-
+    } else {
       if (Object.keys(params).includes("letter")) {
         people = [
           ...new Set(
@@ -555,11 +449,11 @@
             if (
               event?.destination?.url &&
               new URL(event?.destination?.url).searchParams.get("person") ===
-                person
+              person
             ) {
-              return `<button data-name="${person}" class="btn btn-outline p-2 active">${person}</button>`;
+              return `<button data-name="${person}" class="btn btn-outline p-2 px-3 active">${person}</button>`;
             }
-            return `<button data-name="${person}" class="btn btn-outline p-2">${person}</button>`;
+            return `<button data-name="${person}" class="btn btn-outline p-2 px-3">${person}</button>`;
           })
           .join("");
         document.getElementById(
@@ -584,8 +478,6 @@
         ].slice(0, 25);
       }
 
-      const url = new URL(event?.destination?.url || document.location.href);
-
       if (url.searchParams.get("person") || url.searchParams.get("gender")) {
         const personName = new URL(url).searchParams.get("person");
 
@@ -609,99 +501,97 @@
             const path = Object.values(captured?.groups).join("/");
 
             return `<div class="card mb-3 p-3">
-            <div class="card-body">
-              <a href="/aggregate/${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
-              <small>${person.desc.value}</small>
-            </div>
-          </div>`;
+              <div class="card-body">
+                <a href="/aggregate/${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
+                <small>${person.desc.value}</small>
+              </div>
+            </div>`;
           })
           .join("");
       }
+    }
 
-      if (
-        !Object.keys(params).includes("letter") &&
-        !Object.keys(params).includes("gender")
-      ) {
-        document.getElementById("browse--items").innerHTML = null;
-        document.getElementById(
-          "browse--items"
-        ).previousElementSibling.style.display = "none";
-      }
+    if (
+      !Object.keys(params).includes("letter") &&
+      !Object.keys(params).includes("gender")
+    ) {
+      document.getElementById("browse--items").innerHTML = null;
+      document.getElementById(
+        "browse--items"
+      ).previousElementSibling.style.display = "none";
+    }
 
-      if (params.filter === "gender") {
-        document.getElementById("browse--letter-filter").innerHTML = [
-          ["eunuchs", "Eunuchs"],
-          ["men", "Men"],
-          ["women", "Women"],
-        ]
-          .map(([key, value]) => {
-            if (key === params.gender) {
-              return `<button data-gender="${key}" class="btn btn-outline-dark p-1 active">${value}</button>`;
-            }
-            return `<button data-gender="${key}" class="btn btn-outline-dark p-1">${value}</button>`;
-          })
-          .join("");
-      } else if (params.filter === "name") {
-        document.getElementById("browse--letter-filter").innerHTML = Array.from(
-          "abcdefghijklmnopqrstuvwxyz"
-        )
-          .map((item) => {
-            if (item === params.letter) {
-              return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase active">${item}</button>`;
-            }
-            return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase">${item}</button>`;
-          })
-          .join("");
-      }
+    if (params.filter === "gender") {
+      document.getElementById("browse--letter-filter").innerHTML = [
+        ["eunuchs", "Eunuchs"],
+        ["men", "Men"],
+        ["women", "Women"],
+      ]
+        .map(([key, value]) => {
+          if (key === params.gender) {
+            return `<button data-gender="${key}" class="btn btn-outline-dark p-1 active">${value}</button>`;
+          }
+          return `<button data-gender="${key}" class="btn btn-outline-dark p-1">${value}</button>`;
+        })
+        .join("");
+    } else if (params.filter === "name" || params.filter === "events") {
+      document.getElementById("browse--letter-filter").innerHTML = Array.from(
+        "abcdefghijklmnopqrstuvwxyz"
+      )
+        .map((item) => {
+          if (item === params.letter) {
+            return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase active">${item}</button>`;
+          }
+          return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase">${item}</button>`;
+        })
+        .join("");
+    }
 
-       document.getElementById("browse--items-container").scrollIntoView({behavior: "smooth", block: "start", inline: "start" });
+    document.getElementById("browse--items-container").scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+  };
 
-       console.log("SCROLLING TO TOP");
-    };
+  const updateParams = (params) => {
+    const trigger = Object.keys(params)[0];
+    let currentParams = new URLSearchParams(window.location.search);
 
-    const updateParams = (params) => {
-      const trigger = Object.keys(params)[0];
-      let currentParams = new URLSearchParams(window.location.search);
+    if (trigger === "letter") {
+      currentParams.delete("person");
+    }
 
-      if (trigger === "letter") {
-        currentParams.delete("person");
-      }
+    if (trigger === "filter") {
+      currentParams.delete("person");
+      currentParams.delete("letter");
+      currentParams.delete("gender");
 
-      if (trigger === "filter") {
-        currentParams.delete("person");
-        currentParams.delete("letter");
-        currentParams.delete("gender");
-
-        browseLetterFilter.querySelectorAll("button").forEach((button) => {
-          button.classList.remove("bg-neutral", "text-neutral-content");
-          button.classList.add("bg-neutral-300");
-        });
-      }
-
-      if (trigger === "type") {
-        currentParams.delete("person");
-        currentParams.delete("letter");
-        currentParams.delete("gender");
-
-        browseLetterFilter.querySelectorAll("button").forEach((button) => {
-          button.classList.remove("bg-neutral", "text-neutral-content");
-          button.classList.add("bg-neutral-300");
-        });
-      }
-
-      const newParams = new URLSearchParams({
-        ...Object.fromEntries(currentParams),
-        ...params,
+      browseLetterFilter.querySelectorAll("button").forEach((button) => {
+        button.classList.remove("active");
       });
+    }
 
-      window.history.pushState("", "", `?${newParams.toString()}`);
-    };
+    if (trigger === "type") {
+      currentParams.delete("person");
+      currentParams.delete("letter");
+      currentParams.delete("gender");
 
-    const init = () => {
-      const url = new URL(document.location.href);
-      updateData(Object.fromEntries(url.searchParams));
-    };
+      browseLetterFilter.querySelectorAll("button").forEach((button) => {
+        button.classList.remove("active");
+      });
+    }
 
-    init();
-  </script>
+    const newParams = new URLSearchParams({
+      ...Object.fromEntries(currentParams),
+      ...params,
+    });
+
+    window.history.pushState("", "", `?${newParams.toString()}`);
+  };
+
+  const init = () => {
+    const url = new URL(document.location.href);
+    updateData(Object.fromEntries(url.searchParams));
+  };
+
+  init();
+</script>
+
 </html>
