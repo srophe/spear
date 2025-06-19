@@ -1,9 +1,12 @@
 <xsl:stylesheet xmlns:html="http://www.w3.org/1999/xhtml"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:t="http://www.tei-c.org/ns/1.0"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:x="http://www.w3.org/1999/xhtml"
-    xmlns:srophe="https://srophe.app" xmlns:saxon="http://saxon.sf.net/"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:local="http://syriaca.org/ns"
-    exclude-result-prefixes="xs t x saxon local" version="3.0">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:t="http://www.tei-c.org/ns/1.0"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:x="http://www.w3.org/1999/xhtml"
+    xmlns:srophe="https://srophe.app"
+    xmlns:saxon="http://saxon.sf.net/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:local="http://syriaca.org/ns" exclude-result-prefixes="xs t x saxon local" version="3.0">
 
     <!-- ================================================================== 
       Adapted for SPEAR - staticHTML.xsl
@@ -76,8 +79,7 @@
     <xsl:variable name="configPath">
         <xsl:choose>
             <xsl:when test="$staticSitePath != ''">
-                <xsl:value-of
-                    select="concat($staticSitePath, '/siteGenerator/components/repo-config.xml')"/>
+                <xsl:value-of select="concat($staticSitePath, '/siteGenerator/components/repo-config.xml')"/>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="'../components/repo-config.xml'"/>
@@ -126,12 +128,10 @@
             <xsl:when test="$config/child::*">
                 <xsl:choose>
                     <xsl:when test="$config/descendant::*:collection[@name = $collection]">
-                        <xsl:value-of
-                            select="$config/descendant::*:collection[@name = $collection]/@title"/>
+                        <xsl:value-of select="$config/descendant::*:collection[@name = $collection]/@title"/>
                     </xsl:when>
                     <xsl:when test="$config/descendant::*:collection[@title = $collection]">
-                        <xsl:value-of
-                            select="$config/descendant::*:collection[@title = $collection]/@title"/>
+                        <xsl:value-of select="$config/descendant::*:collection[@title = $collection]/@title"/>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:value-of select="$repository-title"/>
@@ -182,7 +182,7 @@
     <xsl:variable name="refs" select="distinct-values($collection/descendant::tei:ab/@ref | $collection/descendant::tei:ab/@ana)"/>
     <!-- Figure out if document is HTML or TEI -->
     <xsl:template match="/">
-        
+
         <!--<xsl:call-template name="buildBrowsePage"/>-->
         <xsl:for-each select="$refs">
             <xsl:variable name="filename"/>
@@ -198,7 +198,7 @@
                 - consolidate factoids relating to entity
                 - link to related
         -->
-       
+
     </xsl:template>
     <xsl:template name="buildBrowsePage">
         <xsl:result-document href="{$applicationPath}/browse.html">
@@ -216,7 +216,8 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:message>Error Can not find matching template for HTML page
-                                <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($config/descendant::*:collection[1]/@template), '.html'), '//', '/')"/></xsl:message>
+                                <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($config/descendant::*:collection[1]/@template), '.html'), '//', '/')"/>
+                            </xsl:message>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -237,7 +238,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 <body id="body">
-                    
+
                     <xsl:choose>
                         <xsl:when test="not(empty($template))">
                             <xsl:choose>
@@ -254,7 +255,7 @@
                             <xsl:message>No template found for html:head element</xsl:message>
                             <xsl:call-template name="genericNav"/>
                         </xsl:otherwise>
-                    </xsl:choose> 
+                    </xsl:choose>
                     <!-- Main browse functions -->
                     <div class="main-content top-padding">
                         <h1>Browse</h1>
@@ -308,7 +309,8 @@
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:message>Error Can not find matching template for HTML page
-                                <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($config/descendant::*:collection[1]/@template), '.html'), '//', '/')"/></xsl:message>
+                                <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($config/descendant::*:collection[1]/@template), '.html'), '//', '/')"/>
+                            </xsl:message>
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:variable>
@@ -329,7 +331,7 @@
                     </xsl:otherwise>
                 </xsl:choose>
                 <body id="body">
-                    
+
                     <xsl:choose>
                         <xsl:when test="not(empty($template))">
                             <xsl:choose>
@@ -346,7 +348,7 @@
                             <xsl:message>No template found for html:head element</xsl:message>
                             <xsl:call-template name="genericNav"/>
                         </xsl:otherwise>
-                    </xsl:choose> 
+                    </xsl:choose>
                     <!-- Main browse functions -->
                     <div class="main-content top-padding">
                         <h1>Browse</h1>
@@ -385,104 +387,260 @@
         </xsl:result-document>
     </xsl:template>
     <xsl:template name="browsePersons">
-        
-        
+
+
         <div class="col-md-12">
             <div class="browse-alpha tabbable">
                 <ul class="list-inline">
-                    <li><a href="#personsA">A</a></li>
-                    <li><a href="#personsB">B</a></li>
-                    <li><a href="#personsC">C</a></li>
-                    <li><a href="#personsD">D</a></li>
-                    <li><a href="#personsE">E</a></li>
-                    <li><a href="#personsF">F</a></li>
-                    <li><a href="#personsG">G</a></li>
-                    <li><a href="#personsH">H</a></li>
-                    <li><a href="#personsI">I</a></li>
-                    <li><a href="#personsJ">J</a></li>
-                    <li><a href="#personsK">K</a></li>
-                    <li><a href="#personsL">L</a></li>
-                    <li><a href="#personsM">M</a></li>
-                    <li><a href="#personsN">N</a></li>
-                    <li><a href="#personsO">O</a></li>
-                    <li><a href="#personsP">P</a></li>
-                    <li><a href="#personsQ">Q</a></li>
-                    <li><a href="#personsR">R</a></li>
-                    <li><a href="#personsS">S</a></li>
-                    <li><a href="#personsT">T</a></li>
-                    <li><a href="#personsU">U</a></li>
-                    <li><a href="#personsV">V</a></li>
-                    <li><a href="#personsW">W</a></li>
-                    <li><a href="#personsX">X</a></li>
-                    <li><a href="#personsY">Y</a></li>
-                    <li><a href="#personsZ">Z</a></li>   
-                </ul>    
+                    <li>
+                        <a href="#personsA">A</a>
+                    </li>
+                    <li>
+                        <a href="#personsB">B</a>
+                    </li>
+                    <li>
+                        <a href="#personsC">C</a>
+                    </li>
+                    <li>
+                        <a href="#personsD">D</a>
+                    </li>
+                    <li>
+                        <a href="#personsE">E</a>
+                    </li>
+                    <li>
+                        <a href="#personsF">F</a>
+                    </li>
+                    <li>
+                        <a href="#personsG">G</a>
+                    </li>
+                    <li>
+                        <a href="#personsH">H</a>
+                    </li>
+                    <li>
+                        <a href="#personsI">I</a>
+                    </li>
+                    <li>
+                        <a href="#personsJ">J</a>
+                    </li>
+                    <li>
+                        <a href="#personsK">K</a>
+                    </li>
+                    <li>
+                        <a href="#personsL">L</a>
+                    </li>
+                    <li>
+                        <a href="#personsM">M</a>
+                    </li>
+                    <li>
+                        <a href="#personsN">N</a>
+                    </li>
+                    <li>
+                        <a href="#personsO">O</a>
+                    </li>
+                    <li>
+                        <a href="#personsP">P</a>
+                    </li>
+                    <li>
+                        <a href="#personsQ">Q</a>
+                    </li>
+                    <li>
+                        <a href="#personsR">R</a>
+                    </li>
+                    <li>
+                        <a href="#personsS">S</a>
+                    </li>
+                    <li>
+                        <a href="#personsT">T</a>
+                    </li>
+                    <li>
+                        <a href="#personsU">U</a>
+                    </li>
+                    <li>
+                        <a href="#personsV">V</a>
+                    </li>
+                    <li>
+                        <a href="#personsW">W</a>
+                    </li>
+                    <li>
+                        <a href="#personsX">X</a>
+                    </li>
+                    <li>
+                        <a href="#personsY">Y</a>
+                    </li>
+                    <li>
+                        <a href="#personsZ">Z</a>
+                    </li>
+                </ul>
             </div>
-            
+
         </div>
     </xsl:template>
     <xsl:template name="browsePlaces">
         <div class="browse-alpha tabbable">
             <ul class="list-inline">
-                <li><a href="#placesA">A</a></li>
-                <li><a href="#placesB">B</a></li>
-                <li><a href="#placesC">C</a></li>
-                <li><a href="#placesD">D</a></li>
-                <li><a href="#placesE">E</a></li>
-                <li><a href="#placesF">F</a></li>
-                <li><a href="#placesG">G</a></li>
-                <li><a href="#placesH">H</a></li>
-                <li><a href="#placesI">I</a></li>
-                <li><a href="#placesJ">J</a></li>
-                <li><a href="#placesK">K</a></li>
-                <li><a href="#placesL">L</a></li>
-                <li><a href="#placesM">M</a></li>
-                <li><a href="#placesN">N</a></li>
-                <li><a href="#placesO">O</a></li>
-                <li><a href="#placesP">P</a></li>
-                <li><a href="#placesQ">Q</a></li>
-                <li><a href="#placesR">R</a></li>
-                <li><a href="#placesS">S</a></li>
-                <li><a href="#placesT">T</a></li>
-                <li><a href="#placesU">U</a></li>
-                <li><a href="#placesV">V</a></li>
-                <li><a href="#placesW">W</a></li>
-                <li><a href="#placesX">X</a></li>
-                <li><a href="#placesY">Y</a></li>
-                <li><a href="#placesZ">Z</a></li>   
-            </ul>    
+                <li>
+                    <a href="#placesA">A</a>
+                </li>
+                <li>
+                    <a href="#placesB">B</a>
+                </li>
+                <li>
+                    <a href="#placesC">C</a>
+                </li>
+                <li>
+                    <a href="#placesD">D</a>
+                </li>
+                <li>
+                    <a href="#placesE">E</a>
+                </li>
+                <li>
+                    <a href="#placesF">F</a>
+                </li>
+                <li>
+                    <a href="#placesG">G</a>
+                </li>
+                <li>
+                    <a href="#placesH">H</a>
+                </li>
+                <li>
+                    <a href="#placesI">I</a>
+                </li>
+                <li>
+                    <a href="#placesJ">J</a>
+                </li>
+                <li>
+                    <a href="#placesK">K</a>
+                </li>
+                <li>
+                    <a href="#placesL">L</a>
+                </li>
+                <li>
+                    <a href="#placesM">M</a>
+                </li>
+                <li>
+                    <a href="#placesN">N</a>
+                </li>
+                <li>
+                    <a href="#placesO">O</a>
+                </li>
+                <li>
+                    <a href="#placesP">P</a>
+                </li>
+                <li>
+                    <a href="#placesQ">Q</a>
+                </li>
+                <li>
+                    <a href="#placesR">R</a>
+                </li>
+                <li>
+                    <a href="#placesS">S</a>
+                </li>
+                <li>
+                    <a href="#placesT">T</a>
+                </li>
+                <li>
+                    <a href="#placesU">U</a>
+                </li>
+                <li>
+                    <a href="#placesV">V</a>
+                </li>
+                <li>
+                    <a href="#placesW">W</a>
+                </li>
+                <li>
+                    <a href="#placesX">X</a>
+                </li>
+                <li>
+                    <a href="#placesY">Y</a>
+                </li>
+                <li>
+                    <a href="#placesZ">Z</a>
+                </li>
+            </ul>
         </div>
     </xsl:template>
     <xsl:template name="browseKeywords">
         <div class="browse-alpha tabbable">
             <ul class="list-inline">
-                <li><a href="#keywordsA">A</a></li>
-                <li><a href="#keywordsB">B</a></li>
-                <li><a href="#keywordsC">C</a></li>
-                <li><a href="#keywordsD">D</a></li>
-                <li><a href="#keywordsE">E</a></li>
-                <li><a href="#keywordsF">F</a></li>
-                <li><a href="#keywordsG">G</a></li>
-                <li><a href="#keywordsH">H</a></li>
-                <li><a href="#keywordsI">I</a></li>
-                <li><a href="#keywordsJ">J</a></li>
-                <li><a href="#keywordsK">K</a></li>
-                <li><a href="#keywordsL">L</a></li>
-                <li><a href="#keywordsM">M</a></li>
-                <li><a href="#keywordsN">N</a></li>
-                <li><a href="#keywordsO">O</a></li>
-                <li><a href="#keywordsP">P</a></li>
-                <li><a href="#keywordsQ">Q</a></li>
-                <li><a href="#keywordsR">R</a></li>
-                <li><a href="#keywordsS">S</a></li>
-                <li><a href="#keywordsT">T</a></li>
-                <li><a href="#keywordsU">U</a></li>
-                <li><a href="#keywordsV">V</a></li>
-                <li><a href="#keywordsW">W</a></li>
-                <li><a href="#keywordsX">X</a></li>
-                <li><a href="#keywordsY">Y</a></li>
-                <li><a href="#keywordsZ">Z</a></li>   
-            </ul>    
+                <li>
+                    <a href="#keywordsA">A</a>
+                </li>
+                <li>
+                    <a href="#keywordsB">B</a>
+                </li>
+                <li>
+                    <a href="#keywordsC">C</a>
+                </li>
+                <li>
+                    <a href="#keywordsD">D</a>
+                </li>
+                <li>
+                    <a href="#keywordsE">E</a>
+                </li>
+                <li>
+                    <a href="#keywordsF">F</a>
+                </li>
+                <li>
+                    <a href="#keywordsG">G</a>
+                </li>
+                <li>
+                    <a href="#keywordsH">H</a>
+                </li>
+                <li>
+                    <a href="#keywordsI">I</a>
+                </li>
+                <li>
+                    <a href="#keywordsJ">J</a>
+                </li>
+                <li>
+                    <a href="#keywordsK">K</a>
+                </li>
+                <li>
+                    <a href="#keywordsL">L</a>
+                </li>
+                <li>
+                    <a href="#keywordsM">M</a>
+                </li>
+                <li>
+                    <a href="#keywordsN">N</a>
+                </li>
+                <li>
+                    <a href="#keywordsO">O</a>
+                </li>
+                <li>
+                    <a href="#keywordsP">P</a>
+                </li>
+                <li>
+                    <a href="#keywordsQ">Q</a>
+                </li>
+                <li>
+                    <a href="#keywordsR">R</a>
+                </li>
+                <li>
+                    <a href="#keywordsS">S</a>
+                </li>
+                <li>
+                    <a href="#keywordsT">T</a>
+                </li>
+                <li>
+                    <a href="#keywordsU">U</a>
+                </li>
+                <li>
+                    <a href="#keywordsV">V</a>
+                </li>
+                <li>
+                    <a href="#keywordsW">W</a>
+                </li>
+                <li>
+                    <a href="#keywordsX">X</a>
+                </li>
+                <li>
+                    <a href="#keywordsY">Y</a>
+                </li>
+                <li>
+                    <a href="#keywordsZ">Z</a>
+                </li>
+            </ul>
         </div>
     </xsl:template>
     <xsl:template name="htmlPage">
@@ -499,14 +657,12 @@
                 </xsl:for-each>
             </xsl:if>
         </xsl:variable>
-        <xsl:variable name="collectionValues"
-            select="$config/descendant::*:collection[@record-URI-pattern = $collectionURIPattern][1]"/>
+        <xsl:variable name="collectionValues" select="$config/descendant::*:collection[@record-URI-pattern = $collectionURIPattern][1]"/>
         <xsl:variable name="collectionTemplate">
             <xsl:choose>
                 <xsl:when test="$idno != ''">
                     <!--                    <xsl:message> TEI record with an idno: <xsl:value-of select="$idno"/></xsl:message>-->
-                    <xsl:variable name="templatePath"
-                        select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')"/>
+                    <xsl:variable name="templatePath" select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')"/>
                     <xsl:if test="doc-available(xs:anyURI($templatePath))">
                         <xsl:sequence select="document(xs:anyURI($templatePath))"/>
                     </xsl:if>
@@ -515,11 +671,8 @@
                     <!--                    <xsl:message>Generate new HTML page</xsl:message>-->
                     <xsl:variable name="templatePath">
                         <xsl:choose>
-                            <xsl:when
-                                test="$config/descendant::*:collection[@name = $outputCollection]/@template">
-                                <xsl:value-of
-                                    select="concat($config/descendant::*:collection[@name = $outputCollection]/@template, '.html')"
-                                />
+                            <xsl:when test="$config/descendant::*:collection[@name = $outputCollection]/@template">
+                                <xsl:value-of select="concat($config/descendant::*:collection[@name = $outputCollection]/@template, '.html')" />
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="'page.html'"/>
@@ -527,9 +680,7 @@
                         </xsl:choose>
                     </xsl:variable>
                     <xsl:variable name="fullTemplatePath">
-                        <xsl:value-of
-                            select="concat($staticSitePath, '/', replace($templatePath, 'templates/', 'siteGenerator/components/'))"
-                        />
+                        <xsl:value-of select="concat($staticSitePath, '/', replace($templatePath, 'templates/', 'siteGenerator/components/'))" />
                     </xsl:variable>
                     <xsl:if test="doc-available($fullTemplatePath)">
                         <xsl:sequence select="document($fullTemplatePath)"/>
@@ -537,16 +688,14 @@
                 </xsl:when>
                 <xsl:when test="$nodes/@data-template-with != ''">
                     <!--                    <xsl:message>Convert HTML from old format </xsl:message>-->
-                    <xsl:variable name="templatePath"
-                        select="replace(concat($staticSitePath, '/siteGenerator/components/', substring-after($nodes/@data-template-with, 'templates/')), '//', '/')"/>
+                    <xsl:variable name="templatePath" select="replace(concat($staticSitePath, '/siteGenerator/components/', substring-after($nodes/@data-template-with, 'templates/')), '//', '/')"/>
                     <xsl:if test="doc-available(xs:anyURI($templatePath))">
                         <xsl:sequence select="document(xs:anyURI($templatePath))"/>
                     </xsl:if>
                 </xsl:when>
                 <xsl:otherwise>
                     <!--                    <xsl:message>Find generic page.html template</xsl:message>-->
-                    <xsl:variable name="templatePath"
-                        select="replace(concat($staticSitePath, '/siteGenerator/components/page.html'), '//', '/')"/>
+                    <xsl:variable name="templatePath" select="replace(concat($staticSitePath, '/siteGenerator/components/page.html'), '//', '/')"/>
                     <xsl:if test="doc-available(xs:anyURI($templatePath))">
                         <xsl:sequence select="document(xs:anyURI($templatePath))"/>
                     </xsl:if>
@@ -566,9 +715,8 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>Error Can not find matching template for HTML page
-                                        <xsl:value-of
-                                        select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')"
-                                    /></xsl:message>
+                                    <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')" />
+                                </xsl:message>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -579,9 +727,8 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>Error Can not find matching template for TEI page
-                                        <xsl:value-of
-                                        select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')"
-                                    /></xsl:message>
+                                    <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')" />
+                                </xsl:message>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -592,9 +739,8 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:message>Error Can not find matching template for TEI page
-                                        <xsl:value-of
-                                        select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')"
-                                    /></xsl:message>
+                                    <xsl:value-of select="replace(concat($staticSitePath, '/siteGenerator/components/', string($collectionValues/@template), '.html'), '//', '/')" />
+                                </xsl:message>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:when>
@@ -649,31 +795,26 @@
                                         <xsl:call-template name="otherDataFormats">
                                             <xsl:with-param name="node" select="t:TEI"/>
                                             <xsl:with-param name="idno" select="$idno"/>
-                                            <xsl:with-param name="formats" select="'print,tei,rdf'"
-                                            />
+                                            <xsl:with-param name="formats" select="'print,tei,rdf'" />
                                         </xsl:call-template>
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <xsl:apply-templates select="$nodes//t:TEI">
-                                                  <xsl:with-param name="collection"
-                                                  select="$collection"/>
+                                                    <xsl:with-param name="collection" select="$collection"/>
                                                 </xsl:apply-templates>
                                             </div>
                                             <div class="col-md-5 col-lg-4 right-menu">
                                                 <!-- Make dynamic -->
                                                 <!-- WS:ToDo Maps -->
                                                 <xsl:choose>
-                                                  <xsl:when
-                                                  test="$nodes/ancestor-or-self::t:TEI/descendant::t:geo">
-                                                  <xsl:call-template name="leafletMap">
-                                                  <xsl:with-param name="nodes"
-                                                  select="$nodes/ancestor-or-self::t:TEI"/>
-                                                  </xsl:call-template>
-                                                  </xsl:when>
-                                                  <!-- Maps for related places -->
+                                                    <xsl:when test="$nodes/ancestor-or-self::t:TEI/descendant::t:geo">
+                                                        <xsl:call-template name="leafletMap">
+                                                            <xsl:with-param name="nodes" select="$nodes/ancestor-or-self::t:TEI"/>
+                                                        </xsl:call-template>
+                                                    </xsl:when>
+                                                    <!-- Maps for related places -->
                                                 </xsl:choose>
-                                                <span class="rdfRelationships"
-                                                  data-recordID="{$idno}"/>
+                                                <span class="rdfRelationships" data-recordID="{$idno}"/>
                                             </div>
                                         </div>
                                     </div>
@@ -682,20 +823,15 @@
                             <xsl:otherwise>
                                 <xsl:call-template name="genericTEIPage">
                                     <xsl:with-param name="config" select="$config"/>
-                                    <xsl:with-param name="repository-title"
-                                        select="$repository-title"/>
-                                    <xsl:with-param name="collection-title"
-                                        select="$collection-title"/>
+                                    <xsl:with-param name="repository-title" select="$repository-title"/>
+                                    <xsl:with-param name="collection-title" select="$collection-title"/>
                                 </xsl:call-template>
                             </xsl:otherwise>
                         </xsl:choose>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:if
-                    test="doc-available(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/footer.html')))">
-                    <xsl:copy-of
-                        select="document(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/footer.html')))"
-                    />
+                <xsl:if test="doc-available(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/footer.html')))">
+                    <xsl:copy-of select="document(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/footer.html')))" />
                 </xsl:if>
             </body>
             <xsl:if test="$template/child::*[1]/html:script">
@@ -708,55 +844,9 @@
         <xsl:choose>
             <xsl:when test="@data-template = 'app:shared-content'">
                 <xsl:variable name="sharedContent" select="@data-template-path"/>
-                <xsl:if
-                    test="doc-available(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/', tokenize($sharedContent, '/')[last()])))">
-                    <xsl:copy-of
-                        select="document(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/', tokenize($sharedContent, '/')[last()])))"
-                    />
+                <xsl:if test="doc-available(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/', tokenize($sharedContent, '/')[last()])))">
+                    <xsl:copy-of select="document(xs:anyURI(concat($staticSitePath, '/siteGenerator/components/', tokenize($sharedContent, '/')[last()])))" />
                 </xsl:if>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:element name="{name(.)}" namespace="http://www.w3.org/1999/xhtml">
-                    <xsl:for-each select="@*">
-                        <xsl:attribute name="{name(.)}">
-                            <xsl:value-of select="."/>
-                        </xsl:attribute>
-                    </xsl:for-each>
-                    <xsl:apply-templates/>
-                </xsl:element>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
-    <xsl:template match="html:span">
-        <xsl:choose>
-            <xsl:when test="@data-template = 'app:keyboard-select-menu'">
-                <xsl:variable name="inputID" select="@data-template-input-id"/>
-                <xsl:choose>
-                    <xsl:when test="$config/descendant::*:keyboard-options/child::*">
-                        <span class="keyboard-menu" xmlns="http://www.w3.org/1999/xhtml">
-                            <button type="button" class="btn btn-default dropdown-toggle"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                title="Select Keyboard"> &#160;<span
-                                    class="syriaca-icon syriaca-keyboard">&#160; </span><span
-                                    class="caret"/>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <xsl:for-each
-                                    select="$config/descendant::*:keyboard-options/*:option">
-                                    <li xmlns="http://www.w3.org/1999/xhtml">
-                                        <a href="#" class="keyboard-select" id="{@id}"
-                                            data-keyboard-id="{$inputID}">
-                                            <xsl:value-of select="."/>
-                                        </a>
-                                    </li>
-                                </xsl:for-each>
-                            </ul>
-                        </span>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:call-template name="generickeyboardSelect"/>
-                    </xsl:otherwise>
-                </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:element name="{name(.)}" namespace="http://www.w3.org/1999/xhtml">
@@ -810,22 +900,17 @@
                                     <li>
                                         <xsl:choose>
                                             <xsl:when test="*:narrower">
-                                                <xsl:variable name="uID"
-                                                  select="tokenize(@rdf:about, '/')[last()]"/>
-                                                <a href="#" type="button" class="expandTerms"
-                                                  data-toggle="collapse" data-target="#view{$uID}"
-                                                  style="display:inline-block;margin:.5em .75em;">
-                                                  <span class="glyphicon glyphicon-plus-sign"/>
+                                                <xsl:variable name="uID" select="tokenize(@rdf:about, '/')[last()]"/>
+                                                <a href="#" type="button" class="expandTerms" data-toggle="collapse" data-target="#view{$uID}" style="display:inline-block;margin:.5em .75em;">
+                                                    <span class="glyphicon glyphicon-plus-sign"/>
                                                 </a>
                                             </xsl:when>
                                             <xsl:otherwise>
-                                                <a href="#" type="button" class="expandTerms"
-                                                  style="display:inline-block;margin:.5em 1.25em;">
+                                                <a href="#" type="button" class="expandTerms" style="display:inline-block;margin:.5em 1.25em;">
                                                   &#160; </a>
                                             </xsl:otherwise>
                                         </xsl:choose>
-                                        <a
-                                            href="{concat(replace($id,$base-uri,concat($staticSitePath,'data')),'.html')}">
+                                        <a href="{concat(replace($id,$base-uri,concat($staticSitePath,'data')),'.html')}">
                                             <xsl:value-of select="*:prefLabel[@xml:lang = 'en']"/>
                                         </a>
                                         <xsl:call-template name="narrowerTerms">
@@ -841,17 +926,14 @@
             <xsl:otherwise>
                 <div class="main-content-block">
                     <div class="interior-content">
-                        <div class="container otherFormats" xmlns="http://www.w3.org/1999/xhtml">
-                            <a href="javascript:window.print();" type="button"
-                                class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip"
-                                title="Click to send this page to the printer.">
+                        <div class="container otherFormats"
+                            xmlns="http://www.w3.org/1999/xhtml">
+                            <a href="javascript:window.print();" type="button" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to send this page to the printer.">
                                 <span class="glyphicon glyphicon-print" aria-hidden="true"/>
                             </a>
                             <xsl:text>&#160;</xsl:text>
                             <!-- WS:NOTE needs work on the link.  -->
-                            <a href="{concat($dataPath,'.rdf')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
-                                title="Click to view the RDF-XML data for this record.">
+                            <a href="{concat($dataPath,'.rdf')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the RDF-XML data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 RDF/XML </a>
                             <xsl:text>&#160;</xsl:text>
@@ -865,19 +947,15 @@
                                             <xsl:value-of select="*:prefLabel[@xml:lang = 'en']"/>
                                             <xsl:if test="*:prefLabel[@xml:lang = 'syr']">
                                                 <xsl:text> - </xsl:text>
-                                                <xsl:value-of
-                                                  select="*:prefLabel[@xml:lang = 'syr']"/>
+                                                <xsl:value-of select="*:prefLabel[@xml:lang = 'syr']"/>
                                             </xsl:if>
                                         </span>
                                     </h1>
                                 </div>
-                                <div class="idno seriesStmt"
-                                    style="margin:0; margin-top:.25em; margin-bottom: 1em; padding:1em; color: #999999;">
+                                <div class="idno seriesStmt" style="margin:0; margin-top:.25em; margin-bottom: 1em; padding:1em; color: #999999;">
                                     <small>
                                         <span class="uri">
-                                            <button type="button" class="btn btn-default btn-xs"
-                                                id="idnoBtn" data-clipboard-action="copy"
-                                                data-clipboard-target="#syriaca-id">
+                                            <button type="button" class="btn btn-default btn-xs" id="idnoBtn" data-clipboard-action="copy" data-clipboard-target="#syriaca-id">
                                                 <span class="srp-label">URI</span>
                                             </button>
                                             <span id="syriaca-id">
@@ -892,50 +970,43 @@
                                             clipboard.on('error', function(e) {
                                             console.log(e);
                                             });
-                                        </script>
+                                            </script>
                                         </span>
                                     </small>
                                     <div>
                                         <xsl:if test="*:scopeNote[@xml:lang = 'en']">
                                             <h3>Scope Note</h3>
                                             <p class="indent">
-                                                <xsl:apply-templates
-                                                  select="*:scopeNote[@xml:lang = 'en']"/>
+                                                <xsl:apply-templates select="*:scopeNote[@xml:lang = 'en']"/>
                                             </p>
                                         </xsl:if>
                                         <h3>Label(s)</h3>
-                                        <xsl:for-each-group select="*:prefLabel"
-                                            group-by="@xml:lang">
+                                        <xsl:for-each-group select="*:prefLabel" group-by="@xml:lang">
                                             <h4>
-                                                <xsl:value-of
-                                                  select="local:expand-lang(current-grouping-key(), '')"
-                                                />
+                                                <xsl:value-of select="local:expand-lang(current-grouping-key(), '')" />
                                             </h4>
                                             <p class="indent">
                                                 <xsl:for-each select="current-group()">
-                                                  <xsl:value-of select="."/>
-                                                  <xsl:if test="position() != last()">
-                                                  <xsl:text>, </xsl:text>
-                                                  </xsl:if>
+                                                    <xsl:value-of select="."/>
+                                                    <xsl:if test="position() != last()">
+                                                        <xsl:text>, </xsl:text>
+                                                    </xsl:if>
                                                 </xsl:for-each>
                                             </p>
                                         </xsl:for-each-group>
                                         <xsl:if test="*:altLabel">
                                             <h3>Alternate Label(s)</h3>
-                                            <xsl:for-each-group select="*:altLabel"
-                                                group-by="@xml:lang">
+                                            <xsl:for-each-group select="*:altLabel" group-by="@xml:lang">
                                                 <h4>
-                                                  <xsl:value-of
-                                                  select="local:expand-lang(current-grouping-key(), '')"
-                                                  />
+                                                    <xsl:value-of select="local:expand-lang(current-grouping-key(), '')" />
                                                 </h4>
                                                 <p class="indent">
-                                                  <xsl:for-each select="current-group()">
-                                                  <xsl:value-of select="."/>
-                                                  <xsl:if test="position() != last()">
-                                                  <xsl:text>, </xsl:text>
-                                                  </xsl:if>
-                                                  </xsl:for-each>
+                                                    <xsl:for-each select="current-group()">
+                                                        <xsl:value-of select="."/>
+                                                        <xsl:if test="position() != last()">
+                                                            <xsl:text>, </xsl:text>
+                                                        </xsl:if>
+                                                    </xsl:for-each>
                                                 </p>
                                             </xsl:for-each-group>
                                         </xsl:if>
@@ -948,14 +1019,11 @@
                                     <ul>
                                         <xsl:for-each select="*:broader">
                                             <xsl:variable name="broaderID" select="@rdf:resource"/>
-                                            <xsl:for-each
-                                                select="//rdf:Description[@rdf:about = $broaderID]">
+                                            <xsl:for-each select="//rdf:Description[@rdf:about = $broaderID]">
                                                 <li>
-                                                  <a
-                                                  href="{concat(replace($broaderID,$base-uri,concat($staticSitePath,'data')),'.html')}">
-                                                  <xsl:value-of
-                                                  select="*:prefLabel[@xml:lang = 'en']"/>
-                                                  </a>
+                                                    <a href="{concat(replace($broaderID,$base-uri,concat($staticSitePath,'data')),'.html')}">
+                                                        <xsl:value-of select="*:prefLabel[@xml:lang = 'en']"/>
+                                                    </a>
                                                 </li>
                                             </xsl:for-each>
                                         </xsl:for-each>
@@ -966,14 +1034,11 @@
                                     <ul>
                                         <xsl:for-each select="*:narrower">
                                             <xsl:variable name="narrowerID" select="@rdf:resource"/>
-                                            <xsl:for-each
-                                                select="//rdf:Description[@rdf:about = $narrowerID]">
+                                            <xsl:for-each select="//rdf:Description[@rdf:about = $narrowerID]">
                                                 <li>
-                                                  <a
-                                                  href="{concat(replace($narrowerID,$base-uri,concat($staticSitePath,'data')),'.html')}">
-                                                  <xsl:value-of
-                                                  select="*:prefLabel[@xml:lang = 'en']"/>
-                                                  </a>
+                                                    <a href="{concat(replace($narrowerID,$base-uri,concat($staticSitePath,'data')),'.html')}">
+                                                        <xsl:value-of select="*:prefLabel[@xml:lang = 'en']"/>
+                                                    </a>
                                                 </li>
                                             </xsl:for-each>
                                         </xsl:for-each>
@@ -984,14 +1049,11 @@
                                     <ul>
                                         <xsl:for-each select="*:related">
                                             <xsl:variable name="relatedID" select="@rdf:resource"/>
-                                            <xsl:for-each
-                                                select="//rdf:Description[@rdf:about = $relatedID]">
+                                            <xsl:for-each select="//rdf:Description[@rdf:about = $relatedID]">
                                                 <li>
-                                                  <a
-                                                  href="{concat(replace($relatedID,$base-uri,concat($staticSitePath,'data')),'.html')}">
-                                                  <xsl:value-of
-                                                  select="*:prefLabel[@xml:lang = 'en']"/>
-                                                  </a>
+                                                    <a href="{concat(replace($relatedID,$base-uri,concat($staticSitePath,'data')),'.html')}">
+                                                        <xsl:value-of select="*:prefLabel[@xml:lang = 'en']"/>
+                                                    </a>
                                                 </li>
                                             </xsl:for-each>
                                         </xsl:for-each>
@@ -1017,22 +1079,17 @@
                         <li>
                             <xsl:choose>
                                 <xsl:when test="*:narrower">
-                                    <xsl:variable name="uID"
-                                        select="tokenize(@rdf:about, '/')[last()]"/>
-                                    <a href="#" type="button" class="expandTerms"
-                                        data-toggle="collapse" data-target="#view{$uID}"
-                                        style="display:inline-block;margin:.5em .75em;">
+                                    <xsl:variable name="uID" select="tokenize(@rdf:about, '/')[last()]"/>
+                                    <a href="#" type="button" class="expandTerms" data-toggle="collapse" data-target="#view{$uID}" style="display:inline-block;margin:.5em .75em;">
                                         <span class="glyphicon glyphicon-plus-sign"/>
                                     </a>
                                 </xsl:when>
                                 <xsl:otherwise>
-                                    <a href="#" type="button" class="expandTerms"
-                                        style="display:inline-block;margin:.5em 1.25em;"> &#160;
+                                    <a href="#" type="button" class="expandTerms" style="display:inline-block;margin:.5em 1.25em;"> &#160;
                                     </a>
                                 </xsl:otherwise>
                             </xsl:choose>
-                            <a
-                                href="{concat(replace($termID,$base-uri,concat($staticSitePath,'data')),'.html')}">
+                            <a href="{concat(replace($termID,$base-uri,concat($staticSitePath,'data')),'.html')}">
                                 <xsl:value-of select="*:prefLabel[@xml:lang = 'en']"/>
                             </a>
                             <xsl:call-template name="narrowerTerms">
@@ -1051,80 +1108,62 @@
         <xsl:param name="idno"/>
         <!-- WS: Needs work -->
         <xsl:variable name="teiRec" select="document-uri(root($node))"/>
-        <xsl:variable name="dataPath"
-            select="substring-before(concat($staticSitePath, '/data/', replace($resource-path, $dataPath, '')), '.xml')"/>
+        <xsl:variable name="dataPath" select="substring-before(concat($staticSitePath, '/data/', replace($resource-path, $dataPath, '')), '.xml')"/>
         <xsl:if test="$formats != ''">
-            <div class="container otherFormats" xmlns="http://www.w3.org/1999/xhtml">
+            <div class="container otherFormats"
+                xmlns="http://www.w3.org/1999/xhtml">
                 <xsl:for-each select="tokenize($formats, ',')">
                     <xsl:choose>
                         <xsl:when test=". = 'geojson'">
-                            <a href="{concat($dataPath,'.geojson')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
-                                title="Click to view the GeoJSON data for this record.">
+                            <a href="{concat($dataPath,'.geojson')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the GeoJSON data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 GeoJSON </a>
                             <xsl:text>&#160;</xsl:text>
                         </xsl:when>
                         <xsl:when test=". = 'json'">
-                            <a href="{concat($dataPath,'.json')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
-                                title="Click to view the GeoJSON data for this record.">
+                            <a href="{concat($dataPath,'.json')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the GeoJSON data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 JSON-LD </a>
                             <xsl:text>&#160;</xsl:text>
                         </xsl:when>
                         <xsl:when test=". = 'kml'">
                             <xsl:if test="$node/descendant::t:location/t:geo">
-                                <a href="{concat($dataPath,'.kml')}" class="btn btn-default btn-xs"
-                                    id="teiBtn" data-toggle="tooltip"
-                                    title="Click to view the KML data for this record.">
-                                    <span class="glyphicon glyphicon-download-alt"
-                                        aria-hidden="true"/> KML </a>
+                                <a href="{concat($dataPath,'.kml')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the KML data for this record.">
+                                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
+ KML </a>
                                 <xsl:text>&#160;</xsl:text>
                             </xsl:if>
                         </xsl:when>
                         <xsl:when test=". = 'print'">
-                            <a href="javascript:window.print();" type="button"
-                                class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip"
-                                title="Click to send this page to the printer.">
+                            <a href="javascript:window.print();" type="button" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to send this page to the printer.">
                                 <span class="glyphicon glyphicon-print" aria-hidden="true"/>
                             </a>
                             <xsl:text>&#160;</xsl:text>
                         </xsl:when>
                         <xsl:when test=". = 'rdf'">
-                            <a href="{concat($dataPath,'.rdf')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
-                                title="Click to view the RDF-XML data for this record.">
+                            <a href="{concat($dataPath,'.rdf')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the RDF-XML data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 RDF/XML </a>
                             <xsl:text>&#160;</xsl:text>
                         </xsl:when>
                         <xsl:when test=". = 'tei'">
-                            <a href="{concat($teiRec,'.tei')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
-                                title="Click to view the TEI XML data for this record.">
+                            <a href="{concat($teiRec,'.tei')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the TEI XML data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 TEI/XML </a>
                             <xsl:text>&#160;</xsl:text>
                         </xsl:when>
                         <xsl:when test=". = 'text'">
-                            <a href="{concat($dataPath,'.txt')}" class="btn btn-default btn-xs"
-                                id="teiBtn" data-toggle="tooltip"
-                                title="Click to view the plain text data for this record.">
+                            <a href="{concat($dataPath,'.txt')}" class="btn btn-default btn-xs" id="teiBtn" data-toggle="tooltip" title="Click to view the plain text data for this record.">
                                 <span class="glyphicon glyphicon-download-alt" aria-hidden="true"/>
                                 Text </a>
                             <xsl:text>&#160;</xsl:text>
                         </xsl:when>
                         <xsl:when test=". = 'citations'">
-                            <xsl:variable name="zoteroGrp"
-                                select="$config/descendant::*:zotero/@group"/>
-                            <xsl:if test="$zoteroGrp != ''"> (<a
-                                    href="{concat('https://api.zotero.org/groups/',$zoteroGrp,'/items/',tokenize($idno,'/')[last()])}"
-                                    class="btn btn-default btn-xs" id="citationsBtn"
-                                    data-toggle="tooltip"
-                                    title="Click for additional Citation Styles.">
+                            <xsl:variable name="zoteroGrp" select="$config/descendant::*:zotero/@group"/>
+                            <xsl:if test="$zoteroGrp != ''"> (                                <a href="{concat('https://api.zotero.org/groups/',$zoteroGrp,'/items/',tokenize($idno,'/')[last()])}" class="btn btn-default btn-xs" id="citationsBtn" data-toggle="tooltip" title="Click for additional Citation Styles.">
                                     <span class="glyphicon glyphicon-th-list" aria-hidden="true"/>
-                                    Cite </a><xsl:text>&#160;</xsl:text>
+                                    Cite </a>
+                                <xsl:text>&#160;</xsl:text>
                             </xsl:if>
                         </xsl:when>
                     </xsl:choose>
@@ -1200,7 +1239,8 @@
     </xsl:template>
     <xsl:template name="genericHeader">
         <head xmlns="http://www.w3.org/1999/xhtml">
-            <title>Generic Header: <xsl:value-of select="$resource-title"/></title>
+            <title>Generic Header: <xsl:value-of select="$resource-title"/>
+            </title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <meta name="DC.type" property="dc.type" content="Text"/>
             <meta name="DC.isPartOf" property="dc.ispartof" content="{$config/html:title[1]}"/>
@@ -1232,196 +1272,33 @@
         </head>
     </xsl:template>
     <xsl:template name="genericNav">
-        <nav xmlns="http://www.w3.org/1999/xhtml" class="navbar navbar-default navbar-fixed-top"
-            role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"/>
-                    <span class="icon-bar"/>
-                    <span class="icon-bar"/>
-                </button>
-                <a class="navbar-brand banner-container" href="index.html">
-                    <span class="syriaca-icon syriaca-syriaca banner-icon">
-                        <span class="path1"/>
-                        <span class="path2"/>
-                        <span class="path3"/>
-                        <span class="path4"/>
-                    </span>
-                    <span class="banner-text">
-                        <xsl:value-of select="$config/html:title[1]"/>
-                    </span>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"  xmlns="http://www.w3.org/1999/xhtml" role="navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand banner-container" href="/index.html">
+                    <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
+                    <span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span
+            >                    </span
+          >
                 </a>
-            </div>
-            <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <xsl:call-template name="syriacaSharedLinks"/>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                                <span class="mobile-submenu">About</span>  <b class="caret"/>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="/about-syriac.html">What is Syriac?</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/about-srophe.html">Project Overview</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/project-team.html">Project Team</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/project-partners.html">Project Partners</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/geo/index.html">
-                                    <span class="icon-text">Gazetteer</span>
-                                </a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="http://vu.edu/syriac">Support Our Work</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/contact-us.html">Contact Us</a>
-                            </li>
-                            <li role="presentation" class="divider"/>
-                            <li>
-                                <a href="/documentation/index.html">
-                                    <span class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"/>
-                                    <span class="icon-text">Documentation</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="search.html" class="nav-text">Advanced Search</a>
-                    </li>
-                    <li>
-                        <div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="search.html" method="get">
-                                <div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav"/>
-                                    <xsl:call-template name="keyboard-select-menu">
-                                        <xsl:with-param name="inputID" select="'keywordNav'"/>
-                                    </xsl:call-template>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search">
-                                        <span class="glyphicon glyphicon-search"/>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="btn-nav">
-                            <button class="btn btn-default navbar-btn" id="font"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                title="Select Font">
-                                <span class="glyphicon glyphicon-font"/>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-right" id="swap-font">
-                                <li>
-                                    <a href="#" class="swap-font" id="DefaultSelect"
-                                        data-font-id="EstrangeloEdessa">Default</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="swap-font" id="EstrangeloEdessaSelect"
-                                        data-font-id="EstrangeloEdessa">Estrangelo Edessa</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="swap-font" id="EastSyriacAdiabeneSelect"
-                                        data-font-id="EastSyriacAdiabene">East Syriac Adiabene</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="swap-font" id="SertoBatnanSelect"
-                                        data-font-id="SertoBatnan">Serto Batnan</a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/documentation/wiki.html?wiki-page=/How-to-view-Syriac-script&amp;wiki-uri=https://github.com/srophe/syriaca-data/wiki"
-                                        >Help <span class="glyphicon glyphicon-question-sign"/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <!-- <xsl:call-template name="syriacaSharedLinks"/> -->
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </nav>
     </xsl:template>
-    <xsl:template name="generickeyboardSelect">
-        <span xmlns="http://www.w3.org/1999/xhtml" class="keyboard-menu">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false" title="Select Keyboard"> &#160;<span
-                    class="syriaca-icon syriaca-keyboard">&#160; </span><span class="caret"/>
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="#" class="keyboard-select" id="syriac-phonetic"
-                        data-keyboard-id="keywordNav">Syriac Phonetic</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="syriac-standard"
-                        data-keyboard-id="keywordNav">Syriac Standard</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Arabic (101)"
-                        data-keyboard-id="keywordNav">Arabic Mod. Standard</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Hebrew" data-keyboard-id="keywordNav"
-                        >Hebrew</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Russian"
-                        data-keyboard-id="keywordNav">Russian</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="ms-Greek" data-keyboard-id="keywordNav"
-                        >Greek</a>
-                </li>
-                <li>
-                    <a href="#" class="keyboard-select" id="qwerty" data-keyboard-id="keywordNav"
-                        >English QWERTY</a>
-                </li>
-            </ul>
-        </span>
-    </xsl:template>
-    <xsl:template name="keyboard-select-menu">
-        <xsl:param name="inputID"/>
-        <xsl:if test="$config/descendant::*:keyboard-options/child::*">
-            <span xmlns="http://www.w3.org/1999/xhtml" class="keyboard-menu">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" title="Select Keyboard"> &#160;<span
-                        class="syriaca-icon syriaca-keyboard">&#160; </span><span class="caret"/>
-                </button>
-                <ul class="dropdown-menu">
-                    <xsl:for-each select="$config/descendant::*:keyboard-options/*:option">
-                        <li xmlns="http://www.w3.org/1999/xhtml">
-                            <a href="#" class="keyboard-select" id="{@id}"
-                                data-keyboard-id="{$inputID}">
-                                <xsl:value-of select="."/>
-                            </a>
-                        </li>
-                    </xsl:for-each>
-                </ul>
-            </span>
-        </xsl:if>
-    </xsl:template>
     <xsl:template name="syriacaSharedLinks">
         <xsl:if test="doc-available(concat($applicationPath, '/', 'templates/shared-links.html'))">
-            <xsl:copy-of select="doc(concat($applicationPath, '/', 'templates/shared-links.html'))"
-            />
+            <xsl:copy-of select="doc(concat($applicationPath, '/', 'templates/shared-links.html'))" />
         </xsl:if>
     </xsl:template>
 

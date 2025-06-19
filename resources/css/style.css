@@ -608,3 +608,47 @@ td .pre {
   border-collapse: collapse;
   width: 100%;
 } */
+
+/* LETTER BUTTONS */
+.letter-btn {
+  width: 24px;
+  height: 24px;
+  line-height: 0;
+}
+
+.grid-col-5 {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  place-items: center;
+  grid-auto-columns: min-content;
+}
+
+#browse--options button.active svg.close {
+  display: none;
+}
+
+#browse--options button.active svg.open {
+  display: inline-block;
+}
+
+#browse--options button:not(.active) svg.close {
+  display: inline-block;
+}
+
+#browse--options button:not(.active) svg.open {
+  display: none;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #456889;
+  --bs-btn-border-color: #456889;
+  --bs-btn-hover-color: #ffffff;
+  --bs-btn-hover-border-color: #456889;
+  --bs-btn-active-bg: #456889;
+  --bs-btn-hover-bg: #456889;
+}
+
+a {
+  color: #337ab7;
+}
+
