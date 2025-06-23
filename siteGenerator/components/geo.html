@@ -11,8 +11,8 @@
         <meta name="DC.type" property="dc.type" content="Text"/>
         <meta name="DC.isPartOf" property="dc.ispartof" content="Syriaca.org: The Syriac Reference Portal"/>
         <meta name="DC.isPartOf" property="dc.ispartof" content="The Syriac Gazetteer"/>
-        <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/>
+        <!-- Bootstrap  5 -->
+        <link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/>
         <!-- Smart menus -->
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/>
         <!-- Srophe styles -->
@@ -29,125 +29,31 @@
         <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/>
         <script type="text/javascript" src="/resources/js/clipboard.min.js"/>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/>
-        <!-- keyboard widget css & script -->
-        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/>
-        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/>
-        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"/>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl : true,
-                    layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
-                });
-
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-
-            })
-        </script>
+        <!-- Plausible Analytics -->
+        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
     </head>
     <body id="body">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-template="app:fix-links">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"/>
-                    <span class="icon-bar"/>
-                    <span class="icon-bar"/>
-                </button>
-                <a class="navbar-brand banner-container" href="/geo/index.html"> 
-                    <span class="syriaca-icon syriaca-syriaca banner-icon" data-template="app:logo"/>
-                    <span class="banner-text" data-template="config:collection-title" data-template-collection="places">Collection Title</span>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center">
+            <div class="container-fluid">
+                <a class="navbar-brand banner-container" href="/index.html"> 
+                    <span class="syriaca-icon syriaca-syriaca banner-icon"></span>
+                    <span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span></span>
                 </a>
-            </div>
-            <div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="/geo/browse.html" class="nav-text">Browse</a>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">Publications</span>  <b class="caret"/>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a href="/index.html">
-                                    <span class="icon-text">Home</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/geo/index.html">
-                                    <span class="icon-text">Gazetteer</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/bibl/index.html">
-                                    <span class="icon-text">Works Cited</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/d3xquery/index.html">
-                                    <span class="icon-text">Visualize relationships</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="/search.html" class="nav-text">Advanced Search</a>
-                    </li>
-                    <li>
-                        <div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get">
-                                <div class="form-group">
-                                    <input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/>
-                                    <span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/>
-                                    <button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search">
-                                        <span class="glyphicon glyphicon-search"/>
-                                    </button>                                    
-                                </div>
-                            </form>
-                        </div>
-                    </li>
-                    <li data-template="app:shared-content" data-template-path="/templates/fontMenu.html"/>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </nav>
         <div id="content" class="text"/>

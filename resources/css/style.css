@@ -7,7 +7,6 @@
 @import url("syr-font-families.css");
 
 /* A */
-.abstract {}
 .alpha-pages {margin:-1.5em 0 1em 0;}
 #advancedSearch {padding:2em 1em; background-color:#F7F7F9;}
 .api-path {width:15%}
@@ -191,7 +190,7 @@ footer .poweredby img { width: 75px; }
 .geo-home #map {border-bottom:4px solid #456889}
 
 /* H */
-.hint {font-size:small; font-style:italic; font-color:grey;}
+.hint {font-size:small; font-style:italic; color:grey;}
 .home-page-text {
     color:white; 
     font-size:1.75em; 
@@ -252,14 +251,8 @@ img{ margin:0px }
 
 /* L */
 .label {color:black;}
-/* Styles for languages and scripts for Syriac styles */
-/* styles for languages and scripts */
-:lang(en) {
-  /* font-size: 1em; */
-	/* font-family: arial, sans-serif; */
-  /* font-family: 'Libre Caslon Text', 'Georgia', 'Times New Roman', Times, serif; */
-}
 
+/* Styles for languages and scripts for Syriac styles */
 :lang(syr),:lang(syc) {
  font-family: "EstrangeloEdessa", "Estrangelo Edessa", Verdana, Arial, Helvetica, sans-serif;
   /*font-size:large;*/
@@ -428,7 +421,7 @@ pre {
 .result {border-bottom:1px dotted #eee; padding-top:.5em; padding-bottom: 1em;}
 .results-list-desc {display:block;}
 .relation .short-rec-view {margin: 1em;}
-.relationship-type {font-color:#666666; display:block;}
+.relationship-type {color:#666666; display:block;}
 .row { margin-left: 0px; margin-right: 0px;}
 
 /* S */
@@ -581,9 +574,9 @@ pre {
     to { transform: scale(1) rotate(360deg); }
 }
 
-@-webkit-keyframes spin2 {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(360deg); }
+@keyframes spin2 {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 /* SPEAR Styles */
@@ -652,3 +645,8 @@ a {
   color: #337ab7;
 }
 
+.factoid-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}

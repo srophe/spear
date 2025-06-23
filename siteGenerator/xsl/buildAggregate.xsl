@@ -1245,7 +1245,7 @@
             <meta name="DC.type" property="dc.type" content="Text"/>
             <meta name="DC.isPartOf" property="dc.ispartof" content="{$config/html:title[1]}"/>
             <link rel="shortcut icon" href="/resources/images/fav-icons/syriaca-favicon.ico"/>
-            <!-- Bootstrap 3 -->
+            <!-- Bootstrap  5 -->
             <link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/>
             <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/>
             <!-- Srophe styles -->
