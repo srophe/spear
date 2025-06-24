@@ -511,7 +511,8 @@
                                     -->
                                     <span>
                                         <a href="https://syriaccorpus.org/api/cts?urn={$ref}">
-                                            See full text at The Syriac Corpus <span class="glyphicon glyphicon-circle-arrow-right"> </span>
+                                            <span>See full text at The Syriac Corpus</span> 
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                                         </a>
                                     </span>
                                 </div>
@@ -918,7 +919,10 @@
                         <span class="spearLabel">Birth date: </span>
                         <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                        <a href="{$url}" class="factoid-more"> 
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+                        </a>
                     </p>
                 </xsl:if>
                 <xsl:if test="descendant::t:birth/t:placeName">
@@ -926,7 +930,9 @@
                         <span class="spearLabel">Birth place: </span>
                         <xsl:apply-templates select="descendant::t:birth/t:note" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        <a href="{$url}" class="factoid-more">
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                         </a>
                     </p>
                 </xsl:if>
@@ -937,7 +943,10 @@
                         <span class="spearLabel">Death date: </span>
                         <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                        <a href="{$url}" class="factoid-more"> 
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+                        </a>
                     </p>
                 </xsl:if>
                 <xsl:if test="descendant::t:death/t:placeName">
@@ -945,7 +954,9 @@
                         <span class="spearLabel">Death place: </span>
                         <xsl:apply-templates select="descendant::t:death/t:note" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        <a href="{$url}" class="factoid-more">
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                         </a>
                     </p>
                 </xsl:if>
@@ -954,7 +965,9 @@
                         <p class="indent">
                             <xsl:apply-templates select="descendant::t:state/t:note" mode="aggregate"/>
                             <xsl:text> </xsl:text>
-                            <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                            <a href="{$url}" class="factoid-more">
+                                <span>See factoid page</span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                             </a>
                         </p>
             </xsl:when>
@@ -962,7 +975,9 @@
                         <p class="indent">
                             <xsl:apply-templates mode="spear"/>
                             <xsl:text> </xsl:text>
-                            <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                            <a href="{$url}" class="factoid-more"> 
+                                <span>See factoid page</span> 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                             </a>
                         </p>
             </xsl:when>
@@ -977,8 +992,9 @@
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:text> </xsl:text>
-                    <a href="{$url}" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    <a href="{$url}" class="factoid-more">
+                        <span>See factoid page</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                     </a>
                 </p>
                 <xsl:if test="@subtype='event'"><hr/></xsl:if>
@@ -994,7 +1010,10 @@
                         <span class="spearLabel">Birth date: </span>
                         <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                        <a href="{$url}" class="factoid-more">
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+                        </a>
                     </p>
                 </xsl:if>
                 <xsl:if test="descendant::t:birth/t:placeName">
@@ -1002,7 +1021,9 @@
                         <span class="spearLabel">Birth place: </span>
                         <xsl:apply-templates select="descendant::t:birth/t:note" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        <a href="{$url}" class="factoid-more">
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                         </a>
                     </p>
                 </xsl:if>
@@ -1013,7 +1034,10 @@
                         <span class="spearLabel">Death date: </span>
                         <xsl:apply-templates select="descendant::t:date" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a>
+                        <a href="{$url}" class="factoid-more">
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
+                        </a>
                     </p>
                 </xsl:if>
                 <xsl:if test="descendant::t:death/t:placeName">
@@ -1021,7 +1045,9 @@
                         <span class="spearLabel">Death place: </span>
                         <xsl:apply-templates select="descendant::t:death/t:note" mode="aggregate"/>
                         <xsl:text> </xsl:text>
-                        <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                        <a href="{$url}" class="factoid-more">
+                            <span>See factoid page</span> 
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                         </a>
                     </p>
                 </xsl:if>
@@ -1030,7 +1056,9 @@
                 <p class="indent"><span class="spearLabel"><xsl:value-of select="descendant::t:state/@type"/>: </span>
                     <xsl:apply-templates select="descendant::t:state/t:note" mode="aggregate"/>
                     <xsl:text> </xsl:text>
-                    <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    <a href="{$url}" class="factoid-more">
+                        <span>See factoid page</span> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                     </a>
                 </p>
             </xsl:when>
@@ -1038,7 +1066,9 @@
                 <p class="indent"><span class="spearLabel"><xsl:value-of select="descendant::t:state/@type"/>: </span>
                     <xsl:apply-templates mode="spear"/>
                     <xsl:text> </xsl:text>
-                    <a href="{$url}" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    <a href="{$url}" class="factoid-more">
+                        <span>See factoid page</span> 
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                     </a>
                 </p>
             </xsl:when>
@@ -1053,8 +1083,9 @@
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:text> </xsl:text>
-                    <a href="{$url}" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/>
+                    <a href="{$url}" class="factoid-more">
+                        <span>See factoid page</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                     </a>
                 </p>
                 <xsl:if test="@subtype='event'"><hr/></xsl:if>
@@ -1071,7 +1102,7 @@
                 <span class="srp-label">Contributors: </span>
                 <xsl:choose>
                     <xsl:when test="count(descendant::t:respStmt) &gt; 2">
-                        <xsl:value-of select="count(descendant::t:respStmt)"/> contributors ( <a class="togglelink" data-toggle="collapse" data-target="#show-contributors" href="#show-contributors" data-text-swap="Hide"> See all  <i class="glyphicon glyphicon-circle-arrow-right"/>
+                        <xsl:value-of select="count(descendant::t:respStmt)"/> contributors ( <a class="togglelink" data-toggle="collapse" data-target="#show-contributors" href="#show-contributors" data-text-swap="Hide"> See all  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-arrow-right-icon lucide-circle-arrow-right"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="m12 16 4-4-4-4"/></svg>
                         </a>) <div class="collapse" id="show-contributors">
                             <ul>
                                 <xsl:for-each select="descendant::t:respStmt">
