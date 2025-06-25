@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,465 +17,355 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span>Gregory Nazianzen —
-                                        ܓܪܝܓܘܪܝܘܣ ܕܐܢܙܝܢܙܘ </span></span></h1>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span>Gregory Nazianzen — ܓܪܝܓܘܪܝܘܣ
+                                ܕܐܢܙܝܢܙܘ </span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div class="tei-note">
+                        <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span
+                                class="langattr" xml:lang="en" lang="en" dir="ltr">Greek Church
+                                Father, and one of the three Cappadocian Fathers, whose influential
+                                writings earned him the title 'the theologian'.</span><span
+                                dir="ltr">” </span><span class="tei-footnote-refs" dir="ltr"
+                                lang="en" xml:lang="en"><span class="tei-footnote-ref"><a
+                                        href="#bib511-1">1</a></span>
+                            </span></span>
+                    </div>
+                    <div class="tei-note">
+                        <span xml:lang="en" lang="en" dir="ltr">In hagiography: Gregory of Nazianzus
+                            was a Cappodocian father and doctor of the church.</span>
+                    </div>
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a href="http://syriaca.org/person/511"
+                                        >http://syriaca.org/person/511</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <div class="sources">
+                            <h3>Personal Information</h3>
+                            <h4>Name variant(s): </h4>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Gregory of <span
+                                                class="tei-placeName"> Nanzianzus </span></span>
+                                    </span>
+                                </span>
+                                <a href="/3096-26" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Gregory, the Theologian </span>
+                                    </span>
+                                </span>
+                                <a href="/3004-68" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Sex: </h4>
+                            <p class="indent"><span class="tei-persName"> Gregory </span> was male.
+                                    <a href="/3096-27" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName">Gregory</span> was male. <a
+                                    href="/3004-69" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div class="tei-note">
-                                <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr">
-                                        “</span><span class="langattr" xml:lang="en" lang="en"
-                                        dir="ltr">Greek Church Father, and one of the three
-                                        Cappadocian Fathers, whose influential writings earned him
-                                        the title 'the theologian'.</span><span dir="ltr">”
-                                        </span><span class="tei-footnote-refs" dir="ltr" lang="en"
-                                        xml:lang="en"><span class="tei-footnote-ref"><a
-                                                href="#bib511-1">1</a></span>
-                                    </span></span>
-                            </div>
-                            <div class="tei-note">
-                                <span xml:lang="en" lang="en" dir="ltr">In hagiography: Gregory of
-                                    Nazianzus was a Cappodocian father and doctor of the
-                                    church.</span>
-                            </div>
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/person/511"
-                                                >http://syriaca.org/person/511</a></span></p></small>
-                            </div>
+                        <div class="sources">
+                            <h3>Relationships</h3>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3221-2" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3174-2" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively the work of Gregory of
+                                Nazianzus. <a href="/3021-2" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory of Nazianzus. <a
+                                    href="/3154-2" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively the work of Gregory of
+                                Nazianzus. <a href="/3101-2" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3005-2" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Gregory Nazianzen, Bosporius and Theodore formed an
+                                alliance. <a href="/3096-29" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzus. <a
+                                    href="/3135-3" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively the work of Gregory of
+                                Nazianzus. <a href="/3160-3" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited Gregory Nazianzen. <a href="/3122-3"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited Gregory Nazianzen. <a href="/3145-3"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory of Nazianzus. <a
+                                    href="/3172-3" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3221-4" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory of Nazianzus. <a
+                                    href="/3088-4" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3174-4" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3183-4" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited Gregory Nazianzen. <a href="/3122-4"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory of Nazianzus. <a
+                                    href="/3159-4" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3095-4" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3014-5" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited Gregory Nazianzen. <a href="/3120-5"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory the Theologian. <a
+                                    href="/3078-6" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited Gregory Nazianzen. <a href="/3024-7"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively the work of Gregory of
+                                Nazianzus. <a href="/3113-7" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Severus of Antioch refered to the writings of Gregory
+                                Nazianzen. <a href="/3136-7" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Severus of Antioch was a follower of Gregory
+                                Nazianzen. <a href="/3004-70" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"> Severus cited positively Gregory Nazianzen. <a
+                                    href="/3014-9" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <div class="sources">
-                                    <h3>Personal Information</h3>
-                                    <h4>Name variant(s): </h4>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Gregory of <span
-                                                  class="tei-placeName"> Nanzianzus </span></span>
-                                            </span>
-                                        </span>
-                                        <a href="/3096-26" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Gregory, the Theologian
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <a href="/3004-68" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Sex: </h4>
-                                    <p class="indent"><span class="tei-persName"> Gregory </span>
-                                        was male. <a href="/3096-27" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Gregory</span> was
-                                        male. <a href="/3004-69" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Relationships</h3>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3221-2" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3005-2" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively the work of Gregory
-                                        of Nazianzus. <a href="/3101-2" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory of
-                                        Nazianzus. <a href="/3154-2" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively the work of Gregory
-                                        of Nazianzus. <a href="/3021-2" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3174-2" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Gregory Nazianzen, Bosporius and Theodore
-                                        formed an alliance. <a href="/3096-29" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory of
-                                        Nazianzus. <a href="/3172-3" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited Gregory Nazianzen. <a
-                                            href="/3145-3" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited Gregory Nazianzen. <a
-                                            href="/3122-3" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively the work of Gregory
-                                        of Nazianzus. <a href="/3160-3" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzus.
-                                            <a href="/3135-3" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3221-4" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3095-4" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory of
-                                        Nazianzus. <a href="/3159-4" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited Gregory Nazianzen. <a
-                                            href="/3122-4" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3183-4" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3174-4" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory of
-                                        Nazianzus. <a href="/3088-4" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited Gregory Nazianzen. <a
-                                            href="/3120-5" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3014-5" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory the
-                                        Theologian. <a href="/3078-6" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Severus of Antioch refered to the writings of
-                                        Gregory Nazianzen. <a href="/3136-7" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively the work of Gregory
-                                        of Nazianzus. <a href="/3113-7" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited Gregory Nazianzen. <a
-                                            href="/3024-7" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Severus of Antioch was a follower of Gregory
-                                        Nazianzen. <a href="/3004-70" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"> Severus cited positively Gregory Nazianzen.
-                                            <a href="/3014-9" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Events</h3>
-                                    <p class="indent">Severus appeals to Gregory of Nazianzus to
-                                        prove the efficacy of the Eucharist regardless of its
-                                        administrator. Just as Baptism is valid regardless of the
-                                        priest, and the seal of the king is valid regardless if it's
-                                        set it in gold or wax, so the Eucharist is efficacious
-                                        regardless of the priest. <a href="/3136-10"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> To defend his belief in the ordination of
-                                        priests by those outside of a particular diocese, Severus
-                                        appeals to the examples of Basil during the controversy
-                                        surrounding Arius, and Gregory the Theologian. <a
-                                            href="/3012-31" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Severus argued that by ordaining priests in a
-                                        diocese that was not his own, Epiphanius was not violating
-                                        the sacred canons, which only outlaws such behavior in the
-                                        cases of bishops forcing themselves on other dioceses,
-                                        citing the examples of Eusebius of Samosata during the
-                                        controversy of Arius, Theodoret, Basil, and Gregory the
-                                        Theologian. <a href="/3004-84" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                </div>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Person Page for <span id="title"
-                                                ><span>Gregory Nazianzen — ܓܪܝܓܘܪܝܘܣ ܕܐܢܙܝܢܙܘ
-                                            </span></span>,” in SPEAR: Syriac Persons Events and
-                                        Relations, general editor Daniel L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/person/511.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/alliance-with.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/alliance-with"
-                                            ></span>Alliance with</a></li>
-                                    <li><a href="/aggregate/taxonomy/arianism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/arianism"
-                                            ></span>Arianism</a></li>
-                                    <li><a href="/aggregate/taxonomy/baptism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/baptism"
-                                            ></span>Baptism</a></li>
-                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
-                                            ></span>Bishops</a></li>
-                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
-                                            ></span>Canon Law</a></li>
-                                    <li><a href="/aggregate/taxonomy/cited.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/cited"
-                                            ></span>Cited</a></li>
-                                    <li><a href="/aggregate/taxonomy/cited-positively.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/cited-positively"
-                                            ></span>Cited Positively</a></li>
-                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
-                                            ></span>Clergy</a></li>
-                                    <li><a href="/aggregate/taxonomy/follower-of.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/follower-of"
-                                            ></span>Follower of</a></li>
-                                    <li><a href="/aggregate/taxonomy/greek-fathers.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/greek-fathers"
-                                            ></span>Greek Fathers</a></li>
-                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
-                                            ></span>Heterodoxy</a></li>
-                                    <li><a href="/aggregate/taxonomy/men.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/men"
-                                            ></span>Men</a></li>
-                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
-                                            ></span>Ordination</a></li>
-                                    <li><a href="/aggregate/taxonomy/priests.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
-                                            ></span>Priests</a></li>
-                                    <li><a href="/aggregate/taxonomy/seals.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/seals"
-                                            ></span>Seals</a></li>
-                                    <li><a href="/aggregate/taxonomy/theology.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/theology"
-                                            ></span>Theology</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/2486.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2486"
-                                            ></span>Arius — ܐܪܝܘܣ </a></li>
-                                    <li><a href="/aggregate/person/376.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/376"
-                                            ></span>Basil of Caesarea — ܒܣܝܠܠܝܘܣ ܕܩܣܪܝܐ </a></li>
-                                    <li><a href="/aggregate/person/2490.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2490"
-                                            ></span>Bosporius — ܒܘܣܦܘܪܝܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2562.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2562"
-                                            ></span>Epiphanius — ܐܦܝܦܢܝܘܣ ܐܦܥܣܩܘܦܐ </a></li>
-                                    <li><a href="/aggregate/person/958.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/958"
-                                            ></span>Eusebius of Samosata — ܐܘܣܒܝܘܣ ܕܫܡܝܫܛ </a></li>
-                                    <li><a href="/aggregate/person/511.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/511"
-                                            ></span>Gregory Nazianzen — ܓܪܝܓܘܪܝܘܣ ܕܐܢܙܝܢܙܘ </a></li>
-                                    <li><a href="/aggregate/person/51.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/51"
-                                            ></span>Severus of Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ </a></li>
-                                    <li><a href="/aggregate/person/2492.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2492"
-                                            ></span>Theodore — ܬܐܘܕܘܪܘܣ </a></li>
-                                    <li><a href="/aggregate/person/781.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/781"
-                                            ></span>Theodoret of Cyrrhus — ܬܐܕܘܪܝܛܘܣ ܕܩܘܪܘܣ
-                                        </a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/2693.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2693"
-                                            ></span>Nazianzus — ܢܐܙܝܐܢܙܘ </a></li>
-                                    <li><a href="/aggregate/place/2607.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2607"
-                                            ></span>Samosata — ܫܡܝܫܜ </a></li>
-                                </ul>
-                            </div>
+                        <div class="sources">
+                            <h3>Events</h3>
+                            <p class="indent">Severus appeals to Gregory of Nazianzus to prove the
+                                efficacy of the Eucharist regardless of its administrator. Just as
+                                Baptism is valid regardless of the priest, and the seal of the king
+                                is valid regardless if it's set it in gold or wax, so the Eucharist
+                                is efficacious regardless of the priest. <a href="/3136-10"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> To defend his belief in the ordination of priests by
+                                those outside of a particular diocese, Severus appeals to the
+                                examples of Basil during the controversy surrounding Arius, and
+                                Gregory the Theologian. <a href="/3012-31" class="factoid-more">See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Severus argued that by ordaining priests in a diocese
+                                that was not his own, Epiphanius was not violating the sacred
+                                canons, which only outlaws such behavior in the cases of bishops
+                                forcing themselves on other dioceses, citing the examples of
+                                Eusebius of Samosata during the controversy of Arius, Theodoret,
+                                Basil, and Gregory the Theologian. <a href="/3004-84"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
                         </div>
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Person Page for <span id="title"><span>Gregory
+                                        Nazianzen — ܓܪܝܓܘܪܝܘܣ ܕܐܢܙܝܢܙܘ </span></span>,” in SPEAR:
+                                Syriac Persons Events and Relations, general editor Daniel L.
+                                Schwartz, https://dev.spear-prosop.org/aggregate/person/511.html,
+                                2025-06-24. </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/2486.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2486"></span>Arius —
+                                    ܐܪܝܘܣ </a></li>
+                            <li><a href="/aggregate/person/376.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/376"></span>Basil of
+                                    Caesarea — ܒܣܝܠܠܝܘܣ ܕܩܣܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/2490.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2490"
+                                    ></span>Bosporius — ܒܘܣܦܘܪܝܘܣ </a></li>
+                            <li><a href="/aggregate/person/2562.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2562"
+                                    ></span>Epiphanius — ܐܦܝܦܢܝܘܣ ܐܦܥܣܩܘܦܐ </a></li>
+                            <li><a href="/aggregate/person/958.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/958"></span>Eusebius
+                                    of Samosata — ܐܘܣܒܝܘܣ ܕܫܡܝܫܛ </a></li>
+                            <li><a href="/aggregate/person/511.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/511"></span>Gregory
+                                    Nazianzen — ܓܪܝܓܘܪܝܘܣ ܕܐܢܙܝܢܙܘ </a></li>
+                            <li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/51"></span>Severus of
+                                    Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ </a></li>
+                            <li><a href="/aggregate/person/2492.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2492"></span>Theodore
+                                    — ܬܐܘܕܘܪܘܣ </a></li>
+                            <li><a href="/aggregate/person/781.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/781"></span>Theodoret
+                                    of Cyrrhus — ܬܐܕܘܪܝܛܘܣ ܕܩܘܪܘܣ </a></li>
+                        </ul>
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/alliance-with.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/alliance-with"
+                                    ></span>Alliance with</a></li>
+                            <li><a href="/aggregate/taxonomy/arianism.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/arianism"
+                                    ></span>Arianism</a></li>
+                            <li><a href="/aggregate/taxonomy/baptism.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/baptism"
+                                    ></span>Baptism</a></li>
+                            <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                    ></span>Bishops</a></li>
+                            <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                    ></span>Canon Law</a></li>
+                            <li><a href="/aggregate/taxonomy/cited.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/cited"
+                                    ></span>Cited</a></li>
+                            <li><a href="/aggregate/taxonomy/cited-positively.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/cited-positively"
+                                    ></span>Cited Positively</a></li>
+                            <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                    ></span>Clergy</a></li>
+                            <li><a href="/aggregate/taxonomy/follower-of.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/follower-of"
+                                    ></span>Follower of</a></li>
+                            <li><a href="/aggregate/taxonomy/greek-fathers.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/greek-fathers"
+                                    ></span>Greek Fathers</a></li>
+                            <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                    ></span>Heterodoxy</a></li>
+                            <li><a href="/aggregate/taxonomy/men.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/men"
+                                ></span>Men</a></li>
+                            <li><a href="/aggregate/taxonomy/ordination.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                    ></span>Ordination</a></li>
+                            <li><a href="/aggregate/taxonomy/priests.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                    ></span>Priests</a></li>
+                            <li><a href="/aggregate/taxonomy/seals.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/seals"
+                                    ></span>Seals</a></li>
+                            <li><a href="/aggregate/taxonomy/theology.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/theology"
+                                    ></span>Theology</a></li>
+                        </ul>
+                        <h4>Related place(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/place/2693.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2693"></span>Nazianzus
+                                    — ܢܐܙܝܐܢܙܘ </a></li>
+                            <li><a href="/aggregate/place/2607.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2607"></span>Samosata
+                                    — ܫܡܝܫܜ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

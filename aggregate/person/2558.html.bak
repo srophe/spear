@@ -1,57 +1,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Misael — ܡܝܘܐܝܠ
                         ܩܘܒܘܩܠܪܐ
-                </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl : true,
-                    layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
-                });
-
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span>Misael — ܡܝܘܐܝܠ
+                </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/></head><body id="body"><nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"><div class="container-fluid"><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"/></button><div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/browse.html">Browse</a><a class="nav-link" href="/documentation.html">Documentation</a><a class="nav-link" href="/about.html">About</a><a class="nav-link" href="/contact.html">Contact Us</a></div></div></div></nav><div class="container my-5"><div class="interior-content"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span>Misael — ܡܝܘܐܝܠ
                         ܩܘܒܘܩܠܪܐ
                 </span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div class="tei-note"><span xml:lang="en" lang="en" dir="ltr">A chamberlain and then deacon who received several letters from Severus of
                         Antioch</span><span class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span class="tei-footnote-ref"><a href="#bib2558-3">3</a></span> </span></div><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/person/2558">http://syriaca.org/person/2558</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Personal Information</h3><h4>Name variant(s): </h4><p class="indent"><span class="tei-listPerson">
                     <span class="tei-person">
-                        <span class="tei-persName"> Misael, the Chamberlain
+                        <span class="tei-persName"> Misael, the deacon
                         </span>
                     </span>
-                </span> <a href="/3042-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
-                    <span class="tei-person">
-                        <span class="tei-persName"> Misael, the Chamberlain
-                        </span>
-                    </span>
-                </span> <a href="/3044-1" class="factoid-more">See factoid page
+                </span> <a href="/3140-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
                     <span class="tei-person">
                         <span class="tei-persName"> Misael, the deacon
@@ -60,10 +17,16 @@
                 </span> <a href="/3136-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
                     <span class="tei-person">
-                        <span class="tei-persName"> Misael, the deacon
+                        <span class="tei-persName"> Misael, the Chamberlain
                         </span>
                     </span>
-                </span> <a href="/3140-1" class="factoid-more">See factoid page
+                </span> <a href="/3044-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
+                    <span class="tei-person">
+                        <span class="tei-persName"> Misael, the Chamberlain
+                        </span>
+                    </span>
+                </span> <a href="/3042-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-listPerson">
                     <span class="tei-person">
                         <span class="tei-persName"> The religious deacon Misael
@@ -72,20 +35,20 @@
                 </span> <a href="/3137-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sex: </h4><p class="indent"><span class="tei-persName">
                                     Mishael </span> was male. <a href="/848-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3042-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3044-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3136-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3140-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3136-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3044-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male. <a href="/3042-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was male.  <a href="/3137-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Sanctity: </h4><p class="indent">
                                 <span class="tei-persName">Mishael</span>
                                 was a saint.
                              <a href="/848-19" class="factoid-more"> See factoid page <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><h4>Occupation(s): </h4><p class="indent">
                                 <span class="tei-persName">Mishael</span> was a praepositus.  <a href="/848-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a chamberlain. <a href="/3042-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a chamberlain. <a href="/3044-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a deacon. <a href="/3136-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a deacon. <a href="/3140-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a deacon. <a href="/3136-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a chamberlain. <a href="/3044-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName">Misael</span> was a chamberlain. <a href="/3042-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="tei-persName"> Misael
                                 </span> was a deacon.  <a href="/3137-7" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p></div><div class="sources"><h3>Relationships</h3><p class="indent">A letter between Severus
@@ -115,19 +78,19 @@
                             Mishael.
                          <a href="/848-22" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
-                                Antioch sent a letter to Misael. <a href="/3042-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
-                                Antioch sent a letter to Misael. <a href="/3044-4" class="factoid-more">See factoid page
+                                Antioch sent a letter to Misael. <a href="/3140-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
                                 Antioch sent a letter to Misael. <a href="/3136-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
-                                Antioch sent a letter to Misael. <a href="/3140-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Misael sent
-                            a letter to Severus of
-                                Antioch. <a href="/3136-5" class="factoid-more">See factoid page
+                                Antioch sent a letter to Misael. <a href="/3044-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Severus of
+                                Antioch sent a letter to Misael. <a href="/3042-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Misael sent
                             a letter to Severus of
                                 Antioch. <a href="/3140-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Misael sent
+                            a letter to Severus of
+                                Antioch. <a href="/3136-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Andrew
                             carried a letter from Misael to Severus of Antioch. <a href="/3140-55" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent">Misael and
@@ -151,19 +114,19 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Between
                                 513 and 518, Severus wrote a letter to Misael, thanking him
                             for his generosity and urging him not to become a solitary.  <a href="/3042-18" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Misael
-                            delivered Severus's church from the persecution of Ægilas.  <a href="/3042-19" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus
                             complained to Misael about officials like Eleutherius who were
                             annoyed by his ordination practices.  <a href="/3044-19" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus
-                            rebuked Misael
-                            for his desire to leave public life in order to become a solitary.
-                         <a href="/3042-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Misael
+                            delivered Severus's church from the persecution of Ægilas.  <a href="/3042-19" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus asked
                                 Misael to
                             defend him and his practices before those like Eleutherius who were
                             causing distress.  <a href="/3044-20" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Severus
+                            rebuked Misael
+                            for his desire to leave public life in order to become a solitary.
+                         <a href="/3042-20" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> To convince Misael to remain in his position, Severus cited several
                             scripture passages, as well as an historical anecdote of Anonymous 3057 and
                                 Anonymous
@@ -188,7 +151,7 @@
                         ܩܘܒܘܩܠܪܐ
                 </span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/person/2558.html, 2025-06-16.
+                                https://dev.spear-prosop.org/aggregate/person/2558.html, 2025-06-24.
                             </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2588.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2588"/>Aegilas — ܐܝܓܝܠܐܣ
                 </a></li><li><a href="/aggregate/person/2593.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2593"/>Ammian — ܐܡܝܐܢܘܣ
                 </a></li><li><a href="/aggregate/person/2480.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2480"/>Andrew — ܐܢܕܪܐܐ
@@ -208,4 +171,4 @@
                 </a></li><li><a href="/aggregate/person/2108.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2108"/>Theodore Castrensus — ܬܐܕܘܪܐ
                         ܩܣܛܪܝܣܝܣ
                 </a></li></ul><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anchorites.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anchorites"/>Anchorites</a></li><li><a href="/aggregate/taxonomy/arianism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/arianism"/>Arianism</a></li><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/authority.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/authority"/>Authority</a></li><li><a href="/aggregate/taxonomy/bible.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bible"/>Bible</a></li><li><a href="/aggregate/taxonomy/bishops.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bishops"/>Bishops</a></li><li><a href="/aggregate/taxonomy/blessing.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/blessing"/>Blessing</a></li><li><a href="/aggregate/taxonomy/burial.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/burial"/>Burial</a></li><li><a href="/aggregate/taxonomy/carrier-of-letter-from.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/carrier-of-letter-from"/>Carrier of Letter from</a></li><li><a href="/aggregate/taxonomy/carrier-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/carrier-of-letter-to"/>Carrier of Letter to</a></li><li><a href="/aggregate/taxonomy/chamberlains.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/chamberlains"/>Chamberlains</a></li><li><a href="/aggregate/taxonomy/charity.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/charity"/>CharityCaritas</a></li><li><a href="/aggregate/taxonomy/churches.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/churches"/>Churches</a></li><li><a href="/aggregate/taxonomy/cited.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cited"/>Cited</a></li><li><a href="/aggregate/taxonomy/civil-servants.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/civil-servants"/>Civil Servants</a></li><li><a href="/aggregate/taxonomy/clergy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/clergy"/>Clergy</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/deacons.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/deacons"/>Deacons</a></li><li><a href="/aggregate/taxonomy/eucharist.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/eucharist"/>Eucharist</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/follower-of.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/follower-of"/>Follower of</a></li><li><a href="/aggregate/taxonomy/friendship-for.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/friendship-for"/>Friendship for</a></li><li><a href="/aggregate/taxonomy/heterodoxy.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"/>Heterodoxy</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/men.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/men"/>Men</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/ordination.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/ordination"/>Ordination</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/polemics.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/polemics"/>Polemics</a></li><li><a href="/aggregate/taxonomy/priests.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/priests"/>Priests</a></li><li><a href="/aggregate/taxonomy/professional-relationship.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"/>Professional Relationship</a></li><li><a href="/aggregate/taxonomy/saints.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/saints"/>Saints</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li><li><a href="/aggregate/taxonomy/shame.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/shame"/>Shame</a></li><li><a href="/aggregate/taxonomy/suffering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/suffering"/>Suffering</a></li><li><a href="/aggregate/taxonomy/theology.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/theology"/>Theology</a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/2841.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2841"/>Sema — ܣܡܐ
-            </a></li></ul></div></div></div></div></div></div></body></html>
+            </a></li></ul></div></div></div></div></body></html>

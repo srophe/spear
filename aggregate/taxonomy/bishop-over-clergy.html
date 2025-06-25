@@ -6,7 +6,7 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <!-- Bootstrap 3 -->
                 <link rel="stylesheet" type="text/css"
-                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
                 <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
                 <!-- Srophe styles -->
                 <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -17,504 +17,400 @@
                 <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
                 <!-- JQuery -->
                 <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
                 <!-- Bootstrap -->
-                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
                 <!-- ReCaptcha -->
                 <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
                 <!-- keyboard widget css & script -->
                 <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
                 <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-                <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
         </head>
-        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                                class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                        data-target="#navbar-collapse-1"><span class="sr-only"
-                                                >Toggle navigation</span><span class="icon-bar"
-                                                ></span><span class="icon-bar"></span><span
-                                                class="icon-bar"></span></button>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
                                 <a class="navbar-brand banner-container" href="/index.html"><span
                                                 class="syriaca-icon syriaca-syriaca banner-icon"
                                                 ></span><span class="banner-text"
-                                                data-template="config:app-title">SPEAR: Syriac
-                                                Persons Events and Relations</span></a>
-                        </div><div class="navbar-collapse collapse pull-right"
-                                id="navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                        <li><a href="/index.html" class="nav-text">Home</a></li>
-                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                                        <li class="dropdown"><a href="#"
-                                                  class="dropdown-toggle lonely-caret"
-                                                  data-toggle="dropdown">  <span
-                                                  class="mobile-submenu">About</span>  <b
-                                                  class="caret"></b></a><ul
-                                                  class="dropdown-menu pull-right">
-                                                  <li><a href="/about.html">Project
-                                                  Overview</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contributors.html">Project
-                                                  Contributors</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contact.html">Contact Us</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/documentation/index.html"><span
-                                                  class="syriaca-icon syriaca-book icon-nav"
-                                                  style="color:red;"></span><span class="icon-text"
-                                                  >Documentation</span></a></li>
-                                                </ul></li>
-                                        <li><a href="/search.html" class="nav-text">Advanced
-                                                  Search</a></li>
-                                        <li><div id="search-wrapper">
-                                                  <form class="navbar-form navbar-right search-box"
-                                                  role="search" action="/search.html" method="get"
-                                                  ><div class="form-group">
-                                                  <input type="text" class="form-control keyboard"
-                                                  placeholder="search" name="keyword"
-                                                  id="keywordNav" />
-                                                  <span data-template="app:keyboard-select-menu"
-                                                  data-template-input-id="keywordNav"></span>
-                                                  <button class="btn btn-default search-btn"
-                                                  id="searchbtn" type="submit" title="Search"><span
-                                                  class="glyphicon glyphicon-search"
-                                                  ></span></button>
-                                                  </div></form>
-                                                </div></li>
-                                </ul>
-                        </div></nav><div class="main-content-block">
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
+                                </div>
+                        </div></nav><div class="container my-5">
                         <div class="interior-content">
-                                <div class="record">
-                                        <div class="interior-content" data-template="app:fix-links">
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns"
-                                                  class="padding-top">
-                                                  <h1>SPEAR Factoids about <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr">Bishop over
-                                                  Clergy</span></span></span></h1>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns">
-                                                  <div style="margin:0 1em 1em; color: #999999;">
-                                                  <small><p><span class="srp-label"
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span><span
+                                                  class="tei-prefLabel" xml:lang="en" lang="en"
+                                                  dir="ltr">Bishop over
+                                                Clergy</span></span></span></h1>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
                                                   ><strong>Syriaca.org URI</strong></span>: <span
                                                   id="syriaca-id"><a
                                                   href="http://syriaca.org/taxonomy/bishop-over-clergy"
                                                   >http://syriaca.org/taxonomy/bishop-over-clergy</a></span></p></small>
-                                                  </div>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns" class="row">
-                                                  <div class="col-md-8">
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Cassian had ecclesiastical
-                                                  authority over Agapius. <a href="/3087-10"
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Cassian had ecclesiastical authority over
+                                                  Agapius. <a href="/3087-10" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Castor had ecclesiastical authority over
+                                                  Anonymi 3040. <a href="/3032-10"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Procopius had ecclesiastical
-                                                  authority over Anonymi 3046. <a href="/3038-10"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Longinus. <a href="/3026-10"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Anonymous 3090. <a
-                                                  href="/3068-10" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Longinus. <a
-                                                  href="/3026-10" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Castor had ecclesiastical
-                                                  authority over Anonymi 3040. <a href="/3032-10"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Anonymous 3090. <a href="/3068-10"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Thomas. <a
-                                                  href="/3028-11" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Isaac had ecclesiastical
-                                                  authority over Anonymi 3080. <a href="/3059-11"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Procopius had ecclesiastical authority over
+                                                  Anonymi 3046. <a href="/3038-10"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Entrechius had ecclesiastical
-                                                  authority over Anonymous 3064 and Anonymi 3062. <a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Epiphanius had ecclesiastical authority
+                                                  over Anonymi 3034. <a href="/3020-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Entrechius had ecclesiastical authority
+                                                  over Anonymous 3064 and Anonymi 3062. <a
                                                   href="/3045-11" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Epiphanius had ecclesiastical
-                                                  authority over Anonymi 3034. <a href="/3020-11"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Isaac had ecclesiastical authority over
+                                                  Anonymi 3080. <a href="/3059-11"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Simeon of Beth Arsham had
-                                                  ecclesiastical authority over Anonymous 3623. <a
-                                                  href="/802-112" class="factoid-more">See factoid
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Thomas. <a href="/3028-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Simeon of Beth Arsham had ecclesiastical
+                                                  authority over Anonymous 3623. <a href="/802-112"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Peter was bishop over Anonymous 3740 <a
+                                                  href="/3083-13" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Procopius had ecclesiastical
-                                                  authority over Anonymi 3050. <a href="/3038-13"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Cassian had ecclesiastical
-                                                  authority over Thomas. <a href="/3076-13"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Peter was bishop over Anonymous
-                                                  3740 <a href="/3083-13" class="factoid-more">See
-                                                  factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Theodore. <a
-                                                  href="/3035-14" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Anonymous 3093. <a
-                                                  href="/3071-14" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Isaac had ecclesiastical
-                                                  authority over Anonymous 3083. <a href="/3059-15"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Theodosius. <a
-                                                  href="/3038-17" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus was bishop over
-                                                  Eusebius and Victor. <a href="/3061-17"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymous 3742 had
-                                                  ecclesiastical authority over Leontius. <a
-                                                  href="/3085-17" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymi 3733 had ecclesiastical
-                                                  authority over Paul. <a href="/3108-18"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Cosmas, Polyeuctus
-                                                  and Zeno. <a href="/3036-19" class="factoid-more"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Cassian had ecclesiastical authority over
+                                                  Thomas. <a href="/3076-13" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Eusebius. <a
-                                                  href="/3081-20" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Procopius had ecclesiastical authority over
+                                                  Anonymi 3050. <a href="/3038-13"
+                                                  class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Isidore had ecclesiastical
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Anonymous 3093. <a href="/3071-14"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Theodore. <a href="/3035-14"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Isaac had ecclesiastical authority over
+                                                  Anonymous 3083. <a href="/3059-15"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymous 3742 had ecclesiastical authority
+                                                  over Leontius. <a href="/3085-17"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus was bishop over Eusebius and
+                                                  Victor. <a href="/3061-17" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Theodosius. <a href="/3038-17"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymi 3733 had ecclesiastical authority
+                                                  over Paul. <a href="/3108-18" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
                                                   authority over Cosmas, Polyeuctus and Zeno. <a
-                                                  href="/3036-20" class="factoid-more">See factoid
+                                                  href="/3036-19" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Irenaeus. <a
-                                                  href="/3028-20" class="factoid-more">See factoid
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Eusebius. <a href="/3081-20"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Irenaeus. <a href="/3028-20"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Isidore had ecclesiastical authority over
+                                                  Cosmas, Polyeuctus and Zeno. <a href="/3036-20"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Peter the Iberian had ecclesiastical
+                                                  authority over Timothy and Theodore. <a
+                                                  href="/3069-21" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Peter the Iberian had
-                                                  ecclesiastical authority over Timothy and
-                                                  Theodore. <a href="/3069-21" class="factoid-more"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Simeon had ecclesiastical authority over
+                                                  Cosmas. <a href="/3072-23" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Simeon had ecclesiastical
-                                                  authority over Cosmas. <a href="/3072-23"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Paul had ecclesiastical authority over
+                                                  Anonymi 3065. <a href="/3046-26"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Paul had ecclesiastical
-                                                  authority over Anonymi 3065. <a href="/3046-26"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Anatolius. <a href="/3028-29"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Elijah. <a
-                                                  href="/3035-29" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Elijah. <a href="/3035-29"
+                                                  class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Anatolius. <a
-                                                  href="/3028-29" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Mara, metropolitan of Amid had
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Mara, metropolitan of Amid had
                                                   ecclesiastical authority over Stephen, Thomas and
                                                   Sergius. <a href="/805-34" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Leontius. <a
-                                                  href="/3028-38" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymous 2235 had
-                                                  ecclesiastical authority over Anonymi 2218. <a
-                                                  href="/8559-395" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Epiphanius had ecclesiastical
-                                                  authority over Isaiah. <a href="/3111-42"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Leontius. <a href="/3028-38"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Stephen. <a
-                                                  href="/3025-45" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Stephen was a bishop with
-                                                  authority over Anonymi 3746 <a href="/3107-47"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymous 2235 had ecclesiastical authority
+                                                  over Anonymi 2218. <a href="/8559-395"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Victor. <a
-                                                  href="/3099-49" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Solon had ecclesiastical
-                                                  authority over Maximus. <a href="/3066-5"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Epiphanius had ecclesiastical authority
+                                                  over Isaiah. <a href="/3111-42"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Isidore was bishop with
-                                                  authority over Silvanus. <a href="/3109-5"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Stephen. <a href="/3025-45"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Philoxenus had ecclesiastical
-                                                  authority over Romulus. <a href="/3056-5"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Stephen was a bishop with authority over
+                                                  Anonymi 3746 <a href="/3107-47"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Romulus. <a
-                                                  href="/3056-6" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Hesychius. <a
-                                                  href="/3026-6" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Castor had ecclesiastical
-                                                  authority over Anonymi 3038. <a href="/3032-6"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Victor. <a href="/3099-49"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Anonymi 3062. <a
-                                                  href="/3045-6" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Isidore was bishop with authority over
+                                                  Silvanus. <a href="/3109-5" class="factoid-more"
+                                                  >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>John of Alexandria Minor had
-                                                  ecclesiastical authority over Anonymi 3085. <a
-                                                  href="/3062-7" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Solon had ecclesiastical authority over
+                                                  Maximus. <a href="/3066-5" class="factoid-more"
+                                                  >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Stephen had ecclesiastical
-                                                  authority over Stephen. <a href="/3086-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Philoxenus had ecclesiastical authority
+                                                  over Romulus. <a href="/3056-5"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Philip. <a
-                                                  href="/3106-8" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Castor had ecclesiastical
-                                                  authority over Anonymi 3039. <a href="/3032-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Anonymi 3062. <a href="/3045-6"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Dionysios had ecclesiastical
-                                                  authority over Anonymous 3073. <a href="/3054-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Castor had ecclesiastical authority over
+                                                  Anonymi 3038. <a href="/3032-6"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Cassian had ecclesiastical
-                                                  authority over Thomas. <a href="/3075-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Hesychius. <a href="/3026-6"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Didymus had ecclesiastical
-                                                  authority over Sannus. <a href="/3119-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Romulus. <a href="/3056-6"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Simeon had ecclesiastical
-                                                  authority over Anonymous 3092. <a href="/3071-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>John of Alexandria Minor had ecclesiastical
+                                                  authority over Anonymi 3085. <a href="/3062-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch had
-                                                  ecclesiastical authority over Anonymous 3097. <a
-                                                  href="/3084-9" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Antoninus had ecclesiastical
-                                                  authority over Mark. <a href="/3043-9"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Simeon had ecclesiastical authority over
+                                                  Anonymous 3092. <a href="/3071-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus was a bishop with
-                                                  authority over Mark. <a href="/3063-9"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Didymus had ecclesiastical authority over
+                                                  Sannus. <a href="/3119-8" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Cassian had ecclesiastical authority over
+                                                  Thomas. <a href="/3075-8" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Dionysios had ecclesiastical authority over
+                                                  Anonymous 3073. <a href="/3054-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Victor had ecclesiastical
-                                                  authority over John. <a href="/3047-9"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Castor had ecclesiastical authority over
+                                                  Anonymi 3039. <a href="/3032-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <div class="citation">
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Philip. <a href="/3106-8"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Stephen had ecclesiastical authority over
+                                                  Stephen. <a href="/3086-8" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Victor had ecclesiastical authority over
+                                                  John. <a href="/3047-9" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus was a bishop with authority over
+                                                  Mark. <a href="/3063-9" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Antoninus had ecclesiastical authority over
+                                                  Mark. <a href="/3043-9" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch had ecclesiastical
+                                                  authority over Anonymous 3097. <a href="/3084-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <div class="citation">
                                                   <h3>How to cite:</h3>
                                                   <span class="element"> “Keyword Page for <span
                                                   id="title"><span><span class="tei-prefLabel"
@@ -523,20 +419,20 @@
                                                   Persons Events and Relations, general editor
                                                   Daniel L. Schwartz,
                                                   https://dev.spear-prosop.org/aggregate/taxonomy/bishop-over-clergy.html,
-                                                  2025-06-16. </span>
-                                                  </div>
-                                                  </div>
-                                                  <div class="col-md-4">
-                                                  <h4>Related taxonomy(s)</h4>
-                                                  <ul>
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
                                                   <li><a
                                                   href="/aggregate/taxonomy/bishop-over-clergy.html"
                                                   ><span class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/bishop-over-clergy"
                                                   ></span>Bishop over Clergy</a></li>
-                                                  </ul>
-                                                  <h4>Related person(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related person(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/person/2426.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2426"
@@ -752,13 +648,13 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2400"
                                                   ></span>John — ܝܘܚܢܢ </a></li>
-                                                  <li><a href="/aggregate/person/2423.html"><span
-                                                  class="loadRDF getLabel"
-                                                  data-rdfRef="http://syriaca.org/person/2423"
-                                                  ></span>Leontius — ܠܐܘܢܛܝܘܣ </a></li>
                                                   <li><a href="/aggregate/person/2519.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2519"
+                                                  ></span>Leontius — ܠܐܘܢܛܝܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2423.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2423"
                                                   ></span>Leontius — ܠܐܘܢܛܝܘܣ </a></li>
                                                   <li><a href="/aggregate/person/2511.html"><span
                                                   class="loadRDF getLabel"
@@ -853,13 +749,13 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2442"
                                                   ></span>Stephen — ܣܛܦܢܘܣ </a></li>
-                                                  <li><a href="/aggregate/person/2533.html"><span
-                                                  class="loadRDF getLabel"
-                                                  data-rdfRef="http://syriaca.org/person/2533"
-                                                  ></span>Stephen — ܣܛܦܢܘܣ ܩܫܝܫܐ </a></li>
                                                   <li><a href="/aggregate/person/2503.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2503"
+                                                  ></span>Stephen — ܣܛܦܢܘܣ ܩܫܝܫܐ </a></li>
+                                                  <li><a href="/aggregate/person/2533.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2533"
                                                   ></span>Stephen — ܣܛܦܢܘܣ ܩܫܝܫܐ </a></li>
                                                   <li><a href="/aggregate/person/2532.html"><span
                                                   class="loadRDF getLabel"
@@ -904,9 +800,7 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2543"
                                                   ></span>Zeno — ܙܝܢܘܢ </a></li>
-                                                  </ul>
-                                                  </div>
-                                                </div>
+                                                </ul>
                                         </div>
                                 </div>
                         </div>

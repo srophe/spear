@@ -6,7 +6,7 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <!-- Bootstrap 3 -->
                 <link rel="stylesheet" type="text/css"
-                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
                 <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
                 <!-- Srophe styles -->
                 <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -17,491 +17,401 @@
                 <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
                 <!-- JQuery -->
                 <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
                 <!-- Bootstrap -->
-                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
                 <!-- ReCaptcha -->
                 <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
                 <!-- keyboard widget css & script -->
                 <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
                 <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-                <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
         </head>
-        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                                class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                        data-target="#navbar-collapse-1"><span class="sr-only"
-                                                >Toggle navigation</span><span class="icon-bar"
-                                                ></span><span class="icon-bar"></span><span
-                                                class="icon-bar"></span></button>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
                                 <a class="navbar-brand banner-container" href="/index.html"><span
                                                 class="syriaca-icon syriaca-syriaca banner-icon"
                                                 ></span><span class="banner-text"
-                                                data-template="config:app-title">SPEAR: Syriac
-                                                Persons Events and Relations</span></a>
-                        </div><div class="navbar-collapse collapse pull-right"
-                                id="navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                        <li><a href="/index.html" class="nav-text">Home</a></li>
-                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                                        <li class="dropdown"><a href="#"
-                                                  class="dropdown-toggle lonely-caret"
-                                                  data-toggle="dropdown">  <span
-                                                  class="mobile-submenu">About</span>  <b
-                                                  class="caret"></b></a><ul
-                                                  class="dropdown-menu pull-right">
-                                                  <li><a href="/about.html">Project
-                                                  Overview</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contributors.html">Project
-                                                  Contributors</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contact.html">Contact Us</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/documentation/index.html"><span
-                                                  class="syriaca-icon syriaca-book icon-nav"
-                                                  style="color:red;"></span><span class="icon-text"
-                                                  >Documentation</span></a></li>
-                                                </ul></li>
-                                        <li><a href="/search.html" class="nav-text">Advanced
-                                                  Search</a></li>
-                                        <li><div id="search-wrapper">
-                                                  <form class="navbar-form navbar-right search-box"
-                                                  role="search" action="/search.html" method="get"
-                                                  ><div class="form-group">
-                                                  <input type="text" class="form-control keyboard"
-                                                  placeholder="search" name="keyword"
-                                                  id="keywordNav" />
-                                                  <span data-template="app:keyboard-select-menu"
-                                                  data-template-input-id="keywordNav"></span>
-                                                  <button class="btn btn-default search-btn"
-                                                  id="searchbtn" type="submit" title="Search"><span
-                                                  class="glyphicon glyphicon-search"
-                                                  ></span></button>
-                                                  </div></form>
-                                                </div></li>
-                                </ul>
-                        </div></nav><div class="main-content-block">
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
+                                </div>
+                        </div></nav><div class="container my-5">
                         <div class="interior-content">
-                                <div class="record">
-                                        <div class="interior-content" data-template="app:fix-links">
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns"
-                                                  class="padding-top">
-                                                  <h1>SPEAR Factoids about <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr"
-                                                  >Saints</span></span></span></h1>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns">
-                                                  <div style="margin:0 1em 1em; color: #999999;">
-                                                  <small><p><span class="srp-label"
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span><span
+                                                  class="tei-prefLabel" xml:lang="en" lang="en"
+                                                  dir="ltr">Saints</span></span></span></h1>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
                                                   ><strong>Syriaca.org URI</strong></span>: <span
                                                   id="syriaca-id"><a
                                                   href="http://syriaca.org/taxonomy/saints"
                                                   >http://syriaca.org/taxonomy/saints</a></span></p></small>
-                                                  </div>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns" class="row">
-                                                  <div class="col-md-8">
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Cyriac</span> was a saint. <a href="/834-10"
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Cyriac</span>
+                                                  was a saint. <a href="/834-10"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Many miracles came about through the
                                                   prayers and the bones of Zacharias. <a
                                                   href="/811-10" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Maro</span> was a saint. <a href="/796-10"
-                                                  class="factoid-more"> See factoid page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Maro</span> was
+                                                  a saint. <a href="/796-10" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 345/6 A. Gr. 657 Abraham built the
                                                   House of the Confessors in Edessa . <a
                                                   href="/8559-109" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anonymous 3681 </span> was a saint. <a
-                                                  href="/820-11" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">
-                                                  Priscus </span> was a saint. <a href="/844-11"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anonymous 3681
+                                                  </span> was a saint. <a href="/820-11"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Abbi</span> was a saint. <a href="/806-11"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> Priscus </span>
+                                                  was a saint. <a href="/844-11"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anonymous 3606</span> was considered among the
-                                                  saints because of her mode of life. <a
-                                                  href="/805-119" class="factoid-more"> See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Abbi</span> was
+                                                  a saint. <a href="/806-11" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anonymous 3607</span> was considered among the
-                                                  saints because of her mode of life. <a
-                                                  href="/805-120" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Malkha</span> was a saint. <a href="/821-13"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anonymous
+                                                  3606</span> was considered among the saints
+                                                  because of her mode of life. <a href="/805-119"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Simeon</span> was a saint. <a href="/832-13"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anonymous
+                                                  3607</span> was considered among the saints
+                                                  because of her mode of life. <a href="/805-120"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Addai</span> was a saint. <a href="/814-13"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Malkha</span>
+                                                  was a saint. <a href="/821-13"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Sergius</span> was a saint. <a href="/797-13"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Simeon</span>
+                                                  was a saint. <a href="/832-13"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">
-                                                  Isaac </span> was a saint. <a href="/836-14"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Addai</span> was
+                                                  a saint. <a href="/814-13" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Sergius</span>
+                                                  was a saint. <a href="/797-13"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Mare</span> was a saint. <a href="/801-14"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> Isaac </span>
+                                                  was a saint. <a href="/836-14"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Mare</span> was a saint. <a href="/805-14"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mare</span> was
+                                                  a saint. <a href="/801-14" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mare</span> was
+                                                  a saint. <a href="/805-14" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"
                                                   >Barhadbshabba</span> was a saint. <a
                                                   href="/834-15" class="factoid-more"> See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Bassian</span> was a saint. <a href="/832-15"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Bassian</span>
+                                                  was a saint. <a href="/832-15"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">
-                                                  Sosiana </span> was a saint. <a href="/846-15"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> Sosiana </span>
+                                                  was a saint. <a href="/846-15"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Aaron</span> was a saint. <a href="/829-15"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Aaron</span> was
+                                                  a saint. <a href="/829-15" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Simeon</span>
+                                                  was a saint. <a href="/815-15"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Simeon</span> was a saint. <a href="/815-15"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>
+                                                <p class="indent"><span class="spearLabel">sanctity: </span>
                                                   <span class="tei-persName">Anonymous 3762</span>
                                                   was a saint. <a href="/812-15"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>
+                                                <p class="indent"><span class="spearLabel">sanctity: </span>
                                                   <span class="tei-persName">Hala</span> was a
                                                   saint. <a href="/825-16" class="factoid-more"> See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >James</span> was a saint. <a href="/840-16"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">James</span> was
+                                                  a saint. <a href="/840-16" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Romanus</span>
+                                                  was a saint. <a href="/832-17"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Romanus</span> was a saint. <a href="/832-17"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Caesaria</span>
+                                                  was a saint. <a href="/845-17"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Caesaria</span> was a saint. <a href="/845-17"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span>The <span class="tei-persName">Monks of
+                                                  Amida</span> were saints. <a href="/827-18"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>The <span class="tei-persName"
-                                                  >Monks of Amida</span> were saints. <a
-                                                  href="/827-18" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Theodore</span> was a saint. <a href="/823-19"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Theodore</span>
+                                                  was a saint. <a href="/823-19"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"> John
-                                                  </span> was a saint. <a href="/846-19"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> John </span>
+                                                  was a saint. <a href="/846-19"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>
+                                                <p class="indent"><span class="spearLabel">sanctity: </span>
                                                   <span class="tei-persName">Mishael</span> was a
                                                   saint. <a href="/848-19" class="factoid-more"> See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">
-                                                  James </span> was a saint. <a href="/807-19"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> James </span>
+                                                  was a saint. <a href="/807-19"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> On 22 August A. D. 394 22 Tammuz A. Gr.
                                                   705 the coffin of Mar Thomas the Apostle was
                                                   brought to his great temple . <a href="/8559-192"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Elijah</span> was a saint. <a href="/823-2"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Elijah</span>
+                                                  was a saint. <a href="/823-2" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Paul</span> was
+                                                  a saint. <a href="/798-2" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span>The <span class="tei-persName">poor
+                                                  man</span> was a saint. <a href="/809-2"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Paul</span> was a saint. <a href="/798-2"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Habib</span> was
+                                                  a saint. <a href="/793-2" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>The <span class="tei-persName"
-                                                  >poor man</span> was a saint. <a href="/809-2"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Abraham</span>
+                                                  was a saint. <a href="/814-2" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Habib</span> was a saint. <a href="/793-2"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Abraham</span> was a saint. <a href="/814-2"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anonymi 3771</span> was a group of saints. <a
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anonymi
+                                                  3771</span> was a group of saints. <a
                                                   href="/838-2" class="factoid-more"> See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Zota</span> was a saint. <a href="/805-2"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Zota</span> was
+                                                  a saint. <a href="/805-2" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Paul</span> was
+                                                  a saint. <a href="/837-20" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Sergius</span>
+                                                  was a saint. <a href="/834-20"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Paul</span> was a saint. <a href="/837-20"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Daniel</span>
+                                                  was a saint. <a href="/833-20"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Sergius</span> was a saint. <a href="/834-20"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Daniel</span> was a saint. <a href="/833-20"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">Mar
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mar
                                                   Afwrsm</span> was a saint. <a href="/10510-205"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">Mar
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mar
                                                   Samuel</span> was a saint. <a href="/10510-206"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">Mar
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mar
                                                   Samuel</span> was a saint. <a href="/10510-207"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">
-                                                  Abraham </span> was a saint. <a href="/831-21"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> Abraham </span>
+                                                  was a saint. <a href="/831-21"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"> John
-                                                  </span> was saint and a martyr. <a href="/816-21"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> John </span>
+                                                  was saint and a martyr. <a href="/816-21"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Stephen</span> was a saint. <a href="/805-21"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Stephen</span>
+                                                  was a saint. <a href="/805-21"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Sergius</span> was a saint. <a href="/833-22"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Sergius</span>
+                                                  was a saint. <a href="/833-22"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anonymous 3718</span> was a saint. <a
-                                                  href="/824-24" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >John</span> was a saint. <a href="/817-24"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anonymous
+                                                  3718</span> was a saint. <a href="/824-24"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">John</span> was
+                                                  a saint. <a href="/817-24" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 403/4 A. Gr. 720 Mar Diogenis began to
                                                   build the House of Mar Barlāhā . <a
                                                   href="/8559-244" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Isidore</span> was a saint. <a href="/842-26"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Isidore</span>
+                                                  was a saint. <a href="/842-26"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Peter</span> was a saint. <a href="/847-26"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Peter</span> was
+                                                  a saint. <a href="/847-26" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 411/2 A. Gr. 723 Rabbula built in
                                                   Edessa the House of Mar Stephanos previously
                                                   called the House of the Sabbath of the Jews of
@@ -510,241 +420,237 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Mary</span> was a saint. <a href="/843-27"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mary</span> was
+                                                  a saint. <a href="/843-27" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Thomas</span>
+                                                  was a saint. <a href="/805-27"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Thomas</span> was a saint. <a href="/805-27"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anonymous
+                                                  3760</span> was a saint. <a href="/807-27"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anonymous 3760</span> was a saint. <a
-                                                  href="/807-27" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Kashish</span> was a saint. <a href="/842-28"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Kashish</span>
+                                                  was a saint. <a href="/842-28"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Photius</span> was a saint. <a href="/847-28"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Photius</span>
+                                                  was a saint. <a href="/847-28"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"
                                                   >Theophilos</span> was a saint. <a href="/843-29"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 441/2 A. Gr. 753 Anatolius made a
                                                   coffin of silver in honor of the bones of Thomas
                                                   the Apostle <a href="/8559-294"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Tribunus</span> was a saint. <a href="/835-3"
-                                                  class="factoid-more"> See factoid page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Tribunus</span>
+                                                  was a saint. <a href="/835-3" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName">Jacob
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Jacob
                                                   Baradaeus</span> was a saint. <a href="/841-3"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>
+                                                <p class="indent"><span class="spearLabel">sanctity: </span>
                                                   <span class="tei-persName">Theodore</span> was a
                                                   saint. <a href="/3109-3" class="factoid-more"> See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Zacharias</span> was a holy person. <a
-                                                  href="/811-3" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Thomas</span> was a saint. <a href="/813-30"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Zacharias</span>
+                                                  was a holy person. <a href="/811-3"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Sergius</span> was a saint. <a href="/834-32"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Thomas</span>
+                                                  was a saint. <a href="/813-30"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Cyriacus</span> was a saint. <a href="/834-33"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Sergius</span>
+                                                  was a saint. <a href="/834-32"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Abraham</span> was a saint. <a href="/834-34"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Cyriacus</span>
+                                                  was a saint. <a href="/834-33"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Abraham</span>
+                                                  was a saint. <a href="/834-34"
+                                                  class="factoid-more"> See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 28 October A. D. 457 28 Teshri I A.
                                                   Gr. 769 Nonos built the House of John the Baptist
                                                   in Edessa . <a href="/8559-344"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 28 October A. D. 457 28 Teshri I A.
                                                   Gr. 769 Nonos built the House of Martyrs to Mar
                                                   Cosmas and Mar Damian . <a href="/8559-346"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"
                                                   >Barhadbshabba</span> was a saint. <a
                                                   href="/834-35" class="factoid-more"> See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Elijah</span> was a saint. <a href="/822-4"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Elijah</span>
+                                                  was a saint. <a href="/822-4" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Simeon</span>
+                                                  was a saint. <a href="/808-4" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> Mary </span>
+                                                  was a saint. <a href="/820-4" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Simeon</span>
+                                                  was a saint. <a href="/826-4" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Theodore of
+                                                  Hirtha</span> was a saint. <a href="/841-4"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Simeon</span> was a saint. <a href="/808-4"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Simeon</span>
+                                                  was a saint. <a href="/802-4" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">John</span> was
+                                                  a saint. <a href="/10510-4" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mare</span> was
+                                                  a saint. <a href="/828-4" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mary</span> was
+                                                  a saint. <a href="/804-4" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Zeʿora</span>
+                                                  was a saint. <a href="/794-4" class="factoid-more"
+                                                  > See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">John</span> was
+                                                  a saint. <a href="/795-4" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">James</span> was
+                                                  a saint. <a href="/807-4" class="factoid-more">
+                                                  See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Sergius</span>
+                                                  was a saint. <a href="/839-45"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"> Mary
-                                                  </span> was a saint. <a href="/820-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Simeon</span> was a saint. <a href="/826-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Theodore of Hirtha</span> was a saint. <a
-                                                  href="/841-4" class="factoid-more"> See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Simeon</span> was a saint. <a href="/802-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >John</span> was a saint. <a href="/10510-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Mare</span> was a saint. <a href="/828-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Mary</span> was a saint. <a href="/804-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Zeʿora</span> was a saint. <a href="/794-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >John</span> was a saint. <a href="/795-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >James</span> was a saint. <a href="/807-4"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Sergius</span> was a saint. <a href="/839-45"
-                                                  class="factoid-more"> See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"
                                                   >Theodosius</span> was a saint. <a href="/839-46"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Anthimus</span> was a saint. <a href="/839-47"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Anthimus</span>
+                                                  was a saint. <a href="/839-47"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Severus</span> was a saint. <a href="/839-48"
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Severus</span>
+                                                  was a saint. <a href="/839-48"
                                                   class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Paul</span> was a saint. <a href="/839-49"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Paul</span> was
+                                                  a saint. <a href="/839-49" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Abraham</span> was a saint. <a href="/834-5"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Abraham</span>
+                                                  was a saint. <a href="/834-5" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Leontius</span> was a saint. <a href="/830-5"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Leontius</span>
+                                                  was a saint. <a href="/830-5" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Theodora commissioned the refurbishing of
                                                   the palace of Hormisdas so that Anonymi 3771 could
                                                   live there as in a monastery, performing acts of
@@ -752,27 +658,27 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Simeon</span> was a saint. <a href="/797-5"
-                                                  class="factoid-more"> See factoid page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Simeon</span>
+                                                  was a saint. <a href="/797-5" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Abraham</span> was a saint. <a href="/796-5"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Abraham</span>
+                                                  was a saint. <a href="/796-5" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Mary completed sixty years in the course of
                                                   her sanctity <a href="/804-56"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Euphemia completed thirty-five years in the
                                                   course of perfection -- thirty administering to
                                                   saints and five in persecution, which led to
@@ -780,15 +686,14 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Ignatius</span> was a saint and martyr. <a
-                                                  href="/816-6" class="factoid-more"> See factoid
-                                                  page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Ignatius</span>
+                                                  was a saint and martyr. <a href="/816-6"
+                                                  class="factoid-more"> See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Even those who disagreed with the
                                                   Christology of Anonymi 3771 marveled at their
                                                   asceticism and came to the palace of Hormisdas to
@@ -797,46 +702,45 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Susan</span> was a saint. <a href="/819-7"
-                                                  class="factoid-more"> See factoid page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Susan</span> was
+                                                  a saint. <a href="/819-7" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Thomas</span> was a saint. <a href="/818-7"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Thomas</span>
+                                                  was a saint. <a href="/818-7" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Mari</span> was a Nazirite. <a href="/833-7"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Mari</span> was
+                                                  a Nazirite. <a href="/833-7" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span>
+                                                <p class="indent"><span class="spearLabel">sanctity: </span>
                                                   <span class="tei-persName">Theodore</span> was a
                                                   saint. <a href="/848-7" class="factoid-more"> See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>John reflected the holiness of Paul and
                                                   Ignatius in his own life. <a href="/816-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Addai</span> was a saint. <a href="/800-7"
-                                                  class="factoid-more"> See factoid page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Addai</span> was
+                                                  a saint. <a href="/800-7" class="factoid-more">
+                                                  See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Theodora convinced Justinian to preserve
                                                   the palace of Hormisdas as a monastery for
                                                   non-Chalcedonians and he continued to do so even
@@ -846,27 +750,27 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Abraham</span> was a saint. <a href="/799-9"
-                                                  class="factoid-more"> See factoid page <span
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Abraham</span>
+                                                  was a saint. <a href="/799-9" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"> A
-                                                  monk who left the monastery </span> was a saint.
-                                                  <a href="/810-9" class="factoid-more"> See factoid
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName"> A monk who left
+                                                  the monastery </span> was a saint. <a
+                                                  href="/810-9" class="factoid-more"> See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >sanctity: </span><span class="tei-persName"
-                                                  >Euphemia</span> was a saint. <a href="/804-9"
-                                                  class="factoid-more"> See factoid page <span
+                                                <p class="indent"><span class="spearLabel">sanctity:
+                                                  </span><span class="tei-persName">Euphemia</span>
+                                                  was a saint. <a href="/804-9" class="factoid-more"
+                                                  > See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <div class="citation">
+                                                <div class="citation">
                                                   <h3>How to cite:</h3>
                                                   <span class="element"> “Keyword Page for <span
                                                   id="title"><span><span class="tei-prefLabel"
@@ -875,12 +779,12 @@
                                                   Persons Events and Relations, general editor
                                                   Daniel L. Schwartz,
                                                   https://dev.spear-prosop.org/aggregate/taxonomy/saints.html,
-                                                  2025-06-16. </span>
-                                                  </div>
-                                                  </div>
-                                                  <div class="col-md-4">
-                                                  <h4>Related person(s)</h4>
-                                                  <ul>
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related person(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/person/2032.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2032"
@@ -1304,9 +1208,9 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/3011"
                                                   ></span>Zota — ܙܘܛܐ </a></li>
-                                                  </ul>
-                                                  <h4>Related taxonomy(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
                                                   <li><a
                                                   href="/aggregate/taxonomy/architecture.html"><span
                                                   class="loadRDF getLabel"
@@ -1390,9 +1294,9 @@
                                                   ><span class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/synagogues"
                                                   ></span>Synagogues</a></li>
-                                                  </ul>
-                                                  <h4>Related place(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related place(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/place/78.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/place/78"
@@ -1434,9 +1338,7 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/place/2593"
                                                   ></span>Mar Thomas the Apostle — </a></li>
-                                                  </ul>
-                                                  </div>
-                                                </div>
+                                                </ul>
                                         </div>
                                 </div>
                         </div>

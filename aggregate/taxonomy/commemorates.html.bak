@@ -1,41 +1,14 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Commemorates</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl : true,
-                    layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
-                });
-
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Commemorates</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/commemorates">http://syriaca.org/taxonomy/commemorates</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Commemorates</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/></head><body id="body"><nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"><div class="container-fluid"><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"/></button><div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/browse.html">Browse</a><a class="nav-link" href="/documentation.html">Documentation</a><a class="nav-link" href="/about.html">About</a><a class="nav-link" href="/contact.html">Contact Us</a></div></div></div></nav><div class="container my-5"><div class="interior-content"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Commemorates</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/commemorates">http://syriaca.org/taxonomy/commemorates</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Elijah.
+                         <a href="/823-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Simeon.
+                         <a href="/808-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated the
                             poor man.
@@ -46,20 +19,83 @@
                             Mary.
                          <a href="/804-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                     John of Ephesus 
+                     commemorated
+                     Jacob Baradaeus
+                   <a href="/841-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus
+                            commemorated Simeon.  <a href="/815-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Habib.
-                         <a href="/793-1" class="factoid-more">See factoid page
+                            Theodore.
+                         <a href="/848-1/" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Simeon.
-                         <a href="/808-1" class="factoid-more">See factoid page
+                         <a href="/802-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Mare.
+                         <a href="/801-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Addai.
+                         <a href="/800-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Mary.
+                         <a href="/820-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            John.
+                         <a href="/816-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Abraham.
+                         <a href="/814-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Susan.
+                         <a href="/819-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            John.
+                         <a href="/817-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Elijah.
-                         <a href="/823-1" class="factoid-more">See factoid page
+                         <a href="/822-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                             James .
+                         <a href="/807-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Anonymous 3718.
+                         <a href="/824-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Zeʿora.
+                         <a href="/794-1" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Thomas.
+                         <a href="/813-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -73,86 +109,13 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Anonymous 3718.
-                         <a href="/824-1" class="factoid-more">See factoid page
+                            Habib.
+                         <a href="/793-1" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Thomas.
-                         <a href="/813-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Zeʿora.
-                         <a href="/794-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                             James .
-                         <a href="/807-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Elijah.
-                         <a href="/822-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            John.
-                         <a href="/817-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Susan.
-                         <a href="/819-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Abraham.
-                         <a href="/814-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            John.
-                         <a href="/816-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Addai.
-                         <a href="/800-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Mare.
-                         <a href="/801-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Simeon.
-                         <a href="/802-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Theodore.
-                         <a href="/848-1/" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Mary.
-                         <a href="/820-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus
-                            commemorated Simeon.  <a href="/815-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                     John of Ephesus 
-                     commemorated
-                     Jacob Baradaeus
-                   <a href="/841-1" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Sergius.
-                         <a href="/797-10" class="factoid-more">See factoid page
+                            Abbi.
+                         <a href="/806-10" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -161,8 +124,10 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Abbi.
-                         <a href="/806-10" class="factoid-more">See factoid page
+                            Sergius.
+                         <a href="/797-10" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Severus of
+                                Antioch commemorated Dioscorus I. <a href="/3142-11" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span> After thirteen years of wandering,  Kashish  came to
                                  Chios.
                             There he visited the shrine of the martyr  Isidore  and venerated his grave. 
@@ -170,9 +135,7 @@
                                 
                             
                          <a href="/842-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>Severus of
-                                Antioch commemorated Dioscorus I. <a href="/3142-11" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Thomas.
@@ -195,13 +158,13 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Malkha.
-                         <a href="/821-12" class="factoid-more">See factoid page
+                            Addai.
+                         <a href="/814-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Addai.
-                         <a href="/814-12" class="factoid-more">See factoid page
+                            Malkha.
+                         <a href="/821-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                      John of Ephesus 
                      commemorated
@@ -215,8 +178,8 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Aaron.
-                         <a href="/829-14" class="factoid-more">See factoid page
+                             Sosiana .
+                         <a href="/846-14" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -225,8 +188,8 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                             Sosiana .
-                         <a href="/846-14" class="factoid-more">See factoid page
+                            Aaron.
+                         <a href="/829-14" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -255,13 +218,13 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            John.
-                         <a href="/795-18" class="factoid-more">See factoid page
+                             John .
+                         <a href="/846-18" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                             John .
-                         <a href="/846-18" class="factoid-more">See factoid page
+                            John.
+                         <a href="/795-18" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -273,16 +236,6 @@
                             Daniel.
                          <a href="/833-19" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Simeon.
-                         <a href="/797-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Anonymous 3762.
-                         <a href="/812-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                      John of Ephesus 
                      commemorated
                      Theodore of Hirtha
@@ -290,25 +243,30 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
+                            Anonymous 3762.
+                         <a href="/812-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Simeon.
+                         <a href="/797-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
                              Abraham .
                          <a href="/831-20" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Procopius
-                            commemorated Lampetius. <a href="/3038-21" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Sergius.
                          <a href="/833-21" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>Procopius
+                            commemorated Lampetius. <a href="/3038-21" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Anonymous 3760.
                          <a href="/807-23" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                             Mari .
-                         <a href="/833-24" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
                             John of Ephesus convinced Harfat
                             that he did not need to wear chains as an act of penitence. He removed them and instead committed himself to double labors,
@@ -318,6 +276,11 @@
                             
                          <a href="/803-24" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                             Mari .
+                         <a href="/833-24" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Peter.
@@ -330,28 +293,28 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Kashish.
-                         <a href="/842-27" class="factoid-more">See factoid page
+                            Photius.
+                         <a href="/847-27" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
-                            Photius.
-                         <a href="/847-27" class="factoid-more">See factoid page
+                            Kashish.
+                         <a href="/842-27" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Theophilos.
                          <a href="/843-28" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            John of Ephesus 
-                            commemorated
-                            Mare.
-                         <a href="/828-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                      John of Ephesus 
                      commemmorated
                      Anonymi 3771
                    <a href="/838-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            John of Ephesus 
+                            commemorated
+                            Mare.
+                         <a href="/828-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -447,15 +410,15 @@
                             Maro.
                          <a href="/796-76" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Anonymi 3750 
-                            commemorated
-                            Patrick
-                         <a href="/3148-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
                             Abraham.
                          <a href="/799-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Anonymi 3750 
+                            commemorated
+                            Patrick
+                         <a href="/3148-8" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             John of Ephesus 
                             commemorated
@@ -464,16 +427,16 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
                                 “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Commemorates</span></span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/taxonomy/commemorates.html, 2025-06-16.
+                                https://dev.spear-prosop.org/aggregate/taxonomy/commemorates.html, 2025-06-24.
                             </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/commemorates.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemorates"/>Commemorates</a></li><li><a href="/aggregate/taxonomy/commemoration.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/commemoration"/>Commemoration</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/martyrdom.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/martyrdom"/>Martyrdom</a></li><li><a href="/aggregate/taxonomy/penitence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/penitence"/>Penitence</a></li><li><a href="/aggregate/taxonomy/wandering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wandering"/>Wandering</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
                 </a></li><li><a href="/aggregate/person/1533.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1533"/>Aaron — ܐܗܪܘܢ
                 </a></li><li><a href="/aggregate/person/1536.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1536"/>Abi — ܐܒܝ
                 </a></li><li><a href="/aggregate/person/1554.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1554"/>Abraham the Priest — ܐܒܪܗܡ
                 </a></li><li><a href="/aggregate/person/1555.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1555"/>Abraham the Recluse — ܐܒܪܗܡ
                         ܚܒܝܫܐ
-                </a></li><li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1546"/>Abraham — ܐܒܪܗܡ
-                </a></li><li><a href="/aggregate/person/1548.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1548"/>Abraham — ܐܒܪܗܡ
                 </a></li><li><a href="/aggregate/person/1547.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1547"/>Abraham — ܐܒܪܗܡ
+                </a></li><li><a href="/aggregate/person/1548.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1548"/>Abraham — ܐܒܪܗܡ
+                </a></li><li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1546"/>Abraham — ܐܒܪܗܡ
                 </a></li><li><a href="/aggregate/person/1116.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1116"/>Addai the Chorepiscos — ܐܕܝ
                         ܟܘܪܐܦܝܣܩܦܐ
                 </a></li><li><a href="/aggregate/person/1117.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1117"/>Addai — ܐܕܝ
@@ -541,9 +504,9 @@
                         ܐܦܝܣܩܘܦܐ
                 </a></li><li><a href="/aggregate/person/2708.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2708"/>Prosdocia — ܦܪܣܕܘܩܝܐ
                 </a></li><li><a href="/aggregate/person/2040.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2040"/>Romanus — ܪܘܡܢܐ
-                </a></li><li><a href="/aggregate/person/1463.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1463"/>Sergius of Tella</a></li><li><a href="/aggregate/person/2070.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2070"/>Sergius — ܣܪܓܝܣ
+                </a></li><li><a href="/aggregate/person/1463.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1463"/>Sergius of Tella</a></li><li><a href="/aggregate/person/2069.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2069"/>Sergius — ܣܪܓܝܣ
                 </a></li><li><a href="/aggregate/person/3154.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3154"/>Sergius — ܣܪܓܝܣ
-                </a></li><li><a href="/aggregate/person/2069.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2069"/>Sergius — ܣܪܓܝܣ
+                </a></li><li><a href="/aggregate/person/2070.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2070"/>Sergius — ܣܪܓܝܣ
                 </a></li><li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/51"/>Severus of Antioch — ܣܘܝܪܝܘܣ
                         ܕܐܢܛܝܘܟܝܐ
                 </a></li><li><a href="/aggregate/person/53.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/53"/>Simeon of Beth Arsham — ܫܡܥܘܢ
@@ -573,4 +536,4 @@
                 </a></li><li><a href="/aggregate/person/3011.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3011"/>Zota — ܙܘܛܐ
                 </a></li></ul><h4>Related place(s)</h4><ul><li><a href="/aggregate/place/1529.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/1529"/>Chios
                                         — ܟܝܘ
-                </a></li></ul></div></div></div></div></div></div></body></html>
+                </a></li></ul></div></div></div></div></body></html>

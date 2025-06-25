@@ -1,460 +1,423 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>SPEAR: Roman Empire</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
-        <!-- Srophe styles -->
-        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
-        <!-- Leaflet -->
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
-        <!-- JQuery -->
-        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
-        <!-- ReCaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
-        <!-- keyboard widget css & script -->
-        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
-        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
-    </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand banner-container" href="/index.html"><span
-                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
-            <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span>Roman
-                                    Empire</span></span></h1>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/place/166"
-                                                >http://syriaca.org/place/166</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <div class="sources">
-                                    <h3>Events</h3>
-                                    <p class="indent"> In February A. D. 364 Shebāṭ A. Gr. 675
-                                        Valentinian became King of Rome . <a href="/8559-146"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In March 364 February A. D. 364 Shebāṭ A. Gr.
-                                        675 Valens became King of Rome . <a href="/8559-147"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In July, 395 Tammuz A. Gr. 706 the Huns
-                                        entered Roman territory . <a href="/8559-201"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 403/4 A. Gr. 715 ʿAbsmayyā composed
-                                        madrāshe on the Huns entering Roman territory . <a
-                                            href="/8559-235" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Sometime between 519 and 525 there was a
-                                        barbarian incursion into Roman territory. <a href="/3116-28"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> After 9 July 518 9 Tammuz A. Gr. 829 Justin
-                                        became King of Rome . <a href="/8559-451"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 44 B.C. 46/5 B.C. A. Gr. 266 Augustus
-                                        became King of Rome . <a href="/8559-52"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> On 10 August A. D. 527 10 Āb A. Gr. 838
-                                        Justinian became the sole King of Rome . <a href="/8559-522"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> On 18 December A. D. 531 18 Kānun I A. Gr.
-                                        843 the Huns entered Roman territory and plundered as far as
-                                        the area around Aleppo and Antioch . <a href="/8559-531"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In September A. D. 532 Elul A. Gr. 843
-                                        Rufinus made peace between Rome , and Persia . <a
-                                            href="/8559-537" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> There was peace between Rome and Persia from
-                                        September 532 to May 540 Elul A. Gr. 843 to Iyār A. Gr. 851
-                                            <a href="/8559-538" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In May 540 Iyār A. Gr. 851 Chosroes broke the
-                                        peace and invaded Roman territory . He laid waste Shura ,
-                                        Aleppo , and Antioch . The following factoids deal with
-                                        closely related events: 8559-538, 8559-542 <a
-                                            href="/8559-542" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Simeon travelled through Persia and into Rome
-                                        in order to convert more people to Christianity. <a
-                                            href="/802-59" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>SPEAR: Roman Empire</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <!-- Bootstrap 3 -->
+                <link rel="stylesheet" type="text/css"
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+                <!-- Srophe styles -->
+                <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+                <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+                <!-- Leaflet -->
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+                <!-- JQuery -->
+                <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+                <!-- Bootstrap -->
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
+                <!-- ReCaptcha -->
+                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+                <!-- keyboard widget css & script -->
+                <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+                <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        </head>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
+                                <a class="navbar-brand banner-container" href="/index.html"><span
+                                                class="syriaca-icon syriaca-syriaca banner-icon"
+                                                ></span><span class="banner-text"
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
                                 </div>
-                                <div class="sources">
-                                    <h4>Personal Names: </h4>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-personGrp">
-                                                <span class="tei-persName"> The Huns who entered
+                        </div></nav><div class="container my-5">
+                        <div class="interior-content">
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span>Roman
+                                                  Empire</span></span></h1>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
+                                                  ><strong>Syriaca.org URI</strong></span>: <span
+                                                  id="syriaca-id"><a
+                                                  href="http://syriaca.org/place/166"
+                                                  >http://syriaca.org/place/166</a></span></p></small>
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <div class="sources">
+                                                  <h3>Events</h3>
+                                                  <p class="indent"> In February A. D. 364 Shebāṭ A.
+                                                  Gr. 675 Valentinian became King of Rome . <a
+                                                  href="/8559-146" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In March 364 February A. D. 364
+                                                  Shebāṭ A. Gr. 675 Valens became King of Rome . <a
+                                                  href="/8559-147" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In July, 395 Tammuz A. Gr. 706
+                                                  the Huns entered Roman territory . <a
+                                                  href="/8559-201" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In 403/4 A. Gr. 715 ʿAbsmayyā
+                                                  composed madrāshe on the Huns entering Roman
+                                                  territory . <a href="/8559-235"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> Sometime between 519 and 525
+                                                  there was a barbarian incursion into Roman
+                                                  territory. <a href="/3116-28" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> After 9 July 518 9 Tammuz A.
+                                                  Gr. 829 Justin became King of Rome . <a
+                                                  href="/8559-451" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In 44 B.C. 46/5 B.C. A. Gr. 266
+                                                  Augustus became King of Rome . <a href="/8559-52"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> On 10 August A. D. 527 10 Āb A.
+                                                  Gr. 838 Justinian became the sole King of Rome .
+                                                  <a href="/8559-522" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> On 18 December A. D. 531 18
+                                                  Kānun I A. Gr. 843 the Huns entered Roman
+                                                  territory and plundered as far as the area around
+                                                  Aleppo and Antioch . <a href="/8559-531"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In September A. D. 532 Elul A.
+                                                  Gr. 843 Rufinus made peace between Rome , and
+                                                  Persia . <a href="/8559-537" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> There was peace between Rome
+                                                  and Persia from September 532 to May 540 Elul A.
+                                                  Gr. 843 to Iyār A. Gr. 851 <a href="/8559-538"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent"> In May 540 Iyār A. Gr. 851
+                                                  Chosroes broke the peace and invaded Roman
+                                                  territory . He laid waste Shura , Aleppo , and
+                                                  Antioch . The following factoids deal with closely
+                                                  related events: 8559-538, 8559-542 <a
+                                                  href="/8559-542" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                  <p class="indent">Simeon travelled through Persia
+                                                  and into Rome in order to convert more people to
+                                                  Christianity. <a href="/802-59"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <hr />
+                                                </div>
+                                                <div class="sources">
+                                                  <h4>Personal Names: </h4>
+                                                  <p class="indent"><span class="tei-listPerson">
+                                                  <span class="tei-personGrp">
+                                                  <span class="tei-persName"> The Huns who entered
                                                   <span class="tei-placeName"> Roman territory
                                                   </span> in Tammuz A. Gr. 706(July, 395)</span>
-                                                <span class="tei-ptr"></span>
-                                            </span>
-                                        </span>
-                                        <a href="/8559-200" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-personGrp">
-                                                <span class="tei-persName"><span class="tei-ref">
+                                                  <span class="tei-ptr"></span>
+                                                  </span>
+                                                  </span>
+                                                  <a href="/8559-200" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-listPerson">
+                                                  <span class="tei-personGrp">
+                                                  <span class="tei-persName"><span class="tei-ref">
                                                   The Huns </span> who entered <span
                                                   class="tei-placeName"> Roman territory </span> on
                                                   18 Kānun I A. Gr. 843(18 December A. D.
                                                   531)</span>
-                                                <span class="tei-ptr"></span>
-                                            </span>
-                                        </span>
-                                        <a href="/8559-530" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Occupation(s): </h4>
-                                    <p class="indent"><span class="tei-persName">Theodosius</span>
-                                        the Great was Emperor of <span class="tei-placeName"> Rome
-                                        </span>. <a href="/8559-176" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Severus</span> was
-                                        emperor of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-3" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anastosios</span>
-                                        was King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-400" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Justin</span> was
-                                        King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-450" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Justinian</span>
-                                        was King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-498" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Augustus
-                                            Caesar</span> was king of <span class="tei-placeName">
-                                            Rome </span>. <a href="/8559-51" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Justinian</span>
-                                        was King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-520" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Honorios</span> was
-                                        King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-549" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Theodosius</span>
-                                        was King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-552" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
+                                                  <span class="tei-ptr"></span>
+                                                  </span>
+                                                  </span>
+                                                  <a href="/8559-530" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <h4>Occupation(s): </h4>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Theodosius</span> the Great was Emperor of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-176" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Severus</span> was emperor of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-3" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Anastosios</span> was King of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-400" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Justin</span> was King of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-450" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Justinian</span> was King of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-498" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Augustus Caesar</span> was king of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-51" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Justinian</span> was King of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-520" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Honorios</span> was King of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-549" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                  <p class="indent"><span class="tei-persName"
+                                                  >Theodosius</span> was King of <span
+                                                  class="tei-placeName"> Rome </span>. <a
+                                                  href="/8559-552" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                </div>
+                                                <div class="citation">
+                                                  <h3>How to cite:</h3>
+                                                  <span class="element"> “Place Page for <span
+                                                  id="title"><span>Roman Empire</span></span>,” in
+                                                  SPEAR: Syriac Persons Events and Relations,
+                                                  general editor Daniel L. Schwartz,
+                                                  https://dev.spear-prosop.org/aggregate/place/166.html,
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
+                                                  <li><a href="/aggregate/taxonomy/accession.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/accession"
+                                                  ></span>Accession</a></li>
+                                                  <li><a href="/aggregate/taxonomy/armies.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/armies"
+                                                  ></span>Armies</a></li>
+                                                  <li><a href="/aggregate/taxonomy/conversion.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/conversion"
+                                                  ></span>Conversion</a></li>
+                                                  <li><a href="/aggregate/taxonomy/diplomacy.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/diplomacy"
+                                                  ></span>Diplomacy</a></li>
+                                                  <li><a href="/aggregate/taxonomy/emperors.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                                  ></span>Emperors</a></li>
+                                                  <li><a href="/aggregate/taxonomy/huns.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/huns"
+                                                  ></span>Huns</a></li>
+                                                  <li><a href="/aggregate/taxonomy/madrashe.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/madrashe"
+                                                  ></span>Madrashe</a></li>
+                                                  <li><a href="/aggregate/taxonomy/peace.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/peace"
+                                                  ></span>Peace</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/proximate-event.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
+                                                  ></span>Proximate Event</a></li>
+                                                  <li><a href="/aggregate/taxonomy/violence.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/violence"
+                                                  ></span>Violence</a></li>
+                                                  <li><a href="/aggregate/taxonomy/war.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/war"
+                                                  ></span>War</a></li>
+                                                </ul>
+                                                <h4>Related person(s)</h4>
+                                                <ul>
+                                                  <li><a href="/aggregate/person/2265.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2265"
+                                                  ></span>Anastasios I — ܐܢܣܛܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2224.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2224"
+                                                  ></span>Anonymi 2224 — The Huns who entered Roman
+                                                  territory in July 395</a></li>
+                                                  <li><a href="/aggregate/person/2227.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2227"
+                                                  ></span>Anonymi 2227 — The Huns who entered Roman
+                                                  territory on 18 December 531</a></li>
+                                                  <li><a href="/aggregate/person/2238.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2238"
+                                                  ></span>Augustus — ܐܓܘܣܛܣ </a></li>
+                                                  <li><a href="/aggregate/person/2267.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2267"
+                                                  ></span>Honorios — ܐܢܪܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/2268.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2268"
+                                                  ></span>Justin I — ܝܘܣܛܝܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2284.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2284"
+                                                  ></span>Justinian I — ܝܘܣܛܝܢܝܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2244.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2244"
+                                                  ></span>Khusrau I Anushirwan — ܟܣܪܘܢ </a></li>
+                                                  <li><a href="/aggregate/person/2300.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2300"
+                                                  ></span>Rufinus — ܪܘܦܝܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2302.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2302"
+                                                  ></span>Severus Alexander — ܣܘܪܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/53.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/53"
+                                                  ></span>Simeon of Beth Arsham — ܫܡܥܘܢ ܕܒܝܬ ܐܪܫܡ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/2271.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2271"
+                                                  ></span>Theodosius I — ܬܐܘܕܣܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/1529.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/1529"
+                                                  ></span>Theodosius II — ܬܐܘܕܘܣܝܘܣ </a></li>
+                                                  <li><a href="/aggregate/person/2309.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2309"
+                                                  ></span>Valens — ܘܠܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/2310.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2310"
+                                                  ></span>Valentinian I — ܘܠܢܛܝܢܣ </a></li>
+                                                  <li><a href="/aggregate/person/16.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/16"
+                                                  ></span>ʿAbshmayya — ܥܒܫܡܝܐ </a></li>
+                                                </ul>
+                                                <h4>Related place(s)</h4>
+                                                <ul>
+                                                  <li><a href="/aggregate/place/18.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/18"
+                                                  ></span>Aleppo — ܚܠܒ </a></li>
+                                                  <li><a href="/aggregate/place/10.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/10"
+                                                  ></span>Antioch — ܐܢܛܝܘܟܝܐ </a></li>
+                                                  <li><a href="/aggregate/place/150.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/150"
+                                                  ></span>Persian-Sasanian Empire</a></li>
+                                                  <li><a href="/aggregate/place/166.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/166"
+                                                  ></span>Roman Empire</a></li>
+                                                  <li><a href="/aggregate/place/185.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/185"
+                                                  ></span>Shura</a></li>
+                                                </ul>
+                                        </div>
                                 </div>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Place Page for <span id="title"
-                                                ><span>Roman Empire</span></span>,” in SPEAR: Syriac
-                                        Persons Events and Relations, general editor Daniel L.
-                                        Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/place/166.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/2265.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2265"
-                                            ></span>Anastasios I — ܐܢܣܛܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2224.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2224"
-                                            ></span>Anonymi 2224 — The Huns who entered Roman
-                                            territory in July 395</a></li>
-                                    <li><a href="/aggregate/person/2227.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2227"
-                                            ></span>Anonymi 2227 — The Huns who entered Roman
-                                            territory on 18 December 531</a></li>
-                                    <li><a href="/aggregate/person/2238.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2238"
-                                            ></span>Augustus — ܐܓܘܣܛܣ </a></li>
-                                    <li><a href="/aggregate/person/2267.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2267"
-                                            ></span>Honorios — ܐܢܪܝܣ </a></li>
-                                    <li><a href="/aggregate/person/2268.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2268"
-                                            ></span>Justin I — ܝܘܣܛܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2284.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2284"
-                                            ></span>Justinian I — ܝܘܣܛܝܢܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2244.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2244"
-                                            ></span>Khusrau I Anushirwan — ܟܣܪܘܢ </a></li>
-                                    <li><a href="/aggregate/person/2300.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2300"
-                                            ></span>Rufinus — ܪܘܦܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2302.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2302"
-                                            ></span>Severus Alexander — ܣܘܪܘܣ </a></li>
-                                    <li><a href="/aggregate/person/53.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/53"
-                                            ></span>Simeon of Beth Arsham — ܫܡܥܘܢ ܕܒܝܬ ܐܪܫܡ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/2271.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2271"
-                                            ></span>Theodosius I — ܬܐܘܕܣܝܣ </a></li>
-                                    <li><a href="/aggregate/person/1529.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1529"
-                                            ></span>Theodosius II — ܬܐܘܕܘܣܝܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2309.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2309"
-                                            ></span>Valens — ܘܠܝܣ </a></li>
-                                    <li><a href="/aggregate/person/2310.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2310"
-                                            ></span>Valentinian I — ܘܠܢܛܝܢܣ </a></li>
-                                    <li><a href="/aggregate/person/16.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/16"
-                                            ></span>ʿAbshmayya — ܥܒܫܡܝܐ </a></li>
-                                </ul>
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/accession.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/accession"
-                                            ></span>Accession</a></li>
-                                    <li><a href="/aggregate/taxonomy/armies.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/armies"
-                                            ></span>Armies</a></li>
-                                    <li><a href="/aggregate/taxonomy/conversion.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/conversion"
-                                            ></span>Conversion</a></li>
-                                    <li><a href="/aggregate/taxonomy/diplomacy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/diplomacy"
-                                            ></span>Diplomacy</a></li>
-                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
-                                            ></span>Emperors</a></li>
-                                    <li><a href="/aggregate/taxonomy/huns.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/huns"
-                                            ></span>Huns</a></li>
-                                    <li><a href="/aggregate/taxonomy/madrashe.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/madrashe"
-                                            ></span>Madrashe</a></li>
-                                    <li><a href="/aggregate/taxonomy/peace.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/peace"
-                                            ></span>Peace</a></li>
-                                    <li><a href="/aggregate/taxonomy/proximate-event.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
-                                            ></span>Proximate Event</a></li>
-                                    <li><a href="/aggregate/taxonomy/violence.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/violence"
-                                            ></span>Violence</a></li>
-                                    <li><a href="/aggregate/taxonomy/war.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/war"
-                                            ></span>War</a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/18.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/18"
-                                            ></span>Aleppo — ܚܠܒ </a></li>
-                                    <li><a href="/aggregate/place/10.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/10"
-                                            ></span>Antioch — ܐܢܛܝܘܟܝܐ </a></li>
-                                    <li><a href="/aggregate/place/150.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/150"
-                                            ></span>Persian-Sasanian Empire</a></li>
-                                    <li><a href="/aggregate/place/166.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/166"
-                                            ></span>Roman Empire</a></li>
-                                    <li><a href="/aggregate/place/185.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/185"
-                                            ></span>Shura</a></li>
-                                </ul>
-                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div></body>
+                </div></body>
 </html>

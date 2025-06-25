@@ -1,50 +1,13 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Cited Positively</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl : true,
-                    layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
-                });
-
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Cited Positively</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/cited-positively">http://syriaca.org/taxonomy/cited-positively</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            John Chrysostom.
-                         <a href="/3125-12" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Cited Positively</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/></head><body id="body"><nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"><div class="container-fluid"><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"/></button><div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/browse.html">Browse</a><a class="nav-link" href="/documentation.html">Documentation</a><a class="nav-link" href="/about.html">About</a><a class="nav-link" href="/contact.html">Contact Us</a></div></div></div></nav><div class="container my-5"><div class="interior-content"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Cited Positively</span></span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/taxonomy/cited-positively">http://syriaca.org/taxonomy/cited-positively</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively 
                             Cyprian.
                          <a href="/3088-12" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            John Chrysostom.
+                         <a href="/3125-12" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -67,39 +30,29 @@
                          <a href="/3221-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited
-                            Cyril.
-                         <a href="/3163-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Cyril of Alexandria.
-                         <a href="/3172-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
                             cited positively
                             John Chrysostom.
-                         <a href="/3145-2" class="factoid-more">See factoid page
+                         <a href="/3080-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively the work of 
+                            Basil.
+                         <a href="/3160-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Gregory Nazianzen.
-                         <a href="/3005-2" class="factoid-more">See factoid page
+                         <a href="/3174-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus of Antioch 
+                            cited positively 
+                            John Chrysostom.
+                         <a href="/3027-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Timothy Aelurus.
-                         <a href="/3110-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively the work of 
-                            Gregory of Nazianzus.
-                         <a href="/3101-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Gregory of Nazianzus.
-                         <a href="/3154-2" class="factoid-more">See factoid page
+                            Cyril of Alexandria.
+                         <a href="/3014-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively 
@@ -113,28 +66,38 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Cyril of Alexandria.
-                         <a href="/3014-2" class="factoid-more">See factoid page
+                            Gregory of Nazianzus.
+                         <a href="/3154-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus of Antioch 
-                            cited positively 
+                            Severus 
+                            cited positively the work of 
+                            Gregory of Nazianzus.
+                         <a href="/3101-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Timothy Aelurus.
+                         <a href="/3110-2" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
                             John Chrysostom.
-                         <a href="/3027-2" class="factoid-more">See factoid page
+                         <a href="/3145-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Gregory Nazianzen.
-                         <a href="/3174-2" class="factoid-more">See factoid page
+                         <a href="/3005-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively the work of 
-                            Basil.
-                         <a href="/3160-2" class="factoid-more">See factoid page
+                            cited
+                            Cyril.
+                         <a href="/3163-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            John Chrysostom.
-                         <a href="/3080-2" class="factoid-more">See factoid page
+                            Cyril of Alexandria.
+                         <a href="/3172-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -163,28 +126,53 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Cyril of Alexandria.
-                         <a href="/3095-3" class="factoid-more">See factoid page
+                            Gregory Nazianzus.
+                         <a href="/3135-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively
+                            cited positively the work of 
                             Gregory of Nazianzus.
-                         <a href="/3172-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited
-                            Gregory Nazianzen.
-                         <a href="/3145-3" class="factoid-more">See factoid page
+                         <a href="/3160-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Basil.
-                         <a href="/3161-3" class="factoid-more">See factoid page
+                            John Chrysostom.
+                         <a href="/3174-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus of Antioch 
                             cited positively 
                             Cyril of Alexandria.
-                         <a href="/3223-3" class="factoid-more">See factoid page
+                         <a href="/3027-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Cyril of Alexandria.
+                         <a href="/3014-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Timothy of Alexandria.
+                         <a href="/3197-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            John Chrysostom.
+                         <a href="/3131-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Athanasius.
+                         <a href="/3154-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Basil.
+                         <a href="/3101-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Cyril.
+                         <a href="/3162-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -198,53 +186,28 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Cyril.
-                         <a href="/3162-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
                             Basil.
-                         <a href="/3101-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Athanasius.
-                         <a href="/3154-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            John Chrysostom.
-                         <a href="/3131-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Cyril of Alexandria.
-                         <a href="/3014-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Timothy of Alexandria.
-                         <a href="/3197-3" class="factoid-more">See factoid page
+                         <a href="/3161-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus of Antioch 
                             cited positively 
                             Cyril of Alexandria.
-                         <a href="/3027-3" class="factoid-more">See factoid page
+                         <a href="/3223-3" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited
+                            Gregory Nazianzen.
+                         <a href="/3145-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            John Chrysostom.
-                         <a href="/3174-3" class="factoid-more">See factoid page
+                            Cyril of Alexandria.
+                         <a href="/3095-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively the work of 
+                            cited positively
                             Gregory of Nazianzus.
-                         <a href="/3160-3" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Gregory Nazianzus.
-                         <a href="/3135-3" class="factoid-more">See factoid page
+                         <a href="/3172-3" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -258,28 +221,48 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
+                            Gregory of Nazianzus.
+                         <a href="/3088-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
                             Gregory Nazianzen.
-                         <a href="/3095-4" class="factoid-more">See factoid page
+                         <a href="/3174-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                           Severus 
+                           cited positively
+                           John Chrysostom.
+                        <a href="/3009-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Cyril of Alexandria.
-                         <a href="/3172-4" class="factoid-more">See factoid page
+                         <a href="/3014-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively
-                            Cyril of Alexandria.
-                         <a href="/3235-4" class="factoid-more">See factoid page
+                            cited positively a letter of 
+                            Basil.
+                         <a href="/3022-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             John Chrysostom.
-                         <a href="/3126-4" class="factoid-more">See factoid page
+                         <a href="/3131-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively 
-                            Basil of Caesarea.
-                         <a href="/3120-4" class="factoid-more">See factoid page
+                            cited positively
+                            Gregory Nazianzen.
+                         <a href="/3183-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            John Chrysostom.
+                         <a href="/3123-4" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited
+                            Gregory Nazianzen.
+                         <a href="/3122-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -292,89 +275,34 @@
                          <a href="/3159-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited
-                            Gregory Nazianzen.
-                         <a href="/3122-4" class="factoid-more">See factoid page
+                            cited positively 
+                            Basil of Caesarea.
+                         <a href="/3120-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             John Chrysostom.
-                         <a href="/3123-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            John Chrysostom.
-                         <a href="/3131-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively a letter of 
-                            Basil.
-                         <a href="/3022-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Gregory Nazianzen.
-                         <a href="/3183-4" class="factoid-more">See factoid page
+                         <a href="/3126-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Cyril of Alexandria.
-                         <a href="/3014-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                           Severus 
-                           cited positively
-                           John Chrysostom.
-                        <a href="/3009-4" class="factoid-more">See factoid page
+                         <a href="/3235-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Gregory Nazianzen.
-                         <a href="/3174-4" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Gregory of Nazianzus.
-                         <a href="/3088-4" class="factoid-more">See factoid page
+                         <a href="/3095-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Cyril of Alexandria.
-                         <a href="/3095-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            John Chrysostom.
-                         <a href="/3103-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Basil.
-                         <a href="/3235-5" class="factoid-more">See factoid page
+                         <a href="/3172-4" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
                             Cyril.
-                         <a href="/3126-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Athanasius.
-                         <a href="/3131-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Basil of Caesarea.
-                         <a href="/3183-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Gregory Nazianzen.
-                         <a href="/3014-5" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Gregory of Nyssa.
-                         <a href="/3125-5" class="factoid-more">See factoid page
+                         <a href="/3209-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -388,13 +316,43 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Cyril.
-                         <a href="/3209-5" class="factoid-more">See factoid page
+                            Gregory of Nyssa.
+                         <a href="/3125-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Gregory the Theologian.
-                         <a href="/3078-6" class="factoid-more">See factoid page
+                            Gregory Nazianzen.
+                         <a href="/3014-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Athanasius.
+                         <a href="/3131-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Basil of Caesarea.
+                         <a href="/3183-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Cyril.
+                         <a href="/3126-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            John Chrysostom.
+                         <a href="/3103-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Basil.
+                         <a href="/3235-5" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Cyril of Alexandria.
+                         <a href="/3095-5" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -403,23 +361,8 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Cyril.
-                         <a href="/3103-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            John Chrysostom.
-                         <a href="/3126-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus
-                            cited positively
-                            Cyril.
-                         <a href="/3120-6" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively a letter by
-                            Isidore.
-                         <a href="/3021-6" class="factoid-more">See factoid page
+                            Ignatius of Antioch.
+                         <a href="/3125-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -427,24 +370,29 @@
                          <a href="/3014-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
+                            cited positively a letter by
+                            Isidore.
+                         <a href="/3021-6" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus
                             cited positively
-                            Ignatius of Antioch.
-                         <a href="/3125-6" class="factoid-more">See factoid page
+                            Cyril.
+                         <a href="/3120-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Gregory of Nyssa.
-                         <a href="/3126-7" class="factoid-more">See factoid page
+                            John Chrysostom.
+                         <a href="/3126-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively the work of 
-                            Gregory of Nazianzus.
-                         <a href="/3113-7" class="factoid-more">See factoid page
+                            cited positively
+                            Cyril.
+                         <a href="/3103-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively a letter of 
-                            Basil.
-                         <a href="/3018-7" class="factoid-more">See factoid page
+                            cited positively
+                            Gregory the Theologian.
+                         <a href="/3078-6" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -457,19 +405,19 @@
                          <a href="/3037-7" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
-                            cited positively
+                            cited positively a letter of 
                             Basil.
-                         <a href="/3113-8" class="factoid-more">See factoid page
+                         <a href="/3018-7" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively the work of 
+                            Gregory of Nazianzus.
+                         <a href="/3113-7" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            John Chrysostom.
-                         <a href="/3024-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
-                            Severus 
-                            cited positively
-                            Cyril of Alexandria.
-                         <a href="/3014-8" class="factoid-more">See factoid page
+                            Gregory of Nyssa.
+                         <a href="/3126-7" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">event: </span>
                             Anastasios wrote a letter to  
                             John complaining about his refusal simply
@@ -490,12 +438,22 @@
                             Severus 
                             cited positively
                             Cyril of Alexandria.
-                         <a href="/3172-9" class="factoid-more">See factoid page
+                         <a href="/3014-8" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Gregory of Nyssa.
-                         <a href="/3024-9" class="factoid-more">See factoid page
+                            John Chrysostom.
+                         <a href="/3024-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Basil.
+                         <a href="/3113-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Dionysius of Alexandria.
+                         <a href="/3088-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
@@ -504,12 +462,17 @@
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
                             Severus 
                             cited positively
-                            Dionysius of Alexandria.
-                         <a href="/3088-9" class="factoid-more">See factoid page
+                            Gregory of Nyssa.
+                         <a href="/3024-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><p class="indent"><span class="spearLabel">relation: </span>
+                            Severus 
+                            cited positively
+                            Cyril of Alexandria.
+                         <a href="/3172-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><div class="citation"><h3>How to cite:</h3><span class="element">
                                 “Keyword Page for <span id="title"><span><span class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr">Cited Positively</span></span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/taxonomy/cited-positively.html, 2025-06-16.
+                                https://dev.spear-prosop.org/aggregate/taxonomy/cited-positively.html, 2025-06-24.
                             </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/anathema.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/anathema"/>Anathema</a></li><li><a href="/aggregate/taxonomy/cited-positively.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/cited-positively"/>Cited Positively</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/letters.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/letters"/>Letters</a></li><li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"/>Sender of Letter to</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2265"/>Anastasios I — ܐܢܣܛܘܣ
                 </a></li><li><a href="/aggregate/person/2612.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2612"/>Athanasius II — ܐܬܢܣܝܘܣ
                 </a></li><li><a href="/aggregate/person/354.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/354"/>Athanasius, bishop of Alexandria — ܐܬܢܣܝܣ ܕܐܠܟܣܢܕܪܝܐ
@@ -543,4 +506,4 @@
                 </a></li><li><a href="/aggregate/person/2774.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2774"/>Timothy I — ܛܝܡܬܐܘܣ ܐܦܝܣܩܘܦܐ
                         ܕܐܠܟܣܢܕܪܝܐ
                 </a></li><li><a href="/aggregate/person/792.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/792"/>Timothy II of Alexandria — ܛܝܡܬܐܘܣ ܕܐܠܟܣܢܕܪܝܐ
-                </a></li></ul></div></div></div></div></div></div></body></html>
+                </a></li></ul></div></div></div></div></body></html>

@@ -6,7 +6,7 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <!-- Bootstrap 3 -->
                 <link rel="stylesheet" type="text/css"
-                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
                 <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
                 <!-- Srophe styles -->
                 <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -17,147 +17,65 @@
                 <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
                 <!-- JQuery -->
                 <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
                 <!-- Bootstrap -->
-                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
                 <!-- ReCaptcha -->
                 <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
                 <!-- keyboard widget css & script -->
                 <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
                 <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-                <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
         </head>
-        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                                class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                        data-target="#navbar-collapse-1"><span class="sr-only"
-                                                >Toggle navigation</span><span class="icon-bar"
-                                                ></span><span class="icon-bar"></span><span
-                                                class="icon-bar"></span></button>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
                                 <a class="navbar-brand banner-container" href="/index.html"><span
                                                 class="syriaca-icon syriaca-syriaca banner-icon"
                                                 ></span><span class="banner-text"
-                                                data-template="config:app-title">SPEAR: Syriac
-                                                Persons Events and Relations</span></a>
-                        </div><div class="navbar-collapse collapse pull-right"
-                                id="navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                        <li><a href="/index.html" class="nav-text">Home</a></li>
-                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                                        <li class="dropdown"><a href="#"
-                                                  class="dropdown-toggle lonely-caret"
-                                                  data-toggle="dropdown">  <span
-                                                  class="mobile-submenu">About</span>  <b
-                                                  class="caret"></b></a><ul
-                                                  class="dropdown-menu pull-right">
-                                                  <li><a href="/about.html">Project
-                                                  Overview</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contributors.html">Project
-                                                  Contributors</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contact.html">Contact Us</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/documentation/index.html"><span
-                                                  class="syriaca-icon syriaca-book icon-nav"
-                                                  style="color:red;"></span><span class="icon-text"
-                                                  >Documentation</span></a></li>
-                                                </ul></li>
-                                        <li><a href="/search.html" class="nav-text">Advanced
-                                                  Search</a></li>
-                                        <li><div id="search-wrapper">
-                                                  <form class="navbar-form navbar-right search-box"
-                                                  role="search" action="/search.html" method="get"
-                                                  ><div class="form-group">
-                                                  <input type="text" class="form-control keyboard"
-                                                  placeholder="search" name="keyword"
-                                                  id="keywordNav" />
-                                                  <span data-template="app:keyboard-select-menu"
-                                                  data-template-input-id="keywordNav"></span>
-                                                  <button class="btn btn-default search-btn"
-                                                  id="searchbtn" type="submit" title="Search"><span
-                                                  class="glyphicon glyphicon-search"
-                                                  ></span></button>
-                                                  </div></form>
-                                                </div></li>
-                                </ul>
-                        </div></nav><div class="main-content-block">
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
+                                </div>
+                        </div></nav><div class="container my-5">
                         <div class="interior-content">
-                                <div class="record">
-                                        <div class="interior-content" data-template="app:fix-links">
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns"
-                                                  class="padding-top">
-                                                  <h1>SPEAR Factoids about <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr"
-                                                  >Priests</span></span></span></h1>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns">
-                                                  <div style="margin:0 1em 1em; color: #999999;">
-                                                  <small><p><span class="srp-label"
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span><span
+                                                  class="tei-prefLabel" xml:lang="en" lang="en"
+                                                  dir="ltr">Priests</span></span></span></h1>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
                                                   ><strong>Syriaca.org URI</strong></span>: <span
                                                   id="syriaca-id"><a
                                                   href="http://syriaca.org/taxonomy/priests"
                                                   >http://syriaca.org/taxonomy/priests</a></span></p></small>
-                                                  </div>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns" class="row">
-                                                  <div class="col-md-8">
-                                                  <p class="indent"><span class="spearLabel">event:
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus wrote a letter to Caesaria
                                                   explaining the meaning of the priest lifting the
                                                   veil covering the eucharist during the liturgy. <a
@@ -165,16 +83,16 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus wrote a letter to Nicias
                                                   discussing the impiety of ordination by Nestorian
                                                   bishops. <a href="/3031-1" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus wrote a letter to Peter hoping to
                                                   correct the bishop's views of ordinations that
                                                   occur at the hands of those outside a particular
@@ -182,8 +100,8 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus commanded Nicias to remain faithful
                                                   to the sacred canons by stripping the deacons and
                                                   priests on Minidus who had been ordained by
@@ -192,21 +110,21 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Philip</span> was a
                                                   presbyter. <a href="/3179-10" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Peter</span> was a presbyter. <a href="/3042-10"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Theodosius and the rest of the bishops
                                                   were sent into exile. Along with three hundred
                                                   clergy and saint Zura, they travelled to a
@@ -216,29 +134,29 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Theotecnus </span> was a presbyter. <a
                                                   href="/3117-11" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3093</span> was a visiting priest. <a
                                                   href="/3072-11" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">Mar
                                                   Samuel</span> was an archpresbyter. <a
                                                   href="/10510-11" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Demons caused Anonymous 3761 to appear as
                                                   an angel of light and placed her on the bishop's
                                                   throne and identified her as Virgin Mary. James
@@ -247,28 +165,28 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3623</span> was a presbyter. <a
                                                   href="/802-111" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Theodore</span> was a presbyter. <a
                                                   href="/3035-12" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Aaron</span> was a qašišā. <a href="/830-12"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Charisius</span> was a
                                                   presbyter from the <span class="tei-placeName"
@@ -276,41 +194,41 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Aelian </span> was a presbyter. <a href="/3047-12"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Epimachus</span> was a presbyter. <a
                                                   href="/3098-13" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3057</span> was a presbyter. <a
                                                   href="/3042-14" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Severus</span> was a presbyter. <a
                                                   href="/3086-14" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">John</span> was a
                                                   presbyter. <a href="/3063-14" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>John began examaning candidates for
                                                   ordination from all over the empire. Potental
                                                   priests came from Armenia, Arzun, Cappadocia. <a
@@ -318,22 +236,22 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Apaphon</span> was a presbyter. <a
                                                   href="/3039-14" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Julian</span> was a
                                                   presbyter. <a href="/3109-15" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> With regard to the mutilation of Thomas,
                                                   Severus advises Aurelius to allow him his priestly
                                                   office if the mutilation was performed by a
@@ -342,37 +260,37 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Theodore </span> was a presbyter. <a
                                                   href="/3099-15" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus also wrote to Cassian, advocating
                                                   the view that Thomas's mutilation was medicinal.
                                                   <a href="/3076-16" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Between 513 and 518, Severus sent a letter
                                                   to Cassian concerning the treatment of a man whose
                                                   genitals had been cut off. <a href="/3075-16"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Philip </span> was a presbyter. <a href="/3148-16"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Theodosius</span> was a presbyter of <span
                                                   class="tei-placeName"> Antioch </span>
@@ -380,21 +298,21 @@
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Zwtʾ is promoted to Presbyter <a
                                                   href="/831-17" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3058</span> was a presbyter. <a
                                                   href="/3042-17" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In reference to Thomas, Severus refutes
                                                   Cassian's blaming of the mutilation on the corrupt
                                                   bishop Julian, suggesting instead that Thomas be
@@ -404,29 +322,29 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Timothy</span> was a presbyter. <a
                                                   href="/3069-18" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Eusebius</span> was a
                                                   priest. <a href="/3061-18" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Epimachus </span> was a presbyter. <a
                                                   href="/3099-18" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Ephraim appealed to the king and queen,
                                                   revealing that John was causing division by
                                                   ordaining priests around the empire.Theodora,
@@ -435,15 +353,15 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Philip</span> was a
                                                   presbyter. <a href="/3196-2" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Ammonius</span> was a
                                                   presbyter of <span class="tei-placeName"
@@ -451,77 +369,77 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Eleusinius wrote a letter to Severus about
                                                   a trial of some presbyters. <a href="/3019-2"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Elisha</span> was a
                                                   presbyter. <a href="/3179-2" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Neon</span> was a
                                                   priest. <a href="/3178-2" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Theotecnus</span> was a
                                                   presbyter. <a href="/3063-2" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Samuel</span> was a
                                                   priest. <a href="/3105-2" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Aaron</span> was a Presbyter. <a href="/829-2"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Victor</span> was a
                                                   presbyter. <a href="/3215-2" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Jonathan</span> was a
                                                   presbyter. <a href="/3170-2" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Victor</span> was a
                                                   priest. <a href="/3061-20" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>John was captured and brought to Antioch,
                                                   where he was tortured and killed by Ephraim of
                                                   Amida. <a href="/816-20" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After a time,John feigned illness again as
                                                   a pretense to travel around the empire to ordain
                                                   more priests. He travelled to
@@ -530,8 +448,8 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Peter </span> was a presbyter of <span
                                                   class="tei-placeName"> Antioch </span>. <a
@@ -539,7 +457,7 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Cosmas </span> was a presbyter of <span
                                                   class="tei-placeName"> Chalcis </span>. <a
@@ -547,7 +465,7 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> While John was ordaining priests in the
                                                   Church at Tralles, John of Ephesus administered
                                                   the eucharist during the ordination service. John
@@ -556,8 +474,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >ʿAbsmayyā</span> was a priest in <span
                                                   class="tei-placeName"> Edessa </span>. <a
@@ -565,7 +483,7 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Appealing to Cyril's letter to Nestorius
                                                   and the example of Severus the presbyter, Severus
                                                   urged Stephen to accept the ordination of Stephen
@@ -574,22 +492,22 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Father Theodore</span> was a presbyter. <a
                                                   href="/3069-24" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Zoninus</span> was a
                                                   presbyter. <a href="/3061-24" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> When Marefinished constructing the
                                                   martyr's chapel and he knew his death was close,
                                                   he knelt in his coffin to pray for three days and
@@ -599,8 +517,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Between 514 and 518, Severus wrote a letter
                                                   to Solon, bishop of Seleucia in Isauria about
                                                   conflicts over bishops in his diocese. <a
@@ -608,8 +526,8 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Sometime after the end of his episcopacy
                                                   Severus of Antioch wrote a letter to Thecla
                                                   discussing her devoutness and answering questions
@@ -620,26 +538,26 @@
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Cosmas</span> was a presbyter. <a href="/3036-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Abraham</span> was a presbyter. <a href="/831-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Leontius</span> was a qašišā. <a href="/830-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Romanus</span> was a presbyter and visitor of the
                                                   great convent of <span class="tei-placeName">Thel
@@ -647,7 +565,7 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus of Antioch and Anonymi 3729
                                                   exchanged letters on questions of whether or not
                                                   there would be sufficient ordained clergy to
@@ -659,34 +577,34 @@
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Photius </span> was a presbyter. <a href="/3134-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Eustace</span> was a presbyter. <a href="/3069-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Neon</span> was a
                                                   presbyter. <a href="/3051-3" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Aeneas</span> was a
                                                   presbyter. <a href="/3061-3" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus defended Julian against charges
                                                   that he attempted to mislead Anastasios. <span
                                                   class="tei-desc"> The following factoids deal with
@@ -700,53 +618,53 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Simeon</span> was a presbyter. <a href="/3104-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Thomas</span> was a
                                                   presbyter. <a href="/3110-3" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >John</span> was a presbyter. <a href="/3098-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   John </span> was a presbyter. <a href="/3107-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Philip</span> was a presbyter. <a href="/3106-3"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Samuel</span> was a
                                                   presbyter. <a href="/3170-3" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Last year, Severus compelled bishop Paul of
                                                   Olba to return to his flock. <a href="/3046-30"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus encouraged Solon to live a holy and
                                                   virtuous life, modelling the piety of Jesus andthe
                                                   martyrs, especially Thecla, so that the legitimacy
@@ -755,8 +673,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> To defend his belief in the ordination of
                                                   priests by those outside of a particular diocese,
                                                   Severus appeals to the examples of Basil during
@@ -765,8 +683,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Thomas </span> was a presbyter of <span
                                                   class="tei-placeName"> Antioch </span>. <a
@@ -774,15 +692,15 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Flavian, who was challengeing the
                                                   ordination of Solon, had previously ordained a
                                                   priest in Germanicupolis. <a href="/3012-32"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus admitted to the archimandrite that
                                                   he never had confidence in Cosmas, or had previous
                                                   knowledge of him, but that the religious presbyter
@@ -791,8 +709,8 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Until an investigation can be undertaken,
                                                   Severus believed that Callistus and those who
                                                   sided from Hilarian should be censored from
@@ -800,15 +718,15 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Epimachus </span> was a presbyter. <a
                                                   href="/3107-36" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Eunomius</span> was a
                                                   priest in <span class="tei-placeName"
@@ -816,14 +734,14 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Leontius</span> was a presbyter. <a
                                                   href="/3028-37" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Procopius had attempted to profit off his
                                                   ordinations, and had ordained Lampetius, a known
                                                   follower of the heresy of Adelphius which had been
@@ -832,8 +750,8 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Gennadius</span> was a
                                                   presbyter in <span class="tei-placeName"
@@ -841,13 +759,13 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Julian</span> was a presbyter <a href="/3130-4"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Maximus</span> was a presbyter of <span
                                                   class="tei-placeName">Seleucia</span>. <a
@@ -855,7 +773,7 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Ammonius</span> was a
                                                   presbyter in <span class="tei-placeName"
@@ -863,21 +781,21 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">John</span> was a
                                                   presbyter. <a href="/3170-4" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Eusebius </span> was a presbyter. <a
                                                   href="/3108-43" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Stephen </span> was a presbyter of <span
                                                   class="tei-placeName"> Antioch </span>. <a
@@ -885,13 +803,13 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Victor </span> was a presbyter. <a href="/3099-48"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Hesychius </span> was presbyter of <span
                                                   class="tei-placeName"> Antioch </span>. <a
@@ -899,47 +817,47 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Zacharias</span> was a
                                                   presbyter. <a href="/3061-5" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Patrick </span> was a presbyter. <a href="/3148-5"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3630</span> was a presbyter. <a
                                                   href="/796-57" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Polyeuctus</span> was a presbyter. <a
                                                   href="/3036-6" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Bassian</span> was a presbyter. <a href="/832-6"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Mark</span> was a
                                                   presbyter. <a href="/3063-6" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus was aware of many letters written
                                                   by Peter to himself and to the presbyter Thomas,
                                                   wherein Peter accused Severus and others of
@@ -949,23 +867,23 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Contrary to the opinion of Peter, Severus
                                                   had not ordained Leontius out of need, but in
                                                   order to honour the man. <a href="/3028-63"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3740</span> was a priest. <a
                                                   href="/3083-7" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3073</span> was a presbyter in the
                                                   village of <span class="tei-placeName"
@@ -973,7 +891,7 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Stephen</span> was a presbyter of <span
                                                   class="tei-placeName"> Tripoli </span>
@@ -981,7 +899,7 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Julian </span> was a presbyter of <span
                                                   class="tei-placeName"> Tarsus </span>. <a
@@ -989,85 +907,85 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Julian, lacking needed clergy, sought the
                                                   ordination of priests and deacons by Sergius and
                                                   Marion. <a href="/3124-7" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Thomas</span> was a priest. <a href="/3076-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >John</span> was a presbyter. <a href="/3098-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Cosmas</span> was a presbyter. <a href="/3073-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Thomas</span> was a presbyter. <a href="/3112-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Peter</span> was a presbyter. <a href="/3004-73"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Hananya</span> was a presbyter. <a href="/794-74"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3647</span> was a presbyter. <a
                                                   href="/796-74" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Zwtʾ</span> was a presbyter. <a href="/831-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Between 513 to 518, Severus wrote a letter
                                                   to Timostratus the Duke about the importance of
                                                   ordination. <a href="/3033-8" class="factoid-more"
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span>
                                                   <span class="tei-persName">Victor</span> was a
                                                   priest. <a href="/3179-8" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Andrew </span> was a presbyter. <a href="/3134-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> When Paul criticized Hilarian for
                                                   ordaining priests outside his jurisdiction,
                                                   Severus had initially prohibited those priests
@@ -1078,15 +996,15 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Ignatius </span> was a presbyter. <a
                                                   href="/3072-8" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After Timothy had died and the orthodox
                                                   began enduring persecution again, Epiphanius
                                                   withdrew to Palestine where he met with Peter of
@@ -1095,14 +1013,14 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Zeno</span> was a presbyter. <a href="/3036-9"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   Longinus </span> was a presbyter of <span
                                                   class="tei-placeName"> Antioch </span>. <a
@@ -1110,23 +1028,23 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Timostratus had previously written to
                                                   Severus about ordination, upsetting the bishop. <a
                                                   href="/3033-9" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Some from Minidus and Uaris obtained
                                                   ordination at the hands of Nestorian bishops. <a
                                                   href="/3031-9" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus asserts that an oblation delivery
                                                   is only necessary for those without bishops,
                                                   making it unnecessary for Misael. Severus appeals
@@ -1136,8 +1054,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Jacob Baradaeus Conon, and Eugene ordained
                                                   non-Chalcedonian priests and bishops throughout
                                                   the areas under his authority: Syria, Armenia,
@@ -1148,23 +1066,23 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Between 513 and 518, Severus wrote a letter
                                                   to Dionysius the bishop of Tarsus about a
                                                   demon-possessed presbyter. <a href="/3054-9"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Anonymous 3114</span> was a presbyter. <a
                                                   href="/3115-9" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Libanius</span> was a presbyter of <span
                                                   class="tei-placeName"> Apamea </span>
@@ -1172,13 +1090,13 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName">
                                                   John </span> was a presbyter. <a href="/3107-9"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Severus advises Valeriena to encourage the
                                                   virgins to an ascetic life, suggesting their
                                                   isolation from men, sharing common meals,
@@ -1187,8 +1105,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel"
                                                   >occupation: </span><span class="tei-persName"
                                                   >Thomas</span> was a presbyter in <span
                                                   class="tei-placeName"> Antioch </span>. <a
@@ -1196,7 +1114,7 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <div class="citation">
+                                                <div class="citation">
                                                   <h3>How to cite:</h3>
                                                   <span class="element"> “Keyword Page for <span
                                                   id="title"><span><span class="tei-prefLabel"
@@ -1205,12 +1123,12 @@
                                                   Persons Events and Relations, general editor
                                                   Daniel L. Schwartz,
                                                   https://dev.spear-prosop.org/aggregate/taxonomy/priests.html,
-                                                  2025-06-16. </span>
-                                                  </div>
-                                                  </div>
-                                                  <div class="col-md-4">
-                                                  <h4>Related person(s)</h4>
-                                                  <ul>
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related person(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/person/1533.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/1533"
@@ -1766,9 +1684,9 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/16"
                                                   ></span>ʿAbshmayya — ܥܒܫܡܝܐ </a></li>
-                                                  </ul>
-                                                  <h4>Related taxonomy(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/taxonomy/altars.html"
                                                   ><span class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/altars"
@@ -2030,9 +1948,9 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/women"
                                                   ></span>Women</a></li>
-                                                  </ul>
-                                                  <h4>Related place(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related place(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/place/572.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/place/572"
@@ -2232,9 +2150,7 @@
                                                   data-rdfRef="http://syriaca.org/place/2855"
                                                   ></span>Unidentified Church in Tralles — ܛܪܠܝܘ
                                                   </a></li>
-                                                  </ul>
-                                                  </div>
-                                                </div>
+                                                </ul>
                                         </div>
                                 </div>
                         </div>

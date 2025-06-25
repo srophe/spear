@@ -6,7 +6,7 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <!-- Bootstrap 3 -->
                 <link rel="stylesheet" type="text/css"
-                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
                 <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
                 <!-- Srophe styles -->
                 <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -17,351 +17,259 @@
                 <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
                 <!-- JQuery -->
                 <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
                 <!-- Bootstrap -->
-                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
                 <!-- ReCaptcha -->
                 <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
                 <!-- keyboard widget css & script -->
                 <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
                 <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-                <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
         </head>
-        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                                class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                        data-target="#navbar-collapse-1"><span class="sr-only"
-                                                >Toggle navigation</span><span class="icon-bar"
-                                                ></span><span class="icon-bar"></span><span
-                                                class="icon-bar"></span></button>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
                                 <a class="navbar-brand banner-container" href="/index.html"><span
                                                 class="syriaca-icon syriaca-syriaca banner-icon"
                                                 ></span><span class="banner-text"
-                                                data-template="config:app-title">SPEAR: Syriac
-                                                Persons Events and Relations</span></a>
-                        </div><div class="navbar-collapse collapse pull-right"
-                                id="navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                        <li><a href="/index.html" class="nav-text">Home</a></li>
-                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                                        <li class="dropdown"><a href="#"
-                                                  class="dropdown-toggle lonely-caret"
-                                                  data-toggle="dropdown">  <span
-                                                  class="mobile-submenu">About</span>  <b
-                                                  class="caret"></b></a><ul
-                                                  class="dropdown-menu pull-right">
-                                                  <li><a href="/about.html">Project
-                                                  Overview</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contributors.html">Project
-                                                  Contributors</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contact.html">Contact Us</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/documentation/index.html"><span
-                                                  class="syriaca-icon syriaca-book icon-nav"
-                                                  style="color:red;"></span><span class="icon-text"
-                                                  >Documentation</span></a></li>
-                                                </ul></li>
-                                        <li><a href="/search.html" class="nav-text">Advanced
-                                                  Search</a></li>
-                                        <li><div id="search-wrapper">
-                                                  <form class="navbar-form navbar-right search-box"
-                                                  role="search" action="/search.html" method="get"
-                                                  ><div class="form-group">
-                                                  <input type="text" class="form-control keyboard"
-                                                  placeholder="search" name="keyword"
-                                                  id="keywordNav" />
-                                                  <span data-template="app:keyboard-select-menu"
-                                                  data-template-input-id="keywordNav"></span>
-                                                  <button class="btn btn-default search-btn"
-                                                  id="searchbtn" type="submit" title="Search"><span
-                                                  class="glyphicon glyphicon-search"
-                                                  ></span></button>
-                                                  </div></form>
-                                                </div></li>
-                                </ul>
-                        </div></nav><div class="main-content-block">
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
+                                </div>
+                        </div></nav><div class="container my-5">
                         <div class="interior-content">
-                                <div class="record">
-                                        <div class="interior-content" data-template="app:fix-links">
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns"
-                                                  class="padding-top">
-                                                  <h1>SPEAR Factoids about <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr">Professional
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span><span
+                                                  class="tei-prefLabel" xml:lang="en" lang="en"
+                                                  dir="ltr">Professional
                                                   Relationship</span></span></span></h1>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns">
-                                                  <div style="margin:0 1em 1em; color: #999999;">
-                                                  <small><p><span class="srp-label"
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
                                                   ><strong>Syriaca.org URI</strong></span>: <span
                                                   id="syriaca-id"><a
                                                   href="http://syriaca.org/taxonomy/professional-relationship"
                                                   >http://syriaca.org/taxonomy/professional-relationship</a></span></p></small>
-                                                  </div>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns" class="row">
-                                                  <div class="col-md-8">
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Asterius and Anonymi 3129 had a
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Asterius and Anonymi 3129 had a
                                                   professional relationship. <a href="/3004-10"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Sosiana and Caesaria had a
-                                                  professional relationship. <a href="/846-10"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymous 3114 and Severus of
-                                                  Antioch had a professional relationship. <a
-                                                  href="/3115-10" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Oecumenius, comes and Severus of
-                                                  Antioch had a professional relationship. <a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Oecumenius, comes and Severus of Antioch
+                                                  had a professional relationship. <a
                                                   href="/3052-10" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Andrew, Severus of Antioch,
-                                                  Theodosius, patriarch of Alexandria and Theodora,
-                                                  Roman empress had a professional relationship. <a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Andrew, Severus of Antioch, Theodosius,
+                                                  patriarch of Alexandria and Theodora, Roman
+                                                  empress had a professional relationship. <a
                                                   href="/3140-10" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and
-                                                  Eleutherius had a professional relationship. <a
-                                                  href="/3044-11" class="factoid-more">See factoid
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymous 3114 and Severus of Antioch had a
+                                                  professional relationship. <a href="/3115-10"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Sosiana and Caesaria had a professional
+                                                  relationship. <a href="/846-10"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Eustathios and John had a professional
+                                                  relationship. <a href="/3069-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Oecumenius, comes and Solon had a
+                                                  professional relationship. <a href="/3052-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus and Philip had a professional
+                                                  relationship. <a href="/3179-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Eleutherius had a
+                                                  professional relationship. <a href="/3044-11"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus and James had a professional
+                                                  relationship. <a href="/3141-12"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Peter and Severus of Antioch had a
+                                                  professional relationship. <a href="/3083-12"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Abba, Severus of Antioch and Maximus had a
+                                                  professional relationship. <a href="/3002-12"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Philoxenos of Mabbug
+                                                  had a professional relationship. <a
+                                                  href="/3056-12" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus and Philip had a
-                                                  professional relationship. <a href="/3179-11"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymi 3099 and Anonymi 3100 had a
+                                                  professional relationship. <a href="/3092-12"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Oecumenius, comes and Solon had
-                                                  a professional relationship. <a href="/3052-11"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Eustathios and John had a
-                                                  professional relationship. <a href="/3069-11"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch, Ignatius and
-                                                  Anonymous 3093 had a professional relationship. <a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch, Ignatius and Anonymous
+                                                  3093 had a professional relationship. <a
                                                   href="/3072-12" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus and James had a
-                                                  professional relationship. <a href="/3141-12"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Anonymi 3099 had a
+                                                  professional relationship. <a href="/3087-13"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymi 3099 and Anonymi 3100
-                                                  had a professional relationship. <a
-                                                  href="/3092-12" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and
-                                                  Philoxenos of Mabbug had a professional
-                                                  relationship. <a href="/3056-12"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>John and Aelian had a professional
+                                                  relationship. <a href="/3047-13"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Abba, Severus of Antioch and
-                                                  Maximus had a professional relationship. <a
-                                                  href="/3002-12" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Peter and Severus of Antioch had
-                                                  a professional relationship. <a href="/3083-12"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Paul and Solon had a professional
+                                                  relationship. <a href="/3046-13"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Anonymi
-                                                  3099 had a professional relationship. <a
-                                                  href="/3087-13" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Anonymous 3751 and Zacharias
-                                                  had a professional relationship. <a
-                                                  href="/3149-13" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Paul and Solon had a
-                                                  professional relationship. <a href="/3046-13"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Anonymous 3751 and Zacharias had a
+                                                  professional relationship. <a href="/3149-13"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>John and Aelian had a
-                                                  professional relationship. <a href="/3047-13"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Barsa and Constantius II had a professional
+                                                  relationship. <a href="/8559-133"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Barsa and Constantius II had a
-                                                  professional relationship. <a href="/8559-133"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anastasios I and Flavian II of Antioch had
+                                                  a professional relationship. <a href="/3004-15"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anastasios I and Flavian II of
-                                                  Antioch had a professional relationship. <a
-                                                  href="/3004-15" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Apophon
-                                                  had a professional relationship. <a
-                                                  href="/3039-16" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Anonymi
-                                                  3061 had a professional relationship. <a
-                                                  href="/3044-16" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Hypatius and Anonymous 3056 had
-                                                  a professional relationship. <a href="/3041-16"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Hypatius and Anonymous 3056 had a
+                                                  professional relationship. <a href="/3041-16"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Theodore the Deacon asked Severus about
                                                   the commands Jannia gave him. <a href="/3013-16"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Theodora and Anonymous 3768 had
-                                                  a professional relationship. <a href="/839-17"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Anonymi 3061 had a
+                                                  professional relationship. <a href="/3044-16"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Theodosius and Entrechius had a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Apophon had a
+                                                  professional relationship. <a href="/3039-16"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Theodora and Anonymous 3768 had a
+                                                  professional relationship. <a href="/839-17"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> John and Justinian had a professional
+                                                  relationship. <a href="/848-18"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymi 3054 and Simeon had a professional
+                                                  relationship. <a href="/3040-18"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Theodosius and Entrechius had a
                                                   professional relationship. <a href="/3038-18"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymi 3054 and Simeon had a
-                                                  professional relationship. <a href="/3040-18"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> John and Justinian had a
-                                                  professional relationship. <a href="/848-18"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>John of Claudiupolis, Patricius
-                                                  and Severus of Antioch had a professional
-                                                  relationship. <a href="/3004-19"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
-                                                  </span> Basil carried a letter from Solon to
-                                                  Severus introducing Epiphanius and Symbatius. <a
-                                                  href="/3024-2" class="factoid-more">See factoid
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>John of Claudiupolis, Patricius and Severus
+                                                  of Antioch had a professional relationship. <a
+                                                  href="/3004-19" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus and Neon had a professional
+                                                  relationship. <a href="/3051-2"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Patricius, Severus, Paul, and Julian of
                                                   Halicarnassus agressively questioned Macedonius II
                                                   about his efforts to promote the Council of
@@ -370,8 +278,8 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Nicias wrote a letter to Severus informing
                                                   him that Gennadius doubted that heretical clergy
                                                   who have repented could be received. <a
@@ -379,305 +287,259 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus and Neon had a
-                                                  professional relationship. <a href="/3051-2"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymi 3072, Anonymi 3067,
-                                                  Anonymous 3068, Anonymous 3069 and Anonymous 3070
-                                                  had a professional relationship. <a
-                                                  href="/3049-20" class="factoid-more">See factoid
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span> Basil carried a letter from Solon to
+                                                  Severus introducing Epiphanius and Symbatius. <a
+                                                  href="/3024-2" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Mishael and Justinian had a
-                                                  professional relationhsip. <a href="/848-20"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Mishael and Justinian had a professional
+                                                  relationhsip. <a href="/848-20"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Theodora and Anonymous 3769 had
-                                                  a professional relationship. <a href="/839-20"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Theodora and Anonymous 3769 had a
+                                                  professional relationship. <a href="/839-20"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Antoninus and Anonymi 3055 had a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymi 3072, Anonymi 3067, Anonymous 3068,
+                                                  Anonymous 3069 and Anonymous 3070 had a
+                                                  professional relationship. <a href="/3049-20"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Theodore and Mishael had a professional
+                                                  relationship. <a href="/848-21"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Anonymous 3768 and Anonymous 3769 had a
+                                                  professional relationship. <a href="/839-21"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>John and Severus of Antioch had a
+                                                  professional relationship. <a href="/3085-21"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Antoninus and Anonymi 3055 had a
                                                   professional relationship. <a href="/3040-21"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>John and Severus of Antioch had
-                                                  a professional relationship. <a href="/3085-21"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Simeon the Mountaineer and Anonymi 3701 had
+                                                  a professional relationship. <a href="/808-22"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Theodore and Mishael had a
-                                                  professional relationship. <a href="/848-21"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> John and Theodore had a professional
+                                                  relationship. <a href="/848-23"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Anonymous 3768 and Anonymous
-                                                  3769 had a professional relationship. <a
-                                                  href="/839-21" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Simeon the Mountaineer and
-                                                  Anonymi 3701 had a professional relationship. <a
-                                                  href="/808-22" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Solon and Paul had a
-                                                  professional relationship. <a href="/3046-23"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Solon and Paul had a professional
+                                                  relationship. <a href="/3046-23"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> John and Theodore had a
-                                                  professional relationship. <a href="/848-23"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Anonymi 3044 had a
+                                                  professional relationship. <a href="/3035-24"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Anonymi
-                                                  3044 had a professional relationship. <a
-                                                  href="/3035-24" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Isidore had a
+                                                  professional relationship. <a href="/3040-25"
+                                                  class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Isidore
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Anonymi 3072 had a
+                                                  professional relationship. <a href="/3053-26"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Stephen, Severus of Antioch and Simeon had
+                                                  a professional relationship. <a href="/3071-26"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Arcadius and Honorios had a professional
+                                                  relationship. <a href="/8559-262"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Anonymous 3751, Joseph, and John had a
+                                                  professional relationship. <a href="/3149-34/"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Leontios and Zeno had a professional
+                                                  relationship. <a href="/8559-371"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Yahab bar Shemesh and Qayuma bar Magartat
                                                   had a professional relationship. <a
-                                                  href="/3040-25" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Anonymi
-                                                  3072 had a professional relationship. <a
-                                                  href="/3053-26" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Stephen, Severus of Antioch and
-                                                  Simeon had a professional relationship. <a
-                                                  href="/3071-26" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Arcadius and Honorios had a
-                                                  professional relationship. <a href="/8559-262"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Anonymous 3751, Joseph, and
-                                                  John had a professional relationship. <a
-                                                  href="/3149-34/" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Leontios and Zeno had a
-                                                  professional relationship. <a href="/8559-371"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Yahab bar Shemesh and Qayuma bar
-                                                  Magartat had a professional relationship. <a
                                                   href="/8559-38" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anastasios I and Euphemios had a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anastasios I and Euphemios had a
                                                   professional relationship. <a href="/8559-404"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anastasios I and Macedonios II
-                                                  had a professional relationship. <a
-                                                  href="/8559-438" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anastasios I and Macedonios II had a
+                                                  professional relationship. <a href="/8559-438"
+                                                  class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Vitalian and Anastasios I had a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Vitalian and Anastasios I had a
                                                   professional relationship. <a href="/8559-444"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Epiphanius and Timothy II of
-                                                  Alexandria had a professional relationship. <a
-                                                  href="/3004-45" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Bar Din and Bulid had a
-                                                  professional relationship. <a href="/8559-45"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Epiphanius and Timothy II of Alexandria had
+                                                  a professional relationship. <a href="/3004-45"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Isidore and Severus of Antioch
-                                                  had a professional relationship. <a
-                                                  href="/3099-45" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Justin I, Severus of Antioch and
-                                                  Philoxenos of Mabbug had a professional
-                                                  relationship. <a href="/8559-459"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Isidore and Severus of Antioch had a
+                                                  professional relationship. <a href="/3099-45"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Patricius, Justin I and Pawla
-                                                  had a professional relationship. <a
-                                                  href="/8559-463" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Asclepius and Euphrasios had a
-                                                  professional relationship. <a href="/8559-481"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Bar Din and Bulid had a professional
+                                                  relationship. <a href="/8559-45"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Justinian I, Euphrasios and
-                                                  Pawla had a professional relationship. <a
-                                                  href="/8559-489" class="factoid-more">See factoid
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Justin I, Severus of Antioch and Philoxenos
+                                                  of Mabbug had a professional relationship. <a
+                                                  href="/8559-459" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Patricius, Justin I and Pawla had a
+                                                  professional relationship. <a href="/8559-463"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Asclepius and Euphrasios had a professional
+                                                  relationship. <a href="/8559-481"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Justinian I, Euphrasios and Pawla had a
+                                                  professional relationship. <a href="/8559-489"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Severus sought the approval of Dioscorus
                                                   in communing with Eleusinius and Proclus but not
                                                   Soteric or Asterius. <a href="/3190-5"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Epiphanius, Peter the Iberian
-                                                  and Anonymi 3131 had a professional relationship.
-                                                  <a href="/3004-51" class="factoid-more">See
-                                                  factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Justinian I and Justin I had a
-                                                  professional relationship. <a href="/8559-521"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Julian
-                                                  had a professional relationship. <a
-                                                  href="/3140-54" class="factoid-more">See factoid
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Epiphanius, Peter the Iberian and Anonymi
+                                                  3131 had a professional relationship. <a
+                                                  href="/3004-51" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Honorios and Theodosius II had a
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Justinian I and Justin I had a professional
+                                                  relationship. <a href="/8559-521"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Julian had a
+                                                  professional relationship. <a href="/3140-54"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Honorios and Theodosius II had a
                                                   professional relationship. <a href="/8559-553"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Anonymi
-                                                  3060 had a professional relationship. <a
-                                                  href="/3044-7" class="factoid-more">See factoid
-                                                  page <span
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch, Menas of Tyre, Isidore,
+                                                  Anonymi 3034 and Archelaus had a professional
+                                                  relationship. <a href="/3020-7"
+                                                  class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Anonymous 3056 had a
+                                                  professional relationship. <a href="/3041-7"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Julian, lacking needed clergy, sought the
                                                   ordination of priests and deacons by Sergius and
                                                   Marion. <a href="/3124-7" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch and Anonymous
-                                                  3056 had a professional relationship. <a
-                                                  href="/3041-7" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Severus of Antioch, Menas of
-                                                  Tyre, Isidore, Anonymi 3034 and Archelaus had a
-                                                  professional relationship. <a href="/3020-7"
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Severus of Antioch and Anonymi 3060 had a
+                                                  professional relationship. <a href="/3044-7"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>John and Caesaria had a
-                                                  professional relationship. <a href="/846-8"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Antiochus, Severus of Antioch and Antoninus
+                                                  had a professional relationship. <a href="/3040-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Antiochus, Severus of Antioch
-                                                  and Antoninus had a professional relationship. <a
-                                                  href="/3040-8" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Anonymi 3103 and Simeon had a
-                                                  professional relationship. <a href="/3104-9"
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>John and Caesaria had a professional
+                                                  relationship. <a href="/846-8"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus and Victor had a
-                                                  professional relationship. <a href="/3179-9"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Severus and Anonymous 3778 had
-                                                  a professional relationship. <a href="/3037-9"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span>Jannia, Theodore and Severus of
-                                                  Antioch had a professional relationship. <a
-                                                  href="/3013-9" class="factoid-more">See factoid
-                                                  page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel"
-                                                  >relation: </span> Theodore and Justinian had a
-                                                  professional relationship/ <a href="/848-9"
-                                                  class="factoid-more">See factoid page <span
-                                                  class="glyphicon glyphicon-circle-arrow-right"
-                                                  aria-hidden="true"></span></a></p>
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Asterius attempted to convince Severus to
                                                   recant his condemnation of the Council of
                                                   Chalcedon and Leo's Tome. He would not recant and
@@ -686,8 +548,38 @@
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <div class="citation">
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Theodore and Justinian had a professional
+                                                  relationship/ <a href="/848-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Jannia, Theodore and Severus of Antioch had
+                                                  a professional relationship. <a href="/3013-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus and Anonymous 3778 had a
+                                                  professional relationship. <a href="/3037-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span> Severus and Victor had a professional
+                                                  relationship. <a href="/3179-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <p class="indent"><span class="spearLabel">relation:
+                                                  </span>Anonymi 3103 and Simeon had a professional
+                                                  relationship. <a href="/3104-9"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <div class="citation">
                                                   <h3>How to cite:</h3>
                                                   <span class="element"> “Keyword Page for <span
                                                   id="title"><span><span class="tei-prefLabel"
@@ -696,12 +588,12 @@
                                                   Syriac Persons Events and Relations, general
                                                   editor Daniel L. Schwartz,
                                                   https://dev.spear-prosop.org/aggregate/taxonomy/professional-relationship.html,
-                                                  2025-06-16. </span>
-                                                  </div>
-                                                  </div>
-                                                  <div class="col-md-4">
-                                                  <h4>Related taxonomy(s)</h4>
-                                                  <ul>
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/taxonomy/anathema.html"
                                                   ><span class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/anathema"
@@ -795,9 +687,9 @@
                                                   ><span class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
                                                   ></span>Sender of Letter to</a></li>
-                                                  </ul>
-                                                  <h4>Related person(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related person(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/person/2582.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2582"
@@ -1088,21 +980,21 @@
                                                   data-rdfRef="http://syriaca.org/person/2529"
                                                   ></span>John of Claudiupolis — ܝܘܚܢܢ ܕܩܠܘܕܝܘܦܘܠܝܣ
                                                   </a></li>
-                                                  <li><a href="/aggregate/person/2477.html"><span
+                                                  <li><a href="/aggregate/person/2400.html"><span
                                                   class="loadRDF getLabel"
-                                                  data-rdfRef="http://syriaca.org/person/2477"
-                                                  ></span>John — ܝܘܚܢܢ </a></li>
-                                                  <li><a href="/aggregate/person/1820.html"><span
-                                                  class="loadRDF getLabel"
-                                                  data-rdfRef="http://syriaca.org/person/1820"
+                                                  data-rdfRef="http://syriaca.org/person/2400"
                                                   ></span>John — ܝܘܚܢܢ </a></li>
                                                   <li><a href="/aggregate/person/2424.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2424"
                                                   ></span>John — ܝܘܚܢܢ </a></li>
-                                                  <li><a href="/aggregate/person/2400.html"><span
+                                                  <li><a href="/aggregate/person/1820.html"><span
                                                   class="loadRDF getLabel"
-                                                  data-rdfRef="http://syriaca.org/person/2400"
+                                                  data-rdfRef="http://syriaca.org/person/1820"
+                                                  ></span>John — ܝܘܚܢܢ </a></li>
+                                                  <li><a href="/aggregate/person/2477.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2477"
                                                   ></span>John — ܝܘܚܢܢ </a></li>
                                                   <li><a href="/aggregate/person/2475.html"><span
                                                   class="loadRDF getLabel"
@@ -1314,9 +1206,7 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2273"
                                                   ></span>Zeno — ܙܝܢܘܢ </a></li>
-                                                  </ul>
-                                                  </div>
-                                                </div>
+                                                </ul>
                                         </div>
                                 </div>
                         </div>

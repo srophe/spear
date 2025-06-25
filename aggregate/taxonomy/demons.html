@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,273 +17,184 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span><span
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel"
+                                    xml:lang="en" lang="en" dir="ltr"
+                        >Demons</span></span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a
+                                        href="http://syriaca.org/taxonomy/demons"
+                                        >http://syriaca.org/taxonomy/demons</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <p class="indent"><span class="spearLabel">event: </span> After ten years of
+                            prayer and contending with demons, John was granted divine authority
+                            over his enemies and sprititual clarity, so that his understanding of
+                            Scripture equalled or surpassed most scholastics. <a href="/795-10"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> Wherever John
+                            went, he healed the sick and exorcised demons. <a href="/795-16"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Susan, who was
+                            attacked by demons in the cave day and night, thought that anonymi 3695
+                            who discovered her were fiends as well. She did not respond to them when
+                            they called out to her. <a href="/819-52" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Anonymi 3695 went
+                            to fetch Anonymi 3662, who immediately came to the cave to retrieve
+                            Susan. Susan did not respond to their entreaties, since demons had
+                            visited her the day before disguised as the sisters in an attempt to
+                            dislodge her from the hermitage. <a href="/819-53" class="factoid-more"
+                                >See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> God granted Susan
+                            power over the fiends that attacked her day and night in the form of
+                            human beings. She continued in this way for fifteen years as her fame
+                            grew and people came from far and wide to visit with her and hear her
+                            speak. She never showed her face when she spoke in public. <a
+                                href="/819-81" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Susan was strong as
+                            adamant against the demons and showed no fear of them. They complained
+                            bitterly about her strength. <a href="/819-82" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Anonymous 3668 who
+                            lived in the desert was regularly assailed by demons and was not as
+                            successful as Susan in fighting them. After seeking her advice, she told
+                            him that her power over demons comes from Christ and that he should not
+                            fear demons if he opposes them in the name of the all-powerful Lord. The
+                            man felt ashamed, but was strengthened against the demons. <a
+                                href="/819-83" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>John had contests
+                            with demons. <a href="/795-9" class="factoid-more">See factoid page
+                                    <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Keyword Page for <span id="title"><span><span
                                             class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
-                                            >Demons</span></span></span></h1>
+                                            >Demons</span></span></span>,” in SPEAR: Syriac Persons
+                                Events and Relations, general editor Daniel L. Schwartz,
+                                https://dev.spear-prosop.org/aggregate/taxonomy/demons.html,
+                                2025-06-24. </span>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/taxonomy/demons"
-                                                >http://syriaca.org/taxonomy/demons</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <p class="indent"><span class="spearLabel">event: </span> After ten
-                                    years of prayer and contending with demons, John was granted
-                                    divine authority over his enemies and sprititual clarity, so
-                                    that his understanding of Scripture equalled or surpassed most
-                                    scholastics. <a href="/795-10" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> Wherever
-                                    John went, he healed the sick and exorcised demons. <a
-                                        href="/795-16" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Susan, who
-                                    was attacked by demons in the cave day and night, thought that
-                                    anonymi 3695 who discovered her were fiends as well. She did not
-                                    respond to them when they called out to her. <a href="/819-52"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Anonymi
-                                    3695 went to fetch Anonymi 3662, who immediately came to the
-                                    cave to retrieve Susan. Susan did not respond to their
-                                    entreaties, since demons had visited her the day before
-                                    disguised as the sisters in an attempt to dislodge her from the
-                                    hermitage. <a href="/819-53" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> God
-                                    granted Susan power over the fiends that attacked her day and
-                                    night in the form of human beings. She continued in this way for
-                                    fifteen years as her fame grew and people came from far and wide
-                                    to visit with her and hear her speak. She never showed her face
-                                    when she spoke in public. <a href="/819-81" class="factoid-more"
-                                        >See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Susan was
-                                    strong as adamant against the demons and showed no fear of them.
-                                    They complained bitterly about her strength. <a href="/819-82"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Anonymous
-                                    3668 who lived in the desert was regularly assailed by demons
-                                    and was not as successful as Susan in fighting them. After
-                                    seeking her advice, she told him that her power over demons
-                                    comes from Christ and that he should not fear demons if he
-                                    opposes them in the name of the all-powerful Lord. The man felt
-                                    ashamed, but was strengthened against the demons. <a
-                                        href="/819-83" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>John had
-                                    contests with demons. <a href="/795-9" class="factoid-more">See
-                                        factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Keyword Page for <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr">Demons</span></span></span>,”
-                                        in SPEAR: Syriac Persons Events and Relations, general
-                                        editor Daniel L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/taxonomy/demons.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/anchorites.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/anchorites"
-                                            ></span>Anchorites</a></li>
-                                    <li><a href="/aggregate/taxonomy/asceticism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/asceticism"
-                                            ></span>Asceticism</a></li>
-                                    <li><a href="/aggregate/taxonomy/demons.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/demons"
-                                            ></span>Demons</a></li>
-                                    <li><a href="/aggregate/taxonomy/exile.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
-                                            ></span>Exile</a></li>
-                                    <li><a href="/aggregate/taxonomy/healing.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/healing"
-                                            ></span>Healing</a></li>
-                                    <li><a href="/aggregate/taxonomy/hermitages.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/hermitages"
-                                            ></span>Hermitages</a></li>
-                                    <li><a href="/aggregate/taxonomy/miracles.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/miracles"
-                                            ></span>Miracles</a></li>
-                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
-                                            ></span>Monasticism</a></li>
-                                    <li><a
-                                            href="/aggregate/taxonomy/spiritual-or-ascetic-disciplines.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/spiritual-or-ascetic-disciplines"
-                                            ></span>Spirtual or Ascetic Disciplines</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/3662.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3662"
-                                            ></span>Anonymous 3662</a></li>
-                                    <li><a href="/aggregate/person/3668.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3668"
-                                            ></span>Anonymous 3668</a></li>
-                                    <li><a href="/aggregate/person/3695.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3695"
-                                            ></span>Anonymous 3695</a></li>
-                                    <li><a href="/aggregate/person/1320.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1320"
-                                            ></span>John the Nazarite — ܝܘܚܢܢ ܢܙܝܪܐ </a></li>
-                                    <li><a href="/aggregate/person/2092.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2092"
-                                            ></span>Suzanna — ܫܘܫܢ </a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/anchorites.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/anchorites"
+                                    ></span>Anchorites</a></li>
+                            <li><a href="/aggregate/taxonomy/asceticism.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/asceticism"
+                                    ></span>Asceticism</a></li>
+                            <li><a href="/aggregate/taxonomy/demons.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/demons"
+                                    ></span>Demons</a></li>
+                            <li><a href="/aggregate/taxonomy/exile.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                    ></span>Exile</a></li>
+                            <li><a href="/aggregate/taxonomy/healing.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/healing"
+                                    ></span>Healing</a></li>
+                            <li><a href="/aggregate/taxonomy/hermitages.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/hermitages"
+                                    ></span>Hermitages</a></li>
+                            <li><a href="/aggregate/taxonomy/miracles.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/miracles"
+                                    ></span>Miracles</a></li>
+                            <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                    ></span>Monasticism</a></li>
+                            <li><a href="/aggregate/taxonomy/spiritual-or-ascetic-disciplines.html"
+                                        ><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/spiritual-or-ascetic-disciplines"
+                                    ></span>Spirtual or Ascetic Disciplines</a></li>
+                        </ul>
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/3662.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3662"
+                                    ></span>Anonymous 3662</a></li>
+                            <li><a href="/aggregate/person/3668.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3668"
+                                    ></span>Anonymous 3668</a></li>
+                            <li><a href="/aggregate/person/3695.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3695"
+                                    ></span>Anonymous 3695</a></li>
+                            <li><a href="/aggregate/person/1320.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1320"></span>John the
+                                    Nazarite — ܝܘܚܢܢ ܢܙܝܪܐ </a></li>
+                            <li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2092"></span>Suzanna
+                                    — ܫܘܫܢ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

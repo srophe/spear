@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,365 +17,265 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span>Anonymous
-                                    3662</span></span></h1>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span>Anonymous
+                        3662</span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a href="http://syriaca.org/person/3662"
+                                        >http://syriaca.org/person/3662</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <div class="sources">
+                            <h3>Personal Information</h3>
+                            <h4>Name variant(s): </h4>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-personGrp">
+                                        <span class="tei-persName"> The five women who rejected the
+                                            Council of Chalcedon and followed Susan </span>
+                                    </span>
+                                </span>
+                                <a href="/819-36" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Place of residence: </h4>
+                            <p class="indent"><span class="tei-persName">Anonymi 3662</span> resided
+                                near <span class="tei-placeName">the House of Mars Menas</span>. <a
+                                    href="/819-39" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/person/3662"
-                                                >http://syriaca.org/person/3662</a></span></p></small>
-                            </div>
+                        <div class="sources">
+                            <h3>Relationships</h3>
+                            <p class="indent">Anonymous 3662 and Suzanna were monks at the same
+                                monastery. <a href="/819-42" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Anonymous 3667 was a monastic authority over Anonymous
+                                3662. <a href="/819-78" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <div class="sources">
-                                    <h3>Personal Information</h3>
-                                    <h4>Name variant(s): </h4>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-personGrp">
-                                                <span class="tei-persName"> The five women who
-                                                  rejected the Council of Chalcedon and followed
-                                                  Susan </span>
-                                            </span>
-                                        </span>
-                                        <a href="/819-36" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Place of residence: </h4>
-                                    <p class="indent"><span class="tei-persName">Anonymi 3662</span>
-                                        resided near <span class="tei-placeName">the House of Mars
-                                            Menas</span>. <a href="/819-39" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Relationships</h3>
-                                    <p class="indent">Anonymous 3662 and Suzanna were monks at the
-                                        same monastery. <a href="/819-42" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Anonymous 3667 was a monastic authority over
-                                        Anonymous 3662. <a href="/819-78" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Events</h3>
-                                    <p class="indent"> Of the women who had submitted to the
-                                        judgments of the Council of Chalcedon, five nuns rejected it
-                                        and followed Susan into exile. <a href="/819-34"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> A tower was erected in Mar Menas for
-                                        protection, in which the women who followedSusan dwelt and
-                                        made a living from the labor of their hands. <a
-                                            href="/819-41" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Anonymi 3662 who followed Susan into exile
-                                        became very distressed over her absence because they did not
-                                        know that she had taken up residence in the hermit's cave.
-                                            <a href="/819-49" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> After ten days, people of the village were
-                                        moved by the sisters' weeping and distress and discovered
-                                        that Susan had been living in the hermit's cave. <a
-                                            href="/819-50" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Anonymi 3695 went to fetch Anonymi 3662, who
-                                        immediately came to the cave to retrieve Susan. Susan did
-                                        not respond to their entreaties, since demons had visited
-                                        her the day before disguised as the sisters in an attempt to
-                                        dislodge her from the hermitage. <a href="/819-53"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Even though Anonymi 3662 managed to convince
-                                        Susan that they were not demons, she refused to return to
-                                        the monastery with them as she wished to live as a hermit.
-                                        They agreed to bring her a jug of water and seven bread
-                                        cakes a week for her sustenance on the condition that she
-                                        will not leave without giving them prior notice. This went
-                                        on for three years, during which time the fame of the Susan
-                                        and her sisters grew. <a href="/819-54" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Anonymi 3664 came to Susan and Anonymi 3352
-                                        from Alexandria and from Libya. <a href="/819-55"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Maro and and his ten disciples had been
-                                        Susan's neighbors in a monastery in Palestine before they
-                                        were driven out of their monastery by the Chalcedonian
-                                        persecution. They made their way to Susan and Anonymi 3662.
-                                            <a href="/819-57" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Maro and Anonymi 3665 settled near Susan and
-                                        Anonymi 3662. Many others followed and settled near the holy
-                                        sisters. Anonymi 3662 and Susan did not wish to cause
-                                        scandal by living in such close proximity to men, so they
-                                        endeavored to leave their tower and go further into the
-                                        desert. <a href="/819-79" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Maro and Anonymi 3665 felt ashamed once they
-                                        learned of Susan's plan to remove herself and Anonymi 3662
-                                        to the desert and offered to build them an enclosed
-                                        monastery with a tower within the village, so that they
-                                        could be isolated but remain close to the other holy men and
-                                        women who travelled to be near her. Susan reluctantly
-                                        agreed. <a href="/819-80" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                </div>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Person Page for <span id="title"
-                                                ><span>Anonymous 3662</span></span>,” in SPEAR:
-                                        Syriac Persons Events and Relations, general editor Daniel
-                                        L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/person/3662.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/anchorites.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/anchorites"
-                                            ></span>Anchorites</a></li>
-                                    <li><a href="/aggregate/taxonomy/asceticism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/asceticism"
-                                            ></span>Asceticism</a></li>
-                                    <li><a href="/aggregate/taxonomy/demons.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/demons"
-                                            ></span>Demons</a></li>
-                                    <li><a href="/aggregate/taxonomy/exile.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
-                                            ></span>Exile</a></li>
-                                    <li><a href="/aggregate/taxonomy/fellow-monastics.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/fellow-monastics"
-                                            ></span>Fellow Monastics</a></li>
-                                    <li><a href="/aggregate/taxonomy/hermitages.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/hermitages"
-                                            ></span>Hermitages</a></li>
-                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
-                                            ></span>Monasteries</a></li>
-                                    <li><a href="/aggregate/taxonomy/monastic-head-over.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-head-over"
-                                            ></span>Monastic Head over</a></li>
-                                    <li><a href="/aggregate/taxonomy/monasticism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monasticism"
-                                            ></span>Monasticism</a></li>
-                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
-                                            ></span>Persecution</a></li>
-                                    <li><a href="/aggregate/taxonomy/pilgrimage.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"
-                                            ></span>Pilgrimage</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/3661.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3661"
-                                            ></span>Anonymous 3661</a></li>
-                                    <li><a href="/aggregate/person/3662.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3662"
-                                            ></span>Anonymous 3662</a></li>
-                                    <li><a href="/aggregate/person/3664.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3664"
-                                            ></span>Anonymous 3664</a></li>
-                                    <li><a href="/aggregate/person/3665.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3665"
-                                            ></span>Anonymous 3665</a></li>
-                                    <li><a href="/aggregate/person/3667.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3667"
-                                            ></span>Anonymous 3667</a></li>
-                                    <li><a href="/aggregate/person/3695.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3695"
-                                            ></span>Anonymous 3695</a></li>
-                                    <li><a href="/aggregate/person/3234.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3234"
-                                            ></span>Maro - ܡܪܘܢ </a></li>
-                                    <li><a href="/aggregate/person/2092.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2092"
-                                            ></span>Suzanna — ܫܘܫܢ </a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/572.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/572"
-                                            ></span>Alexandria — ܐܠܟܣܢܕܪܝܐ </a></li>
-                                    <li><a href="/aggregate/place/698.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/698"
-                                            ></span>Filasṭīn — ܦܠܫܬ </a></li>
-                                    <li><a href="/aggregate/place/2810.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2810"
-                                            ></span>Libya — ܠܘܒܐ </a></li>
-                                    <li><a href="/aggregate/place/2819.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2819"
-                                            ></span>Mar Menas — ܡܪܝ ܡܐܢܐ </a></li>
-                                </ul>
-                            </div>
+                        <div class="sources">
+                            <h3>Events</h3>
+                            <p class="indent"> Of the women who had submitted to the judgments of
+                                the Council of Chalcedon, five nuns rejected it and followed Susan
+                                into exile. <a href="/819-34" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> A tower was erected in Mar Menas for protection, in
+                                which the women who followedSusan dwelt and made a living from the
+                                labor of their hands. <a href="/819-41" class="factoid-more">See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Anonymi 3662 who followed Susan into exile became very
+                                distressed over her absence because they did not know that she had
+                                taken up residence in the hermit's cave. <a href="/819-49"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> After ten days, people of the village were moved by
+                                the sisters' weeping and distress and discovered that Susan had been
+                                living in the hermit's cave. <a href="/819-50" class="factoid-more"
+                                    >See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Anonymi 3695 went to fetch Anonymi 3662, who
+                                immediately came to the cave to retrieve Susan. Susan did not
+                                respond to their entreaties, since demons had visited her the day
+                                before disguised as the sisters in an attempt to dislodge her from
+                                the hermitage. <a href="/819-53" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Even though Anonymi 3662 managed to convince Susan
+                                that they were not demons, she refused to return to the monastery
+                                with them as she wished to live as a hermit. They agreed to bring
+                                her a jug of water and seven bread cakes a week for her sustenance
+                                on the condition that she will not leave without giving them prior
+                                notice. This went on for three years, during which time the fame of
+                                the Susan and her sisters grew. <a href="/819-54"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Anonymi 3664 came to Susan and Anonymi 3352 from
+                                Alexandria and from Libya. <a href="/819-55" class="factoid-more"
+                                    >See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Maro and and his ten disciples had been Susan's
+                                neighbors in a monastery in Palestine before they were driven out of
+                                their monastery by the Chalcedonian persecution. They made their way
+                                to Susan and Anonymi 3662. <a href="/819-57" class="factoid-more"
+                                    >See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Maro and Anonymi 3665 settled near Susan and Anonymi
+                                3662. Many others followed and settled near the holy sisters.
+                                Anonymi 3662 and Susan did not wish to cause scandal by living in
+                                such close proximity to men, so they endeavored to leave their tower
+                                and go further into the desert. <a href="/819-79"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Maro and Anonymi 3665 felt ashamed once they learned
+                                of Susan's plan to remove herself and Anonymi 3662 to the desert and
+                                offered to build them an enclosed monastery with a tower within the
+                                village, so that they could be isolated but remain close to the
+                                other holy men and women who travelled to be near her. Susan
+                                reluctantly agreed. <a href="/819-80" class="factoid-more">See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
                         </div>
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Person Page for <span id="title"><span>Anonymous
+                                        3662</span></span>,” in SPEAR: Syriac Persons Events and
+                                Relations, general editor Daniel L. Schwartz,
+                                https://dev.spear-prosop.org/aggregate/person/3662.html, 2025-06-24.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/anchorites.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/anchorites"
+                                    ></span>Anchorites</a></li>
+                            <li><a href="/aggregate/taxonomy/asceticism.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/asceticism"
+                                    ></span>Asceticism</a></li>
+                            <li><a href="/aggregate/taxonomy/demons.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/demons"
+                                    ></span>Demons</a></li>
+                            <li><a href="/aggregate/taxonomy/exile.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                    ></span>Exile</a></li>
+                            <li><a href="/aggregate/taxonomy/fellow-monastics.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/fellow-monastics"
+                                    ></span>Fellow Monastics</a></li>
+                            <li><a href="/aggregate/taxonomy/hermitages.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/hermitages"
+                                    ></span>Hermitages</a></li>
+                            <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                    ></span>Monasteries</a></li>
+                            <li><a href="/aggregate/taxonomy/monastic-head-over.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monastic-head-over"
+                                    ></span>Monastic Head over</a></li>
+                            <li><a href="/aggregate/taxonomy/monasticism.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monasticism"
+                                    ></span>Monasticism</a></li>
+                            <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                    ></span>Persecution</a></li>
+                            <li><a href="/aggregate/taxonomy/pilgrimage.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"
+                                    ></span>Pilgrimage</a></li>
+                        </ul>
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/3661.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3661"
+                                    ></span>Anonymous 3661</a></li>
+                            <li><a href="/aggregate/person/3662.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3662"
+                                    ></span>Anonymous 3662</a></li>
+                            <li><a href="/aggregate/person/3664.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3664"
+                                    ></span>Anonymous 3664</a></li>
+                            <li><a href="/aggregate/person/3665.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3665"
+                                    ></span>Anonymous 3665</a></li>
+                            <li><a href="/aggregate/person/3667.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3667"
+                                    ></span>Anonymous 3667</a></li>
+                            <li><a href="/aggregate/person/3695.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3695"
+                                    ></span>Anonymous 3695</a></li>
+                            <li><a href="/aggregate/person/3234.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3234"></span>Maro -
+                                    ܡܪܘܢ </a></li>
+                            <li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2092"></span>Suzanna
+                                    — ܫܘܫܢ </a></li>
+                        </ul>
+                        <h4>Related place(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/572"></span>Alexandria
+                                    — ܐܠܟܣܢܕܪܝܐ </a></li>
+                            <li><a href="/aggregate/place/698.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/698"></span>Filasṭīn —
+                                    ܦܠܫܬ </a></li>
+                            <li><a href="/aggregate/place/2810.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2810"></span>Libya —
+                                    ܠܘܒܐ </a></li>
+                            <li><a href="/aggregate/place/2819.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2819"></span>Mar Menas
+                                    — ܡܪܝ ܡܐܢܐ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

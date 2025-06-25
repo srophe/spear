@@ -1,43 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>SPEAR: Yoḥannan Urṭaya
                                         — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ
-                </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><script type="text/javascript" src="/resources/js/jquery.min.js"/><script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"/><script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"/><script type="text/javascript" src="/resources/js/clipboard.min.js"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"/><script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"/><script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"/><script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"/><script type="text/javascript" src="/resources/keyboard/syr/syr.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"/><script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/><script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({ container: 'body' })
-
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl : true,
-                    layout: 'syriac-phonetic',
-                    hidden: function(event, keyboard, el){
-                       //  keyboard.destroy();
-                     }
-                });
-
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function(){
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-
-            })]]></script></head><body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"/><span class="icon-bar"/><span class="icon-bar"/></button><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons Events and Relations</span></a></div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1"><ul class="nav navbar-nav"><li><a href="/index.html" class="nav-text">Home</a></li><li><a href="/browse.html" class="nav-text">Browse</a></li><li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret" data-toggle="dropdown"> 
-                            <span class="mobile-submenu">About</span>  <b class="caret"/></a><ul class="dropdown-menu pull-right"><li><a href="/about.html">Project Overview</a></li><li role="presentation" class="divider"/><li><a href="/contributors.html">Project Contributors</a></li><li role="presentation" class="divider"/><li><a href="/contact.html">Contact Us</a></li><li role="presentation" class="divider"/><li><a href="/documentation/index.html"><span class="syriaca-icon syriaca-book icon-nav" style="color:red;"/><span class="icon-text">Documentation</span></a></li></ul></li><li><a href="/search.html" class="nav-text">Advanced Search</a></li><li><div id="search-wrapper"><form class="navbar-form navbar-right search-box" role="search" action="/search.html" method="get"><div class="form-group"><input type="text" class="form-control keyboard" placeholder="search" name="keyword" id="keywordNav"/><span data-template="app:keyboard-select-menu" data-template-input-id="keywordNav"/><button class="btn btn-default search-btn" id="searchbtn" type="submit" title="Search"><span class="glyphicon glyphicon-search"/></button></div></form></div></li></ul></div></nav><div class="main-content-block"><div class="interior-content"><div class="record"><div class="interior-content" data-template="app:fix-links"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span>Yoḥannan Urṭaya
+                </title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico"/><!-- Bootstrap 3 --><link rel="stylesheet" type="text/css" href="/resources/bootstrap-5.3.6/css/bootstrap.min.css"/><link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css"/><!-- Srophe styles --><link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css"/><link rel="stylesheet" type="text/css" href="/resources/css/style.css"/><link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css"/><!-- Leaflet --><link rel="stylesheet" href="/resources/leaflet/leaflet.css"/><link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css"/><!-- JQuery --><link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet"/><!-- Bootstrap --><script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"/><!-- ReCaptcha --><script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"/><!-- keyboard widget css & script --><link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet"/><link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet"/><link href="/resources/keyboard/syr/syr.css" rel="stylesheet"/><script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"/></head><body id="body"><nav class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"><div class="container-fluid"><a class="navbar-brand banner-container" href="/index.html"><span class="syriaca-icon syriaca-syriaca banner-icon"/><span class="banner-text" data-template="config:app-title">SPEAR<span class="d-none d-md-inline">: Syriac Persons Events and Relations</span></span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"/></button><div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"><div class="navbar-nav"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/browse.html">Browse</a><a class="nav-link" href="/documentation.html">Documentation</a><a class="nav-link" href="/about.html">About</a><a class="nav-link" href="/contact.html">Contact Us</a></div></div></div></nav><div class="container my-5"><div class="interior-content"><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="padding-top"><h1>SPEAR Factoids about <span id="title"><span>Yoḥannan Urṭaya
                                         — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ
                 </span></span></h1></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"><div style="margin:0 1em 1em; color: #999999;"><small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>: <span id="syriaca-id"><a href="http://syriaca.org/place/399">http://syriaca.org/place/399</a></span></p></small></div></div><div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns" class="row"><div class="col-md-8"><div class="sources"><h3>Events</h3><p class="indent">John of
                                 Ephesus, who was a monk in the Convent of John
@@ -115,15 +78,15 @@
                             in  530  <a href="/10510-158" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abba succeeded Symy as head of the Convent of John
                                 Urtaya.  <a href="/10510-159" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Before the Convent of
+                                John Urtaya was established there were a collection of
+                            huts on the site, named after Mar Afwrsm.  <a href="/10510-16" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> 
                             For a third time, the community was forced to leave
                             their convent,
                             travelling to Izla, 
                             ʿArab, and 
                             Dara.  <a href="/827-16" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Before the Convent of
-                                John Urtaya was established there were a collection of
-                            huts on the site, named after Mar Afwrsm.  <a href="/10510-16" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Abraham
                             IV succeeded Abba as head of the Convent of John
                                 Urtaya.  <a href="/10510-189" class="factoid-more">See factoid page
@@ -132,6 +95,11 @@
                             succeeded Abraham
                                 IV as head of the Convent of John
                                 Urtaya <a href="/10510-195" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Sometime
+                                between 530 and 536, in the month of November,a stranger came to
+                                the convent outside
+                                    of Amida. Dirty and worn out,he stood at vespers
+                            and at table without speaking.  <a href="/821-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">
                             Between A.D. 521 and 526
                             the community was
@@ -142,11 +110,6 @@
                             large, that the monastery
                             of Mar Mama in the village of Hzyn 
                             in Ṭyšf could not hold them.  <a href="/827-2" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Sometime
-                                between 530 and 536, in the month of November,a stranger came to
-                                the convent outside
-                                    of Amida. Dirty and worn out,he stood at vespers
-                            and at table without speaking.  <a href="/821-2" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The brothers of the Convent of John Urtaya and the other religious believers
                             persevered during the persecutions, which began in 
                                 520/1
@@ -178,12 +141,15 @@
                                 A. Gr.
                                         878
                              <a href="/10510-7" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After many years of wandering, Leontius and
-                                Qashish
-                            joined the company of John
-                                of Ephesus at the Monastery of Yoḥannan
-                                Urṭaya and lived there for about twenty years until his
-                            death.  <a href="/830-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Speaking with the
+                                archimandrite,the man decided to
+                            stay in the
+                                convent for the winter. He continued in his
+                            silence and weeping, garnering the appreciation of the brothers, who
+                            were encouraged by him.  <a href="/821-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Kashish
+                            entered the  Monastery of
+                                John Urtaya  in  Amida. <a href="/842-8" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> The great senior Mar
                                 Samuel Archpresbyter dwelled in the Convent of John
                                 Urtaya during the time of its prosperity until the year 
@@ -191,30 +157,27 @@
                                 A. Gr.
                                         850
                              <a href="/10510-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Kashish
-                            entered the  Monastery of
-                                John Urtaya  in  Amida. <a href="/842-8" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Speaking with the
-                                archimandrite,the man decided to
-                            stay in the
-                                convent for the winter. He continued in his
-                            silence and weeping, garnering the appreciation of the brothers, who
-                            were encouraged by him.  <a href="/821-8" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> After many years of wandering, Leontius and
+                                Qashish
+                            joined the company of John
+                                of Ephesus at the Monastery of Yoḥannan
+                                Urṭaya and lived there for about twenty years until his
+                            death.  <a href="/830-8" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Thomas went
                             to the Monastery of John
                                 Urtaya, where his sister Cosmo found him and
                             pleaded with him to come home. He refused and remained at the monastery.
                          <a href="/805-85" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> At beginning of the reign of Justinian,the community was
-                            allowed to return to their destroyed monastery.
-                                And they began to restore their convents.  <a href="/827-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Kashish 
+                            left the  Monastery of
+                                John Urtaya  and travelled to  Egypt, Thebais, Greece, Illyricum, Rome, and other countries.  <a href="/842-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Leontius was
                             buried alongside of the
                                 Blessed Aaron at the Monastery of Yoḥannan
                                 Urṭaya <a href="/830-9" class="factoid-more">See factoid page
-                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> Kashish 
-                            left the  Monastery of
-                                John Urtaya  and travelled to  Egypt, Thebais, Greece, Illyricum, Rome, and other countries.  <a href="/842-9" class="factoid-more">See factoid page
+                        <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent"> At beginning of the reign of Justinian,the community was
+                            allowed to return to their destroyed monastery.
+                                And they began to restore their convents.  <a href="/827-9" class="factoid-more">See factoid page
                         <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"/></a></p><hr/><p class="indent">Stephen saw
                             that Thomas
                             was residing in Monastery
@@ -354,8 +317,8 @@
                                         — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ
                 </span></span>,” 
                                 in SPEAR: Syriac Persons Events and Relations, general editor Daniel L. Schwartz, 
-                                https://dev.spear-prosop.org/aggregate/place/399.html, 2025-06-16.
-                            </span></div></div><div class="col-md-4"><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/bible.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bible"/>Bible</a></li><li><a href="/aggregate/taxonomy/bodies.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bodies"/>Bodies</a></li><li><a href="/aggregate/taxonomy/burial.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/burial"/>Burial</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/emotions.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emotions"/>Emotions</a></li><li><a href="/aggregate/taxonomy/exegesis.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exegesis"/>Exegesis</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/humility.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/humility"/>Humility</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/pilgrimage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"/>Pilgrimage</a></li><li><a href="/aggregate/taxonomy/poverty.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poverty"/>Poverty</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/silence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/silence"/>Silence</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/sleep.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sleep"/>Sleep</a></li><li><a href="/aggregate/taxonomy/succession.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/succession"/>Succession</a></li><li><a href="/aggregate/taxonomy/suffering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/suffering"/>Suffering</a></li><li><a href="/aggregate/taxonomy/tears.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tears"/>Tears</a></li><li><a href="/aggregate/taxonomy/travel.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/travel"/>Travel</a></li><li><a href="/aggregate/taxonomy/vespers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/vespers"/>Vespers</a></li><li><a href="/aggregate/taxonomy/wandering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wandering"/>Wandering</a></li><li><a href="/aggregate/taxonomy/war.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/war"/>War</a></li></ul><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
+                                https://dev.spear-prosop.org/aggregate/place/399.html, 2025-06-24.
+                            </span></div></div><div class="col-md-4"><h4>Related person(s)</h4><ul><li><a href="/aggregate/person/2032.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/2032"/> — ܩܫܝܫ
                 </a></li><li><a href="/aggregate/person/1533.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/1533"/>Aaron — ܐܗܪܘܢ
                 </a></li><li><a href="/aggregate/person/3183.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3183"/>Abba - ܐܒܐ
         </a></li><li><a href="/aggregate/person/3185.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/person/3185"/>Abraham I - ܐܒܪܗܡ
@@ -411,4 +374,4 @@
                                         — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ
                 </a></li><li><a href="/aggregate/place/3057.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/3057"/>ʿArab</a></li><li><a href="/aggregate/place/2796.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2796"/>Ḥzyn — ܚܙܝܢ
             </a></li><li><a href="/aggregate/place/2858.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/place/2858"/>Ṭyšf — ܛܝܫܦܐ ܐܬܪܐ
-            </a></li></ul></div></div></div></div></div></div></body></html>
+            </a></li></ul><h4>Related taxonomy(s)</h4><ul><li><a href="/aggregate/taxonomy/asceticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/asceticism"/>Asceticism</a></li><li><a href="/aggregate/taxonomy/bible.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bible"/>Bible</a></li><li><a href="/aggregate/taxonomy/bodies.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/bodies"/>Bodies</a></li><li><a href="/aggregate/taxonomy/burial.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/burial"/>Burial</a></li><li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"/>Council of Chalcedon</a></li><li><a href="/aggregate/taxonomy/death.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/death"/>Death</a></li><li><a href="/aggregate/taxonomy/emotions.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/emotions"/>Emotions</a></li><li><a href="/aggregate/taxonomy/exegesis.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exegesis"/>Exegesis</a></li><li><a href="/aggregate/taxonomy/exile.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/exile"/>Exile</a></li><li><a href="/aggregate/taxonomy/humility.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/humility"/>Humility</a></li><li><a href="/aggregate/taxonomy/monasteries.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasteries"/>Monasteries</a></li><li><a href="/aggregate/taxonomy/monastic-heads.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"/>Monastic Heads</a></li><li><a href="/aggregate/taxonomy/monasticism.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monasticism"/>Monasticism</a></li><li><a href="/aggregate/taxonomy/monks.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/monks"/>Monks</a></li><li><a href="/aggregate/taxonomy/persecution.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/persecution"/>Persecution</a></li><li><a href="/aggregate/taxonomy/pilgrimage.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/pilgrimage"/>Pilgrimage</a></li><li><a href="/aggregate/taxonomy/poverty.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/poverty"/>Poverty</a></li><li><a href="/aggregate/taxonomy/prayer.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/prayer"/>Prayer</a></li><li><a href="/aggregate/taxonomy/silence.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/silence"/>Silence</a></li><li><a href="/aggregate/taxonomy/sin.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sin"/>Sin</a></li><li><a href="/aggregate/taxonomy/sleep.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/sleep"/>Sleep</a></li><li><a href="/aggregate/taxonomy/succession.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/succession"/>Succession</a></li><li><a href="/aggregate/taxonomy/suffering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/suffering"/>Suffering</a></li><li><a href="/aggregate/taxonomy/tears.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/tears"/>Tears</a></li><li><a href="/aggregate/taxonomy/travel.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/travel"/>Travel</a></li><li><a href="/aggregate/taxonomy/vespers.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/vespers"/>Vespers</a></li><li><a href="/aggregate/taxonomy/wandering.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/wandering"/>Wandering</a></li><li><a href="/aggregate/taxonomy/war.html"><span class="loadRDF getLabel" data-rdfRef="http://syriaca.org/taxonomy/war"/>War</a></li></ul></div></div></div></div></body></html>

@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,528 +17,407 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span><span
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel"
+                                    xml:lang="en" lang="en" dir="ltr"
+                        >Miracles</span></span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a
+                                        href="http://syriaca.org/taxonomy/miracles"
+                                        >http://syriaca.org/taxonomy/miracles</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <p class="indent"><span class="spearLabel">event: </span> The number of
+                            visitors to the holy men in the palace of Hormisdas resulted in the
+                            floor collapsing. Thanks to the prayers of the saints and the mercy of
+                            God, no one was injured. <a href="/838-10" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> Many miracles came
+                            about through the prayers and the bones of Zacharias. <a href="/811-10"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Two young men enter
+                            the cell of Simeon and are unable to leave or put down the food they
+                            have taken until Simeon releases them by prayer. <a href="/815-12"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> After mighty
+                            labors of abstinence, Abraham received gifts of the Spirit that enabled
+                            him to cure the sick and to drive out demons. <a href="/796-13"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Habib was so holy,
+                            that many would confess their sins to him without any prompting on his
+                            part. Habib performed many miracles and mighty works against his
+                            enemies. <a href="/793-16" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> Wherever John
+                            went, he healed the sick and exorcised demons. <a href="/795-16"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Zeʿora miraculously
+                            stopped a Hun from killing him, probably in 515. This date is suggested
+                            in a footnote by Brooks. <a href="/794-19" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>John's mother and
+                            father visited the holy Maro and asked him to save John's life, as all
+                            of his brothers and sisters died in infancy. <a href="/796-21"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> From atop his
+                            column Zeʿora healed the sick by blessing water and sprinkling it on
+                            them. <a href="/794-26" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Two children were
+                            were struck down with illness and died when their parents refused
+                            Simeon's attempt to tonsure them. <a href="/808-27" class="factoid-more"
+                                >See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Maro bid a certain
+                            brother to fetch lentils for the baby John to eat. <a href="/796-27"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>John, who appeared
+                            dead, was revived by eating the lentils provided by Maro. <a
+                                href="/796-31" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Maro's fame grew as
+                            he became known for performing blessings and miracles through prayer. <a
+                                href="/796-34" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>A certain layman
+                            whose wife was barren came to Maro for help. Maro gave him one of his
+                            toenails to hang on his wife, who then promptly conceived a son whom he
+                            named Maro. <a href="/796-36" class="factoid-more">See factoid page
+                                    <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Justinian fell ill
+                            and Theodora hid him while she convinced Zeʿora to heal the emperor. <a
+                                href="/794-39" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> When the community
+                            was at Mar Mama, a miracle occurred, where those affected by famine were
+                            fed by unending bread at the monastery after the fathers had prayed. <a
+                                href="/827-4" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Zeʿora restored
+                            Justinian to health and the emperor relented from pusuing strict
+                            persecution of non-Chalcedonians. <a href="/794-45" class="factoid-more"
+                                >See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span>Zeʿora miraculously
+                            restored a spring that had stopped flowing <a href="/794-5"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> Agapetus sent a
+                            message to Zeʿora at a villa near Sycae, demanding he obey Justinian.
+                            Zeʿora refused. Anonymous 3645 tried to bring him back to the city but
+                            heavy winds prevented him crossing the Golden Horn. <a href="/794-57"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> The Huns invaded
+                            but the monastery was protected and left unharmed because of Maro's
+                            prayers. <a href="/796-70" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> After Paul's death
+                            miracles were everywhere wrought through his holy bones, men taking his
+                            skull and going round the districts, and, wheresoever locusts came, or
+                            hail or a scorching wind or bubonic plague, and his right hand or his
+                            head went, God would straighlway make deliverance. <a href="/798-9"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <p class="indent"><span class="spearLabel">event: </span> Sometime around
+                            519-520 Isaiah attempted to demonstrate his sanctity in the city of
+                            Alexandria by raising Anonymous 3754 from the dead. He was unsuccessful
+                            and fled. <a href="/3111-9" class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <hr />
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Keyword Page for <span id="title"><span><span
                                             class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
-                                            >Miracles</span></span></span></h1>
+                                            >Miracles</span></span></span>,” in SPEAR: Syriac
+                                Persons Events and Relations, general editor Daniel L. Schwartz,
+                                https://dev.spear-prosop.org/aggregate/taxonomy/miracles.html,
+                                2025-06-24. </span>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/taxonomy/miracles"
-                                                >http://syriaca.org/taxonomy/miracles</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <p class="indent"><span class="spearLabel">event: </span> The number
-                                    of visitors to the holy men in the palace of Hormisdas resulted
-                                    in the floor collapsing. Thanks to the prayers of the saints and
-                                    the mercy of God, no one was injured. <a href="/838-10"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> Many
-                                    miracles came about through the prayers and the bones of
-                                    Zacharias. <a href="/811-10" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Two young
-                                    men enter the cell of Simeon and are unable to leave or put down
-                                    the food they have taken until Simeon releases them by prayer.
-                                        <a href="/815-12" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> After
-                                    mighty labors of abstinence, Abraham received gifts of the
-                                    Spirit that enabled him to cure the sick and to drive out
-                                    demons. <a href="/796-13" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Habib was
-                                    so holy, that many would confess their sins to him without any
-                                    prompting on his part. Habib performed many miracles and mighty
-                                    works against his enemies. <a href="/793-16"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> Wherever
-                                    John went, he healed the sick and exorcised demons. <a
-                                        href="/795-16" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Zeʿora
-                                    miraculously stopped a Hun from killing him, probably in 515.
-                                    This date is suggested in a footnote by Brooks. <a
-                                        href="/794-19" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>John's
-                                    mother and father visited the holy Maro and asked him to save
-                                    John's life, as all of his brothers and sisters died in infancy.
-                                        <a href="/796-21" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> From atop
-                                    his column Zeʿora healed the sick by blessing water and
-                                    sprinkling it on them. <a href="/794-26" class="factoid-more"
-                                        >See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Two
-                                    children were were struck down with illness and died when their
-                                    parents refused Simeon's attempt to tonsure them. <a
-                                        href="/808-27" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Maro bid a
-                                    certain brother to fetch lentils for the baby John to eat. <a
-                                        href="/796-27" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>John, who
-                                    appeared dead, was revived by eating the lentils provided by
-                                    Maro. <a href="/796-31" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Maro's fame
-                                    grew as he became known for performing blessings and miracles
-                                    through prayer. <a href="/796-34" class="factoid-more">See
-                                        factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>A certain
-                                    layman whose wife was barren came to Maro for help. Maro gave
-                                    him one of his toenails to hang on his wife, who then promptly
-                                    conceived a son whom he named Maro. <a href="/796-36"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Justinian
-                                    fell ill and Theodora hid him while she convinced Zeʿora to heal
-                                    the emperor. <a href="/794-39" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> When the
-                                    community was at Mar Mama, a miracle occurred, where those
-                                    affected by famine were fed by unending bread at the monastery
-                                    after the fathers had prayed. <a href="/827-4"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Zeʿora
-                                    restored Justinian to health and the emperor relented from
-                                    pusuing strict persecution of non-Chalcedonians. <a
-                                        href="/794-45" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Zeʿora
-                                    miraculously restored a spring that had stopped flowing <a
-                                        href="/794-5" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> Agapetus
-                                    sent a message to Zeʿora at a villa near Sycae, demanding he
-                                    obey Justinian. Zeʿora refused. Anonymous 3645 tried to bring
-                                    him back to the city but heavy winds prevented him crossing the
-                                    Golden Horn. <a href="/794-57" class="factoid-more">See factoid
-                                        page <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> The Huns
-                                    invaded but the monastery was protected and left unharmed
-                                    because of Maro's prayers. <a href="/796-70"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> After
-                                    Paul's death miracles were everywhere wrought through his holy
-                                    bones, men taking his skull and going round the districts, and,
-                                    wheresoever locusts came, or hail or a scorching wind or bubonic
-                                    plague, and his right hand or his head went, God would
-                                    straighlway make deliverance. <a href="/798-9"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> Sometime
-                                    around 519-520 Isaiah attempted to demonstrate his sanctity in
-                                    the city of Alexandria by raising Anonymous 3754 from the dead.
-                                    He was unsuccessful and fled. <a href="/3111-9"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Keyword Page for <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr"
-                                        >Miracles</span></span></span>,” in SPEAR: Syriac Persons
-                                        Events and Relations, general editor Daniel L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/taxonomy/miracles.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/bread.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bread"
-                                            ></span>Bread</a></li>
-                                    <li><a href="/aggregate/taxonomy/buildings.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/buildings"
-                                            ></span>Buildings</a></li>
-                                    <li><a href="/aggregate/taxonomy/confession.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/confession"
-                                            ></span>Confession</a></li>
-                                    <li><a href="/aggregate/taxonomy/cult-of-saints.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/cult-of-saints"
-                                            ></span>Cult of Saints</a></li>
-                                    <li><a href="/aggregate/taxonomy/death.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/death"
-                                            ></span>Death</a></li>
-                                    <li><a href="/aggregate/taxonomy/demons.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/demons"
-                                            ></span>Demons</a></li>
-                                    <li><a href="/aggregate/taxonomy/fasting.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/fasting"
-                                            ></span>Fasting</a></li>
-                                    <li><a href="/aggregate/taxonomy/food.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/food"
-                                            ></span>Food</a></li>
-                                    <li><a href="/aggregate/taxonomy/healing.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/healing"
-                                            ></span>Healing</a></li>
-                                    <li><a href="/aggregate/taxonomy/holy-places.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/holy-places"
-                                            ></span>Holy Places</a></li>
-                                    <li><a href="/aggregate/taxonomy/huns.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/huns"
-                                            ></span>Huns</a></li>
-                                    <li><a href="/aggregate/taxonomy/illness.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
-                                            ></span>Illness</a></li>
-                                    <li><a href="/aggregate/taxonomy/miracles.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/miracles"
-                                            ></span>Miracles</a></li>
-                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
-                                            ></span>Monasteries</a></li>
-                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
-                                            ></span>Monastic Heads</a></li>
-                                    <li><a href="/aggregate/taxonomy/monks.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
-                                            ></span>Monks</a></li>
-                                    <li><a href="/aggregate/taxonomy/poor.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/poor"
-                                            ></span>Poor</a></li>
-                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
-                                            ></span>Prayer</a></li>
-                                    <li><a href="/aggregate/taxonomy/relics.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/relics"
-                                            ></span>Relics</a></li>
-                                    <li><a href="/aggregate/taxonomy/repentance.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/repentance"
-                                            ></span>Repentance</a></li>
-                                    <li><a href="/aggregate/taxonomy/saints.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
-                                            ></span>Saints</a></li>
-                                    <li><a href="/aggregate/taxonomy/war.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/war"
-                                            ></span>War</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/1546.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1546"
-                                            ></span>Abraham — ܐܒܪܗܡ </a></li>
-                                    <li><a href="/aggregate/person/3193.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3193"
-                                            ></span>Agapetus - ܐܓܦܝܛܣ </a></li>
-                                    <li><a href="/aggregate/person/3601.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3601"
-                                            ></span>Anonymi 3601</a></li>
-                                    <li><a href="/aggregate/person/3602.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3602"
-                                            ></span>Anonymi 3602</a></li>
-                                    <li><a href="/aggregate/person/3771.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3771"
-                                            ></span>Anonymi 3771</a></li>
-                                    <li><a href="/aggregate/person/3624.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3624"
-                                            ></span>Anonymous 3624</a></li>
-                                    <li><a href="/aggregate/person/3625.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3625"
-                                            ></span>Anonymous 3625</a></li>
-                                    <li><a href="/aggregate/person/3626.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3626"
-                                            ></span>Anonymous 3626</a></li>
-                                    <li><a href="/aggregate/person/3627.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3627"
-                                            ></span>Anonymous 3627</a></li>
-                                    <li><a href="/aggregate/person/3628.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3628"
-                                            ></span>Anonymous 3628</a></li>
-                                    <li><a href="/aggregate/person/3639.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3639"
-                                            ></span>Anonymous 3639</a></li>
-                                    <li><a href="/aggregate/person/3645.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3645"
-                                            ></span>Anonymous 3645</a></li>
-                                    <li><a href="/aggregate/person/3754.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3754"
-                                            ></span>Anonymous 3754</a></li>
-                                    <li><a href="/aggregate/person/3763.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3763"
-                                            ></span>Habib - ܚܒܝܒ </a></li>
-                                    <li><a href="/aggregate/person/2496.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2496"
-                                            ></span>Isaiah — ܐܫܥܝܐ </a></li>
-                                    <li><a href="/aggregate/person/74.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/74"
-                                            ></span>John of Ephesus — ܝܘܚܢܢ ܕܐܦܣܘܣ </a></li>
-                                    <li><a href="/aggregate/person/1320.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1320"
-                                            ></span>John the Nazarite — ܝܘܚܢܢ ܢܙܝܪܐ </a></li>
-                                    <li><a href="/aggregate/person/2284.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2284"
-                                            ></span>Justinian I — ܝܘܣܛܝܢܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/3235.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3235"
-                                            ></span>Maro - ܡܪܘܢ </a></li>
-                                    <li><a href="/aggregate/person/1885.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1885"
-                                            ></span>Maron — ܡܪܘܢ </a></li>
-                                    <li><a href="/aggregate/person/1934.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1934"
-                                            ></span>Monks of Amida</a></li>
-                                    <li><a href="/aggregate/person/1980.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1980"
-                                            ></span>Paul the Mourner — ܦܘܠܘܣ ܐܒܝܠܐ </a></li>
-                                    <li><a href="/aggregate/person/2097.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2097"
-                                            ></span>Simeon the Mountaineer — ܫܡܥܘܢ ܛܘܪܝܐ </a></li>
-                                    <li><a href="/aggregate/person/2099.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2099"
-                                            ></span>Simeon the Solitaire — ܫܡܥܘܢ ܝܚܝܕܝܐ </a></li>
-                                    <li><a href="/aggregate/person/779.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/779"
-                                            ></span>Theodora, Roman empress — ܡܠܟܬܐ ܬܐܘܕܘܪܐ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/2153.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2153"
-                                            ></span>Zacharias — ܙܟܪܝܐ </a></li>
-                                    <li><a href="/aggregate/person/1524.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1524"
-                                            ></span>Zeʿora — ܙܥܘܪܐ </a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/572.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/572"
-                                            ></span>Alexandria — ܐܠܟܣܢܕܪܝܐ </a></li>
-                                    <li><a href="/aggregate/place/2618.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2618"
-                                            ></span>Cell of Simeon the Solitary</a></li>
-                                    <li><a href="/aggregate/place/2793.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2793"
-                                            ></span>Hormisda — ܗܘܪܡܙܕܐ </a></li>
-                                    <li><a href="/aggregate/place/2813.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2813"
-                                            ></span>Mar Mama — ܡܪܝ ܡܡܐ </a></li>
-                                    <li><a href="/aggregate/place/2860.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2860"
-                                            ></span>Villa near Sycae — ܦܪܣܛܝܘܢ ܕܤܘܩܣ </a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/bread.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/bread"
+                                    ></span>Bread</a></li>
+                            <li><a href="/aggregate/taxonomy/buildings.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/buildings"
+                                    ></span>Buildings</a></li>
+                            <li><a href="/aggregate/taxonomy/confession.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/confession"
+                                    ></span>Confession</a></li>
+                            <li><a href="/aggregate/taxonomy/cult-of-saints.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/cult-of-saints"
+                                    ></span>Cult of Saints</a></li>
+                            <li><a href="/aggregate/taxonomy/death.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/death"
+                                    ></span>Death</a></li>
+                            <li><a href="/aggregate/taxonomy/demons.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/demons"
+                                    ></span>Demons</a></li>
+                            <li><a href="/aggregate/taxonomy/fasting.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/fasting"
+                                    ></span>Fasting</a></li>
+                            <li><a href="/aggregate/taxonomy/food.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/food"
+                                    ></span>Food</a></li>
+                            <li><a href="/aggregate/taxonomy/healing.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/healing"
+                                    ></span>Healing</a></li>
+                            <li><a href="/aggregate/taxonomy/holy-places.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/holy-places"
+                                    ></span>Holy Places</a></li>
+                            <li><a href="/aggregate/taxonomy/huns.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/huns"
+                                    ></span>Huns</a></li>
+                            <li><a href="/aggregate/taxonomy/illness.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                    ></span>Illness</a></li>
+                            <li><a href="/aggregate/taxonomy/miracles.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/miracles"
+                                    ></span>Miracles</a></li>
+                            <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                    ></span>Monasteries</a></li>
+                            <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                    ></span>Monastic Heads</a></li>
+                            <li><a href="/aggregate/taxonomy/monks.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                    ></span>Monks</a></li>
+                            <li><a href="/aggregate/taxonomy/poor.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/poor"
+                                    ></span>Poor</a></li>
+                            <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                    ></span>Prayer</a></li>
+                            <li><a href="/aggregate/taxonomy/relics.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/relics"
+                                    ></span>Relics</a></li>
+                            <li><a href="/aggregate/taxonomy/repentance.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/repentance"
+                                    ></span>Repentance</a></li>
+                            <li><a href="/aggregate/taxonomy/saints.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                    ></span>Saints</a></li>
+                            <li><a href="/aggregate/taxonomy/war.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/war"
+                                ></span>War</a></li>
+                        </ul>
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/1546.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1546"></span>Abraham
+                                    — ܐܒܪܗܡ </a></li>
+                            <li><a href="/aggregate/person/3193.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3193"></span>Agapetus
+                                    - ܐܓܦܝܛܣ </a></li>
+                            <li><a href="/aggregate/person/3601.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3601"></span>Anonymi
+                                    3601</a></li>
+                            <li><a href="/aggregate/person/3602.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3602"></span>Anonymi
+                                    3602</a></li>
+                            <li><a href="/aggregate/person/3771.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3771"></span>Anonymi
+                                    3771</a></li>
+                            <li><a href="/aggregate/person/3624.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3624"
+                                    ></span>Anonymous 3624</a></li>
+                            <li><a href="/aggregate/person/3625.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3625"
+                                    ></span>Anonymous 3625</a></li>
+                            <li><a href="/aggregate/person/3626.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3626"
+                                    ></span>Anonymous 3626</a></li>
+                            <li><a href="/aggregate/person/3627.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3627"
+                                    ></span>Anonymous 3627</a></li>
+                            <li><a href="/aggregate/person/3628.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3628"
+                                    ></span>Anonymous 3628</a></li>
+                            <li><a href="/aggregate/person/3639.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3639"
+                                    ></span>Anonymous 3639</a></li>
+                            <li><a href="/aggregate/person/3645.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3645"
+                                    ></span>Anonymous 3645</a></li>
+                            <li><a href="/aggregate/person/3754.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3754"
+                                    ></span>Anonymous 3754</a></li>
+                            <li><a href="/aggregate/person/3763.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3763"></span>Habib -
+                                    ܚܒܝܒ </a></li>
+                            <li><a href="/aggregate/person/2496.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2496"></span>Isaiah —
+                                    ܐܫܥܝܐ </a></li>
+                            <li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/74"></span>John of
+                                    Ephesus — ܝܘܚܢܢ ܕܐܦܣܘܣ </a></li>
+                            <li><a href="/aggregate/person/1320.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1320"></span>John the
+                                    Nazarite — ܝܘܚܢܢ ܢܙܝܪܐ </a></li>
+                            <li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2284"
+                                    ></span>Justinian I — ܝܘܣܛܝܢܝܢܐ </a></li>
+                            <li><a href="/aggregate/person/3235.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3235"></span>Maro -
+                                    ܡܪܘܢ </a></li>
+                            <li><a href="/aggregate/person/1885.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1885"></span>Maron —
+                                    ܡܪܘܢ </a></li>
+                            <li><a href="/aggregate/person/1934.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1934"></span>Monks of
+                                    Amida</a></li>
+                            <li><a href="/aggregate/person/1980.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1980"></span>Paul the
+                                    Mourner — ܦܘܠܘܣ ܐܒܝܠܐ </a></li>
+                            <li><a href="/aggregate/person/2097.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2097"></span>Simeon
+                                    the Mountaineer — ܫܡܥܘܢ ܛܘܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/2099.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2099"></span>Simeon
+                                    the Solitaire — ܫܡܥܘܢ ܝܚܝܕܝܐ </a></li>
+                            <li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/779"></span>Theodora,
+                                    Roman empress — ܡܠܟܬܐ ܬܐܘܕܘܪܐ </a></li>
+                            <li><a href="/aggregate/person/2153.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2153"
+                                    ></span>Zacharias — ܙܟܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/1524.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1524"></span>Zeʿora —
+                                    ܙܥܘܪܐ </a></li>
+                        </ul>
+                        <h4>Related place(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/place/572.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/572"></span>Alexandria
+                                    — ܐܠܟܣܢܕܪܝܐ </a></li>
+                            <li><a href="/aggregate/place/2618.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2618"></span>Cell of
+                                    Simeon the Solitary</a></li>
+                            <li><a href="/aggregate/place/2793.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2793"></span>Hormisda
+                                    — ܗܘܪܡܙܕܐ </a></li>
+                            <li><a href="/aggregate/place/2813.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2813"></span>Mar Mama
+                                    — ܡܪܝ ܡܡܐ </a></li>
+                            <li><a href="/aggregate/place/2860.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2860"></span>Villa
+                                    near Sycae — ܦܪܣܛܝܘܢ ܕܤܘܩܣ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
