@@ -1,389 +1,340 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>SPEAR: Martyrdom</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
-        <!-- Srophe styles -->
-        <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
-        <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
-        <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
-        <!-- Leaflet -->
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
-        <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
-        <!-- JQuery -->
-        <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
-        <!-- ReCaptcha -->
-        <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
-        <!-- keyboard widget css & script -->
-        <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
-        <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
-        <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
-    </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
-                <a class="navbar-brand banner-container" href="/index.html"><span
-                        class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
-            <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span><span
-                                            class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
-                                            >Martyrdom</span></span></span></h1>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/taxonomy/martyrdom"
-                                                >http://syriaca.org/taxonomy/martyrdom</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <p class="indent"><span class="spearLabel">event: </span> Severus
-                                    wrote a letter to Andrew on the subject of . <a href="/3141-1"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>John was
-                                    captured and brought to Antioch, where he was tortured and
-                                    killed by Ephraim of Amida. <a href="/816-20"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> In 420/1
-                                    A. Gr. 732 Jacob the Mutilated suffered martyrdom. <a
-                                        href="/8559-270" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> After 28
-                                    October A. D. 457 28 Teshri I A. Gr. 769 Nonos built the House
-                                    of Martyrs to Mar Cosmas and Mar Damian . <a href="/8559-346"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Abraham
-                                    calmed the angry mob and sent them away by telling them that he
-                                    would examine Sergius inside the church. Once inside, Abraham
-                                    and Anonymi 3689 beat Sergius severely before shaving off his
-                                    hair, which marked his ascetic profession, and putting him in
-                                    irons in order to transport him to the monastery of 'Tryz. <a
-                                        href="/797-45" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Anonymi
-                                    3618 refused to renounce Christianity and were put to the sword.
-                                    They became martyrs. <a href="/802-57" class="factoid-more">See
-                                        factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span>Euphemia
-                                    completed thirty-five years in the course of perfection --
-                                    thirty administering to saints and five in persecution, which
-                                    led to martyrdom. <a href="/804-57" class="factoid-more">See
-                                        factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <p class="indent"><span class="spearLabel">event: </span> John
-                                    Chrysostom commemorated women who died by suicide in the face of
-                                    persecution: Pelagia, Domnina, Prosdocia, and Berenice. <a
-                                        href="/3141-7" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <hr />
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Keyword Page for <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr"
-                                        >Martyrdom</span></span></span>,” in SPEAR: Syriac Persons
-                                        Events and Relations, general editor Daniel L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/taxonomy/martyrdom.html,
-                                        2025-06-16. </span>
+        <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+                <title>SPEAR: Martyrdom</title>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+                <!-- Bootstrap 3 -->
+                <link rel="stylesheet" type="text/css"
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
+                <!-- Srophe styles -->
+                <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
+                <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+                <link rel="stylesheet" type="text/css" media="print" href="/resources/css/print.css" />
+                <!-- Leaflet -->
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.css" />
+                <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
+                <!-- JQuery -->
+                <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
+                <!-- Bootstrap -->
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
+                <!-- ReCaptcha -->
+                <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
+                <!-- keyboard widget css & script -->
+                <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
+                <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
+                <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+        </head>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
+                                <a class="navbar-brand banner-container" href="/index.html"><span
+                                                class="syriaca-icon syriaca-syriaca banner-icon"
+                                                ></span><span class="banner-text"
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/architecture.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/architecture"
-                                            ></span>Architecture</a></li>
-                                    <li><a href="/aggregate/taxonomy/asceticism.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/asceticism"
-                                            ></span>Asceticism</a></li>
-                                    <li><a href="/aggregate/taxonomy/commemorates.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/commemorates"
-                                            ></span>Commemorates</a></li>
-                                    <li><a href="/aggregate/taxonomy/commemoration.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/commemoration"
-                                            ></span>Commemoration</a></li>
-                                    <li><a href="/aggregate/taxonomy/death.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/death"
-                                            ></span>Death</a></li>
-                                    <li><a href="/aggregate/taxonomy/grammar.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/grammar"
-                                            ></span>Grammar</a></li>
-                                    <li><a href="/aggregate/taxonomy/holy-places.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/holy-places"
-                                            ></span>Holy Places</a></li>
-                                    <li><a href="/aggregate/taxonomy/imprisonment.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/imprisonment"
-                                            ></span>Imprisonment</a></li>
-                                    <li><a href="/aggregate/taxonomy/letters.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
-                                            ></span>Letters</a></li>
-                                    <li><a href="/aggregate/taxonomy/martyrdom.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/martyrdom"
-                                            ></span>Martyrdom</a></li>
-                                    <li><a href="/aggregate/taxonomy/ordination.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/ordination"
-                                            ></span>Ordination</a></li>
-                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
-                                            ></span>Persecution</a></li>
-                                    <li><a href="/aggregate/taxonomy/priests.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
-                                            ></span>Priests</a></li>
-                                    <li><a href="/aggregate/taxonomy/religious-conflict.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/religious-conflict"
-                                            ></span>Religious Conflict</a></li>
-                                    <li><a href="/aggregate/taxonomy/saints.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
-                                            ></span>Saints</a></li>
-                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
-                                            ></span>Sender of Letter to</a></li>
-                                    <li><a href="/aggregate/taxonomy/suicide.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/suicide"
-                                            ></span>Suicide</a></li>
-                                    <li><a href="/aggregate/taxonomy/violence.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/violence"
-                                            ></span>Violence</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/3184.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3184"
-                                            ></span>Abraham of Amida</a></li>
-                                    <li><a href="/aggregate/person/2480.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2480"
-                                            ></span>Andrew — ܐܢܕܪܐܐ ܩܪܘܝܐ </a></li>
-                                    <li><a href="/aggregate/person/3618.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3618"
-                                            ></span>Anonymi 3618</a></li>
-                                    <li><a href="/aggregate/person/3689.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3689"
-                                            ></span>Anonymous 3689</a></li>
-                                    <li><a href="/aggregate/person/2618.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2618"
-                                            ></span>Berenice — ܒܪܢܝܩܐ </a></li>
-                                    <li><a href="/aggregate/person/400.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/400"
-                                            ></span>Braun, Oskar — ܐܘܣܟܐܪ ܒܪܘܢ </a></li>
-                                    <li><a href="/aggregate/person/1650.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1650"
-                                            ></span>Cosmos — ܩܘܙܡܐ </a></li>
-                                    <li><a href="/aggregate/person/1669.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1669"
-                                            ></span>Damian — ܕܘܡܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2637.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2637"
-                                            ></span>Domnina — ܕܘܡܢܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2274.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2274"
-                                            ></span>Ephrem of Amida — ܐܦܪܝܡ ܐܡܕܝܐ </a></li>
-                                    <li><a href="/aggregate/person/3025.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3025"
-                                            ></span>Euphemia — ܐܘܦܡܝܐ </a></li>
-                                    <li><a href="/aggregate/person/1296.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1296"
-                                            ></span>Jacob the Cut-Up — ܝܥܩܘܒ ܡܦܣܩܐ </a></li>
-                                    <li><a href="/aggregate/person/573.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/573"
-                                            ></span>John Chrysostom — ܝܘܐܢܝܣ ܟܪܘܣܘܣܛܘܡܘܣ </a></li>
-                                    <li><a href="/aggregate/person/50.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/50"
-                                            ></span>John of Tella — ܝܘܚܢܢ ܕܬܠܐ </a></li>
-                                    <li><a href="/aggregate/person/2292.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2292"
-                                            ></span>Nona — ܢܘܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2708.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2708"
-                                            ></span>Prosdocia — ܦܪܣܕܘܩܝܐ </a></li>
-                                    <li><a href="/aggregate/person/3154.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3154"
-                                            ></span>Sergius — ܣܪܓܝܣ </a></li>
-                                    <li><a href="/aggregate/person/51.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/51"
-                                            ></span>Severus of Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ </a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/2737.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2737"
-                                            ></span>Amida — ܐܡܕܝܐ </a></li>
-                                    <li><a href="/aggregate/place/10.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/10"
-                                            ></span>Antioch — ܐܢܛܝܘܟܝܐ </a></li>
-                                    <li><a href="/aggregate/place/2602.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2602"
-                                            ></span>House of Martyrs — ܒܝܬ ܣܗ̈ܕܐ </a></li>
-                                    <li><a href="/aggregate/place/2867.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2867"
-                                            ></span>ʿTryz — ܐܬܪܝܙ </a></li>
-                                </ul>
-                            </div>
+                        </div></nav><div class="container my-5">
+                        <div class="interior-content">
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span><span
+                                                  class="tei-prefLabel" xml:lang="en" lang="en"
+                                                  dir="ltr">Martyrdom</span></span></span></h1>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
+                                                  ><strong>Syriaca.org URI</strong></span>: <span
+                                                  id="syriaca-id"><a
+                                                  href="http://syriaca.org/taxonomy/martyrdom"
+                                                  >http://syriaca.org/taxonomy/martyrdom</a></span></p></small>
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span> Severus wrote a letter to Andrew on the
+                                                  subject of . <a href="/3141-1"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span>John was captured and brought to Antioch,
+                                                  where he was tortured and killed by Ephraim of
+                                                  Amida. <a href="/816-20" class="factoid-more">See
+                                                  factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span> In 420/1 A. Gr. 732 Jacob the Mutilated
+                                                  suffered martyrdom. <a href="/8559-270"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span> After 28 October A. D. 457 28 Teshri I A.
+                                                  Gr. 769 Nonos built the House of Martyrs to Mar
+                                                  Cosmas and Mar Damian . <a href="/8559-346"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span>Abraham calmed the angry mob and sent them
+                                                  away by telling them that he would examine Sergius
+                                                  inside the church. Once inside, Abraham and
+                                                  Anonymi 3689 beat Sergius severely before shaving
+                                                  off his hair, which marked his ascetic profession,
+                                                  and putting him in irons in order to transport him
+                                                  to the monastery of 'Tryz. <a href="/797-45"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span>Anonymi 3618 refused to renounce
+                                                  Christianity and were put to the sword. They
+                                                  became martyrs. <a href="/802-57"
+                                                  class="factoid-more">See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span>Euphemia completed thirty-five years in the
+                                                  course of perfection -- thirty administering to
+                                                  saints and five in persecution, which led to
+                                                  martyrdom. <a href="/804-57" class="factoid-more"
+                                                  >See factoid page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
+                                                  </span> John Chrysostom commemorated women who
+                                                  died by suicide in the face of persecution:
+                                                  Pelagia, Domnina, Prosdocia, and Berenice. <a
+                                                  href="/3141-7" class="factoid-more">See factoid
+                                                  page <span
+                                                  class="glyphicon glyphicon-circle-arrow-right"
+                                                  aria-hidden="true"></span></a></p>
+                                                <hr />
+                                                <div class="citation">
+                                                  <h3>How to cite:</h3>
+                                                  <span class="element"> “Keyword Page for <span
+                                                  id="title"><span><span class="tei-prefLabel"
+                                                  xml:lang="en" lang="en" dir="ltr"
+                                                  >Martyrdom</span></span></span>,” in SPEAR: Syriac
+                                                  Persons Events and Relations, general editor
+                                                  Daniel L. Schwartz,
+                                                  https://dev.spear-prosop.org/aggregate/taxonomy/martyrdom.html,
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/architecture.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/architecture"
+                                                  ></span>Architecture</a></li>
+                                                  <li><a href="/aggregate/taxonomy/asceticism.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/asceticism"
+                                                  ></span>Asceticism</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/commemorates.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/commemorates"
+                                                  ></span>Commemorates</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/commemoration.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/commemoration"
+                                                  ></span>Commemoration</a></li>
+                                                  <li><a href="/aggregate/taxonomy/death.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/death"
+                                                  ></span>Death</a></li>
+                                                  <li><a href="/aggregate/taxonomy/grammar.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/grammar"
+                                                  ></span>Grammar</a></li>
+                                                  <li><a href="/aggregate/taxonomy/holy-places.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/holy-places"
+                                                  ></span>Holy Places</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/imprisonment.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/imprisonment"
+                                                  ></span>Imprisonment</a></li>
+                                                  <li><a href="/aggregate/taxonomy/letters.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                                  ></span>Letters</a></li>
+                                                  <li><a href="/aggregate/taxonomy/martyrdom.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/martyrdom"
+                                                  ></span>Martyrdom</a></li>
+                                                  <li><a href="/aggregate/taxonomy/ordination.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/ordination"
+                                                  ></span>Ordination</a></li>
+                                                  <li><a href="/aggregate/taxonomy/persecution.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                                  ></span>Persecution</a></li>
+                                                  <li><a href="/aggregate/taxonomy/priests.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                                  ></span>Priests</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/religious-conflict.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/religious-conflict"
+                                                  ></span>Religious Conflict</a></li>
+                                                  <li><a href="/aggregate/taxonomy/saints.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                                  ></span>Saints</a></li>
+                                                  <li><a
+                                                  href="/aggregate/taxonomy/sender-of-letter-to.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                                  ></span>Sender of Letter to</a></li>
+                                                  <li><a href="/aggregate/taxonomy/suicide.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/suicide"
+                                                  ></span>Suicide</a></li>
+                                                  <li><a href="/aggregate/taxonomy/violence.html"
+                                                  ><span class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/taxonomy/violence"
+                                                  ></span>Violence</a></li>
+                                                </ul>
+                                                <h4>Related person(s)</h4>
+                                                <ul>
+                                                  <li><a href="/aggregate/person/3184.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3184"
+                                                  ></span>Abraham of Amida</a></li>
+                                                  <li><a href="/aggregate/person/2480.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2480"
+                                                  ></span>Andrew — ܐܢܕܪܐܐ ܩܪܘܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/3618.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3618"
+                                                  ></span>Anonymi 3618</a></li>
+                                                  <li><a href="/aggregate/person/3689.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3689"
+                                                  ></span>Anonymous 3689</a></li>
+                                                  <li><a href="/aggregate/person/2618.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2618"
+                                                  ></span>Berenice — ܒܪܢܝܩܐ </a></li>
+                                                  <li><a href="/aggregate/person/400.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/400"
+                                                  ></span>Braun, Oskar — ܐܘܣܟܐܪ ܒܪܘܢ </a></li>
+                                                  <li><a href="/aggregate/person/1650.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/1650"
+                                                  ></span>Cosmos — ܩܘܙܡܐ </a></li>
+                                                  <li><a href="/aggregate/person/1669.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/1669"
+                                                  ></span>Damian — ܕܘܡܝܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2637.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2637"
+                                                  ></span>Domnina — ܕܘܡܢܝܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2274.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2274"
+                                                  ></span>Ephrem of Amida — ܐܦܪܝܡ ܐܡܕܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/3025.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3025"
+                                                  ></span>Euphemia — ܐܘܦܡܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/1296.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/1296"
+                                                  ></span>Jacob the Cut-Up — ܝܥܩܘܒ ܡܦܣܩܐ </a></li>
+                                                  <li><a href="/aggregate/person/573.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/573"
+                                                  ></span>John Chrysostom — ܝܘܐܢܝܣ ܟܪܘܣܘܣܛܘܡܘܣ
+                                                  </a></li>
+                                                  <li><a href="/aggregate/person/50.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/50"
+                                                  ></span>John of Tella — ܝܘܚܢܢ ܕܬܠܐ </a></li>
+                                                  <li><a href="/aggregate/person/2292.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2292"
+                                                  ></span>Nona — ܢܘܢܐ </a></li>
+                                                  <li><a href="/aggregate/person/2708.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/2708"
+                                                  ></span>Prosdocia — ܦܪܣܕܘܩܝܐ </a></li>
+                                                  <li><a href="/aggregate/person/3154.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/3154"
+                                                  ></span>Sergius — ܣܪܓܝܣ </a></li>
+                                                  <li><a href="/aggregate/person/51.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/person/51"
+                                                  ></span>Severus of Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ
+                                                  </a></li>
+                                                </ul>
+                                                <h4>Related place(s)</h4>
+                                                <ul>
+                                                  <li><a href="/aggregate/place/2737.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/2737"
+                                                  ></span>Amida — ܐܡܕܝܐ </a></li>
+                                                  <li><a href="/aggregate/place/10.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/10"
+                                                  ></span>Antioch — ܐܢܛܝܘܟܝܐ </a></li>
+                                                  <li><a href="/aggregate/place/2602.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/2602"
+                                                  ></span>House of Martyrs — ܒܝܬ ܣܗ̈ܕܐ </a></li>
+                                                  <li><a href="/aggregate/place/2867.html"><span
+                                                  class="loadRDF getLabel"
+                                                  data-rdfRef="http://syriaca.org/place/2867"
+                                                  ></span>ʿTryz — ܐܬܪܝܙ </a></li>
+                                                </ul>
+                                        </div>
+                                </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div></body>
+                </div></body>
 </html>

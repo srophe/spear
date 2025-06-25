@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,710 +17,564 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span>Anastasios I — ܐܢܣܛܘܣ
-                                    </span></span></h1>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span>Anastasios I — ܐܢܣܛܘܣ
+                            </span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div class="tei-note">
+                        <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr"> “</span><span
+                                class="langattr" xml:lang="en" lang="en" dir="ltr">Anastasius ruled
+                                the Roman Empire from 491 to 518. The wealth of the imperial
+                                treasury increased considerably during his reign. He was the last
+                                emperor who did not insist on the orthodoxy of the council of
+                                Chalcedon and, in his last years, allowed the accession of
+                                anti-Chalcedonian bishops to major episcopal sees, such as Severus
+                                in Antioch.</span><span dir="ltr">” </span><span
+                                class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"><span
+                                    class="tei-footnote-ref"><a href="#bib2265-8">8</a></span>
+                            </span></span>
+                    </div>
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a href="http://syriaca.org/person/2265"
+                                        >http://syriaca.org/person/2265</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <div class="sources">
+                            <h3>Personal Information</h3>
+                            <h4>Name variant(s): </h4>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> The pious king </span>
+                                    </span>
+                                </span>
+                                <a href="/3004-14" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Anastasius </span>
+                                    </span>
+                                </span>
+                                <a href="/10510-142" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> The pious king </span>
+                                    </span>
+                                </span>
+                                <a href="/3012-28" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Our serene Christ-loving King
+                                        </span>
+                                    </span>
+                                </span>
+                                <a href="/3085-3" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Anastasios the king </span>
+                                    </span>
+                                </span>
+                                <a href="/8559-398" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Anastos the king </span>
+                                    </span>
+                                </span>
+                                <a href="/8559-429" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName"> Anastus the king </span>
+                                    </span>
+                                </span>
+                                <a href="/8559-430" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Death: </h4>
+                            <p class="indent"><span class="spearLabel">Death date: </span>9 July
+                                5189 Tammuz A. Gr. 829 <a href="/8559-446" class="factoid-more"> See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Sex: </h4>
+                            <p class="indent"><span class="tei-persName">Anastasius</span> was male.
+                                    <a href="/10510-143" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName">Anastasius</span> was male.
+                                    <a href="/805-3" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName"> Anastasios </span> was
+                                male. <a href="/8559-399" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName">Anastasius</span> was male.
+                                    <a href="/802-66" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Occupation(s): </h4>
+                            <p class="indent"><span class="tei-persName">Anastasius</span> was an
+                                empereror. <a href="/10510-144" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName">Anastasius</span> was an
+                                emperor. <a href="/805-4" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName">Anastosios</span> was King
+                                of <span class="tei-placeName"> Rome </span>. <a href="/8559-400"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-persName">Anastasius</span> was
+                                Emperor of <span class="tei-placeName"> Rome </span>
+                                <a href="/802-67" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div class="tei-note">
-                                <span class="tei-quote" dir="ltr" lang="en"><span dir="ltr">
-                                        “</span><span class="langattr" xml:lang="en" lang="en"
-                                        dir="ltr">Anastasius ruled the Roman Empire from 491 to 518.
-                                        The wealth of the imperial treasury increased considerably
-                                        during his reign. He was the last emperor who did not insist
-                                        on the orthodoxy of the council of Chalcedon and, in his
-                                        last years, allowed the accession of anti-Chalcedonian
-                                        bishops to major episcopal sees, such as Severus in
-                                        Antioch.</span><span dir="ltr">” </span><span
-                                        class="tei-footnote-refs" dir="ltr" lang="en" xml:lang="en"
-                                            ><span class="tei-footnote-ref"><a href="#bib2265-8"
-                                                >8</a></span>
-                                    </span></span>
-                            </div>
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/person/2265"
-                                                >http://syriaca.org/person/2265</a></span></p></small>
-                            </div>
+                        <div class="sources">
+                            <h3>Relationships</h3>
+                            <p class="indent">Anastasios I and Flavian II of Antioch had a
+                                professional relationship. <a href="/3004-15" class="factoid-more"
+                                    >See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Anastasios I sent a letter to Severus of Antioch. <a
+                                    href="/3053-20" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Anonymi 3067, Anonymous 3068, Anonymous 3069 and
+                                Anonymous 3070 had enmity for Anastasios I. <a href="/3049-21"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Anastasios I and Euphemios had a professional
+                                relationship. <a href="/8559-404" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Anastasios I and Macedonios II had a professional
+                                relationship. <a href="/8559-438" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Vitalian and Anastasios I had a professional
+                                relationship. <a href="/8559-444" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <div class="sources">
-                                    <h3>Personal Information</h3>
-                                    <h4>Name variant(s): </h4>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> The pious king </span>
-                                            </span>
-                                        </span>
-                                        <a href="/3004-14" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Anastasius </span>
-                                            </span>
-                                        </span>
-                                        <a href="/10510-142" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> The pious king </span>
-                                            </span>
-                                        </span>
-                                        <a href="/3012-28" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Our serene Christ-loving
-                                                  King </span>
-                                            </span>
-                                        </span>
-                                        <a href="/3085-3" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Anastasios the king
-                                                </span>
-                                            </span>
-                                        </span>
-                                        <a href="/8559-398" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Anastos the king </span>
-                                            </span>
-                                        </span>
-                                        <a href="/8559-429" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName"> Anastus the king </span>
-                                            </span>
-                                        </span>
-                                        <a href="/8559-430" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Death: </h4>
-                                    <p class="indent"><span class="spearLabel">Death date: </span>9
-                                        July 5189 Tammuz A. Gr. 829 <a href="/8559-446"
-                                            class="factoid-more"> See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Sex: </h4>
-                                    <p class="indent"><span class="tei-persName">Anastasius</span>
-                                        was male. <a href="/10510-143" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anastasius</span>
-                                        was male. <a href="/805-3" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName"> Anastasios </span>
-                                        was male. <a href="/8559-399" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anastasius</span>
-                                        was male. <a href="/802-66" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Occupation(s): </h4>
-                                    <p class="indent"><span class="tei-persName">Anastasius</span>
-                                        was an empereror. <a href="/10510-144" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anastasius</span>
-                                        was an emperor. <a href="/805-4" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anastosios</span>
-                                        was King of <span class="tei-placeName"> Rome </span>. <a
-                                            href="/8559-400" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-persName">Anastasius</span>
-                                        was Emperor of <span class="tei-placeName"> Rome </span>
-                                        <a href="/802-67" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Relationships</h3>
-                                    <p class="indent">Anastasios I and Flavian II of Antioch had a
-                                        professional relationship. <a href="/3004-15"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Anastasios I sent a letter to Severus of
-                                        Antioch. <a href="/3053-20" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Anonymi 3067, Anonymous 3068, Anonymous 3069
-                                        and Anonymous 3070 had enmity for Anastasios I. <a
-                                            href="/3049-21" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Anastasios I and Euphemios had a professional
-                                        relationship. <a href="/8559-404" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Anastasios I and Macedonios II had a
-                                        professional relationship. <a href="/8559-438"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Vitalian and Anastasios I had a professional
-                                        relationship. <a href="/8559-444" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Events</h3>
-                                    <p class="indent">Anastasius died in 518 (830 Alexander). <a
-                                            href="/805-1" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Severus sent a letter to Anastasius I
-                                        expressing his refusal to recant his condemnation of the
-                                        Council of Chalcedon and Leo's Tome. He preferred exile to
-                                        recanting. <a href="/3190-12" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Cosmas succeeded Abraham III as head of the
-                                        Convent of John Urtaya and served during the reign of the
-                                        Emperor Anastasius. <a href="/10510-137"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Patricius, Severus, Paul, and Julian of
-                                        Halicarnassus agressively questioned Macedonius II about his
-                                        efforts to promote the Council of Chalcedon against the
-                                        wishes of Anastasius I. <a href="/3242-2"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Sometime during his episcopacy Severus of
-                                        Antioch consulted with Anastasios I regarding the difficult
-                                        circumstances surrounding the lack of a bishop in Antaradus.
-                                            <a href="/3085-24" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Severus defended Julian against charges that
-                                        he attempted to mislead Anastasios. The following factoids
-                                        deal with related events: 3079-26, 3064-3. <a href="/3064-3"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Following the example of Constantine, Severus
-                                        encouraged Solon to commune only with orthodox clergy,
-                                        rather than following the example of Anastasius who had
-                                        supported the Henotikon. <a href="/3012-33"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 498/9 A. Gr. 810 Anastasios deposed
-                                        Euphemius . The following factoids deal with closely related
-                                        events: 8559-408, 8559-409 <a href="/8559-408"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 511/2This regularized date was calculated
-                                        by the SPEAR editor from a non-calendrical dating system
-                                        such as regnal years, etc. the 21st year of the reign of
-                                        Anastasios Anastasios commanded them to open the coffin of
-                                        Euphemia the martyr , remove the book placed there by the
-                                        Council of Chalcedon , and burn it. Anastasios relented when
-                                        fire from heaven struck the faces of those wishing to remove
-                                        it . This regularized date was calculated by the SPEAR
-                                        editor from a non-calendrical dating system such as regnal
-                                        years, etc. <a href="/8559-433" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 511/2This regularized date was calculated
-                                        by the SPEAR editor from a non-calendrical dating system
-                                        such as regnal years, etc. the 21st year of the reign of
-                                        Anastasios Anastasios deposed Macedon because he did not
-                                        anathematize the Council of Chalcedon . This regularized
-                                        date was calculated by the SPEAR editor from a
-                                        non-calendrical dating system such as regnal years, etc. <a
-                                            href="/8559-439" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> In 511/2This regularized date was calculated
-                                        by the SPEAR editor from a non-calendrical dating system
-                                        such as regnal years, etc. the 24st year of the reign of
-                                        Anastasios Vitalian rebelled against Anastasios . This
-                                        regularized date was calculated by the SPEAR editor from a
-                                        non-calendrical dating system such as regnal years, etc. <a
-                                            href="/8559-445" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> On 9 July 518 9 Tammuz A. Gr. 829 Anastasios
-                                        died. <a href="/8559-447" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Justin became the new emperor upon
-                                        Anastasius's death in 518 830 . <a href="/805-5"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Simeon met with Anastasius and asked him to
-                                        urge Kawad to let the Christians in Persia live in peace.
-                                        Anastasius convinced Kawad to leave the Persian Christians
-                                        alone. <a href="/802-64" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Emperor Anastasius sent his formula of
-                                        satisfaction to Flavian, prelate of Antioch. <a
-                                            href="/3004-77" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Anastasios wrote a letter to John complaining
-                                        about his refusal simply to accept the Henotikon without
-                                        anathemas of Chalcedon. His letter cites letters by Peter
-                                        Mongus, Athanasius, John, and John. <a href="/3017-8"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                </div>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Person Page for <span id="title"
-                                                ><span>Anastasios I — ܐܢܣܛܘܣ </span></span>,” in
-                                        SPEAR: Syriac Persons Events and Relations, general editor
-                                        Daniel L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/person/2265.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/anathema.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/anathema"
-                                            ></span>Anathema</a></li>
-                                    <li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"
-                                            ></span>Anti-Chalcedonian</a></li>
-                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
-                                            ></span>Bishops</a></li>
-                                    <li><a href="/aggregate/taxonomy/canon-law.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/canon-law"
-                                            ></span>Canon Law</a></li>
-                                    <li><a href="/aggregate/taxonomy/church-councils.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/church-councils"
-                                            ></span>Church Councils</a></li>
-                                    <li><a href="/aggregate/taxonomy/cited-positively.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/cited-positively"
-                                            ></span>Cited Positively</a></li>
-                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
-                                            ></span>Clergy</a></li>
-                                    <li><a href="/aggregate/taxonomy/communion.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/communion"
-                                            ></span>Communion</a></li>
-                                    <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
-                                            ></span>Council of Chalcedon</a></li>
-                                    <li><a href="/aggregate/taxonomy/death.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/death"
-                                            ></span>Death</a></li>
-                                    <li><a href="/aggregate/taxonomy/decrees.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/decrees"
-                                            ></span>Decrees</a></li>
-                                    <li><a href="/aggregate/taxonomy/deposition-of-clergy.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"
-                                            ></span>Deposition of Clergy</a></li>
-                                    <li><a href="/aggregate/taxonomy/deposition-of-rulers.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/deposition-of-rulers"
-                                            ></span>Deposition of Rulers</a></li>
-                                    <li><a href="/aggregate/taxonomy/diplomacy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/diplomacy"
-                                            ></span>Diplomacy</a></li>
-                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
-                                            ></span>Emperors</a></li>
-                                    <li><a href="/aggregate/taxonomy/enmity-for.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/enmity-for"
-                                            ></span>Enmity for</a></li>
-                                    <li><a href="/aggregate/taxonomy/exile.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
-                                            ></span>Exile</a></li>
-                                    <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
-                                            ></span>Heterodoxy</a></li>
-                                    <li><a href="/aggregate/taxonomy/kings.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/kings"
-                                            ></span>Kings</a></li>
-                                    <li><a href="/aggregate/taxonomy/letters.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/letters"
-                                            ></span>Letters</a></li>
-                                    <li><a href="/aggregate/taxonomy/men.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/men"
-                                            ></span>Men</a></li>
-                                    <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
-                                            ></span>Monastic Heads</a></li>
-                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
-                                            ></span>Persecution</a></li>
-                                    <li><a href="/aggregate/taxonomy/priests.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
-                                            ></span>Priests</a></li>
-                                    <li><a href="/aggregate/taxonomy/professional-relationship.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"
-                                            ></span>Professional Relationship</a></li>
-                                    <li><a href="/aggregate/taxonomy/proximate-event.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
-                                            ></span>Proximate Event</a></li>
-                                    <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
-                                            ></span>Sender of Letter to</a></li>
-                                    <li><a href="/aggregate/taxonomy/succession.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/succession"
-                                            ></span>Succession</a></li>
-                                    <li><a href="/aggregate/taxonomy/theology.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/theology"
-                                            ></span>Theology</a></li>
-                                    <li><a href="/aggregate/taxonomy/usurpers.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/usurpers"
-                                            ></span>Usurpers</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/3187.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3187"
-                                            ></span>Abraham III - ܐܒܪܗܡ </a></li>
-                                    <li><a href="/aggregate/person/2265.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2265"
-                                            ></span>Anastasios I — ܐܢܣܛܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2219.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2219"
-                                            ></span>Anonymi 2219 — Those struck by fire in 511/2
-                                            because they wanted to remove the book placed in the
-                                            coffin of Euphemia the Martyr by the Council of
-                                            Chalcedon</a></li>
-                                    <li><a href="/aggregate/person/3067.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3067"
-                                            ></span>Anonymi 3067 — The heads of monasteries in Syria
-                                            Secunda who urged their bishops to oppose
-                                        Severus</a></li>
-                                    <li><a href="/aggregate/person/3068.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3068"
-                                            ></span>Anonymous 3068 — The bishop of Epiphania in A.D.
-                                            515</a></li>
-                                    <li><a href="/aggregate/person/3069.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3069"
-                                            ></span>Anonymous 3069 — The bishop of Arethusa in A.D.
-                                            515</a></li>
-                                    <li><a href="/aggregate/person/3070.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3070"
-                                            ></span>Anonymous 3070 — The bishop of Rhaphania in A.D.
-                                            515</a></li>
-                                    <li><a href="/aggregate/person/2612.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2612"
-                                            ></span>Athanasius II — ܐܬܢܣܝܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2513.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2513"
-                                            ></span>Constantine — ܩܘܣܛܢܛܝܢܘܣ ܡܝܛܪܘܦܘܠܝܛܝܣ </a></li>
-                                    <li><a href="/aggregate/person/3200.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3200"
-                                            ></span>Cosmas - ܩܘܣܡܐ </a></li>
-                                    <li><a href="/aggregate/person/479.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/479"
-                                            ></span>Euphemia, the martyr — ܐܘܦܝܡܝܐ </a></li>
-                                    <li><a href="/aggregate/person/2277.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2277"
-                                            ></span>Euphemios — ܐܘܦܝܡܝܣ </a></li>
-                                    <li><a href="/aggregate/person/2530.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2530"
-                                            ></span>Flavian II of Antioch — ܦܠܒܝܢܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2687.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2687"
-                                            ></span>John II (Hemula) — ܝܘܚܢܢ ܪܝܫ ܐܝ̈ܣܩܦܐ </a></li>
-                                    <li><a href="/aggregate/person/2572.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2572"
-                                            ></span>John III of Nicaea — ܝܘܚܢܢ ܪܝܫ ܐܦ̈ܝܣܩܘܦܐ
-                                            ܕܐܠܟܣܢܕܪܝܐ </a></li>
-                                    <li><a href="/aggregate/person/579.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/579"
-                                            ></span>Julian of Halicarnassus — ܝܘܠܝܢܐ ܕܗܐܠܝܩܪܢܣܝܘܣ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/2410.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2410"
-                                            ></span>Julian — ܝܘܠܝܢܐ ܩܫܝܫܐ </a></li>
-                                    <li><a href="/aggregate/person/2268.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2268"
-                                            ></span>Justin I — ܝܘܣܛܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/2286.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2286"
-                                            ></span>Kavad — ܩܘܕ </a></li>
-                                    <li><a href="/aggregate/person/2299.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2299"
-                                            ></span>Leo — ܠܐܘܢ </a></li>
-                                    <li><a href="/aggregate/person/2696.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2696"
-                                            ></span>Macedonius II — ܡܩܕܘܢܝܘܣ ܐܦܝܣܩܘܦܐ ܕܩܘܣܛܢܛܝܢܦܘܠܝܣ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/2281.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2281"
-                                            ></span>Patricius — ܦܛܪܝܩ </a></li>
-                                    <li><a href="/aggregate/person/2730.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2730"
-                                            ></span>Paul</a></li>
-                                    <li><a href="/aggregate/person/2736.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2736"
-                                            ></span>Peter Mongus — ܦܛܪܘܣ ܐܦܝܣܩܘܦܐ ܕܐܠܟܣܢܕܪܝܐ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/51.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/51"
-                                            ></span>Severus of Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ </a></li>
-                                    <li><a href="/aggregate/person/53.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/53"
-                                            ></span>Simeon of Beth Arsham — ܫܡܥܘܢ ܕܒܝܬ ܐܪܫܡ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/2417.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2417"
-                                            ></span>Solon — ܣܘܠܘܢ ܐܦܝܣܩܘܦܐ ܘܡܝܛܪܘܦܘܠܝܛܝܣ ܕܣܠܘܩܝܐ
-                                            ܕܐܝܣܘܪܝܐ </a></li>
-                                    <li><a href="/aggregate/person/2311.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2311"
-                                            ></span>Vitalian — ܒܝܛܠܝܢܐ </a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/1471.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/1471"
-                                            ></span>Antaradus — ܐܢܛܐܪܐܕܘܣ </a></li>
-                                    <li><a href="/aggregate/place/10.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/10"
-                                            ></span>Antioch — ܐܢܛܝܘܟܝܐ </a></li>
-                                    <li><a href="/aggregate/place/622.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/622"
-                                            ></span>Chalcedon — ܟܠܩܝܕܘܢܐ </a></li>
-                                    <li><a href="/aggregate/place/166.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/166"
-                                            ></span>Roman Empire</a></li>
-                                    <li><a href="/aggregate/place/641.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/641"
-                                            ></span>Rome — ܪܘܡܝ </a></li>
-                                    <li><a href="/aggregate/place/399.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/399"
-                                            ></span>Yoḥannan Urṭaya — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ
-                                        </a></li>
-                                </ul>
-                            </div>
+                        <div class="sources">
+                            <h3>Events</h3>
+                            <p class="indent">Anastasius died in 518 (830 Alexander). <a
+                                    href="/805-1" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Severus sent a letter to Anastasius I expressing his
+                                refusal to recant his condemnation of the Council of Chalcedon and
+                                Leo's Tome. He preferred exile to recanting. <a href="/3190-12"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Cosmas succeeded Abraham III as head of the Convent of
+                                John Urtaya and served during the reign of the Emperor Anastasius.
+                                    <a href="/10510-137" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Patricius, Severus, Paul, and Julian of Halicarnassus
+                                agressively questioned Macedonius II about his efforts to promote
+                                the Council of Chalcedon against the wishes of Anastasius I. <a
+                                    href="/3242-2" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Sometime during his episcopacy Severus of Antioch
+                                consulted with Anastasios I regarding the difficult circumstances
+                                surrounding the lack of a bishop in Antaradus. <a href="/3085-24"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Severus defended Julian against charges that he
+                                attempted to mislead Anastasios. The following factoids deal with
+                                related events: 3079-26, 3064-3. <a href="/3064-3"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Following the example of Constantine, Severus
+                                encouraged Solon to commune only with orthodox clergy, rather than
+                                following the example of Anastasius who had supported the Henotikon.
+                                    <a href="/3012-33" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> In 498/9 A. Gr. 810 Anastasios deposed Euphemius .
+                                The following factoids deal with closely related events: 8559-408,
+                                8559-409 <a href="/8559-408" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> In 511/2This regularized date was calculated by the
+                                SPEAR editor from a non-calendrical dating system such as regnal
+                                years, etc. the 21st year of the reign of Anastasios Anastasios
+                                commanded them to open the coffin of Euphemia the martyr , remove
+                                the book placed there by the Council of Chalcedon , and burn it.
+                                Anastasios relented when fire from heaven struck the faces of those
+                                wishing to remove it . This regularized date was calculated by the
+                                SPEAR editor from a non-calendrical dating system such as regnal
+                                years, etc. <a href="/8559-433" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> In 511/2This regularized date was calculated by the
+                                SPEAR editor from a non-calendrical dating system such as regnal
+                                years, etc. the 21st year of the reign of Anastasios Anastasios
+                                deposed Macedon because he did not anathematize the Council of
+                                Chalcedon . This regularized date was calculated by the SPEAR editor
+                                from a non-calendrical dating system such as regnal years, etc. <a
+                                    href="/8559-439" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> In 511/2This regularized date was calculated by the
+                                SPEAR editor from a non-calendrical dating system such as regnal
+                                years, etc. the 24st year of the reign of Anastasios Vitalian
+                                rebelled against Anastasios . This regularized date was calculated
+                                by the SPEAR editor from a non-calendrical dating system such as
+                                regnal years, etc. <a href="/8559-445" class="factoid-more">See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> On 9 July 518 9 Tammuz A. Gr. 829 Anastasios died. <a
+                                    href="/8559-447" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Justin became the new emperor upon Anastasius's death
+                                in 518 830 . <a href="/805-5" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Simeon met with Anastasius and asked him to urge Kawad
+                                to let the Christians in Persia live in peace. Anastasius convinced
+                                Kawad to leave the Persian Christians alone. <a href="/802-64"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Emperor Anastasius sent his formula of satisfaction to
+                                Flavian, prelate of Antioch. <a href="/3004-77" class="factoid-more"
+                                    >See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Anastasios wrote a letter to John complaining about
+                                his refusal simply to accept the Henotikon without anathemas of
+                                Chalcedon. His letter cites letters by Peter Mongus, Athanasius,
+                                John, and John. <a href="/3017-8" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
                         </div>
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Person Page for <span id="title"
+                                        ><span>Anastasios I — ܐܢܣܛܘܣ </span></span>,” in SPEAR:
+                                Syriac Persons Events and Relations, general editor Daniel L.
+                                Schwartz, https://dev.spear-prosop.org/aggregate/person/2265.html,
+                                2025-06-24. </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/anathema.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/anathema"
+                                    ></span>Anathema</a></li>
+                            <li><a href="/aggregate/taxonomy/anti-chalcedonian.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/anti-chalcedonian"
+                                    ></span>Anti-Chalcedonian</a></li>
+                            <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                    ></span>Bishops</a></li>
+                            <li><a href="/aggregate/taxonomy/canon-law.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/canon-law"
+                                    ></span>Canon Law</a></li>
+                            <li><a href="/aggregate/taxonomy/church-councils.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/church-councils"
+                                    ></span>Church Councils</a></li>
+                            <li><a href="/aggregate/taxonomy/cited-positively.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/cited-positively"
+                                    ></span>Cited Positively</a></li>
+                            <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                    ></span>Clergy</a></li>
+                            <li><a href="/aggregate/taxonomy/communion.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/communion"
+                                    ></span>Communion</a></li>
+                            <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
+                                    ></span>Council of Chalcedon</a></li>
+                            <li><a href="/aggregate/taxonomy/death.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/death"
+                                    ></span>Death</a></li>
+                            <li><a href="/aggregate/taxonomy/decrees.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/decrees"
+                                    ></span>Decrees</a></li>
+                            <li><a href="/aggregate/taxonomy/deposition-of-clergy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/deposition-of-clergy"
+                                    ></span>Deposition of Clergy</a></li>
+                            <li><a href="/aggregate/taxonomy/deposition-of-rulers.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/deposition-of-rulers"
+                                    ></span>Deposition of Rulers</a></li>
+                            <li><a href="/aggregate/taxonomy/diplomacy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/diplomacy"
+                                    ></span>Diplomacy</a></li>
+                            <li><a href="/aggregate/taxonomy/emperors.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                    ></span>Emperors</a></li>
+                            <li><a href="/aggregate/taxonomy/enmity-for.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/enmity-for"
+                                    ></span>Enmity for</a></li>
+                            <li><a href="/aggregate/taxonomy/exile.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                    ></span>Exile</a></li>
+                            <li><a href="/aggregate/taxonomy/heterodoxy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/heterodoxy"
+                                    ></span>Heterodoxy</a></li>
+                            <li><a href="/aggregate/taxonomy/kings.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/kings"
+                                    ></span>Kings</a></li>
+                            <li><a href="/aggregate/taxonomy/letters.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/letters"
+                                    ></span>Letters</a></li>
+                            <li><a href="/aggregate/taxonomy/men.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/men"
+                                ></span>Men</a></li>
+                            <li><a href="/aggregate/taxonomy/monastic-heads.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monastic-heads"
+                                    ></span>Monastic Heads</a></li>
+                            <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                    ></span>Persecution</a></li>
+                            <li><a href="/aggregate/taxonomy/priests.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                    ></span>Priests</a></li>
+                            <li><a href="/aggregate/taxonomy/professional-relationship.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/professional-relationship"
+                                    ></span>Professional Relationship</a></li>
+                            <li><a href="/aggregate/taxonomy/proximate-event.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/proximate-event"
+                                    ></span>Proximate Event</a></li>
+                            <li><a href="/aggregate/taxonomy/sender-of-letter-to.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/sender-of-letter-to"
+                                    ></span>Sender of Letter to</a></li>
+                            <li><a href="/aggregate/taxonomy/succession.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/succession"
+                                    ></span>Succession</a></li>
+                            <li><a href="/aggregate/taxonomy/theology.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/theology"
+                                    ></span>Theology</a></li>
+                            <li><a href="/aggregate/taxonomy/usurpers.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/usurpers"
+                                    ></span>Usurpers</a></li>
+                        </ul>
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/3187.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3187"></span>Abraham
+                                    III - ܐܒܪܗܡ </a></li>
+                            <li><a href="/aggregate/person/2265.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2265"
+                                    ></span>Anastasios I — ܐܢܣܛܘܣ </a></li>
+                            <li><a href="/aggregate/person/2219.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2219"></span>Anonymi
+                                    2219 — Those struck by fire in 511/2 because they wanted to
+                                    remove the book placed in the coffin of Euphemia the Martyr by
+                                    the Council of Chalcedon</a></li>
+                            <li><a href="/aggregate/person/3067.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3067"></span>Anonymi
+                                    3067 — The heads of monasteries in Syria Secunda who urged their
+                                    bishops to oppose Severus</a></li>
+                            <li><a href="/aggregate/person/3068.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3068"
+                                    ></span>Anonymous 3068 — The bishop of Epiphania in A.D.
+                                515</a></li>
+                            <li><a href="/aggregate/person/3069.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3069"
+                                    ></span>Anonymous 3069 — The bishop of Arethusa in A.D.
+                                515</a></li>
+                            <li><a href="/aggregate/person/3070.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3070"
+                                    ></span>Anonymous 3070 — The bishop of Rhaphania in A.D.
+                                515</a></li>
+                            <li><a href="/aggregate/person/2612.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2612"
+                                    ></span>Athanasius II — ܐܬܢܣܝܘܣ </a></li>
+                            <li><a href="/aggregate/person/2513.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2513"
+                                    ></span>Constantine — ܩܘܣܛܢܛܝܢܘܣ ܡܝܛܪܘܦܘܠܝܛܝܣ </a></li>
+                            <li><a href="/aggregate/person/3200.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3200"></span>Cosmas -
+                                    ܩܘܣܡܐ </a></li>
+                            <li><a href="/aggregate/person/479.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/479"></span>Euphemia,
+                                    the martyr — ܐܘܦܝܡܝܐ </a></li>
+                            <li><a href="/aggregate/person/2277.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2277"
+                                    ></span>Euphemios — ܐܘܦܝܡܝܣ </a></li>
+                            <li><a href="/aggregate/person/2530.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2530"></span>Flavian
+                                    II of Antioch — ܦܠܒܝܢܘܣ </a></li>
+                            <li><a href="/aggregate/person/2687.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2687"></span>John II
+                                    (Hemula) — ܝܘܚܢܢ ܪܝܫ ܐܝ̈ܣܩܦܐ </a></li>
+                            <li><a href="/aggregate/person/2572.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2572"></span>John III
+                                    of Nicaea — ܝܘܚܢܢ ܪܝܫ ܐܦ̈ܝܣܩܘܦܐ ܕܐܠܟܣܢܕܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/579.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/579"></span>Julian of
+                                    Halicarnassus — ܝܘܠܝܢܐ ܕܗܐܠܝܩܪܢܣܝܘܣ </a></li>
+                            <li><a href="/aggregate/person/2410.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2410"></span>Julian —
+                                    ܝܘܠܝܢܐ ܩܫܝܫܐ </a></li>
+                            <li><a href="/aggregate/person/2268.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2268"></span>Justin I
+                                    — ܝܘܣܛܝܢܐ </a></li>
+                            <li><a href="/aggregate/person/2286.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2286"></span>Kavad —
+                                    ܩܘܕ </a></li>
+                            <li><a href="/aggregate/person/2299.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2299"></span>Leo —
+                                    ܠܐܘܢ </a></li>
+                            <li><a href="/aggregate/person/2696.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2696"
+                                    ></span>Macedonius II — ܡܩܕܘܢܝܘܣ ܐܦܝܣܩܘܦܐ ܕܩܘܣܛܢܛܝܢܦܘܠܝܣ
+                                </a></li>
+                            <li><a href="/aggregate/person/2281.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2281"
+                                    ></span>Patricius — ܦܛܪܝܩ </a></li>
+                            <li><a href="/aggregate/person/2730.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2730"
+                                ></span>Paul</a></li>
+                            <li><a href="/aggregate/person/2736.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2736"></span>Peter
+                                    Mongus — ܦܛܪܘܣ ܐܦܝܣܩܘܦܐ ܕܐܠܟܣܢܕܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/51.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/51"></span>Severus of
+                                    Antioch — ܣܘܝܪܝܘܣ ܕܐܢܛܝܘܟܝܐ </a></li>
+                            <li><a href="/aggregate/person/53.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/53"></span>Simeon of
+                                    Beth Arsham — ܫܡܥܘܢ ܕܒܝܬ ܐܪܫܡ </a></li>
+                            <li><a href="/aggregate/person/2417.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2417"></span>Solon —
+                                    ܣܘܠܘܢ ܐܦܝܣܩܘܦܐ ܘܡܝܛܪܘܦܘܠܝܛܝܣ ܕܣܠܘܩܝܐ ܕܐܝܣܘܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/2311.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2311"></span>Vitalian
+                                    — ܒܝܛܠܝܢܐ </a></li>
+                        </ul>
+                        <h4>Related place(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/place/1471.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/1471"></span>Antaradus
+                                    — ܐܢܛܐܪܐܕܘܣ </a></li>
+                            <li><a href="/aggregate/place/10.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/10"></span>Antioch —
+                                    ܐܢܛܝܘܟܝܐ </a></li>
+                            <li><a href="/aggregate/place/622.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/622"></span>Chalcedon
+                                    — ܟܠܩܝܕܘܢܐ </a></li>
+                            <li><a href="/aggregate/place/166.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/166"></span>Roman
+                                    Empire</a></li>
+                            <li><a href="/aggregate/place/641.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/641"></span>Rome —
+                                    ܪܘܡܝ </a></li>
+                            <li><a href="/aggregate/place/399.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/399"></span>Yoḥannan
+                                    Urṭaya — ܕܝܪܐ ܕܡܪܝ ܝܘܚܢܢ ܕܐܘܪ̈ܛܝܐ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

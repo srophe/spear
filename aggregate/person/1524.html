@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,641 +17,517 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span>Zeʿora — ܙܥܘܪܐ
-                                    </span></span></h1>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span>Zeʿora — ܙܥܘܪܐ
+                        </span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div class="tei-note">
+                        <span xml:lang="en" lang="en" dir="ltr">Zaʿūra was an anchorite whose life
+                            was memorialized by <span class="tei-persName"><a
+                                    href="http://syriaca.org/person/74">John of Ephesus</a></span>.
+                            He was a stylite saint who famously replaced his teacher, another
+                            stylite, when the former was ready to retire. Zaʿūra also travelled to
+                                <span class="tei-placeName"><a href="http://syriaca.org/place/586"
+                                    >Constantinople</a></span> in order to advocate for the cause of
+                            the Miaphysites before the Empress <span class="tei-persName"><a
+                                    href="http://syriaca.org/person/779">Theodora</a></span>.</span>
+                    </div>
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a href="http://syriaca.org/person/1524"
+                                        >http://syriaca.org/person/1524</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <div class="sources">
+                            <h3>Personal Information</h3>
+                            <h4>Name variant(s): </h4>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName">Z'ura</span>
+                                    </span>
+                                </span>
+                                <a href="/793-20" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent"><span class="tei-listPerson">
+                                    <span class="tei-person">
+                                        <span class="tei-persName">Z'ura</span>
+                                    </span>
+                                </span>
+                                <a href="/817-8" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Sex: </h4>
+                            <p class="indent"><span class="tei-persName">Zeʿora</span> was male. <a
+                                    href="/794-2" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Place of residence: </h4>
+                            <p class="indent">
+                                <span class="tei-persName">Zeʿora</span> resided in <span
+                                    class="tei-placeName">the monastery of Pyṭr</span>. <a
+                                    href="/835-11" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Sanctity: </h4>
+                            <p class="indent"><span class="tei-persName">Zeʿora</span> was a saint.
+                                    <a href="/794-4" class="factoid-more"> See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <h4>Occupation(s): </h4>
+                            <p class="indent"><span class="tei-persName">Zeʿora</span> was a monk.
+                                    <a href="/794-3" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div class="tei-note">
-                                <span xml:lang="en" lang="en" dir="ltr">Zaʿūra was an anchorite
-                                    whose life was memorialized by <span class="tei-persName"><a
-                                            href="http://syriaca.org/person/74">John of
-                                        Ephesus</a></span>. He was a stylite saint who famously
-                                    replaced his teacher, another stylite, when the former was ready
-                                    to retire. Zaʿūra also travelled to <span class="tei-placeName"
-                                            ><a href="http://syriaca.org/place/586"
-                                            >Constantinople</a></span> in order to advocate for the
-                                    cause of the Miaphysites before the Empress <span
-                                        class="tei-persName"><a href="http://syriaca.org/person/779"
-                                            >Theodora</a></span>.</span>
-                            </div>
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/person/1524"
-                                                >http://syriaca.org/person/1524</a></span></p></small>
-                            </div>
+                        <div class="sources">
+                            <h3>Relationships</h3>
+                            <p class="indent"> John of Ephesus commemorated Zeʿora. <a href="/794-1"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Zeʿora and Anonymous 3635 were monks at the same
+                                monastery. <a href="/794-10" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Anonymous 3637 had ecclesiastical authority over
+                                Zeʿora. <a href="/794-14" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Zeʿora was a follower of Habib. <a href="/793-21"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Zeʿora and Anonymi 3642 were fellow clergy. <a
+                                    href="/794-31" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Zeʿora had enmity for Agapetus. <a href="/794-52"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Hananya studied under Zeʿora. <a href="/794-75"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <p class="indent">Zeʿora studied under Anonymous 3634. <a href="/794-80"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <div class="sources">
-                                    <h3>Personal Information</h3>
-                                    <h4>Name variant(s): </h4>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName">Z'ura</span>
-                                            </span>
-                                        </span>
-                                        <a href="/793-20" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent"><span class="tei-listPerson">
-                                            <span class="tei-person">
-                                                <span class="tei-persName">Z'ura</span>
-                                            </span>
-                                        </span>
-                                        <a href="/817-8" class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Sex: </h4>
-                                    <p class="indent"><span class="tei-persName">Zeʿora</span> was
-                                        male. <a href="/794-2" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Place of residence: </h4>
-                                    <p class="indent">
-                                        <span class="tei-persName">Zeʿora</span> resided in <span
-                                            class="tei-placeName">the monastery of Pyṭr</span>. <a
-                                            href="/835-11" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Sanctity: </h4>
-                                    <p class="indent"><span class="tei-persName">Zeʿora</span> was a
-                                        saint. <a href="/794-4" class="factoid-more"> See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <h4>Occupation(s): </h4>
-                                    <p class="indent"><span class="tei-persName">Zeʿora</span> was a
-                                        monk. <a href="/794-3" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Relationships</h3>
-                                    <p class="indent"> John of Ephesus commemorated Zeʿora. <a
-                                            href="/794-1" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Zeʿora and Anonymous 3635 were monks at the
-                                        same monastery. <a href="/794-10" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Anonymous 3637 had ecclesiastical authority
-                                        over Zeʿora. <a href="/794-14" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Zeʿora was a follower of Habib. <a
-                                            href="/793-21" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Zeʿora and Anonymi 3642 were fellow clergy. <a
-                                            href="/794-31" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Zeʿora had enmity for Agapetus. <a
-                                            href="/794-52" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Hananya studied under Zeʿora. <a
-                                            href="/794-75" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <p class="indent">Zeʿora studied under Anonymous 3634. <a
-                                            href="/794-80" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                </div>
-                                <div class="sources">
-                                    <h3>Events</h3>
-                                    <p class="indent"> Theodosius and the rest of the bishops were
-                                        sent into exile. Along with three hundred clergy and saint
-                                        Zura, they travelled to a fortress called Dereus in Thrace.
-                                        They were supported in the court by Empress Theodora. <a
-                                            href="/817-10" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> The Huns arrived and threatened Zeʿora,
-                                        probably in 515. <a href="/794-18" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora miraculously stopped a Hun from killing
-                                        him, probably in 515. <a href="/794-19" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Habib sent his disciple Z'ura to pray over the
-                                        demon-possessed man, who then died, his injustices being
-                                        undone. <a href="/793-22" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">The master of Zeʿora died. <a href="/794-24"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora made a column for himself and stood on
-                                        it. <a href="/794-25" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> From atop his column Zeʿora healed the sick
-                                        by blessing water and sprinkling it on them. <a
-                                            href="/794-26" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Chalcedonian persecutors removed Zeʿora from
-                                        his column. <a href="/794-27" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora took ten disciples and traveled to
-                                        Constantinople in order to protest the treatment of the
-                                        non-Chalcedonians to the emperor <a href="/794-29"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Habib died, leaving the monastery to Z'ura. <a
-                                            href="/793-32" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">The persecutors of Zeʿora sent letters to
-                                        Constantinople to explain their treatment of Zeʿora. <a
-                                            href="/794-35" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">The emperor opposed Zeʿora who spoke boldly in
-                                        defense of his non-Chalcedonian convictions and against the
-                                        persecution of non-Chalcedonians. The emperor oppossed
-                                        Zeʿora but also feared him. <a href="/794-36"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora anathematized the Council of Chalcedon
-                                        and inflicted the emperor with swelling and a compromised
-                                        mental state. <a href="/794-37" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Justinian fell ill and Theodora hid him while
-                                        she convinced Zeʿora to heal the emperor. <a href="/794-39"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora restored Justinian to health and the
-                                        emperor relented from pusuing strict persecution of
-                                        non-Chalcedonians. <a href="/794-45" class="factoid-more"
-                                            >See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora's fame grew, extending as far as the
-                                        city of Rome and enabling him to have great influence among
-                                        the emperor and the senators. He used this influence to care
-                                        for the poor. <a href="/794-46" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Pope Agapetus, who was about to blaspheme by
-                                        declaring that Mary should not be commemorated in the
-                                        church, urged the emperor to expel Zeʿora. <a href="/794-48"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora miraculously restored a spring that had
-                                        stopped flowing <a href="/794-5" class="factoid-more">See
-                                            factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent"> Agapetus sent a message to Zeʿora at a villa
-                                        near Sycae, demanding he obey Justinian. Zeʿora refused.
-                                        Anonymous 3645 tried to bring him back to the city but heavy
-                                        winds prevented him crossing the Golden Horn. <a
-                                            href="/794-57" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Agapetus died suddenly on the day predicted by
-                                        Zeʿora and Anonymi 3646 accused him of using magic against
-                                        the Pope. <a href="/794-61" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora engaged in affective prayer. <a
-                                            href="/794-63" class="factoid-more">See factoid page
-                                                <span class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora performed many acts of charity for the
-                                        poor. <a href="/794-64" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora left the city for a camp in Thrace
-                                        called Dercus where he dwelt together with Theodosius,
-                                        Patriarch of Alexandria . <a href="/794-67"
-                                            class="factoid-more">See factoid page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                    <p class="indent">Zeʿora died, leaving behind his disciple
-                                        Hananya. <a href="/794-71" class="factoid-more">See factoid
-                                            page <span
-                                                class="glyphicon glyphicon-circle-arrow-right"
-                                                aria-hidden="true"></span></a></p>
-                                    <hr />
-                                </div>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Person Page for <span id="title"
-                                                ><span>Zeʿora — ܙܥܘܪܐ </span></span>,” in SPEAR:
-                                        Syriac Persons Events and Relations, general editor Daniel
-                                        L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/person/1524.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/3193.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3193"
-                                            ></span>Agapetus - ܐܓܦܝܛܣ </a></li>
-                                    <li><a href="/aggregate/person/3640.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3640"
-                                            ></span>Anonymi 3640</a></li>
-                                    <li><a href="/aggregate/person/3641.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3641"
-                                            ></span>Anonymi 3641</a></li>
-                                    <li><a href="/aggregate/person/3642.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3642"
-                                            ></span>Anonymi 3642</a></li>
-                                    <li><a href="/aggregate/person/3646.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3646"
-                                            ></span>Anonymi 3646</a></li>
-                                    <li><a href="/aggregate/person/3634.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3634"
-                                            ></span>Anonymous 3634</a></li>
-                                    <li><a href="/aggregate/person/3635.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3635"
-                                            ></span>Anonymous 3635</a></li>
-                                    <li><a href="/aggregate/person/3637.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3637"
-                                            ></span>Anonymous 3637</a></li>
-                                    <li><a href="/aggregate/person/3639.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3639"
-                                            ></span>Anonymous 3639</a></li>
-                                    <li><a href="/aggregate/person/3645.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3645"
-                                            ></span>Anonymous 3645</a></li>
-                                    <li><a href="/aggregate/person/3763.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3763"
-                                            ></span>Habib - ܚܒܝܒ </a></li>
-                                    <li><a href="/aggregate/person/3212.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3212"
-                                            ></span>Hananya - ܚܢܢܝܐ </a></li>
-                                    <li><a href="/aggregate/person/74.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/74"
-                                            ></span>John of Ephesus — ܝܘܚܢܢ ܕܐܦܣܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2284.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2284"
-                                            ></span>Justinian I — ܝܘܣܛܝܢܝܢܐ </a></li>
-                                    <li><a href="/aggregate/person/624.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/624"
-                                            ></span>Mary, Mother of God — ܡܪܝܡ </a></li>
-                                    <li><a href="/aggregate/person/779.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/779"
-                                            ></span>Theodora, Roman empress — ܡܠܟܬܐ ܬܐܘܕܘܪܐ
-                                        </a></li>
-                                    <li><a href="/aggregate/person/784.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/784"
-                                            ></span>Theodosius, patriarch of Alexandria — ܬܐܘܕܘܣܝܘܣ
-                                            ܕܐܠܟܣܢܕܪܝܐ </a></li>
-                                    <li><a href="/aggregate/person/1524.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1524"
-                                            ></span>Zeʿora — ܙܥܘܪܐ </a></li>
-                                </ul>
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/anathema.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/anathema"
-                                            ></span>Anathema</a></li>
-                                    <li><a href="/aggregate/taxonomy/bishop-over-monk.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bishop-over-monk"
-                                            ></span>Bishop over Monk</a></li>
-                                    <li><a href="/aggregate/taxonomy/bishops.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/bishops"
-                                            ></span>Bishops</a></li>
-                                    <li><a href="/aggregate/taxonomy/charity.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/charity"
-                                            ></span>CharityCaritas</a></li>
-                                    <li><a href="/aggregate/taxonomy/clergy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/clergy"
-                                            ></span>Clergy</a></li>
-                                    <li><a href="/aggregate/taxonomy/commemorates.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/commemorates"
-                                            ></span>Commemorates</a></li>
-                                    <li><a href="/aggregate/taxonomy/commemoration.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/commemoration"
-                                            ></span>Commemoration</a></li>
-                                    <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"
-                                                ><span class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
-                                            ></span>Council of Chalcedon</a></li>
-                                    <li><a href="/aggregate/taxonomy/death.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/death"
-                                            ></span>Death</a></li>
-                                    <li><a href="/aggregate/taxonomy/demonology.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/demonology"
-                                            ></span>Demonology</a></li>
-                                    <li><a href="/aggregate/taxonomy/emperors.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/emperors"
-                                            ></span>Emperors</a></li>
-                                    <li><a href="/aggregate/taxonomy/enmity-for.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/enmity-for"
-                                            ></span>Enmity for</a></li>
-                                    <li><a href="/aggregate/taxonomy/exile.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/exile"
-                                            ></span>Exile</a></li>
-                                    <li><a href="/aggregate/taxonomy/fame.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/fame"
-                                            ></span>Fame</a></li>
-                                    <li><a href="/aggregate/taxonomy/fellow-clergy.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/fellow-clergy"
-                                            ></span>Fellow Clergy</a></li>
-                                    <li><a href="/aggregate/taxonomy/fellow-monastics.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/fellow-monastics"
-                                            ></span>Fellow Monastics</a></li>
-                                    <li><a href="/aggregate/taxonomy/follower-of.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/follower-of"
-                                            ></span>Follower of</a></li>
-                                    <li><a href="/aggregate/taxonomy/healing.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/healing"
-                                            ></span>Healing</a></li>
-                                    <li><a href="/aggregate/taxonomy/huns.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/huns"
-                                            ></span>Huns</a></li>
-                                    <li><a href="/aggregate/taxonomy/illness.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/illness"
-                                            ></span>Illness</a></li>
-                                    <li><a href="/aggregate/taxonomy/men.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/men"
-                                            ></span>Men</a></li>
-                                    <li><a href="/aggregate/taxonomy/miracles.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/miracles"
-                                            ></span>Miracles</a></li>
-                                    <li><a href="/aggregate/taxonomy/monasteries.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monasteries"
-                                            ></span>Monasteries</a></li>
-                                    <li><a href="/aggregate/taxonomy/monks.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/monks"
-                                            ></span>Monks</a></li>
-                                    <li><a href="/aggregate/taxonomy/nobles.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/nobles"
-                                            ></span>Nobles</a></li>
-                                    <li><a href="/aggregate/taxonomy/persecution.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/persecution"
-                                            ></span>Persecution</a></li>
-                                    <li><a href="/aggregate/taxonomy/prayer.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/prayer"
-                                            ></span>Prayer</a></li>
-                                    <li><a href="/aggregate/taxonomy/priests.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/priests"
-                                            ></span>Priests</a></li>
-                                    <li><a href="/aggregate/taxonomy/saints.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/saints"
-                                            ></span>Saints</a></li>
-                                    <li><a href="/aggregate/taxonomy/student-of.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/student-of"
-                                            ></span>Student of</a></li>
-                                    <li><a href="/aggregate/taxonomy/stylites.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/stylites"
-                                            ></span>Stylites</a></li>
-                                    <li><a href="/aggregate/taxonomy/travel.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/travel"
-                                            ></span>Travel</a></li>
-                                    <li><a href="/aggregate/taxonomy/war.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/war"
-                                            ></span>War</a></li>
-                                </ul>
-                                <h4>Related place(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/place/2620.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2620"
-                                            ></span>Alexandria — ܐܠܟܣܢܕܪܝܐ </a></li>
-                                    <li><a href="/aggregate/place/586.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/586"
-                                            ></span>Constantinople — ܩܘܣܛܢܛܝܢܘܦܘܠܝܣ </a></li>
-                                    <li><a href="/aggregate/place/2772.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2772"
-                                            ></span>Dercus — ܕܪܩܘܣ </a></li>
-                                    <li><a href="/aggregate/place/2778.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2778"
-                                            ></span>Pyṭr — ܦܝܛܪ </a></li>
-                                    <li><a href="/aggregate/place/641.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/641"
-                                            ></span>Rome — ܪܘܡܝ </a></li>
-                                    <li><a href="/aggregate/place/1459.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/1459"
-                                            ></span>Thrace — ܬܪܐܩܝܐ </a></li>
-                                    <li><a href="/aggregate/place/2854.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2854"
-                                            ></span>Thrace — ܬܪܩܝܐ </a></li>
-                                    <li><a href="/aggregate/place/2860.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/place/2860"
-                                            ></span>Villa near Sycae — ܦܪܣܛܝܘܢ ܕܤܘܩܣ </a></li>
-                                </ul>
-                            </div>
+                        <div class="sources">
+                            <h3>Events</h3>
+                            <p class="indent"> Theodosius and the rest of the bishops were sent into
+                                exile. Along with three hundred clergy and saint Zura, they
+                                travelled to a fortress called Dereus in Thrace. They were supported
+                                in the court by Empress Theodora. <a href="/817-10"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> The Huns arrived and threatened Zeʿora, probably in
+                                515. <a href="/794-18" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora miraculously stopped a Hun from killing him,
+                                probably in 515. <a href="/794-19" class="factoid-more">See factoid
+                                    page <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Habib sent his disciple Z'ura to pray over the
+                                demon-possessed man, who then died, his injustices being undone. <a
+                                    href="/793-22" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">The master of Zeʿora died. <a href="/794-24"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora made a column for himself and stood on it. <a
+                                    href="/794-25" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> From atop his column Zeʿora healed the sick by
+                                blessing water and sprinkling it on them. <a href="/794-26"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Chalcedonian persecutors removed Zeʿora from his
+                                column. <a href="/794-27" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora took ten disciples and traveled to
+                                Constantinople in order to protest the treatment of the
+                                non-Chalcedonians to the emperor <a href="/794-29"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Habib died, leaving the monastery to Z'ura. <a
+                                    href="/793-32" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">The persecutors of Zeʿora sent letters to
+                                Constantinople to explain their treatment of Zeʿora. <a
+                                    href="/794-35" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">The emperor opposed Zeʿora who spoke boldly in defense
+                                of his non-Chalcedonian convictions and against the persecution of
+                                non-Chalcedonians. The emperor oppossed Zeʿora but also feared him.
+                                    <a href="/794-36" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora anathematized the Council of Chalcedon and
+                                inflicted the emperor with swelling and a compromised mental state.
+                                    <a href="/794-37" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Justinian fell ill and Theodora hid him while she
+                                convinced Zeʿora to heal the emperor. <a href="/794-39"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora restored Justinian to health and the emperor
+                                relented from pusuing strict persecution of non-Chalcedonians. <a
+                                    href="/794-45" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora's fame grew, extending as far as the city of
+                                Rome and enabling him to have great influence among the emperor and
+                                the senators. He used this influence to care for the poor. <a
+                                    href="/794-46" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Pope Agapetus, who was about to blaspheme by declaring
+                                that Mary should not be commemorated in the church, urged the
+                                emperor to expel Zeʿora. <a href="/794-48" class="factoid-more">See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora miraculously restored a spring that had stopped
+                                flowing <a href="/794-5" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent"> Agapetus sent a message to Zeʿora at a villa near
+                                Sycae, demanding he obey Justinian. Zeʿora refused. Anonymous 3645
+                                tried to bring him back to the city but heavy winds prevented him
+                                crossing the Golden Horn. <a href="/794-57" class="factoid-more">See
+                                    factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Agapetus died suddenly on the day predicted by Zeʿora
+                                and Anonymi 3646 accused him of using magic against the Pope. <a
+                                    href="/794-61" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora engaged in affective prayer. <a href="/794-63"
+                                    class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora performed many acts of charity for the poor. <a
+                                    href="/794-64" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora left the city for a camp in Thrace called
+                                Dercus where he dwelt together with Theodosius, Patriarch of
+                                Alexandria . <a href="/794-67" class="factoid-more">See factoid page
+                                        <span class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
+                            <p class="indent">Zeʿora died, leaving behind his disciple Hananya. <a
+                                    href="/794-71" class="factoid-more">See factoid page <span
+                                        class="glyphicon glyphicon-circle-arrow-right"
+                                        aria-hidden="true"></span></a></p>
+                            <hr />
                         </div>
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Person Page for <span id="title"><span>Zeʿora —
+                                        ܙܥܘܪܐ </span></span>,” in SPEAR: Syriac Persons Events and
+                                Relations, general editor Daniel L. Schwartz,
+                                https://dev.spear-prosop.org/aggregate/person/1524.html, 2025-06-24.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/3193.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3193"></span>Agapetus
+                                    - ܐܓܦܝܛܣ </a></li>
+                            <li><a href="/aggregate/person/3640.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3640"></span>Anonymi
+                                    3640</a></li>
+                            <li><a href="/aggregate/person/3641.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3641"></span>Anonymi
+                                    3641</a></li>
+                            <li><a href="/aggregate/person/3642.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3642"></span>Anonymi
+                                    3642</a></li>
+                            <li><a href="/aggregate/person/3646.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3646"></span>Anonymi
+                                    3646</a></li>
+                            <li><a href="/aggregate/person/3634.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3634"
+                                    ></span>Anonymous 3634</a></li>
+                            <li><a href="/aggregate/person/3635.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3635"
+                                    ></span>Anonymous 3635</a></li>
+                            <li><a href="/aggregate/person/3637.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3637"
+                                    ></span>Anonymous 3637</a></li>
+                            <li><a href="/aggregate/person/3639.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3639"
+                                    ></span>Anonymous 3639</a></li>
+                            <li><a href="/aggregate/person/3645.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3645"
+                                    ></span>Anonymous 3645</a></li>
+                            <li><a href="/aggregate/person/3763.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3763"></span>Habib -
+                                    ܚܒܝܒ </a></li>
+                            <li><a href="/aggregate/person/3212.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3212"></span>Hananya
+                                    - ܚܢܢܝܐ </a></li>
+                            <li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/74"></span>John of
+                                    Ephesus — ܝܘܚܢܢ ܕܐܦܣܘܣ </a></li>
+                            <li><a href="/aggregate/person/2284.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2284"
+                                    ></span>Justinian I — ܝܘܣܛܝܢܝܢܐ </a></li>
+                            <li><a href="/aggregate/person/624.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/624"></span>Mary,
+                                    Mother of God — ܡܪܝܡ </a></li>
+                            <li><a href="/aggregate/person/779.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/779"></span>Theodora,
+                                    Roman empress — ܡܠܟܬܐ ܬܐܘܕܘܪܐ </a></li>
+                            <li><a href="/aggregate/person/784.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/784"
+                                    ></span>Theodosius, patriarch of Alexandria — ܬܐܘܕܘܣܝܘܣ
+                                    ܕܐܠܟܣܢܕܪܝܐ </a></li>
+                            <li><a href="/aggregate/person/1524.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1524"></span>Zeʿora —
+                                    ܙܥܘܪܐ </a></li>
+                        </ul>
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/anathema.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/anathema"
+                                    ></span>Anathema</a></li>
+                            <li><a href="/aggregate/taxonomy/bishop-over-monk.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/bishop-over-monk"
+                                    ></span>Bishop over Monk</a></li>
+                            <li><a href="/aggregate/taxonomy/bishops.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/bishops"
+                                    ></span>Bishops</a></li>
+                            <li><a href="/aggregate/taxonomy/charity.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/charity"
+                                    ></span>CharityCaritas</a></li>
+                            <li><a href="/aggregate/taxonomy/clergy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/clergy"
+                                    ></span>Clergy</a></li>
+                            <li><a href="/aggregate/taxonomy/commemorates.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/commemorates"
+                                    ></span>Commemorates</a></li>
+                            <li><a href="/aggregate/taxonomy/commemoration.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/commemoration"
+                                    ></span>Commemoration</a></li>
+                            <li><a href="/aggregate/taxonomy/council-of-chalcedon.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/council-of-chalcedon"
+                                    ></span>Council of Chalcedon</a></li>
+                            <li><a href="/aggregate/taxonomy/death.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/death"
+                                    ></span>Death</a></li>
+                            <li><a href="/aggregate/taxonomy/demonology.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/demonology"
+                                    ></span>Demonology</a></li>
+                            <li><a href="/aggregate/taxonomy/emperors.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/emperors"
+                                    ></span>Emperors</a></li>
+                            <li><a href="/aggregate/taxonomy/enmity-for.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/enmity-for"
+                                    ></span>Enmity for</a></li>
+                            <li><a href="/aggregate/taxonomy/exile.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/exile"
+                                    ></span>Exile</a></li>
+                            <li><a href="/aggregate/taxonomy/fame.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/fame"
+                                    ></span>Fame</a></li>
+                            <li><a href="/aggregate/taxonomy/fellow-clergy.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/fellow-clergy"
+                                    ></span>Fellow Clergy</a></li>
+                            <li><a href="/aggregate/taxonomy/fellow-monastics.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/fellow-monastics"
+                                    ></span>Fellow Monastics</a></li>
+                            <li><a href="/aggregate/taxonomy/follower-of.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/follower-of"
+                                    ></span>Follower of</a></li>
+                            <li><a href="/aggregate/taxonomy/healing.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/healing"
+                                    ></span>Healing</a></li>
+                            <li><a href="/aggregate/taxonomy/huns.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/huns"
+                                    ></span>Huns</a></li>
+                            <li><a href="/aggregate/taxonomy/illness.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/illness"
+                                    ></span>Illness</a></li>
+                            <li><a href="/aggregate/taxonomy/men.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/men"
+                                ></span>Men</a></li>
+                            <li><a href="/aggregate/taxonomy/miracles.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/miracles"
+                                    ></span>Miracles</a></li>
+                            <li><a href="/aggregate/taxonomy/monasteries.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monasteries"
+                                    ></span>Monasteries</a></li>
+                            <li><a href="/aggregate/taxonomy/monks.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/monks"
+                                    ></span>Monks</a></li>
+                            <li><a href="/aggregate/taxonomy/nobles.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/nobles"
+                                    ></span>Nobles</a></li>
+                            <li><a href="/aggregate/taxonomy/persecution.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/persecution"
+                                    ></span>Persecution</a></li>
+                            <li><a href="/aggregate/taxonomy/prayer.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/prayer"
+                                    ></span>Prayer</a></li>
+                            <li><a href="/aggregate/taxonomy/priests.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/priests"
+                                    ></span>Priests</a></li>
+                            <li><a href="/aggregate/taxonomy/saints.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/saints"
+                                    ></span>Saints</a></li>
+                            <li><a href="/aggregate/taxonomy/student-of.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/student-of"
+                                    ></span>Student of</a></li>
+                            <li><a href="/aggregate/taxonomy/stylites.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/stylites"
+                                    ></span>Stylites</a></li>
+                            <li><a href="/aggregate/taxonomy/travel.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/travel"
+                                    ></span>Travel</a></li>
+                            <li><a href="/aggregate/taxonomy/war.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/war"
+                                ></span>War</a></li>
+                        </ul>
+                        <h4>Related place(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/place/2620.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2620"
+                                    ></span>Alexandria — ܐܠܟܣܢܕܪܝܐ </a></li>
+                            <li><a href="/aggregate/place/586.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/586"
+                                    ></span>Constantinople — ܩܘܣܛܢܛܝܢܘܦܘܠܝܣ </a></li>
+                            <li><a href="/aggregate/place/2772.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2772"></span>Dercus —
+                                    ܕܪܩܘܣ </a></li>
+                            <li><a href="/aggregate/place/2778.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2778"></span>Pyṭr —
+                                    ܦܝܛܪ </a></li>
+                            <li><a href="/aggregate/place/641.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/641"></span>Rome —
+                                    ܪܘܡܝ </a></li>
+                            <li><a href="/aggregate/place/1459.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/1459"></span>Thrace —
+                                    ܬܪܐܩܝܐ </a></li>
+                            <li><a href="/aggregate/place/2854.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2854"></span>Thrace —
+                                    ܬܪܩܝܐ </a></li>
+                            <li><a href="/aggregate/place/2860.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/place/2860"></span>Villa
+                                    near Sycae — ܦܪܣܛܝܘܢ ܕܤܘܩܣ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <!-- Bootstrap 3 -->
                 <link rel="stylesheet" type="text/css"
-                        href="/resources/bootstrap/css/bootstrap.min.css" />
+                        href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
                 <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
                 <!-- Srophe styles -->
                 <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -17,178 +17,96 @@
                 <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
                 <!-- JQuery -->
                 <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-                <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-                <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-                <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
                 <!-- Bootstrap -->
-                <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+                <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
                 <!-- ReCaptcha -->
                 <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
                 <!-- keyboard widget css & script -->
                 <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
                 <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-                <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
                 <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-                <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
         </head>
-        <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                                class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                                        data-target="#navbar-collapse-1"><span class="sr-only"
-                                                >Toggle navigation</span><span class="icon-bar"
-                                                ></span><span class="icon-bar"></span><span
-                                                class="icon-bar"></span></button>
+        <body id="body"><nav
+                        class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                                ><div class="container-fluid">
                                 <a class="navbar-brand banner-container" href="/index.html"><span
                                                 class="syriaca-icon syriaca-syriaca banner-icon"
                                                 ></span><span class="banner-text"
-                                                data-template="config:app-title">SPEAR: Syriac
-                                                Persons Events and Relations</span></a>
-                        </div><div class="navbar-collapse collapse pull-right"
-                                id="navbar-collapse-1">
-                                <ul class="nav navbar-nav">
-                                        <li><a href="/index.html" class="nav-text">Home</a></li>
-                                        <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                                        <li class="dropdown"><a href="#"
-                                                  class="dropdown-toggle lonely-caret"
-                                                  data-toggle="dropdown">  <span
-                                                  class="mobile-submenu">About</span>  <b
-                                                  class="caret"></b></a><ul
-                                                  class="dropdown-menu pull-right">
-                                                  <li><a href="/about.html">Project
-                                                  Overview</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contributors.html">Project
-                                                  Contributors</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/contact.html">Contact Us</a></li>
-                                                  <li role="presentation" class="divider"></li>
-                                                  <li><a href="/documentation/index.html"><span
-                                                  class="syriaca-icon syriaca-book icon-nav"
-                                                  style="color:red;"></span><span class="icon-text"
-                                                  >Documentation</span></a></li>
-                                                </ul></li>
-                                        <li><a href="/search.html" class="nav-text">Advanced
-                                                  Search</a></li>
-                                        <li><div id="search-wrapper">
-                                                  <form class="navbar-form navbar-right search-box"
-                                                  role="search" action="/search.html" method="get"
-                                                  ><div class="form-group">
-                                                  <input type="text" class="form-control keyboard"
-                                                  placeholder="search" name="keyword"
-                                                  id="keywordNav" />
-                                                  <span data-template="app:keyboard-select-menu"
-                                                  data-template-input-id="keywordNav"></span>
-                                                  <button class="btn btn-default search-btn"
-                                                  id="searchbtn" type="submit" title="Search"><span
-                                                  class="glyphicon glyphicon-search"
-                                                  ></span></button>
-                                                  </div></form>
-                                                </div></li>
-                                </ul>
-                        </div></nav><div class="main-content-block">
+                                                data-template="config:app-title">SPEAR<span
+                                                  class="d-none d-md-inline">: Syriac Persons Events
+                                                  and Relations</span></span></a>
+                                <button class="navbar-toggler" type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNavAltMarkup"
+                                        aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                        aria-label="Toggle navigation"><span
+                                                class="navbar-toggler-icon"></span></button>
+                                <div class="collapse navbar-collapse justify-content-end"
+                                        id="navbarNavAltMarkup">
+                                        <div class="navbar-nav">
+                                                <a class="nav-link" href="/">Home</a>
+                                                <a class="nav-link" href="/browse.html">Browse</a>
+                                                <a class="nav-link" href="/documentation.html"
+                                                  >Documentation</a>
+                                                <a class="nav-link" href="/about.html">About</a>
+                                                <a class="nav-link" href="/contact.html">Contact
+                                                  Us</a>
+                                        </div>
+                                </div>
+                        </div></nav><div class="container my-5">
                         <div class="interior-content">
-                                <div class="record">
-                                        <div class="interior-content" data-template="app:fix-links">
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns"
-                                                  class="padding-top">
-                                                  <h1>SPEAR Factoids about <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr">Holy
-                                                  Places</span></span></span></h1>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns">
-                                                  <div style="margin:0 1em 1em; color: #999999;">
-                                                  <small><p><span class="srp-label"
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="padding-top">
+                                        <h1>SPEAR Factoids about <span id="title"><span><span
+                                                  class="tei-prefLabel" xml:lang="en" lang="en"
+                                                  dir="ltr">Holy Places</span></span></span></h1>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns">
+                                        <div style="margin:0 1em 1em; color: #999999;">
+                                                <small><p><span class="srp-label"
                                                   ><strong>Syriaca.org URI</strong></span>: <span
                                                   id="syriaca-id"><a
                                                   href="http://syriaca.org/taxonomy/holy-places"
                                                   >http://syriaca.org/taxonomy/holy-places</a></span></p></small>
-                                                  </div>
-                                                </div>
-                                                <div xmlns:x="http://www.w3.org/1999/xhtml"
-                                                  xmlns:local="http://syriaca.org/ns" class="row">
-                                                  <div class="col-md-8">
-                                                  <p class="indent"><span class="spearLabel">event:
+                                        </div>
+                                </div>
+                                <div xmlns:x="http://www.w3.org/1999/xhtml"
+                                        xmlns:local="http://syriaca.org/ns" class="row">
+                                        <div class="col-md-8">
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Many miracles came about through the
                                                   prayers and the bones of Zacharias. <a
                                                   href="/811-10" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 345/6 A. Gr. 657 Abraham built the
                                                   House of the Confessors in Edessa . <a
                                                   href="/8559-109" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 369/70 A. Gr. 681 the great House of
                                                   Baptism of Edessa was built. <a href="/8559-152"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In September A. D. 373 Elul A. Gr. 684
                                                   people fled the Church of Edessa because of the
                                                   persecution of Arians . <a href="/8559-160"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In December A.D. 377 December A.D. 378 The
                                                   orthodox recovered the Church of Edessa . Hallier
                                                   rightly points out that chronicler made an error
@@ -197,8 +115,8 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 379/80 the year Theodosius the Great
                                                   became king Eulogios built the House of Mar Daniel
                                                   which was called the House of Mar Demet . <a
@@ -206,8 +124,8 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Abraham, Cyriac, Barhadbshabba, and Sergius
                                                   abolished paganism, overthrew idolatry, uprooted
                                                   altars, destroyed shrines, and cut down trees in
@@ -216,16 +134,16 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 403/4 A. Gr. 720 Mar Diogenis began to
                                                   build the House of Mar Barlāhā . <a
                                                   href="/8559-244" class="factoid-more">See factoid
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 411/2 A. Gr. 723 Rabbula built in
                                                   Edessa the House of Mar Stephanos previously
                                                   called the House of the Sabbath of the Jews of
@@ -234,24 +152,24 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 8 August A. D. 435 8 Āb A. Gr. 746
                                                   Hiba built the new church which came to be called
                                                   the House of the Apostles . <a href="/8559-287"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 437/8 A. Gr. 749 Senator bought a
                                                   silver table weighing 720 pounds and it was placed
                                                   in the old Church of Edessa . <a href="/8559-290"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 21 July 448 21 Tāmmuz A. Gr. 759
                                                   Nonos built a sacristy in the Church of Edessa .
                                                   The dates of Hiba's exile and Nonos' first
@@ -259,24 +177,24 @@
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 28 October A. D. 457 28 Teshri I A.
                                                   Gr. 769 Nonos built the House of John the Baptist
                                                   in Edessa . <a href="/8559-344"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 28 October A. D. 457 28 Teshri I A.
                                                   Gr. 769 Nonos built the House of Martyrs to Mar
                                                   Cosmas and Mar Damian . <a href="/8559-346"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> During the seige of Edessa in September A.
                                                   D. 503 Elul A. Gr. 814 Kavad burned the House of
                                                   Mar Sergius and the House of the Confessors .
@@ -293,37 +211,37 @@
                                                   page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Paul entered a cave filled with malignant
                                                   fiends and planted a cross and hung up relics of
                                                   saints. <a href="/798-5" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span>Paul made an altar and a chapel in his
                                                   cave. <a href="/798-7" class="factoid-more">See
                                                   factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Qunā laid the foundations of the Church of
                                                   Edessa in 312/3 A. Gr. 624 . <a href="/8559-87"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> After 312/3 A. Gr. 624 , Shaʿad finished
                                                   building the Church of Edessa . <a href="/8559-88"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> Aitalaha built the cemetery and the
                                                   eastern side of the Church of Edessa in 324/5 A.
                                                   Gr. 636 . The text seems to be confused regarding
@@ -332,15 +250,15 @@
                                                   >See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <p class="indent"><span class="spearLabel">event:
+                                                <hr />
+                                                <p class="indent"><span class="spearLabel">event:
                                                   </span> In 327/8 A. Gr. 639 the Church of Edessa
                                                   was enlarged. <a href="/8559-99"
                                                   class="factoid-more">See factoid page <span
                                                   class="glyphicon glyphicon-circle-arrow-right"
                                                   aria-hidden="true"></span></a></p>
-                                                  <hr />
-                                                  <div class="citation">
+                                                <hr />
+                                                <div class="citation">
                                                   <h3>How to cite:</h3>
                                                   <span class="element"> “Keyword Page for <span
                                                   id="title"><span><span class="tei-prefLabel"
@@ -349,12 +267,12 @@
                                                   Persons Events and Relations, general editor
                                                   Daniel L. Schwartz,
                                                   https://dev.spear-prosop.org/aggregate/taxonomy/holy-places.html,
-                                                  2025-06-16. </span>
-                                                  </div>
-                                                  </div>
-                                                  <div class="col-md-4">
-                                                  <h4>Related taxonomy(s)</h4>
-                                                  <ul>
+                                                  2025-06-24. </span>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <h4>Related taxonomy(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/taxonomy/altars.html"
                                                   ><span class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/altars"
@@ -421,9 +339,9 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/taxonomy/war"
                                                   ></span>War</a></li>
-                                                  </ul>
-                                                  <h4>Related person(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related person(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/person/2202.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2202"
@@ -545,9 +463,9 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/person/2153"
                                                   ></span>Zacharias — ܙܟܪܝܐ </a></li>
-                                                  </ul>
-                                                  <h4>Related place(s)</h4>
-                                                  <ul>
+                                                </ul>
+                                                <h4>Related place(s)</h4>
+                                                <ul>
                                                   <li><a href="/aggregate/place/2589.html"><span
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/place/2589"
@@ -608,9 +526,7 @@
                                                   class="loadRDF getLabel"
                                                   data-rdfRef="http://syriaca.org/place/2598"
                                                   ></span>Sacristy — ܐܝܪܛܝܘܢ </a></li>
-                                                  </ul>
-                                                  </div>
-                                                </div>
+                                                </ul>
                                         </div>
                                 </div>
                         </div>

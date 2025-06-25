@@ -5,7 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <!-- Bootstrap 3 -->
-        <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css"
+            href="/resources/bootstrap-5.3.6/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/resources/css/sm-core-css.css" />
         <!-- Srophe styles -->
         <link rel="stylesheet" type="text/css" href="/resources/css/syr-icon-fonts.css" />
@@ -16,300 +17,196 @@
         <link rel="stylesheet" href="/resources/leaflet/leaflet.awesome-markers.css" />
         <!-- JQuery -->
         <link href="/resources/jquery-ui/jquery-ui.min.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-ui/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.smartmenus.min.js"></script>
-        <script type="text/javascript" src="/resources/js/clipboard.min.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/resources/bootstrap-5.3.6/js/bootstrap.min.js"></script>
         <!-- ReCaptcha -->
         <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
         <!-- keyboard widget css & script -->
         <link href="/resources/keyboard/css/keyboard.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/css/keyboard-previewkeyset.min.css" rel="stylesheet" />
         <link href="/resources/keyboard/syr/syr.css" rel="stylesheet" />
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-mobile.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/js/jquery.keyboard.extension-navigation.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/jquery.keyboard.extension-autocomplete.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/keyboardSupport.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/syr/syr.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Greek.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Russian.min.js"></script>
-        <script type="text/javascript" src="/resources/keyboard/layouts/ms-Arabic.min.js"></script>
         <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
-        <script type="text/javascript"><![CDATA[
-            $(document).ready(function () {
-                $('[data-toggle="tooltip"]').tooltip({
-                    container: 'body'
-                })
-                
-                $('.keyboard').keyboard({
-                    openOn: null,
-                    stayOpen: false,
-                    alwaysOpen: false,
-                    autoAccept: true,
-                    usePreview: false,
-                    initialFocus: true,
-                    rtl: true,
-                    layout: 'syriac-phonetic',
-                    hidden: function (event, keyboard, el) {
-                        //  keyboard.destroy();
-                    }
-                });
-                
-                $('.keyboard-select').click(function () {
-                    var keyboardID = '#' + $(this).data("keyboard-id")
-                    var kb = $(keyboardID).getkeyboard();
-                    //var kb = $('#searchField').getkeyboard();
-                    // change layout based on link ID
-                    kb.options.layout = this.id
-                    // open keyboard if layout is different, or time from it last closing is &gt; 200 ms
-                    if (kb.last.layout !== kb.options.layout || (new Date().getTime() - kb.last.eventTime) &gt; 200) {
-                        kb.reveal();
-                    }
-                });
-                //Change fonts
-                $('.swap-font').on('click', function () {
-                    var selectedFont = $(this).data("font-id")
-                    $('.selectableFont').not('.syr').css('font-family', selectedFont);
-                    $("*:lang(syr)").css('font-family', selectedFont)
-                });
-            })//]]></script>
     </head>
-    <body id="body"><nav class="navbar navbar-default navbar-fixed-top" role="navigation"><div
-                class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#navbar-collapse-1"><span class="sr-only">Toggle
-                        navigation</span><span class="icon-bar"></span><span class="icon-bar"
-                        ></span><span class="icon-bar"></span></button>
+    <body id="body"><nav
+            class="navbar navbar-expand-lg bg-body-tertiary p-3 justify-content-between align-items-center"
+                ><div class="container-fluid">
                 <a class="navbar-brand banner-container" href="/index.html"><span
                         class="syriaca-icon syriaca-syriaca banner-icon"></span><span
-                        class="banner-text" data-template="config:app-title">SPEAR: Syriac Persons
-                        Events and Relations</span></a>
-            </div><div class="navbar-collapse collapse pull-right" id="navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a href="/index.html" class="nav-text">Home</a></li>
-                    <li><a href="/browse.html" class="nav-text">Browse</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle lonely-caret"
-                            data-toggle="dropdown">  <span class="mobile-submenu">About</span>  <b
-                                class="caret"></b></a><ul class="dropdown-menu pull-right">
-                            <li><a href="/about.html">Project Overview</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contributors.html">Project Contributors</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                            <li role="presentation" class="divider"></li>
-                            <li><a href="/documentation/index.html"><span
-                                        class="syriaca-icon syriaca-book icon-nav"
-                                        style="color:red;"></span><span class="icon-text"
-                                        >Documentation</span></a></li>
-                        </ul></li>
-                    <li><a href="/search.html" class="nav-text">Advanced Search</a></li>
-                    <li><div id="search-wrapper">
-                            <form class="navbar-form navbar-right search-box" role="search"
-                                action="/search.html" method="get"><div class="form-group">
-                                    <input type="text" class="form-control keyboard"
-                                        placeholder="search" name="keyword" id="keywordNav" />
-                                    <span data-template="app:keyboard-select-menu"
-                                        data-template-input-id="keywordNav"></span>
-                                    <button class="btn btn-default search-btn" id="searchbtn"
-                                        type="submit" title="Search"><span
-                                            class="glyphicon glyphicon-search"></span></button>
-                                </div></form>
-                        </div></li>
-                </ul>
-            </div></nav><div class="main-content-block">
+                        class="banner-text" data-template="config:app-title">SPEAR<span
+                            class="d-none d-md-inline">: Syriac Persons Events and
+                        Relations</span></span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" href="/">Home</a>
+                        <a class="nav-link" href="/browse.html">Browse</a>
+                        <a class="nav-link" href="/documentation.html">Documentation</a>
+                        <a class="nav-link" href="/about.html">About</a>
+                        <a class="nav-link" href="/contact.html">Contact Us</a>
+                    </div>
+                </div>
+            </div></nav><div class="container my-5">
             <div class="interior-content">
-                <div class="record">
-                    <div class="interior-content" data-template="app:fix-links">
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="padding-top">
-                            <h1>SPEAR Factoids about <span id="title"><span><span
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="padding-top">
+                    <h1>SPEAR Factoids about <span id="title"><span><span class="tei-prefLabel"
+                                    xml:lang="en" lang="en" dir="ltr">Parent
+                        of</span></span></span></h1>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns">
+                    <div style="margin:0 1em 1em; color: #999999;">
+                        <small><p><span class="srp-label"><strong>Syriaca.org URI</strong></span>:
+                                    <span id="syriaca-id"><a
+                                        href="http://syriaca.org/taxonomy/parent-of"
+                                        >http://syriaca.org/taxonomy/parent-of</a></span></p></small>
+                    </div>
+                </div>
+                <div xmlns:x="http://www.w3.org/1999/xhtml" xmlns:local="http://syriaca.org/ns"
+                    class="row">
+                    <div class="col-md-8">
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3119
+                            was the parent of Georgia. <a href="/3127-11" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymi 3706 was
+                            the parent of Suzanna. <a href="/819-12" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span> Anonymous 3758
+                            was the parent of Father Poemen . <a href="/3138-16"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3120
+                            was the parent of Sergius bar Fathya. <a href="/3140-18"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3624
+                            was the parent of John of Ephesus. <a href="/796-25"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3625
+                            was the parent of John of Ephesus. <a href="/796-26"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span> Conon was the
+                            father of Anonymous 3774 <a href="/3007-3" class="factoid-more">See
+                                factoid page <span class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3755
+                            was the parent of Anonymous 3754. <a href="/3111-36"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Podalirius was
+                            the parent of Anonymous 3123. <a href="/3140-39" class="factoid-more"
+                                >See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3696
+                            was the parent of Mary the Mourner. <a href="/820-7"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <p class="indent"><span class="spearLabel">relation: </span>Anonymous 3670
+                            was the parent of Abraham and Anonymous 3671. <a href="/10510-71"
+                                class="factoid-more">See factoid page <span
+                                    class="glyphicon glyphicon-circle-arrow-right"
+                                    aria-hidden="true"></span></a></p>
+                        <div class="citation">
+                            <h3>How to cite:</h3>
+                            <span class="element"> “Keyword Page for <span id="title"><span><span
                                             class="tei-prefLabel" xml:lang="en" lang="en" dir="ltr"
-                                            >Parent of</span></span></span></h1>
+                                            >Parent of</span></span></span>,” in SPEAR: Syriac
+                                Persons Events and Relations, general editor Daniel L. Schwartz,
+                                https://dev.spear-prosop.org/aggregate/taxonomy/parent-of.html,
+                                2025-06-24. </span>
                         </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns">
-                            <div style="margin:0 1em 1em; color: #999999;">
-                                <small><p><span class="srp-label"><strong>Syriaca.org
-                                            URI</strong></span>: <span id="syriaca-id"><a
-                                                href="http://syriaca.org/taxonomy/parent-of"
-                                                >http://syriaca.org/taxonomy/parent-of</a></span></p></small>
-                            </div>
-                        </div>
-                        <div xmlns:x="http://www.w3.org/1999/xhtml"
-                            xmlns:local="http://syriaca.org/ns" class="row">
-                            <div class="col-md-8">
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3119 was the parent of Georgia. <a
-                                        href="/3127-11" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>Anonymi
-                                    3706 was the parent of Suzanna. <a href="/819-12"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span>
-                                    Anonymous 3758 was the parent of Father Poemen . <a
-                                        href="/3138-16" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3120 was the parent of Sergius bar Fathya. <a
-                                        href="/3140-18" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3624 was the parent of John of Ephesus. <a
-                                        href="/796-25" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3625 was the parent of John of Ephesus. <a
-                                        href="/796-26" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation: </span> Conon
-                                    was the father of Anonymous 3774 <a href="/3007-3"
-                                        class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3755 was the parent of Anonymous 3754. <a
-                                        href="/3111-36" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Podalirius was the parent of Anonymous 3123. <a
-                                        href="/3140-39" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3696 was the parent of Mary the Mourner. <a
-                                        href="/820-7" class="factoid-more">See factoid page <span
-                                            class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <p class="indent"><span class="spearLabel">relation:
-                                    </span>Anonymous 3670 was the parent of Abraham and Anonymous
-                                    3671. <a href="/10510-71" class="factoid-more">See factoid page
-                                            <span class="glyphicon glyphicon-circle-arrow-right"
-                                            aria-hidden="true"></span></a></p>
-                                <div class="citation">
-                                    <h3>How to cite:</h3>
-                                    <span class="element"> “Keyword Page for <span id="title"
-                                                  ><span><span class="tei-prefLabel" xml:lang="en"
-                                                  lang="en" dir="ltr">Parent
-                                        of</span></span></span>,” in SPEAR: Syriac Persons Events
-                                        and Relations, general editor Daniel L. Schwartz,
-                                        https://dev.spear-prosop.org/aggregate/taxonomy/parent-of.html,
-                                        2025-06-16. </span>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <h4>Related taxonomy(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/taxonomy/parent-of.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/taxonomy/parent-of"
-                                            ></span>Parent of</a></li>
-                                </ul>
-                                <h4>Related person(s)</h4>
-                                <ul>
-                                    <li><a href="/aggregate/person/3185.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3185"
-                                            ></span>Abraham I - ܐܒܪܗܡ </a></li>
-                                    <li><a href="/aggregate/person/3706.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3706"
-                                            ></span>Anonymi 3706</a></li>
-                                    <li><a href="/aggregate/person/3119.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3119"
-                                            ></span>Anonymous 3119 — The father of Georgia and
-                                            husband of Anastasia</a></li>
-                                    <li><a href="/aggregate/person/3120.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3120"
-                                            ></span>Anonymous 3120 — The father of Sergius</a></li>
-                                    <li><a href="/aggregate/person/3123.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3123"
-                                            ></span>Anonymous 3123 — The second wife of
-                                            Anatolius</a></li>
-                                    <li><a href="/aggregate/person/3624.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3624"
-                                            ></span>Anonymous 3624</a></li>
-                                    <li><a href="/aggregate/person/3625.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3625"
-                                            ></span>Anonymous 3625</a></li>
-                                    <li><a href="/aggregate/person/3670.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3670"
-                                            ></span>Anonymous 3670</a></li>
-                                    <li><a href="/aggregate/person/3671.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3671"
-                                            ></span>Anonymous 3671</a></li>
-                                    <li><a href="/aggregate/person/3696.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3696"
-                                            ></span>Anonymous 3696</a></li>
-                                    <li><a href="/aggregate/person/3754.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3754"
-                                            ></span>Anonymous 3754</a></li>
-                                    <li><a href="/aggregate/person/3755.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3755"
-                                            ></span>Anonymous 3755</a></li>
-                                    <li><a href="/aggregate/person/3758.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3758"
-                                            ></span>Anonymous 3758</a></li>
-                                    <li><a href="/aggregate/person/3774.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/3774"
-                                            ></span>Anonymous 3774</a></li>
-                                    <li><a href="/aggregate/person/2628.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2628"
-                                            ></span>Conon — ܩܘܢܘܢ ܣܠܢܛܝܪܐ </a></li>
-                                    <li><a href="/aggregate/person/2656.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2656"
-                                            ></span>Georgia — ܓܘܪܓܝܐ ܦܛܪܝܩܝܐ </a></li>
-                                    <li><a href="/aggregate/person/74.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/74"
-                                            ></span>John of Ephesus — ܝܘܚܢܢ ܕܐܦܣܘܣ </a></li>
-                                    <li><a href="/aggregate/person/1881.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/1881"
-                                            ></span>Mary the Mourner — ܡܪܝܡ ܐܒܝܠܬܐ </a></li>
-                                    <li><a href="/aggregate/person/2482.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2482"
-                                            ></span>Podalirius — ܦܘܕܘܠܘܪܝܘܣ </a></li>
-                                    <li><a href="/aggregate/person/2739.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2739"
-                                            ></span>Poemen — ܐܒܐ ܦܘܡܝܢ </a></li>
-                                    <li><a href="/aggregate/person/2483.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2483"
-                                            ></span>Sergius bar Fathya — ܣܪܓܝܣ ܒܪ ܦܬܝܐ </a></li>
-                                    <li><a href="/aggregate/person/2092.html"><span
-                                                class="loadRDF getLabel"
-                                                data-rdfRef="http://syriaca.org/person/2092"
-                                            ></span>Suzanna — ܫܘܫܢ </a></li>
-                                </ul>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Related taxonomy(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/taxonomy/parent-of.html"><span
+                                        class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/taxonomy/parent-of"
+                                    ></span>Parent of</a></li>
+                        </ul>
+                        <h4>Related person(s)</h4>
+                        <ul>
+                            <li><a href="/aggregate/person/3185.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3185"></span>Abraham
+                                    I - ܐܒܪܗܡ </a></li>
+                            <li><a href="/aggregate/person/3706.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3706"></span>Anonymi
+                                    3706</a></li>
+                            <li><a href="/aggregate/person/3119.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3119"
+                                    ></span>Anonymous 3119 — The father of Georgia and husband of
+                                    Anastasia</a></li>
+                            <li><a href="/aggregate/person/3120.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3120"
+                                    ></span>Anonymous 3120 — The father of Sergius</a></li>
+                            <li><a href="/aggregate/person/3123.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3123"
+                                    ></span>Anonymous 3123 — The second wife of Anatolius</a></li>
+                            <li><a href="/aggregate/person/3624.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3624"
+                                    ></span>Anonymous 3624</a></li>
+                            <li><a href="/aggregate/person/3625.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3625"
+                                    ></span>Anonymous 3625</a></li>
+                            <li><a href="/aggregate/person/3670.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3670"
+                                    ></span>Anonymous 3670</a></li>
+                            <li><a href="/aggregate/person/3671.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3671"
+                                    ></span>Anonymous 3671</a></li>
+                            <li><a href="/aggregate/person/3696.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3696"
+                                    ></span>Anonymous 3696</a></li>
+                            <li><a href="/aggregate/person/3754.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3754"
+                                    ></span>Anonymous 3754</a></li>
+                            <li><a href="/aggregate/person/3755.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3755"
+                                    ></span>Anonymous 3755</a></li>
+                            <li><a href="/aggregate/person/3758.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3758"
+                                    ></span>Anonymous 3758</a></li>
+                            <li><a href="/aggregate/person/3774.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/3774"
+                                    ></span>Anonymous 3774</a></li>
+                            <li><a href="/aggregate/person/2628.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2628"></span>Conon —
+                                    ܩܘܢܘܢ ܣܠܢܛܝܪܐ </a></li>
+                            <li><a href="/aggregate/person/2656.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2656"></span>Georgia
+                                    — ܓܘܪܓܝܐ ܦܛܪܝܩܝܐ </a></li>
+                            <li><a href="/aggregate/person/74.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/74"></span>John of
+                                    Ephesus — ܝܘܚܢܢ ܕܐܦܣܘܣ </a></li>
+                            <li><a href="/aggregate/person/1881.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/1881"></span>Mary the
+                                    Mourner — ܡܪܝܡ ܐܒܝܠܬܐ </a></li>
+                            <li><a href="/aggregate/person/2482.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2482"
+                                    ></span>Podalirius — ܦܘܕܘܠܘܪܝܘܣ </a></li>
+                            <li><a href="/aggregate/person/2739.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2739"></span>Poemen —
+                                    ܐܒܐ ܦܘܡܝܢ </a></li>
+                            <li><a href="/aggregate/person/2483.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2483"></span>Sergius
+                                    bar Fathya — ܣܪܓܝܣ ܒܪ ܦܬܝܐ </a></li>
+                            <li><a href="/aggregate/person/2092.html"><span class="loadRDF getLabel"
+                                        data-rdfRef="http://syriaca.org/person/2092"></span>Suzanna
+                                    — ܫܘܫܢ </a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
