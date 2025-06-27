@@ -54,7 +54,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX spr: <http://syriaca.org/prop/reference/>
 PREFIX schema: <http://schema.org/>
 
-SELECT DISTINCT ?factoid ?description ?type ?label
+SELECT DISTINCT ?factoid ?description ?type ?label ?person
 FROM <http://syriaca.org/persons#graph>
 FROM NAMED <https://spear-prosop.org>
 WHERE {
