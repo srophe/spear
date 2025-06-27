@@ -1,3 +1,5 @@
+export const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
+
 // Create Winona style list 
 export async function renderEventKeywordList(query, listId, labelField = "label", valueField = "value", onSelect) {
   const listEl = document.getElementById(listId);
