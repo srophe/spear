@@ -36,38 +36,47 @@
 
     const factoidDisplay = document.getElementById('factoidResults');
 
-    async function renderFactoids() {
-      try {
-        const factoids = await getAllPersonFactoids();
+async function renderFactoids() {
+  try {
+    const data = await getAllPersonFactoids();
+    const factoids = data?.results?.bindings || [];
 
-        if (!Array.isArray(factoids) || factoids.length === 0) {
-          factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
-          return;
-        }
+    console.log('Returned data:', factoids);
 
-        factoidDisplay.innerHTML = `
-          <h3>All Related Factoids:</h3>
-          <ul>
-            ${factoids.map(f => {
-              const typeSlug = f.uri.split('/').pop(); // e.g., "event-participant"
-              const typeLabel = typeMap[typeSlug] || typeSlug;
-
-              return `
-                <li>
-                  <a href="${f.uri}" target="_blank">${f.uri}</a><br/>
-                  ${typeLabel ? `<strong>Type:</strong> ${typeLabel}<br/>` : ''}
-                  ${f.label ? `<strong>${f.label}</strong><br/>` : ''}
-                  ${f.description ? `<small>${f.description}</small>` : ''}
-                </li>
-              `;
-            }).join('')}
-          </ul>
-        `;
-      } catch (err) {
-        console.error("Failed to load factoids:", err);
-        factoidDisplay.innerHTML = "<em>Failed to load factoids.</em>";
-      }
+    if (!Array.isArray(factoids) || factoids.length === 0) {
+      factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
+      return;
     }
+
+    factoidDisplay.innerHTML = `
+      <h3>All Related Factoids:</h3>
+      <ul>
+        ${factoids.map(f => {
+          const uri = f.factoid?.value || '';
+          const typeUri = f.type?.value || '';
+          const typeSlug = typeUri.split('/').pop();
+          const typeLabel = typeMap[typeSlug] || typeSlug;
+          const label = f.label?.value || '';
+          const description = f.description?.value || '';
+
+          return `
+            <li>
+              <a href="${uri}" target="_blank">${uri}</a><br/>
+              ${typeLabel ? `<strong>Type:</strong> ${typeLabel}<br/>` : ''}
+              ${label ? `<strong>${label}</strong><br/>` : ''}
+              ${description ? `<small>${description}</small>` : ''}
+            </li>
+          `;
+        }).join('')}
+      </ul>
+    `;
+  } catch (err) {
+    console.error("Failed to load factoids:", err);
+    factoidDisplay.innerHTML = "<em>Failed to load factoids.</em>";
+  }
+}
+
+    
 
     renderFactoids();
   </script>
