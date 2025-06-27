@@ -35,6 +35,7 @@
       getEthnicityOptions,
       getPlaceOptions,
       getEducationFieldsOfStudy,
+      getRelationshipOptions,
       populateDropdown,
       fetchPeopleRelatedToKeyword
     } from './menuqueries.js';
@@ -53,6 +54,8 @@
       populateDropdown(getPlaceOptions(), 'resultDropdown', 'label', 'place');
     } else if (type === 'fieldOfStudy') {
       populateDropdown(getEducationFieldsOfStudy(), 'resultDropdown', 'label', 'subject');
+    } else if (type === 'relationships') {
+      populateDropdown(getRelationshipOptions(), 'resultDropdown', 'label', 'relationship');
     }
   };
 
