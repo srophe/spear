@@ -84,17 +84,21 @@
       return;
     }
   
+    
     factoidDisplay.innerHTML = `
-      <h3>(Factoid filter) Related Factoids:</h3>
-      <ul>
-${factoids.map(f => `
-  <li>
-    ${f.description ? `<a href="${f.uri}" target="_blank">${f.description}</a>` : `<a href="${f.uri}" target="_blank">${f.uri}</a>`}
-    ${f.person && f.label ? `<br><small><a href="${f.person}" target="_blank">${f.label}</a></small>` : ""}
-  </li>
-`).join('')}
-      </ul>
-    `;
+  <h3>(Factoid filter) Related Factoids:</h3>
+  <ul>
+    ${factoids.map(f => `
+      <li>
+        <strong>Type:</strong> ${type}<br/>
+        ${f.description ? `<small>${f.description}</small>` : ""}
+        `<a href="${f.uri}" target="_blank">${f.uri}</a>`
+        ${f.person && f.label ? `<br><small><a href="${f.person}" target="_blank">${f.label}</a></small>` : ""}
+      </li>
+    `).join('')}
+  </ul>
+`;
+
     
     const relatedPeople = await fetchPeopleRelatedToKeyword(selectedValue, type);
 
