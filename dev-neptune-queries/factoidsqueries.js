@@ -17,25 +17,57 @@ WHERE {
 ORDER BY ?factoid
 `;
 
+// export const getAllPersonFactoids = () => `
+// PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+// PREFIX spr: <http://syriaca.org/prop/reference/>
+// PREFIX schema: <http://schema.org/>
+
+// SELECT DISTINCT ?factoid ?description
+// FROM <http://syriaca.org/persons#graph>
+// FROM NAMED <https://spear-prosop.org>
+// WHERE {
+//   ?person rdfs:label ?label .
+
+//   GRAPH <https://spear-prosop.org> {
+//     {
+//       ?person ?pred ?statementNode .
+//       ?statementNode spr:reference-URL ?factoid .
+//     }
+//     UNION
+//     {
+//       ?statementNode ?pred ?person .
+//       ?statementNode spr:reference-URL ?factoid .
+//     }
+
+//     FILTER(?factoid != ?person)
+
+//     OPTIONAL {
+//       ?factoid schema:description ?description .
+//     }
+//   }
+// }
+// ORDER BY ?factoid
+// `;
+
 export const getAllPersonFactoids = () => `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX spr: <http://syriaca.org/prop/reference/>
 PREFIX schema: <http://schema.org/>
 
-SELECT DISTINCT ?factoid ?description
+SELECT DISTINCT ?factoid ?description ?type ?label
 FROM <http://syriaca.org/persons#graph>
 FROM NAMED <https://spear-prosop.org>
 WHERE {
   ?person rdfs:label ?label .
-
+  FILTER(LANG(?label) = "en")
   GRAPH <https://spear-prosop.org> {
     {
-      ?person ?pred ?statementNode .
+      ?person ?type ?statementNode .
       ?statementNode spr:reference-URL ?factoid .
     }
     UNION
     {
-      ?statementNode ?pred ?person .
+      ?statementNode ?type ?person .
       ?statementNode spr:reference-URL ?factoid .
     }
 
