@@ -156,12 +156,21 @@ export async function fetchPeopleRelatedToKeyword(uri, relation) {
       ORDER BY ?person
     `,
     relationship: `
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+      PREFIX schema: <http://schema.org/>
       
-      SELECT DISTINCT ?person 
-      FROM <https://spear-prosop.org>
+      SELECT DISTINCT ?person ?label ?description
+      FROM <http://syriaca.org/persons#graph>
+      FROM NAMED <https://spear-prosop.org>
       WHERE {
-        ?person <${uri}> ?o .
+          ?person rdfs:label ?label .
+          FILTER(LANG(?label) = "en")
+          OPTIONAL { ?person schema:description ?description }
+        GRAPH <https://spear-prosop.org> {
+      	?person <${uri}> ?o
+        }
       }
+      ORDER BY ?label
     `,
     place: `
       PREFIX swdt: <http://syriaca.org/prop/direct/>
