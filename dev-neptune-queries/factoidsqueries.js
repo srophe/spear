@@ -48,6 +48,27 @@ WHERE {
 }
 ORDER BY ?factoid
 `;
+
+export const getFactoidsForRelationship = (relationshipUri) => `
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  PREFIX schema: <http://schema.org/>
+  PREFIX sp: <http://syriaca.org/prop/>
+  PREFIX sps: <http://syriaca.org/schema/>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+
+  SELECT DISTINCT ?factoid ?description ?person
+  FROM <https://spear-prosop.org>
+  WHERE {
+    {
+      ?person <${relationshipUri}> ?statementNode .
+      ?statementNode spr:reference-URL ?factoid .
+    }
+    OPTIONAL { ?factoid schema:description ?description }
+  }
+  ORDER BY ?factoid
+`;
+
+
 export const getFactoidsForEthnicity = (ethnicityUri) => `
   PREFIX swdt: <http://syriaca.org/prop/direct/>
   PREFIX schema: <http://schema.org/>
@@ -138,6 +159,10 @@ export async function fetchFactoidsByType(uri, type) {
     case "fieldOfStudy":
       console.log("Field of Study URI:", uri);
       query = getFactoidsForFieldOfStudy(uri);
+      break;
+    case "relationship":
+      console.log("Field of Study URI:", uri);
+      query = getFactoidsForRelationship(uri);
       break;
     default:
       console.warn(`Unsupported type: ${type}`);
