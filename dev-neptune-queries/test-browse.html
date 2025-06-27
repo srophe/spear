@@ -87,7 +87,12 @@
     factoidDisplay.innerHTML = `
       <h3>(Factoid filter) Related Factoids:</h3>
       <ul>
-        ${factoids.map(f => `<li><a href="${f.description}" target="_blank">${f.uri}</a><br><small>${f.label}</small></li>`).join('')}
+${factoids.map(f => `
+  <li>
+    ${f.description ? `<a href="${f.uri}" target="_blank">${f.description}</a>` : `<a href="${f.uri}" target="_blank">${f.uri}</a>`}
+    ${f.person && f.label ? `<br><small><a href="${f.person}" target="_blank">${f.label}</a></small>` : ""}
+  </li>
+`).join('')}
       </ul>
     `;
     
