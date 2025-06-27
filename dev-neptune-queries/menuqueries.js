@@ -19,6 +19,20 @@ export const getEthnicityOptions = () => `
   }
   ORDER BY ?ethnicity
 `;
+export const getRelationshipOptions = () => `
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+  SELECT DISTINCT ?collectionType ?subject ?label
+  WHERE {
+    VALUES (?collection ?collectionType) {
+      (<http://syriaca.org/taxonomy/directed-relations-collection> "directed")
+      (<http://syriaca.org/taxonomy/mutual-relations-collection> "mutual")
+    }
+    ?collection skos:member ?subject .
+    ?subject skos:prefLabel ?label .
+  }
+  ORDER BY ?collectionType ?label
+`;
 export const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
 
 export const getPlaceOptions = () => `
