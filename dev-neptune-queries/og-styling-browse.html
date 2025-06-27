@@ -53,9 +53,9 @@
   <div id="factoidResults">Related Factoids will appear here.</div>
 
   <script type="module">
-    import { getEventKeywords } from './menuqueries.js';
+    import { getEventKeywords, fetchPeopleRelatedToKeyword } from './menuqueries.js';
     import { renderEventKeywordList } from './prettylist.js';
-    import { fetchFactoidsByType, fetchPeopleRelatedToKeyword } from './factoidsqueries.js';
+    import { fetchFactoidsByType} from './factoidsqueries.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       const factoidDisplay = document.getElementById('factoidResults');
