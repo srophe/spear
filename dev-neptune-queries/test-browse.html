@@ -92,7 +92,7 @@
           <li>
             ${f.description ? `<p>${f.description}</p>` : ""}
             <a href="${f.uri}" target="_blank">${f.uri}</a>
-            ${f.person && f.label ? `<p><a href="${f.person}" target="_blank">${f.label}</a></p>` : ""}
+            ${f.person && f.label ? `<p><a href="${f.person}" target="_blank">${type}: ${f.label}</a></p>` : ""}
           </li>
         `).join('')}
       </ul>
