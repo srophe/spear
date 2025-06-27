@@ -220,7 +220,8 @@ export async function fetchFactoidsByType(uri, type) {
     return data.results.bindings.map(b => ({
       uri: b.factoid?.value ?? '',
       description: b.description?.value ?? '',
-      label: b.label?.value ?? ''
+      label: b.label?.value ?? '',
+      person: b.person?.value ?? ''
     }));
   } catch (err) {
     console.error("Failed to fetch factoids:", err);
