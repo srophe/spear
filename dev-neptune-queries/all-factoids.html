@@ -39,9 +39,10 @@
 async function renderFactoids() {
   try {
     const data = await getAllPersonFactoids();
+    console.log(JSON.stringify(data, null, 2))
     const factoids = data?.results?.bindings || [];
 
-    console.log('Returned data:', factoids);
+    console.log('Bindings parsed data:', factoids);
 
     if (!Array.isArray(factoids) || factoids.length === 0) {
       factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
