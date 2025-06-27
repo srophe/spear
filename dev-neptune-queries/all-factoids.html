@@ -38,7 +38,7 @@
 
 async function renderFactoids() {
   try {
-    const data = await fetchFactoidsByType('0', allPersonFactoids);
+    const data = await fetchFactoidsByType('0', 'allPersonFactoids');
     console.log(JSON.stringify(data, null, 2))
     const factoids = data?.results?.bindings || [];
 
