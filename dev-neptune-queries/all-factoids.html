@@ -38,38 +38,34 @@
 
 async function renderFactoids() {
   try {
-    const data = await fetchFactoidsByType('0', 'allPersonFactoids');
-    console.log(JSON.stringify(data, null, 2))
-    const factoids = data?.results?.bindings || [];
-
-    console.log('Bindings parsed data:', factoids);
-
+    const factoids = await fetchFactoidsByType('0', 'allPersonFactoids');
+    console.log(JSON.stringify(factoids, null, 2))
+   
     if (!Array.isArray(factoids) || factoids.length === 0) {
       factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
       return;
     }
 
     factoidDisplay.innerHTML = `
+
       <h3>All Related Factoids:</h3>
       <ul>
         ${factoids.map(f => {
-          const uri = f.factoid?.value || '';
-          const typeUri = f.type?.value || '';
-          const typeSlug = typeUri.split('/').pop();
+          const typeSlug = f.type?.split('/').pop();
           const typeLabel = typeMap[typeSlug] || typeSlug;
-          const label = f.label?.value || '';
-          const description = f.description?.value || '';
-
+          
           return `
             <li>
-              <a href="${uri}" target="_blank">${uri}</a><br/>
+              <a href="${f.uri}" target="_blank">${f.uri}</a><br/>
               ${typeLabel ? `<strong>Type:</strong> ${typeLabel}<br/>` : ''}
-              ${label ? `<strong>${label}</strong><br/>` : ''}
-              ${description ? `<small>${description}</small>` : ''}
+              ${f.label ? `<strong>${f.label}</strong><br/>` : ''}
+              ${f.description ? `<small>${f.description}</small>` : ''}
             </li>
           `;
         }).join('')}
       </ul>
+
+
     `;
   } catch (err) {
     console.error("Failed to load factoids:", err);
