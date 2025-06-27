@@ -257,7 +257,8 @@ export async function fetchFactoidsByType(uri, type) {
       uri: b.factoid?.value ?? '',
       description: b.description?.value ?? '',
       label: b.label?.value ?? '',
-      person: b.person?.value ?? ''
+      person: b.person?.value ?? '',
+      type: b.type?.value ?? ''
     }));
   } catch (err) {
     console.error("Failed to fetch factoids:", err);
