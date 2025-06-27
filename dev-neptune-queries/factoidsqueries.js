@@ -201,7 +201,7 @@ PREFIX sps: <http://syriaca.org/prop/statement/>
 
 export async function fetchFactoidsByType(uri, type) {
   let query;
-
+  console.log("Type: ", type);
   switch (type) {
     case "event":
       query = getFactoidsRelatedToKeyword(uri);
@@ -226,6 +226,7 @@ export async function fetchFactoidsByType(uri, type) {
       break;
     case "allPersonFactoids":
       query = getAllPersonFactoids();
+      console.log("Query:", query);
       break;
     default:
       console.warn(`Unsupported type: ${type}`);
