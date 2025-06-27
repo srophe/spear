@@ -18,6 +18,7 @@
   <option value="event">Event Keywords</option>
   <option value="ethnicity">Ethnicities</option>
   <option value="place">Places</option>
+  <option value="relationship">Relationships</option> 
   <option value="fieldOfStudy">Education Fields of Study</option> 
 </select>
 
@@ -54,7 +55,7 @@
       populateDropdown(getPlaceOptions(), 'resultDropdown', 'label', 'place');
     } else if (type === 'fieldOfStudy') {
       populateDropdown(getEducationFieldsOfStudy(), 'resultDropdown', 'label', 'subject');
-    } else if (type === 'relationships') {
+    } else if (type === 'relationship') {
       populateDropdown(getRelationshipOptions(), 'resultDropdown', 'label', 'relationship');
     }
   };
