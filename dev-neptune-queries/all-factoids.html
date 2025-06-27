@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Factoids</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; }
+    h1, h3 { margin-top: 2rem; }
+    ul { list-style: none; padding-left: 0; }
+    li { margin-bottom: 1rem; }
+    a { color: #0066cc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    small { display: block; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>All Factoids</h1>
+  <div id="factoidResults">Loading...</div>
+
+  <script type="module">
+    import { getAllPersonFactoids } from './factoidsqueries.js';
+
+    // Optional: map specific type endings to more readable labels
+    const typeMap = {
+      "event-participant": "Event Participant",
+      "ethnicity": "Ethnicity",
+      "place": "Place",
+      "spouse-of": "Relationship (Spouse)",
+      "field-of-study": "Field of Study",
+      "occupation" : "Event (Occupation)",
+      "gender" : "Characteristic (Gender)",
+      "name-variant": "Characteristic (Name Variant)",
+      "sibling-of": "Relationship (Sibling)",
+      "professional-relationship": "Relationship (Professional)",
+      "socec-status":"Characteristic (Socio-economic status)"
+      // add more mappings as needed
+    };
+
+    const factoidDisplay = document.getElementById('factoidResults');
+
+    const factoids = await getAllFactoids();
+
+    if (!factoids.length) {
+      factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
+    } else {
+      factoidDisplay.innerHTML = `
+        <h3>All Related Factoids:</h3>
+        <ul>
+          ${factoids.map(f => {
+            // Extract last part of the URI
+            const typeSegment = f.type?.split('/').pop() || "Unknown";
+            const readableType = typeMap[typeSegment] || typeSegment;
+
+            return `
+              <li>
+                <strong>${readableType}</strong><br/>
+                <a href="${f.uri}" target="_blank">${f.uri}</a><br/>
+                ${f.description ? `<small>${f.description}</small>` : ""}
+                ${f.person && f.label ? `<small><a href="${f.person}" target="_blank">${f.label}</a></small>` : ""}
+              </li>
+            `;
+          }).join('')}
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>
