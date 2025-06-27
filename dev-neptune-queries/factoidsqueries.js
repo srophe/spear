@@ -161,7 +161,11 @@ export async function fetchFactoidsByType(uri, type) {
       query = getFactoidsForFieldOfStudy(uri);
       break;
     case "relationship":
-      console.log("Field of Study URI:", uri);
+      if (uri.includes('/taxonomy/')) {
+        uri = uri.replace('/taxonomy/', '/prop/');
+      }
+      console.log("Relationship URI:", uri);
+
       query = getFactoidsForRelationship(uri);
       break;
     default:
