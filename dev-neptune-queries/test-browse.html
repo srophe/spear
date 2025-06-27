@@ -90,9 +90,9 @@
       <ul>
         ${factoids.map(f => `
           <li>
-            ${f.description ? `<small>${f.description}</small><br/>` : ""}
+            ${f.description ? `<p>${f.description}</p>` : ""}
             <a href="${f.uri}" target="_blank">${f.uri}</a>
-            ${f.person && f.label ? `<br><small><a href="${f.person}" target="_blank">${f.label}</a></small>` : ""}
+            ${f.person && f.label ? `<p><a href="${f.person}" target="_blank">${f.label}</a></p>` : ""}
           </li>
         `).join('')}
       </ul>
