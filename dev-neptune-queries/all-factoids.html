@@ -38,7 +38,7 @@
 
     const factoidDisplay = document.getElementById('factoidResults');
 
-    const factoids = await getAllFactoids();
+    const factoids = await getAllPersonFactoids();
 
     if (!factoids.length) {
       factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
