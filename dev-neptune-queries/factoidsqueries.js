@@ -224,6 +224,9 @@ export async function fetchFactoidsByType(uri, type) {
 
       query = getFactoidsForRelationshipWithLabels(uri);
       break;
+    case "allPersonFactoids":
+      query = getAllPersonFactoids();
+      break;
     default:
       console.warn(`Unsupported type: ${type}`);
       return [];
