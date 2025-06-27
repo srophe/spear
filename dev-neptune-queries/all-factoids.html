@@ -18,7 +18,7 @@
   <div id="factoidResults">Loading...</div>
 
   <script type="module">
-    import { getAllFactoids, getAllPersonFactoids } from './factoidsqueries.js';
+    import { getAllFactoids, getAllPersonFactoids, fetchFactoidsByType } from './factoidsqueries.js';
 
     const typeMap = {
       "event-participant": "Event Participant",
@@ -38,7 +38,7 @@
 
 async function renderFactoids() {
   try {
-    const data = await getAllPersonFactoids();
+    const data = await fetchFactoidsByType('0', allPersonFactoids)();
     console.log(JSON.stringify(data, null, 2))
     const factoids = data?.results?.bindings || [];
 
