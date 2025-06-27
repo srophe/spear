@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Event Keyword Explorer</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    #eventKeywordList {
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      background: #fff;
+    }
+
+    #eventKeywordItems li {
+      padding: 0.5rem;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+    }
+
+    #eventKeywordItems li:hover {
+      background: #f0f0f0;
+    }
+
+    #factoidResults, #result {
+      margin-top: 2rem;
+    }
+
+    small {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Browse Event Keywords</h1>
+
+  <div id="eventKeywordList">
+    <ul id="eventKeywordItems" style="list-style: none; padding-left: 0;"></ul>
+  </div>
+
+  <div id="result">Related Persons will appear here.</div>
+  <div id="factoidResults">Related Factoids will appear here.</div>
+
+  <script type="module">
+    import { getEventKeywords } from './menuqueries.js';
+    import { renderEventKeywordList } from './prettylist.js';
+    import { fetchFactoidsByType, fetchPeopleRelatedToKeyword } from './factoidsqueries.js';
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const factoidDisplay = document.getElementById('factoidResults');
+      const resultDisplay = document.getElementById('result');
+
+      const handleKeywordSelect = async (selectedValue) => {
+        const type = 'event'; // We are filtering event keywords
+
+        const factoids = await fetchFactoidsByType(selectedValue, type);
+        if (!factoids.length) {
+          factoidDisplay.innerHTML = "<em>No factoids found for this selection.</em>";
+        } else {
+          factoidDisplay.innerHTML = `
+            <h3>Related Factoids</h3>
+            <ul>
+              ${factoids.map(f => `<li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>`).join('')}
+            </ul>
+          `;
+        }
+
+        const relatedPeople = await fetchPeopleRelatedToKeyword(selectedValue, type);
+        if (!relatedPeople.length) {
+          resultDisplay.innerHTML = "<p>No associated persons found.</p>";
+        } else {
+          resultDisplay.innerHTML = `
+            <h3>Related Persons</h3>
+            <ul>
+              ${relatedPeople.map(p => `
+                <li>
+                  <a href="${p.person}" target="_blank">${p.label || p.person}</a>
+                  ${p.gender ? ` – ${p.gender}` : ""}
+                  ${p.description ? `<br/><small><em>${p.description}</em></small>` : ""}
+                </li>`).join('')}
+            </ul>
+          `;
+        }
+      };
+
+      renderEventKeywordList(getEventKeywords(), 'eventKeywordItems', 'keyword', 'keyword', handleKeywordSelect);
+    });
+  </script>
+</body>
+</html>
