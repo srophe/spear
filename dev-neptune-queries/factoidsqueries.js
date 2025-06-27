@@ -67,7 +67,31 @@ export const getFactoidsForRelationship = (relationshipUri) => `
   }
   ORDER BY ?factoid
 `;
+export const getFactoidsForRelationshipWithLabels = (relationshipUri) => `
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  PREFIX schema: <http://schema.org/>
+  PREFIX sp: <http://syriaca.org/prop/>
+  PREFIX sps: <http://syriaca.org/schema/>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
+  SELECT DISTINCT ?factoid ?description ?person ?label
+  FROM <https://spear-prosop.org>
+  FROM NAMED <http://syriaca.org/persons#graph>
+  WHERE {
+    {
+      ?person <${relationshipUri}> ?statementNode .
+      ?statementNode spr:reference-URL ?factoid .
+      
+    }
+    OPTIONAL { ?factoid schema:description ?description }
+    GRAPH <http://syriaca.org/persons#graph> {
+          ?person rdfs:label ?label .
+          FILTER(LANG(?label) = "en")
+      }
+  }
+  ORDER BY ?label
+`;
 
 export const getFactoidsForEthnicity = (ethnicityUri) => `
   PREFIX swdt: <http://syriaca.org/prop/direct/>
@@ -166,7 +190,7 @@ export async function fetchFactoidsByType(uri, type) {
       }
       console.log("Relationship URI:", uri);
 
-      query = getFactoidsForRelationship(uri);
+      query = getFactoidsForRelationshipWithLabels(uri);
       break;
     default:
       console.warn(`Unsupported type: ${type}`);
@@ -195,7 +219,8 @@ export async function fetchFactoidsByType(uri, type) {
 
     return data.results.bindings.map(b => ({
       uri: b.factoid?.value ?? '',
-      description: b.description?.value ?? ''
+      description: b.description?.value ?? '',
+      label: b.label?.value ?? ''
     }));
   } catch (err) {
     console.error("Failed to fetch factoids:", err);
