@@ -48,22 +48,24 @@ async function renderFactoids() {
 
     factoidDisplay.innerHTML = `
 
-      <h3>All Related Factoids:</h3>
-      <ul>
-        ${factoids.map(f => {
-          const typeSlug = f.type?.split('/').pop();
-          const typeLabel = typeMap[typeSlug] || typeSlug;
-          
-          return `
-            <li>
-              <a href="${f.uri}" target="_blank">${f.uri}</a><br/>
-              ${typeLabel ? `<strong>Type:</strong> ${typeLabel}<br/>` : ''}
-              ${f.label ? `<strong>${f.label}</strong><br/>` : ''}
-              ${f.description ? `<small>${f.description}</small>` : ''}
-            </li>
-          `;
-        }).join('')}
-      </ul>
+      <h3>All Person Factoids:</h3>
+<ul>
+  ${factoids.map(f => {
+    const typeSlug = f.type?.split('/').pop();
+    const typeLabel = typeMap[typeSlug] || typeSlug;
+    const personLink = f.person ? `<a href="${f.person}" target="_blank">${f.label}</a>` : f.label;
+
+    return `
+      <li>
+        ${f.description ? `<em>${f.description}</em><br/>` : ''}
+        <a href="${f.uri}" target="_blank">${f.uri}</a><br/>
+        ${typeLabel} (${personLink})
+      </li>
+    `;
+  }).join('')}
+</ul>
+
+
 
 
     `;
