@@ -82,9 +82,8 @@
       const factoidDisplay = document.getElementById('factoidResults');
       const resultDisplay = document.getElementById('result');
 
-      const handleKeywordSelect = async (selectedValue) => {
-        const type = 'event'; // We are filtering event keywords
-
+      const handleKeywordSelect = async (selectedValue, type = 'event') => {
+        
         const factoids = await fetchFactoidsByType(selectedValue, type);
         if (!factoids.length) {
           factoidDisplay.innerHTML = "<em>No factoids found for this selection.</em>";
@@ -115,8 +114,8 @@
         }
       };
 
-      renderEventKeywordList(getEventKeywords(), 'eventKeywordItems', 'eventKeywordList','keyword', 'keyword', handleKeywordSelect);
-      renderKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'relationshipKeywordList','label', 'subject', handleKeywordSelect);
+      renderEventKeywordList(getEventKeywords(), 'eventKeywordItems','keyword', 'keyword', uri => handleKeywordSelect(uri, 'event'));
+      renderKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'relationshipKeywordList','label', 'subject', uri => handleKeywordSelect(uri, 'relationship'));
 
 
     });
