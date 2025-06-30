@@ -9,19 +9,12 @@ export const getEventKeywords = () => `
   ORDER BY ?keyword
 `;
 // Create Winona style list 
-export async function renderKeywordList(query, listId, labelField = "label", valueField = "value", onSelect) {
-  const listEl = document.getElementById(listId);
+export async function renderKeywordList(query, itemsId, listId, labelField = "label", valueField = "value", onSelect) {
+  const listEl = document.getElementById(itemsId);
   const pageSize = 50;
   let offset = 0;
   let loading = false;
   let endReached = false;
-
-  function prettify(uri) {
-    const raw = uri.split('/').pop();
-    return raw
-      .replace(/[-_]/g, ' ')           // Replace dashes/underscores with spaces
-      .replace(/\b\w/g, c => c.toUpperCase()); // Capitalize first letter of each word
-  }
 
   async function loadNextPage() {
     if (loading || endReached) return;
@@ -42,7 +35,7 @@ export async function renderKeywordList(query, listId, labelField = "label", val
 
       results.forEach(binding => {
         const uri = binding[valueField]?.value || "";
-        const prettyLabel = prettify(uri);
+        const label = binding[labelField]?.value || uri;
 
         const li = document.createElement("li");
         li.style.marginBottom = "0.75rem";
@@ -51,7 +44,7 @@ export async function renderKeywordList(query, listId, labelField = "label", val
         li.style.cursor = "pointer";
         li.style.padding = "0.5rem";
         li.style.borderBottom = "1px solid #ddd";
-        li.textContent = prettyLabel;
+        li.textContent = label;
 
         li.addEventListener("click", () => {
           onSelect(uri);
@@ -70,7 +63,7 @@ export async function renderKeywordList(query, listId, labelField = "label", val
 
   loadNextPage();
 
-  const container = document.getElementById("eventKeywordList");
+  const container = document.getElementById(listId);
   container.addEventListener("scroll", () => {
     const threshold = container.scrollHeight - container.clientHeight - 50;
     if (container.scrollTop >= threshold) {
