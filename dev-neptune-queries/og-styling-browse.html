@@ -32,7 +32,23 @@
     #eventKeywordItems li:hover {
       background: #f0f0f0;
     }
+    .keywordList {
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      background: #fff;
+    }
 
+   .keywordItems li {
+      padding: 0.5rem;
+      cursor: pointer;
+      border-bottom: 1px solid #eee;
+    }
+
+    .keywordItems li:hover {
+      background: #f0f0f0;
+    }
     #factoidResults, #result {
       margin-top: 2rem;
     }
@@ -50,15 +66,15 @@
   </div>
     <h1>Browse Relationship Keywords</h1>
 
-  <div id="relationshipKeywordList">
-    <ul id="relationshipKeywordItems" style="list-style: none; padding-left: 0;"></ul>
+  <div id="relationshipKeywordList" class = "keywordList">
+    <ul id="relationshipKeywordItems" class= "keywordItems" style="list-style: none; padding-left: 0;"></ul>
   </div>
 
   <div id="result">Related Persons will appear here.</div>
   <div id="factoidResults">Related Factoids will appear here.</div>
 
   <script type="module">
-    import { getEventKeywords, getRelationshipOptions, fetchPeopleRelatedToKeyword } from './menuqueries.js';
+    import { getEventKeywords, getRelationshipOptions, fetchPeopleRelatedToKeyword, renderKeywordList } from './menuqueries.js';
     import { renderEventKeywordList } from './prettylist.js';
     import { fetchFactoidsByType} from './factoidsqueries.js';
 
@@ -100,7 +116,7 @@
       };
 
       renderEventKeywordList(getEventKeywords(), 'eventKeywordItems', 'keyword', 'keyword', handleKeywordSelect);
-      renderEventKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'keyword', 'keyword', handleKeywordSelect);
+      renderKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'keyword', 'keyword', handleKeywordSelect);
 
 
     });
