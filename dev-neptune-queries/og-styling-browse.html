@@ -48,6 +48,11 @@
   <div id="eventKeywordList">
     <ul id="eventKeywordItems" style="list-style: none; padding-left: 0;"></ul>
   </div>
+    <h1>Browse Relationship Keywords</h1>
+
+  <div id="relationshipKeywordList">
+    <ul id="relationshipKeywordItems" style="list-style: none; padding-left: 0;"></ul>
+  </div>
 
   <div id="result">Related Persons will appear here.</div>
   <div id="factoidResults">Related Factoids will appear here.</div>
@@ -95,6 +100,9 @@
       };
 
       renderEventKeywordList(getEventKeywords(), 'eventKeywordItems', 'keyword', 'keyword', handleKeywordSelect);
+      renderEventKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'keyword', 'keyword', handleKeywordSelect);
+
+
     });
   </script>
 </body>
