@@ -9,7 +9,7 @@ export const getEventKeywords = () => `
   ORDER BY ?keyword
 `;
 // Create Winona style list 
-export async function renderEventKeywordList(query, listId, labelField = "label", valueField = "value", onSelect) {
+export async function renderKeywordList(query, listId, labelField = "label", valueField = "value", onSelect) {
   const listEl = document.getElementById(listId);
   const pageSize = 50;
   let offset = 0;
