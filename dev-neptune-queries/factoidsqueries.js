@@ -16,6 +16,57 @@ WHERE {
 }
 ORDER BY ?factoid
 `;
+// uncertainty level filter example
+    // PREFIX spq: <http://syriaca.org/prop/qualifier/>
+
+    // SELECT (COUNT(DISTINCT ?factoid) AS ?count)
+    // FROM <https://spear-prosop.org>
+    // WHERE {
+    //   ?factoid spq:certainty ?level .
+    //   FILTER(LCASE(STR(?level)) NOT IN ("dubia", "incerta")) 
+    // }
+export const getAllFactoidsUncertaintyFilter = (levelsStringWithQuotes) => `
+  PREFIX spq: <http://syriaca.org/prop/qualifier/>
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+  PREFIX schema: <http://schema.org/>
+  
+  SELECT DISTINCT ?factoid ?description
+  FROM <https://spear-prosop.org>
+  WHERE {
+    
+      ?statementNode spr:reference-URL ?factoid .
+      FILTER NOT EXISTS {
+        ?factoid spq:certainty ?level .
+        FILTER(LCASE(STR(?level)) = levelsStringWithQuotes)
+      }
+      OPTIONAL {
+        ?factoid schema:description ?description .
+      }
+  }
+  ORDER BY ?factoid
+  `;
+//Quotes are around each uncertainty term
+export const getAllFactoidsUncertaintyFilterCount = (levelsStringWithQuotes) => `
+curl -G "https://sparql.vanderbilt.edu/sparql" \
+  --data-urlencode 'query=
+  PREFIX spq: <http://syriaca.org/prop/qualifier/>  
+  PREFIX spr: <http://syriaca.org/prop/reference/>
+
+  SELECT (COUNT(DISTINCT ?factoid) AS ?count)
+  FROM <https://spear-prosop.org>
+  WHERE {
+    ?statementNode spr:reference-URL ?factoid .
+
+    FILTER NOT EXISTS {
+      ?factoid spq:certainty ?level .
+      FILTER(LCASE(STR(?level)) = levelsStringWithQuotes)
+    }
+  }
+  ' \
+  -H "Accept: application/sparql-results+json"
+
+  `;
 
 // export const getAllPersonFactoids = () => `
 // PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
