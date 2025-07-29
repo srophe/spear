@@ -8,49 +8,55 @@
       font-family: Georgia, serif;
       padding: 2rem;
       background: #f9f9f9;
+      margin: 0;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 1.2rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      flex: 0 0 250px;
+    }
+
+    .keywordList, #eventKeywordList {
+      max-height: 500px;
+      overflow-y: auto;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+      background: #fff;
       margin-bottom: 1rem;
     }
 
-    #eventKeywordList {
-      max-height: 500px;
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      padding: 1rem;
-      background: #fff;
-    }
-
-    #eventKeywordItems li {
-      padding: 0.5rem;
+    .keywordItems li, #eventKeywordItems li {
+      padding: 0.4rem;
       cursor: pointer;
       border-bottom: 1px solid #eee;
     }
 
-    #eventKeywordItems li:hover {
+    .keywordItems li:hover, #eventKeywordItems li:hover {
       background: #f0f0f0;
     }
-    .keywordList {
-      max-height: 500px;
-      overflow-y: auto;
-      border: 1px solid #ccc;
-      padding: 1rem;
-      background: #fff;
+
+    #content {
+      flex-grow: 1;
     }
 
-   .keywordItems li {
-      padding: 0.5rem;
-      cursor: pointer;
-      border-bottom: 1px solid #eee;
-    }
-
-    .keywordItems li:hover {
-      background: #f0f0f0;
-    }
     #factoidResults, #result {
-      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
     }
 
     small {
@@ -59,65 +65,56 @@
   </style>
 </head>
 <body>
-  <h1>Browse Event Keywords</h1>
+  <h1>Browse Event & Relationship Keywords</h1>
+  <div class="container">
+    <div class="sidebar">
+      <h1>Event Keywords</h1>
+      <div id="eventKeywordList">
+        <ul id="eventKeywordItems"></ul>
+      </div>
 
-  <div id="eventKeywordList">
-    <ul id="eventKeywordItems" style="list-style: none; padding-left: 0;"></ul>
+      <h1>Relationship Keywords</h1>
+      <div id="relationshipKeywordList" class="keywordList">
+        <ul id="relationshipKeywordItems" class="keywordItems"></ul>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="result">Related Persons will appear here.</div>
+      <div id="factoidResults">Related Factoids will appear here.</div>
+    </div>
   </div>
-    <h1>Browse Relationship Keywords</h1>
-
-  <div id="relationshipKeywordList" class = "keywordList">
-    <ul id="relationshipKeywordItems" class= "keywordItems" style="list-style: none; padding-left: 0;"></ul>
-  </div>
-
-  <div id="result">Related Persons will appear here.</div>
-  <div id="factoidResults">Related Factoids will appear here.</div>
 
   <script type="module">
     import { getEventKeywords, getRelationshipOptions, fetchPeopleRelatedToKeyword, renderKeywordList } from './menuqueries.js';
     import { renderEventKeywordList } from './prettylist.js';
-    import { fetchFactoidsByType} from './factoidsqueries.js';
+    import { fetchFactoidsByType } from './factoidsqueries.js';
 
     document.addEventListener('DOMContentLoaded', () => {
       const factoidDisplay = document.getElementById('factoidResults');
       const resultDisplay = document.getElementById('result');
 
       const handleKeywordSelect = async (selectedValue, type = 'event') => {
-        
         const factoids = await fetchFactoidsByType(selectedValue, type);
-        if (!factoids.length) {
-          factoidDisplay.innerHTML = "<em>No factoids found for this selection.</em>";
-        } else {
-          factoidDisplay.innerHTML = `
-            <h3>Related Factoids</h3>
-            <ul>
-              ${factoids.map(f => `<li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>`).join('')}
-            </ul>
-          `;
-        }
+        factoidDisplay.innerHTML = factoids.length
+          ? `<h3>Related Factoids</h3><ul>${factoids.map(f => `
+              <li><a href="${f.uri}" target="_blank">${f.uri}</a><br><small>${f.description}</small></li>
+            `).join('')}</ul>`
+          : "<em>No factoids found for this selection.</em>";
 
         const relatedPeople = await fetchPeopleRelatedToKeyword(selectedValue, type);
-        if (!relatedPeople.length) {
-          resultDisplay.innerHTML = "<p>No associated persons found.</p>";
-        } else {
-          resultDisplay.innerHTML = `
-            <h3>Related Persons</h3>
-            <ul>
-              ${relatedPeople.map(p => `
-                <li>
-                  <a href="${p.person}" target="_blank">${p.label || p.person}</a>
-                  ${p.gender ? ` – ${p.gender}` : ""}
-                  ${p.description ? `<br/><small><em>${p.description}</em></small>` : ""}
-                </li>`).join('')}
-            </ul>
-          `;
-        }
+        resultDisplay.innerHTML = relatedPeople.length
+          ? `<h3>Related Persons</h3><ul>${relatedPeople.map(p => `
+              <li>
+                <a href="${p.person}" target="_blank">${p.label || p.person}</a>
+                ${p.gender ? ` – ${p.gender}` : ""}
+                ${p.description ? `<br/><small><em>${p.description}</em></small>` : ""}
+              </li>`).join('')}</ul>`
+          : "<p>No associated persons found.</p>";
       };
 
-      renderEventKeywordList(getEventKeywords(), 'eventKeywordItems','keyword', 'keyword', uri => handleKeywordSelect(uri, 'event'));
-      renderKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'relationshipKeywordList','label', 'subject', uri => handleKeywordSelect(uri, 'relationship'));
-
-
+      renderEventKeywordList(getEventKeywords(), 'eventKeywordItems', 'keyword', 'keyword', uri => handleKeywordSelect(uri, 'event'));
+      renderKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'relationshipKeywordList', 'label', 'subject', uri => handleKeywordSelect(uri, 'relationship'));
     });
   </script>
 </body>
