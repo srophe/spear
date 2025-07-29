@@ -603,6 +603,11 @@ td .pre {
 } */
 
 /* LETTER BUTTONS */
+.filter-btn {
+  height: 24px;
+  line-height: 0;
+}
+
 .letter-btn {
   width: 24px;
   height: 24px;
@@ -649,4 +654,78 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 0.25em;
+}
+
+.sticky-offset {
+    top: 1rem;
+}
+
+/* Pagination dots */
+.pagination-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 1rem 0;
+}
+
+.pagination-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #dee2e6;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pagination-dot:hover {
+  background-color: #adb5bd;
+  transform: scale(1.1);
+}
+
+.pagination-dot.active {
+  background-color: #456889;
+  transform: scale(1.2);
+}
+
+.pagination-dot.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.search-filter {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.search-filter input {
+  padding-right: 2.5rem;
+}
+
+.search-filter .search-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  pointer-events: none;
+}
+
+.search-filter .clear-search {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #6c757d;
+  cursor: pointer;
+  display: none;
+}
+
+.search-filter .clear-search:hover {
+  color: #495057;
 }
