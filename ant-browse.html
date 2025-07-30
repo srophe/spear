@@ -552,7 +552,6 @@
 </body>
 <script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/resources/js/srophe.js"></script>
-<script type="module" src="/resources/js/state-manager.js"></script>
 <script type="module">
   // Constants
   const ITEMS_PER_PAGE = 15;
@@ -615,9 +614,11 @@
 
   // Imports
   import persons from "../types/persons.json" with { type: 'json' };
-  import factoids from "../types/factoids.json" with { type: 'json' };
+  // Import person names data, this is a subset of the persons data
   import personNamesData from "../types/factoid/names.json" with { type: 'json' };
-  import { getEventKeywords, getRelationshipOptions, fetchPeopleRelatedToKeyword, renderKeywordList } from './dev-neptune-queries/menuqueries.js';
+
+  import factoids from "../types/factoids.json" with { type: 'json' };
+  import { getEventKeywords, getRelationshipOptions, getEducationFieldsOfStudy, renderKeywordList, populateDropdown } from './menu.js';
 
   // Data
   let people = persons.results?.bindings;
@@ -666,6 +667,8 @@
     });
     return res.json();
   };
+  
+//Can switch to using setupKeywordList if needed
 
   const renderList = async () => {
     const data = await fetchData(getRelationshipOptions());
