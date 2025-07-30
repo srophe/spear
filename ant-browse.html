@@ -178,6 +178,10 @@
       display: flex;
       gap: 0.5rem;
     }
+    #personResults, #factoidResults {
+  transition: opacity 0.3s ease;
+}
+
 
     .collapse-toggle {
       background: none;
@@ -542,6 +546,24 @@
             </div>
             <div class="ms-5 mt-3 p-3" id="browse--items-container"></div>
           </div>
+<div class="new-results">
+  <!-- Persons results -->
+  <div id="personResults">
+    <div class="card p-3 shadow-lg border-0">
+      <hr class="d-none" />
+      <div id="browse--items" class="grid-col-5 gap-3"></div>
+      <div class="pagination-dots d-none"></div>
+    </div>
+    <div class="mt-3 p-3" id="browse--items-container"></div>
+  </div>
+
+  <!-- Factoid results -->
+  <div id="factoidResults" class="d-none">
+    Loading factoids...
+  </div>
+</div>
+
+
               <div class="results">
       <div id="factoidResults">Loading factoids...</div>
     </div>
@@ -1053,7 +1075,7 @@
     let filteredItems = [];
 
     if (currentFilter === 'name') {
-      filteredItems = personNames
+      filteredItems = people
         .filter(person => person.name.value.toLowerCase().includes(searchTerm.toLowerCase()))
         .map(person => person.name.value);
     } else if (currentFilter === 'relationship') {
@@ -1221,6 +1243,18 @@
         });
         selectedButton.classList.add("active");
         updateParams({ type: selectedButton.dataset.type });
+        // Toggle views after click
+const personResults = document.getElementById('personResults');
+const factoidResults = document.getElementById('factoidResults');
+
+if (selectedButton.dataset.type === 'factoid') {
+  personResults?.classList.add('d-none');
+  factoidResults?.classList.remove('d-none');
+} else {
+  personResults?.classList.remove('d-none');
+  factoidResults?.classList.add('d-none');
+}
+
       }
     });
 
@@ -1243,6 +1277,18 @@
 
     // Set initial states
     setActiveButton(elements.browseTypes, 'type', params.type || 'person');
+    // Toggle results panels
+const personResults = document.getElementById('personResults');
+const factoidResults = document.getElementById('factoidResults');
+
+if (params.type === 'factoid') {
+  personResults?.classList.add('d-none');
+  factoidResults?.classList.remove('d-none');
+} else {
+  personResults?.classList.remove('d-none');
+  factoidResults?.classList.add('d-none');
+}
+
     setActiveButton(elements.browseOptions, 'filter', params.filter || 'name');
     setActiveButton(elements.browseLetterFilter, 'letter', params.letter);
 
@@ -1258,7 +1304,13 @@
 
     handleDataUpdate(params);
   };
-  
+  const factoidResults = document.getElementById("factoidResults");
+    if (params.type === "factoid") {
+    factoidResults?.classList.remove("d-none");
+    } else {
+    factoidResults?.classList.add("d-none");
+    }
+
 </script>
   <script type="module">
     import { initializeFilter } from './filter.js';
