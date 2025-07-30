@@ -381,6 +381,9 @@
               <button type="button" class="btn btn-outline-dark" data-type="factoid">
                 Factoids
               </button>
+              <button onclick="showFactoids()">Factoids</button>
+<button onclick="showPersons()">Persons</button>
+
             </div>
             <div class="new-filter-sidebar" id="filter-sidebar">
               <!-- Names Filter -->
@@ -537,7 +540,7 @@
               </div>
             </div>
           </div>
-          <div class="flex-grow-1">
+          <!-- <div class="flex-grow-1">
             <div class="card ms-5 p-3 flex-grow-1 shadow-lg border-0">
  
               <hr class="d-none" />
@@ -545,7 +548,7 @@
               <div class="pagination-dots d-none"></div>
             </div>
             <div class="ms-5 mt-3 p-3" id="browse--items-container"></div>
-          </div>
+          </div> -->
 <div class="new-results">
   <!-- Persons results -->
   <div id="personResults">
@@ -558,15 +561,19 @@
   </div>
 
   <!-- Factoid results -->
-  <div id="factoidResults" class="d-none">
-    Loading factoids...
+<div id="factoidResults" class="d-none">
+  <div class="card p-3 shadow-lg border-0">
+    <div id="factoid-items" class="grid-col-5 gap-3"></div>
+    <div class="pagination-dots" id="factoid-pagination"></div>
   </div>
 </div>
 
+</div>
 
-              <div class="results">
+
+              <!-- <div class="results">
       <div id="factoidResults">Loading factoids...</div>
-    </div>
+    </div> -->
         </div>
       </div>
     </div>
@@ -578,74 +585,22 @@
   // Constants
   const ITEMS_PER_PAGE = 15;
   const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
-  const relationshipsURIs = [
-    "http://syriaca.org/taxonomy/acquaintance-of",
-    "http://syriaca.org/taxonomy/alliance-with",
-    "http://syriaca.org/taxonomy/baptized",
-    "http://syriaca.org/taxonomy/bishop-over",
-    "http://syriaca.org/taxonomy/bishop-over-bishop",
-    "http://syriaca.org/taxonomy/bishop-over-clergy",
-    "http://syriaca.org/taxonomy/bishop-over-monk",
-    "http://syriaca.org/taxonomy/bringer-of-legal-charges-against",
-    "http://syriaca.org/taxonomy/carrier-of-letter-from",
-    "http://syriaca.org/taxonomy/carrier-of-letter-to",
-    "http://syriaca.org/taxonomy/child-of",
-    "http://syriaca.org/taxonomy/child-of-sibling-of",
-    "http://syriaca.org/taxonomy/cited",
-    "http://syriaca.org/taxonomy/cited-negatively",
-    "http://syriaca.org/taxonomy/cited-positively",
-    "http://syriaca.org/taxonomy/co-authors",
-    "http://syriaca.org/taxonomy/command-over",
-    "http://syriaca.org/taxonomy/commemorates",
-    "http://syriaca.org/taxonomy/commune-together",
-    "http://syriaca.org/taxonomy/cousin-of",
-    "http://syriaca.org/taxonomy/descendent-of",
-    "http://syriaca.org/taxonomy/enmity-for",
-    "http://syriaca.org/taxonomy/fellow-clergy",
-    "http://syriaca.org/taxonomy/fellow-monastics",
-    "http://syriaca.org/taxonomy/follower-of",
-    "http://syriaca.org/taxonomy/friendship-for",
-    "http://syriaca.org/taxonomy/grandparent-of",
-    "http://syriaca.org/taxonomy/house-slave-of",
-    "http://syriaca.org/taxonomy/household-of",
-    "http://syriaca.org/taxonomy/judge-of",
-    "http://syriaca.org/taxonomy/kin-of",
-    "http://syriaca.org/taxonomy/member-of-group",
-    "http://syriaca.org/taxonomy/monastic-head-over",
-    "http://syriaca.org/taxonomy/ordained",
-    "http://syriaca.org/taxonomy/parent-of",
-    "http://syriaca.org/taxonomy/patron-of",
-    "http://syriaca.org/taxonomy/professional-relationship",
-    "http://syriaca.org/taxonomy/proximate-event",
-    "http://syriaca.org/taxonomy/refuter-of",
-    "http://syriaca.org/taxonomy/same-event",
-    "http://syriaca.org/taxonomy/sender-of-letter-to",
-    "http://syriaca.org/taxonomy/sibling-of",
-    "http://syriaca.org/taxonomy/sibling-of-parent-of",
-    "http://syriaca.org/taxonomy/slave-of",
-    "http://syriaca.org/taxonomy/spouse-of",
-    "http://syriaca.org/taxonomy/student-of",
-    "http://syriaca.org/taxonomy/submitter-of-legal-petition-to",
-    "http://syriaca.org/taxonomy/submitter-of-petition-to"
-  ];
-
+ 
   // State
   let currentPage = 1;
   let totalPages = 1;
   let allItems = [];
 
-  // Imports
-  import persons from "../types/persons.json" with { type: 'json' };
-  // Import person names data, this is a subset of the persons data
-  import personNamesData from "../types/factoid/names.json" with { type: 'json' };
+import persons from "./types/persons.json" with { type: 'json' };
+import personNamesData from "./types/factoid/names.json" with { type: 'json' };
+import factoids from "./types/factoids.json" with { type: 'json' };
 
-  import factoids from "../types/factoids.json" with { type: 'json' };
   import { getEventKeywords, getRelationshipOptions, getEducationFieldsOfStudy, renderKeywordList, populateDropdown } from './menu.js';
 
   // Data
   let people = persons.results?.bindings;
   let personNames = personNamesData.results?.bindings;
-
+  console.log("Person Names Data:", personNames);
   // DOM Elements (cached)
   const elements = {
     browseOptions: document.getElementById("browse--options"),
@@ -669,6 +624,17 @@
       timeout = setTimeout(later, wait);
     };
   };
+  // Toggle between person and factoid results
+  function showFactoids() {
+  document.getElementById("factoidResults").classList.remove("d-none");
+  document.getElementById("personResults").classList.add("d-none");
+}
+
+function showPersons() {
+  document.getElementById("personResults").classList.remove("d-none");
+  document.getElementById("factoidResults").classList.add("d-none");
+}
+
 
   const getUrlParams = () => Object.fromEntries(new URLSearchParams(window.location.search));
 
@@ -692,15 +658,6 @@
   
 //Can switch to using setupKeywordList if needed
 
-  const renderList = async () => {
-    const data = await fetchData(getRelationshipOptions());
-    return data.results.bindings.filter(item => relationshipsURIs.includes(item.subject.value));
-  };
-
-  const renderEventList = async () => {
-    const data = await fetchData(getEventKeywords());
-    return data.results.bindings.filter(item => relationshipsURIs.includes(item.keyword.value));
-  };
 
   // UI State Management
   const setActiveButton = (container, selector, activeValue) => {
@@ -1067,7 +1024,7 @@
     console.log(`${sectionName} filter cleared successfully`);
   };
 
-  // Search and Filter Logic
+  // Search and Filter Logic!!!!
   const applyNameFilter = (searchTerm) => {
     const currentParams = getUrlParams();
     const currentFilter = currentParams.filter || 'name';
@@ -1075,10 +1032,11 @@
     let filteredItems = [];
 
     if (currentFilter === 'name') {
-      filteredItems = people
+      filteredItems = personNames
         .filter(person => person.name.value.toLowerCase().includes(searchTerm.toLowerCase()))
         .map(person => person.name.value);
     } else if (currentFilter === 'relationship') {
+        // use the relationship options data
       filteredItems = eventKeywordlist
         .filter(item => item.label.value.toLowerCase().includes(searchTerm.toLowerCase()))
         .map(item => item.label.value);
@@ -1304,12 +1262,7 @@ if (params.type === 'factoid') {
 
     handleDataUpdate(params);
   };
-  const factoidResults = document.getElementById("factoidResults");
-    if (params.type === "factoid") {
-    factoidResults?.classList.remove("d-none");
-    } else {
-    factoidResults?.classList.add("d-none");
-    }
+
 
 </script>
   <script type="module">
