@@ -24,21 +24,21 @@
       "event-participant": "Event Participant",
       "ethnicity": "Ethnicity",
       "place": "Place",
-      "spouse-of": "Relationship: Spouse",
+      "spouse-of": "Spouse of",
       "field-of-study": "Field of Study",
-      "occupation": "Event: Occupation",
-      "gender": "Characteristic: Gender",
-      "name-variant": "Characteristic: Name Variant",
-      "sibling-of": "Relationship (Sibling)",
-      "professional-relationship": "Relationship (Professional)",
-      "socec-status": "Characteristic (Socio-economic status)"
+      "occupation": "Occupation",
+      "gender": "Gender",
+      "name-variant": "Name Variant",
+      "sibling-of": "Sibling of",
+      "professional-relationship": "Professional Relationship",
+      "socec-status": "Socio-economic status"
     };
 
     const factoidDisplay = document.getElementById('factoidResults');
 
 async function renderFactoids() {
   try {
-    const factoids = await fetchFactoidsByType('0', 'allPersonFactoids');
+    const factoids = await fetchFactoidsByType('0', 'getAllFactoids');
     console.log(JSON.stringify(factoids, null, 2))
    
     if (!Array.isArray(factoids) || factoids.length === 0) {
