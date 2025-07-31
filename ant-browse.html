@@ -381,6 +381,9 @@
               <button type="button" class="btn btn-outline-dark" data-type="factoid">
                 Factoids
               </button>
+              <button type="button" class="btn btn-outline-dark" data-type="person" id="clearFiltersBtn">
+              Clear selections
+            </button>
             </div>
             <div class="new-filter-sidebar" id="filter-sidebar">
               <!-- Names Filter -->
@@ -403,10 +406,14 @@
                       placeholder="Enter name..." />
                   </div>
                 </div>
+                 <!-- Letter Filter -->
+                <div id="browse--letter-filter" class="mb-3"></div>
               </div>
+               
 
-              <!-- Gender Filter -->
-     
+
+              <!-- Gender Filter use checkboxes for multiselection capability -->
+    
               <div class="filter-section">
                 <div class="filter-title d-flex justify-content-between align-items-center">
                   Gender
@@ -419,7 +426,7 @@
                     </button>
                   </div>
                 </div>
-                <div class="filter-content" id="gender-filter">
+                <div class="filter-content" id="gender-filter genderSelect">
                   <div class="radio-group">
                     <label>
                       <input class="me-1" type="radio" name="gender" value="" checked />
@@ -440,49 +447,54 @@
                   </div>
                 </div>
                               <div class="filter-section">
-        <select id="genderSelect">
-          <option value="">All</option>
-          <option value="http://syriaca.org/taxonomy/gender/men">Men</option>
-          <option value="http://syriaca.org/taxonomy/gender/women">Women</option>
-          <option value="http://syriaca.org/taxonomy/gender/eunuchs">Eunuch</option>
-        </select>
+   
       </div>
               </div>
-
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+            <div class="filter-content" id="gender-filter">
+              <label>Gender</label></div></div>
+            <div class="checkbox-group" id="genderSelect">
+              <label><input class="me-1" type="checkbox" name="gender" value="http://syriaca.org/taxonomy/men" /> Men</label>
+              <label><input class="me-1" type="checkbox" name="gender" value="http://syriaca.org/taxonomy/women" /> Women</label>
+              <label><input class="me-1" type="checkbox" name="gender" value="http://syriaca.org/taxonomy/eunuchs" /> Eunuchs</label>
+            </div>
+          </div>
               <!-- Events Filter -->
               <div class="filter-section">
-        Events
+                     <div class="filter-title d-flex justify-content-between align-items-center">
+                  Events
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="gender" title="Clear gender filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="gender-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                                        <div class="filter-content" id="events-filter">
+                  <div class="filter-control">
+                    <label for="event-multiselect">Select events:</label>
+                    <div class="multiselect-container">
+                      <input type="text" id="event-search" class="form-control form-control-sm"
+                        placeholder="Type to search events..." autocomplete="off" />
+                      <div class="multiselect-dropdown" id="event-dropdown">
+
+                      </div>
+                      <div class="selected-items" id="event-selected">
+                        <!-- Selected items will appear here -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
         <div id="eventKeywordList" class="keywordList">
           <ul id="eventKeywordItems"></ul>
         </div>
       </div>
  <!-- Relationships Filter -->
       <div class="filter-section">
-        Relationships
-        <div id="relationshipKeywordList" class="keywordList">
-          <ul id="relationshipKeywordItems" class="keywordItems"></ul>
-        </div>
-      </div>
-<!-- Ethnicity Filter -->
-      <div class="filter-section">
-        Ethnicity
-        <div id="ethnicityKeywordList" class="keywordList">
-            <ul id="ethnicityKeywordItems"></ul>
-        </div>
-      </div>
-            <div class="filter-section">
-        Place
-        <select id="placeSelect"></select>
-      </div>
-
-      <div class="filter-section">
-        Field of Study
-        <select id="fieldOfStudySelect"></select>
-      </div>
-
-             
-              <div class="filter-section">
-                <div class="filter-title d-flex justify-content-between align-items-center">
+                     <div class="filter-title d-flex justify-content-between align-items-center">
                   Relationships
                   <div class="d-flex gap-2">
                     <button class="clear-section-btn" data-section="relationships" title="Clear relationships filter">
@@ -493,16 +505,14 @@
                     </button>
                   </div>
                 </div>
-                <div class="filter-content" id="relationships-filter">
+                        <div class="filter-content" id="relationships-filter">
                   <div class="filter-control">
                     <label for="relationship-multiselect">Select relationships:</label>
                     <div class="multiselect-container">
                       <input type="text" id="relationship-search" class="form-control form-control-sm"
                         placeholder="Type to search relationships..." autocomplete="off" />
                       <div class="multiselect-dropdown" id="relationship-dropdown">
-                        <div id="relationshipKeywordList" class="keywordList">
-                        <ul id="relationshipKeywordItems" class="keywordItems"></ul>
-                         </div>
+     
                       </div>
                       <div class="selected-items" id="relationship-selected">
                         <!-- Selected items will appear here -->
@@ -510,7 +520,52 @@
                     </div>
                   </div>
                 </div>
-              </div>
+        <div id="relationshipKeywordList" class="keywordList">
+          <ul id="relationshipKeywordItems" class="keywordItems"></ul>
+        </div>
+      
+      </div>
+<!-- Ethnicity Filter -->
+      <div class="filter-section">
+        Ethnicity
+        <div id="ethnicityKeywordList" class="keywordList">
+            <ul id="ethnicityKeywordItems"></ul>
+        </div>
+      </div>
+        <div class="filter-section">
+                          <div class="filter-title d-flex justify-content-between align-items-center">
+                  Place
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="place" title="Clear place filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="place-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+        
+                                  <div class="filter-content" id="place-filter">
+                  <div class="filter-control">
+                    <label for="place-multiselect">Select place:</label>
+                    <div class="multiselect-container">
+                      <input type="text" id="place-search" class="form-control form-control-sm"
+                        placeholder="Type to search places..." autocomplete="off" />
+                      <div class="multiselect-dropdown" id="place-dropdown">
+
+                      </div>
+                      <div class="selected-items" id="place-selected">
+                        <!-- Selected items will appear here -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        <div id="placeKeywordList" class="keywordList">
+            <ul id="placeKeywordItems"></ul>
+        </div>
+      </div>
+
+
               <!-- Uncertainty Filter -->
               <div class="filter-section">
                 <div class="filter-title d-flex justify-content-between align-items-center">
@@ -526,18 +581,22 @@
                 </div>
                 <div class="filter-content" id="uncertainty-filter">
                   <div class="filter-control">
-        <select  class="form-select form-select-sm" id="uncertaintySelect">
-          <option value="">All</option>
-          <option value="errata">Errata</option>
-          <option value="dubia">Dubia</option>
-          <option value="incerta">Incerta</option>
-        </select>
+   <div class="checkbox-group" id="uncertaintySelect">
+    <label>Exclude by uncertainty level:</label>
+    <label><input class="me-1" type="checkbox" name="uncertainty" value="errata" /> Errata</label>
+    <label><input class="me-1" type="checkbox" name="uncertainty" value="dubia" /> Dubia</label>
+    <label><input class="me-1" type="checkbox" name="uncertainty" value="incerta" /> Incerta</label>
+  </div>
                   </div>
                 </div>
               </div>
+              <div class="filter-content" id="uncertainty-filter">
+  
+ 
+</div>
             </div>
           </div>
-          <div class="flex-grow-1">
+          <!-- <div class="flex-grow-1">
             <div class="card ms-5 p-3 flex-grow-1 shadow-lg border-0">
  
               <hr class="d-none" />
@@ -545,10 +604,10 @@
               <div class="pagination-dots d-none"></div>
             </div>
             <div class="ms-5 mt-3 p-3" id="browse--items-container"></div>
-          </div>
+          </div> -->
 <div class="new-results">
-  <!-- Persons results -->
-  <div id="personResults">
+  <!-- Persons results  -->
+<div id="personResultsog">
     <div class="card p-3 shadow-lg border-0">
       <hr class="d-none" />
       <div id="browse--items" class="grid-col-5 gap-3"></div>
@@ -556,17 +615,22 @@
     </div>
     <div class="mt-3 p-3" id="browse--items-container"></div>
   </div>
+  <div id="personResults"  class="d-none">
+    <div class="card p-3 shadow-lg border-0">
+      <div id="browse--items" class="grid-col-5 gap-3"></div>
+      <div class="pagination-dots d-none"></div>
+    </div>
+    <div class="mt-3 p-3" id="browse--items-container"></div>
+  </div>
 
   <!-- Factoid results -->
-  <div id="factoidResults" class="d-none">
-    Loading factoids...
+<div id="factoidResults" class="d-none">
+  <div class="card p-3 shadow-lg border-0">
+    <div id="factoid-items" class="grid-col-5 gap-3"></div>
+    <div class="pagination-dots" id="factoid-pagination"></div>
   </div>
 </div>
-
-
-              <div class="results">
-      <div id="factoidResults">Loading factoids...</div>
-    </div>
+</div>
         </div>
       </div>
     </div>
@@ -578,74 +642,23 @@
   // Constants
   const ITEMS_PER_PAGE = 15;
   const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
-  const relationshipsURIs = [
-    "http://syriaca.org/taxonomy/acquaintance-of",
-    "http://syriaca.org/taxonomy/alliance-with",
-    "http://syriaca.org/taxonomy/baptized",
-    "http://syriaca.org/taxonomy/bishop-over",
-    "http://syriaca.org/taxonomy/bishop-over-bishop",
-    "http://syriaca.org/taxonomy/bishop-over-clergy",
-    "http://syriaca.org/taxonomy/bishop-over-monk",
-    "http://syriaca.org/taxonomy/bringer-of-legal-charges-against",
-    "http://syriaca.org/taxonomy/carrier-of-letter-from",
-    "http://syriaca.org/taxonomy/carrier-of-letter-to",
-    "http://syriaca.org/taxonomy/child-of",
-    "http://syriaca.org/taxonomy/child-of-sibling-of",
-    "http://syriaca.org/taxonomy/cited",
-    "http://syriaca.org/taxonomy/cited-negatively",
-    "http://syriaca.org/taxonomy/cited-positively",
-    "http://syriaca.org/taxonomy/co-authors",
-    "http://syriaca.org/taxonomy/command-over",
-    "http://syriaca.org/taxonomy/commemorates",
-    "http://syriaca.org/taxonomy/commune-together",
-    "http://syriaca.org/taxonomy/cousin-of",
-    "http://syriaca.org/taxonomy/descendent-of",
-    "http://syriaca.org/taxonomy/enmity-for",
-    "http://syriaca.org/taxonomy/fellow-clergy",
-    "http://syriaca.org/taxonomy/fellow-monastics",
-    "http://syriaca.org/taxonomy/follower-of",
-    "http://syriaca.org/taxonomy/friendship-for",
-    "http://syriaca.org/taxonomy/grandparent-of",
-    "http://syriaca.org/taxonomy/house-slave-of",
-    "http://syriaca.org/taxonomy/household-of",
-    "http://syriaca.org/taxonomy/judge-of",
-    "http://syriaca.org/taxonomy/kin-of",
-    "http://syriaca.org/taxonomy/member-of-group",
-    "http://syriaca.org/taxonomy/monastic-head-over",
-    "http://syriaca.org/taxonomy/ordained",
-    "http://syriaca.org/taxonomy/parent-of",
-    "http://syriaca.org/taxonomy/patron-of",
-    "http://syriaca.org/taxonomy/professional-relationship",
-    "http://syriaca.org/taxonomy/proximate-event",
-    "http://syriaca.org/taxonomy/refuter-of",
-    "http://syriaca.org/taxonomy/same-event",
-    "http://syriaca.org/taxonomy/sender-of-letter-to",
-    "http://syriaca.org/taxonomy/sibling-of",
-    "http://syriaca.org/taxonomy/sibling-of-parent-of",
-    "http://syriaca.org/taxonomy/slave-of",
-    "http://syriaca.org/taxonomy/spouse-of",
-    "http://syriaca.org/taxonomy/student-of",
-    "http://syriaca.org/taxonomy/submitter-of-legal-petition-to",
-    "http://syriaca.org/taxonomy/submitter-of-petition-to"
-  ];
-
+ 
   // State
   let currentPage = 1;
   let totalPages = 1;
   let allItems = [];
 
   // Imports
-  import persons from "../types/persons.json" with { type: 'json' };
-  // Import person names data, this is a subset of the persons data
-  import personNamesData from "../types/factoid/names.json" with { type: 'json' };
-
-  import factoids from "../types/factoids.json" with { type: 'json' };
-  import { getEventKeywords, getRelationshipOptions, getEducationFieldsOfStudy, renderKeywordList, populateDropdown } from './menu.js';
+  import { initializeFilter } from './filter.js';
+ import persons from "./types/person.json" with { type: 'json' };
+import personNamesData from "./types/factoid/names.json" with { type: 'json' };
+import factoids from "./types/factoids.json" with { type: 'json' };
+// import { getEventKeywords, getRelationshipOptions, getEducationFieldsOfStudy, populateDropdown } from './menu.js'; 
 
   // Data
   let people = persons.results?.bindings;
   let personNames = personNamesData.results?.bindings;
-
+  console.log("Person Names Data:", personNames);
   // DOM Elements (cached)
   const elements = {
     browseOptions: document.getElementById("browse--options"),
@@ -692,15 +705,6 @@
   
 //Can switch to using setupKeywordList if needed
 
-  const renderList = async () => {
-    const data = await fetchData(getRelationshipOptions());
-    return data.results.bindings.filter(item => relationshipsURIs.includes(item.subject.value));
-  };
-
-  const renderEventList = async () => {
-    const data = await fetchData(getEventKeywords());
-    return data.results.bindings.filter(item => relationshipsURIs.includes(item.keyword.value));
-  };
 
   // UI State Management
   const setActiveButton = (container, selector, activeValue) => {
@@ -783,22 +787,23 @@
       },
       filter: () => {
         ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
-        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+        
+        if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
         if (elements.nameSearch) elements.nameSearch.value = '';
       },
       type: () => {
         ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
-        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+        if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
         if (elements.nameSearch) elements.nameSearch.value = '';
       },
       nameSearch: () => {
         ["letter", "gender"].forEach(p => currentParams.delete(p));
-        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+         if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
       },
       gender: () => {
         ["nameSearch", "letter"].forEach(p => currentParams.delete(p));
         if (elements.nameSearch) elements.nameSearch.value = '';
-        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+        if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
       }
     };
 
@@ -814,10 +819,13 @@
 
   const handleDataUpdate = (params, event) => {
     if (params.nameSearch) {
-      if (elements.nameSearch) elements.nameSearch.value = params.nameSearch;
-      applyNameFilter(params.nameSearch);
-      return;
+    if (elements.nameSearch) elements.nameSearch.value = params.nameSearch;
+
+    // Pass in type so it knows which dataset to use
+    applyNameFilter(params.nameSearch, params.type || 'person');
+    return;
     }
+
 
     // Sync sidebar gender filter
     const genderRadio = document.querySelector(`input[name="gender"][value="${params.gender || ''}"]`);
@@ -829,57 +837,6 @@
     }
   };
 
-  // Relationship options data
-  const relationshipOptions = [
-    { value: 'acquaintance-of', label: 'Acquaintance of' },
-    { value: 'alliance-with', label: 'Alliance with' },
-    { value: 'baptized', label: 'Baptized' },
-    { value: 'bishop-over', label: 'Bishop over' },
-    { value: 'bishop-over-bishop', label: 'Bishop over bishop' },
-    { value: 'bishop-over-clergy', label: 'Bishop over clergy' },
-    { value: 'bishop-over-monk', label: 'Bishop over monk' },
-    { value: 'bringer-of-legal-charges-against', label: 'Bringer of legal charges against' },
-    { value: 'carrier-of-letter-from', label: 'Carrier of letter from' },
-    { value: 'carrier-of-letter-to', label: 'Carrier of letter to' },
-    { value: 'child-of', label: 'Child of' },
-    { value: 'child-of-sibling-of', label: 'Child of sibling of' },
-    { value: 'cited', label: 'Cited' },
-    { value: 'cited-negatively', label: 'Cited negatively' },
-    { value: 'cited-positively', label: 'Cited positively' },
-    { value: 'co-authors', label: 'Co-authors' },
-    { value: 'command-over', label: 'Command over' },
-    { value: 'commemorates', label: 'Commemorates' },
-    { value: 'commune-together', label: 'Commune together' },
-    { value: 'cousin-of', label: 'Cousin of' },
-    { value: 'descendent-of', label: 'Descendent of' },
-    { value: 'enmity-for', label: 'Enmity for' },
-    { value: 'fellow-clergy', label: 'Fellow clergy' },
-    { value: 'fellow-monastics', label: 'Fellow monastics' },
-    { value: 'follower-of', label: 'Follower of' },
-    { value: 'friendship-for', label: 'Friendship for' },
-    { value: 'grandparent-of', label: 'Grandparent of' },
-    { value: 'house-slave-of', label: 'House slave of' },
-    { value: 'household-of', label: 'Household of' },
-    { value: 'judge-of', label: 'Judge of' },
-    { value: 'kin-of', label: 'Kin of' },
-    { value: 'member-of-group', label: 'Member of group' },
-    { value: 'monastic-head-over', label: 'Monastic head over' },
-    { value: 'ordained', label: 'Ordained' },
-    { value: 'parent-of', label: 'Parent of' },
-    { value: 'patron-of', label: 'Patron of' },
-    { value: 'professional-relationship', label: 'Professional relationship' },
-    { value: 'proximate-event', label: 'Proximate event' },
-    { value: 'refuter-of', label: 'Refuter of' },
-    { value: 'same-event', label: 'Same event' },
-    { value: 'sender-of-letter-to', label: 'Sender of letter to' },
-    { value: 'sibling-of', label: 'Sibling of' },
-    { value: 'sibling-of-parent-of', label: 'Sibling of parent of' },
-    { value: 'slave-of', label: 'Slave of' },
-    { value: 'spouse-of', label: 'Spouse of' },
-    { value: 'student-of', label: 'Student of' },
-    { value: 'submitter-of-legal-petition-to', label: 'Submitter of legal petition to' },
-    { value: 'submitter-of-petition-to', label: 'Submitter of petition to' }
-  ];
 
   // Multiselect functionality
   class MultiselectDropdown {
@@ -1067,7 +1024,7 @@
     console.log(`${sectionName} filter cleared successfully`);
   };
 
-  // Search and Filter Logic
+  // Search and Filter Logic!!!!
   const applyNameFilter = (searchTerm) => {
     const currentParams = getUrlParams();
     const currentFilter = currentParams.filter || 'name';
@@ -1075,10 +1032,11 @@
     let filteredItems = [];
 
     if (currentFilter === 'name') {
-      filteredItems = people
+      filteredItems = personNames
         .filter(person => person.name.value.toLowerCase().includes(searchTerm.toLowerCase()))
         .map(person => person.name.value);
     } else if (currentFilter === 'relationship') {
+        // use the relationship options data
       filteredItems = eventKeywordlist
         .filter(item => item.label.value.toLowerCase().includes(searchTerm.toLowerCase()))
         .map(item => item.label.value);
@@ -1127,12 +1085,14 @@
 
   
   // Event Handlers
-  const createEventHandler = (container, handler) => {
+    const createEventHandler = (container, handler) => {
     container?.addEventListener("click", (event) => {
-      event.preventDefault();
-      handler(event);
+        const target = event.target.closest("button");
+        if (!target) return;
+        event.preventDefault(); // only if it's a real button
+        handler(event);
     });
-  };
+    };
 
   // Initialize Event Listeners
   const initEventListeners = () => {
@@ -1196,10 +1156,14 @@
       if (event.target.tagName === "BUTTON") {
         document.getElementById("browse--items-container").innerHTML = null;
         const selectedButton = event.target;
+        console.log('Browse type clicked:', selectedButton.dataset.type);
 
-        elements.browseLetterFilter.querySelectorAll("button").forEach(button => {
-          button.classList.remove("active");
-        });
+        if(elements.browseLetterFilter) {
+          elements.browseLetterFilter.querySelectorAll("button").forEach(button => {
+            button.classList.remove("active");
+          });
+        }
+ 
         selectedButton.classList.add("active");
 
         if (selectedButton.dataset.letter) updateParams({ letter: selectedButton.dataset.letter });
@@ -1244,22 +1208,21 @@
         selectedButton.classList.add("active");
         updateParams({ type: selectedButton.dataset.type });
         // Toggle views after click
-const personResults = document.getElementById('personResults');
-const factoidResults = document.getElementById('factoidResults');
+    const personResults = document.getElementById('personResults');
+    const factoidResults = document.getElementById('factoidResults');
 
-if (selectedButton.dataset.type === 'factoid') {
-  personResults?.classList.add('d-none');
-  factoidResults?.classList.remove('d-none');
-} else {
-  personResults?.classList.remove('d-none');
-  factoidResults?.classList.add('d-none');
-}
+    if (selectedButton.dataset.type === 'factoid') {
+    personResults?.classList.add('d-none');
+    factoidResults?.classList.remove('d-none');
+    } else {
+    personResults?.classList.remove('d-none');
+    factoidResults?.classList.add('d-none');
+    }
 
       }
     });
 
     // Initialize relationship multiselect
-    initRelationshipMultiselect();
   };
 
   // Function to initialize relationships from URL parameters
@@ -1270,24 +1233,27 @@ if (selectedButton.dataset.type === 'factoid') {
       window.relationshipMultiselect.setSelection(selectedValues);
     }
   };
+  function createAlphabetMenu() {
+  const container = elements.browseLetterFilter;
+  if (!container) return;
+
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+  container.innerHTML = alphabet
+    .map(letter => `<button type="button" class="btn btn-sm btn-outline-secondary" data-type="person" data-letter="${letter}">${letter}</button>`)
+    .join("");
+}
+
 
   // Update the init function to include relationship initialization
   const init = () => {
     const params = getUrlParams();
+    createAlphabetMenu();
 
     // Set initial states
     setActiveButton(elements.browseTypes, 'type', params.type || 'person');
     // Toggle results panels
-const personResults = document.getElementById('personResults');
-const factoidResults = document.getElementById('factoidResults');
 
-if (params.type === 'factoid') {
-  personResults?.classList.add('d-none');
-  factoidResults?.classList.remove('d-none');
-} else {
-  personResults?.classList.remove('d-none');
-  factoidResults?.classList.add('d-none');
-}
 
     setActiveButton(elements.browseOptions, 'filter', params.filter || 'name');
     setActiveButton(elements.browseLetterFilter, 'letter', params.letter);
@@ -1304,17 +1270,14 @@ if (params.type === 'factoid') {
 
     handleDataUpdate(params);
   };
-  const factoidResults = document.getElementById("factoidResults");
-    if (params.type === "factoid") {
-    factoidResults?.classList.remove("d-none");
-    } else {
-    factoidResults?.classList.add("d-none");
-    }
+  document.addEventListener('DOMContentLoaded', () => {
+    init();
+    initEventListeners();
+  });
+
+    document.addEventListener('DOMContentLoaded', initializeFilter);
 
 </script>
-  <script type="module">
-    import { initializeFilter } from './filter.js';
-    document.addEventListener('DOMContentLoaded', initializeFilter);
-  </script>
+
 
 </html>
