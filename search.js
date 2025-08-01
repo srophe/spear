@@ -1,5 +1,3 @@
-
-
 export const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
 
 export async function fetchFactoidsWithFilters(state) {
@@ -31,13 +29,15 @@ export async function fetchFactoidsWithFilters(state) {
       uncertainty: binding.level?.value || '',
       type: binding.type?.value || '',
       relationship: binding.relationship?.value || '',
-      event: binding.event?.value || '' 
+      event: binding.event?.value || '' ,
+      stmt: binding.stmt?.value || ''
     }));
   } catch (error) {
     console.error('Failed to fetch factoids:', error);
     return [];
   }
 }
+
 export function buildFilterQueryExclusiveNoLabels(state) {
   const lines = [];
 
@@ -102,12 +102,12 @@ export function buildFilterQueryExclusiveNoLabels(state) {
   }
 
   // Field of Study
-  if (state.fieldOfStudy) {
-    lines.push(`
-      ?fieldStmt sps:education <${state.fieldOfStudy}> ;
-                 spr:reference-URL ?factoid .
-    `);
-  }
+  // if (state.fieldOfStudy) {
+  //   lines.push(`
+  //     ?fieldStmt sps:education <${state.fieldOfStudy}> ;
+  //                spr:reference-URL ?factoid .
+  //   `);
+  // }
 
   // Final query
   return `
@@ -119,7 +119,7 @@ PREFIX sp: <http://syriaca.org/prop/>
 PREFIX sps: <http://syriaca.org/prop/statement/>
 PREFIX spq: <http://syriaca.org/prop/qualifier/>
 
-SELECT DISTINCT ?factoid ?description ?person ?label ?gender ?type 
+SELECT DISTINCT ?factoid ?description ?person ?label ?gender ?type ?statementNode ?relationship ?event ?level
 FROM <http://syriaca.org/persons#graph>
 FROM <https://spear-prosop.org>
 WHERE {
@@ -146,7 +146,7 @@ export function buildFilterQuery(state) {
     selectedEthnicityKeywords = [],
     selectedGenderKeywords = [],
     selectedPlaceKeywords = [],
-    selectedFieldOfStudyKeywords = [],
+    // selectedFieldOfStudyKeywords = [],
     selectedUncertaintyKeywords = []
   } = state;
 
@@ -164,17 +164,10 @@ export function buildFilterQuery(state) {
   });
 
   // Ethnicity
-  if (selectedEthnicityKeywords.length > 0) {
-    const ethnicityUnion = selectedEthnicityKeywords.map(uri => `
-      {
-        ?person swdt:ethnic-label <${uri}> .
-        ?person sp:ethnic-label ?stmt .
-      }
-    `).join(' UNION ');
-
-    tripleBlocks.push(ethnicityUnion);
-  }
-
+  selectedEthnicityKeywords.forEach(uri => {
+    tripleBlocks.push(`?person swdt:ethnic-label <${uri}> .`);
+    tripleBlocks.push(`?person sp:ethnic-label ?stmt .`);
+  });
 
   // Gender: How is this handled in Neptune, need named graph block?
   selectedGenderKeywords.forEach(uri => {
@@ -198,9 +191,9 @@ export function buildFilterQuery(state) {
   });
 
   // Field of Study
-  selectedFieldOfStudyKeywords.forEach(uri => {
-    tripleBlocks.push(`?stmt sps:education <${uri}> .`);
-  });
+  // selectedFieldOfStudyKeywords.forEach(uri => {
+  //   tripleBlocks.push(`?stmt sps:education <${uri}> .`);
+  // });
 
   // Begin query template
   let query = `
@@ -287,9 +280,9 @@ export function buildFilterCountQuery(state) {
     `);
   });
 
-  selectedFieldOfStudyKeywords.forEach(uri => {
-    tripleBlocks.push(`?stmt sps:education <${uri}> .`);
-  });
+  // selectedFieldOfStudyKeywords.forEach(uri => {
+  //   tripleBlocks.push(`?stmt sps:education <${uri}> .`);
+  // });
 
   let query = `
 PREFIX schema: <http://schema.org/>
@@ -324,34 +317,119 @@ WHERE {
 
 
 export function buildMultiFilterQuery(state) {
-  const {
-    selectedEventKeywords = [],
-    selectedRelationshipKeywords = [],
-    selectedEthnicityKeywords = [],
-    selectedGenderKeywords = [],
-    selectedPlaceKeywords = [],
-    selectedFieldOfStudyKeywords = [],
-    selectedUncertaintyKeywords = []
-  } = state;
+ 
+  const selectVars = new Set(['?factoid', '?description']);
+  const blocks = [];
 
-  const valuesBlocks = [
-    buildValuesBlock("eventKeyword", selectedEventKeywords),
-    buildValuesBlock("relationship", selectedRelationshipKeywords),
-    buildValuesBlock("ethnicity", selectedEthnicityKeywords),
-    buildValuesBlock("gender", selectedGenderKeywords),
-    buildValuesBlock("place", selectedPlaceKeywords),
-    buildValuesBlock("field", selectedFieldOfStudyKeywords),
-  ].filter(Boolean).join('\n');
+  // Event Keyword filter // Add event participant?
+  if (state.selectedEventKeywords.size > 0) {
+    blocks.push(`
+      ?statementNode sps:event-keyword ?eventKeyword .
+      VALUES ?eventKeyword { ${Array.from(state.selectedEventKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?eventKeyword');
+  }
 
-  const uncertaintyBlock = selectedUncertaintyKeywords.length
-    ? selectedUncertaintyKeywords.map(level => `
-        FILTER NOT EXISTS {
-          ?factoid spq:certainty ?level .
-          FILTER(LCASE(STR(?level)) = "${level.toLowerCase()}")
+  // Relationship filter
+  if (state.selectedRelationshipKeywords.size > 0) {
+    blocks.push(`
+      ?person ?relationship ?statementNode .
+      VALUES ?relationship { ${Array.from(state.selectedRelationshipKeywords).map(uri => `<${uri.replace('/taxonomy/', '/prop/')}>`).join(' ')} }
+    `);
+    selectVars.add('?relationship');
+  }
+
+  // Ethnicity filter
+  if (state.selectedEthnicityKeywords.size > 0) {
+    blocks.push(`
+      ?person swdt:ethnic-label ?ethnicity .
+      ?person sp:ethnic-label ?statementNode .
+      VALUES ?ethnicity { ${Array.from(state.selectedEthnicityKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?ethnicity');
+  }
+
+  // Gender filter
+  if (state.selectedGenderKeywords.size > 0) {
+    blocks.push(`
+      ?person swdt:gender ?gender .
+      ?person sp:gender ?statementNode .
+      VALUES ?gender { ${Array.from(state.selectedGenderKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?gender');
+  }
+
+  // Place filter
+  if (state.selectedPlaceKeywords.size > 0) {
+    const placeValues = Array.from(state.selectedPlaceKeywords).map(uri => `<${uri}>`).join(' ');
+    blocks.push(`
+      {
+        {
+          ?person swdt:birth-place ?place ;
+                  sp:birth-place ?statementNode .
+        } UNION {
+          ?person swdt:death-place ?place ;
+                  sp:death-place ?statementNode .
+        } UNION {
+          ?person swdt:residence ?place ;
+                  sp:residence ?statementNode .
+        } UNION {
+          ?statementNode sps:event ?event .
+          ?event swdt:event-place ?place ;
+                sp:event-place ?statementNode .
         }
-      `).join('\n')
-    : '';
+        FILTER(?place IN (${placeValues}))
+      }
+    `);
 
+    selectVars.add('?place');
+  }
+
+  // Field of Study filter
+  // if (state.selectedFieldOfStudyKeywords.size > 0) {
+  //   blocks.push(`
+  //     ?statementNode sps:education ?field .
+  //     VALUES ?field { ${Array.from(state.selectedFieldOfStudyKeywords).map(uri => `<${uri}>`).join(' ')} }
+  //   `);
+  //   selectVars.add('?field');
+  // }
+
+  // Uncertainty filter
+  let uncertaintyBlock = ''; // Declare in outer scope
+
+if (state.uncertainty && state.uncertainty.trim() !== '') {
+  const levels = state.uncertainty
+    .split(',')
+    .map(level => level.trim().toLowerCase())
+    .filter(Boolean); // remove empty strings
+
+  if (levels.length > 0) {
+    const filters = levels.map(lvl => `"${lvl}"`).join(', ');
+    uncertaintyBlock = `
+      FILTER NOT EXISTS {
+        ?factoid spq:certainty ?level .
+        FILTER(LCASE(STR(?level)) IN (${filters}))
+      }`;
+  }
+}
+
+
+    const needsPersonLabel = blocks.some(b => b.includes('?person'));
+    if (needsPersonLabel) {
+      blocks.push(`
+        OPTIONAL {
+          GRAPH <http://syriaca.org/persons#graph> {
+            ?person rdfs:label ?label .
+            FILTER(LANG(?label) = "en")
+          }
+        }
+      `);
+      selectVars.add('?label');
+      selectVars.add('?person');
+    }
+
+
+  // Final SPARQL query
   return `
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX schema: <http://schema.org/>
@@ -361,61 +439,28 @@ PREFIX sp: <http://syriaca.org/prop/>
 PREFIX sps: <http://syriaca.org/prop/statement/>
 PREFIX spq: <http://syriaca.org/prop/qualifier/>
 
-SELECT DISTINCT ?factoid ?description ?label ?person
-FROM <http://syriaca.org/persons#graph>
+SELECT DISTINCT ${Array.from(selectVars).join(' ')}
+FROM NAMED <http://syriaca.org/persons#graph>
 FROM <https://spear-prosop.org>
 WHERE {
   ?statementNode spr:reference-URL ?factoid .
 
   OPTIONAL { ?factoid schema:description ?description . }
 
-  OPTIONAL {
-    ?statementNode ?p ?person .
-    ?person rdfs:label ?label .
-    FILTER(LANG(?label) = "en")
-  }
-
-  ${valuesBlocks}
-
-  # Filters based on values blocks
-  ${selectedEventKeywords.length ? '?statementNode sps:event-keyword ?eventKeyword .' : ''}
-  ${selectedRelationshipKeywords.length ? '?person ?relationship ?statementNode .' : ''}
-  ${selectedEthnicityKeywords.length ? `
-    ?person swdt:ethnic-label ?ethnicity .
-    ?person sp:ethnic-label ?statementNode .
-  ` : ''}
-  ${selectedGenderKeywords.length ? '?person swdt:gender ?gender .' : ''}
-  ${selectedPlaceKeywords.length ? `
-    {
-      ?person swdt:birth-place ?place ;
-              sp:birth-place ?placeStatement .
-    } UNION {
-      ?person swdt:death-place ?place ;
-              sp:death-place ?placeStatement .
-    } UNION {
-      ?person swdt:residence ?place ;
-              sp:residence ?placeStatement .
-    } UNION {
-      ?event swdt:event-place ?place ;
-             sp:event-place ?placeStatement .
-    }
-    ?placeStatement spr:reference-URL ?factoid .
-  ` : ''}
-  ${selectedFieldOfStudyKeywords.length ? `
-    ?statementNode sps:education ?field ;
-                   spr:reference-URL ?factoid .
-  ` : ''}
-
+  ${blocks.join('\n')}
   ${uncertaintyBlock}
 }
-ORDER BY ?label
-LIMIT 200
+ORDER BY ?factoid
+LIMIT 20000
 `;
 }
 
+
+
 export async function fetchFactoidsByMultiType(state) {
   const query = buildMultiFilterQuery(state);
-
+  console.log("buildMultiFilterQuery state:", state);
+  console.log('Fetching factoids with multi-type query:', query);
   try {
     const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
       headers: { Accept: 'application/sparql-results+json' }
@@ -433,19 +478,15 @@ export async function fetchFactoidsByMultiType(state) {
       description: b.description?.value ?? '',
       label: b.label?.value ?? '',
       person: b.person?.value ?? '',
-      gender: b.gender?.value ?? '',
-      uncertainty: b.level?.value ?? '',
-      type: b.type?.value ?? '',
+      eventKeyword: b.eventKeyword?.value ?? '',
       relationship: b.relationship?.value ?? '',
-      event: b.event?.value ?? ''
+      ethnicity: b.ethnicity?.value ?? '',
+      gender: b.gender?.value ?? '',
+      place: b.place?.value ?? '',
+      field: b.field?.value ?? '',
     }));
   } catch (err) {
     console.error("Failed to fetch factoids:", err);
     return [];
   }
-}
-function buildValuesBlock(variable, uris) {
-  if (!uris?.length) return '';
-  const values = uris.map(uri => `<${uri}>`).join(' ');
-  return `VALUES ?${variable} { ${values} }`;
 }
