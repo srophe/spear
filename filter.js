@@ -8,7 +8,7 @@ import {
   renderKeywordList
 } from './menu.js';
 
-import { fetchFactoidsWithFilters } from './search.js';
+import { fetchFactoidsWithFilters, fetchFactoidsByMultiType } from './search.js';
 import { renderKeywordPrettyList } from './list.js'; 
 
 // Global filter state
@@ -82,38 +82,13 @@ function toggleSet(set, value) {
 }
 
 // Rendering logic for factoids
-function renderFactoidsOG(facts) {
-  const container = document.getElementById('factoidResults');
-  if (!facts.length) {
-    container.innerHTML = '<p>No factoids found.</p>';
-    return;
-  }
-  `<div class="card mb-3 p-3">
-              <div class="card-body">
-                <a href="/aggregate/${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
-                <small>${person.desc.value}</small>
-              </div>
-            </div>`
-  container.innerHTML = `
-    <h4>Factoids</h4>
-    <h5>${facts.length} found</h5>
-      ${facts.map(f => `
-        <div class="card mb-3 p-3">
-          <div class="card-body">
-            ${f.description ? `<p>${f.description}</p>` : ''}
-            ${f.label ? `<br/><em>${f.label}</em>` : ''}
-            <a href="${f.uri}" target="_blank"class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${f.uri}</a>
-          </div>
-        </div>
-      `).join('')}
- 
-  `;
-}
 function renderFactoids(facts) {
-  const container = document.getElementById('factoidResults');
   document.getElementById('defaultFactoidResults').innerHTML = '';
+  console.log("Rendering factoids:", facts);
 
-  // Filter out factoids that have a `person` URI
+  const container = document.getElementById('factoidResults');
+
+  // Filter out factoids that have a `person` URI, why??
     const filtered = facts.filter(f => {
     return !f.uri.startsWith('http://syriaca.org/person/');
   });
@@ -142,17 +117,16 @@ function renderFactoids(facts) {
   // `;
   container.innerHTML = `
   <h4>Factoids</h4>
-  <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${facts.length} results</h5>
+  <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${filtered.length} results</h5>
 
-  <ul style="list-style-type: none; padding: 0; margin: 0;">
+  <ul style="list-style-type: none; padding: 0; margin: 2rem;">
     ${filtered.map(f => `
       <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
-        ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
-
-        <em>Factoid link:</em><br/>
+        ${f.description ? `Description:<br/><em> ${f.description}</em><br/>` : ''}
+        Factoid link:
         <a href="${f.uri}" target="_blank">${f.uri}</a>
-        ${f.label ? `<br/><em>${f.label}</em>` : ''}
-        ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+        ${f.label ? `<br/>Related person: <em>${f.label}</em>` : ''}
+        ${f.person ? `<br/>Related person link:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
       </li>
     `).join('')}
   </ul>
@@ -200,9 +174,9 @@ function updateResults() {
   const queryString = stateToUrlParams(state);
   const newUrl = `${window.location.pathname}?${queryString}`;
   history.replaceState(null, '', newUrl); // updates URL without reloading
-  if(queryString.length > 1){
-    fetchFactoidsWithFilters(state).then(renderFactoids);
-  }else{
+  if (queryString.length > 1) {
+    fetchFactoidsByMultiType(state).then(renderFactoids);
+  } else{
     renderDefaultFactoids();
   }
   
