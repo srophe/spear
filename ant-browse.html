@@ -547,7 +547,7 @@
         </div>
       </div>
         <div class="filter-section">
-                          <div class="filter-title d-flex justify-content-between align-items-center">
+                <div class="filter-title d-flex justify-content-between align-items-center">
                   Place
                   <div class="d-flex gap-2">
                     <button class="clear-section-btn" data-section="place" title="Clear place filter">
@@ -559,25 +559,24 @@
                   </div>
                 </div>
         
-                                  <div class="filter-content" id="place-filter">
+                <div class="filter-content" id="place-filter">
                   <div class="filter-control">
                     <label for="place-multiselect">Select place:</label>
                     <div class="multiselect-container">
                       <input type="text" id="place-search" class="form-control form-control-sm"
                         placeholder="Type to search places..." autocomplete="off" />
                       <div class="multiselect-dropdown" id="place-dropdown">
-
                       </div>
                       <div class="selected-items" id="place-selected">
                         <!-- Selected items will appear here -->
                       </div>
                     </div>
                   </div>
+                  <div id="placeKeywordList" class="keywordList">
+                    <ul id="placeKeywordItems"></ul>
+                  </div>
                 </div>
-        <div id="placeKeywordList" class="keywordList">
-            <ul id="placeKeywordItems"></ul>
         </div>
-      </div>
 
 
               <!-- Uncertainty Filter -->
