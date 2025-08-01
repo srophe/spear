@@ -81,7 +81,34 @@ function toggleSet(set, value) {
   set.has(value) ? set.delete(value) : set.add(value);
 }
 
-
+// Rendering logic for factoids
+function renderFactoidsOG(facts) {
+  const container = document.getElementById('factoidResults');
+  if (!facts.length) {
+    container.innerHTML = '<p>No factoids found.</p>';
+    return;
+  }
+  `<div class="card mb-3 p-3">
+              <div class="card-body">
+                <a href="/aggregate/${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
+                <small>${person.desc.value}</small>
+              </div>
+            </div>`
+  container.innerHTML = `
+    <h4>Factoids</h4>
+    <h5>${facts.length} found</h5>
+      ${facts.map(f => `
+        <div class="card mb-3 p-3">
+          <div class="card-body">
+            ${f.description ? `<p>${f.description}</p>` : ''}
+            ${f.label ? `<br/><em>${f.label}</em>` : ''}
+            <a href="${f.uri}" target="_blank"class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${f.uri}</a>
+          </div>
+        </div>
+      `).join('')}
+ 
+  `;
+}
 function renderFactoids(facts) {
   const container = document.getElementById('factoidResults');
   document.getElementById('defaultFactoidResults').innerHTML = '';
@@ -95,6 +122,24 @@ function renderFactoids(facts) {
     container.innerHTML = '<p>No factoids found.</p>';
     return;
   }
+  console.log("Filtered factoids:", filtered);
+  // container.innerHTML = `
+  //   <h4>Factoids</h4>
+  //       <h5 style="margin: 2rem;">${facts.length} results</h5>
+
+  //   <ul style="list-style-type: none; padding: 0; margin: 0;">
+  //     ${filtered.map(f => `
+  //       <li style="margin: 2rem;">
+  //         ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
+
+  //         <em>Factoid link:</em><br/>
+  //         <a href="${f.uri}" target="_blank">${f.uri}</a>
+  //                   ${f.label ? `<br/><em>${f.label}</em>` : ''}
+  //         ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+  //       </li>
+  //     `).join('')}
+  //   </ul>
+  // `;
   container.innerHTML = `
   <h4>Factoids</h4>
   <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${facts.length} results</h5>
