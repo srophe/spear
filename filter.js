@@ -8,7 +8,7 @@ import {
   renderKeywordList
 } from './menu.js';
 
-import { fetchFactoidsWithFilters, fetchFactoidsByMultiType, buildFilterCountQuery } from './search.js';
+import { fetchFactoidsWithFilters } from './search.js';
 import { renderKeywordPrettyList } from './list.js'; 
 
 // Global filter state
@@ -81,30 +81,10 @@ function toggleSet(set, value) {
   set.has(value) ? set.delete(value) : set.add(value);
 }
 
-// Rendering logic for factoids
-function renderFactoidsOG(facts) {
-  const container = document.getElementById('factoidResults');
-  if (!facts.length) {
-    container.innerHTML = '<p>No factoids found.</p>';
-    return;
-  }
-  container.innerHTML = `
-    <h4>Factoids</h4>
-    <h5>${facts.length} found</h5>
-    <ul style="list-style-type: none; padding: 0; margin: 0;">
-      ${facts.map(f => `
-        <li style=" margin: 2rem;">
-          ${f.description ? `<p>${f.description}</p>` : ''}
-          ${f.label ? `<br/><em>${f.label}</em>` : ''}
-          <a href="${f.uri}" target="_blank">${f.uri}</a>
-        </li>
-      `).join('')}
-    </ul>
- 
-  `;
-}
+
 function renderFactoids(facts) {
   const container = document.getElementById('factoidResults');
+  document.getElementById('defaultFactoidResults').innerHTML = '';
 
   // Filter out factoids that have a `person` URI
     const filtered = facts.filter(f => {
@@ -115,21 +95,24 @@ function renderFactoids(facts) {
     container.innerHTML = '<p>No factoids found.</p>';
     return;
   }
-
   container.innerHTML = `
-    <h4>Factoids</h4>
-        <h5 style="margin: 2rem;">${facts.length} results</h5>
+  <h4>Factoids</h4>
+  <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${facts.length} results</h5>
 
-    <ul style="list-style-type: none; padding: 0; margin: 0;">
-      ${filtered.map(f => `
-        <li style="margin: 2rem;">
-          ${f.description ? `<p>${f.description}</p>` : ''}
-          ${f.label ? `<br/><em>${f.label}</em>` : ''}
-          <a href="${f.uri}" target="_blank">${f.uri}</a>
-        </li>
-      `).join('')}
-    </ul>
-  `;
+  <ul style="list-style-type: none; padding: 0; margin: 0;">
+    ${filtered.map(f => `
+      <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
+        ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
+
+        <em>Factoid link:</em><br/>
+        <a href="${f.uri}" target="_blank">${f.uri}</a>
+        ${f.label ? `<br/><em>${f.label}</em>` : ''}
+        ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+      </li>
+    `).join('')}
+  </ul>
+`;
+
 }
 
 function clearFilters() {
@@ -144,8 +127,8 @@ function clearFilters() {
   state.uncertainty = '';
 
   document.querySelectorAll('input[name="gender"]').forEach(r => r.checked = r.value === '');
-document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
-
+  document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
+  document.getElementById('factoidResults').innerHTML = '';
 
   // Reset the dropdown UI
   // const genderSelect = document.getElementById('genderSelect');
@@ -164,6 +147,7 @@ document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = 
 
   // Update results
   updateResults();
+  // renderDefaultFactoids();
 }
 
 // Master updater
@@ -171,7 +155,12 @@ function updateResults() {
   const queryString = stateToUrlParams(state);
   const newUrl = `${window.location.pathname}?${queryString}`;
   history.replaceState(null, '', newUrl); // updates URL without reloading
-  fetchFactoidsWithFilters(state).then(renderFactoids);
+  if(queryString.length > 1){
+    fetchFactoidsWithFilters(state).then(renderFactoids);
+  }else{
+    renderDefaultFactoids();
+  }
+  
 }
 
 
@@ -265,10 +254,75 @@ export function initializeFilter() {
   document.getElementById('clearFiltersBtn').addEventListener('click', clearFilters);
   setupDropdowns();
   setupKeywordLists();
-  updateResults(); // Initial load (optional)
   searchMenuItems('event-search', 'eventKeywordItems');
   searchMenuItems('relationship-search', 'relationshipKeywordItems');
   searchMenuItems('place-search', 'placeKeywordItems');
+  renderDefaultFactoids();
 
+}
+  import allFactoidsData from "./types/factoid/defaultFactoids.json" with { type: 'json' };
 
+    const typeMap = {
+      "event-participant": "Event Participant",
+      "ethnicity": "Ethnicity",
+      "place": "Place",
+      "spouse-of": "Spouse of",
+      "field-of-study": "Field of Study",
+      "occupation": "Occupation",
+      "gender": "Gender",
+      "name-variant": "Name Variant",
+      "sibling-of": "Sibling of",
+      "professional-relationship": "Professional Relationship",
+      "socec-status": "Socio-Economic Status",
+      "religious-affiliation": "Religious Affiliation",
+      "birth-place": "Birth Place",
+      "death-place": "Death Place",
+      "residence": "Residence",
+      "citizenship": "Citizenship",
+      "education": "Education"
+    };
+
+    const factoidDisplay = document.getElementById('defaultFactoidResults');
+
+async function renderDefaultFactoids() {
+   document.getElementById('factoidResults').innerHTML = '';
+  const factoids = allFactoidsData.results.bindings.map(f => ({
+    uri: f.factoid.value,
+    label: f.label.value,
+    description: f.description?.value || '',
+    type: f.type.value,
+    person: f.person?.value || ''
+  }));
+  try {
+   
+    if (!Array.isArray(factoids) || factoids.length === 0) {
+      factoidDisplay.innerHTML = "<em>No factoids found in the database.</em>";
+      return;
+    }
+
+    factoidDisplay.innerHTML = `
+
+<ul style="list-style-type: none; padding-left: 2rem; padding-right: 2rem; ">
+ <h4>All Person Factoids</h4>
+        <h5 style="margin: 2rem;">${factoids.length} results</h5>
+
+  ${factoids.map(f => {
+    const typeSlug = f.type?.split('/').pop();
+    const typeLabel = typeMap[typeSlug] || typeSlug;
+    const personLink = f.person ? `<a href="${f.person}" target="_blank">${f.label}</a>` : f.label;
+
+    return `
+      <li style="padding-top: 1rem; padding-bottom: 1rem;">
+        ${f.description ? `<em>${f.description}</em><br/>` : ''}
+        <a href="${f.uri}" target="_blank">${f.uri}</a><br/>
+        ${typeLabel} (${personLink})
+      </li>
+    `;
+  }).join('')}
+</ul>
+    `;
+  } catch (err) {
+    console.error("Failed to load factoids:", err);
+    factoidDisplay.innerHTML = "<em>Failed to load factoids.</em>";
+  }
 }
