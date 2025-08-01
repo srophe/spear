@@ -52,12 +52,12 @@
 
   <!-- Add this CSS in the <head> section after your existing stylesheets -->
   <style>
-    .new-container {
+    .container {
       display: flex;
       gap: 2rem;
     }
 
-    .new-sidebar {
+    .sidebar {
       width: 280px;
       background: #fff;
       padding: 1rem;
@@ -71,12 +71,12 @@
       background: #fff;
       padding: 1rem;
       border: 1px solid #ccc;
-      max-height: 90vh;
+      max-height: 190vh;
       overflow-y: auto;
     }
 
   
-    .new-filter-sidebar {
+    .filter-sidebar {
       background: #f8f9fa;
       border-radius: 0.375rem;
       padding: 1rem;
@@ -370,7 +370,7 @@
       </div>
     </div>
   </nav>
-<div class="new-container py-4 d-flex align-items-start">
+<div class="container py-4 d-flex align-items-start">
 
           <div class="d-flex flex-column" style="min-width: 250px">
             <div class="btn-group my-3 sticky-top sticky-offset shadow-lg m-2" role="group" aria-label="types"
@@ -381,11 +381,13 @@
               <button type="button" class="btn btn-outline-dark" data-type="factoid">
                 Factoids
               </button>
-              <button type="button" class="btn btn-outline-dark" data-type="person" id="clearFiltersBtn">
-              Clear selections
-            </button>
+
             </div>
-            <div class="new-filter-sidebar" id="filter-sidebar">
+
+            <div class="filter-sidebar" id="filter-sidebar">
+                <div className="filter-section"><div class="filter-title d-flex justify-content-between align-items-right" style="justify-items: right;">                        <button type="button" class="btn btn-outline-dark" data-type="person" id="clearFiltersBtn">
+              Clear selections
+            </button></div></div>
               <!-- Names Filter -->
               <div class="filter-section">
                 <div class="filter-title d-flex justify-content-between align-items-center">
@@ -405,9 +407,10 @@
                     <input type="text" id="name-search" class="form-control form-control-sm"
                       placeholder="Enter name..." />
                   </div>
-                </div>
-                 <!-- Letter Filter -->
+                                 <!-- Letter Filter -->
                 <div id="browse--letter-filter" class="mb-3"></div>
+                </div>
+  
               </div>
                
 
@@ -426,7 +429,7 @@
                     </button>
                   </div>
                 </div>
-                <div class="filter-content" id="gender-filter genderSelect">
+                <div class="filter-content" id="gender-filter">
                   <div class="radio-group">
                     <label>
                       <input class="me-1" type="radio" name="gender" value="" checked />
@@ -452,13 +455,23 @@
               </div>
               <div class="filter-section">
                 <div class="filter-title d-flex justify-content-between align-items-center">
-            <div class="filter-content" id="gender-filter">
-              <label>Gender</label></div></div>
+                  Gender
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="gender" title="Clear gender filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="gender-select">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="gender-select">
             <div class="checkbox-group" id="genderSelect">
               <label><input class="me-1" type="checkbox" name="gender" value="http://syriaca.org/taxonomy/men" /> Men</label>
               <label><input class="me-1" type="checkbox" name="gender" value="http://syriaca.org/taxonomy/women" /> Women</label>
               <label><input class="me-1" type="checkbox" name="gender" value="http://syriaca.org/taxonomy/eunuchs" /> Eunuchs</label>
             </div>
+          </div>
           </div>
               <!-- Events Filter -->
               <div class="filter-section">
@@ -468,7 +481,7 @@
                     <button class="clear-section-btn" data-section="gender" title="Clear gender filter">
                       <span>×</span>
                     </button>
-                    <button class="collapse-toggle" data-target="gender-filter">
+                    <button class="collapse-toggle" data-target="events-filter">
                       <span>−</span>
                     </button>
                   </div>
@@ -487,9 +500,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                
         <div id="eventKeywordList" class="keywordList">
           <ul id="eventKeywordItems"></ul>
+        </div>
         </div>
       </div>
  <!-- Relationships Filter -->
@@ -519,10 +533,10 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                
         <div id="relationshipKeywordList" class="keywordList">
           <ul id="relationshipKeywordItems" class="keywordItems"></ul>
-        </div>
+        </div></div>
       
       </div>
 <!-- Ethnicity Filter -->
@@ -630,6 +644,12 @@
     <div class="pagination-dots" id="factoid-pagination"></div>
   </div>
 </div>
+<div id="defaultFactoidResults" class="d-none">
+  <div class="card p-3 shadow-lg border-0">
+    <div id="factoid-items" class="grid-col-5 gap-3"></div>
+    <div class="pagination-dots" id="factoid-pagination"></div>
+  </div>
+</div>
 </div>
         </div>
       </div>
@@ -653,7 +673,6 @@
  import persons from "./types/persons.json" with { type: 'json' };
 import personNamesData from "./types/factoid/names.json" with { type: 'json' };
 import factoids from "./types/factoids.json" with { type: 'json' };
-// import { getEventKeywords, getRelationshipOptions, getEducationFieldsOfStudy, populateDropdown } from './menu.js'; 
 
   // Data
   let people = persons.results?.bindings;
@@ -1108,17 +1127,18 @@ import factoids from "./types/factoids.json" with { type: 'json' };
     // Filter sidebar
     elements.sidebar?.addEventListener('click', (event) => {
       // Collapse/expand
-      if (event.target.classList.contains('collapse-toggle')) {
-        const targetId = event.target.dataset.target;
-        const targetElement = document.getElementById(targetId);
-        const toggleButton = event.target;
+    const collapseBtn = event.target.closest('.collapse-toggle');
+    if (collapseBtn) {
+      const targetId = collapseBtn.dataset.target;
+      const targetElement = document.getElementById(targetId);
 
-        if (targetElement) {
-          targetElement.classList.toggle('collapsed');
-          toggleButton.querySelector('span').textContent =
-            targetElement.classList.contains('collapsed') ? '+' : '−';
-        }
+      if (targetElement) {
+        targetElement.classList.toggle('collapsed');
+        collapseBtn.querySelector('span').textContent =
+          targetElement.classList.contains('collapsed') ? '+' : '−';
       }
+    }
+
 
       // Clear buttons
       if (event.target.classList.contains('clear-section-btn') ||
