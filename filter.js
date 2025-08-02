@@ -174,7 +174,7 @@ function updateResults() {
   const queryString = stateToUrlParams(state);
   const newUrl = `${window.location.pathname}?${queryString}`;
   history.replaceState(null, '', newUrl); // updates URL without reloading
-  if (queryString.length > 1) {
+  if (queryString.length > 1 && queryString !== '?' && queryString !== '?type=factoid') {
     fetchFactoidsByMultiType(state).then(renderFactoids);
   } else{
     renderDefaultFactoids();
