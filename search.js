@@ -234,86 +234,86 @@ if (state.uncertainty && state.uncertainty.trim() !== '') {
   return query;
 }
 
-export function buildFilterCountQuery(state) {
-  const {
-    selectedEventKeywords = [],
-    selectedRelationshipKeywords = [],
-    selectedEthnicityKeywords = [],
-    selectedGenderKeywords = [],
-    selectedPlaceKeywords = [],
-    selectedFieldOfStudyKeywords = [],
-    selectedUncertaintyKeywords = []
-  } = state;
+// export function buildFilterCountQuery(state) {
+//   const {
+//     selectedEventKeywords = [],
+//     selectedRelationshipKeywords = [],
+//     selectedEthnicityKeywords = [],
+//     selectedGenderKeywords = [],
+//     selectedPlaceKeywords = [],
+//     selectedFieldOfStudyKeywords = [],
+//     selectedUncertaintyKeywords = []
+//   } = state;
 
-  const tripleBlocks = [];
+//   const tripleBlocks = [];
 
-  selectedEventKeywords.forEach(uri => {
-    tripleBlocks.push(`?stmt sps:event-keyword <${uri}> .`);
-  });
+//   selectedEventKeywords.forEach(uri => {
+//     tripleBlocks.push(`?stmt sps:event-keyword <${uri}> .`);
+//   });
 
-  selectedRelationshipKeywords.forEach(uri => {
-    const safeUri = uri.replace('/taxonomy/', '/prop/');
-    tripleBlocks.push(`?person <${safeUri}> ?stmt .`);
-  });
+//   selectedRelationshipKeywords.forEach(uri => {
+//     const safeUri = uri.replace('/taxonomy/', '/prop/');
+//     tripleBlocks.push(`?person <${safeUri}> ?stmt .`);
+//   });
 
-  selectedEthnicityKeywords.forEach(uri => {
-    tripleBlocks.push(`?person swdt:ethnic-label <${uri}> .`);
-    tripleBlocks.push(`?person sp:ethnic-label ?stmt .`);
-  });
+//   selectedEthnicityKeywords.forEach(uri => {
+//     tripleBlocks.push(`?person swdt:ethnic-label <${uri}> .`);
+//     tripleBlocks.push(`?person sp:ethnic-label ?stmt .`);
+//   });
 
-  selectedGenderKeywords.forEach(uri => {
-    tripleBlocks.push(`?person swdt:gender <${uri}> .`);
-    tripleBlocks.push(`?person sp:gender ?stmt .`);
-  });
+//   selectedGenderKeywords.forEach(uri => {
+//     tripleBlocks.push(`?person swdt:gender <${uri}> .`);
+//     tripleBlocks.push(`?person sp:gender ?stmt .`);
+//   });
 
-  selectedPlaceKeywords.forEach(uri => {
-    tripleBlocks.push(`
-      {
-        ?person swdt:birth-place <${uri}> ; sp:birth-place ?stmt .
-      } UNION {
-        ?person swdt:death-place <${uri}> ; sp:death-place ?stmt .
-      } UNION {
-        ?person swdt:residence <${uri}> ; sp:residence ?stmt .
-      } UNION {
-        ?event swdt:event-place <${uri}> ; sp:event-place ?stmt .
-      }
-    `);
-  });
+//   selectedPlaceKeywords.forEach(uri => {
+//     tripleBlocks.push(`
+//       {
+//         ?person swdt:birth-place <${uri}> ; sp:birth-place ?stmt .
+//       } UNION {
+//         ?person swdt:death-place <${uri}> ; sp:death-place ?stmt .
+//       } UNION {
+//         ?person swdt:residence <${uri}> ; sp:residence ?stmt .
+//       } UNION {
+//         ?event swdt:event-place <${uri}> ; sp:event-place ?stmt .
+//       }
+//     `);
+//   });
 
-  // selectedFieldOfStudyKeywords.forEach(uri => {
-  //   tripleBlocks.push(`?stmt sps:education <${uri}> .`);
-  // });
+//   // selectedFieldOfStudyKeywords.forEach(uri => {
+//   //   tripleBlocks.push(`?stmt sps:education <${uri}> .`);
+//   // });
 
-  let query = `
-PREFIX schema: <http://schema.org/>
-PREFIX swdt: <http://syriaca.org/prop/direct/>
-PREFIX spr: <http://syriaca.org/prop/reference/>
-PREFIX sp: <http://syriaca.org/prop/>
-PREFIX sps: <http://syriaca.org/prop/statement/>
-PREFIX spq: <http://syriaca.org/prop/qualifier/>
+//   let query = `
+// PREFIX schema: <http://schema.org/>
+// PREFIX swdt: <http://syriaca.org/prop/direct/>
+// PREFIX spr: <http://syriaca.org/prop/reference/>
+// PREFIX sp: <http://syriaca.org/prop/>
+// PREFIX sps: <http://syriaca.org/prop/statement/>
+// PREFIX spq: <http://syriaca.org/prop/qualifier/>
 
-SELECT (COUNT(DISTINCT ?factoid) AS ?count)
-FROM <https://spear-prosop.org>
-WHERE {
-  ${tripleBlocks.join('\n')}
-  ?stmt spr:reference-URL ?factoid .
-`;
+// SELECT (COUNT(DISTINCT ?factoid) AS ?count)
+// FROM <https://spear-prosop.org>
+// WHERE {
+//   ${tripleBlocks.join('\n')}
+//   ?stmt spr:reference-URL ?factoid .
+// `;
 
-  if (selectedUncertaintyKeywords.length > 0) {
-    const filters = selectedUncertaintyKeywords
-      .map(level => `LCASE(STR(?level)) = "${level.toLowerCase()}"`)
-      .join(" || ");
-    query += `
-  FILTER NOT EXISTS {
-    ?factoid spq:certainty ?level .
-    FILTER(${filters})
-  }`;
-  }
+//   if (selectedUncertaintyKeywords.length > 0) {
+//     const filters = selectedUncertaintyKeywords
+//       .map(level => `LCASE(STR(?level)) = "${level.toLowerCase()}"`)
+//       .join(" || ");
+//     query += `
+//   FILTER NOT EXISTS {
+//     ?factoid spq:certainty ?level .
+//     FILTER(${filters})
+//   }`;
+//   }
 
-  query += `\n}`;
+//   query += `\n}`;
 
-  return query;
-}
+//   return query;
+// }
 
 
 export function buildMultiFilterQuery(state) {
@@ -360,30 +360,38 @@ export function buildMultiFilterQuery(state) {
   }
 
   // Place filter
-  if (state.selectedPlaceKeywords.size > 0) {
-    const placeValues = Array.from(state.selectedPlaceKeywords).map(uri => `<${uri}>`).join(' ');
-    blocks.push(`
-      {
-        {
-          ?person swdt:birth-place ?place ;
-                  sp:birth-place ?statementNode .
-        } UNION {
-          ?person swdt:death-place ?place ;
-                  sp:death-place ?statementNode .
-        } UNION {
-          ?person swdt:residence ?place ;
-                  sp:residence ?statementNode .
-        } UNION {
-          ?statementNode sps:event ?event .
-          ?event swdt:event-place ?place ;
-                sp:event-place ?statementNode .
-        }
-        FILTER(?place IN (${placeValues}))
-      }
-    `);
+if (state.selectedPlaceKeywords.size > 0) {
+  const placeValues = Array.from(state.selectedPlaceKeywords)
+    .map(uri => `<${uri}>`)
+    .join(' ');
 
-    selectVars.add('?place');
-  }
+  blocks.push(`
+    VALUES ?place { ${placeValues} }
+    {
+{
+          ?person swdt:birth-place ?place .
+          ?person sp:birth-place ?birthStmt .
+          ?birthStmt spr:reference-URL ?factoid .
+        } UNION {
+          ?person swdt:death-place ?place .
+          ?person sp:death-place ?deathStmt .
+          ?deathStmt spr:reference-URL ?factoid .
+        } UNION {
+          ?person swdt:residence ?place .
+          ?person sp:residence ?resStmt .
+          ?resStmt spr:reference-URL ?factoid .
+        } UNION {
+          ?event swdt:event-place ?place ;
+                 sp:event-place ?placeStmt .
+          ?placeStmt spr:reference-URL ?factoid .
+        }
+    }
+  `);
+
+  selectVars.add('?place');
+}
+        // ?event swdt:event-place <${uri}> ; sp:event-place ?stmt .
+
 
   // Field of Study filter
   // if (state.selectedFieldOfStudyKeywords.size > 0) {
@@ -413,8 +421,14 @@ if (state.uncertainty && state.uncertainty.trim() !== '') {
   }
 }
 
-
-    const needsPersonLabel = blocks.some(b => b.includes('?person'));
+// We can bind the labels to the person in places in the query where we already have ?person bound
+const needsPersonLabel = blocks.some(b =>
+  b.includes('?person') &&
+  !b.includes('swdt:birth-place') &&
+  !b.includes('swdt:death-place') &&
+  !b.includes('swdt:residence') &&
+  !b.includes('swdt:event-place')
+);
     if (needsPersonLabel) {
       blocks.push(`
         OPTIONAL {
@@ -490,3 +504,141 @@ export async function fetchFactoidsByMultiType(state) {
     return [];
   }
 }
+
+// export function buildMultiFilterQuery(state) {
+//   const selectVars = new Set(['?factoid', '?description']);
+//   const blocks = [];
+
+//   // Event Keyword filter
+//   if (state.selectedEventKeywords.size > 0) {
+//     blocks.push(`
+//       ?statementNode sps:event-keyword ?eventKeyword .
+//       ?statementNode spr:reference-URL ?factoid .
+//       VALUES ?eventKeyword { ${Array.from(state.selectedEventKeywords).map(uri => `<${uri}>`).join(' ')} }
+//     `);
+//     selectVars.add('?eventKeyword');
+//   }
+
+//   // Relationship filter
+//   if (state.selectedRelationshipKeywords.size > 0) {
+//     blocks.push(`
+//       ?person ?relationship ?relStmt .
+//       ?relStmt spr:reference-URL ?factoid .
+//       VALUES ?relationship { ${Array.from(state.selectedRelationshipKeywords).map(uri => `<${uri.replace('/taxonomy/', '/prop/')}>`).join(' ')} }
+//     `);
+//     selectVars.add('?relationship');
+//     selectVars.add('?person');
+//   }
+
+//   // Ethnicity filter
+//   if (state.selectedEthnicityKeywords.size > 0) {
+//     blocks.push(`
+//       ?person swdt:ethnic-label ?ethnicity .
+//       ?person sp:ethnic-label ?ethStmt .
+//       ?ethStmt spr:reference-URL ?factoid .
+//       VALUES ?ethnicity { ${Array.from(state.selectedEthnicityKeywords).map(uri => `<${uri}>`).join(' ')} }
+//     `);
+//     selectVars.add('?ethnicity');
+//     selectVars.add('?person');
+//   }
+
+//   // Gender filter
+//   if (state.selectedGenderKeywords.size > 0) {
+//     blocks.push(`
+//       ?person swdt:gender ?gender .
+//       ?person sp:gender ?genderStmt .
+//       ?genderStmt spr:reference-URL ?factoid .
+//       VALUES ?gender { ${Array.from(state.selectedGenderKeywords).map(uri => `<${uri}>`).join(' ')} }
+//     `);
+//     selectVars.add('?gender');
+//     selectVars.add('?person');
+//   }
+
+//   // Place filter
+//   if (state.selectedPlaceKeywords.size > 0) {
+//     const placeValues = Array.from(state.selectedPlaceKeywords).map(uri => `<${uri}>`).join(' ');
+//     blocks.push(`
+//       VALUES ?place { ${placeValues} }
+//       {
+//         {
+//           ?person swdt:birth-place ?place .
+//           ?person sp:birth-place ?birthStmt .
+//           ?birthStmt spr:reference-URL ?factoid .
+//         } UNION {
+//           ?person swdt:death-place ?place .
+//           ?person sp:death-place ?deathStmt .
+//           ?deathStmt spr:reference-URL ?factoid .
+//         } UNION {
+//           ?person swdt:residence ?place .
+//           ?person sp:residence ?resStmt .
+//           ?resStmt spr:reference-URL ?factoid .
+//         } UNION {
+//           ?event swdt:event-place ?place ;
+//                 sp:event-place ?stmt .
+//           ?stmt spr:reference-URL ?factoid .
+//         }
+//       }
+//     `);
+//     selectVars.add('?place');
+//     selectVars.add('?person'); // might be bound in first 3 branches
+//     selectVars.add('?event'); // might be bound in last branch
+//     selectVars.add('?birthStmt');
+//     selectVars.add('?deathStmt');
+//     selectVars.add('?resStmt');
+//     selectVars.add('?stmt');
+//   }
+
+//   // Uncertainty filter
+//   let uncertaintyBlock = '';
+//   if (state.uncertainty && state.uncertainty.trim() !== '') {
+//     const levels = state.uncertainty
+//       .split(',')
+//       .map(level => level.trim().toLowerCase())
+//       .filter(Boolean);
+
+//     if (levels.length > 0) {
+//       const filters = levels.map(lvl => `"${lvl}"`).join(', ');
+//       uncertaintyBlock = `
+//         FILTER NOT EXISTS {
+//           ?factoid spq:certainty ?level .
+//           FILTER(LCASE(STR(?level)) IN (${filters}))
+//         }`;
+//     }
+//   }
+
+//   // Optional label binding
+//   const needsPersonLabel = blocks.some(b => b.includes('?person'));
+//   if (needsPersonLabel) {
+//     blocks.push(`
+//       OPTIONAL {
+//         GRAPH <http://syriaca.org/persons#graph> {
+//           ?person rdfs:label ?label .
+//           FILTER(LANG(?label) = "en")
+//         }
+//       }
+//     `);
+//     selectVars.add('?label');
+//   }
+
+//   // Final SPARQL query
+//   return `
+// PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+// PREFIX schema: <http://schema.org/>
+// PREFIX spr: <http://syriaca.org/prop/reference/>
+// PREFIX swdt: <http://syriaca.org/prop/direct/>
+// PREFIX sp: <http://syriaca.org/prop/>
+// PREFIX sps: <http://syriaca.org/prop/statement/>
+// PREFIX spq: <http://syriaca.org/prop/qualifier/>
+
+// SELECT DISTINCT ${Array.from(selectVars).join(' ')}
+// FROM NAMED <http://syriaca.org/persons#graph>
+// FROM <https://spear-prosop.org>
+// WHERE {
+//   OPTIONAL { ?factoid schema:description ?description . }
+//   ${blocks.join('\n')}
+//   ${uncertaintyBlock}
+// }
+// ORDER BY ?factoid
+// LIMIT 2000
+// `;
+// }
