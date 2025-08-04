@@ -19,8 +19,6 @@ const state = {
   selectedGenderKeywords: new Set(),
   selectedUncertaintyKeywords: new Set(),
   selectedPlaceKeywords: new Set(),
-  // selectedFieldOfStudyKeywords: new Set(),
-  currentTab: 'factoids'
 };
 export function prettifyUri(uri) {
   if (!uri) return '';
@@ -83,7 +81,7 @@ function toggleSet(set, value) {
 
 // Rendering logic for factoids
 function renderFactoids(facts) {
-  document.getElementById('defaultFactoidResults').innerHTML = '';
+  clearResults();
   console.log("Rendering factoids:", facts);
 
   const container = document.getElementById('factoidResults');
@@ -98,23 +96,7 @@ function renderFactoids(facts) {
     return;
   }
   console.log("Filtered factoids:", filtered);
-  // container.innerHTML = `
-  //   <h4>Factoids</h4>
-  //       <h5 style="margin: 2rem;">${facts.length} results</h5>
 
-  //   <ul style="list-style-type: none; padding: 0; margin: 0;">
-  //     ${filtered.map(f => `
-  //       <li style="margin: 2rem;">
-  //         ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
-
-  //         <em>Factoid link:</em><br/>
-  //         <a href="${f.uri}" target="_blank">${f.uri}</a>
-  //                   ${f.label ? `<br/><em>${f.label}</em>` : ''}
-  //         ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
-  //       </li>
-  //     `).join('')}
-  //   </ul>
-  // `;
   container.innerHTML = `
   <h4>Factoids</h4>
   <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${filtered.length} results</h5>
@@ -168,10 +150,18 @@ function clearFilters() {
   updateResults();
   // renderDefaultFactoids();
 }
+// Clear results displayed
+function clearResults() {
+  document.getElementById('factoidResults').innerHTML = '';
+  document.getElementById('defaultFactoidResults').innerHTML = '';
+  document.getElementById('personResults').innerHTML = '';
+}
 
 // Master updater
 function updateResults() {
+  console.log("Updating results with state:", state);
   const queryString = stateToUrlParams(state);
+  console.log("Generated query string for SPARQL endpoint:", queryString);
   const newUrl = `${window.location.pathname}?${queryString}`;
   history.replaceState(null, '', newUrl); // updates URL without reloading
   if (queryString.length > 1 && queryString !== '?' && queryString !== '?type=factoid') {
@@ -179,9 +169,7 @@ function updateResults() {
   } else{
     renderDefaultFactoids();
   }
-  
 }
-
 
 // Load dropdown menus
 function setupDropdowns() {
