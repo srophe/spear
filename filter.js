@@ -19,6 +19,8 @@ const state = {
   selectedGenderKeywords: new Set(),
   selectedUncertaintyKeywords: new Set(),
   selectedPlaceKeywords: new Set(),
+  // selectedFieldOfStudyKeywords: new Set(),
+  // currentTab: 'factoids'
 };
 export function prettifyUri(uri) {
   if (!uri) return '';
@@ -81,9 +83,8 @@ function toggleSet(set, value) {
 
 // Rendering logic for factoids
 function renderFactoids(facts) {
-  clearResults();
+  document.getElementById('defaultFactoidResults').innerHTML = '';
   console.log("Rendering factoids:", facts);
-
   const container = document.getElementById('factoidResults');
 
   // Filter out factoids that have a `person` URI, why??
@@ -96,7 +97,23 @@ function renderFactoids(facts) {
     return;
   }
   console.log("Filtered factoids:", filtered);
+  // container.innerHTML = `
+  //   <h4>Factoids</h4>
+  //       <h5 style="margin: 2rem;">${facts.length} results</h5>
 
+  //   <ul style="list-style-type: none; padding: 0; margin: 0;">
+  //     ${filtered.map(f => `
+  //       <li style="margin: 2rem;">
+  //         ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
+
+  //         <em>Factoid link:</em><br/>
+  //         <a href="${f.uri}" target="_blank">${f.uri}</a>
+  //                   ${f.label ? `<br/><em>${f.label}</em>` : ''}
+  //         ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+  //       </li>
+  //     `).join('')}
+  //   </ul>
+  // `;
   container.innerHTML = `
   <h4>Factoids</h4>
   <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${filtered.length} results</h5>
@@ -126,11 +143,9 @@ function clearFilters() {
   // Reset dropdowns
   state.selectedGenderKeywords.clear();
   state.uncertainty = '';
-
   document.querySelectorAll('input[name="gender"]').forEach(r => r.checked = r.value === '');
   document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
-  document.getElementById('factoidResults').innerHTML = '';
-
+  
   // Reset the dropdown UI
   // const genderSelect = document.getElementById('genderSelect');
   // if (genderSelect) genderSelect.value = '';
@@ -145,22 +160,16 @@ function clearFilters() {
 
   // Clear URL
   history.replaceState(null, '', window.location.pathname);
-
   // Update results
   updateResults();
   // renderDefaultFactoids();
-}
-// Clear results displayed
-function clearResults() {
-  document.getElementById('factoidResults').innerHTML = '';
-  document.getElementById('defaultFactoidResults').innerHTML = '';
 }
 
 // Master updater
 function updateResults() {
   console.log("Updating results with state:", state);
   const queryString = stateToUrlParams(state);
-  console.log("Generated query string for SPARQL endpoint:", queryString);
+  console.log("Generated query string:", queryString);
   const newUrl = `${window.location.pathname}?${queryString}`;
   history.replaceState(null, '', newUrl); // updates URL without reloading
   if (queryString.length > 1 && queryString !== '?' && queryString !== '?type=factoid') {
@@ -168,7 +177,9 @@ function updateResults() {
   } else{
     renderDefaultFactoids();
   }
+  
 }
+
 
 // Load dropdown menus
 function setupDropdowns() {
@@ -264,7 +275,6 @@ export function initializeFilter() {
   searchMenuItems('relationship-search', 'relationshipKeywordItems');
   searchMenuItems('place-search', 'placeKeywordItems');
   renderDefaultFactoids();
-
 }
   import allFactoidsData from "./types/factoid/defaultFactoids.json" with { type: 'json' };
 
