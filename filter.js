@@ -154,7 +154,6 @@ function clearFilters() {
 function clearResults() {
   document.getElementById('factoidResults').innerHTML = '';
   document.getElementById('defaultFactoidResults').innerHTML = '';
-  document.getElementById('personResults').innerHTML = '';
 }
 
 // Master updater
