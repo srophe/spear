@@ -66,7 +66,7 @@
       overflow-y: auto;
     }
 
-    .new-results {
+    .results {
       flex-grow: 1;
       background: #fff;
       padding: 1rem;
@@ -372,8 +372,8 @@
   </nav>
 <div class="container py-4 d-flex align-items-start">
 
-          <div class="d-flex flex-column" style="min-width: 250px">
-            <div class="btn-group my-3 sticky-top sticky-offset shadow-lg m-2" role="group" aria-label="types"
+  <div class="d-flex flex-column" style="min-width: 250px">
+    <div class="btn-group my-3 sticky-top sticky-offset shadow-lg m-2" role="group" aria-label="types"
               id="browse--types">
               <button type="button" class="btn btn-outline-dark active" data-type="person">
                 Persons
@@ -609,7 +609,7 @@
  
 </div>
             </div>
-          </div>
+  </div>
           <!-- <div class="flex-grow-1">
             <div class="card ms-5 p-3 flex-grow-1 shadow-lg border-0">
  
@@ -629,14 +629,13 @@
     </div>
     <div class="mt-3 p-3" id="browse--items-container"></div>
   </div>
-  <div id="personResults"  >
+  <!-- <div id="personResults"  class="d-none">
     <div class="card p-3 shadow-lg border-0">
-      <hr />
       <div id="browse--items" class="grid-col-5 gap-3"></div>
       <div class="pagination-dots d-none"></div>
     </div>
     <div class="mt-3 p-3" id="browse--items-container"></div>
-  </div>
+  </div> -->
 
   <!-- Factoid results -->
 <div id="factoidResults" class="d-none">
@@ -671,10 +670,10 @@
 
   // Imports
   import { initializeFilter } from './filter.js';
- import persons from "./types/persons.json" with { type: 'json' };
-import personNamesData from "./types/factoid/names.json" with { type: 'json' };
-import factoids from "./types/factoids.json" with { type: 'json' };
-
+  import persons from "./types/persons.json" with { type: 'json' };
+  import personNamesData from "./types/factoid/names.json" with { type: 'json' };
+  import factoids from "./types/factoids.json" with { type: 'json' };
+  
   // Data
   let people = persons.results?.bindings;
   let personNames = personNamesData.results?.bindings;
@@ -793,76 +792,88 @@ import factoids from "./types/factoids.json" with { type: 'json' };
 
     updateParams({ currentPage: page });
   };
-function clearResults() {
-  document.getElementById('factoidResults').innerHTML = '';
-  document.getElementById('defaultFactoidResults').innerHTML = '';
-  document.getElementById('personResults').innerHTML = '';
-  document.getElementById('personResultsog').innerHTML = '';
-
-}
 
   // Main update functions
   const updateParams = (params) => {
-    const trigger = Object.keys(params)[0];
-    let currentParams = new URLSearchParams(window.location.search);
-
-    const paramActions = {
-      letter: () => {
-        currentParams.delete("person");
-        currentParams.delete("nameSearch");
-        if (!currentParams.get("relationship")) currentParams.set("currentPage", 1);
-      },
-      filter: () => {
-        ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
-        
-        if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
-        if (elements.nameSearch) elements.nameSearch.value = '';
-      },
-      type: () => {
-        ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
-        if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
-        if (elements.nameSearch) elements.nameSearch.value = '';
-      },
-      nameSearch: () => {
-        ["letter", "gender"].forEach(p => currentParams.delete(p));
-         if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
-      },
-      gender: () => {
-        ["nameSearch", "letter"].forEach(p => currentParams.delete(p));
-        if (elements.nameSearch) elements.nameSearch.value = '';
-        if(elements.browseLetterFilter)  {elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));}
+  // Get current URL params
+  const trigger = Object.keys(params)[0];
+  let currentParams = new URLSearchParams(window.location.search);
+  // Apply side-effects (reset buttons, inputs, etc.)
+  const paramActions = {
+    letter: () => {
+      currentParams.delete("person");
+      currentParams.delete("nameSearch");
+      if (!currentParams.get("relationship")) currentParams.set("currentPage", 1);
+      if (elements.browseLetterFilter) {
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
       }
-    };
-
-    paramActions[trigger]?.();
-
-    const newParams = new URLSearchParams({
-      ...Object.fromEntries(currentParams),
-      ...params,
-    });
-
-    window.history.pushState("", "", `?${newParams.toString()}`);
-  };
-
-  const handleDataUpdate = (params, event) => {
-    if (params.nameSearch) {
-    if (elements.nameSearch) elements.nameSearch.value = params.nameSearch;
-
-    // Pass in type so it knows which dataset to use
-    applyNameFilter(params.nameSearch, params.type || 'person');
-    return;
-    }
-
-
-    // Sync sidebar gender filter
-    const genderRadio = document.querySelector(`input[name="gender"][value="${params.gender || ''}"]`);
-    if (genderRadio) genderRadio.checked = true;
-
-    // Clear name search when other filters are applied
-    if ((params.letter || params.gender || params.filter || params.type) && !params.nameSearch) {
       if (elements.nameSearch) elements.nameSearch.value = '';
+    },
+    filter: () => {
+      ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
+      if (elements.browseLetterFilter) {
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      }
+      if (elements.nameSearch) elements.nameSearch.value = '';
+    },
+    type: () => {
+      ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
+      if (elements.browseLetterFilter) {
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      }
+      if (elements.nameSearch) elements.nameSearch.value = '';
+    },
+    nameSearch: () => {
+      ["letter", "gender"].forEach(p => currentParams.delete(p));
+      if (elements.browseLetterFilter) {
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      }
+    },
+    gender: () => {
+      ["nameSearch", "letter"].forEach(p => currentParams.delete(p));
+      if (elements.nameSearch) elements.nameSearch.value = '';
+      if (elements.browseLetterFilter) {
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      }
     }
   };
+
+  // Run param-based actions (optional UI cleanup)
+  paramActions[trigger]?.();
+
+  // Build the new param set
+  const newParams = new URLSearchParams(currentParams.toString());
+  for (const [key, value] of Object.entries(params)) {
+    newParams.set(key, value);
+  }
+
+  // Compare old and new
+  if (newParams.toString() !== currentParams.toString()) {
+    window.history.pushState({}, '', `?${newParams.toString()}`);
+    handleDataUpdate(Object.fromEntries(newParams));
+  }
+};
+
+
+const handleDataUpdate = (params, event) => {
+  if (params.person) {
+    updateData(params);
+    return;
+  }
+
+  if (params.nameSearch) {
+    elements.nameSearch.value = params.nameSearch;
+    applyNameFilter(params.nameSearch);
+    return;
+  }
+
+  if ((params.letter || params.gender || params.filter || params.type) && !params.nameSearch) {
+    if (elements.nameSearch) elements.nameSearch.value = '';
+  }
+
+  updateData(params, event);
+};
+
 
 
   // Multiselect functionality
@@ -989,7 +1000,7 @@ function clearResults() {
       this.renderSelectedItems();
       this.renderOptions();
     }
-  }
+  } 
 
   // Update the filter configurations
   const filterConfigs = {
@@ -1055,18 +1066,21 @@ function clearResults() {
   const applyNameFilter = (searchTerm) => {
     const currentParams = getUrlParams();
     const currentFilter = currentParams.filter || 'name';
-
+    const currentType = currentParams.type || 'person';
+    
     let filteredItems = [];
 
-    if (currentFilter === 'name') {
+    if ((currentFilter === 'name' || currentParams.nameSearch)) {
+      // This shows person name options
       filteredItems = personNames
         .filter(person => person.name.value.toLowerCase().includes(searchTerm.toLowerCase()))
         .map(person => person.name.value);
-    } else if (currentFilter === 'relationship') {
-        // use the relationship options data
-      filteredItems = eventKeywordlist
-        .filter(item => item.label.value.toLowerCase().includes(searchTerm.toLowerCase()))
-        .map(item => item.label.value);
+    } 
+    
+    if (currentParams.person && currentType === 'factoid') {
+      filteredItems = personNames
+        .filter(item => item.name.value.toLowerCase().includes(searchTerm.toLowerCase()))
+        .map(item => item.name.value);
     }
 
     // Remove duplicates
@@ -1109,6 +1123,103 @@ function clearResults() {
       updateData(Object.fromEntries(currentParams));
     }
   };
+
+ const updateData = (params) => {
+  document.getElementById('defaultFactoidResults').innerHTML = '';
+  document.getElementById('factoidResults').innerHTML = '';
+  clearDisplay();
+  const type = params.type || 'person';
+  const dataset = type === 'factoid' ? personNames : people;
+  console.log("PARAMS IN UPDATE DATA:", params);
+
+  let filteredItems = []; 
+
+  // 1. Filter by letter
+  if (params.letter) {
+    filteredItems = dataset
+      .filter(person => person.name?.value?.toLowerCase().startsWith(params.letter.toLowerCase()))
+      .map(person => person.name.value);
+  }
+
+  // 2. Filter by gender
+  if (params.gender) {
+    filteredItems = dataset
+      .filter(person => person.sex?.value?.toLowerCase() === params.gender.toLowerCase())
+      .map(person => person.name.value);
+  }
+
+  // 3. Filter by both letter + gender
+  if (params.letter && params.gender) {
+    filteredItems = dataset
+      .filter(person =>
+        person.name?.value?.toLowerCase().startsWith(params.letter.toLowerCase()) &&
+        person.sex?.value?.toLowerCase() === params.gender.toLowerCase()
+      )
+      .map(person => person.name.value);
+  }
+
+
+
+  // 5. Remove duplicates, paginate and render
+  allItems = [...new Set(filteredItems)];
+  currentPage = 1;
+  createPaginationDots(allItems.length);
+  displayPageItems(allItems);
+
+  // Show the result section
+  elements.browseItems.previousElementSibling?.classList.remove('d-none');
+
+  // 6. Handle direct person selection (e.g., after clicking a name button)
+if (params.person) {
+  console.log("Direct person selection:", params.person);
+  const personMatch = dataset.filter(p => p.name.value === params.person);
+console.log("Person match:", personMatch);
+  if (personMatch.length > 0) {
+    const cardsHtml = personMatch.map(person => {
+      // Match the correct field for description and URL
+      const desc = person.desc?.value || person.description?.value || '';
+      const uri = person.uri?.value || person.factoid?.value || '';
+      let href = '#';
+
+      if (uri.includes('/')) {
+        // Build correct link based on source format
+        const captured = uri.match(/\/(?<id>(\d+)-(\d+))$/) || uri.match(/\/(?<cat>\w+)\/(?<id>\d+)$/);
+        if (captured?.groups) {
+          const path = Object.values(captured.groups).join('/');
+          href = (type === 'factoid') ? `/${path}` : `/aggregate/${path}`;
+        }
+      }
+
+      return `
+        <div class="card mb-3 p-3">
+          <div class="card-body">
+            <a href="${href}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
+            <small>${desc}</small>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    document.getElementById("browse--items-container").innerHTML = cardsHtml;
+
+    // Scroll to results
+    document.getElementById("browse--items-container").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start"
+    });
+  } else {
+    document.getElementById("browse--items-container").innerHTML = `<p>No data found for ${params.person}</p>`;
+  }
+
+  return;
+}
+elements.browseItems.querySelectorAll("button").forEach(button => {
+  button.classList.toggle("active", button.dataset.name === params.person);
+});
+
+
+};
 
   
   // Event Handlers
@@ -1223,7 +1334,11 @@ function clearResults() {
           button.classList.remove("active");
         });
         selectedButton.classList.add("active");
-        updateParams({ person: selectedButton.dataset.name });
+        const selectedName = selectedButton.dataset.name;
+        const current = new URLSearchParams(window.location.search).get("person");
+        if (current?.toLowerCase() !== selectedName.toLowerCase()) {
+          updateParams({ person: selectedName });
+        }
       }
     });
 
@@ -1246,6 +1361,7 @@ function clearResults() {
     personResults?.classList.remove('d-none');
     factoidResults?.classList.add('d-none');
     }
+    createAlphabetMenu();
 
       }
     });
@@ -1268,7 +1384,7 @@ function clearResults() {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
   container.innerHTML = alphabet
-    .map(letter => `<button type="button" class="btn btn-sm btn-outline-secondary" data-type="person" data-letter="${letter}">${letter}</button>`)
+    .map(letter => `<button type="button" class="btn btn-sm btn-outline-secondary" data-letter="${letter}">${letter}</button>`)
     .join("");
 }
 
@@ -1285,7 +1401,7 @@ function clearResults() {
 
     setActiveButton(elements.browseOptions, 'filter', params.filter || 'name');
     setActiveButton(elements.browseLetterFilter, 'letter', params.letter);
-
+    console.log("Params in init:", params);
     // Set name search from URL
     if (params.nameSearch && elements.nameSearch) {
       elements.nameSearch.value = params.nameSearch;
@@ -1304,6 +1420,11 @@ function clearResults() {
   });
 
     document.addEventListener('DOMContentLoaded', initializeFilter);
+window.addEventListener("popstate", () => {
+  const params = getUrlParams();
+  handleDataUpdate(params);
+});
+
 
 </script>
 
