@@ -85,7 +85,8 @@ function toggleSet(set, value) {
 
 // Rendering logic for factoids
 function renderFactoids(facts) {
-  document.getElementById('defaultFactoidResults').innerHTML = '';
+  document.getElementById('defaultFactoidResults').classList.add('d-none');
+  document.getElementById('factoidResults').classList.remove('d-none');
   console.log("Rendering factoids:", facts);
   const container = document.getElementById('factoidResults');
 
