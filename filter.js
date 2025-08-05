@@ -42,7 +42,9 @@ function stateToUrlParams(state) {
     params.set('uncertainty', state.uncertainty);
   }
 
+  for (const uri of state.selectedSourceKeywords) {
 
+    params.append('source', uri);
 
   for (const uri of state.selectedEventKeywords) {
     params.append('event', uri);
@@ -66,8 +68,7 @@ function updateStateFromUrlParams() {
 
   state.selectedGenderKeywords = new Set(params.getAll('gender'));
   state.uncertainty = params.get('uncertainty') || '';
-
-
+  state.selectedSourceKeywords = new Set(params.getAll('source'));
   state.selectedEventKeywords = new Set(params.getAll('event'));
   state.selectedRelationshipKeywords = new Set(params.getAll('relationship'));
   state.selectedEthnicityKeywords = new Set(params.getAll('ethnicity'));
@@ -143,6 +144,7 @@ function clearFilters() {
   // Reset dropdowns
   state.selectedGenderKeywords.clear();
   state.uncertainty = '';
+  state.selectedSourceKeywords.clear();
   document.querySelectorAll('input[name="gender"]').forEach(r => r.checked = r.value === '');
   document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
   
@@ -183,19 +185,26 @@ function updateResults() {
 
 // Load dropdown menus
 function setupDropdowns() {
-
-document.querySelectorAll('input[name="gender"]').forEach(input => {
-  input.addEventListener('change', () => {
-    if (input.value) state.selectedGenderKeywords.add(input.value);
-    updateResults();
+  
+  document.querySelectorAll('input[name="source"]').forEach(input => {
+    input.addEventListener('change', () => {
+      if (input.value) state.selectedSourceKeywords.add(input.value);
+      updateResults();
+    });
   });
-});
+  
+  document.querySelectorAll('input[name="gender"]').forEach(input => {
+    input.addEventListener('change', () => {
+      if (input.value) state.selectedGenderKeywords.add(input.value);
+      updateResults();
+    });
+  });
 
-document.querySelectorAll('input[name="uncertainty"]').forEach(input => {
-  input.addEventListener('change', () => {
-    const selected = Array.from(
-      document.querySelectorAll('input[name="uncertainty"]:checked')
-    ).map(cb => cb.value);
+  document.querySelectorAll('input[name="uncertainty"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const selected = Array.from(
+        document.querySelectorAll('input[name="uncertainty"]:checked')
+      ).map(cb => cb.value);
 
     state.uncertainty = selected.join(',');
     updateResults();
