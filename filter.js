@@ -44,8 +44,8 @@ function stateToUrlParams(state) {
   }
 
   for (const uri of state.selectedSourceKeywords) {
-
     params.append('source', uri);
+  }
 
   for (const uri of state.selectedEventKeywords) {
     params.append('event', uri);
