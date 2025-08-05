@@ -336,9 +336,7 @@ async function renderDefaultFactoids() {
     factoidDisplay.innerHTML = `
 
 <ul style="list-style-type: none; padding-left: 2rem; padding-right: 2rem; ">
- <h4>All Person Factoids</h4>
-        <h5 style="margin: 2rem;">${factoids.length} results</h5>
-
+ <h4>Factoids</h4>
   ${factoids.map(f => {
     const typeSlug = f.type?.split('/').pop();
     const typeLabel = typeMap[typeSlug] || typeSlug;
