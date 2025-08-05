@@ -310,10 +310,14 @@ export function initializeFilter() {
       "education": "Education"
     };
 
-    const factoidDisplay = document.getElementById('defaultFactoidResults');
 
 async function renderDefaultFactoids() {
-   document.getElementById('factoidResults').innerHTML = '';
+  const queryRestults = document.getElementById('factoidResults');
+  queryRestults.classList.add('d-none');
+  const factoidDisplay = document.getElementById('defaultFactoidResults');
+  factoidDisplay.classList.remove('d-none');
+  
+  console.log("Rendering default factoids:", allFactoidsData);
   const factoids = allFactoidsData.results.bindings.map(f => ({
     uri: f.factoid.value,
     label: f.label.value,
