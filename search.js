@@ -320,7 +320,17 @@ export function buildMultiFilterQuery(state) {
  
   const selectVars = new Set(['?factoid', '?description']);
   const blocks = [];
-
+  
+  // Each filter category needs to be added here to the blocks for the query
+  
+  // Source filter
+  if (state.selectedSourceKeywords.size > 0) {
+    blocks.push(`
+      ?factoid spr:part-of-series ?source .
+      VALUES ?source { ${Array.from(state.selectedSourceKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?source');
+  }
   // Event Keyword filter // Add event participant?
   if (state.selectedEventKeywords.size > 0) {
     blocks.push(`
