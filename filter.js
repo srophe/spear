@@ -100,23 +100,6 @@ function renderFactoids(facts) {
     return;
   }
   console.log("Filtered factoids:", filtered);
-  // container.innerHTML = `
-  //   <h4>Factoids</h4>
-  //       <h5 style="margin: 2rem;">${facts.length} results</h5>
-
-  //   <ul style="list-style-type: none; padding: 0; margin: 0;">
-  //     ${filtered.map(f => `
-  //       <li style="margin: 2rem;">
-  //         ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
-
-  //         <em>Factoid link:</em><br/>
-  //         <a href="${f.uri}" target="_blank">${f.uri}</a>
-  //                   ${f.label ? `<br/><em>${f.label}</em>` : ''}
-  //         ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
-  //       </li>
-  //     `).join('')}
-  //   </ul>
-  // `;
   container.innerHTML = `
   <h4>Factoids</h4>
   <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${filtered.length} results</h5>
@@ -124,11 +107,10 @@ function renderFactoids(facts) {
   <ul style="list-style-type: none; padding: 0; margin: 2rem;">
     ${filtered.map(f => `
       <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
-        ${f.description ? `Description:<br/><em> ${f.description}</em><br/>` : ''}
-        Factoid link:
+        ${f.description ? `<em> ${f.description}</em><br/>` : ''}
         <a href="${f.uri}" target="_blank">${f.uri}</a>
         ${f.label ? `<br/>Related person: <em>${f.label}</em>` : ''}
-        ${f.person ? `<br/>Related person link:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+        ${f.person ? `<br/>Related person uri:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
       </li>
     `).join('')}
   </ul>
