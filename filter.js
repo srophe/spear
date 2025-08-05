@@ -20,7 +20,8 @@ const state = {
   selectedUncertaintyKeywords: new Set(),
   selectedPlaceKeywords: new Set(),
   // selectedFieldOfStudyKeywords: new Set(),
-  // currentTab: 'factoids'
+  // currentTab: 'factoids',
+  selectedSourceKeywords: new Set()
 };
 export function prettifyUri(uri) {
   if (!uri) return '';
@@ -147,7 +148,8 @@ function clearFilters() {
   state.selectedSourceKeywords.clear();
   document.querySelectorAll('input[name="gender"]').forEach(r => r.checked = r.value === '');
   document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
-  
+  document.querySelectorAll('input[name="source"]').forEach(r => r.checked = r.value === '');
+
   // Reset the dropdown UI
   // const genderSelect = document.getElementById('genderSelect');
   // if (genderSelect) genderSelect.value = '';
