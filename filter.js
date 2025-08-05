@@ -176,9 +176,10 @@ function updateResults() {
   console.log("Generated query string:", queryString);
   const newUrl = `${window.location.pathname}?${queryString}`;
   history.replaceState(null, '', newUrl); // updates URL without reloading
+  if (!queryString) {console.log("rendering default factoids");renderDefaultFactoids();}
   if (queryString.length > 1 && queryString !== '?' && queryString !== '?type=factoid') {
     fetchFactoidsByMultiType(state).then(renderFactoids);
-  } else{
+  } else {
     renderDefaultFactoids();
   }
   
