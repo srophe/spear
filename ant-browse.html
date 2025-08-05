@@ -388,6 +388,28 @@
                 <div className="filter-section"><div class="filter-title d-flex justify-content-between align-items-right" style="justify-items: right;">                        <button type="button" class="btn btn-outline-dark" data-type="person" id="clearFiltersBtn">
               Clear selections
             </button></div></div>
+            <!-- Source Filter -->
+            <div class="filter-section">
+              <div class="filter-title d-flex justify-content-between align-items-center">
+                Source
+                <div class="d-flex gap-2">
+                  <button class="clear-section-btn" data-section="source" title="Clear source filter">
+                    <span>×</span>
+                  </button>
+                  <button class="collapse-toggle" data-target="source-select">
+                    <span>−</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="filter-content" id="source-select">
+            <div class="checkbox-group" id="sourceSelect">
+              <label><input class="me-1" type="checkbox" name="source" value="https://spear-prosop.org/letters-severus" /> Letter of Severus of Antioch</label>
+              <label><input class="me-1" type="checkbox" name="source" value="https://spear-prosop.org/lives-eastern-saints" /> Lives of the Eastern Saints</label>
+              <label><input class="me-1" type="checkbox" name="source" value="https://spear-prosop.org/chronicle-edessa" /> Chronicle of Edessa</label>
+            </div>
+          </div>
+          </div>
               <!-- Names Filter -->
               <div class="filter-section">
                 <div class="filter-title d-flex justify-content-between align-items-center">
