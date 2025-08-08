@@ -20,7 +20,7 @@ const state = {
   selectedUncertaintyKeywords: new Set(),
   selectedPlaceKeywords: new Set(),
   // selectedFieldOfStudyKeywords: new Set(),
-  // currentTab: 'factoids',
+  // currentTab: 'factoids'
   selectedSourceKeywords: new Set()
 };
 export function prettifyUri(uri) {
@@ -42,11 +42,10 @@ function stateToUrlParams(state) {
   if (state.uncertainty) {
     params.set('uncertainty', state.uncertainty);
   }
-
   for (const uri of state.selectedSourceKeywords) {
     params.append('source', uri);
-  }
 
+  }
   for (const uri of state.selectedEventKeywords) {
     params.append('event', uri);
   }
@@ -69,11 +68,13 @@ function updateStateFromUrlParams() {
 
   state.selectedGenderKeywords = new Set(params.getAll('gender'));
   state.uncertainty = params.get('uncertainty') || '';
-  state.selectedSourceKeywords = new Set(params.getAll('source'));
+
+
   state.selectedEventKeywords = new Set(params.getAll('event'));
   state.selectedRelationshipKeywords = new Set(params.getAll('relationship'));
   state.selectedEthnicityKeywords = new Set(params.getAll('ethnicity'));
   state.selectedPlaceKeywords = new Set(params.getAll('place'));
+  state.selectedSourceKeywords = new Set(params.getAll('source'));
   // state.selectedFieldOfStudyKeywords = new Set(params.getAll('field'));
 }
 
@@ -89,7 +90,6 @@ function renderFactoids(facts) {
   document.getElementById('factoidResults').classList.remove('d-none');
   console.log("Rendering factoids:", facts);
   const container = document.getElementById('factoidResults');
-
   // Filter out factoids that have a `person` URI, why??
     const filtered = facts.filter(f => {
     return !f.uri.startsWith('http://syriaca.org/person/');
@@ -100,9 +100,38 @@ function renderFactoids(facts) {
     return;
   }
   console.log("Filtered factoids:", filtered);
+  // container.innerHTML = `
+  //   <h4>Factoids</h4>
+  //       <h5 style="margin: 2rem;">${facts.length} results</h5>
+
+  //   <ul style="list-style-type: none; padding: 0; margin: 0;">
+  //     ${filtered.map(f => `
+  //       <li style="margin: 2rem;">
+  //         ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
+
+  //         <em>Factoid link:</em><br/>
+  //         <a href="${f.uri}" target="_blank">${f.uri}</a>
+  //                   ${f.label ? `<br/><em>${f.label}</em>` : ''}
+  //         ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+  //       </li>
+  //     `).join('')}
+  //   </ul>
+  // `;
+    // <ul style="list-style-type: none; padding: 0; margin: 2rem;">
+  //   ${filtered.map(f => `
+  //     <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
+  //       ${f.description ? `Description:<br/><em> ${f.description}</em><br/>` : ''}
+  //       Factoid link:
+  //       <a href="${f.uri}" target="_blank">${f.uri}</a>
+  //       ${f.label ? `<br/>Related person: <em>${f.label}</em>` : ''}
+  //       ${f.person ? `<br/>Related person link:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+  //     </li>
+  //   `).join('')}
+  // </ul>
   container.innerHTML = `
   <h4>Factoids</h4>
   <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${filtered.length} results</h5>
+
 
   <ul style="list-style-type: none; padding: 0; margin: 2rem;">
     ${filtered.map(f => `
@@ -118,6 +147,20 @@ function renderFactoids(facts) {
 
 }
 
+function clearNameResults() {
+  const browseItemsContainer = document.getElementById('browse--items-container');
+    if (browseItemsContainer) browseItemsContainer.innerHTML = '';
+  const browseContainer = document.getElementById('browse--items');
+    if (browseContainer) browseContainer.innerHTML = '';  
+}
+function clearPersonResults() {
+  const browseItemsContainer = document.getElementById('browse--items-container');
+  if (browseItemsContainer) browseItemsContainer.innerHTML = '';
+  const browseContainer = document.getElementById('browse--items');
+    if (browseContainer) browseContainer.innerHTML = '';  
+}
+
+
 function clearFilters() {
   // Reset all keyword sets
   state.selectedEventKeywords.clear();
@@ -128,25 +171,21 @@ function clearFilters() {
   // Reset dropdowns
   state.selectedGenderKeywords.clear();
   state.uncertainty = '';
-  state.selectedSourceKeywords.clear();
   document.querySelectorAll('input[name="gender"]').forEach(r => r.checked = r.value === '');
   document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
   document.querySelectorAll('input[name="source"]').forEach(r => r.checked = r.value === '');
 
-  // Reset the dropdown UI
-  // const genderSelect = document.getElementById('genderSelect');
-  // if (genderSelect) genderSelect.value = '';
-
-  // const uncertaintySelect = document.getElementById('uncertaintySelect');
-  // if (uncertaintySelect) uncertaintySelect.value = '';
-
-  // // Uncheck any selected keyword checkboxes
-  // document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
-  //   cb.checked = false;
-  // });
+  state.selectedSourceKeywords.clear();
+  state.selectedUncertaintyKeywords.clear();
 
   // Clear URL
   history.replaceState(null, '', window.location.pathname);
+  
+  const browseItemsContainer = document.getElementById('browse--items-container');
+    if (browseItemsContainer) browseItemsContainer.innerHTML = '';
+  const browseContainer = document.getElementById('browse--items');
+    if (browseContainer) browseContainer.innerHTML = '';  
+
   // Update results
   updateResults();
   // renderDefaultFactoids();
@@ -158,11 +197,12 @@ function updateResults() {
   const queryString = stateToUrlParams(state);
   console.log("Generated query string:", queryString);
   const newUrl = `${window.location.pathname}?${queryString}`;
+  clearNameResults();
+  clearPersonResults();
   history.replaceState(null, '', newUrl); // updates URL without reloading
-  if (!queryString) {console.log("rendering default factoids");renderDefaultFactoids();}
   if (queryString.length > 1 && queryString !== '?' && queryString !== '?type=factoid') {
     fetchFactoidsByMultiType(state).then(renderFactoids);
-  } else {
+  } else{
     renderDefaultFactoids();
   }
   
@@ -171,14 +211,14 @@ function updateResults() {
 
 // Load dropdown menus
 function setupDropdowns() {
-  
+
   document.querySelectorAll('input[name="source"]').forEach(input => {
     input.addEventListener('change', () => {
       if (input.value) state.selectedSourceKeywords.add(input.value);
       updateResults();
     });
   });
-  
+
   document.querySelectorAll('input[name="gender"]').forEach(input => {
     input.addEventListener('change', () => {
       if (input.value) state.selectedGenderKeywords.add(input.value);
@@ -186,11 +226,11 @@ function setupDropdowns() {
     });
   });
 
-  document.querySelectorAll('input[name="uncertainty"]').forEach(input => {
-    input.addEventListener('change', () => {
-      const selected = Array.from(
-        document.querySelectorAll('input[name="uncertainty"]:checked')
-      ).map(cb => cb.value);
+document.querySelectorAll('input[name="uncertainty"]').forEach(input => {
+  input.addEventListener('change', () => {
+    const selected = Array.from(
+      document.querySelectorAll('input[name="uncertainty"]:checked')
+    ).map(cb => cb.value);
 
     state.uncertainty = selected.join(',');
     updateResults();
@@ -295,11 +335,11 @@ export function initializeFilter() {
 
 
 async function renderDefaultFactoids() {
-  const queryRestults = document.getElementById('factoidResults');
-  queryRestults.classList.add('d-none');
+  const queryResults = document.getElementById('factoidResults');
+  queryResults.classList.add('d-none');
   const factoidDisplay = document.getElementById('defaultFactoidResults');
   factoidDisplay.classList.remove('d-none');
-  
+
   console.log("Rendering default factoids:", allFactoidsData);
   const factoids = allFactoidsData.results.bindings.map(f => ({
     uri: f.factoid.value,
@@ -318,7 +358,9 @@ async function renderDefaultFactoids() {
     factoidDisplay.innerHTML = `
 
 <ul style="list-style-type: none; padding-left: 2rem; padding-right: 2rem; ">
- <h4>Factoids</h4>
+ <h4>All Person Factoids</h4>
+        <h5 style="margin: 2rem;">${factoids.length} results</h5>
+
   ${factoids.map(f => {
     const typeSlug = f.type?.split('/').pop();
     const typeLabel = typeMap[typeSlug] || typeSlug;
