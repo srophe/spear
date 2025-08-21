@@ -49,6 +49,317 @@
   <script src="https://www.google.com/recaptcha/api.js" type="text/javascript" async="async" defer="defer"></script>
   <!-- Plausible Analytics -->
   <script defer="defer" data-domain="spear.vuexistapps.us" src="https://plausible.io/js/script.js"></script>
+
+  <!-- Add this CSS in the <head> section after your existing stylesheets -->
+  <style>
+    .filter-sidebar {
+      background: #f8f9fa;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #dee2e6;
+    }
+
+    .filter-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .filter-title {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: #495057;
+      border-bottom: 1px solid #dee2e6;
+      padding-bottom: 0.5rem;
+    }
+
+    .filter-control {
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-control label {
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+      color: #6c757d;
+    }
+
+    .filter-control input[type="text"],
+    .filter-control input[type="date"],
+    .filter-control select {
+      font-size: 0.875rem;
+      padding: 0.375rem;
+    }
+
+    .filter-control input[type="checkbox"],
+    .filter-control input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: 0.25rem 0;
+    }
+
+    .date-range {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .date-range input {
+      flex: 1;
+    }
+
+    .uncertainty-slider {
+      margin-top: 0.5rem;
+    }
+
+    input[type="range"].uncertainty-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #456889;
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    .uncertainty-value {
+      font-size: 0.75rem;
+      color: #6c757d;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    .filter-actions {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #dee2e6;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .collapse-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #0d6efd;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .collapse-toggle:hover {
+      text-decoration: underline;
+    }
+
+    .filter-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .filter-content.collapsed {
+      max-height: 0;
+    }
+
+    .filter-content:not(.collapsed) {
+      max-height: 500px;
+    }
+
+    /* New styles for clear buttons */
+    .clear-section-btn {
+      background: none;
+      border: none;
+      color: #dc3545;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .clear-section-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Add these CSS styles to your existing styles */
+    .year-range {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .year-range input {
+      flex: 1;
+    }
+
+    .dual-range-slider {
+      position: relative;
+      margin: 1rem 0;
+    }
+
+    .dual-range-slider input[type="range"] {
+      width: 100%;
+      height: 6px;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .dual-range-slider input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #456889;
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    .dual-range-slider input[type="range"]::-moz-range-thumb {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #456889;
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    .dual-range-slider::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: #dee2e6;
+      border-radius: 3px;
+      transform: translateY(-50%);
+      z-index: -1;
+    }
+
+    .range-values {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: #6c757d;
+      margin-top: 0.5rem;
+      padding: 0 10px;
+    }
+
+    .range-values span:first-child,
+    .range-values span:last-child {
+      color: #495057;
+    }
+
+    .btn-outline-dark {
+      background-color: white;
+    }
+
+    /* Add these CSS styles for the multiselect dropdown */
+    .multiselect-container {
+      position: relative;
+    }
+
+    .multiselect-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ced4da;
+      border-top: none;
+      border-radius: 0 0 0.375rem 0.375rem;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+    }
+
+    .multiselect-dropdown.show {
+      display: block;
+    }
+
+    .multiselect-option {
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      border-bottom: 1px solid #f8f9fa;
+      font-size: 0.875rem;
+      transition: background-color 0.15s ease;
+    }
+
+    .multiselect-option:hover {
+      background-color: #f8f9fa;
+    }
+
+    .multiselect-option:last-child {
+      border-bottom: none;
+    }
+
+    .multiselect-option.selected {
+      background-color: #e7f3ff;
+      color: #0d6efd;
+    }
+
+    .selected-items {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .selected-item {
+      background-color: #e7f3ff;
+      color: #0d6efd;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      border: 1px solid #b6d7ff;
+    }
+
+    .selected-item .remove-btn {
+      background: none;
+      border: none;
+      color: #0d6efd;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.875rem;
+      line-height: 1;
+    }
+
+    .selected-item .remove-btn:hover {
+      color: #dc3545;
+    }
+
+    .relationship-search-input:focus+.multiselect-dropdown {
+      display: block;
+    }
+  </style>
 </head>
 
 <body id="body">
@@ -78,18 +389,246 @@
     <div class="row">
       <div class="col-12">
         <div class="py-4 d-flex align-items-start">
-          <div class="btn-group my-3" role="group" aria-label="types" id="browse--types">
-            <button type="button" class="btn btn-outline-dark active" data-type="person">
-              Persons
-            </button>
-            <button type="button" class="btn btn-outline-dark" data-type="factoid">
-              Factoids
-            </button>
+          <div class="d-flex flex-column" style="min-width: 250px">
+            <div class="btn-group my-3 sticky-top sticky-offset shadow-lg m-2" role="group" aria-label="types"
+              id="browse--types">
+              <button type="button" class="btn btn-outline-dark active" data-type="person">
+                Persons
+              </button>
+              <button type="button" class="btn btn-outline-dark" data-type="factoid">
+                Factoids
+              </button>
+            </div>
+            <div class="filter-sidebar" id="filter-sidebar">
+              <!-- Names Filter -->
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+                  Names
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="names" title="Clear names filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="names-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="names-filter">
+                  <div class="filter-control">
+                    <label for="name-search">Search by name:</label>
+                    <input type="text" id="name-search" class="form-control form-control-sm"
+                      placeholder="Enter name..." />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Gender Filter -->
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+                  Gender
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="gender" title="Clear gender filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="gender-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="gender-filter">
+                  <div class="radio-group">
+                    <label>
+                      <input class="me-1" type="radio" name="gender" value="" checked />
+                      All genders
+                    </label>
+                    <label>
+                      <input class="me-1" type="radio" name="gender" value="men" />
+                      Men
+                    </label>
+                    <label>
+                      <input class="me-1" type="radio" name="gender" value="women" />
+                      Women
+                    </label>
+                    <label>
+                      <input class="me-1" type="radio" name="gender" value="eunuchs" />
+                      Eunuchs
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Events Filter -->
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+                  Events
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="events" title="Clear events filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="events-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="events-filter">
+                  <div class="filter-control">
+                    <label for="event-type">Event type:</label>
+                    <select id="event-type" class="form-select form-select-sm">
+                      <option value="">All events</option>
+                      <option value="birth">Birth</option>
+                      <option value="death">Death</option>
+                      <option value="ordination">Ordination</option>
+                      <option value="appointment">Appointment</option>
+                      <option value="marriage">Marriage</option>
+                      <option value="education">Education</option>
+                    </select>
+                  </div>
+                  <div class="checkbox-group">
+                    <label>
+                      <input class="me-1" type="checkbox" value="baptism" />
+                      Baptism
+                    </label>
+                    <label>
+                      <input class="me-1" type="checkbox" value="consecration" />
+                      Consecration
+                    </label>
+                    <label>
+                      <input class="me-1" type="checkbox" value="pilgrimage" />
+                      Pilgrimage
+                    </label>
+                    <label>
+                      <input class="me-1" type="checkbox" value="exile" />
+                      Exile
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Relationships Filter -->
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+                  Relationships
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="relationships" title="Clear relationships filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="relationships-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="relationships-filter">
+                  <div class="filter-control">
+                    <label for="relationship-multiselect">Select relationships:</label>
+                    <div class="multiselect-container">
+                      <input type="text" id="relationship-search" class="form-control form-control-sm"
+                        placeholder="Type to search relationships..." autocomplete="off" />
+                      <div class="multiselect-dropdown" id="relationship-dropdown">
+                        <!-- Options will be populated by JavaScript -->
+                      </div>
+                      <div class="selected-items" id="relationship-selected">
+                        <!-- Selected items will appear here -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dates Filter -->
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+                  Dates
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="dates" title="Clear dates filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="dates-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="dates-filter">
+                  <div class="filter-control">
+                    <label>Year range:</label>
+                    <div class="year-range">
+                      <input type="number" id="year-from" class="form-control form-control-sm" placeholder="From year"
+                        min="1" max="2000" step="1" />
+                      <span>to</span>
+                      <input type="number" id="year-to" class="form-control form-control-sm" placeholder="To year"
+                        min="1" max="2000" step="1" />
+                    </div>
+                  </div>
+                  <div class="filter-control">
+                    <label for="year-range-slider">Year range slider:</label>
+                    <div class="dual-range-slider">
+                      <input type="range" id="year-min-slider" class="form-range mb-2" min="1" max="2000" value="1"
+                        step="1" />
+                      <div class="range-values">
+                        <span id="year-min-display">1</span>
+                        <span>-</span>
+                        <span id="year-max-display">2000</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-control">
+                    <label for="century">Century:</label>
+                    <select id="century" class="form-select form-select-sm">
+                      <option value="">All centuries</option>
+                      <option value="1">1st century</option>
+                      <option value="2">2nd century</option>
+                      <option value="3">3rd century</option>
+                      <option value="4">4th century</option>
+                      <option value="5">5th century</option>
+                      <option value="6">6th century</option>
+                      <option value="7">7th century</option>
+                      <option value="8">8th century</option>
+                      <option value="9">9th century</option>
+                      <option value="10">10th century</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Uncertainty Filter -->
+              <div class="filter-section">
+                <div class="filter-title d-flex justify-content-between align-items-center">
+                  Uncertainty
+                  <div class="d-flex gap-2">
+                    <button class="clear-section-btn" data-section="uncertainty" title="Clear uncertainty filter">
+                      <span>×</span>
+                    </button>
+                    <button class="collapse-toggle" data-target="uncertainty-filter">
+                      <span>−</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="filter-content" id="uncertainty-filter">
+                  <div class="filter-control">
+                    <label for="uncertainty-level">Certainty level:</label>
+                    <input type="range" id="uncertainty-level" class="form-range uncertainty-slider" min="0" max="100"
+                      value="0" step="10" />
+                    <div class="uncertainty-value">
+                      <span id="uncertainty-display">0% uncertain or higher</span>
+                    </div>
+                  </div>
+                  <div class="checkbox-group">
+                    <label>
+                      <input class="me-1" type="checkbox" value="exclude-uncertain" />
+                      Exclude uncertain data
+                    </label>
+                    <label>
+                      <input class="me-1" type="checkbox" value="uncertain-only" />
+                      Show only uncertain data
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="flex-grow-1">
-            <div class="card ms-5 p-3 border-1 flex-grow-1">
-              <div class="d-inline-flex gap-4" id="browse--options">
-                <button type="button" class="btn btn-outline-dark w-100 active" data-filter="name">
+            <div class="card ms-5 p-3 flex-grow-1 shadow-lg border-0">
+              <!-- <div class="d-inline-flex gap-2" id="browse--options">
+                <button data-category="person" type="button" class="btn btn-outline-dark w-100 active" data-filter="name">
                   <span>Names</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -102,7 +641,7 @@
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-                <button type="button" class="btn btn-outline-dark w-100" data-filter="gender">
+                <button  data-category="person" type="button" class="btn btn-outline-dark w-100" data-filter="gender">
                   <span>Gender</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -115,7 +654,7 @@
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-                <button type="button" class="btn btn-outline-dark w-100" data-filter="events">
+                <button data-category="factoid" type="button" class="btn btn-outline-dark w-100" data-filter="events">
                   <span>Events</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -128,7 +667,20 @@
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-                <button type="button" class="btn btn-outline-dark w-100" disabled>
+                <button data-category="factoid" type="button" class="btn btn-outline-dark w-100" data-filter="relationship">
+                  <span>Relationships</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="open lucide lucide-chevron-up-icon lucide-chevron-up">
+                    <path d="m18 15-6-6-6 6" />
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="close lucide lucide-chevron-down-icon lucide-chevron-down">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+                <button data-category="person" type="button" class="btn btn-outline-dark w-100" disabled>
                   <span>Dates</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -154,12 +706,13 @@
                     <path d="m6 9 6 6 6-6" />
                   </svg>
                 </button>
-              </div>
-              <div id="browse--letter-filter" class="d-inline-flex gap-2 mt-3"></div>
-              <hr />
+              </div> -->
+              <!-- <div id="browse--letter-filter" class="d-inline-flex gap-2 mt-3"></div> -->
+              <hr class="d-none" />
               <div id="browse--items" class="grid-col-5 gap-3"></div>
+              <div class="pagination-dots d-none"></div>
             </div>
-            <div class="ms-5 mt-3" id="browse--items-container"></div>
+            <div class="ms-5 mt-3 p-3" id="browse--items-container"></div>
           </div>
         </div>
       </div>
@@ -168,415 +721,243 @@
 </body>
 <script type="text/javascript" src="/resources/js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="/resources/js/srophe.js"></script>
+<script type="module" src="/resources/js/state-manager.js"></script>
 <script type="module">
-  //  types, selectedType, selectedFilter, people, persons, factoids
+  // Constants
+  const ITEMS_PER_PAGE = 15;
+  const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
+  const relationshipsURIs = [
+    "http://syriaca.org/taxonomy/acquaintance-of",
+    "http://syriaca.org/taxonomy/alliance-with",
+    "http://syriaca.org/taxonomy/baptized",
+    "http://syriaca.org/taxonomy/bishop-over",
+    "http://syriaca.org/taxonomy/bishop-over-bishop",
+    "http://syriaca.org/taxonomy/bishop-over-clergy",
+    "http://syriaca.org/taxonomy/bishop-over-monk",
+    "http://syriaca.org/taxonomy/bringer-of-legal-charges-against",
+    "http://syriaca.org/taxonomy/carrier-of-letter-from",
+    "http://syriaca.org/taxonomy/carrier-of-letter-to",
+    "http://syriaca.org/taxonomy/child-of",
+    "http://syriaca.org/taxonomy/child-of-sibling-of",
+    "http://syriaca.org/taxonomy/cited",
+    "http://syriaca.org/taxonomy/cited-negatively",
+    "http://syriaca.org/taxonomy/cited-positively",
+    "http://syriaca.org/taxonomy/co-authors",
+    "http://syriaca.org/taxonomy/command-over",
+    "http://syriaca.org/taxonomy/commemorates",
+    "http://syriaca.org/taxonomy/commune-together",
+    "http://syriaca.org/taxonomy/cousin-of",
+    "http://syriaca.org/taxonomy/descendent-of",
+    "http://syriaca.org/taxonomy/enmity-for",
+    "http://syriaca.org/taxonomy/fellow-clergy",
+    "http://syriaca.org/taxonomy/fellow-monastics",
+    "http://syriaca.org/taxonomy/follower-of",
+    "http://syriaca.org/taxonomy/friendship-for",
+    "http://syriaca.org/taxonomy/grandparent-of",
+    "http://syriaca.org/taxonomy/house-slave-of",
+    "http://syriaca.org/taxonomy/household-of",
+    "http://syriaca.org/taxonomy/judge-of",
+    "http://syriaca.org/taxonomy/kin-of",
+    "http://syriaca.org/taxonomy/member-of-group",
+    "http://syriaca.org/taxonomy/monastic-head-over",
+    "http://syriaca.org/taxonomy/ordained",
+    "http://syriaca.org/taxonomy/parent-of",
+    "http://syriaca.org/taxonomy/patron-of",
+    "http://syriaca.org/taxonomy/professional-relationship",
+    "http://syriaca.org/taxonomy/proximate-event",
+    "http://syriaca.org/taxonomy/refuter-of",
+    "http://syriaca.org/taxonomy/same-event",
+    "http://syriaca.org/taxonomy/sender-of-letter-to",
+    "http://syriaca.org/taxonomy/sibling-of",
+    "http://syriaca.org/taxonomy/sibling-of-parent-of",
+    "http://syriaca.org/taxonomy/slave-of",
+    "http://syriaca.org/taxonomy/spouse-of",
+    "http://syriaca.org/taxonomy/student-of",
+    "http://syriaca.org/taxonomy/submitter-of-legal-petition-to",
+    "http://syriaca.org/taxonomy/submitter-of-petition-to"
+  ];
+
+  // State
+  let currentPage = 1;
+  let totalPages = 1;
+  let allItems = [];
+
+  // Imports
   import persons from "../types/persons.json" with { type: 'json' };
   import factoids from "../types/factoids.json" with { type: 'json' };
   import personNamesData from "../types/factoid/names.json" with { type: 'json' };
+  import { getEventKeywords, getRelationshipOptions, fetchPeopleRelatedToKeyword, renderKeywordList } from './dev-neptune-queries/menuqueries.js';
 
-  const types = {
-    person: "Persons",
-    factoid: "Factoids",
+  // Data
+  let people = persons.results?.bindings;
+  let personNames = personNamesData.results?.bindings;
+
+  // DOM Elements (cached)
+  const elements = {
+    browseOptions: document.getElementById("browse--options"),
+    browseTypes: document.getElementById("browse--types"),
+    browseItems: document.getElementById("browse--items"),
+    browseLetterFilter: document.getElementById("browse--letter-filter"),
+    paginationDots: document.querySelector('.pagination-dots'),
+    sidebar: document.getElementById('filter-sidebar'),
+    nameSearch: document.getElementById('name-search'),
+    filterInputs: {
+      yearFrom: document.getElementById('year-from'),
+      yearTo: document.getElementById('year-to'),
+      century: document.getElementById('century'),
+      yearMinSlider: document.getElementById('year-min-slider'),
+      yearMaxSlider: document.getElementById('year-max-slider'),
+      yearMinDisplay: document.getElementById('year-min-display'),
+      yearMaxDisplay: document.getElementById('year-max-display'),
+      uncertaintySlider: document.getElementById('uncertainty-level'),
+      uncertaintyDisplay: document.getElementById('uncertainty-display')
+    }
   };
 
-  let selectedType = "person";
-  let selectedFilter = "source";
-
-  let people = persons.results?.bindings?.slice(0, 20);
-  let personNames = personNamesData.results?.bindings?.slice(0, 20);
-
-  const type =
-    new URLSearchParams(window.location.search).get("type") ?? "person";
-  const filter =
-    new URLSearchParams(window.location.search).get("filter") ?? "name";
-  const letter =
-    new URLSearchParams(window.location.search).get("letter") ?? "";
-  const id = new URLSearchParams(window.location.search).get("id") ?? "";
-
-  const browseOptions = document.getElementById("browse--options");
-  const browseTypes = document.getElementById("browse--types");
-  const browseItems = document.getElementById("browse--items");
-  const browseLetterFilter = document.getElementById("browse--letter-filter");
-
-  browseTypes?.querySelectorAll("button").forEach((button) => {
-    if (button.dataset.type === type) {
-      button.classList.add("active");
-    } else {
-      button.classList.remove("active");
-    }
-  });
-
-  browseOptions?.querySelectorAll("button").forEach((button) => {
-    if (button.dataset.filter === filter) {
-      button.classList.add("active");
-    } else {
-      button.classList.remove("active");
-    }
-  });
-
-  browseItems?.querySelectorAll("button").forEach((button) => {
-    if (button.dataset.id === id) {
-      button.classList.add("border-neutral");
-      button.classList.remove("border-transparent");
-    } else {
-      button.classList.remove("border-neutral");
-      button.classList.add("border-transparent");
-    }
-  });
-
-  browseLetterFilter?.querySelectorAll("button").forEach((button) => {
-    if (button.dataset.letter === letter) {
-      button.classList.add("active");
-    } else {
-      button.classList.remove(
-        "active"
-      );
-    }
-  });
-
-  browseLetterFilter?.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    document.getElementById("browse--items-container").innerHTML = null;
-
-    if (event.target.tagName === "BUTTON") {
-      const selectedButton = event.target;
-
-      browseLetterFilter.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("remove");
-      });
-      selectedButton.classList.add("active");
-
-      if (selectedButton.dataset.letter) {
-        updateParams({ letter: selectedButton.dataset.letter });
-      }
-      if (selectedButton.dataset.gender) {
-        updateParams({ gender: selectedButton.dataset.gender });
-      }
-    }
-  });
-
-  browseOptions?.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    if (
-      event.target.tagName === "BUTTON" ||
-      event.target.parentElement.tagName === "BUTTON"
-    ) {
-      const selectedButton =
-        event.target.tagName === "BUTTON"
-          ? event.target
-          : event.target.parentElement;
-
-      browseOptions
-        .querySelectorAll("button, button:not(.selected)")
-        .forEach((button) => {
-          button.classList.add("border-neutral-content/50");
-          button.classList.remove("border");
-          button.classList.remove("border-2");
-          button.classList.remove("border-neutral");
-          button.classList.remove("active");
-        });
-      if (selectedButton.classList.contains("active")) {
-        selectedButton.classList.remove("active");
-      } else {
-        selectedButton.classList.remove("border-neutral-content/50");
-        selectedButton.classList.add("border");
-        selectedButton.classList.add("border-2");
-        selectedButton.classList.add("border-neutral");
-        selectedButton.classList.add("active");
-      }
-
-      document.getElementById("browse--items-container").innerHTML = null;
-
-      updateParams({ filter: selectedButton.dataset.filter });
-    }
-  });
-
-  browseItems?.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    if (event.target.tagName === "BUTTON") {
-      const selectedButton = event.target;
-
-      browseItems.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("active");
-      });
-      selectedButton.classList.add("active");
-
-      updateParams({ person: selectedButton.dataset.name });
-    }
-  });
-
-  browseTypes?.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    if (event.target.tagName === "BUTTON") {
-      const selectedButton = event.target;
-
-      browseTypes.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("active");
-      });
-
-      selectedButton.classList.add("active");
-
-      updateParams({ type: selectedButton.dataset.type });
-    }
-  });
-
-  navigation.addEventListener("navigate", (e) => {
-    const params = new URL(e.destination.url).searchParams;
-    updateData(Object.fromEntries(params), e);
-  });
-
-  const updateData = (params, event) => {
-    const url = new URL(event?.destination?.url || document.location.href);
-
-    let people = [];
-    let factoids = [];
-
-    if (params.type === "factoid") {
-
-      document.getElementById("browse--letter-filter").innerHTML = Array.from(
-        "abcdefghijklmnopqrstuvwxyz"
-      )
-        .map((item) => {
-          if (item === params.letter) {
-            return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase active">${item}</button>`;
-          }
-          return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase">${item}</button>`;
-        })
-        .join("");
-
-      if (Object.keys(params).includes("letter")) {
-        people = [
-          ...new Set(
-            personNamesData.results.bindings
-              .filter((person) => {
-                const name = person.name.value.toLowerCase();
-                return name.startsWith(params.letter.toLowerCase());
-              })
-              .map((person) => {
-                return person.name.value;
-              })
-          ),
-        ].slice(0, 25);
-
-        document.getElementById("browse--items").innerHTML = people
-          .map((person) => {
-            if (
-              event?.destination?.url &&
-              new URL(event?.destination?.url).searchParams.get("person") ===
-              person
-            ) {
-              return `<button data-name="${person}" class="btn btn-outline p-2 px-3 active">${person}</button>`;
-            }
-            return `<button data-name="${person}" class="btn btn-outline p-2 px-3">${person}</button>`;
-          })
-          .join("");
-        document.getElementById(
-          "browse--items"
-        ).previousElementSibling.style.display = null;
-      }
-
-      if (Object.keys(params).includes("gender")) {
-        people = [
-          ...new Set(
-            personNamesData.results.bindings
-              .filter((person) => {
-                const gender = person?.sex?.value.toLowerCase();
-                if (gender === params.gender.toLowerCase()) {
-                  return person.name.value;
-                }
-              })
-              .map((person) => {
-                return person.name.value;
-              })
-          ),
-        ].slice(0, 25);
-      }
-
-      if (url.searchParams.get("person") || url.searchParams.get("gender")) {
-        const personName = new URL(url).searchParams.get("person");
-
-        const genederValue = new URL(url).searchParams.get("gender");
-
-        if (personName) {
-          people = personNamesData.results.bindings.filter((person) => {
-            return person.name.value === personName;
-          });
-        }
-
-        if (genederValue) {
-          people = personNamesData.results.bindings.filter((person) => {
-            return person?.sex?.value === genederValue;
-          });
-        }
-
-        document.getElementById("browse--items-container").innerHTML = people
-          .map((person) => {
-            const captured = person?.factoid?.value.match(/\/(?<id>(\d+)-(\d+))$/);
-            const path = Object.values(captured?.groups).join("/");
-
-            const prefix = location.hostname === "localhost" || location.hostname === "127.0.0.1" ? 'data/' : '';
-
-            return `<div class="card mb-3 p-3">
-            <div class="card-body">
-              <a href="/${prefix}${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
-              <small>${person.description.value}</small>
-            </div>
-          </div>`;
-          })
-          .join("");
-      }
-    } else {
-      if (Object.keys(params).includes("letter")) {
-        people = [
-          ...new Set(
-            persons.results.bindings
-              .filter((person) => {
-                const name = person.name.value.toLowerCase();
-                return name.startsWith(params.letter.toLowerCase());
-              })
-              .map((person) => {
-                return person.name.value;
-              })
-          ),
-        ].slice(0, 25);
-
-        document.getElementById("browse--items").innerHTML = people
-          .map((person) => {
-            if (
-              event?.destination?.url &&
-              new URL(event?.destination?.url).searchParams.get("person") ===
-              person
-            ) {
-              return `<button data-name="${person}" class="btn btn-outline p-2 px-3 active">${person}</button>`;
-            }
-            return `<button data-name="${person}" class="btn btn-outline p-2 px-3">${person}</button>`;
-          })
-          .join("");
-        document.getElementById(
-          "browse--items"
-        ).previousElementSibling.style.display = null;
-      }
-
-      if (Object.keys(params).includes("gender")) {
-        people = [
-          ...new Set(
-            persons.results.bindings
-              .filter((person) => {
-                const gender = person?.sex?.value.toLowerCase();
-                if (gender === params.gender.toLowerCase()) {
-                  return person.name.value;
-                }
-              })
-              .map((person) => {
-                return person.name.value;
-              })
-          ),
-        ].slice(0, 25);
-      }
-
-      if (url.searchParams.get("person") || url.searchParams.get("gender")) {
-        const personName = new URL(url).searchParams.get("person");
-
-        const genederValue = new URL(url).searchParams.get("gender");
-
-        if (personName) {
-          people = persons.results.bindings.filter((person) => {
-            return person.name.value === personName;
-          });
-        }
-
-        if (genederValue) {
-          people = persons.results.bindings.filter((person) => {
-            return person?.sex?.value === genederValue;
-          });
-        }
-
-        document.getElementById("browse--items-container").innerHTML = people
-          .map((person) => {
-            const captured = person.uri.value.match(/\/.+\/(?<category>.+)\/(?<id>\d+)$/);
-            const path = Object.values(captured?.groups).join("/");
-
-            return `<div class="card mb-3 p-3">
-              <div class="card-body">
-                <a href="/aggregate/${path}" class="cursor-pointer py-3 border-2 border-transparent rounded-sm">${person.name.value}</a>
-                <small>${person.desc.value}</small>
-              </div>
-            </div>`;
-          })
-          .join("");
-      }
-    }
-
-    if (
-      !Object.keys(params).includes("letter") &&
-      !Object.keys(params).includes("gender")
-    ) {
-      document.getElementById("browse--items").innerHTML = null;
-      document.getElementById(
-        "browse--items"
-      ).previousElementSibling.style.display = "none";
-    }
-
-    if (params.filter === "gender") {
-      document.getElementById("browse--letter-filter").innerHTML = [
-        ["eunuchs", "Eunuchs"],
-        ["men", "Men"],
-        ["women", "Women"],
-      ]
-        .map(([key, value]) => {
-          if (key === params.gender) {
-            return `<button data-gender="${key}" class="btn btn-outline-dark p-1 active">${value}</button>`;
-          }
-          return `<button data-gender="${key}" class="btn btn-outline-dark p-1">${value}</button>`;
-        })
-        .join("");
-    } else if (params.filter === "name" || params.filter === "events") {
-      document.getElementById("browse--letter-filter").innerHTML = Array.from(
-        "abcdefghijklmnopqrstuvwxyz"
-      )
-        .map((item) => {
-          if (item === params.letter) {
-            return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase active">${item}</button>`;
-          }
-          return `<button data-letter="${item}" class="btn btn-outline-dark letter-btn p-1 text-uppercase">${item}</button>`;
-        })
-        .join("");
-    }
-
-    document.getElementById("browse--items-container").scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+  // Utility Functions
+  const debounce = (func, wait) => {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
   };
 
+  const getUrlParams = () => Object.fromEntries(new URLSearchParams(window.location.search));
+
+  const updateUrlParams = (params) => {
+    const currentParams = new URLSearchParams(window.location.search);
+    Object.entries(params).forEach(([key, value]) => {
+      if (value) currentParams.set(key, value);
+      else currentParams.delete(key);
+    });
+    window.history.pushState("", "", `?${currentParams.toString()}`);
+  };
+
+  // Data Fetching
+  const fetchData = async (query) => {
+    const encodedQuery = encodeURIComponent(query);
+    const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodedQuery}`, {
+      headers: { Accept: 'application/sparql-results+json' }
+    });
+    return res.json();
+  };
+
+  const renderList = async () => {
+    const data = await fetchData(getRelationshipOptions());
+    return data.results.bindings.filter(item => relationshipsURIs.includes(item.subject.value));
+  };
+
+  const renderEventList = async () => {
+    const data = await fetchData(getEventKeywords());
+    return data.results.bindings.filter(item => relationshipsURIs.includes(item.keyword.value));
+  };
+
+  // UI State Management
+  const setActiveButton = (container, selector, activeValue) => {
+    container?.querySelectorAll("button").forEach(button => {
+      const dataValue = button.dataset[selector];
+      button.classList.toggle("active", dataValue === activeValue);
+    });
+  };
+
+  const clearDisplay = () => {
+    elements.browseItems.innerHTML = '';
+    const hrElement = elements.browseItems.previousElementSibling;
+    if (hrElement) hrElement.classList.add('d-none');
+    elements.paginationDots.classList.add('d-none');
+  };
+
+  // Pagination
+  const createPaginationDots = (totalItems) => {
+    if (!elements.browseItems) return;
+
+    const existingPagination = elements.browseItems.parentNode.querySelector('.pagination-dots');
+    if (existingPagination) existingPagination.innerHTML = '';
+
+    if (totalItems <= ITEMS_PER_PAGE) {
+      totalPages = 1;
+      currentPage = 1;
+      elements.paginationDots.classList.add('d-none');
+      return;
+    }
+
+    elements.paginationDots.classList.remove('d-none');
+    totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const dot = document.createElement('button');
+      dot.className = `pagination-dot ${i === currentPage ? 'active' : ''}`;
+      dot.setAttribute('data-page', i);
+      dot.setAttribute('aria-label', `Go to page ${i}`);
+      elements.paginationDots.appendChild(dot);
+    }
+  };
+
+  const displayPageItems = (items) => {
+    if (!elements.browseItems) return;
+
+    elements.browseItems.innerHTML = '';
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    const pageItems = items.slice(startIndex, endIndex);
+
+    elements.browseItems.innerHTML = pageItems
+      .map(item => `<button data-name="${item}" class="btn btn-outline p-2 px-3">${item}</button>`)
+      .join("");
+
+    elements.browseItems.previousElementSibling.classList.remove('d-none');
+  };
+
+  const goToPage = (page) => {
+    if (page < 1 || page > totalPages) return;
+
+    currentPage = page;
+
+    document.querySelectorAll('.pagination-dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index + 1 === currentPage);
+    });
+
+    updateParams({ currentPage: page });
+  };
+
+  // Main update functions
   const updateParams = (params) => {
     const trigger = Object.keys(params)[0];
     let currentParams = new URLSearchParams(window.location.search);
 
-    if (trigger === "letter") {
-      currentParams.delete("person");
-    }
+    const paramActions = {
+      letter: () => {
+        currentParams.delete("person");
+        currentParams.delete("nameSearch");
+        if (!currentParams.get("relationship")) currentParams.set("currentPage", 1);
+      },
+      filter: () => {
+        ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+        if (elements.nameSearch) elements.nameSearch.value = '';
+      },
+      type: () => {
+        ["person", "letter", "gender", "nameSearch"].forEach(p => currentParams.delete(p));
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+        if (elements.nameSearch) elements.nameSearch.value = '';
+      },
+      nameSearch: () => {
+        ["letter", "gender"].forEach(p => currentParams.delete(p));
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      },
+      gender: () => {
+        ["nameSearch", "letter"].forEach(p => currentParams.delete(p));
+        if (elements.nameSearch) elements.nameSearch.value = '';
+        elements.browseLetterFilter.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+      }
+    };
 
-    if (trigger === "filter") {
-      currentParams.delete("person");
-      currentParams.delete("letter");
-      currentParams.delete("gender");
-
-      browseLetterFilter.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("active");
-      });
-    }
-
-    if (trigger === "type") {
-      currentParams.delete("person");
-      currentParams.delete("letter");
-      currentParams.delete("gender");
-
-      browseLetterFilter.querySelectorAll("button").forEach((button) => {
-        button.classList.remove("active");
-      });
-    }
+    paramActions[trigger]?.();
 
     const newParams = new URLSearchParams({
       ...Object.fromEntries(currentParams),
@@ -586,12 +967,556 @@
     window.history.pushState("", "", `?${newParams.toString()}`);
   };
 
-  const init = () => {
-    const url = new URL(document.location.href);
-    updateData(Object.fromEntries(url.searchParams));
+  const handleDataUpdate = (params, event) => {
+    if (params.nameSearch) {
+      if (elements.nameSearch) elements.nameSearch.value = params.nameSearch;
+      applyNameFilter(params.nameSearch);
+      return;
+    }
+
+    // Sync sidebar gender filter
+    const genderRadio = document.querySelector(`input[name="gender"][value="${params.gender || ''}"]`);
+    if (genderRadio) genderRadio.checked = true;
+
+    // Clear name search when other filters are applied
+    if ((params.letter || params.gender || params.filter || params.type) && !params.nameSearch) {
+      if (elements.nameSearch) elements.nameSearch.value = '';
+    }
   };
 
-  init();
+  // Relationship options data
+  const relationshipOptions = [
+    { value: 'acquaintance-of', label: 'Acquaintance of' },
+    { value: 'alliance-with', label: 'Alliance with' },
+    { value: 'baptized', label: 'Baptized' },
+    { value: 'bishop-over', label: 'Bishop over' },
+    { value: 'bishop-over-bishop', label: 'Bishop over bishop' },
+    { value: 'bishop-over-clergy', label: 'Bishop over clergy' },
+    { value: 'bishop-over-monk', label: 'Bishop over monk' },
+    { value: 'bringer-of-legal-charges-against', label: 'Bringer of legal charges against' },
+    { value: 'carrier-of-letter-from', label: 'Carrier of letter from' },
+    { value: 'carrier-of-letter-to', label: 'Carrier of letter to' },
+    { value: 'child-of', label: 'Child of' },
+    { value: 'child-of-sibling-of', label: 'Child of sibling of' },
+    { value: 'cited', label: 'Cited' },
+    { value: 'cited-negatively', label: 'Cited negatively' },
+    { value: 'cited-positively', label: 'Cited positively' },
+    { value: 'co-authors', label: 'Co-authors' },
+    { value: 'command-over', label: 'Command over' },
+    { value: 'commemorates', label: 'Commemorates' },
+    { value: 'commune-together', label: 'Commune together' },
+    { value: 'cousin-of', label: 'Cousin of' },
+    { value: 'descendent-of', label: 'Descendent of' },
+    { value: 'enmity-for', label: 'Enmity for' },
+    { value: 'fellow-clergy', label: 'Fellow clergy' },
+    { value: 'fellow-monastics', label: 'Fellow monastics' },
+    { value: 'follower-of', label: 'Follower of' },
+    { value: 'friendship-for', label: 'Friendship for' },
+    { value: 'grandparent-of', label: 'Grandparent of' },
+    { value: 'house-slave-of', label: 'House slave of' },
+    { value: 'household-of', label: 'Household of' },
+    { value: 'judge-of', label: 'Judge of' },
+    { value: 'kin-of', label: 'Kin of' },
+    { value: 'member-of-group', label: 'Member of group' },
+    { value: 'monastic-head-over', label: 'Monastic head over' },
+    { value: 'ordained', label: 'Ordained' },
+    { value: 'parent-of', label: 'Parent of' },
+    { value: 'patron-of', label: 'Patron of' },
+    { value: 'professional-relationship', label: 'Professional relationship' },
+    { value: 'proximate-event', label: 'Proximate event' },
+    { value: 'refuter-of', label: 'Refuter of' },
+    { value: 'same-event', label: 'Same event' },
+    { value: 'sender-of-letter-to', label: 'Sender of letter to' },
+    { value: 'sibling-of', label: 'Sibling of' },
+    { value: 'sibling-of-parent-of', label: 'Sibling of parent of' },
+    { value: 'slave-of', label: 'Slave of' },
+    { value: 'spouse-of', label: 'Spouse of' },
+    { value: 'student-of', label: 'Student of' },
+    { value: 'submitter-of-legal-petition-to', label: 'Submitter of legal petition to' },
+    { value: 'submitter-of-petition-to', label: 'Submitter of petition to' }
+  ];
+
+  // Multiselect functionality
+  class MultiselectDropdown {
+    constructor(containerId, options, onSelectionChange) {
+      this.container = document.getElementById(containerId);
+      this.searchInput = this.container.querySelector('#relationship-search');
+      this.dropdown = this.container.querySelector('#relationship-dropdown');
+      this.selectedContainer = this.container.querySelector('#relationship-selected');
+      this.options = options;
+      this.selectedValues = new Set();
+      this.onSelectionChange = onSelectionChange;
+
+      this.init();
+    }
+
+    init() {
+      this.renderOptions();
+      this.bindEvents();
+    }
+
+    renderOptions(filter = '') {
+      const filteredOptions = this.options.filter(option =>
+        option.label.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      this.dropdown.innerHTML = filteredOptions
+        .map(option => `
+            <div class="multiselect-option ${this.selectedValues.has(option.value) ? 'selected' : ''}"
+                 data-value="${option.value}">
+              ${option.label}
+            </div>
+          `).join('');
+    }
+
+    bindEvents() {
+      // Search input events
+      this.searchInput.addEventListener('input', (e) => {
+        const filter = e.target.value;
+        this.renderOptions(filter);
+        this.showDropdown();
+      });
+
+      this.searchInput.addEventListener('focus', () => {
+        this.showDropdown();
+      });
+
+      // Dropdown option clicks
+      this.dropdown.addEventListener('click', (e) => {
+        if (e.target.classList.contains('multiselect-option')) {
+          const value = e.target.dataset.value;
+          this.toggleSelection(value);
+        }
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!this.container.contains(e.target)) {
+          this.hideDropdown();
+        }
+      });
+
+      // Keyboard navigation
+      this.searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          this.hideDropdown();
+        }
+      });
+    }
+
+    toggleSelection(value) {
+      if (this.selectedValues.has(value)) {
+        this.selectedValues.delete(value);
+      } else {
+        this.selectedValues.add(value);
+      }
+
+      this.renderSelectedItems();
+      this.renderOptions(this.searchInput.value);
+      this.onSelectionChange(Array.from(this.selectedValues));
+    }
+
+    renderSelectedItems() {
+      const selectedOptions = this.options.filter(option =>
+        this.selectedValues.has(option.value)
+      );
+
+      this.selectedContainer.innerHTML = selectedOptions
+        .map(option => `
+            <div class="selected-item" data-value="${option.value}">
+              ${option.label}
+              <button type="button" class="remove-btn" data-value="${option.value}">×</button>
+            </div>
+          `).join('');
+
+      // Bind remove button events
+      this.selectedContainer.querySelectorAll('.remove-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const value = e.target.dataset.value;
+          this.toggleSelection(value);
+        });
+      });
+    }
+
+    showDropdown() {
+      this.dropdown.classList.add('show');
+    }
+
+    hideDropdown() {
+      this.dropdown.classList.remove('show');
+    }
+
+    clear() {
+      this.selectedValues.clear();
+      this.renderSelectedItems();
+      this.renderOptions();
+      this.searchInput.value = '';
+      this.onSelectionChange([]);
+    }
+
+    setSelection(values) {
+      this.selectedValues = new Set(values);
+      this.renderSelectedItems();
+      this.renderOptions();
+    }
+  }
+
+  // Update the filter configurations
+  const filterConfigs = {
+    names: {
+      controls: ['name-search'],
+      urlParams: ['nameSearch', 'nameType'],
+      onClear: () => {
+        if (elements.nameSearch) {
+          elements.nameSearch.value = '';
+          handleNameSearch();
+        }
+      }
+    },
+    gender: {
+      controls: ['input[name="gender"][value=""]'],
+      urlParams: ['gender'],
+      onClear: () => {
+        const allGendersRadio = document.querySelector('input[name="gender"][value=""]');
+        if (allGendersRadio) {
+          allGendersRadio.checked = true;
+          allGendersRadio.dispatchEvent(new Event('change'));
+        }
+      }
+    },
+    events: {
+      controls: ['event-type', '#events-filter input[type="checkbox"]'],
+      urlParams: ['events', 'eventType'],
+      onClear: () => {
+        const eventTypeSelect = document.getElementById('event-type');
+        if (eventTypeSelect) eventTypeSelect.value = '';
+        document.querySelectorAll('#events-filter input[type="checkbox"]').forEach(cb => cb.checked = false);
+      }
+    },
+    relationships: {
+      controls: ['relationship-multiselect'],
+      urlParams: ['relationships'],
+      onClear: () => {
+        if (window.relationshipMultiselect) {
+          window.relationshipMultiselect.clear();
+        }
+      }
+    },
+    dates: {
+      controls: Object.keys(elements.filterInputs).filter(key => key.includes('year') || key === 'century'),
+      urlParams: ['yearFrom', 'yearTo', 'century'],
+      onClear: () => {
+        const { yearFrom, yearTo, century, yearMinSlider, yearMaxSlider, yearMinDisplay, yearMaxDisplay } = elements.filterInputs;
+        [yearFrom, yearTo, century].forEach(el => el && (el.value = ''));
+        if (yearMinSlider) yearMinSlider.value = 1;
+        if (yearMaxSlider) yearMaxSlider.value = 2000;
+        if (yearMinDisplay) yearMinDisplay.textContent = '1';
+        if (yearMaxDisplay) yearMaxDisplay.textContent = '2000';
+      }
+    },
+    uncertainty: {
+      controls: ['uncertainty-level', '#uncertainty-filter input[type="checkbox"]'],
+      urlParams: ['uncertaintyLevel', 'uncertaintyOptions'],
+      onClear: () => {
+        const { uncertaintySlider, uncertaintyDisplay } = elements.filterInputs;
+        if (uncertaintySlider) uncertaintySlider.value = 0;
+        if (uncertaintyDisplay) uncertaintyDisplay.textContent = '0% uncertain or higher';
+        document.querySelectorAll('#uncertainty-filter input[type="checkbox"]').forEach(cb => cb.checked = false);
+      }
+    }
+  };
+
+  const clearFilterSection = (sectionName) => {
+    console.log(`Clearing ${sectionName} filter...`);
+
+    const config = filterConfigs[sectionName];
+    if (!config) return;
+
+    // Execute section-specific clear logic
+    config.onClear();
+
+    // Remove URL parameters
+    const params = new URLSearchParams(window.location.search);
+    config.urlParams.forEach(param => params.delete(param));
+    window.history.pushState("", "", `?${params.toString()}`);
+
+    console.log(`${sectionName} filter cleared successfully`);
+  };
+
+  // Search and Filter Logic
+  const applyNameFilter = (searchTerm) => {
+    const currentParams = getUrlParams();
+    const currentFilter = currentParams.filter || 'name';
+
+    let filteredItems = [];
+
+    if (currentFilter === 'name') {
+      filteredItems = personNames
+        .filter(person => person.name.value.toLowerCase().includes(searchTerm.toLowerCase()))
+        .map(person => person.name.value);
+    } else if (currentFilter === 'relationship') {
+      filteredItems = eventKeywordlist
+        .filter(item => item.label.value.toLowerCase().includes(searchTerm.toLowerCase()))
+        .map(item => item.label.value);
+    }
+
+    // Remove duplicates
+    filteredItems = [...new Set(filteredItems)];
+
+    allItems = filteredItems;
+    currentPage = 1;
+
+    createPaginationDots(filteredItems.length);
+    displayPageItems(filteredItems);
+
+    elements.browseItems.previousElementSibling.classList.remove('d-none');
+    updateParams({ nameSearch: searchTerm, currentPage: 1 });
+  };
+
+  const handleNameSearch = () => {
+    const nameSearchValue = elements.nameSearch?.value.trim();
+
+    if (nameSearchValue) {
+      applyNameFilter(nameSearchValue);
+    } else {
+      const currentParams = getUrlParams();
+      if (currentParams.letter || currentParams.gender) {
+        updateData(currentParams);
+      } else {
+        clearDisplay();
+      }
+    }
+  };
+
+  const handleGenderFilter = (event) => {
+    const selectedGender = event.target.value;
+
+    if (selectedGender) {
+      updateParams({ gender: selectedGender });
+    } else {
+      const currentParams = new URLSearchParams(window.location.search);
+      currentParams.delete('gender');
+      window.history.pushState("", "", `?${currentParams.toString()}`);
+      updateData(Object.fromEntries(currentParams));
+    }
+  };
+
+  // Year Slider Synchronization
+  const syncYearInputs = () => {
+    const { yearFrom, yearTo, yearMinSlider, yearMaxSlider, yearMinDisplay, yearMaxDisplay } = elements.filterInputs;
+    const century = elements.filterInputs.century;
+
+    if (!yearFrom || !yearTo || !yearMinSlider || !yearMaxSlider) return;
+
+    const syncToSlider = (input, slider, display, otherInput, otherSlider, otherDisplay, isMin) => {
+      input.addEventListener('input', (e) => {
+        const value = parseInt(e.target.value) || (isMin ? 1 : 2000);
+        slider.value = isMin ? Math.min(value, parseInt(otherSlider.value)) : Math.max(value, parseInt(otherSlider.value));
+        display.textContent = slider.value;
+
+        const otherValue = parseInt(otherInput.value);
+        if ((isMin && otherValue < value) || (!isMin && otherValue > value)) {
+          otherInput.value = value;
+          otherSlider.value = value;
+          otherDisplay.textContent = value;
+        }
+      });
+    };
+
+    const syncFromSlider = (slider, input, display, otherSlider, otherInput, otherDisplay, isMin) => {
+      slider.addEventListener('input', (e) => {
+        const value = parseInt(e.target.value);
+        input.value = value;
+        display.textContent = value;
+
+        const otherValue = parseInt(otherSlider.value);
+        if ((isMin && otherValue < value) || (!isMin && otherValue > value)) {
+          otherSlider.value = value;
+          otherInput.value = value;
+          otherDisplay.textContent = value;
+        }
+      });
+    };
+
+    syncToSlider(yearFrom, yearMinSlider, yearMinDisplay, yearTo, yearMaxSlider, yearMaxDisplay, true);
+    syncToSlider(yearTo, yearMaxSlider, yearMaxDisplay, yearFrom, yearMinSlider, yearMinDisplay, false);
+    syncFromSlider(yearMinSlider, yearFrom, yearMinDisplay, yearMaxSlider, yearTo, yearMaxDisplay, true);
+    syncFromSlider(yearMaxSlider, yearTo, yearMaxDisplay, yearMinSlider, yearFrom, yearMinDisplay, false);
+
+    if (century) {
+      century.addEventListener('change', (e) => {
+        const centuryValue = parseInt(e.target.value);
+        if (centuryValue) {
+          const startYear = (centuryValue - 1) * 100 + 1;
+          const endYear = centuryValue * 100;
+
+          [yearFrom.value, yearTo.value, yearMinSlider.value, yearMaxSlider.value] = [startYear, endYear, startYear, endYear];
+          yearMinDisplay.textContent = startYear;
+          yearMaxDisplay.textContent = endYear;
+        }
+      });
+    }
+  };
+
+  // Event Handlers
+  const createEventHandler = (container, handler) => {
+    container?.addEventListener("click", (event) => {
+      event.preventDefault();
+      handler(event);
+    });
+  };
+
+  // Initialize Event Listeners
+  const initEventListeners = () => {
+    // Pagination
+    elements.paginationDots?.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (event.target.classList.contains('pagination-dot')) {
+        const selectedPage = parseInt(event.target.dataset.page);
+        if (!isNaN(selectedPage)) goToPage(selectedPage);
+      }
+    });
+
+    // Filter sidebar
+    elements.sidebar?.addEventListener('click', (event) => {
+      // Collapse/expand
+      if (event.target.classList.contains('collapse-toggle')) {
+        const targetId = event.target.dataset.target;
+        const targetElement = document.getElementById(targetId);
+        const toggleButton = event.target;
+
+        if (targetElement) {
+          targetElement.classList.toggle('collapsed');
+          toggleButton.querySelector('span').textContent =
+            targetElement.classList.contains('collapsed') ? '+' : '−';
+        }
+      }
+
+      // Clear buttons
+      if (event.target.classList.contains('clear-section-btn') ||
+        event.target.parentElement.classList.contains('clear-section-btn') ||
+        (event.target.tagName === 'SPAN' && event.target.parentElement.classList.contains('clear-section-btn'))) {
+
+        let clearButton = event.target;
+        if (event.target.tagName === 'SPAN') {
+          clearButton = event.target.parentElement;
+        } else if (event.target.parentElement.classList.contains('clear-section-btn')) {
+          clearButton = event.target.parentElement;
+        }
+
+        const sectionName = clearButton.dataset.section;
+        if (sectionName) {
+          event.preventDefault();
+          event.stopPropagation();
+          clearFilterSection(sectionName);
+        }
+      }
+    });
+
+    // Uncertainty slider
+    elements.filterInputs.uncertaintySlider?.addEventListener('input', (event) => {
+      const value = event.target.value;
+      elements.filterInputs.uncertaintyDisplay.textContent = `${value}% uncertain or higher`;
+    });
+
+    // Name search
+    elements.nameSearch?.addEventListener('input', debounce(handleNameSearch, 300));
+
+    // Gender filter
+    document.querySelectorAll('input[name="gender"]').forEach(radio => {
+      radio.addEventListener('change', handleGenderFilter);
+    });
+
+    // Main browse event handlers
+    createEventHandler(elements.browseLetterFilter, (event) => {
+      if (event.target.tagName === "BUTTON") {
+        document.getElementById("browse--items-container").innerHTML = null;
+        const selectedButton = event.target;
+
+        elements.browseLetterFilter.querySelectorAll("button").forEach(button => {
+          button.classList.remove("active");
+        });
+        selectedButton.classList.add("active");
+
+        if (selectedButton.dataset.letter) updateParams({ letter: selectedButton.dataset.letter });
+        if (selectedButton.dataset.gender) updateParams({ gender: selectedButton.dataset.gender });
+        if (selectedButton.dataset.events) updateParams({ events: selectedButton.dataset.events });
+      }
+    });
+
+    createEventHandler(elements.browseOptions, (event) => {
+      const selectedButton = event.target.tagName === "BUTTON" ? event.target : event.target.parentElement;
+      if (selectedButton.tagName !== "BUTTON") return;
+
+      elements.browseLetterFilter.innerHTML = null;
+      elements.browseItems.innerHTML = null;
+
+      elements.browseOptions.querySelectorAll("button").forEach(button => {
+        button.classList.remove("active");
+      });
+      selectedButton.classList.toggle("active");
+
+      document.getElementById("browse--items-container").innerHTML = null;
+      updateParams({ filter: selectedButton.dataset.filter });
+    });
+
+    createEventHandler(elements.browseItems, (event) => {
+      if (event.target.tagName === "BUTTON") {
+        const selectedButton = event.target;
+        elements.browseItems.querySelectorAll("button").forEach(button => {
+          button.classList.remove("active");
+        });
+        selectedButton.classList.add("active");
+        updateParams({ person: selectedButton.dataset.name });
+      }
+    });
+
+    createEventHandler(elements.browseTypes, (event) => {
+      if (event.target.tagName === "BUTTON") {
+        const selectedButton = event.target;
+        elements.browseTypes.querySelectorAll("button").forEach(button => {
+          button.classList.remove("active");
+        });
+        selectedButton.classList.add("active");
+        updateParams({ type: selectedButton.dataset.type });
+      }
+    });
+
+    // Initialize relationship multiselect
+    initRelationshipMultiselect();
+  };
+
+  // Function to initialize relationships from URL parameters
+  const initRelationshipsFromUrl = () => {
+    const params = getUrlParams();
+    if (params.relationships && window.relationshipMultiselect) {
+      const selectedValues = params.relationships.split(',');
+      window.relationshipMultiselect.setSelection(selectedValues);
+    }
+  };
+
+  // Update the init function to include relationship initialization
+  const init = () => {
+    const params = getUrlParams();
+
+    // Set initial states
+    setActiveButton(elements.browseTypes, 'type', params.type || 'person');
+    setActiveButton(elements.browseOptions, 'filter', params.filter || 'name');
+    setActiveButton(elements.browseLetterFilter, 'letter', params.letter);
+
+    // Set name search from URL
+    if (params.nameSearch && elements.nameSearch) {
+      elements.nameSearch.value = params.nameSearch;
+    }
+
+    // Initialize relationships from URL
+    setTimeout(() => {
+      initRelationshipsFromUrl();
+    }, 100); // Small delay to ensure multiselect is initialized
+
+    handleDataUpdate(params);
+  };
 </script>
 
 </html>
