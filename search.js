@@ -30,7 +30,9 @@ export async function fetchFactoidsWithFilters(state) {
       type: binding.type?.value || '',
       relationship: binding.relationship?.value || '',
       event: binding.event?.value || '' ,
-      stmt: binding.stmt?.value || ''
+      stmt: binding.stmt?.value || '',
+      source: binding.source?.value || '',
+      eventKeyword: binding.event?.value || ''
     }));
   } catch (error) {
     console.error('Failed to fetch factoids:', error);
@@ -203,6 +205,7 @@ PREFIX spr: <http://syriaca.org/prop/reference/>
 PREFIX sp: <http://syriaca.org/prop/>
 PREFIX sps: <http://syriaca.org/prop/statement/>
 PREFIX spq: <http://syriaca.org/prop/qualifier/>
+PREFIX spr: <http://syriaca.org/prop/reference/>
 
 SELECT DISTINCT ?factoid ?description ?label ?person ?type ?relationship ?event ?level ?stmt
 FROM <https://spear-prosop.org>
@@ -318,11 +321,9 @@ if (state.uncertainty && state.uncertainty.trim() !== '') {
 
 export function buildMultiFilterQuery(state) {
  
-  const selectVars = new Set(['?factoid', '?description']);
+  const selectVars = new Set(['?factoid', '?description','?source']);
   const blocks = [];
-  
-  // Each filter category needs to be added here to the blocks for the query
-  
+
   // Source filter
   if (state.selectedSourceKeywords.size > 0) {
     blocks.push(`
@@ -331,6 +332,7 @@ export function buildMultiFilterQuery(state) {
     `);
     selectVars.add('?source');
   }
+
   // Event Keyword filter // Add event participant?
   if (state.selectedEventKeywords.size > 0) {
     blocks.push(`
@@ -468,6 +470,7 @@ FROM NAMED <http://syriaca.org/persons#graph>
 FROM <https://spear-prosop.org>
 WHERE {
   ?statementNode spr:reference-URL ?factoid .
+  ?factoid spr:part-of-series ?source .
 
   OPTIONAL { ?factoid schema:description ?description . }
 
@@ -508,6 +511,224 @@ export async function fetchFactoidsByMultiType(state) {
       gender: b.gender?.value ?? '',
       place: b.place?.value ?? '',
       field: b.field?.value ?? '',
+      source: b.source?.value ?? '',
+      uncertainty: b.level?.value ?? '',
+      type: b.type?.value ?? '',
+      stmt: b.stmt?.value ?? ''
+    }));
+  } catch (err) {
+    console.error("Failed to fetch factoids:", err);
+    return [];
+  }
+}
+
+// Event Factoids
+export function buildEventFactoidQuery(state) {
+ 
+  const selectVars = new Set(['?factoid', '?description','?source']);
+  const blocks = [];
+
+  // Source filter
+  if (state.selectedSourceKeywords.size > 0) {
+    blocks.push(`
+      ?factoid spr:part-of-series ?source .
+      VALUES ?source { ${Array.from(state.selectedSourceKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?source');
+  } else {
+    blocks.push(`    
+      VALUES ?source {
+    <https://spear-prosop.org/chronicle-edessa>
+    <https://spear-prosop.org/lives-eastern-saints>
+    <https://spear-prosop.org/letters-severus>
+  }`)
+  }
+
+  // Event Keyword filter // Add event participant?
+  if (state.selectedEventKeywords.size > 0) {
+    blocks.push(`
+      ?statementNode sps:event-keyword ?eventKeyword .
+      ?statementNode spr:reference-URL ?factoid .
+      VALUES ?eventKeyword { ${Array.from(state.selectedEventKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?eventKeyword');
+  } else {
+    blocks.push(`
+      ?event sp:event-keyword/spr:reference-URL ?factoid .
+      `)
+  }
+
+  // Relationship filter
+  // if (state.selectedRelationshipKeywords.size > 0) {
+  //   blocks.push(`
+  //     ?person ?relationship ?statementNode .
+  //     VALUES ?relationship { ${Array.from(state.selectedRelationshipKeywords).map(uri => `<${uri.replace('/taxonomy/', '/prop/')}>`).join(' ')} }
+  //   `);
+  //   selectVars.add('?relationship');
+  // }
+
+  // Ethnicity filter
+  // if (state.selectedEthnicityKeywords.size > 0) {
+  //   blocks.push(`
+  //     ?person swdt:ethnic-label ?ethnicity .
+  //     ?person sp:ethnic-label ?statementNode .
+  //     VALUES ?ethnicity { ${Array.from(state.selectedEthnicityKeywords).map(uri => `<${uri}>`).join(' ')} }
+  //   `);
+  //   selectVars.add('?ethnicity');
+  // }
+
+  // Gender filter
+  if (state.selectedGenderKeywords.size > 0) {
+    blocks.push(`
+      ?person swdt:gender ?gender .
+      ?person sp:gender ?statementNode .
+      VALUES ?gender { ${Array.from(state.selectedGenderKeywords).map(uri => `<${uri}>`).join(' ')} }
+    `);
+    selectVars.add('?gender');
+  }
+
+  // Place filter
+if (state.selectedPlaceKeywords.size > 0) {
+  const placeValues = Array.from(state.selectedPlaceKeywords)
+    .map(uri => `<${uri}>`)
+    .join(' ');
+
+  blocks.push(`
+    VALUES ?place { ${placeValues} }
+    {
+{
+          ?person swdt:birth-place ?place .
+          ?person sp:birth-place ?birthStmt .
+          ?birthStmt spr:reference-URL ?factoid .
+        } UNION {
+          ?person swdt:death-place ?place .
+          ?person sp:death-place ?deathStmt .
+          ?deathStmt spr:reference-URL ?factoid .
+        } UNION {
+          ?person swdt:residence ?place .
+          ?person sp:residence ?resStmt .
+          ?resStmt spr:reference-URL ?factoid .
+        } UNION {
+          ?event swdt:event-place ?place ;
+                 sp:event-place ?placeStmt .
+          ?placeStmt spr:reference-URL ?factoid .
+        }
+    }
+  `);
+
+  selectVars.add('?place');
+}
+        // ?event swdt:event-place <${uri}> ; sp:event-place ?stmt .
+
+
+  // Field of Study filter
+  // if (state.selectedFieldOfStudyKeywords.size > 0) {
+  //   blocks.push(`
+  //     ?statementNode sps:education ?field .
+  //     VALUES ?field { ${Array.from(state.selectedFieldOfStudyKeywords).map(uri => `<${uri}>`).join(' ')} }
+  //   `);
+  //   selectVars.add('?field');
+  // }
+
+  // Uncertainty filter
+  let uncertaintyBlock = ''; // Declare in outer scope
+
+if (state.uncertainty && state.uncertainty.trim() !== '') {
+  const levels = state.uncertainty
+    .split(',')
+    .map(level => level.trim().toLowerCase())
+    .filter(Boolean); // remove empty strings
+
+  if (levels.length > 0) {
+    const filters = levels.map(lvl => `"${lvl}"`).join(', ');
+    uncertaintyBlock = `
+      FILTER NOT EXISTS {
+        ?factoid spq:certainty ?level .
+        FILTER(LCASE(STR(?level)) IN (${filters}))
+      }`;
+  }
+}
+
+// We can bind the labels to the person in places in the query where we already have ?person bound
+const needsPersonLabel = blocks.some(b =>
+  b.includes('?person') &&
+  !b.includes('swdt:birth-place') &&
+  !b.includes('swdt:death-place') &&
+  !b.includes('swdt:residence') &&
+  !b.includes('swdt:event-place')
+);
+    if (needsPersonLabel) {
+      blocks.push(`
+        OPTIONAL {
+          GRAPH <http://syriaca.org/persons#graph> {
+            ?person rdfs:label ?label .
+            FILTER(LANG(?label) = "en")
+          }
+        }
+      `);
+      selectVars.add('?label');
+      selectVars.add('?person');
+    }
+
+
+  // Final SPARQL query
+  return `
+PREFIX sp:   <http://syriaca.org/prop/>
+PREFIX spr:  <http://syriaca.org/prop/reference/>
+PREFIX schema: <http://schema.org/>
+PREFIX swdt: <http://syriaca.org/prop/direct/>
+
+PREFIX sps: <http://syriaca.org/prop/statement/>
+PREFIX spq: <http://syriaca.org/prop/qualifier/>
+
+SELECT DISTINCT ${Array.from(selectVars).join(' ')}
+FROM <https://spear-prosop.org>
+FROM NAMED <http://syriaca.org/persons#graph>
+WHERE {
+  ${blocks.join('\n')}
+  ?factoid spr:part-of-series ?source .
+  ${uncertaintyBlock}
+
+  OPTIONAL { ?factoid schema:description ?description . }
+  
+}
+ORDER BY ?factoid
+LIMIT 20000
+`;
+}
+
+
+export async function fetchEventFactoids(state) {
+ const query = buildEventFactoidQuery(state);
+  console.log("Buiding query with state:", state);
+  console.log('Fetching factoids with query:', query);
+  try {
+    const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
+      headers: { Accept: 'application/sparql-results+json' }
+    });
+
+    if (!res.ok) {
+      const errorText = await res.text();
+      console.error("SPARQL HTTP error:", res.status, errorText);
+      return [];
+    }
+
+    const data = await res.json();
+    return data.results.bindings.map(b => ({
+      uri: b.factoid?.value ?? '',
+      description: b.description?.value ?? '',
+      label: b.label?.value ?? '',
+      person: b.person?.value ?? '',
+      eventKeyword: b.eventKeyword?.value ?? '',
+      relationship: b.relationship?.value ?? '',
+      ethnicity: b.ethnicity?.value ?? '',
+      gender: b.gender?.value ?? '',
+      place: b.place?.value ?? '',
+      field: b.field?.value ?? '',
+      source: b.source?.value ?? '',
+      uncertainty: b.level?.value ?? '',
+      type: b.type?.value ?? '',
+      stmt: b.stmt?.value ?? ''
     }));
   } catch (err) {
     console.error("Failed to fetch factoids:", err);

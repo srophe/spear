@@ -69,7 +69,15 @@ export const getEducationFieldsOfStudy = () => `
   }
   ORDER BY ?label
 `;
-
+export const getOccupationOptions = () => `
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  SELECT DISTINCT ?occupation ?label
+  WHERE {
+    <http://syriaca.org/taxonomy/occupations-collection> skos:member ?occupation .
+    ?occupation skos:prefLabel ?label .
+  }
+  ORDER BY ?label
+`;
 
 /**
  * Populates a <select> element with options from a SPARQL query above

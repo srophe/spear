@@ -1,0 +1,296 @@
+
+    .container {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .results {
+      /* flex-grow: 1; */
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      max-height: 190vh;
+      overflow-y: auto;
+    }
+
+  
+    .filter-sidebar {
+      background: #f8f9fa;
+      border-radius: 0.375rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #dee2e6;
+    }
+
+    .filter-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .filter-title {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: #495057;
+      border-bottom: 1px solid #dee2e6;
+      padding-bottom: 0.5rem;
+    }
+
+    .filter-control {
+      margin-bottom: 0.5rem;
+    }
+
+    .filter-control label {
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+      color: #6c757d;
+    }
+
+    .filter-control input[type="text"],
+    .filter-control input[type="date"],
+    .filter-control select {
+      font-size: 0.875rem;
+      padding: 0.375rem;
+    }
+
+    .filter-control input[type="checkbox"],
+    .filter-control input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+
+    .checkbox-group,
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .checkbox-group label,
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: 0.25rem 0;
+    }
+
+    .date-range {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .date-range input {
+      flex: 1;
+    }
+
+    .uncertainty-slider {
+      margin-top: 0.5rem;
+    }
+
+    input[type="range"].uncertainty-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #456889;
+      cursor: pointer;
+      pointer-events: all;
+    }
+
+    .uncertainty-value {
+      font-size: 0.75rem;
+      color: #6c757d;
+      text-align: center;
+      margin-top: 0.25rem;
+    }
+
+    .filter-actions {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #dee2e6;
+      display: flex;
+      gap: 0.5rem;
+    }
+    #personResults, #factoidResults {
+  transition: opacity 0.3s ease;
+}
+#personItemsContainer {
+      flex-grow: 1;
+}
+
+
+    .collapse-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #0d6efd;
+      font-size: 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .collapse-toggle:hover {
+      text-decoration: underline;
+    }
+
+    .filter-content {
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .filter-content.collapsed {
+      max-height: 0;
+    }
+
+    .filter-content:not(.collapsed) {
+      max-height: 500px;
+    }
+
+    /* New styles for clear buttons */
+    .clear-section-btn {
+      background: none;
+      border: none;
+      color: #dc3545;
+      font-size: 0.875rem;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .clear-section-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Add these CSS styles to your existing styles */
+  .btn-outline-dark {
+      background-color: white;
+    }
+
+    /* Add these CSS styles for the multiselect dropdown */
+    .multiselect-container {
+      position: relative;
+    }
+
+    .multiselect-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ced4da;
+      border-top: none;
+      border-radius: 0 0 0.375rem 0.375rem;
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 1000;
+      display: none;
+    }
+
+    .multiselect-dropdown.show {
+      display: block;
+    }
+
+    .multiselect-option {
+      padding: 0.5rem 0.75rem;
+      cursor: pointer;
+      border-bottom: 1px solid #f8f9fa;
+      font-size: 0.875rem;
+      transition: background-color 0.15s ease;
+    }
+
+    .multiselect-option:hover {
+      background-color: #f8f9fa;
+    }
+
+    .multiselect-option:last-child {
+      border-bottom: none;
+    }
+
+    .multiselect-option.selected {
+      background-color: #e7f3ff;
+      color: #0d6efd;
+    }
+
+    .selected-items {
+      margin-top: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    .selected-item {
+      background-color: #e7f3ff;
+      color: #0d6efd;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      border: 1px solid #b6d7ff;
+    }
+
+    .selected-item .remove-btn {
+      background: none;
+      border: none;
+      color: #0d6efd;
+      cursor: pointer;
+      padding: 0;
+      font-size: 0.875rem;
+      line-height: 1;
+    }
+
+    .selected-item .remove-btn:hover {
+      color: #dc3545;
+    }
+
+    .relationship-search-input:focus+.multiselect-dropdown {
+      display: block;
+    }
+       .keywordList {
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      background: #fafafa;
+      padding: 0.5rem;
+    }
+
+    .keywordList ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .keywordList li:hover {
+      background-color: #eef;
+    }
+
+    ul.result-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.result-list li {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
