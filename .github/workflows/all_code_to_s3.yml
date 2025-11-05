@@ -29,9 +29,7 @@ jobs:
         with:
           role-to-assume: ${{ secrets.AWS_DEV_SPEAR_ARN }}
           aws-region: ${{ secrets.AWS_REGION }}
-          role-session-name: GitHub-OIDC-frontend-spear
-          role-duration-seconds: 21600
-
+          role-session-name: GitHub-OIDC-frontend-spear-dev
 
       # Step 3: Files to S3
       # This will add and overwrite all non data folder files to the S3 bucket but not delete files in S3 that have been deleted in the repo
