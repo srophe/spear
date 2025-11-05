@@ -450,7 +450,7 @@ export default {
     // Clear all
     root.querySelector('#clearFiltersBtn')?.addEventListener('click', () => {
 
-        console.log('Clearing all person filters');
+      console.log('Clearing all person filters');
 
       s.name = '';  
       s.personURIs = [];
