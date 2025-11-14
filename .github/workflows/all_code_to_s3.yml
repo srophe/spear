@@ -36,7 +36,7 @@ jobs:
       - name: Sync files in S3
         if: success()
         run: |
-          aws s3 sync ./ s3://$BUCKET_NAME --exact-timestamps --exclude "data/*" --exclude ".github/*" --exclude "aggregate/*" --exclude ".git/*"
+          aws s3 sync ./ s3://$BUCKET_NAME --exact-timestamps --exclude "data/*" --exclude ".github/*" --exclude "aggregate/*" --exclude ".git/*" --exclude "dev-neptune-queries/*" 
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
