@@ -24,6 +24,7 @@ export async function renderKeywordPrettyList(query, listId, containerId, labelF
         headers: { Accept: 'application/sparql-results+json' }
       });
       const data = await res.json();
+      console.log("Keyword list data:", data);
       const results = data.results.bindings;
 
       if (results.length === 0) {

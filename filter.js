@@ -3,13 +3,12 @@ import {
   getRelationshipOptions,
   getEthnicityOptions,
   getPlaceOptions,
-  getEducationFieldsOfStudy,
-  populateDropdown,
   getOccupationOptions,
   renderKeywordList
 } from './menu.js';
 
-import { fetchFactoidsWithFilters, fetchFactoidsByMultiType, fetchEventFactoids } from './search.js';
+// import { fetchFactoidsWithFilters, fetchFactoidsByMultiType, fetchEventFactoids } from './search.js';
+import { fetchEventFactoids } from './event/search.js';
 import { renderKeywordPrettyList } from './list.js'; 
 
 // Global filter state

@@ -1,3 +1,4 @@
+// Person mode for SPEAR application: User requestsed filters for person factoids: by associated persons, event keywords, places, occupations, gender, relationshipsand sources.
 import {
   getEventKeywords,
   getRelationshipOptions,
@@ -9,7 +10,6 @@ import {
 import { renderKeywordPrettyList } from '../list.js';
 import persons from "../person/person.json" with { type: 'json' };
 
-// import { fetchPersonFactoids } from '../search.js';
 import { fetchData } from '../person/search.js';
 
 function writeFilterParamsToUrl(filterState) {
@@ -287,25 +287,47 @@ export default {
       ]),
     };
 
-    const s = state.filters.person;
-    const params = new URLSearchParams(location.search);
-    const initialName = params.get('nameSearch') || '';
-    if (initialName) s.name = initialName;
-    const nameInput = root.querySelector('#name-search');
-    if (nameInput) {
-        if (initialName) nameInput.value = initialName;
-        // Debounce is optional; direct is fine for local JSON
-        nameInput.addEventListener('input', (e) => {
-        s.name = e.target.value.trim();
-        writeFilterParamsToUrl(s);
-        runSearch();
-        });
-    }
+const s = state.filters.person;
+const params = new URLSearchParams(location.search);
+const initialName = params.get('nameSearch') || '';
+if (initialName) s.name = initialName;
+
+const nameInput = root.querySelector('#name-search');
+if (nameInput) {
+  if (initialName) nameInput.value = initialName;
+
+  // define debounce helper (or import it if you already have one globally)
+  function debounce(fn, delay = 500) {
+    let timeout;
+    return (...args) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => fn(...args), delay);
+    };
+  }
+
+  // define debounced search callback
+  const debouncedSearch = debounce((event) => {
+    s.name = event.target.value.trim();
+    writeFilterParamsToUrl(s);
+    runSearch();
+  }, 500);
+
+  // attach listener
+  nameInput.addEventListener('input', debouncedSearch);
+}
+
+    
 
     // Helpers
     const toggleSet = (set, value) => set.has(value) ? set.delete(value) : set.add(value);
-
-
+    
+    // function debounce(fn, delay = 400) {
+    //   let timeoutId;
+    //   return (...args) => {
+    //     clearTimeout(timeoutId);
+    //     timeoutId = setTimeout(() => fn(...args), delay);
+    //   };
+    // }
 
     // Gender
     root.querySelectorAll('input[name="gender"]').forEach(cb => {
@@ -447,7 +469,7 @@ export default {
 //   runSearch();
 // });
 
-    // Clear all
+    // Clear all: Active
     root.querySelector('#clearFiltersBtn')?.addEventListener('click', () => {
 
       console.log('Clearing all person filters');
@@ -494,7 +516,6 @@ export default {
         (s.selectedOccupationKeywords?.size ?? 0) > 0;
 
     // ---------- SIMPLE (JSON) ----------
-      // ✅ Case 0: no filters, no name → show all people from JSON
   if (!hasName && !hasAnyFacet) {
     const bindings = persons.results?.bindings ?? [];
     const rows = bindings.map(b => ({
@@ -549,11 +570,11 @@ export default {
     const panel = document.getElementById('person--items');
     if (!panel) return;
     if (!facts || facts.length === 0) {
-      panel.innerHTML = `<div class="text-muted">No person in the database match these filters.</div>`;
+      panel.innerHTML = `<div class="text-muted">No records in the database match these filters.</div>`;
       return;
     }
     panel.innerHTML = `
-      <h4>People</h4>
+      <h4>Persons</h4>
       <h5 class="mt-2 mb-3">${facts.length} results</h5>
       <ul class="result-list">
         ${facts.map(f => `

@@ -5,21 +5,10 @@ export function buildMultiFilterQuery(state) {
  
   const selectVars = new Set([]);
   const blocks = [];
-  const personBlock = [];
-    // Source filter
+    // Name filter
   if (state.persons && state.persons.length > 0) {
     blocks.push(`
       VALUES ?person { ${Array.from(state.persons).map(uri => `<${uri}>`).join(' ')} }
-    `);
-  }
-  console.log('personBlock:', personBlock);
-    // Source filter
-  if (state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords < 3) {
-    blocks.push(`
-      ?person ?p ?statementNode .  
-      ?statementNode spr:reference-URL ?factoid .
-      ?factoid spr:part-of-series ?source .
-      VALUES ?source { ${Array.from(state.selectedSourceKeywords).map(uri => `<${uri}>`).join(' ')} }
     `);
   }
 
@@ -91,7 +80,17 @@ if (state.selectedPlaceKeywords.size > 0) {
 
   selectVars.add('(GROUP_CONCAT(DISTINCT STR(?place); SEPARATOR=", ") AS ?places)');
 }
-  
+      // Source filter
+  if (state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords.size < 3) {
+    blocks.push(`
+    
+      ?statementNode spr:reference-URL ?factoid .
+      ?factoid spr:part-of-series ?source .
+    
+      VALUES ?source { ${Array.from(state.selectedSourceKeywords).map(uri => `<${uri}>`).join(' ')} }
+      ?person ?p ?statementNode .  
+    `);
+  }
 
   // Uncertainty filter
 //   let uncertaintyBlock = ''; // Declare in outer scope
@@ -112,7 +111,7 @@ if (state.selectedPlaceKeywords.size > 0) {
 //   }
 // }
 
-const graphBlock = blocks.join('\n'); // ✅ safe separator
+const graphBlock = blocks.join('\n'); 
 
   // Final SPARQL query
   return `

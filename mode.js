@@ -32,8 +32,6 @@ export function boot({ registry, defaultType = 'person' } = {}) {
     if (els.eventPanel)  els.eventPanel.classList.toggle('d-none',  type !== 'event');
   };
  
-
-
   const wireSidebarChrome = (root, state, runSearch) => {    root.addEventListener('click', (e) => {
     console.log('Sidebar clicked, mode.js');  
     const btn = e.target.closest('.collapse-toggle');
@@ -58,31 +56,6 @@ export function boot({ registry, defaultType = 'person' } = {}) {
         bubbles: true
       }));
     });
-
-
-
-        // // CLEAR ALL BUTTON
-        // root.addEventListener('click', (e) => {
-        //   const clearAll = e.target.closest('#clearAllFilters');
-        //   if (!clearAll) return;
-        //   e.preventDefault();
-        //   e.stopPropagation();
-
-        //   // Clear all inputs in sidebar
-        //   root.querySelectorAll('input[type="checkbox"], input[type="radio"]').forEach(cb => cb.checked = false);
-        //   root.querySelectorAll('input[type="text"], select').forEach(el => el.value = '');
-
-        //   // Reset state.filters
-        //   state.filters = {};
-        //   console.log('***Filters after clearing all:', state.filters);
-        //   // Clear URL params but preserve `type`
-        //   const url = new URL(location);
-        //   const type = url.searchParams.get('type');
-        //   url.search = type ? `type=${type}` : '';
-        //   history.replaceState({}, '', url);
-
-        //   runSearch?.(); // refresh results
-        // });
   };
 
   async function mount(type, { fromPopstate = false } = {}) {
@@ -93,8 +66,15 @@ export function boot({ registry, defaultType = 'person' } = {}) {
     
     const runSearch = async () => {
       if (!mode.fetch || !mode.render) return;
-      const rows = await mode.fetch(state);
-      mode.render(rows, state);
+      try {
+        const rows = await mode.fetch(state);
+        if (!rows) {
+          return;
+        }
+        mode.render(rows, state);
+      } catch (err) {
+        console.error('Search failed:', err);
+      }
     };
 
     const mode = registry[type];

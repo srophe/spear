@@ -317,3 +317,41 @@ export async function fetchFactoidsByType(uri, type) {
   }
 }
 
+
+
+
+  curl -G "https://sparql.vanderbilt.edu/sparql" \
+  --data-urlencode 'query=
+  PREFIX swdt: <http://syriaca.org/prop/direct/>
+  SELECT DISTINCT ?keyword
+  FROM <https://spear-prosop.org>
+  WHERE {
+    ?event swdt:event-keyword ?keyword .
+  }
+  ORDER BY ?keyword
+  ' \
+  -H "Accept: application/sparql-results+json"
+
+
+    curl -G "https://sparql.vanderbilt.edu/sparql" \
+  --data-urlencode 'query=
+  PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <http://schema.org/>
+PREFIX swdt: <http://syriaca.org/prop/direct/>
+
+SELECT DISTINCT ?person ?label_en ?description (STRAFTER(STR(?gender), "/taxonomy/") AS ?sex) ?occupation
+WHERE {
+  GRAPH <https://spear-prosop.org> {
+    { ?person ?p ?o } UNION { ?s ?p ?person }
+  }
+  GRAPH <http://syriaca.org/persons#graph> {
+    ?person rdfs:label ?label_en . 
+    FILTER(LANG(?label_en) = "en")
+    OPTIONAL {?person schema:description ?description}
+    OPTIONAL  { ?person swdt:gender  ?gender }
+    OPTIONAL { ?person swdt:occupation ?occupation }
+  }
+}
+ORDER BY ?label_en
+  ' \
+  -H "Accept: application/sparql-results+json"
