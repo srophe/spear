@@ -9,7 +9,7 @@ import {
 
 import { renderKeywordPrettyList } from '../list.js';
 import persons from "../person/person.json" with { type: 'json' };
-
+import { cleanPunctuationSpacing } from '../utils/cleanUi.js';
 import { fetchData } from '../person/search.js';
 
 function writeFilterParamsToUrl(filterState) {
@@ -583,7 +583,7 @@ if (nameInput) {
             </a>
             <br/>
             ${f.person ? ` [${f.person}]<br/>` : ''}
-            ${f.description ? `<em> ${f.description} </em>` : ''}
+            ${cleanPunctuationSpacing(f.description) ? `<em> ${cleanPunctuationSpacing(f.description)} </em>` : ''}
           </li>
         `).join('')}
       </ul>

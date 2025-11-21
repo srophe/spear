@@ -1,3 +1,5 @@
 .DS_Store
 autodeploy2
 autodeploy
+
+dev-neptune-queries/*

@@ -9,7 +9,7 @@ import {
 
 import { renderKeywordPrettyList } from '../list.js';
 import persons from '../event/person.json' with { type: 'json' };
-
+import { cleanPunctuationSpacing } from '../utils/cleanUi.js';
 // Use your existing fetcher that already works for event factoids
 // (adjust the path if your fetcher lives elsewhere)
 // import { fetchEventFactoids } from '../search.js';
@@ -641,7 +641,7 @@ export default {
       <ul class="result-list">
         ${facts.map(f => `
       <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
-        ${f.description ? `<em> ${f.description} </em>` : ''}${f.source ? ` [${getSourceLabel(f.source)}]<br/>` : ''}
+        ${cleanPunctuationSpacing(f.description) ? `<em> ${cleanPunctuationSpacing(f.description)} </em>` : ''}${f.source ? ` [${getSourceLabel(f.source)}]<br/>` : ''}
         ${f.eventKeyword ? `${f.eventKeyword}<br/> ` : ''}
         <a href="${f.uri}" >${f.uri}</a> 
       </li>
