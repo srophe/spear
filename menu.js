@@ -1,6 +1,18 @@
 export const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
 
+
 // Add filter menu options
+// Example: wrap your SPARQL calls
+// export async function getEventKeywords() {
+//   return fetchWithCache('eventKeywords', async () => {
+//     const response = await fetch('../menus/events.json');
+
+//     if (!response.ok) throw new Error('Failed to load event keywords');
+//     return response.json();
+//   });
+// }
+
+
 
 export const getEventKeywords = () => `
   PREFIX swdt: <http://syriaca.org/prop/direct/>
@@ -69,7 +81,15 @@ export const getEducationFieldsOfStudy = () => `
   }
   ORDER BY ?label
 `;
-
+export const getOccupationOptions = () => `
+  PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+  SELECT DISTINCT ?occupation ?label
+  WHERE {
+    <http://syriaca.org/taxonomy/occupations-collection> skos:member ?occupation .
+    ?occupation skos:prefLabel ?label .
+  }
+  ORDER BY ?label
+`;
 
 /**
  * Populates a <select> element with options from a SPARQL query above
@@ -178,3 +198,28 @@ export async function renderKeywordList(query, itemsId, listId, labelField = "la
     }
   });
 }
+const CACHE_TTL_HOURS = 24; // or 0 if you want once per session
+
+async function fetchWithCache(key, fetchFn) {
+  const now = Date.now();
+
+  // Check cache
+  const cached = localStorage.getItem(key);
+  const cacheTime = localStorage.getItem(key + '_time');
+
+  if (cached && cacheTime && (now - Number(cacheTime)) < CACHE_TTL_HOURS * 3600 * 1000) {
+    console.log(`[CACHE] Using cached data for ${key}`);
+    return JSON.parse(cached);
+  }
+
+  // If not cached or expired, fetch fresh
+  console.log(`[CACHE] Fetching new data for ${key}`);
+  const data = await fetchFn();
+
+  // Store cache
+  localStorage.setItem(key, JSON.stringify(data));
+  localStorage.setItem(key + '_time', now.toString());
+
+  return data;
+}
+

@@ -3,12 +3,12 @@ import {
   getRelationshipOptions,
   getEthnicityOptions,
   getPlaceOptions,
-  getEducationFieldsOfStudy,
-  populateDropdown,
+  getOccupationOptions,
   renderKeywordList
 } from './menu.js';
 
-import { fetchFactoidsWithFilters, fetchFactoidsByMultiType } from './search.js';
+// import { fetchFactoidsWithFilters, fetchFactoidsByMultiType, fetchEventFactoids } from './search.js';
+import { fetchEventFactoids } from './event/search.js';
 import { renderKeywordPrettyList } from './list.js'; 
 
 // Global filter state
@@ -21,6 +21,7 @@ const state = {
   selectedPlaceKeywords: new Set(),
   // selectedFieldOfStudyKeywords: new Set(),
   // currentTab: 'factoids'
+  selectedOccupationKeywords: new Set(),
   selectedSourceKeywords: new Set()
 };
 export function prettifyUri(uri) {
@@ -31,9 +32,30 @@ export function prettifyUri(uri) {
   const parts = uri.split(/[\/#]/);
   return parts[parts.length - 1];
 }
+const sourceLabels = {
+  "https://spear-prosop.org/letters-severus": "Letters of Severus of Antioch",
+  "https://spear-prosop.org/lives-eastern-saints": "Lives of the Eastern Saints",
+  "https://spear-prosop.org/chronicle-edessa": "Chronicle of Edessa"
+
+};
+
+function getSourceLabel(uri) {
+  return sourceLabels[uri] || prettifyUri(uri);
+}
+
+export const FILTER_MAP = {
+  name:         { stateKey: 'name', urlKey: 'nameSearch' },
+  gender:       { stateKey: 'selectedGenderKeywords', urlKey: 'gender' },
+  source:       { stateKey: 'selectedSourceKeywords', urlKey: 'source' },
+  occupation:   { stateKey: 'selectedOccupationKeywords', urlKey: 'occupation' },
+  event:        { stateKey: 'selectedEventKeywords', urlKey: 'event' },
+  relationship: { stateKey: 'selectedRelationshipKeywords', urlKey: 'relationship' },
+  place:        { stateKey: 'selectedPlaceKeywords', urlKey: 'place' }
+};
+
 
 // Convert state to URLSearchParams string
-function stateToUrlParams(state) {
+export function stateToUrlParams(state) {
   const params = new URLSearchParams();
 
   for (const uri of state.selectedGenderKeywords) {
@@ -44,6 +66,10 @@ function stateToUrlParams(state) {
   }
   for (const uri of state.selectedSourceKeywords) {
     params.append('source', uri);
+
+  }
+   for (const uri of state.selectedOccupationKeywords) {
+    params.append('occupation', uri);
 
   }
   for (const uri of state.selectedEventKeywords) {
@@ -63,7 +89,7 @@ function stateToUrlParams(state) {
 }
 
 // Parse URL params and update state
-function updateStateFromUrlParams() {
+export function updateStateFromUrlParams() {
   const params = new URLSearchParams(window.location.search);
 
   state.selectedGenderKeywords = new Set(params.getAll('gender'));
@@ -76,6 +102,7 @@ function updateStateFromUrlParams() {
   state.selectedPlaceKeywords = new Set(params.getAll('place'));
   state.selectedSourceKeywords = new Set(params.getAll('source'));
   // state.selectedFieldOfStudyKeywords = new Set(params.getAll('field'));
+  state.selectedOccupationKeywords = new Set(params.getAll('occupation'));
 }
 
 
@@ -90,56 +117,28 @@ function renderFactoids(facts) {
   document.getElementById('factoidResults').classList.remove('d-none');
   console.log("Rendering factoids:", facts);
   const container = document.getElementById('factoidResults');
-  // Filter out factoids that have a `person` URI, why??
-    const filtered = facts.filter(f => {
-    return !f.uri.startsWith('http://syriaca.org/person/');
-  });
+  // Filter out factoids that have a `person` URI, why do they exist in database?
+  // This is a temporary fix, we should not have these factoids in the database.
+  //   const filtered = facts.filter(f => {
+  //   return !f.uri.startsWith('http://syriaca.org/person/');
+  // });
 
-  if (!filtered.length) {
+  if (!facts) {
     container.innerHTML = '<p>No factoids found.</p>';
     return;
   }
-  console.log("Filtered factoids:", filtered);
-  // container.innerHTML = `
-  //   <h4>Factoids</h4>
-  //       <h5 style="margin: 2rem;">${facts.length} results</h5>
 
-  //   <ul style="list-style-type: none; padding: 0; margin: 0;">
-  //     ${filtered.map(f => `
-  //       <li style="margin: 2rem;">
-  //         ${f.description ? `<p><em>Content:</em><br/> ${f.description}</p>` : ''}
-
-  //         <em>Factoid link:</em><br/>
-  //         <a href="${f.uri}" target="_blank">${f.uri}</a>
-  //                   ${f.label ? `<br/><em>${f.label}</em>` : ''}
-  //         ${f.person ? `<br/><em>Related person link:</em><br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
-  //       </li>
-  //     `).join('')}
-  //   </ul>
-  // `;
-    // <ul style="list-style-type: none; padding: 0; margin: 2rem;">
-  //   ${filtered.map(f => `
-  //     <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
-  //       ${f.description ? `Description:<br/><em> ${f.description}</em><br/>` : ''}
-  //       Factoid link:
-  //       <a href="${f.uri}" target="_blank">${f.uri}</a>
-  //       ${f.label ? `<br/>Related person: <em>${f.label}</em>` : ''}
-  //       ${f.person ? `<br/>Related person link:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
-  //     </li>
-  //   `).join('')}
-  // </ul>
   container.innerHTML = `
   <h4>Factoids</h4>
-  <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${filtered.length} results</h5>
-
+  <h5 style="margin: 2rem; border-bottom: 1px solid #ccc;">${facts.length} results</h5>
 
   <ul style="list-style-type: none; padding: 0; margin: 2rem;">
-    ${filtered.map(f => `
+    ${facts.map(f => `
       <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
-        ${f.description ? `<em> ${f.description}</em><br/>` : ''}
+        ${f.description ? `<em> ${f.description} </em>` : ''}${f.source ? ` [${getSourceLabel(f.source)}]<br/>` : ''}
         <a href="${f.uri}" target="_blank">${f.uri}</a>
         ${f.label ? `<br/>Related person: <em>${f.label}</em>` : ''}
-        ${f.person ? `<br/>Related person uri:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
+        ${f.person ? `<br/>Related person link:<br/><a href="${f.person}" target="_blank">${f.person}</a>` : ''}
       </li>
     `).join('')}
   </ul>
@@ -167,13 +166,14 @@ function clearFilters() {
   state.selectedRelationshipKeywords.clear();
   state.selectedEthnicityKeywords.clear();
   state.selectedPlaceKeywords.clear();
-
+  state.selectedOccupationKeywords.clear();
+  state.persons.clear();
   // Reset dropdowns
   state.selectedGenderKeywords.clear();
   state.uncertainty = '';
-  document.querySelectorAll('input[name="gender"]').forEach(r => r.checked = r.value === '');
+  document.querySelectorAll('input[name="gender"]').forEach(cb => { cb.checked = false; });
   document.querySelectorAll('input[name="uncertainty"]').forEach(r => r.checked = r.value === '');
-  document.querySelectorAll('input[name="source"]').forEach(r => r.checked = r.value === '');
+  document.querySelectorAll('input[name="source"]').forEach(cb => { cb.checked = false; });
 
   state.selectedSourceKeywords.clear();
   state.selectedUncertaintyKeywords.clear();
@@ -188,11 +188,10 @@ function clearFilters() {
 
   // Update results
   updateResults();
-  // renderDefaultFactoids();
 }
 
 // Master updater
-function updateResults() {
+export function updateResults() {
   console.log("Updating results with state:", state);
   const queryString = stateToUrlParams(state);
   console.log("Generated query string:", queryString);
@@ -200,42 +199,66 @@ function updateResults() {
   clearNameResults();
   clearPersonResults();
   history.replaceState(null, '', newUrl); // updates URL without reloading
-  if (queryString.length > 1 && queryString !== '?' && queryString !== '?type=factoid') {
-    fetchFactoidsByMultiType(state).then(renderFactoids);
-  } else{
-    renderDefaultFactoids();
-  }
-  
+  fetchEventFactoids(state).then(renderFactoids);
 }
 
 
 // Load dropdown menus
 function setupDropdowns() {
 
-  document.querySelectorAll('input[name="source"]').forEach(input => {
-    input.addEventListener('change', () => {
-      if (input.value) state.selectedSourceKeywords.add(input.value);
-      updateResults();
-    });
-  });
-
   document.querySelectorAll('input[name="gender"]').forEach(input => {
     input.addEventListener('change', () => {
-      if (input.value) state.selectedGenderKeywords.add(input.value);
+      if (!input.value) return; // no empty values in your markup
+      if (input.checked) state.selectedGenderKeywords.add(input.value);
+      else state.selectedGenderKeywords.delete(input.value);
       updateResults();
     });
   });
 
-document.querySelectorAll('input[name="uncertainty"]').forEach(input => {
-  input.addEventListener('change', () => {
-    const selected = Array.from(
-      document.querySelectorAll('input[name="uncertainty"]:checked')
-    ).map(cb => cb.value);
+  document.querySelectorAll('input[name="uncertainty"]').forEach(input => {
+    input.addEventListener('change', () => {
+      const selected = Array.from(
+        document.querySelectorAll('input[name="uncertainty"]:checked')
+      ).map(cb => cb.value);
 
-    state.uncertainty = selected.join(',');
-    updateResults();
+      state.uncertainty = selected.join(',');
+      updateResults();
+    });
   });
-});
+  const sourceCheckboxes = Array.from(document.querySelectorAll('input[name="source"]'));
+  const allSourcesCb = sourceCheckboxes[0];
+  const specificCbs = sourceCheckboxes.slice(1);
+  const ALL_URIS = specificCbs.map(cb => cb.value);
+
+  // Initialize state from DOM (so default-checked boxes populate state)
+  state.selectedSourceKeywords = new Set(
+    specificCbs.filter(cb => cb.checked).map(cb => cb.value)
+  );
+
+  sourceCheckboxes.forEach((cb, idx) => {
+    cb.addEventListener('change', () => {
+      if (idx === 0) {
+        // "All sources" toggled
+        if (cb.checked) {
+          specificCbs.forEach(s => (s.checked = true));
+          state.selectedSourceKeywords = new Set(ALL_URIS);  // restrict to all three
+        } else {
+          // Unchecking "All" doesn't change specifics; recompute from DOM
+          state.selectedSourceKeywords = new Set(
+            specificCbs.filter(s => s.checked).map(s => s.value)
+          );
+        }
+      } else {
+        // A specific box toggled
+        if (cb.checked) state.selectedSourceKeywords.add(cb.value);
+        else state.selectedSourceKeywords.delete(cb.value);
+
+        // Keep "All" in sync
+        allSourcesCb.checked = ALL_URIS.every(u => state.selectedSourceKeywords.has(u));
+      }
+      updateResults();
+    });
+  });
 
 
 }
@@ -298,6 +321,16 @@ function setupKeywordLists() {
       updateResults();
     }
   );
+    renderKeywordList(
+    getOccupationOptions(),
+    'occupationKeywordItems',
+    'occupationKeywordList',
+    'label', 'occupation',
+    uri => {
+      toggleSet(state.selectedOccupationKeywords, uri);
+      updateResults();
+    }
+  );
 }
 
 // Initialize everything
@@ -309,9 +342,11 @@ export function initializeFilter() {
   searchMenuItems('event-search', 'eventKeywordItems');
   searchMenuItems('relationship-search', 'relationshipKeywordItems');
   searchMenuItems('place-search', 'placeKeywordItems');
-  renderDefaultFactoids();
+  searchMenuItems('occupation-search', 'occupationKeywordItems');
+
+  updateResults();
 }
-  import allFactoidsData from "./types/factoid/defaultFactoids.json" with { type: 'json' };
+  import allEventsFactoidsData from "./types/factoid/defaultFactoids.json" with { type: 'json' };
 
     const typeMap = {
       "event-participant": "Event Participant",
@@ -334,13 +369,12 @@ export function initializeFilter() {
     };
 
 
-async function renderDefaultFactoids() {
+async function renderDefaultEventFactoids() {
   const queryResults = document.getElementById('factoidResults');
   queryResults.classList.add('d-none');
   const factoidDisplay = document.getElementById('defaultFactoidResults');
   factoidDisplay.classList.remove('d-none');
 
-  console.log("Rendering default factoids:", allFactoidsData);
   const factoids = allFactoidsData.results.bindings.map(f => ({
     uri: f.factoid.value,
     label: f.label.value,
@@ -380,4 +414,59 @@ async function renderDefaultFactoids() {
     console.error("Failed to load factoids:", err);
     factoidDisplay.innerHTML = "<em>Failed to load factoids.</em>";
   }
+}
+// ✅ Clear one section’s filters from state and URL
+export function clearSection(section, state) {
+  const map = FILTER_MAP[section];
+  if (!map) return;
+
+  // Clear from state
+  if (state.filters && state.filters[map.stateKey]) {
+    delete state.filters[map.stateKey];
+  }
+
+  // Clear from URL
+  const url = new URL(window.location.href);
+  url.searchParams.delete(map.urlKey);
+  history.replaceState({}, '', url.toString());
+}
+export function clearAllFilters(state) {
+  // Clear from state
+  Object.values(FILTER_MAP).forEach(({ stateKey }) => {
+    if (state.filters[stateKey]) delete state.filters[stateKey];
+  });
+
+  // Clear from URL (preserve type)
+  const url = new URL(window.location.href);
+  const type = url.searchParams.get('type');
+  url.search = type ? `type=${type}` : '';
+  history.replaceState({}, '', url.toString());
+}
+export function clearPersonSection(section, state) {
+  const p = state.filters.person;
+  if (!p) return;
+
+  // map section name → property key inside state.filters.person
+  const map = {
+    names:        'name',
+    gender:       'selectedGenderKeywords',
+    source:       'selectedSourceKeywords',
+    occupations:  'selectedOccupationKeywords',
+    events:       'selectedEventKeywords',
+    relationships:'selectedRelationshipKeywords',
+    place:        'selectedPlaceKeywords'
+  };
+
+  const key = map[section];
+  if (!key) return;
+
+  const val = p[key];
+  if (val instanceof Set) val.clear();
+  else if (Array.isArray(val)) val.length = 0;
+  else if (typeof val === 'string') p[key] = '';
+
+  // also scrub that parameter from the URL
+  const url = new URL(window.location.href);
+  url.searchParams.delete(section === 'names' ? 'nameSearch' : section.replace(/s$/, ''));
+  history.replaceState({}, '', url);
 }

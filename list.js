@@ -1,6 +1,6 @@
-export async function renderKeywordPrettyList(query, listId, labelField = "label", valueField = "value", onSelect) {
+export async function renderKeywordPrettyList(query, listId, containerId, labelField = "label", valueField = "value", onSelect) {
   const listEl = document.getElementById(listId);
-  const container = document.getElementById(listId); // Make scroll listener flexible
+  const container = document.getElementById(containerId); // Make scroll listener flexible
   const pageSize = 50;
   let offset = 0;
   let loading = false;
@@ -24,6 +24,7 @@ export async function renderKeywordPrettyList(query, listId, labelField = "label
         headers: { Accept: 'application/sparql-results+json' }
       });
       const data = await res.json();
+      console.log("Keyword list data:", data);
       const results = data.results.bindings;
 
       if (results.length === 0) {
