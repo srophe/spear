@@ -1,5 +1,7 @@
 export function cleanPunctuationSpacing(text) {
   return text
+    // Remove double periods
+    .replace(/\.{2,}/g, '.')
     // Remove space before punctuation
     .replace(/\s+([.,;:!?])/g, '$1')
     // Ensure exactly one space after punctuation—EXCEPT before ] ) or end of sentence
