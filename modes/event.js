@@ -521,7 +521,9 @@ export default {
       root.querySelectorAll('#eventSourceSelect input[name="source"]:not([data-all])').forEach(cb => (cb.checked = true));
       root.querySelectorAll('.keywordList li.selected').forEach(li => li.classList.remove('selected'));
       root.querySelectorAll('#event-search,#relationship-search,#place-search,#occupation-search').forEach(i => (i.value = ''));
-
+      const allSources = root.querySelector('#sourceSelect input[data-all]');
+      if (allSources) allSources.checked = true;
+      root.querySelectorAll('#sourceSelect input[name="source"]:not([data-all])').forEach(cb => (cb.checked = true));
       writeFilterParamsToUrl(s);
       runSearch();
     });
