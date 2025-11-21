@@ -83,10 +83,8 @@ if (state.selectedPlaceKeywords.size > 0) {
       // Source filter
   if (state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords.size < 3) {
     blocks.push(`
-    
       ?statementNode spr:reference-URL ?factoid .
       ?factoid spr:part-of-series ?source .
-    
       VALUES ?source { ${Array.from(state.selectedSourceKeywords).map(uri => `<${uri}>`).join(' ')} }
       ?person ?p ?statementNode .  
     `);
@@ -160,6 +158,9 @@ export async function fetchData(state) {
   console.log('Fetching persons with multi-type query:', query);
   query.split('\n').forEach((line,i)=>console.log(String(i+1).padStart(3,' '), line));
 
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
+
   try {
     const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
       headers: { Accept: 'application/sparql-results+json' }
@@ -191,7 +192,12 @@ export async function fetchData(state) {
 
     }));
   } catch (err) {
-    console.error("Failed to fetch factoids:", err);
+    clearTimeout(timeoutId);
+    if (err.name === 'AbortError') {
+      console.error("Query timed out after 5 seconds");
+    } else {
+      console.error("Failed to fetch factoids:", err);
+    }
     return [];
   }
 }
