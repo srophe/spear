@@ -3,3 +3,10 @@ autodeploy2
 autodeploy
 
 dev-neptune-queries/*
+dev/*
+dev-neptune-queries
+PersonURIs_SPEAR.txt
+PersonURIs_SPEAR_sorted.txt
+missing_from_person_json.txt
+person_values.txt
+person_values_sorted.txt
