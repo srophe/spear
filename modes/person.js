@@ -69,6 +69,7 @@ export default {
                     <label><input class="me-1" type="checkbox" name="source" value="https://spear-prosop.org/chronicle-edessa" checked /> Chronicle of Edessa</label>
                 </div>
             </div>
+            <div id="source-error-container"></div>
           </div>
               <!-- Names Filter -->
               <div class="filter-section">

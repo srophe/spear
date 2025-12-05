@@ -8077,26 +8077,6 @@
       {
         "person": {
           "type": "uri",
-          "value": "http://syriaca.org/person/2278"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Euphrasios"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܐܘܦܪܘܣ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "A patriarch of Antioch about whom only very little is known, Euphrasius came to the episcopal throne in 521 and was in all likelihood a fierce persecutor of the miaphysites. He was killed in an earthquake that struck Antioch in 526, an end which for later miaphysite authors seemed fitting because of his deeds."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
           "value": "http://syriaca.org/person/2647"
         },
         "label_en": {
@@ -8468,26 +8448,6 @@
           "xml:lang": "syr",
           "type": "literal",
           "value": "ܐܘܛܘܟܐ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Eutyches was a controversial and polemical monastic teacher active in Constantinople in the early fifth century. He opposed dyophysite (two-nature) Christology, but the precise nature of his own one-nature Christology is uncertain. He was condemned in 448 at a synod, restored in 449 at the Second Council of Ephesus , and condemned again at the Council of Chalcedon where he was championed by the Syriac monk Barsauma . In later theological discussions, Eutyches' one-nature Christology was equally condemned by Chalcedonian theologians and the Coptic and Syriac Orthodox Churches. Eutyches was archimandrite of a monk in Constantinople and opposed the doctrine of the two natures in Christ. He was condemned as a heretic at the council of Chalcedon in 451 for supposedly denying the human nature in Christ."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/482"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Eutyches"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܐܘܛܘܟܝܢܣܛܐ (used as adjective)"
         },
         "description": {
           "type": "literal",

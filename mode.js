@@ -1,5 +1,6 @@
 // mode.js
 
+
 export function boot({ registry, defaultType = 'person' } = {}) {
   const state = { type: null, filters: {} };
 
@@ -63,14 +64,33 @@ export function boot({ registry, defaultType = 'person' } = {}) {
     state.type = type;
 
     togglePanels(type);
+
+    function showUserFacetError(msg) {
+      console.warn("Showing user facet error:", msg);
+      const container = document.getElementById("source-error-container");
+      if (!container) return;
+
+      container.innerHTML = `
+        <div class="alert alert-warning mt-2 p-2" style="font-size: 0.9rem;">
+          ${msg}
+        </div>
+      `;
+    }
+
     
     const runSearch = async () => {
       if (!mode.fetch || !mode.render) return;
       try {
         const rows = await mode.fetch(state);
-        if (!rows) {
+          // Early exit for source only facet error
+                  if (!rows) {
           return;
         }
+        if (rows?.error) {
+          showUserFacetError(rows.message);
+          return; // STOP — do not call mode.render
+        }
+
         mode.render(rows, state);
       } catch (err) {
         console.error('Search failed:', err);

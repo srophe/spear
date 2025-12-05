@@ -156,6 +156,25 @@ export async function fetchData(state) {
   const query = buildMultiFilterQuery(state);
   console.log("Build Person MultiFilterQuery with state:", state);
   console.log('Fetching persons with multi-type query:', query);
+
+    // --- EARLY EXIT CONDITION: Source-only selection crashes Neptune---
+  const onlySourceSelected =
+    state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords.size < 3 &&
+    (!state.persons || state.persons.length === 0) &&
+    state.selectedEventKeywords.size === 0 &&
+    state.selectedRelationshipKeywords.size === 0 &&
+    state.selectedOccupationKeywords.size === 0 &&
+    state.selectedGenderKeywords.size === 0 &&
+    state.selectedPlaceKeywords.size === 0;
+
+  if (onlySourceSelected) {
+    console.warn("Source-only facet query prevented.");
+    return {
+      error: true,
+      message: "Source choice alone is insufficient for query. Please select at least one additional facet.",
+      rows: []
+    };
+  }
   query.split('\n').forEach((line,i)=>console.log(String(i+1).padStart(3,' '), line));
 
   const controller = new AbortController();
