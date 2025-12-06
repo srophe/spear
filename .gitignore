@@ -10,3 +10,5 @@ PersonURIs_SPEAR_sorted.txt
 missing_from_person_json.txt
 person_values.txt
 person_values_sorted.txt
+sparql-query
+sparql-query/*

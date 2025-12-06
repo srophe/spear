@@ -65,6 +65,12 @@ export function boot({ registry, defaultType = 'person' } = {}) {
 
     togglePanels(type);
 
+    function clearUserFacetError() {
+      const container = document.getElementById("source-error-container");
+      if (!container) return;
+      container.innerHTML = ""; 
+    }
+
     function showUserFacetError(msg) {
       console.warn("Showing user facet error:", msg);
       const container = document.getElementById("source-error-container");
@@ -90,7 +96,7 @@ export function boot({ registry, defaultType = 'person' } = {}) {
           showUserFacetError(rows.message);
           return; // STOP — do not call mode.render
         }
-
+        clearUserFacetError();
         mode.render(rows, state);
       } catch (err) {
         console.error('Search failed:', err);

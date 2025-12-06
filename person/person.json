@@ -8607,26 +8607,6 @@
         "label_syr": {
           "xml:lang": "syr",
           "type": "literal",
-          "value": "ܦܠܒܝܢܘܣ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Bishop of Antioch Flavian represented the see of Antioch as ambassador in Constantinople before being made patriarch of Antioch by Anastasius in 498. He attempted to follow a middle course between adherents and opponents of Chalcedon until he lost imperial support in 512 and was replaced by the miaphysite champion Severus. Exiled to Petra, Flavian died in 518."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/2530"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Flavian II of Antioch"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
           "value": "ܦܠܘܝܢܐ"
         },
         "description": {
@@ -8635,25 +8615,41 @@
         }
       },
       {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/2654"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Gaian"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܓܐܝܐܢܘܣ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Bishop of Alexandria opposed by Severus of Antioch Gaianus was an Egyptian cleric and follower of the doctrine of Julian of Halicarnassus concerning the incorruptibility of Christ (Aphthartism). He was supported by a considerable part of the population of Alexandria after the death of Timothy IV in early 535; the new patriarch Theodosius was ousted and Gaianus acceded to the patriarchal throne for three months before a military expedition reinstalled Theodosius. Gaianus was sent into exile to the west, probably to Carthage."
-        }
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1167"
       },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bassus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In hagiography: Bassus and his twin sister Suzanna were twin children of a Zoroastrian governor. They were informed about Christianity by a Christian slave. They were baptized by an ascetic named Longinus . They were killed by their father. A martyr named Stephen is also commemorated with them. At least one monastery commemorating Mar Bassus was founded near Apamea ."
+      }
+    }, {
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1711"
+      },
+      "label_syr" : {
+        "xml:lang" : "syr",
+        "type" : "literal",
+        "value" : "ܐܣܛܦܢܘܣ"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Stephen the Protomartyr"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Stephen is commemorated in the Syriac tradition as the first of Christian martyrs."
+      }
+    },
       {
         "person": {
           "type": "uri",
@@ -10412,26 +10408,6 @@
         "label_syr": {
           "xml:lang": "syr",
           "type": "literal",
-          "value": "ܝܘܚܢܢ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Monk, missionary, church leader, (titular) Bp. of Ephesus, hagiographer, and historian. Born in 507 in Roman Mesopotamia, John became a monk already in his childhood. Since the late 530s, he mainly lived in Constantinople where he enjoyed good relations with Justinian despite his miaphysite convictions. John earned fame with his missionary campaigns in Asia Minor and rose, in 558, to become bishop and one of the miaphysite leaders in Constantinople. John participated in the debates to find a formula of faith that could be accepted by both the miaphysites and the Chalcedonians. He was a victim of the miaphysite persecution starting in 571 and repeatedly imprisoned until his death in about 589. He wrote the Lives of the Eastern Saints, a collection of hagiographic tales, and a large Ecclesiastical History, of which the third part dealing with the events of the 570s and 580s has been preserved."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/74"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "John of Ephesus"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
           "value": "ܝܘܚܢܢ ܕܐܦܣܘܣ"
         },
         "description": {
@@ -10932,26 +10908,6 @@
         "description": {
           "type": "literal",
           "value": "Bishop of Alabanda"
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/579"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Julian of Halicarnassus"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܝܘܠܝܢܐ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Bp., theologian, controversialist. Julian was originally a collaborator of Severus of Antioch and bishop of Halicarnassus. After the accession of Justin I in 518, he was, as an opponent of Chalcedon, forced into exile and went to Egypt together with Severus. There, he clashed with his former mentor since he argued that Christ's body had always been immune to corruption and suffering, a notion fiercely contested by Severus. This conflict ushered in a lasting split among the miaphysites; the followers of Julian, known as Julianists or aphthartists, remained especially strong in Egypt during the remainder of the sixth century."
         }
       },
       {
@@ -12593,26 +12549,6 @@
           "xml:lang": "syr",
           "type": "literal",
           "value": "ܦܘܠܘܣ ܬܪܝܢܐ ܦܛܪܝܪܟܐ ܕܐܢܛܝܘܟܝܐ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Patr. Pawlos’s name (‘of the house of the black ones’) was rendered in Greek as ‘of the black (ones)’ (Melanos, sing., or Melanōn, plur.). Paul, nicknamed the Black, was of Alexandrian origin and lived in Constantinople together with the miaphysite patriarch Theodosius of Alexandria. Theodosius ordained him patriarch of Antioch in 564, but he never was accepted by all the miaphysites in Syria. Paul's position was further weakened in the early 570s, when he temporarily entered into communion with the Chalcedonians. Eventually, his opponents succeeded in ordaining Peter of Callinicum as counter-patriarch. According to Joh. Eph., EH 4.54-57, Paul spent his last years in hiding and his death went largely unnoticed."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/72"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Paul II , Patriarch of Antioch"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܦܘܠܘܣ"
         },
         "description": {
           "type": "literal",
@@ -15432,26 +15368,6 @@
       {
         "person": {
           "type": "uri",
-          "value": "http://syriaca.org/person/784"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Theodosius , patriarch of Alexandria"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܬܐܕܘܪܘܣ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Patr. of Alexandria ; leader of the Egyptian and Syrian anti-Chalcedonians. Theodore, of Syrian origin, was abbot of the miaphysite monastery of Rhamnis in Egypt and consecrated patriarch of Alexandria in 575. However, the majority of the miaphysite clergy did not accept him and elected Peter of Alexandria instead, as is narrated in Joh. Eph., EH 4.10-13."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
           "value": "http://syriaca.org/person/2271"
         },
         "label_en": {
@@ -15963,26 +15879,6 @@
           "xml:lang": "syr",
           "type": "literal",
           "value": "ܛܝܡܬܐܘܣ"
-        },
-        "description": {
-          "type": "literal",
-          "value": "Bishop of Alexandria and a non-Chalcedonian Timothy was anti-Chalcedonian patriarch of Alexandria from 517 to 535. During his tenure, he welcomed Severus and other miaphysite clerics from Syria who had been forced to leave their sees."
-        }
-      },
-      {
-        "person": {
-          "type": "uri",
-          "value": "http://syriaca.org/person/2440"
-        },
-        "label_en": {
-          "xml:lang": "en",
-          "type": "literal",
-          "value": "Timothy IV"
-        },
-        "label_syr": {
-          "xml:lang": "syr",
-          "type": "literal",
-          "value": "ܛܝܡܘܬܐܘܣ ܪܝܫ ܐܦ̈ܝܣܩܘܦܐ"
         },
         "description": {
           "type": "literal",
@@ -16638,7 +16534,18 @@
           "type": "literal",
           "value": "Qashish is commemorated in Qashish (text) , a work surviving in at least 3 manuscripts including ms London, British Library, Add. 14647, f. 120-121v ."
         }
+      },
+       {
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3703"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3703"
       }
+    }
     ]
   }
 }
