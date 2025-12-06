@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - 'erin-dev'
-    paths:
-      - '.github/workflows/all_code_to_s3.yml'
+    # paths:
+    #   - '.github/workflows/all_code_to_s3.yml'
 
 permissions:
   id-token: write
