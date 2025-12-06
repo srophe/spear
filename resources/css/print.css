@@ -2,7 +2,7 @@
 
   * {
     text-shadow: none !important;
-    color: #000 !important; // Black prints faster: h5bp.com/s
+    color: #000 !important; 
     background: transparent !important;
     box-shadow: none !important;
   }
@@ -20,7 +20,6 @@
     content: " (" attr(title) ")";
   }
 
-  // Don't show links for images, or javascript/internal links
   .ir a:after,
   a[href^="javascript:"]:after,
   a[href^="#"]:after {
@@ -34,7 +33,7 @@
   }
 
   thead {
-    display: table-header-group; // h5bp.com/t
+    display: table-header-group; 
   }
 
   tr,

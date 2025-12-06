@@ -15,8 +15,8 @@ export function buildMultiFilterQuery(state) {
   // Event Keyword filter // Add event participant//works
   if (state.selectedEventKeywords.size > 0) {
     blocks.push(`
-        ?event swdt:event-participant ?person .
-        ?event sp:event-keyword/sps:event-keyword ?eventKeyword .
+        ?keywordevent swdt:event-participant ?person .
+        ?keywordevent sp:event-keyword/sps:event-keyword ?eventKeyword .
       VALUES ?eventKeyword { ${Array.from(state.selectedEventKeywords).map(uri => `<${uri}>`).join(' ')} }
     `);
   }
@@ -72,7 +72,7 @@ if (state.selectedPlaceKeywords.size > 0) {
     { ?person swdt:residence    ?place . }
     UNION
     {
-        ?event  swdt:event-place       ?place ;
+        ?placeevent  swdt:event-place       ?place ;
                 swdt:event-participant ?person .
     }
     }
@@ -83,10 +83,11 @@ if (state.selectedPlaceKeywords.size > 0) {
       // Source filter
   if (state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords.size < 3) {
     blocks.push(`
+      ?person rdf:type schema:Person .
+      ?person ?p ?statementNode .
       ?statementNode spr:reference-URL ?factoid .
       ?factoid spr:part-of-series ?source .
       VALUES ?source { ${Array.from(state.selectedSourceKeywords).map(uri => `<${uri}>`).join(' ')} }
-      ?person ?p ?statementNode .  
     `);
   }
 
@@ -158,24 +159,23 @@ export async function fetchData(state) {
   console.log('Fetching persons with multi-type query:', query);
 
     // --- EARLY EXIT CONDITION: Source-only selection crashes Neptune---
-  const onlySourceSelected =
-    state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords.size < 3 &&
-    (!state.persons || state.persons.length === 0) &&
-    state.selectedEventKeywords.size === 0 &&
-    state.selectedRelationshipKeywords.size === 0 &&
-    state.selectedOccupationKeywords.size === 0 &&
-    state.selectedGenderKeywords.size === 0 &&
-    state.selectedPlaceKeywords.size === 0;
+  // const onlySourceSelected =
+  //   state.selectedSourceKeywords.size > 0 && state.selectedSourceKeywords.size < 3 &&
+  //   (!state.persons || state.persons.length === 0) &&
+  //   state.selectedEventKeywords.size === 0 &&
+  //   state.selectedRelationshipKeywords.size === 0 &&
+  //   state.selectedOccupationKeywords.size === 0 &&
+  //   state.selectedGenderKeywords.size === 0 &&
+  //   state.selectedPlaceKeywords.size === 0;
 
-  if (onlySourceSelected) {
-    console.warn("Source-only facet query prevented.");
-    return {
-      error: true,
-      message: "Source choice alone is insufficient for query. Please select at least one additional facet.",
-      rows: []
-    };
-  }
-  query.split('\n').forEach((line,i)=>console.log(String(i+1).padStart(3,' '), line));
+  // if (onlySourceSelected) {
+  //   console.warn("Source-only facet query prevented.");
+  //   return {
+  //     error: true,
+  //     message: "Source choice alone is insufficient for query. Please select at least one additional facet.",
+  //     rows: []
+  //   };
+  // }
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), 5000);
