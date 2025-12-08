@@ -139,7 +139,7 @@ export async function renderKeywordList(query, itemsId, listId, labelField = "la
   const container = document.getElementById(listId);
   if (!listEl || !container) return;
 
-  const pageSize = 50;
+  const pageSize = 10000;
   let offset = 0;
   let loading = false;
   let endReached = false;
