@@ -1,0 +1,43 @@
+{
+  "head" : {
+    "vars" : [ "factoid", "person", "label_en", "description", "relationship", "gender", "occupation", "source" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "While in exile, Severus came into conflict with Julian of Halicarnassus."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/refuter-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    } ]
+  }
+}

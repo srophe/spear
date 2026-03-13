@@ -93,6 +93,7 @@ export const getOccupationOptions = () => `
 
 /**
  * Populates a <select> element with options from a SPARQL query above
+ * Results are cached for 24 hours to reduce server load
  */
 export async function populateDropdown(query, dropdownId, labelField = "label", valueField = "value") {
   const cacheKey = `dropdown_${dropdownId}`;
@@ -129,8 +130,9 @@ export async function populateDropdown(query, dropdownId, labelField = "label", 
 }
 
 /**
- * Renders a scrollable <ul> list from a SPARQL query for keywords, used by relationships menu, paginated by 50
+ * Renders a scrollable <ul> list from a SPARQL query for keywords, used by relationships menu
  * Calls `onSelect(uri)` when a user clicks an item, also see `renderKeywordPrettyList` for a more generic version
+ * Results are cached for 24 hours to reduce server load
  * @param {string} query - SPARQL query to fetch keywords
  * @param {string} itemsId - ID of the <ul> element to populate
  * @param {string} listId - ID of the container for scroll listener
@@ -144,64 +146,42 @@ export async function renderKeywordList(query, itemsId, listId, labelField = "la
   const container = document.getElementById(listId);
   if (!listEl || !container) return;
 
-  const pageSize = 10000;
-  let offset = 0;
-  let loading = false;
-  let endReached = false;
-
-  async function loadNextPage() {
-    if (loading || endReached) return;
-    loading = true;
-
-    const pagedQuery = `${query}\nOFFSET ${offset}\nLIMIT ${pageSize}`;
-    try {
-      const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(pagedQuery)}`, {
+  // Create cache key from query
+  const cacheKey = `keywordList_${btoa(query).substring(0, 20)}`;
+  
+  try {
+    const data = await fetchWithCache(cacheKey, async () => {
+      const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
         headers: { Accept: 'application/sparql-results+json' }
       });
-      const data = await res.json();
-      const results = data.results.bindings;
+      return res.json();
+    });
 
-      if (results.length === 0) {
-        endReached = true;
-        return;
-      }
+    const results = data.results.bindings;
 
-      results.forEach(binding => {
-        const uri = binding[valueField]?.value || "";
-        const label = binding[labelField]?.value || uri;
+    // Render all results at once since we're caching
+    results.forEach(binding => {
+      const uri = binding[valueField]?.value || "";
+      const label = binding[labelField]?.value || uri;
 
-        const li = document.createElement("li");
-        li.textContent = label;
-        li.style.marginBottom = "0.5rem";
-        li.style.fontFamily = "Georgia, serif";
-        li.style.fontSize = ".78rem";
-        li.style.cursor = "pointer";
-        li.style.padding = "0.4rem";
-        li.style.borderBottom = "1px solid #eee";
+      const li = document.createElement("li");
+      li.textContent = label;
+      li.style.marginBottom = "0.5rem";
+      li.style.fontFamily = "Georgia, serif";
+      li.style.fontSize = ".78rem";
+      li.style.cursor = "pointer";
+      li.style.padding = "0.4rem";
+      li.style.borderBottom = "1px solid #eee";
 
-        li.addEventListener("click", () => {
-          onSelect(uri);
-        });
-
-        listEl.appendChild(li);
+      li.addEventListener("click", () => {
+        onSelect(uri);
       });
 
-      offset += pageSize;
-    } catch (err) {
-      console.error("Failed to load keyword list:", err);
-    } finally {
-      loading = false;
-    }
+      listEl.appendChild(li);
+    });
+  } catch (err) {
+    console.error("Failed to load keyword list:", err);
   }
-
-  loadNextPage();
-
-  container.addEventListener("scroll", () => {
-    const threshold = container.scrollHeight - container.clientHeight - 50;
-    if (container.scrollTop >= threshold) {
-      loadNextPage();
-    }
-  });
 }
 const CACHE_TTL_HOURS = 24; // or 0 if you want once per session
 
@@ -226,5 +206,20 @@ async function fetchWithCache(key, fetchFn) {
   localStorage.setItem(key + '_time', now.toString());
 
   return data;
+}
+
+/**
+ * Clears all cached menu data from localStorage
+ * Call this function to force fresh data on next load
+ */
+export function clearMenuCache() {
+  const keys = Object.keys(localStorage);
+  keys.forEach(key => {
+    if (key.startsWith('keywordList_') || key.startsWith('dropdown_')) {
+      localStorage.removeItem(key);
+      localStorage.removeItem(key + '_time');
+    }
+  });
+  console.log('Menu cache cleared');
 }
 

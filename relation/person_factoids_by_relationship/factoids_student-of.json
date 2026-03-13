@@ -1,0 +1,209 @@
+{
+  "head" : {
+    "vars" : [ "factoid", "person", "label_en", "description", "relationship", "gender", "occupation", "source" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/794-80"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1524"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Zeʿora"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Zeʿora studied under Anonymous 3634."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/828-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1875"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mara the Solitary"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mara the Solitary studied under Paul the Mourner."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/833-6"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1876"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mari"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mari studied under Mara of Beth Urtaye."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3116-27"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2020"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Polycarp of Smyrna"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Polycarp was a disciple of John the Evangelist"
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/794-75"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3212"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Hananya"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Hananya studied under Zeʿora."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/797-22"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3698"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3698"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3698 studied under Sergius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3111-65"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3756"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3756"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3756 studied under Isaiah."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    } ]
+  }
+}

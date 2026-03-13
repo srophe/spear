@@ -1,0 +1,5854 @@
+{
+  "head" : {
+    "vars" : [ "factoid", "person", "label_en", "description", "relationship", "gender", "occupation", "source" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-553"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1529"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodosius II"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Honorios and Theodosius II had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/846-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1820"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Caesaria had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/808-22"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2097"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Simeon the Mountaineer"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Simeon the Mountaineer and Anonymi 3701 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2108"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore Castrensus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore and Mishael had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-23"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2108"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore Castrensus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Theodore had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2108"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore Castrensus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore and Justinian had a professional relationship/"
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-481"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2236"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asclepius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asclepius and Euphrasios had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishops"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-45"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2239"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bardin"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bar Din and Bulid had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/prefect"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-133"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2241"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Barsa"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Barsa and Constantius II had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishops"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-45"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2243"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bulid"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bar Din and Bulid had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/prefect"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-133"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2249"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Constantius II"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Barsa and Constantius II had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-15"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2265"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I and Flavian II of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-404"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2265"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I and Euphemios had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-438"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2265"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I and Macedonios II had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-444"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2265"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Vitalian and Anastasios I had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-262"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2266"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Arcadius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Arcadius and Honorios had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-262"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2267"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Honorios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Arcadius and Honorios had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-553"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2267"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Honorios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Honorios and Theodosius II had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-459"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2268"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justin I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justin I, Severus of Antioch and Philoxenos of Mabbug had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-463"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2268"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justin I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius, Justin I and Pawla had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-521"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2268"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justin I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I and Justin I had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-371"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2273"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Zeno"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Leontios and Zeno had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-404"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2277"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Euphemios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I and Euphemios had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishops"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-481"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2278"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Euphrasios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asclepius and Euphrasios had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-489"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2278"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Euphrasios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I, Euphrasios and Pawla had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-19"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2281"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John of Claudiupolis, Patricius and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3242-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2281"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius, Severus, Paul, and Julian of Halicarnassus agressively questioned Macedonius II about his efforts to promote the Council of Chalcedon against the wishes of Anastasius I."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-463"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2281"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius, Justin I and Pawla had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2284"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Justinian had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2284"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mishael and Justinian had a professional relationhsip."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2284"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore and Justinian had a professional relationship/"
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-489"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2284"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I, Euphrasios and Pawla had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-521"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2284"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I and Justin I had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-38"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2285"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Qayuma bar Magartat"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Yahab bar Shemesh and Qayuma bar Magartat had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/scribes"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-371"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2287"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Leontios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Leontios and Zeno had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/usurpers"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-463"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2296"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Pawla"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius, Justin I and Pawla had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishops"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-489"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2296"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Pawla"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I, Euphrasios and Pawla had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishops"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-444"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2311"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Vitalian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Vitalian and Anastasios I had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-38"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2313"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Yahab bar Shemesh"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Yahab bar Shemesh and Qayuma bar Magartat had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/scribes"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3047-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2400"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Aelian had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3069-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2400"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Eustathios and John had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3069-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2402"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Eustathios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Eustathios and John had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3072-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2406"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ignatius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Ignatius and Anonymous 3093 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3124-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2407"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Marion"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Julian, lacking needed clergy, sought the ordination of priests and deacons by Sergius and Marion."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3046-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2417"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Paul and Solon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3046-23"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2417"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon and Paul had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3052-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2417"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius, comes and Solon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3085-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2424"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3190-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2430"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dioscorus II"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus sought the approval of Dioscorus in communing with Eleusinius and Proclus but not Soteric or Asterius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3179-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2433"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Victor"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Victor had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3179-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2437"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Philip"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Philip had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3124-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2465"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Julian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Julian, lacking needed clergy, sought the ordination of priests and deacons by Sergius and Marion."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3046-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2468"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Paul"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Paul and Solon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3046-23"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2468"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Paul"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon and Paul had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3149-34/"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2475"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Joseph"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751, Joseph, and John had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3149-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2476"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Zacharias"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751 and Zacharias had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3149-34/"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2477"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751, Joseph, and John had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2480"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Andrew"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Andrew, Severus of Antioch, Theodosius, patriarch of Alexandria and Theodora, Roman empress had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-54"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2487"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Julian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Julian had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3083-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2514"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Peter"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Peter and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3034-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2526"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Nicias"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Nicias wrote a letter to Severus informing him that Gennadius doubted that heretical clergy who have repented could be received."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2528"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asterius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asterius and Anonymi 3129 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-19"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2529"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John of Claudiupolis"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John of Claudiupolis, Patricius and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-15"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2530"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Flavian II of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I and Flavian II of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-25"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2545"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isidore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Isidore had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3099-45"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2545"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isidore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isidore and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3038-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2546"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Entrechius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodosius and Entrechius had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3038-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2548"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodosius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodosius and Entrechius had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2552"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antiochus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antiochus, Severus of Antioch and Antoninus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2553"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antoninus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antoninus and Anonymi 3055 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2553"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antoninus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antiochus, Severus of Antioch and Antoninus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2554"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Simeon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3054 and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3071-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2554"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Simeon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Stephen, Severus of Antioch and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3041-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2556"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Hypatius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Hypatius and Anonymous 3056 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2558"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Misael"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mishael and Justinian had a professional relationhsip."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2558"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Misael"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore and Mishael had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3044-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2559"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Eleutherius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Eleutherius had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3024-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2560"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Basil carried a letter from Solon to Severus introducing Epiphanius and Symbatius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3024-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2561"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Symbatius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Basil carried a letter from Solon to Severus introducing Epiphanius and Symbatius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-45"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2562"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius and Timothy II of Alexandria had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-51"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2562"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius, Peter the Iberian and Anonymi 3131 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3071-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2566"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Stephen the deacon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Stephen, Severus of Antioch and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3002-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2582"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Abba"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Abba, Severus of Antioch and Maximus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3047-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2589"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Aelian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Aelian had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3020-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2606"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Archelaus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Menas of Tyre, Isidore, Anonymi 3034 and Archelaus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3190-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2610"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asterius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asterius attempted to convince Severus to recant his condemnation of the Council of Chalcedon and Leo's Tome. He would not recant and declared his intent to suffer exile rather than recant."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/846-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2621"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Caesaria"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sosiana and Caesaria had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/846-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2621"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Caesaria"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Caesaria had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3034-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2655"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Gennadius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Nicias wrote a letter to Severus informing him that Gennadius doubted that heretical clergy who have repented could be received."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3020-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2667"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isidore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Menas of Tyre, Isidore, Anonymi 3034 and Archelaus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3141-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2668"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "James"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and James had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3013-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2669"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jannia"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore the Deacon asked Severus about the commands Jannia gave him."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3013-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2669"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jannia"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jannia, Theodore and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-438"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2696"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Macedonius II"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasios I and Macedonios II had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3020-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2705"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Menas of Tyre"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Menas of Tyre, Isidore, Anonymi 3034 and Archelaus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3002-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2722"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Maximus"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Abba, Severus of Antioch and Maximus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3051-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2724"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Neon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Neon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3242-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2730"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Paul"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius, Severus, Paul, and Julian of Halicarnassus agressively questioned Macedonius II about his efforts to promote the Council of Chalcedon against the wishes of Anastasius I."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3124-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2751"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sergius I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Julian, lacking needed clergy, sought the ordination of priests and deacons by Sergius and Marion."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3104-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2754"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Simeon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3103 and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3013-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2767"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore the Deacon asked Severus about the commands Jannia gave him."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3013-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2767"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jannia, Theodore and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3039-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2782"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Apophon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Apophon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/846-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3020"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sosiana"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sosiana and Caesaria had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3020-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3034"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3034"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Menas of Tyre, Isidore, Anonymi 3034 and Archelaus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3035-24"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3044"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3044"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3044 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3054"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3054"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3054 and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3055"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3055"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antoninus and Anonymi 3055 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3041-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3056"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3056"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Hypatius and Anonymous 3056 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3041-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3056"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3056"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymous 3056 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3044-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3060"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3060"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3060 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3044-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3061"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3061"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3061 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3049-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3067"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3067"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072, Anonymi 3067, Anonymous 3068, Anonymous 3069 and Anonymous 3070 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3049-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3068"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3068"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072, Anonymi 3067, Anonymous 3068, Anonymous 3069 and Anonymous 3070 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3049-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3069"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3069"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072, Anonymi 3067, Anonymous 3068, Anonymous 3069 and Anonymous 3070 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3049-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3070"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3070"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072, Anonymi 3067, Anonymous 3068, Anonymous 3069 and Anonymous 3070 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3049-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3072"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072, Anonymi 3067, Anonymous 3068, Anonymous 3069 and Anonymous 3070 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3053-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3072"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3072"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3072 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3072-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3093"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3093"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Ignatius and Anonymous 3093 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3087-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3099"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3099"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3099 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3092-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3099"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3099"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3099 and Anonymi 3100 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3092-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3100"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3100"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3099 and Anonymi 3100 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3104-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3103"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3103"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3103 and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3115-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3114"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3114"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3114 and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3129"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3129"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asterius and Anonymi 3129 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-51"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3131"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymi 3131"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius, Peter the Iberian and Anonymi 3131 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3224"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Justinian had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/848-23"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3224"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Theodore had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/808-22"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3701"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3701"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Simeon the Mountaineer and Anonymi 3701 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3149-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3751"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751 and Zacharias had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3149-34/"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3751"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3751, Joseph, and John had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-17"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3768"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3768"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora and Anonymous 3768 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3768"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3768"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3768 and Anonymous 3769 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3769"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3769"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora and Anonymous 3769 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3769"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3769"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3768 and Anonymous 3769 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3037-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3778"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3778"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Anonymous 3778 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3056-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/44"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Philoxenos of Mabbug"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Philoxenos of Mabbug had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/metropolitans"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-459"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/44"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Philoxenos of Mabbug"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justin I, Severus of Antioch and Philoxenos of Mabbug had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/metropolitans"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3002-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Abba, Severus of Antioch and Maximus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-19"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John of Claudiupolis, Patricius and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3013-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore the Deacon asked Severus about the commands Jannia gave him."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3013-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Jannia, Theodore and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3020-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Menas of Tyre, Isidore, Anonymi 3034 and Archelaus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3024-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Basil carried a letter from Solon to Severus introducing Epiphanius and Symbatius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3034-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Nicias wrote a letter to Severus informing him that Gennadius doubted that heretical clergy who have repented could be received."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3035-24"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3044 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3037-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Anonymous 3778 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3039-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Apophon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-25"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Isidore had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3040-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Antiochus, Severus of Antioch and Antoninus had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3041-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymous 3056 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3044-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Eleutherius had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3044-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3061 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3044-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3060 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3051-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Neon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3052-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius, comes and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3053-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3072 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3056-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Philoxenos of Mabbug had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3071-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Stephen, Severus of Antioch and Simeon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3072-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch, Ignatius and Anonymous 3093 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3083-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Peter and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3085-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3087-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Anonymi 3099 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3099-45"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isidore and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3115-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3114 and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Andrew, Severus of Antioch, Theodosius, patriarch of Alexandria and Theodora, Roman empress had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-54"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch and Julian had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3141-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and James had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3179-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Philip had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3179-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus and Victor had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3190-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus sought the approval of Dioscorus in communing with Eleusinius and Proclus but not Soteric or Asterius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3190-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Asterius attempted to convince Severus to recant his condemnation of the Council of Chalcedon and Leo's Tome. He would not recant and declared his intent to suffer exile rather than recant."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3242-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patricius, Severus, Paul, and Julian of Halicarnassus agressively questioned Macedonius II about his efforts to promote the Council of Chalcedon against the wishes of Anastasius I."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-459"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justin I, Severus of Antioch and Philoxenos of Mabbug had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3052-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/56"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius , comes"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius, comes and Severus of Antioch had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/comes"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3052-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/56"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius , comes"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius, comes and Solon had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/comes"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-51"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/680"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Peter the Iberian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius, Peter the Iberian and Anonymi 3131 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/779"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora , Roman empress"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Andrew, Severus of Antioch, Theodosius, patriarch of Alexandria and Theodora, Roman empress had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-17"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/779"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora , Roman empress"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora and Anonymous 3768 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/839-20"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/779"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora , Roman empress"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora and Anonymous 3769 had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/784"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodosius , patriarch of Alexandria"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Andrew, Severus of Antioch, Theodosius, patriarch of Alexandria and Theodora, Roman empress had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3004-45"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/792"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Timothy II of Alexandria"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epiphanius and Timothy II of Alexandria had a professional relationship."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    } ]
+  }
+}

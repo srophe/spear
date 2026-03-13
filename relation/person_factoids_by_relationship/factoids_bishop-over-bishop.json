@@ -1,0 +1,649 @@
+{
+  "head" : {
+    "vars" : [ "factoid", "person", "label_en", "description", "relationship", "gender", "occupation", "source" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3024-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2417"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon was a bishop with authority over the bishop Epiphanius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3024-4"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2417"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon was a bishop with authority over the bishop Symbatius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3052-6"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2417"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Solon had ecclesiastical authority over the bishop(s) Paul and Musonius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3096-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2492"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore had ecclesiastical authority over the bishop(s) Bosporius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3048-6"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2514"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Peter"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Peter had ecclesiastical authority over the bishop(s) Anonymi 3066."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2520"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dionysios"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dionysius forced Basil to perform an unlawful ordination."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3035-17"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishops who attended a synod in Antioch."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3035-22"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Peter."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3035-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Cosmas."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3036-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Isidore."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3046-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Paul."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3048-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Peter."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3052-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Solon, Paul and Musonius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3060-6"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Epiphanius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3061-16"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus sent Eusebius and Victor to urge Marinus to repent and abandon his Eutychian views of the incarnation."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3062-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) John of Alexandria Minor."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3068-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Anonymi 3066."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3094-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch had ecclesiastical authority over the bishop(s) Eucharius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3195-4"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/51"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus of Antioch"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus had episcopal authority over Epiphanius, but he rebelled."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patriarchs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    } ]
+  }
+}

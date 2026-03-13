@@ -1,0 +1,1034 @@
+{
+  "head" : {
+    "vars" : [ "factoid", "person", "label_en", "description", "relationship", "gender", "occupation", "source" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/836-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1788"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isaac"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isaac and Anonymous 3690 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/846-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/1820"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sosiana and John were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/843-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2121"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theophilos"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theophilos and Mary were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/813-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2126"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Thomas the Armenian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Thomas the Armenian and Anonymous 3233 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/802-105"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2244"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Khusrau I Anushirwan"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3242 and Khusrau I Anushirwan were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/shahs"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/805-44"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2284"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Justinian I"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora, Roman empress and Justinian I were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/emperors"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3037-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2424"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Anonymous 3777 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-33"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2481"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anatolius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3123 and Anatolius were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3008-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2591"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Alypius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Alypius and Anonymous 3775 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3127-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2596"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anastasia"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3119 and Anastasia were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3082-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2622"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Calliopius"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3011-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/2766"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore and Anonymous 3776 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/846-5"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3020"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sosiana"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sosiana and John were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/843-9"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3021"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Mary"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theophilos and Mary were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3084-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3097"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3097"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3098 and Anonymous 3097 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3084-13"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3098"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3098"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3098 and Anonymous 3097 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3127-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3119"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3119"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3119 and Anastasia were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3120"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3120"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3121 and Anonymous 3120 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/men"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-21"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3121"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3121"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3121 and Anonymous 3120 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3140-33"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3123"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3123"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3123 and Anatolius were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/813-11"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3233"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Maria the Armenian"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Thomas the Armenian and Anonymous 3233 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/802-105"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3242"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3242"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3242 and Khusrau I Anushirwan were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/796-41"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3627"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3627"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3627 and Anonymous 3628 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/796-41"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3628"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3628"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3627 and Anonymous 3628 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/796-54"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3629"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3629"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3629 and Anonymous 3632 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/796-54"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3632"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3632"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3629 and Anonymous 3632 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/836-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3690"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3690"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Isaac and Anonymous 3690 were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3082-8"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3739"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3739"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3008-2"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3775"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3775"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Alypius and Anonymous 3775 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3011-7"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3776"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3776"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodore and Anonymous 3776 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3037-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3777"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3777"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "John and Anonymous 3777 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3014-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/3785"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anonymous 3785"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius and Anonymous 3785 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3014-10"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/56"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius , comes"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oecumenius and Anonymous 3785 were married."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/comes"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/805-44"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/person/779"
+      },
+      "label_en" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora , Roman empress"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Theodora, Roman empress and Justinian I were spouses."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "gender" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/women"
+      },
+      "occupation" : {
+        "type" : "uri",
+        "value" : "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/lives-eastern-saints"
+      }
+    } ]
+  }
+}

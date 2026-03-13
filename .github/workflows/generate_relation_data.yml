@@ -1,0 +1,78 @@
+name: Generate Relation Data
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday at midnight
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Get relationship types
+        working-directory: relation
+        run: |
+          curl -G "https://sparql.vanderbilt.edu/sparql" \
+            --data-urlencode 'query=
+          PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+          
+          SELECT DISTINCT ?subject ?label
+          WHERE {
+            VALUES (?collection) {
+              (<http://syriaca.org/taxonomy/directed-relations-collection>)
+              (<http://syriaca.org/taxonomy/mutual-relations-collection>)
+            }
+            ?collection skos:member ?subject .
+            ?subject skos:prefLabel ?label .
+          }
+          ORDER BY ?label
+          ' \
+          -H "Accept: application/sparql-results+json" > relationship_types.json
+          
+          echo "✓ Relationship types retrieved"
+          jq '.results.bindings | length' relationship_types.json
+
+      - name: Query all relation factoids
+        working-directory: relation
+        run: |
+          chmod +x batch_query_relationships.sh
+          ./batch_query_relationships.sh
+          
+          echo "✓ All relation factoids generated"
+          ls -lh all_relation_factoids.json
+
+      - name: Filter relation factoids
+        working-directory: relation
+        run: |
+          node filter_factoids.js
+          
+          echo "✓ Filtered relation factoids generated"
+          ls -lh filtered_relation_factoids.json
+
+      - name: Query person relation factoids
+        working-directory: relation
+        run: |
+          chmod +x batch_query_person_relationship.sh
+          ./batch_query_person_relationship.sh
+          
+          echo "✓ Person relation factoids generated"
+          ls -lh all_person_relation_factoids.json
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add relation/*.json
+          git diff --staged --quiet || git commit -m "chore: update relation data files [skip ci]"
+          git push
