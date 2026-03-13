@@ -600,7 +600,11 @@ if (hasName || hasGender || hasOccupation || hasSource) {
     // Render into the event results panel
     const panel = document.getElementById('relation--items');
     if (!panel) return;
-
+    
+    if (!facts || facts.length === 0) {
+      panel.innerHTML = `<div class="text-muted">No event factoids match these filters.</div>`;
+      return;
+    }
 
 
 
