@@ -514,6 +514,8 @@ export default {
       s.uncertainty = '';
 
       // reset inputs visually
+      const nameInput = root.querySelector('#name-search');
+      if (nameInput) nameInput.value = '';
       root.querySelectorAll('input[name="gender"]').forEach(cb => (cb.checked = false));
       root.querySelectorAll('input[name="uncertainty"]').forEach(cb => (cb.checked = false));
       const all = root.querySelector('#eventSourceSelect input[data-all]');

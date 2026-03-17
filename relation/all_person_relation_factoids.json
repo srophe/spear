@@ -10698,7 +10698,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/dux"
+          "value": "http://syriaca.org/taxonomy/dukes"
         },
         "source": {
           "type": "uri",
@@ -18682,7 +18682,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -23303,7 +23303,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -27463,7 +27463,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -27707,7 +27707,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/prefect"
+          "value": "http://syriaca.org/taxonomy/prefects"
         },
         "source": {
           "type": "uri",
@@ -27779,7 +27779,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/prefect"
+          "value": "http://syriaca.org/taxonomy/prefects"
         },
         "source": {
           "type": "uri",
@@ -33355,7 +33355,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -33391,7 +33391,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -33427,7 +33427,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -36593,7 +36593,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/dux"
+          "value": "http://syriaca.org/taxonomy/dukes"
         },
         "source": {
           "type": "uri",
@@ -38069,7 +38069,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/cubicularius"
+          "value": "http://syriaca.org/taxonomy/cubicularius"
         },
         "source": {
           "type": "uri",
@@ -38105,7 +38105,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/cubicularius"
+          "value": "http://syriaca.org/taxonomy/cubicularius"
         },
         "source": {
           "type": "uri",
@@ -48529,7 +48529,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -48565,7 +48565,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
@@ -51117,7 +51117,7 @@
         },
         "occupation": {
           "type": "uri",
-          "value": "file:///Users/geiere/Projects/Neptune/upload/srophe-data-rdf/persons/empress"
+          "value": "http://syriaca.org/taxonomy/empresses"
         },
         "source": {
           "type": "uri",
