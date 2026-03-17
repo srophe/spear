@@ -1,0 +1,1020 @@
+{
+  "head" : {
+    "vars" : [ "factoid", "person", "label_en", "description", "relationship", "gender", "occupation", "source" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-12"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dionysius forced Basil to perform an unlawful ordination."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-15"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-12"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "When Dionysius attempted to force Basil to perform an unlawful ordination, Severus urged Theotecnus and John to oppose this."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-12"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3064-14"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Dionysius forced Basil to perform an unlawful ordination."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3063-15"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3064-14"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "When Dionysius attempted to force Basil to perform an unlawful ordination, Severus urged Theotecnus and John to oppose this."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3064-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3064-3"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus defended Julian against charges that he attempted to mislead Anastasios."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3079-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3064-3"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sometime between 515-18 Severus of Antioch and a group of clergy and scholastics ruled against Julian in a dispute regarding church property in Tarsus. Julian attempted to appeal to the magister militum Hypatius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3064-3"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3079-26"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus defended Julian against charges that he attempted to mislead Anastasios."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3079-26"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3079-26"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sometime between 515-18 Severus of Antioch and a group of clergy and scholastics ruled against Julian in a dispute regarding church property in Tarsus. Julian attempted to appeal to the magister militum Hypatius."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-17"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-17"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Those who thought the Henotikon was insufficient without an anathema of Chalcedon refused to commune with those who thought is was sufficient."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-17"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anatolius prophesied the death of those who communed with non-Chalcedonians who accepted the Henotikon even though it did not anathematize Chalcedon. He was forced to repent when his prophecies did not come true."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-19"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-17"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus healed a man with boils who thought he was going to die because Anatolius prophesied the death of those who communed with non-Chalcedonians who accepted the Henotikon even though it did not anathematize Chalcedon."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-17"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-18"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Those who thought the Henotikon was insufficient without an anathema of Chalcedon refused to commune with those who thought is was sufficient."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-18"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anatolius prophesied the death of those who communed with non-Chalcedonians who accepted the Henotikon even though it did not anathematize Chalcedon. He was forced to repent when his prophecies did not come true."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-19"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-18"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus healed a man with boils who thought he was going to die because Anatolius prophesied the death of those who communed with non-Chalcedonians who accepted the Henotikon even though it did not anathematize Chalcedon."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-17"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-19"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Those who thought the Henotikon was insufficient without an anathema of Chalcedon refused to commune with those who thought is was sufficient."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-18"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-19"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Anatolius prophesied the death of those who communed with non-Chalcedonians who accepted the Henotikon even though it did not anathematize Chalcedon. He was forced to repent when his prophecies did not come true."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-19"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/3109-19"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Severus healed a man with boils who thought he was going to die because Anatolius prophesied the death of those who communed with non-Chalcedonians who accepted the Henotikon even though it did not anathematize Chalcedon."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/letters-severus"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-389"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-311"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the inhabitants of Nicopolis died in an earthquake."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-388"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-388"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the city of Nicopolis was destroyed by an earthquake ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-396"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-388"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the Bishop of Nicopolis . and two synkelli survived an earthquake that destroyed Nicopolis ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-388"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-389"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the city of Nicopolis was destroyed by an earthquake ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-389"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-389"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the inhabitants of Nicopolis died in an earthquake."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-396"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-389"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the Bishop of Nicopolis . and two synkelli survived an earthquake that destroyed Nicopolis ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-388"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-396"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the city of Nicopolis was destroyed by an earthquake ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-389"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-396"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the inhabitants of Nicopolis died in an earthquake."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-396"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-396"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 the Bishop of Nicopolis . and two synkelli survived an earthquake that destroyed Nicopolis ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-408"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-408"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 Anastasios deposed Euphemius ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-409"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-408"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 Macedon became Bishop of Constantinople after the deposition of Euphemius ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-408"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-409"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 Anastasios deposed Euphemius ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-409"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-409"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 498/9 A. Gr. 810 Macedon became Bishop of Constantinople after the deposition of Euphemius ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-420"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-420"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In September A. D. 503 Elul A. Gr. 814 Kavad besieged Edessa but did not capture it."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-421"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-420"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "During the seige of Edessa in September A. D. 503 Elul A. Gr. 814 Kavad burned the House of Mar Sergius and the House of the Confessors ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-420"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-421"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In September A. D. 503 Elul A. Gr. 814 Kavad besieged Edessa but did not capture it."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-421"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-421"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "During the seige of Edessa in September A. D. 503 Elul A. Gr. 814 Kavad burned the House of Mar Sergius and the House of the Confessors ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-482"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-476"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 424/5 A. Gr. 836 , after the flooding of Edessa Asclepius fled Edessa and spent 70 days in Antioch with Euphrasius ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-482"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-482"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In 424/5 A. Gr. 836 , after the flooding of Edessa Asclepius fled Edessa and spent 70 days in Antioch with Euphrasius ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-501"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-501"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 29 May 526 29 Iyār A. Gr. 837 at the seventh hour a great earthquake struck Antioch ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-502"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-501"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 15 November A. D. 527 15 Teshri II A. Gr. 839 a great fire of unknown origin burned much of what remained of Antioch after it was destroyed by earthquake ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-504"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-501"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 29 May 526 29 Iyār A. Gr. 837 Euphrasius the Patriarch of Antioch died in an earthquake."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-501"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-502"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 29 May 526 29 Iyār A. Gr. 837 at the seventh hour a great earthquake struck Antioch ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-502"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-502"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 15 November A. D. 527 15 Teshri II A. Gr. 839 a great fire of unknown origin burned much of what remained of Antioch after it was destroyed by earthquake ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-504"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-504"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 29 May 526 29 Iyār A. Gr. 837 Euphrasius the Patriarch of Antioch died in an earthquake."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-533"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-531"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 10 January A. D. 532 10 Kānun II A. Gr. 843 Demosthenes fell sick and died in Tella while fighting the Huns ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-533"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-533"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "On 10 January A. D. 532 10 Kānun II A. Gr. 843 Demosthenes fell sick and died in Tella while fighting the Huns ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-542"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-538"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In May 540 Iyār A. Gr. 851 Chosroes broke the peace and invaded Roman territory . He laid waste Shura , Aleppo , and Antioch ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    }, {
+      "factoid" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-542"
+      },
+      "person" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/8559-542"
+      },
+      "description" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "In May 540 Iyār A. Gr. 851 Chosroes broke the peace and invaded Roman territory . He laid waste Shura , Aleppo , and Antioch ."
+      },
+      "relationship" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "source" : {
+        "type" : "uri",
+        "value" : "https://spear-prosop.org/chronicle-edessa"
+      }
+    } ]
+  }
+}

@@ -1,0 +1,918 @@
+{
+  "head" : {
+    "vars" : [ "subject", "label" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/disciplinary-associate"
+      },
+      "label" : {
+        "xml:lang" : "de",
+        "type" : "literal",
+        "value" : "Fachkollege"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/acquaintance-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Acquaintance of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/addressee-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Addressee of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/alliance-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Alliance with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/ancestor-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ancestor of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/baptized"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Baptized"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bishop over"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-monk"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bishop over  Monk"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-bishop"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bishop over Bishop"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bishop-over-clergy"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bishop over Clergy"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/bringer-of-legal-charges-against"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Bringer of Legal Charges against"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/brotherhood-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Brotherhood with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/carrier-of-letter-from"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Carrier of Letter from"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/carrier-of-letter-to"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Carrier of Letter to"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/casual-intimate-relationship-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Casual Intimate Relationship with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/child-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Child of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/child-of-sibling-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Child of Sibling of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/cited"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Cited"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/cited-negatively"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Cited Negatively"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/cited-positively"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Cited Positively"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/clergy-for"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Clergy for"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/clerical-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Clerical Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/co-located"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Co-located"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/colleague-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Colleague of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/command-over"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Command over"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/commemorates"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Commemorates"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/commune-together"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Commune Together"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/conceptually-related"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Conceptually Related"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/confessor-for"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Confessor for"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/cousin-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Cousin of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/descendent-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Descendent of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/destruction"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Destruction"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/disciplinary-associate"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Disciplinary Associate"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/employer-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Employer of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/enmity-for"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Enmity for"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/epistolary-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Epistolary Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/extended-family-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Extended Family of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/extended-household-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Extended Household of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/family-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Family of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/fellow-clergy"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Fellow Clergy"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/fellow-monastics"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Fellow Monastics"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/follower-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Follower of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/freed-slave-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Freed Slave of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/friendship-for"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Friendship for"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/godparent-for"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Godparent for"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/grandchild-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Grandchild of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/grandparent-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Grandparent of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/great-grandparent-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Great-grandparent of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/hereditary-family-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Hereditary Family of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/house-slave-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "House Slave of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/household-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Household of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/informant-network-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Informant Network with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/intellectual-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Intellectual Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/intimate-relationship-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Intimate Relationship with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/judge-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Judge of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/judicial-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Judicial Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/kin-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Kin of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/legally-recognized-relationship-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Legally Recognized Relationship with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/military-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Military Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/monastic-head-over"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Monastic Head over"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/monastic-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Monastic Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/not-to-be-confused-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Not to be Confused with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/oral-informant-about"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oral Informant about"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/oral-informant-to"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Oral Informant to"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/ordained"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ordained"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/parent-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Parent of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/patron-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Patron of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/persecuted"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Persecuted"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/possibly-identical"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Possibly Identical"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/professional-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Professional Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/proximate-event"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Proximate Event"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/reader-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Reader of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/reader-of-handwriting-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Reader of Handwriting of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/recipient-of-letter-from"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Recipient of Letter from"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/refuter-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Refuter of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/related-event"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Related Event"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/religious-relationship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Religious Relationship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/ritual-kinship"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Ritual Kinship"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/same-event"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Same Event"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/sender-of-letter-to"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sender of Letter to"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/serious-intimate-relationship-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Serious Intimate Relationship with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/share-a-name"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Share a Name"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/shares-attribution-with"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Shares Attribution with"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/sibling-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sibling of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/sibling-of-parent-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Sibling of Parent of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/slave-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Slave of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/spouse-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Spouse of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/student-of"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Student of"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/submitter-of-legal-petition-to"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Submitter of Legal Petition to"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/written-informant-about"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Written Informant about"
+      }
+    }, {
+      "subject" : {
+        "type" : "uri",
+        "value" : "http://syriaca.org/taxonomy/member-of-group"
+      },
+      "label" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "member-of-group"
+      }
+    } ]
+  }
+}
