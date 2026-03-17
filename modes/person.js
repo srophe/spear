@@ -9,7 +9,7 @@ import {
 
 import { renderKeywordPrettyList } from '../list.js';
 import persons from "../person/person.json" with { type: 'json' };
-import { cleanPunctuationSpacing } from '../utils/cleanUi.js';
+import { cleanPunctuationSpacing, toAggregateUri } from '../utils/cleanUi.js';
 import { fetchData } from '../person/search.js';
 
 function writeFilterParamsToUrl(filterState) {
@@ -580,7 +580,7 @@ if (nameInput) {
       <ul class="result-list">
         ${facts.map(f => `
           <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
-            <a href="${f.person}" target="_blank">${f.label_en ? ` ${f.label_en} -- ` : ''}${f.label_syr ? ` ${f.label_syr}` : ''}
+            <a href="${toAggregateUri(f.person)}" target="_blank">${f.label_en ? ` ${f.label_en} -- ` : ''}${f.label_syr ? ` ${f.label_syr}` : ''}
             </a>
             <br/>
             ${f.person ? ` [${f.person}]<br/>` : ''}

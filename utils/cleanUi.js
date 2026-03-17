@@ -10,6 +10,11 @@ export function cleanPunctuationSpacing(text) {
     .replace(/\s{2,}/g, ' ');
 }
 
+export function toAggregateUri(uri) {
+  const result = uri.replace('syriaca.org', 'spear-prosop.org').replace(/(\/)(person|place|keyword|work)(\/)/,  '$1aggregate/$2$3');
+  return result.endsWith('.html') ? result : result + '.html';
+}
+
 export function uriDisplayString(uri){
   if (uri == null) return '';
   if (uri.startsWith("http://syriaca.org/prop/") || uri.startsWith("http://syriaca.org/taxonomy/")) {
