@@ -1,25 +1,19 @@
-// Event mode for SPEAR application: User requestsed filters for event factoids: by associated persons, event keywords, places, occupations, gender, uncertainty, and sources.
+// Event mode for SPEAR application: User requested filters for event factoids: by associated persons, event keywords, places, occupations, gender, uncertainty, and sources.
 import {
-  getEventKeywords,
   getRelationshipOptions,
-  getPlaceOptions,
   getOccupationOptions,
   renderKeywordList
 } from '../menu.js';
 
-import { renderKeywordPrettyList } from '../list.js';
-import persons from '../event/person.json' with { type: 'json' };
-import { cleanPunctuationSpacing } from '../utils/cleanUi.js';
-// Use your existing fetcher that already works for event factoids
-// (adjust the path if your fetcher lives elsewhere)
-// import { fetchEventFactoids } from '../search.js';
-import { fetchEventFactoids } from '../event/search.js';
-
+import persons from '../relation/all_person_relation_factoids.json' with { type: 'json' };
+import { cleanPunctuationSpacing, uriDisplayString, deduplicateFactoids } from '../utils/cleanUi.js';
+import allRelationFactoids from '../relation/filtered_relation_factoids.json' with { type: 'json' };
+import { fetchRelationFactoids } from '../relation/search.js';
 
 function writeFilterParamsToUrl(filterState) {
   // Preserve existing params like ?type=event, only replace filter params
   const url = new URL(location.href);
-  const keys = ['nameSearch','gender','uncertainty','source','occupation','event','place'];
+  const keys = ['nameSearch','gender','uncertainty','source','occupation','relation'];
   keys.forEach(k => url.searchParams.delete(k));
   if (filterState.name && filterState.name.trim()) {
     url.searchParams.set('nameSearch', filterState.name.trim());
@@ -28,26 +22,25 @@ function writeFilterParamsToUrl(filterState) {
   if (filterState.uncertainty)                                url.searchParams.set('uncertainty', filterState.uncertainty);
   for (const uri of filterState.selectedSourceKeywords)       url.searchParams.append('source', uri);
   for (const uri of filterState.selectedOccupationKeywords)   url.searchParams.append('occupation', uri);
-  for (const uri of filterState.selectedEventKeywords)        url.searchParams.append('event', uri);
-  for (const uri of filterState.selectedPlaceKeywords)        url.searchParams.append('place', uri);
+  for (const uri of filterState.selectedRelationshipKeywords)        url.searchParams.append('relation', uri);
   history.replaceState({}, '', url);
 }
-// put this near your fetch() ??
 const str = (x) => {
   if (x == null) return '';
   if (typeof x === 'object' && 'value' in x) return (x.value ?? '').toString();
   return ('' + x);
 };
 
+
 export default {
-  id: 'event',
+  id: 'relation',
 
   sidebar(state) {
     return `
       <div class="filter-sidebar" id="filter-sidebar">
         <div className="filter-section"><div class="filter-title d-flex justify-content-between align-items-right" style="justify-items: right;">                        
-          <button type="button" class="btn btn-outline-dark" data-type="person" id="clearFiltersBtn">
-              Remove Filters/Show All Event Factoids
+          <button type="button" class="btn btn-outline-dark" data-type="relation" id="clearFiltersBtn">
+              Remove Filters/Show All Relation Factoids
           </button>
         </div>
       </div>
@@ -73,69 +66,41 @@ export default {
                 </div>
             </div>
           </div>
-          <!-- Source Filter -->
-          <div class="filter-section">
-                <div class="filter-title d-flex justify-content-between align-items-center">
-                  Event Concepts
+<!-- Relationships Filter -->
+      <div class="filter-section">
+                     <div class="filter-title d-flex justify-content-between align-items-center">
+                Types of Relation
                   <div class="d-flex gap-2">
-                    <button class="clear-section-btn" data-section="event" title="Clear event filter">
+                    <button class="clear-section-btn" data-section="relationships" title="Clear relationships filter">
                       <span>×</span>
                     </button>
-                    <button class="collapse-toggle" data-target="events-filter">
+                    <button class="collapse-toggle" data-target="relationships-filter">
                       <span>−</span>
                     </button>
                   </div>
                 </div>
-                <div class="filter-content" id="events-filter">
+              <!-- Relationships Filter -->
+            <div class="filter-content" id="relationships-filter">
                   <div class="filter-control">
-                    <label for="event-multiselect">Select events:</label>
+                    <label for="relationship-multiselect">Select relationships:</label>
                     <div class="multiselect-container">
-                      <input type="text" id="event-search" class="form-control form-control-sm"
-                        placeholder="Type to search events..." autocomplete="off" />
-                      <div class="multiselect-dropdown" id="event-dropdown">
+                      <input type="text" id="relationship-search" class="form-control form-control-sm"
+                        placeholder="Type to search relationships..." autocomplete="off" />
+                      <div class="multiselect-dropdown" id="relationship-dropdown">
+     
                       </div>
-                      <div class="selected-items" id="event-selected">
+                      <div class="selected-items" id="relationship-selected">
                         <!-- Selected items will appear here -->
                       </div>
                     </div>
                   </div>
                 
-                  <div id="eventKeywordList" class="keywordList">
-                    <ul id="eventKeywordItems"></ul>
-                  </div>
-                </div>
-              </div>
-                      <div class="filter-section">
-                <div class="filter-title d-flex justify-content-between align-items-center">
-                  Associated Places
-                  <div class="d-flex gap-2">
-                    <button class="clear-section-btn" data-section="place" title="Clear place filter">
-                      <span>×</span>
-                    </button>
-                    <button class="collapse-toggle" data-target="place-filter">
-                      <span>−</span>
-                    </button>
-                  </div>
-                </div>
-        
-                <div class="filter-content" id="place-filter">
-                  <div class="filter-control">
-                    <label for="place-multiselect">Select place:</label>
-                    <div class="multiselect-container">
-                      <input type="text" id="place-search" class="form-control form-control-sm"
-                        placeholder="Type to search places..." autocomplete="off" />
-                      <div class="multiselect-dropdown" id="place-dropdown">
-                      </div>
-                      <div class="selected-items" id="place-selected">
-                        <!-- Selected items will appear here -->
-                      </div>
-                    </div>
-                  </div>
-                  <div id="placeKeywordList" class="keywordList">
-                    <ul id="placeKeywordItems"></ul>
-                  </div>
-                </div>
+        <div id="relationshipKeywordList" class="keywordList">
+          <ul id="relationshipKeywordItems" class="keywordItems"></ul>
         </div>
+        </div>
+      </div>
+      
               <h5 class="filter-title">Associated Persons</h5>
               <!-- Names Filter -->
             
@@ -164,42 +129,6 @@ export default {
                
               <!-- Gender Filter use checkboxes for multiselection capability -->
     
-              <!-- <div class="filter-section">
-                <div class="filter-title d-flex justify-content-between align-items-center">
-                  Gender
-                  <div class="d-flex gap-2">
-                    <button class="clear-section-btn" data-section="gender" title="Clear gender filter">
-                      <span>×</span>
-                    </button>
-                    <button class="collapse-toggle" data-target="gender-filter">
-                      <span>−</span>
-                    </button>
-                  </div>
-                </div>
-                <div class="filter-content" id="gender-filter">
-                  <div class="radio-group">
-                    <label>
-                      <input class="me-1" type="radio" name="gender" value="" checked />
-                      All genders
-                    </label>
-                    <label>
-                      <input class="me-1" type="radio" name="gender" value="men" />
-                      Men
-                    </label>
-                    <label>
-                      <input class="me-1" type="radio" name="gender" value="women" />
-                      Women
-                    </label>
-                    <label>
-                      <input class="me-1" type="radio" name="gender" value="eunuchs" />
-                      Eunuchs
-                    </label>
-                  </div>
-                </div>
-                              <div class="filter-section">
-   
-      </div>
-              </div> -->
             <div class="filter-section">
               <div class="filter-title d-flex justify-content-between align-items-center">
                 Gender
@@ -221,7 +150,7 @@ export default {
             </div>
           </div>
           </div>
-              <!-- Events Filter -->
+              <!-- Occupations Filter -->
           <div class="filter-section">
                      <div class="filter-title d-flex justify-content-between align-items-center">
                   Occupations
@@ -293,17 +222,16 @@ export default {
   },
 
   bind(root, state, runSearch) {
-    // one event-specific bucket in shared state
-    state.filters.event ??= {
+    // one relation-specific bucket in shared state
+    state.filters.relation ??= {
       name: '',
       personURIs: new Set(),
+      relationURIs: new Set(),
       persons: new Set(),
-      events: new Set(),
-      selectedEventKeywords:        new Set(),
-      selectedRelationshipKeywords: new Set(),
+      relations: new Set(),
+      selectedRelationshipKeywords:        new Set(),
       selectedGenderKeywords:       new Set(),
       // selectedUncertaintyKeywords:  new Set(), // not used directly; we store string in .uncertainty
-      selectedPlaceKeywords:        new Set(),
       selectedOccupationKeywords:   new Set(),
       selectedSourceKeywords:       new Set([
         'https://spear-prosop.org/letters-severus',
@@ -313,7 +241,7 @@ export default {
       uncertainty: '' // CSV of errata,dubia,incerta to exclude
     };
 
-    const s = state.filters.event;
+    const s = state.filters.relation;
     const params = new URLSearchParams(location.search);
     const initialName = params.get('nameSearch') || '';
     if (initialName) s.name = initialName;
@@ -401,18 +329,7 @@ export default {
       });
     };
 
-    renderKeywordPrettyList(getEventKeywords(), 'eventKeywordItems', 'eventKeywordList','keyword', 'keyword', (uri) => {
-      toggleSet(s.selectedEventKeywords, uri);
-      writeFilterParamsToUrl(s);
-      runSearch();
-    });
 
-
-    renderKeywordList(getPlaceOptions(), 'placeKeywordItems', 'placeKeywordList', 'label', 'place', (uri) => {
-      toggleSet(s.selectedPlaceKeywords, uri);
-      writeFilterParamsToUrl(s);
-      runSearch();
-    });
 
     renderKeywordList(getRelationshipOptions(), 'relationshipKeywordItems', 'relationshipKeywordList', 'label', 'subject', (uri) => {
       toggleSet(s.selectedRelationshipKeywords, uri);
@@ -426,15 +343,13 @@ export default {
       runSearch();
     });
 
-    wireSearchFilter('event-search',        '#eventKeywordItems');
     wireSearchFilter('relationship-search', '#relationshipKeywordItems');
-    wireSearchFilter('place-search',        '#placeKeywordItems');
     wireSearchFilter('occupation-search',   '#occupationKeywordItems');
 
     // Clear section events, active
     root.addEventListener('clearSection', (e) => {
       const section = e.detail.section;
-      const p = state.filters.event;
+      const p = state.filters.relation;
       console.log('Clear section event for:', section, p);
       if (!p) return;
 
@@ -460,9 +375,7 @@ export default {
         gender:       'selectedGenderKeywords',
         source:       'selectedSourceKeywords',
         occupations:  'selectedOccupationKeywords',
-        event:        'selectedEventKeywords',
         relationships:'selectedRelationshipKeywords',
-        place:        'selectedPlaceKeywords'
       };
 
       const key = map[section];
@@ -501,9 +414,7 @@ export default {
       s.personURIs = [];
       s.persons = [];
       s.events = [];
-      s.selectedEventKeywords.clear();
       s.selectedRelationshipKeywords.clear();
-      s.selectedPlaceKeywords.clear();
       s.selectedOccupationKeywords.clear();
       s.selectedGenderKeywords.clear();
       s.selectedSourceKeywords = new Set([
@@ -518,11 +429,11 @@ export default {
       if (nameInput) nameInput.value = '';
       root.querySelectorAll('input[name="gender"]').forEach(cb => (cb.checked = false));
       root.querySelectorAll('input[name="uncertainty"]').forEach(cb => (cb.checked = false));
-      const all = root.querySelector('#eventSourceSelect input[data-all]');
-      if (all) all.checked = true;
+    //   const all = root.querySelector('#eventSourceSelect input[data-all]');
+    //   if (all) all.checked = true;
       root.querySelectorAll('#eventSourceSelect input[name="source"]:not([data-all])').forEach(cb => (cb.checked = true));
       root.querySelectorAll('.keywordList li.selected').forEach(li => li.classList.remove('selected'));
-      root.querySelectorAll('#event-search,#relationship-search,#place-search,#occupation-search').forEach(i => (i.value = ''));
+      root.querySelectorAll('#relationship-search,#occupation-search').forEach(i => (i.value = ''));
       const allSources = root.querySelector('#sourceSelect input[data-all]');
       if (allSources) allSources.checked = true;
       root.querySelectorAll('#sourceSelect input[name="source"]:not([data-all])').forEach(cb => (cb.checked = true));
@@ -531,54 +442,108 @@ export default {
     });
   },
 
-  // async fetch(state) {
-  //   // Return current results (orchestrator will call render with these)
-  //   console.log("Fetching event factoids with filters:", state.filters.event);
-  //   return await fetchEventFactoids(state.filters.event);
-  // },
+
 
     fetch: async (state) => {
-      const s = state.filters.event ?? {};
-      console.log("State filters for events:", s);
+      const s = state.filters.relation ?? {};
+      console.log("State filters for relations:", s);
       const hasName = !!(s.name && s.name.trim());
       const hasGender = (s.selectedGenderKeywords?.size ?? 0) > 0;
       const hasOccupation = (s.selectedOccupationKeywords?.size ?? 0) > 0;
-      console.log('Filter checks - hasName:', hasName, 'hasGender:', hasGender, 'hasOccupation:', hasOccupation);
+      const hasSource = (s.selectedSourceKeywords?.size ?? 0) > 0;  
+      const hasRelationship =   (s.selectedRelationshipKeywords?.size ?? 0) > 0;
       // Check if any other facet filters are applied
-      const hasAnyOtherFacet =
-        ((s.selectedSourceKeywords?.size ?? 3) > 0 && (s.selectedSourceKeywords?.size ?? 3) < 3) ||
-        (s.selectedEventKeywords?.size ?? 0) > 0 ||
-        s.uncertainty ||
-        (s.selectedPlaceKeywords?.size ?? 0) > 0;
+      const hasFacet =
+        
+        s.uncertainty !== '' || hasName || hasGender ||hasOccupation ||hasSource || hasRelationship;
 
-      if (hasName || hasGender || hasOccupation) {
-      // Need to process JSON results into rows  
-      const bindings = persons.results?.bindings ?? [];
-      let rows = bindings.map(b => ({
-      person: str(b.person),
-      label_en: str(b.label_en),
-      label_syr: str(b.label_syr),
-      description: str(b.description),
-      gender: str(b.gender),
-      occupation: str(b.occupation), uri: str(b.factoid), eventKeyword: str(b.eventKeyword), source: str(b.source)  
-    }));
     // ---------- SIMPLE (JSON) ----------
-  // if (!hasName && !hasAnyOtherFacet) {
-  //   s.personURIs = rows.map(r => r.person);
-  //   console.log('Default: showing all people from JSON (' + rows.length + ' rows)');
-  //   return rows;
-  // }
-   if (hasName) { 
-        const q = (s.name ?? '').trim().toLowerCase();
+//  Default page view
+if (!hasFacet) {
+  // Load from filtered_relation_factoids.json instead of persons.json
+  const bindings = allRelationFactoids.results?.bindings ?? [];
+  const rows = bindings.map(b => ({
+    factoid: str(b.factoid),
+    uri: str(b.factoid),
+    description: str(b.description),
+    source: str(b.source),
+    relationship: uriDisplayString(str((b.relationship)))
+  }));
+  
+  console.log('Default: showing all relation factoids from filtered JSON (' + rows.length + ' rows)');
+  return deduplicateFactoids(rows);
+}
+// ---------- SOURCE-ONLY FILTER ---------- Don't need
+if (hasSource && !hasName && !hasGender && !hasOccupation && !hasRelationship && s.uncertainty !== '' ) {
+  const bindings = allRelationFactoids.results?.bindings ?? [];
+  let rows = bindings.map(b => ({
+    factoid: str(b.factoid),
+    uri: str(b.factoid),
+    description: str(b.description),
+    source: str(b.source),
+    relationship: str(b.relationship)
+  }));
+  
+  // Filter by selected sources
+  const selectedSources = Array.from(s.selectedSourceKeywords);
+  if (selectedSources.length > 0 && selectedSources.length < 3) {
+    rows = rows.filter(r => selectedSources.includes(r.source));
+    console.log('Filtering by sources only:', selectedSources, 'rows:', rows.length);
+  } else {
+    console.log('Default: showing all relation factoids from filtered JSON (' + rows.length + ' rows)');
+  }
+  
+  return deduplicateFactoids(rows);
+}
+// ---------- Person-based FILTER ----------
+
+// ---------- NAME FILTER ----------
+if (hasName || hasGender || hasOccupation || hasSource) {
+
+  const bindings = persons.results?.bindings ?? [];
+  let rows = bindings.map(b => ({
+    factoid: str(b.factoid),
+    uri: str(b.factoid),
+    description: str(b.description),
+    source: str(b.source),
+    relationship: str(b.relationship),
+    name: str(b.label_en) || str(b.label_syr) || '',
+    personURI: str(b.person),
+    gender: str(b.gender),
+    occupation: str(b.occupation),
+    label_en: str(b.label_en),
+    label_syr: str(b.label_syr),
+
+  }));
+    // Filter by selected sources
+  const selectedSources = Array.from(s.selectedSourceKeywords);
+  if (selectedSources.length > 0 && selectedSources.length < 3) {
+    rows = rows.filter(r => selectedSources.includes(r.source));
+    console.log('Filtering by sources only:', selectedSources, 'rows:', rows.length);
+  } else {
+    console.log('Default: showing all relation factoids from filtered JSON (' + rows.length + ' rows)');
+  }
+      // Filter by selected sources
+  const selectedRelationships = Array.from(s.selectedRelationshipKeywords);
+  if (selectedRelationships.length > 0 ) {
+    rows = rows.filter(r => selectedRelationships.includes(r.relationship));
+    console.log('Filtering by relationship:', selectedRelationships);
+  } else {
+    console.log('No relationship keyword filters applied, skipping that filter step.');
+
+  }
+    // Filter by name
+    if (hasName) {
+    const q = (s.name ?? '').trim().toLowerCase();
         console.log('Filtering by name search:', q);
-        if (q) {
+    
         rows = rows.filter(r =>
-            (r.label_en && r.label_en.toLowerCase().includes(q)) ||
-            (r.label_syr && r.label_syr.toLowerCase().includes(q))
+            (r.name && r.name.toLowerCase().includes(q))
         );
-        }
-   }
-     // ---------- FILTER BY GENDER ----------
+        
+    console.log('Filtering by name only:', q, 'rows:', rows.length);
+    }
+         // ---------- FILTER BY GENDER ----------
   if (hasGender) {
     const selectedGenders = Array.from(s.selectedGenderKeywords).map(g => g.toLowerCase());
     console.log('Filtering by genders:', selectedGenders);
@@ -586,8 +551,7 @@ export default {
     r.gender && selectedGenders.some(sel => sel === r.gender)
     );
   }
-
-  // ---------- FILTER BY OCCUPATION ----------
+    // ---------- FILTER BY OCCUPATION ----------
   if (hasOccupation) {
     const selectedOccs = Array.from(s.selectedOccupationKeywords);
     console.log('Filtering by occupations:', selectedOccs);
@@ -610,41 +574,50 @@ export default {
     console.log('Rows after occupation filter:', rows.length);
   }
         const personURIs = rows.map(r => r.person);
-        const eventURIs = [...new Set(rows.map(r => r.uri))];
+        const relationURIs = [...new Set(rows.map(r => r.relationship))];
         // Bind directly to state for later SPARQL queries
-        state.filters.event.persons = [...new Set(personURIs)];
+        state.filters.relation.persons = [...new Set(personURIs)];
 
-        state.filters.event.events = [...new Set(eventURIs)];
+        state.filters.relation.relations = [...new Set(relationURIs)];
         console.log('Bound personURIs to state:', personURIs.length);
-        console.log('Event URIs:', eventURIs);
+        console.log('count relation URIs:', relationURIs.length);
         console.log('fetch -> JSON rows:', rows.length, 'sample:', rows[0]);
-    // If we pull factoid description from JSON, we can return here, but for now we re-query SPARQL for full factoid data
-    }
+    
+
+  return deduplicateFactoids(rows);
+}
+
 
     // ---------- COMPLEX (LIVE) ----------
-
-    return await fetchEventFactoids(state.filters.event);
+  else if (hasRelationship ) {
+    const results = await fetchRelationFactoids(state.filters.relation);
+    return deduplicateFactoids(results);
+}
 
     },
 
   render(facts) {
     // Render into the event results panel
-    const panel = document.getElementById('event--items');
+    const panel = document.getElementById('relation--items');
     if (!panel) return;
 
     if (!facts || facts.length === 0) {
-      panel.innerHTML = `<div class="text-muted">No event factoids match these filters.</div>`;
+      panel.innerHTML = `<div class="text-muted">No relation factoids match these filters.</div>`;
       return;
     }
 
+
+
     panel.innerHTML = `
-      <h4>Event Factoids</h4>
+      <h4>Relation Factoids</h4>
       <h5 class="mt-2 mb-3">${facts.length} results</h5>
       <ul class="result-list">
         ${facts.map(f => `
       <li style="padding: 1rem 0; border-bottom: 1px solid #ccc;">
         ${cleanPunctuationSpacing(f.description) ? `<em> ${cleanPunctuationSpacing(f.description)} </em>` : ''}${f.source ? ` [${getSourceLabel(f.source)}]<br/>` : ''}
-        ${f.eventKeyword ? `${f.eventKeyword}<br/> ` : ''}
+        ${f.relationKeyword ? `${f.relationKeyword}<br/> ` : ''}
+        ${f.relationship ? `Type of Relation: ${uriDisplayString(f.relationship)}<br/> ` : ''}
+
         <a href="${f.uri}" >${f.uri}</a> 
       </li>
         `).join('')}

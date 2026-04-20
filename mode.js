@@ -9,6 +9,7 @@ export function boot({ registry, defaultType = 'person' } = {}) {
     sidebar:     document.getElementById('filter-sidebar'),
     personPanel: document.getElementById('personResults'),
     eventPanel:  document.getElementById('eventResults'),
+    relationPanel:  document.getElementById('relationResults'),
   };
 
   const readTypeFromUrl = () =>
@@ -31,6 +32,7 @@ export function boot({ registry, defaultType = 'person' } = {}) {
   const togglePanels = (type) => {
     if (els.personPanel) els.personPanel.classList.toggle('d-none', type !== 'person');
     if (els.eventPanel)  els.eventPanel.classList.toggle('d-none',  type !== 'event');
+    if (els.relationPanel) els.relationPanel.classList.toggle('d-none', type !=='relation');
   };
  
   const wireSidebarChrome = (root, state, runSearch) => {    root.addEventListener('click', (e) => {
