@@ -1,5 +1,18 @@
+import { fetchWithCache } from '../menu.js';
 
 export const SPARQL_ENDPOINT = "https://sparql.vanderbilt.edu/sparql";
+
+// Build a stable, collision-free localStorage key from the full query text.
+// Keying on the query (not a fixed name) means the default unfiltered result
+// caches, and each distinct facet combination gets its own entry.
+function eventCacheKey(query) {
+  // DJB2 hash -> compact, deterministic key. Avoids btoa truncation collisions.
+  let hash = 5381;
+  for (let i = 0; i < query.length; i++) {
+    hash = ((hash << 5) + hash + query.charCodeAt(i)) | 0;
+  }
+  return `eventFactoidsV1_${(hash >>> 0).toString(36)}`;
+}
 
 
 // Event Factoids
@@ -168,37 +181,42 @@ LIMIT 20000
 
 
 export async function fetchEventFactoids(state) {
- const query = buildEventFactoidQuery(state);
+  const query = buildEventFactoidQuery(state);
   console.log("Buiding query with state:", state);
   console.log('Fetching factoids with query:', query);
   try {
-    const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
-      headers: { Accept: 'application/sparql-results+json' }
+    // Cache the mapped rows keyed on the query text (24h TTL, shared with the menus).
+    // The default unfiltered event query and each facet combination cache separately.
+    return await fetchWithCache(eventCacheKey(query), async () => {
+      const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
+        headers: { Accept: 'application/sparql-results+json' }
+      });
+
+      if (!res.ok) {
+        const errorText = await res.text();
+        console.error("SPARQL HTTP error:", res.status, errorText);
+        // Throw so a failed request is NOT written to the cache.
+        throw new Error(`SPARQL HTTP ${res.status}`);
+      }
+
+      const data = await res.json();
+      return data.results.bindings.map(b => ({
+        uri: b.factoid?.value ?? '',
+        description: b.description?.value ?? '',
+        label: b.label?.value ?? '',
+        person: b.person?.value ?? '',
+        eventKeyword: b.eventKeyword?.value ?? '',
+        relationship: b.relationship?.value ?? '',
+        ethnicity: b.ethnicity?.value ?? '',
+        gender: b.gender?.value ?? '',
+        place: b.place?.value ?? '',
+        field: b.field?.value ?? '',
+        source: b.source?.value ?? '',
+        uncertainty: b.level?.value ?? '',
+        type: b.type?.value ?? '',
+        stmt: b.stmt?.value ?? ''
+      }));
     });
-
-    if (!res.ok) {
-      const errorText = await res.text();
-      console.error("SPARQL HTTP error:", res.status, errorText);
-      return [];
-    }
-
-    const data = await res.json();
-    return data.results.bindings.map(b => ({
-      uri: b.factoid?.value ?? '',
-      description: b.description?.value ?? '',
-      label: b.label?.value ?? '',
-      person: b.person?.value ?? '',
-      eventKeyword: b.eventKeyword?.value ?? '',
-      relationship: b.relationship?.value ?? '',
-      ethnicity: b.ethnicity?.value ?? '',
-      gender: b.gender?.value ?? '',
-      place: b.place?.value ?? '',
-      field: b.field?.value ?? '',
-      source: b.source?.value ?? '',
-      uncertainty: b.level?.value ?? '',
-      type: b.type?.value ?? '',
-      stmt: b.stmt?.value ?? ''
-    }));
   } catch (err) {
     console.error("Failed to fetch factoids:", err);
     return [];

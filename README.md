@@ -11,6 +11,7 @@ SPEAR provides an interactive interface for searching and analyzing historical p
 ### Multi-Modal Search
 - **Person Search**: Find individuals by name, occupation, gender, relationships, and associated places
 - **Event Search**: Explore historical events with filtering by participants, locations, and keywords
+- **Relation Search**: Explore historical relationships documented in one of the three sources for SPEAR by filtering by source or keywords
 
 ### Advanced Filtering
 - **Multi-select filters**: Combine multiple criteria (events, relationships, places, occupations)
