@@ -184,12 +184,16 @@ export async function fetchData(state) {
 //         };
 //   }
 
+  // Client-side timeout set just above the API Gateway integration timeout (15s),
+  // so the browser normally receives the gateway's 504 and only self-aborts if the
+  // response stalls entirely. The signal must be passed to fetch for abort() to work.
   const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000);
+  const timeoutId = setTimeout(() => controller.abort(), 16000);
 
   try {
     const res = await fetch(`${SPARQL_ENDPOINT}?query=${encodeURIComponent(query)}`, {
-      headers: { Accept: 'application/sparql-results+json' }
+      headers: { Accept: 'application/sparql-results+json' },
+      signal: controller.signal,
     });
 
     if (!res.ok) {
@@ -214,12 +218,13 @@ export async function fetchData(state) {
       label_syr: b.label_syr?.value ?? '',
     }));
   } catch (err) {
-    clearTimeout(timeoutId);
     if (err.name === 'AbortError') {
-      console.error("Query timed out after 5 seconds");
+      console.error("Query timed out after 16 seconds");
     } else {
       console.error("Failed to fetch factoids:", err);
     }
     return [];
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
