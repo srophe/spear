@@ -10,14 +10,10 @@ import {
 import { renderKeywordPrettyList } from '../list.js';
 import persons from '../event/person.json' with { type: 'json' };
 import { cleanPunctuationSpacing } from '../utils/cleanUi.js';
-// Use your existing fetcher that already works for event factoids
-// (adjust the path if your fetcher lives elsewhere)
-// import { fetchEventFactoids } from '../search.js';
 import { fetchEventFactoids } from '../event/search.js';
 
 
 function writeFilterParamsToUrl(filterState) {
-  // Preserve existing params like ?type=event, only replace filter params
   const url = new URL(location.href);
   const keys = ['nameSearch','gender','uncertainty','source','occupation','event','place'];
   keys.forEach(k => url.searchParams.delete(k));
@@ -514,6 +510,8 @@ export default {
       s.uncertainty = '';
 
       // reset inputs visually
+      const nameInput = root.querySelector('#name-search');
+      if (nameInput) nameInput.value = '';
       root.querySelectorAll('input[name="gender"]').forEach(cb => (cb.checked = false));
       root.querySelectorAll('input[name="uncertainty"]').forEach(cb => (cb.checked = false));
       const all = root.querySelector('#eventSourceSelect input[data-all]');

@@ -1,16 +1,3 @@
-Here is a clean, well-structured **README.md** for your **Person Search** system in SPEAR. It explains:
-
-* How person-level facet filtering works
-* The corrected SPARQL logic
-* How to run diagnostics
-* How to integrate it into the front-end
-
-You can drop this into your repo directly.
-If you want a version tailored to Jekyll/VitePress/GitHub Pages, I can format it accordingly.
-
----
-
-# 📘 **README.md — Person Search (SPEAR Prosopography)**
 
 # SPEAR Person Search
 
@@ -29,7 +16,7 @@ The SPEAR **Person Search** engine allows users to filter persons based on multi
 * **Gender, occupation, relationships** (optional facets)
 * **Names / keyword text search**
 
-Search is executed against the **Neptune SPARQL endpoint**:
+Search is executed against the **Vanderbilt University Libraries' public SPARQL endpoint**:
 
 ```
 https://sparql.vanderbilt.edu/sparql
@@ -42,20 +29,19 @@ All person-level data is sourced from:
 
 ---
 
-## 🎯 Person-Level Facet Intersection (Key Concept)
+## Person-Level Facet Intersection 
 
 A person should be returned **if they match all selected facets**, but:
 
-### ❗ Facets do *not* need to be satisfied by the same event.
+### Facets do *not* need to be satisfied by the same event.
 
 Example:
 
 * A person participates in **Event A**, which has keyword *monasticism*
-* They also participate in **Event B**, which has place *2605*
+* They also participate in **Event B**, which has place *Edessa*
 
 Even though A ≠ B, this **should still match**, because both facets apply to the **same person node**.
 
-This was the main issue that caused `person/1113` not to appear in earlier queries.
 
 ---
 
@@ -99,7 +85,7 @@ This version works for all valid person searches and returns person 1113 correct
 
 ---
 
-## 🧪 Running Diagnostic Queries via cURL
+## Troublshooting: Running Diagnostic Queries via cURL
 
 Useful for debugging when a person fails to appear in results.
 
@@ -142,7 +128,7 @@ This reveals:
 
 ---
 
-## 📄 Full Person Search Query (Labels + Description + Facets)
+## Person Search Query (Labels + Description + Facets)
 
 This expands the facet query to retrieve multilingual labels and descriptions.
 
@@ -199,7 +185,7 @@ ORDER BY ?label_en
 
 ---
 
-## 🗂 Data Model Summary
+## Data Model Summary
 
 | Element              | Source Graph     | Description                   |
 | -------------------- | ---------------- | ----------------------------- |
