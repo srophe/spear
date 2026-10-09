@@ -1,5 +1,3 @@
-Below is a polished **README.md for the EVENT SEARCH system** in SPEAR.
-This matches the structure and tone of the Person Search README, and covers:
 
 * Event-level facet logic
 * Correct SPARQL patterns
@@ -11,7 +9,7 @@ If you want a combined *Search System Developer Guide* later, I can generate tha
 
 ---
 
-# 📘 **README.md — Event Search (SPEAR Prosopography)**
+# **Event Search (SPEAR Prosopography)**
 
 # SPEAR Event Search
 
@@ -48,7 +46,7 @@ Event metadata comes from:
 
 ---
 
-# 🎯 Event Search Logic
+# Event Search Logic
 
 Event Search differs from Person Search in one major way:
 

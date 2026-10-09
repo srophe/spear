@@ -7,7 +7,6 @@ import {
   renderKeywordList
 } from './menu.js';
 
-// import { fetchFactoidsWithFilters, fetchFactoidsByMultiType, fetchEventFactoids } from './search.js';
 import { fetchEventFactoids } from './event/search.js';
 import { renderKeywordPrettyList } from './list.js'; 
 
